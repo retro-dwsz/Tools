@@ -1,0 +1,107 @@
+/** Basic aliases **/ 
+
+/* numbers */
+int8_t = i8
+int16_t = i16
+int32_t = i32
+int64_t = i64
+
+unt8_t = u8
+unt16_t = u16
+unt32_t = u32
+unt64_t = u64
+
+float = f32
+double = f64
+long double = fld
+
+/* strings */
+std::string = str
+std::wstring = wstr
+std::u16string = str16
+std::u32string = str32
+
+std::string_view = strv
+std::stringstream = sstream
+std::ostringstream = ostream
+
+/* containers */
+std::vector = vec
+std::array = arr
+std::map = map
+std::unordered_map = umap
+std::set = set
+std::unordered_set = uset
+std::pair = pair
+std::initializer_list = initl
+std::span = span
+std::tuple = tuple
+std::list = list
+
+/* type containers */
+std::optional = topt
+std::varaint = tvar
+std::expected = texp
+
+/* Pointer */
+using ptr = void*;
+
+/** Concepts **/
+
+Basic Code:
+`{
+template <typename X, typename Y>
+concept Same = std::same_as<X, Y>;
+
+template <typename T, typename... Ts>
+concept OneOf = (Same<T, Ts> || ...);
+}`
+
+/* 32-bit int&float */
+nx32 = i32, f32
+
+/* 64-bit int&float */
+nx64 = i64, f64
+
+/* 32-bit+64-bit int&float */
+CommonNumber = i32, i64, f32, f64
+
+/* Commonly used numbers and strings */
+CommonTypes = i32, i64, f32, f64, cstr, str
+
+/* All integer + unsiged + floating */
+Numbers = i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld
+
+/* Type references */
+`{
+template <typename T>
+concept Ref = OneOf<T, T&, const T&>;
+}`
+
+/* Integers */
+/* All integer */
+Int = i8, i16, i32, i64
+
+/* Common integers */
+CInt = i32, i64
+    
+/* Unsiged Integers */
+/* All unsigned integers */
+UInt = u8, u16, u32, u64
+
+/* Common unsigned integers */
+CUInt = u32, u64
+     
+/* Floating Points */
+/* All floating points */
+Float = f32, f64, fld
+
+/* Common floating points */
+Floats = f32, f64
+    
+/* Strings */
+/* Standard C/C++ stirngs */
+Strings = str, cstr;
+
+/* Wide C/C++ stirngs */
+WStrings = wstr, cwstr

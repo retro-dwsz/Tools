@@ -1,0 +1,21 @@
+# pkgname=mingw-w64-clang-x86_64-tools-cpp
+pkgname=${MINGW_PACKAGE_PREFIX:-msys}-tools-cpp
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Personal header-only C++ utility library"
+arch=('any')
+
+license=('MIT')
+depends=()
+source=("tools-cpp.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  install -d "${pkgdir}${MINGW_PREFIX}/include"
+
+  install -m644 "${srcdir}/tools-cpp/Tools.hpp" \
+                "${pkgdir}${MINGW_PREFIX}/include/Tools.hpp"
+
+  cp -r "${srcdir}/tools-cpp/Tools" \
+        "${pkgdir}${MINGW_PREFIX}/include/"
+}
