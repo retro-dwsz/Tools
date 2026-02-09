@@ -29,10 +29,5 @@
 /*
 Msys packages: 
 
-./Msys/mingw-w64-clang-aarch64-tools-cpp-10022026-1-any.pkg.tar.zst 
-./Msys/mingw-w64-clang-x86_64-tools-cpp-10022026-1-any.pkg.tar.zst 
-./Msys/mingw-w64-i686-tools-cpp-10022026-1-any.pkg.tar.zst 
-./Msys/mingw-w64-ucrt-x86_64-tools-cpp-10022026-1-any.pkg.tar.zst 
-./Msys/mingw-w64-x86_64-tools-cpp-10022026-1-any.pkg.tar.zst 
-./Msys/msys-tools-cpp-10022026-1-any.pkg.tar.zst
+
 */
