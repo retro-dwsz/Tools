@@ -114,7 +114,6 @@ namespace Tools::Cast {
 }
 
 namespace Tools::Cast {
-
     // cast<T>(value)
     //
     // "One-door" casting API.

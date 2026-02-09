@@ -7,6 +7,14 @@
 #include <print>
 #include <format>
 
+/*
+Compile this file: clang++ -c Style.cpp -o Style.o
+                   clang++ -shared Style.cpp -o Style.dll
+Make archive:      ar rcs Style.a Style.o
+Compile and Link:  clang++ -o test.cpp -o test.exe -lStyle
+                   clang++ Style.dll test.cpp -o test.exe
+*/
+
 // #define FMT_HEADER_ONLY
 // #include <fmt/format.h>
 // #include <fmt/color.h>

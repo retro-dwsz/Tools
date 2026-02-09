@@ -1,16 +1,15 @@
 #pragma once
 
+#include "Types.hpp"
 #include <format>
-#include <string>
 #include <algorithm>
-#include <cstdint>
 #include <regex>
 
 // #include <fmt/format.h>
 
 namespace Tools::Styling {
-    using str = std::string;        // Main string
-    using wstr = std::wstring;      // Wide string (Do we even need this?)
+    // using str = std::string;        // Main string
+    // using wstr = std::wstring;      // Wide string (Do we even need this?)
 
     struct Color {
         uint8_t r, g, b;

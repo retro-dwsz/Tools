@@ -1,11 +1,11 @@
 format = 2
-pkgname = msys-tools-cpp
-pkgbase = msys-tools-cpp
+pkgname = mingw-w64-ucrt-x86_64-tools-cpp
+pkgbase = mingw-w64-ucrt-x86_64-tools-cpp
 pkgver = 10022026-1
 pkgarch = any
 pkgbuild_sha256sum = aa000db44255eda8a3cec6401f41679afdb495af00ec7eee729131ba6f5afb2a
 packager = Unknown Packager
-builddate = 1770660931
+builddate = 1770667059
 builddir = /d/Code/_CLIB/Tools/Msys
 startdir = /d/Code/_CLIB/Tools/Msys
 buildtool = makepkg

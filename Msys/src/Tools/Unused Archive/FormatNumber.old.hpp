@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Types.hpp"
+#include "../Types.hpp"
 #include <iomanip>
 #include <string>
 #include <type_traits>
@@ -371,7 +371,7 @@ namespace Tools::FormatNumber {
             number = -number;
         }
         
-        stream oss;
+        sstream oss;
         oss << fixed << setprecision(decimals) << number;
         str numStr = Format(oss.str(), groupSize, separator);
         
