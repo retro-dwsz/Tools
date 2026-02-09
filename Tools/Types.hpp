@@ -6,8 +6,7 @@
 #include "Types.float.hpp"
 #include "Types.string.hpp"
 #include "Types.containers.hpp"
-
-using ptr = void*;
+#include "Types.ptr.hpp"
 
 // #include <type_traits>
 // #include <concepts>
@@ -43,7 +42,7 @@ concept Numbers = OneOf<T, i8, i16, i32, i64,
                   >;
 
 template <typename T>
-concept Integers = OneOf<T, i8, i16, i32, i64,
+concept Integer = OneOf<T, i8, i16, i32, i64,
                            u8, u16, u32, u64
                            >;
 
@@ -51,14 +50,7 @@ template <typename T>
 concept Ref = OneOf<T, T&, const T&>;
 
 template <Numbers T>
-constexpr void CheckRange(T& min, T& max) {
+void CheckRange(T& min, T& max) {
     if (max < min) std::swap(min, max);
 }
 
-/*
-clangd:
-
-llvm-mingw      D:\Code\LLVM\LLVM-MinGW\bin\clangd.exe
-msys            D:\Code\_MSYS2\Files\clang64\bin\clangd.exe
-
-*/

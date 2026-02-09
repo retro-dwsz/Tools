@@ -1,10 +1,10 @@
-#include "Types.hpp"
+#include "../Types.hpp"
 #include <sstream>
 
 namespace Formatter {
-    using NumInteger = std::variant<i8, i16, i32, i64, u8, u16, u32, u64>;
-    using NumFloating = std::variant<f32, f64, fld>;
-    using Num = std::variant<i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld>;
+    using NumInteger = tvar<i8, i16, i32, i64, u8, u16, u32, u64>;
+    using NumFloating = tvar<f32, f64, fld>;
+    using Num = tvar<i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld>;
 
     // Helper function untuk memformat string integer
     str formatIntegerString(const str& numStr, u32 group, cstr separator) {
