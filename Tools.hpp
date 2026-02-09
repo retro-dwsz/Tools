@@ -25,9 +25,3 @@
 #include "Tools/Types.string.hpp"
 
 #include "Tools/IVec.hpp"
-
-/*
-Msys packages: 
-
-
-*/
