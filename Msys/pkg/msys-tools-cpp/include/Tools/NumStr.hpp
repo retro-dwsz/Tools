@@ -8,12 +8,6 @@
 #include <variant>
 #include <algorithm>
 
-#include <fmt/format.h>
-using fmt::print;
-using fmt::println;
-using fmt::format;
-
-
 // Optional: Add fmt include if you want to use it
 // #include <fmt/format.h>
 // using fmt::print;

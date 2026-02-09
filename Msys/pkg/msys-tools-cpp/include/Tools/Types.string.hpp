@@ -1,7 +1,6 @@
 #pragma once
 
 /* ---- String ---- */
-
 #include <sstream>
 #include <string>
 #include <string_view>

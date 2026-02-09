@@ -2,11 +2,11 @@
 pkgname = msys-tools-cpp
 pkgbase = msys-tools-cpp
 xdata = pkgtype=pkg
-pkgver = 1.0.0-1
+pkgver = 10022026-1
 pkgdesc = Personal header-only C++ utility library
 url = 
-builddate = 1770577464
+builddate = 1770660931
 packager = Unknown Packager
-size = 3015604
+size = 2999258
 arch = any
 license = MIT

@@ -1,21 +1,31 @@
-# pkgname=mingw-w64-clang-x86_64-tools-cpp
+# Create tarball:
+# tar -czf ./Msys/tools-cpp.tar.gz Tools Tools.hpp
+# 
+# Install using selected environment
+# pacman -U <packagename>
+#
+# Format:
+# mingw-w64-<ENV>-tools-cpp-<RELEASE>-any
+
 pkgname=${MINGW_PACKAGE_PREFIX:-msys}-tools-cpp
-pkgver=1.0.0
-pkgrel=1
 pkgdesc="Personal header-only C++ utility library"
+pkgver=10022026
+pkgrel=1
 arch=('any')
 
 license=('MIT')
-depends=()
+# depends=("${MINGW_PACKAGE_PREFIX}-fmt")
 source=("tools-cpp.tar.gz")
 sha256sums=('SKIP')
 
 package() {
   install -d "${pkgdir}${MINGW_PREFIX}/include"
 
-  install -m644 "${srcdir}/tools-cpp/Tools.hpp" \
+  install -m644 "${srcdir}/Tools.hpp" \
                 "${pkgdir}${MINGW_PREFIX}/include/Tools.hpp"
 
-  cp -r "${srcdir}/tools-cpp/Tools" \
+  cp -r "${srcdir}/Tools" \
         "${pkgdir}${MINGW_PREFIX}/include/"
 }
+
+
