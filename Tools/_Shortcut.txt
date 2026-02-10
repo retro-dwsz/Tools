@@ -1,60 +1,60 @@
 /** Basic aliases **/ 
 
 /* numbers */
-int8_t . . . . . . . . . . . . . . . . . . . . . . . . .= i8
-int16_t  . . . . . . . . . . . . . . . . . . . . . . . .= i16
-int32_t  . . . . . . . . . . . . . . . . . . . . . . . .= i32
-int64_t  . . . . . . . . . . . . . . . . . . . . . . . .= i64
+i8 .....................................................= int8_t
+i16 ....................................................= int16_t
+i32 ....................................................= int32_t
+i64 ....................................................= int64_t
 
-unt8_t . . . . . . . . . . . . . . . . . . . . . . . . .= u8
-unt16_t  . . . . . . . . . . . . . . . . . . . . . . . .= u16
-unt32_t  . . . . . . . . . . . . . . . . . . . . . . . .= u32
-unt64_t  . . . . . . . . . . . . . . . . . . . . . . . .= u64
+u8 .....................................................= unt8_t
+u16 ....................................................= unt16_t
+u32 ....................................................= unt32_t
+u64 ....................................................= unt64_t
 
-float  . . . . . . . . . . . . . . . . . . . . . . . . .= f32
-double . . . . . . . . . . . . . . . . . . . . . . . . .= f64
-long double  . . . . . . . . . . . . . . . . . . . . . .= fld
+f32 ....................................................= float 
+f64 ....................................................= double
+fld ....................................................= long double 
 
 /* strings */
-std::string  . . . . . . . . . . . . . . . . . . . . . .= str
-std::wstring . . . . . . . . . . . . . . . . . . . . . .= wstr
-std::u16string . . . . . . . . . . . . . . . . . . . . .= str16
-std::u32string . . . . . . . . . . . . . . . . . . . . .= str32
+str ....................................................= std::string 
+wstr ...................................................= std::wstring
+str16 ..................................................= std::u16string
+str32 ..................................................= std::u32string
 
-std::string_view . . . . . . . . . . . . . . . . . . . .= strview
-std::stringstream . . .  . . . . . . . . . . . . . . . .= sstream
-std::ostringstream . . . . . . . . . . . . . . . . . . .= ostream
+strview ................................................= std::string_view
+sstream ................................................= std::stringstream
+ostream ................................................= std::ostringstream
 
 /* containers */
-std::vector  . . . . . . . . . . . . . . . . . . . . . .= vec
-std::array . . . . . . . . . . . . . . . . . . . . . . .= arr
-std::map . . . . . . . . . . . . . . . . . . . . . . . .= map
-std::unordered_map . . . . . . . . . . . . . . . . . . .= umap
-std::set . . . . . . . . . . . . . . . . . . . . . . . .= set
-std::unordered_set . . . . . . . . . . . . . . . . . . .= uset
-std::pair  . . . . . . . . . . . . . . . . . . . . . . .= pair
-std::initializer_list  . . . . . . . . . . . . . . . . .= initl
-std::span . . . . . . .  . . . . . . . . . . . . . . . .= span
-std::tuple . . . . . . . . . . . . . . . . . . . . . . .= tuple
-std::list . . . . . . .  . . . . . . . . . . . . . . . .= list
+vec ....................................................= std::vector
+arr ....................................................= std::array
+map ....................................................= std::map
+umap ...................................................= std::unordered_map
+set ....................................................= std::set
+uset ...................................................= std::unordered_set
+pair ...................................................= std::pair
+initl ..................................................= std::initializer_list
+span ...................................................= std::span
+tuple ..................................................= std::tuple
+list ...................................................= std::list
 
 /* type containers */
-std::optional  . . . . . . . . . . . . . . . . . . . . .= topt
-std::varaint . . . . . . . . . . . . . . . . . . . . . .= tvar
-std::expected  . . . . . . . . . . . . . . . . . . . . .= texp
+topt ...................................................= std::optional
+tvar ...................................................= std::varaint
+texp ...................................................= std::expected
 
 /* Pointer */
 /* Pointer to data*/
-using ptr  . . . . . . . . . . . . . . . . . . . . . . .= T*;
+ptr ....................................................= T*;
 
 /* Pointer to constant data */
-using ptrcd  . . . . . . . . . . . . . . . . . . . . . .= const T*;
+ptrcd ..................................................= const T*;
 
 /* Constant pointer to data */
-using cptr . . . . . . . . . . . . . . . . . . . . . . .= T const*;
+cptr ...................................................= T const*;
 
 /* Constant pointer to constant data*/
-using cptrcd . . . . . . . . . . . . . . . . . . . . . .= const T *const;
+cptrcd .................................................= const T *const;
 
 
 /** Concepts **/
@@ -69,19 +69,19 @@ concept OneOf = (Same<T, Ts> || ...);
 }`
 
 /* 32-bit int&float */
-nx32 . . . . . . . . . . . . . . . . . . . . . . . . . .= i32, f32
+i32, f32 ...............................................= nx32
 
 /* 64-bit int&float */
-nx64 . . . . . . . . . . . . . . . . . . . . . . . . . .= i64, f64
+i64, f64 ...............................................= nx64
 
 /* 32-bit+64-bit int&float */
-CommonNumber . . . . . . . . . . . . . . . . . . . . . .= i32, i64, f32, f64
+i32, i64, f32, f64 .....................................= CommonNumber
 
 /* Commonly used numbers and strings */
-CommonTypes  . . . . . . . . . . . . . . . . . . . . . .= i32, i64, f32, f64, cstr, str
+i32, i64, f32, f64, cstr, str ..........................= CommonTypes
 
 /* All integer + unsiged + floating */
-Numbers . . . . . . . .  . . . . . . . . . . . . . . . .= i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld
+i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld ....= Numbers
 
 /* Type references */
 `{
@@ -91,62 +91,59 @@ concept Ref = OneOf<T, T&, const T&>;
 
 /* Integers */
 /* All integer */
-Int . . . . . . . . . . . . . . . . . . . . . . .  . . .= i8, i16, i32, i64
+i8, i16, i32, i64 ......................................= Int
 
 /* Common integers */
-CInt . . . . . . . . . . . . . . . . . . . . . . . . . .= i32, i64
+i32, i64 ...............................................= CInt
     
 /* Unsiged Integers */
 /* All unsigned integers */
-UInt . . . . . . . . . . . . . . . . . . . . . . . . . .= u8, u16, u32, u64
+u8, u16, u32, u64 ......................................= UInt
 
 /* Common unsigned integers */
-CUInt . . . . . . . . . . . . . . . . . . . . . . . . . = u32, u64
+u32, u64 ...............................................= CUInt
 
 /* All integer */
-Integer . . . . . . . . . . . . . . . . . . . . . . . . = i8, i16, i32, i64, u8, u16, u32, u64
+i8, i16, i32, i64, u8, u16, u32, u64 ...................= Integer
 
 /* Floating Points */
 /* All floating points */
-Float  . . . . . . . . . . . . . . . . . . . . . . . . .= f32, f64, fld
+f32, f64, fld  .........................................= Float
 
 /* Common floating points */
-CFloat . . . . . . . . . . . . . . . . . . . . . . . . .= f32, f64
+f32, f64 ...............................................= CFloat
     
-/* Strings */
-/* Standard C&C++ stirngs */
-Strings  . . . . . . . . . . . . . . . . . . . . . . . .= str, cstr;
-
-/* Wide C&C++ stirngs */
-WStrings . . . . . . . . . . . . . . . . . . . . . . . .= wstr, cwstr
+/* Standard & Wide C&C++ stirngs */
+str, cstr ..............................................= Strings
+wstr, cwstr ............................................= WStrings
 
 Header files:
-Tools/Casting.hpp                                       : Type Casting aliases. Example: static_cast -> scast
-Tools/Edges.hpp                                         : Min/max getter for types
-Tools/Files.hpp                                         : I/O files utility
-Tools/FormatNumber.hpp                                  : Number formatter
-Tools/IVec.hpp                                          : "Improved Vector", custom made container
-Tools/Linking.hpp                                       : .dll linking utility using windows API
-Tools/Random.hpp                                        : Random Number generator 
-Tools/RandomHW.hpp                                      : Hardware-level random generator (x86 only)
-Tools/Randomizer.hpp                                    : Stuff to make random number (used by Random and RandomHW)
-Tools/Rounding.hpp                                      : Python-like rounding utility
-Tools/SafeInput.hpp                                     : Safer input utility
-Tools/Style.hpp                                         : Text styler for str
-Tools/StyleW.hpp                                        : Text styler for wstr
-Tools/Types.hpp                                         : Type aliases
-Tools/Types.containers.hpp                              : Containers aliases
-Tools/Types.int.hpp                                     : Signed interger aliases
-Tools/Types.uint.hpp                                    : Unsigned integer aliases
-Tools/Types.float.hpp                                   : Floating aliases 
-Tools/Types.ptr.hpp                                     : Pointer aliases
-Tools/Types.string.hpp                                  : String type aliases
-Tools/Types.memory.hpp                                  : Smart pointer aliases
-Tools/Vector.hpp                                        : Pyhton-like functions for vector
-Tools/VectorSlice.hpp                                   : Vector slicing function
-Tools/Win32.hpp                                         : Windows API utility
+Tools/Casting.hpp ......................................: Type Casting aliases. Example: static_cast -> scast
+Tools/Edges.hpp ........................................: Min/max getter for types
+Tools/Files.hpp ........................................: I/O files utility
+Tools/FormatNumber.hpp .................................: Number formatter
+Tools/IVec.hpp .........................................: "Improved Vector", custom made container
+Tools/Linking.hpp ......................................: .dll linking utility using windows API
+Tools/Random.hpp .......................................: Random Number generator 
+Tools/RandomHW.hpp .....................................: Hardware-level random generator (x86 only)
+Tools/Randomizer.hpp ...................................: Stuff to make random number (used by Random and RandomHW)
+Tools/Rounding.hpp .....................................: Python-like rounding utility
+Tools/SafeInput.hpp ....................................: Safer input utility
+Tools/Style.hpp ........................................: Text styler for str
+Tools/StyleW.hpp .......................................: Text styler for wstr
+Tools/Types.hpp ........................................: Type aliases
+Tools/Types.containers.hpp .............................: Containers aliases
+Tools/Types.int.hpp ....................................: Signed interger aliases
+Tools/Types.uint.hpp ...................................: Unsigned integer aliases
+Tools/Types.float.hpp ..................................: Floating aliases 
+Tools/Types.ptr.hpp ....................................: Pointer aliases
+Tools/Types.string.hpp .................................: String type aliases
+Tools/Types.memory.hpp .................................: Smart pointer aliases
+Tools/Vector.hpp .......................................: Pyhton-like functions for vector
+Tools/VectorSlice.hpp ..................................: Vector slicing function
+Tools/Win32.hpp ........................................: Windows API utility
 
 Folders:
-Tools/IVec/*                                            : Improved vector implementations
-Tools/RandomHW/*                                        : Hardware-level random number implementations
-Tools/Random/*                                          : Random number implementations
+Tools/IVec/* ...........................................: Improved vector implementations
+Tools/RandomHW/* .......................................: Hardware-level random number implementations
+Tools/Random/* .........................................: Random number implementations
