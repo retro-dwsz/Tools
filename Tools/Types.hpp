@@ -49,6 +49,9 @@ concept Integer = OneOf<T, i8, i16, i32, i64,
 template <typename T>
 concept Ref = OneOf<T, T&, const T&>;
 
+template <typename T>
+using cref = const T&;
+
 template <Numbers T>
 void CheckRange(T& min, T& max) {
     if (max < min) std::swap(min, max);

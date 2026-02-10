@@ -70,25 +70,23 @@ concept OneOf = (Same<T, Ts> || ...);
 }`
 
 /* 32-bit int&float */
-i32, f32 ...............................................= nx32
+nx32 ...................................................= i32, f32
 
 /* 64-bit int&float */
-i64, f64 ...............................................= nx64
+nx64 ...................................................= i64, f64
 
 /* 32-bit+64-bit int&float */
-i32, i64, f32, f64 .....................................= CommonNumber
+CommonNumber ...........................................= i32, i64, f32, f64
 
 /* Commonly used numbers and strings */
-i32, i64, f32, f64, cstr, str ..........................= CommonTypes
+CommonTypes ............................................= i32, i64, f32, f64, cstr, str
 
 /* All integer + unsiged + floating */
-i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld ....= Numbers
+Numbers ................................................= i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, fld
 
 /* Type references */
-`{
-template <typename T>
-concept Ref = OneOf<T, T&, const T&>;
-}`
+Ref ....................................................= T&, const T& (concept)
+cref<T> ................................................= const T& (using)
 
 /* Integers */
 /* All integer */
