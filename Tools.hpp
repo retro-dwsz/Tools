@@ -18,6 +18,7 @@
 #include "Tools/Win32.hpp"
 
 #include "Tools/Types.hpp"
+#include "Tools/Types.ptr.hpp"
 #include "Tools/Types.int.hpp"
 #include "Tools/Types.uint.hpp"
 #include "Tools/Types.float.hpp"
