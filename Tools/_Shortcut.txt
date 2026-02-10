@@ -119,3 +119,34 @@ Strings  . . . . . . . . . . . . . . . . . . . . . . . .= str, cstr;
 
 /* Wide C&C++ stirngs */
 WStrings . . . . . . . . . . . . . . . . . . . . . . . .= wstr, cwstr
+
+Header files:
+Tools/Casting.hpp                                       : Type Casting aliases. Example: static_cast -> scast
+Tools/Edges.hpp                                         : Min/max getter for types
+Tools/Files.hpp                                         : I/O files utility
+Tools/FormatNumber.hpp                                  : Number formatter
+Tools/IVec.hpp                                          : "Improved Vector", custom made container
+Tools/Linking.hpp                                       : .dll linking utility using windows API
+Tools/Random.hpp                                        : Random Number generator 
+Tools/RandomHW.hpp                                      : Hardware-level random generator (x86 only)
+Tools/Randomizer.hpp                                    : Stuff to make random number (used by Random and RandomHW)
+Tools/Rounding.hpp                                      : Python-like rounding utility
+Tools/SafeInput.hpp                                     : Safer input utility
+Tools/Style.hpp                                         : Text styler for str
+Tools/StyleW.hpp                                        : Text styler for wstr
+Tools/Types.hpp                                         : Type aliases
+Tools/Types.containers.hpp                              : Containers aliases
+Tools/Types.int.hpp                                     : Signed interger aliases
+Tools/Types.uint.hpp                                    : Unsigned integer aliases
+Tools/Types.float.hpp                                   : Floating aliases 
+Tools/Types.ptr.hpp                                     : Pointer aliases
+Tools/Types.string.hpp                                  : String type aliases
+Tools/Types.memory.hpp                                  : Smart pointer aliases
+Tools/Vector.hpp                                        : Pyhton-like functions for vector
+Tools/VectorSlice.hpp                                   : Vector slicing function
+Tools/Win32.hpp                                         : Windows API utility
+
+Folders:
+Tools/IVec/*                                            : Improved vector implementations
+Tools/RandomHW/*                                        : Hardware-level random number implementations
+Tools/Random/*                                          : Random number implementations
