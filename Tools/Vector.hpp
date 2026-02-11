@@ -1,10 +1,5 @@
+#pragma once
 #include "Types.hpp"
-
-/*
-Rule: 
-Jika ada return: Pass dengan const
-Jika inline: Pass dengan &
-*/
 
 // Slice range x<->y
 namespace Tools::Vector {
