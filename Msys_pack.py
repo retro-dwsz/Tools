@@ -15,18 +15,11 @@ packages = [
     f"./Msys/msys-tools-cpp-{v}-1-any.pkg.tar.zst"
 ]
 
+for n, i in enumerate(packages, start=1):
+    print(f"package{n}: {i}")
+
 packs = " ".join(packages)
-print(packs)
 cmd = f"tar -zcf ./Msys/Release/Release-{v}-tools-cpp.tar.gz {packs}"
 
-print(cmd)
+print(f"tar -zcf ./Msys/Release/Release-{v}-tools-cpp.tar.gz {{packs}}")
 os.system(cmd)
-
-'''
-sysucrt "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-sysmstys "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-sysmingw32 "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-sysmingw64 "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-sysclang "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-sysclangarm "cd D:/Code/_CLIB/Tools/Msys && makepkg -Cf"
-'''
