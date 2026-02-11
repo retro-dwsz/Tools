@@ -1,4 +1,11 @@
 #pragma once
+
+#include "RandomHW/RandomHW.common.hpp"
+#include "RandomHW/RandomHW.single.hpp"
+#include "RandomHW/RandomHW.vector.hpp"
+#include "RandomHW/RandomHW.bundle.hpp"
+#include "RandomHW/RandomHW.sbundle.hpp"
+
 // #include "Types.hpp"
 // #include "Style.hpp"
 // #include "Randomizer.hpp"
@@ -8,12 +15,6 @@
 // #include <format>
 // #include <cpuid.h>
 // #include <immintrin.h>
-
-#include "RandomHW/RandomHW.common.hpp"
-#include "RandomHW/RandomHW.single.hpp"
-#include "RandomHW/RandomHW.vector.hpp"
-#include "RandomHW/RandomHW.bundle.hpp"
-#include "RandomHW/RandomHW.sbundle.hpp"
 
 // #define BEGIN_NAMESPACE(name) namespace name {
 // #define END_NAMESPACE }

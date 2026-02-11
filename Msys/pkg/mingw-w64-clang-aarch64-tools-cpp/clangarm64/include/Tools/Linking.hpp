@@ -22,14 +22,14 @@
 #include <windows.h>
 
 namespace Tools::Linking {
-    str GetFile(const str& File) {
+    str GetFile(cref<str> File) {
         if (File.size() >= 3 && File.substr(File.size() - 3) == "dll")
             return File;
         return std::format("{}.dll", File);
     }
 
     template<typename T>
-    T LoadSymbol(const HMODULE lib, const str& name) {
+    T LoadSymbol(const HMODULE lib, cref<str> name) {
         auto sym = reinterpret_cast<T>(GetProcAddress(lib, name.c_str()));
         if (!sym)
             throw std::runtime_error(std::format("Missing symbol '{}'", name));
@@ -69,8 +69,8 @@ namespace Tools::Linking {
     // Call dll with str msg
     void CallFunctionA(                 /* Function II  */
         str& File,                      /* File to find */
-        const str& Msg,                 /* Message to forward (str) */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
+        cref<str> Msg,                 /* Message to forward (str) */
+        cref<str> EntryPoint,          /* Function to call (disable magle!) */
         const int TerminalSize = 50,    /* Optional Terminal size */
         const bool debug = true         /* Optional Debugging log */
     ) {
@@ -130,8 +130,8 @@ namespace Tools::Linking {
     // Call DLL with wstr
     void CallFunctionAW(                /* Function II  */
         str& File,                      /* File to find */
-        const wstr& MsgW,               /* Message to forward (wstr) */
-        const str& EntryPoint,          /* Function to call (auto mangle on main.cpp) */
+        cref<wstr> MsgW,                /* Message to forward (wstr) */
+        cref<str> EntryPoint,           /* Function to call (auto mangle on main.cpp) */
         const int TerminalSize = 50,    /* Optional Terminal size */
         const bool debug = true         /* Optional Debugging log */
     ) {
@@ -193,7 +193,7 @@ namespace Tools::Linking {
     // Call dll without any args
     void CallFunctionB(                 /* Function III */
         str& File,                      /* File to find */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
+        cref<str> EntryPoint,           /* Function to call (disable magle!) */
         const int TerminalSize = 50,    /* Optional Terminal size */
         const bool debug = true         /* Optional Debugging log */
     ) {
@@ -252,7 +252,7 @@ namespace Tools::Linking {
     // Call dll file with C-like args (int argc, const char** argv)
     int CallFunctionC(                  /* Function IV A */
         str& File,                      /* File to find */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
+        cref<str> EntryPoint,           /* Function to call (disable magle!) */
     //  const int Argc                  /* C argc, not really necessary */
     //  const char** Argv,              /* C argv, not really safe, mismatch can lead to crash */
         const vec<str> Args,            /* C argv (+argc), but safer */
@@ -328,8 +328,8 @@ namespace Tools::Linking {
 
     // safer CallFunctionC
     int CallFunctionC_s(                /* Function IV B */
-        const str& File,                /* File to find */
-        const str& EntryPoint,          /* Finnction to call (disable magle!) */
+        cref<str> File,                 /* File to find */
+        cref<str> EntryPoint,           /* Finnction to call (disable magle!) */
         const vec<str>& Args,           /* C Argv in vector */
         int TerminalSize = 50,          /* Optional Terminal size */
         bool debug = true               /* Optional Debugging log */
@@ -398,7 +398,7 @@ namespace Tools::Linking {
 
     #if __has_include(<cxxabi.h>)
     template <typename T>
-    str RemoveSignature(const str& Func, bool WithArgs = true) {
+    str RemoveSignature(cref<str> Func, bool WithArgs = true) {
         const char* Name = Func.c_str();
         int status = 0;
         std::unique_ptr<char, void(*)(void*)> res{
