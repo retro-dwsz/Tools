@@ -8,6 +8,8 @@
 #include <iostream>
 #include <format>
 
+#define sconst static const
+
 /*
 Compile this file: clang++ -c Style.cpp -o Style.o
                    clang++ -shared Style.cpp -o Style.dll
@@ -207,7 +209,7 @@ namespace Tools::StylingW {
     /* ---- To reset mess you've made before ---- */
     /* inline */
     str Reset(cref<str> Text){
-        static const std::regex ansi_escape("\x1B\\[[0-9;]*m");
+        sconst std::regex ansi_escape("\x1B\\[[0-9;]*m");
         return std::regex_replace(Text, ansi_escape, "");
     }
 }
@@ -414,7 +416,9 @@ namespace Tools::StylingW {
     /* ---- To reset mess you've made before ---- */
     /* DEP */ /* inline */
     wstr Reset(cref<wstr> Text){
-        static const std::wregex ansi_escape(L"\x1B\\[[0-9;]*m");
+        sconst std::wregex ansi_escape(L"\x1B\\[[0-9;]*m");
         return std::regex_replace(Text, ansi_escape, L"");
     }
 }
+
+

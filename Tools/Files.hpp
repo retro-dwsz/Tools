@@ -7,11 +7,11 @@
 #include <vector>
 #include <fstream>
 
-#include "Types.string.hpp"
+#include "Types.hpp"
 
 namespace Tools::Files {
     /* ---- CPP str ---- */
-    str ReadFile(const str& File){
+    str ReadFile(cref<str> File){
         try {
             std::ifstream in(File, std::ios::binary);
 
@@ -25,7 +25,7 @@ namespace Tools::Files {
         }
     }
 
-    void WriteFile(const str& File, const str& Content){
+    void WriteFile(cref<str> File, cref<str> Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -47,7 +47,7 @@ namespace Tools::Files {
     }
 
     /* ---- C str ---- */
-    cstr ReadFileC(const str& File){
+    cstr ReadFileC(cref<str> File){
         try {
             auto C = std::make_unique<cstr>(ReadFile(File).c_str());
             return *C;
@@ -57,7 +57,7 @@ namespace Tools::Files {
         }
     }
 
-    void WriteFileC(const str& File, cstr& Content){
+    void WriteFileC(cref<str> File, cstr& Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -79,11 +79,11 @@ namespace Tools::Files {
     }
 
     /* ---- Wide String ---- */
-    wstr ReadFileW(const std::string& File){
+    wstr ReadFileW(cref<str> File){
         std::ifstream in(File, std::ios::binary);
         if(!in) throw std::runtime_error("Cannot open");
 
-        std::vector<char> buf(
+        vec<char> buf(
             (std::istreambuf_iterator<char>(in)),
             std::istreambuf_iterator<char>()
         );
@@ -97,7 +97,7 @@ namespace Tools::Files {
         return out;
     }
 
-    void WriteFileW(const str& File, const wstr& Content){
+    void WriteFileW(cref<str> File, const wstr& Content){
         if(File == "__NONE__") return;
 
         std::ofstream out(File, std::ios::binary | std::ios::trunc);

@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <regex>
 
-// #include <fmt/format.h>
+#define sconst static const
 
 namespace Tools::Styling {
     // using str = std::string;        // Main string
@@ -130,7 +130,7 @@ namespace Tools::Styling {
 
     /* ---- To reset mess you've made before ---- */
     void Reset(str& Text){
-        static const std::regex ansi_escape("\x1B\\[[0-9;]*m");
+        sconst std::regex ansi_escape("\x1B\\[[0-9;]*m");
         Text = std::regex_replace(Text, ansi_escape, "");
     }
 }
