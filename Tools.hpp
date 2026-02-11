@@ -15,7 +15,7 @@
 #include "Tools/StyleW.hpp"
 #include "Tools/Style.hpp"
 #include "Tools/Vector.hpp"
-#include "Tools/VectorSlice.hpp"
+// #include "Tools/VectorSlice.hpp"
 #include "Tools/Win32.hpp"
 
 #include "Tools/Types.hpp"

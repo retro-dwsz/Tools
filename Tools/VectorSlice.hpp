@@ -5,7 +5,7 @@
 namespace Tools::VectorSlice {
     // Return new vector versions
     template <typename T>
-    vec<T> Slice(vec<T> vec, int x, int y) {
+    vec<T> Slice(const vec<T>& vec, int x, int y) {
         // Handle negative indices
         const auto size = static_cast<int>(vec.size());
         if (x < 0) x = size + x;
@@ -20,7 +20,7 @@ namespace Tools::VectorSlice {
     }
 
     template <typename T>
-    vec<T> Slice(vec<T>& vec, int n) {
+    vec<T> Slice(const vec<T>& vec, int n) {
         const auto size = static_cast<int>(vec.size());
         int start, end;
 
