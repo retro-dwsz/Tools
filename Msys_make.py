@@ -6,17 +6,6 @@ except Exception:
     print("Invalid version")
     exit(1)
 
-packages = [
-    f"msys2_shell.cmd -defterm -here -no-start -msys -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
-    f"msys2_shell.cmd -defterm -here -no-start -ucrt64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
-    f"msys2_shell.cmd -defterm -here -no-start -mingw32 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
-    f"msys2_shell.cmd -defterm -here -no-start -mingw64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
-    f"msys2_shell.cmd -defterm -here -no-start -clang64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
-    f"msys2_shell.cmd -defterm -here -no-start -clangarm64 -c \"cd {Path} && makepkg -Cf >null 2>&1\""
-
-]
-
-
 syss = [
     "Msys",
     "UCRT64",
@@ -24,6 +13,15 @@ syss = [
     "MinGW64",
     "Clang64",
     "Clang64Arm",
+]
+
+packages = [
+    f"msys2_shell.cmd -defterm -here -no-start -msys -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
+    f"msys2_shell.cmd -defterm -here -no-start -ucrt64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
+    f"msys2_shell.cmd -defterm -here -no-start -mingw32 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
+    f"msys2_shell.cmd -defterm -here -no-start -mingw64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
+    f"msys2_shell.cmd -defterm -here -no-start -clang64 -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
+    f"msys2_shell.cmd -defterm -here -no-start -clangarm64 -c \"cd {Path} && makepkg -Cf >null 2>&1\""
 ]
 
 def main():
