@@ -50,7 +50,7 @@ namespace Tools::CommonW {
     
     // Proper hex parser (handles "0x" and decimal)
     // Input as string, return as useable u32
-    u32 GetHex(cref<str> s) {
+    u32 GetHex(const str& s) {
         if (s.empty()) return 0;
 
         try {
@@ -63,7 +63,7 @@ namespace Tools::CommonW {
     }
 
     // Helper function to blend hex colors based on opacity
-    u32 BlendAlpha(cref<u32> color, cref<i32> alpha) {
+    u32 BlendAlpha(const u32& color, const i32& alpha) {
         Color c = GetRGB(color);
         float t = alpha / 100.0f;
 
@@ -75,14 +75,14 @@ namespace Tools::CommonW {
     }
 
     // Inline alpha-blending to write to each channell
-    void BlendAlpha(u8& Red, u8& Green, u8& Blue, cref<u32> Alpha) {
+    void BlendAlpha(u8& Red, u8& Green, u8& Blue, const u32& Alpha) {
         Red = (Alpha >> 16) & 0xFF;     // Red
         Green = (Alpha >> 8) & 0xFF;    // Green
         Blue = Alpha & 0xFF;            // Blue
     }
 
     // Helper function to blend back and fore colors based on opacity
-    u32 BlendFBG(cref<u32> fg, cref<u32> bg, cref<i32> alpha) {
+    u32 BlendFBG(const u32& fg, const u32& bg, const i32& alpha) {
         float t = alpha / 100.0f;
 
         Color A = GetRGB(fg);
@@ -99,7 +99,7 @@ namespace Tools::CommonW {
 namespace Tools::StylingW {
     // Basic colorization
     /* inline */
-    str Colorize(cref<str> Text, cref<u64>Hex) {
+    str Colorize(const str& Text, const u64&Hex) {
         // Extract RGB channels
         u8 r = (Hex >> 16) & 0xFF;
         u8 g = (Hex >> 8) & 0xFF;
@@ -127,28 +127,28 @@ namespace Tools::StylingW {
     /* ---- Basic styles ---- */
     // Bold text
     /* inline */
-    str Bold(cref<str> Text) {
+    str Bold(const str& Text) {
         // return "\033[1m" + Text + "\033[0m";
         return std::format("\033[1m{}\033[0m", Text);
     }
 
     // Italic text
     /* inline */
-    str Italic(cref<str> Text) {
+    str Italic(const str& Text) {
         // return "\033[3m" + Text + "\033[0m";
         return std::format("\033[3m{}\033[0m", Text);
     }
     
     // Underline text
     /* inline */
-    str Under(cref<str> Text) {
+    str Under(const str& Text) {
         // return "\033[4m" + Text + "\033[0m";
         return std::format("\033[4m{}\033[0m", Text);
     }
     
     // Strikethrough text
     /* inline */
-    str Strike(cref<str> Text) {
+    str Strike(const str& Text) {
         // return "\033[9m" + Text + "\033[0m";
         return std::format("\033[9m{}\033[0m", Text);
     }
@@ -156,7 +156,7 @@ namespace Tools::StylingW {
     /* ---- Coloring styles ---- */
     // Foreground color with opacity
     /* inline */
-    str ColorFG(cref<str> Text, u32 color_tx = 0xFF8A46, i32 alpha = 100) {
+    str ColorFG(const str& Text, u32 color_tx = 0xFF8A46, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = CommonW::BlendAlpha(color_tx, alpha);
@@ -173,7 +173,7 @@ namespace Tools::StylingW {
 
     // Background color with opacity
     /* inline */
-    str ColorBG(cref<str> Text, u32 color_bg = 0x092655, i32 alpha = 100) {
+    str ColorBG(const str& Text, u32 color_bg = 0x092655, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = CommonW::BlendAlpha(color_bg, alpha);
@@ -190,7 +190,7 @@ namespace Tools::StylingW {
 
     // Foreground color with opacity using struct Color
     /* inline */
-    str ColorFG(cref<str> text, CommonW::Color& rgb) {
+    str ColorFG(const str& text, CommonW::Color& rgb) {
         return std::format(
             "\033[38;2;{};{};{}m{}\033[0m",
             std::to_string(rgb.r), std::to_string(rgb.g), std::to_string(rgb.b), text
@@ -199,7 +199,7 @@ namespace Tools::StylingW {
 
     // Background color with opacity using struct Color
     /* inline */
-    str ColorBG(cref<str> text, CommonW::Color& rgb) {
+    str ColorBG(const str& text, CommonW::Color& rgb) {
         return std::format(
             "\033[48;2;{};{};{}m{}\033[0m",
             std::to_string(rgb.r), std::to_string(rgb.g), std::to_string(rgb.b), text
@@ -208,7 +208,7 @@ namespace Tools::StylingW {
 
     /* ---- To reset mess you've made before ---- */
     /* inline */
-    str Reset(cref<str> Text){
+    str Reset(const str& Text){
         sconst std::regex ansi_escape("\x1B\\[[0-9;]*m");
         return std::regex_replace(Text, ansi_escape, "");
     }
@@ -217,7 +217,7 @@ namespace Tools::StylingW {
 namespace Tools::StylingW {
     // Basic colorization
     /* DEP */ /* inline */
-    wstr Colorize(cref<wstr> Text, const u64 Hex) {
+    wstr Colorize(const wstr& Text, const u64 Hex) {
         // Extract RGB channels
         u8 r = (Hex >> 16) & 0xFF;
         u8 g = (Hex >> 8) & 0xFF;
@@ -259,7 +259,7 @@ namespace Tools::StylingW {
     /* ---- Basic styles ---- */
     // Bold text
     /* DEP */ /* inline */
-    wstr Bold(cref<wstr> Text) {        
+    wstr Bold(const wstr& Text) {        
         return wstr(L"\033[1m") + Text + wstr(L"\033[0m");
 
         /*
@@ -272,7 +272,7 @@ namespace Tools::StylingW {
 
     // Italic text
     /* DEP */ /* inline */
-    wstr Italic(cref<wstr> Text) {
+    wstr Italic(const wstr& Text) {
         return wstr(L"\033[3m") + Text + wstr(L"\033[0m");
         /* 
         return std::format(
@@ -284,7 +284,7 @@ namespace Tools::StylingW {
 
     // Underline text
     /* DEP */ /* inline */
-    wstr Under(cref<wstr> Text) {
+    wstr Under(const wstr& Text) {
         return wstr(L"\033[4m") + Text + wstr(L"\033[0m");
         /*
         return std::format(
@@ -296,7 +296,7 @@ namespace Tools::StylingW {
 
     // Strikethrough text
     /* DEP */ /* inline */
-    wstr Strike(cref<wstr> Text) {
+    wstr Strike(const wstr& Text) {
         return wstr(L"\033[9m") + Text + wstr(L"\033[0m");
         /*
         return std::format(
@@ -309,7 +309,7 @@ namespace Tools::StylingW {
     /* ---- Coloring styles ---- */
     // Foreground color with opacity
     /* DEP */ /* inline */
-    wstr ColorFG(cref<wstr> Text, u32 color_tx = 0xFF8A46, i32 alpha = 100) {
+    wstr ColorFG(const wstr& Text, u32 color_tx = 0xFF8A46, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = CommonW::BlendAlpha(color_tx, alpha);
@@ -339,7 +339,7 @@ namespace Tools::StylingW {
 
     // Background color with opacity
     /* DEP */ /* inline */
-    wstr ColorBG(cref<wstr> Text, u32 color_bg = 0x092655, i32 alpha = 100) {
+    wstr ColorBG(const wstr& Text, u32 color_bg = 0x092655, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = CommonW::BlendAlpha(color_bg, alpha);
@@ -369,7 +369,7 @@ namespace Tools::StylingW {
 
     // Foreground color with opacity using struct Color
     /* DEP */ /* inline */
-    wstr ColorFG(cref<wstr> Text, CommonW::Color& rgb) {
+    wstr ColorFG(const wstr& Text, CommonW::Color& rgb) {
         return wstr(L"\033[48;2;")
             + std::to_wstring(rgb.r)
             + wstr(L";")
@@ -392,7 +392,7 @@ namespace Tools::StylingW {
 
     // Background color with opacity using struct Color
     /* DEP */ /* inline */
-    wstr ColorBG(cref<wstr> Text, CommonW::Color& rgb) {
+    wstr ColorBG(const wstr& Text, CommonW::Color& rgb) {
         return wstr(L"\033[48;2;")
             + std::to_wstring(rgb.r)
             + wstr(L";")
@@ -415,7 +415,7 @@ namespace Tools::StylingW {
 
     /* ---- To reset mess you've made before ---- */
     /* DEP */ /* inline */
-    wstr Reset(cref<wstr> Text){
+    wstr Reset(const wstr& Text){
         sconst std::wregex ansi_escape(L"\x1B\\[[0-9;]*m");
         return std::regex_replace(Text, ansi_escape, L"");
     }

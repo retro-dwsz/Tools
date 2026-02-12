@@ -3,12 +3,12 @@
 #include "../Types.hpp"
 
 /* Inline Slices */
-namespace Tools::Vector {
+namespace Tools::VectorInl {
     // Inline modification versions
     template <typename T>
-    void SliceInl(vec<T>& vec, int x, int y) {
+    void Slice(vec<T>& vec, idx x, idx y) {
         // Handle negative indices
-        const auto size = static_cast<int>(vec.size());
+        const auto size = static_cast<idx>(vec.size());
         if (x < 0) x = size + x;
         if (y < 0) y = size + y;
 
@@ -23,8 +23,8 @@ namespace Tools::Vector {
     }
 
     template <typename T>
-    void SliceInl(vec<T>& vec, int n) {
-        int size = static_cast<int>(vec.size());
+    void Slice(vec<T>& vec, idx n) {
+        idx size = static_cast<idx>(vec.size());
         int start, end;
 
         if (n >= 0) {
@@ -46,3 +46,13 @@ namespace Tools::Vector {
         vec.erase(vec.begin(), vec.begin() + start);
     }
 }
+
+template void Tools::VectorInl::Slice(vec<i32>& vec, idx x, idx y);
+template void Tools::VectorInl::Slice(vec<i64>& vec, idx x, idx y);
+template void Tools::VectorInl::Slice(vec<f32>& vec, idx x, idx y);
+template void Tools::VectorInl::Slice(vec<f64>& vec, idx x, idx y);
+
+template void Tools::VectorInl::Slice(vec<i32>& vec, idx n);
+template void Tools::VectorInl::Slice(vec<i64>& vec, idx n);
+template void Tools::VectorInl::Slice(vec<f32>& vec, idx n);
+template void Tools::VectorInl::Slice(vec<f64>& vec, idx n);

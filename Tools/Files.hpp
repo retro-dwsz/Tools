@@ -11,7 +11,7 @@
 
 namespace Tools::Files {
     /* ---- CPP str ---- */
-    str ReadFile(cref<str> File){
+    str ReadFile(const str& File){
         try {
             std::ifstream in(File, std::ios::binary);
 
@@ -25,7 +25,7 @@ namespace Tools::Files {
         }
     }
 
-    void WriteFile(cref<str> File, cref<str> Content){
+    void WriteFile(const str& File, const str& Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -47,7 +47,7 @@ namespace Tools::Files {
     }
 
     /* ---- C str ---- */
-    cstr ReadFileC(cref<str> File){
+    cstr ReadFileC(const str& File){
         try {
             auto C = std::make_unique<cstr>(ReadFile(File).c_str());
             return *C;
@@ -57,7 +57,7 @@ namespace Tools::Files {
         }
     }
 
-    void WriteFileC(cref<str> File, cstr& Content){
+    void WriteFileC(const str& File, cstr& Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -79,7 +79,7 @@ namespace Tools::Files {
     }
 
     /* ---- Wide String ---- */
-    wstr ReadFileW(cref<str> File){
+    wstr ReadFileW(const str& File){
         std::ifstream in(File, std::ios::binary);
         if(!in) throw std::runtime_error("Cannot open");
 
@@ -97,7 +97,7 @@ namespace Tools::Files {
         return out;
     }
 
-    void WriteFileW(cref<str> File, const wstr& Content){
+    void WriteFileW(const str& File, const wstr& Content){
         if(File == "__NONE__") return;
 
         std::ofstream out(File, std::ios::binary | std::ios::trunc);

@@ -1,5 +1,6 @@
 #pragma once
-#include "IVec.hpp"
+
+#include "IVec_c.base.hpp"
 
 /* First index getter */
 template <typename T>
@@ -49,7 +50,7 @@ inline const T* Tools::ivec<T>::cend() {
 
 /* First index reference */
 template <typename T>
-inline T& Tools::ivec<T>::revbegin() {
+inline T& Tools::ivec<T>::refbegin() {
     if (ivec_size == 0)
         throw std::out_of_range("ivec is empty");
     return ivec_data[0];
@@ -57,7 +58,7 @@ inline T& Tools::ivec<T>::revbegin() {
 
 /* Last index reference */
 template <typename T>
-inline T& Tools::ivec<T>::revend() {
+inline T& Tools::ivec<T>::refend() {
     if (ivec_size == 0)
         throw std::out_of_range("ivec is empty");
     return ivec_data[ivec_size - 1];

@@ -1,5 +1,6 @@
 #pragma once
-#include "IVec.hpp"
+
+#include "IVec_c.base.hpp"
 
 /* Reserve (with NONE value) */
 template <typename T>

@@ -15,7 +15,7 @@ namespace Tools::Styling {
         u8 r, g, b;
     };
 
-    str Colorize(cref<str> Text, const u64 Hex) {
+    str Colorize(const str& Text, const u64 Hex) {
         // Extract RGB channels
         u8 r = (Hex >> 16) & 0xFF;
         u8 g = (Hex >> 8) & 0xFF;
@@ -33,7 +33,7 @@ namespace Tools::Styling {
     }
 
     // Proper hex parser (handles "0x" and decimal)
-    u32 ParseHex(cref<str> s) {
+    u32 ParseHex(const str& s) {
         if (s.empty()) return 0;
         u32 val = 0;
         try {
@@ -64,7 +64,7 @@ namespace Tools::Styling {
     }
 
     /* ---- To make everything after "0x" caps */
-    str CapsPtr(str s) {
+    str CapsPtr(str& s) {
         if (s.starts_with("0x") || s.starts_with("0X")) {
             s = s.substr(2);
         }
@@ -74,28 +74,28 @@ namespace Tools::Styling {
 
     /* ---- Basic styles ---- */
     // Bold text
-    str Bold(str Text = "Hello, world!") {
+    str Bold(const str& Text = "Hello, world!") {
         return "\033[1m" + Text + "\033[0m";
     }
 
     // Italic text
-    str Italic(str Text = "Hello, world!") {
+    str Italic(const str& Text = "Hello, world!") {
         return "\033[3m" + Text + "\033[0m";
     }
 
     // Underline text
-    str Under(str Text = "Hello, world!") {
+    str Under(const str& Text = "Hello, world!") {
         return "\033[4m" + Text + "\033[0m";
     }
 
     // Strikethrough text
-    str Strike(str Text = "Hello, world!") {
+    str Strike(const str& Text = "Hello, world!") {
         return "\033[9m" + Text + "\033[0m";
     }
 
     /* ---- Coloring styles ---- */
     // Foreground color with opacity
-    str ColorFG(str Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100) {
+    str ColorFG(const str& Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = BlendRGB(color_tx, alpha);
@@ -107,7 +107,7 @@ namespace Tools::Styling {
     }
 
     // Background color with opacity
-    str ColorBG(str Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100) {
+    str ColorBG(const str& Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
             u32 blended_color = BlendRGB(color_bg, alpha);
@@ -119,12 +119,12 @@ namespace Tools::Styling {
     }
 
     // Foreground color with opacity using struct Color
-    str ColorizeFG(cref<str> text, Color rgb) {
+    str ColorizeFG(const str text, Color rgb) {
         return std::format("\033[38;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
     }
 
     // Background color with opacity using struct Color
-    str ColorizeBG(cref<str> text, Color rgb) {
+    str ColorizeBG(const str text, Color rgb) {
         return std::format("\033[48;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
     }
 

@@ -1,12 +1,13 @@
 #pragma once
 
 #include "../Types.hpp"
+#include <algorithm>
 
 // Find elements
 namespace Tools::Vector {
     // Binary search
     template<Numbers T>
-    T Find(cref<vec<T>> v, T Element){
+    T Find(const vec<T>& v, T Element){
         idx low = 0;
         idx high = v.size() - 1;
         while (low <= high) {
@@ -25,7 +26,7 @@ namespace Tools::Vector {
 
     // Find an element frequency
     template<Numbers T>
-    idx FindFreq(cref<vec<T>> v, T Element){
+    idx FindFreq(const vec<T>& v, T Element){
         idx Count = 0;
         for(const auto i : v){
             if(i == Element){
@@ -37,7 +38,7 @@ namespace Tools::Vector {
 
     // Find elements and frequency
     template<Numbers T>
-    umap<T, idx> FindNFreq(cref<vec<T>> v){
+    umap<T, idx> FindNFreq(const vec<T>& v){
         umap<T, idx> result{};
 
         for(const auto x : v){
@@ -49,7 +50,7 @@ namespace Tools::Vector {
 
     // Extractor
     template<Numbers T>
-    vec<T> ExtractUnique(cref<vec<T>> v){
+    vec<T> ExtractUnique(const vec<T>& v){
         umap<T, bool> seen;
         vec<T> out;
 
@@ -61,5 +62,20 @@ namespace Tools::Vector {
         }
 
         return out;
+    }
+
+    // Remove duplicated values
+    template<typename T>
+    vec<T> RemoveDuplicates(const vec<T>& Data){
+        vec<T> Out(Data);
+        auto U = std::unique(Out.begin(), Out.end());
+        Out.erase(U, Out.end());
+        return Out;
+    }
+
+    template<typename T>
+    void RemoveDuplicatesIln(vec<T>& Data){
+        auto U = std::unique(Data.begin(), Data.end());
+        Data.erase(U, Data.end());
     }
 }

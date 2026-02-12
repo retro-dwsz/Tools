@@ -1,6 +1,7 @@
 #pragma once
 
-#include "IVec.hpp"
+#include "IVec_c.base.hpp"
+
 #include <utility>
 #include <random>
 #include <algorithm>
@@ -8,17 +9,17 @@
 
 /* Slicers */
 template <typename T>
-void Tools::ivec<T>::slice(i64 x, i64 y) {
-    *this = rslice(x, y);
+void Tools::ivec<T>::sliceInl(i64 x, i64 y) {
+    *this = slice(x, y);
 };
 
 template <typename T>
-void Tools::ivec<T>::slice(i64 n) {
-    *this = rslice(n);
+void Tools::ivec<T>::sliceIln(i64 n) {
+    *this = slice(n);
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rslice(i64 x, i64 y) {
+Tools::ivec<T> Tools::ivec<T>::slice(i64 x, i64 y) {
     if (ivec_size == 0) return {};
 
     if (x < 0) x += ivec_size;
@@ -38,13 +39,13 @@ Tools::ivec<T> Tools::ivec<T>::rslice(i64 x, i64 y) {
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rslice(i64 n) {
+Tools::ivec<T> Tools::ivec<T>::slice(i64 n) {
     if (ivec_size == 0) return {};
 
     if (n >= 0)
-        return rslice(0, n);
+        return slice(0, n);
     else
-        return rslice(ivec_size + n, ivec_size - 1);
+        return slice(ivec_size + n, ivec_size - 1);
 }
 
 /* Find utils */
@@ -144,54 +145,54 @@ pair<idx, vec<T>> Tools::ivec<T>::findAll(
 /* Random utils */
 
 template <typename T>
-void Tools::ivec<T>::shuffle() {
+void Tools::ivec<T>::shuffleInl() {
     static std::mt19937_64 rng{ std::random_device{}() };
     std::shuffle(begin(), end(), rng);
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rshuffle() {
+Tools::ivec<T> Tools::ivec<T>::shuffle() {
     Tools::ivec<T> out(*this);
-    out.shuffle();
+    out.shuffleInl();
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::sort() {
+void Tools::ivec<T>::sortInl() {
     // std::ranges::sort(*this);
     std::sort(begin(), end());
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rsort() {
+Tools::ivec<T> Tools::ivec<T>::sort() {
     Tools::ivec<T> out(*this);
-    out.reverse();
+    out.reverseInl();
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::revsort() {
+void Tools::ivec<T>::rsortInl() {
     // std::ranges::sort(*this, std::ranges::greater{});
     std::sort(begin(), end(), std::greater<T>{});
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rrevsort() {
+Tools::ivec<T> Tools::ivec<T>::rsort() {
     Tools::ivec<T> out(*this);
     std::sort(*out, std::greater<T>{});
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::reverse() {
+void Tools::ivec<T>::reverseInl() {
     // std::ranges::reverse(*this);
     std::reverse(begin(), end());
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rreverse() {
+Tools::ivec<T> Tools::ivec<T>::reverse() {
     Tools::ivec<T> out(*this);
-    out.reverse();
+    out.reverseInl();
     return out;
 }
 

@@ -7,12 +7,12 @@
 namespace Tools::SafeInput {
     // Without expected data
     template <typename T>
-    T s_input(cref<str> prompt = "Input: ", cref<str> Error = "Invaid input!") {
+    T s_input(const str& prompt = "Input: ", const str& Error = "Invaid input!") {
         T value{};
         while (true) {
             std::cout << prompt;
 
-            if (std::cin >> value) {
+            if (std::cin >& value) {
                 return value; // Sukses: input valid
             }
 
@@ -26,14 +26,14 @@ namespace Tools::SafeInput {
     // Container expected data
     template <typename T>
     T s_input(
-        cref<str> prompt,
-        cref<vec<T>> expected,
-        cref<str> error = "Invalid input!\n"
+        const str& prompt,
+        const vec<T>& expected,
+        const str& error = "Invalid input!\n"
     ) {
         return s_input<T>(
             prompt,
             error,
-            [=](cref<T> v) {
+            [=](const T& v) {
                 return std::find(expected.begin(), expected.end(), v) != expected.end();
             }
         );
@@ -42,14 +42,14 @@ namespace Tools::SafeInput {
     // Single var expected data
     template <typename T>
     T s_input(
-        cref<str> prompt,
-        cref<T> expected,
-        cref<str> error = "Invalid input!\n"
+        const str& prompt,
+        const T& expected,
+        const str& error = "Invalid input!\n"
     ) {
         return s_input<T>(
             prompt,
             error,
-            [=](cref<T> v) { return v == expected; }
+            [=](const T& v) { return v == expected; }
         );
     }
 }

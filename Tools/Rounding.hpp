@@ -18,7 +18,7 @@ namespace Tools::Round {
     }
 
     template <Numbers T>
-    T Round(const T value, const int digits) {
+    T Round(const T value, const i32 digits) {
         static_assert(std::is_arithmetic_v<T>, "Round only supports numbers");
 
         if constexpr (std::is_integral_v<T>) {
