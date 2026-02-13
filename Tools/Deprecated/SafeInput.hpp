@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Types.hpp"
+#include "../Types.hpp"
 #include <iostream>
 
 // Safe input with expected data type
 namespace Tools::SafeInput {
     // Without expected data
     template <typename T>
+    [[deprecated("Safe input is not fully \"safe\"")]]
     T s_input(const str& prompt = "Input: ", const str& Error = "Invaid input!") {
         T value{};
         while (true) {
@@ -25,6 +26,7 @@ namespace Tools::SafeInput {
 
     // Container expected data
     template <typename T>
+    [[deprecated("Safe input is not fully \"safe\"")]]
     T s_input(
         const str& prompt,
         const vec<T>& expected,
@@ -41,6 +43,7 @@ namespace Tools::SafeInput {
 
     // Single var expected data
     template <typename T>
+    [[deprecated("Safe input is not fully \"safe\"")]]
     T s_input(
         const str& prompt,
         const T& expected,

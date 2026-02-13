@@ -35,6 +35,7 @@ namespace Tools::NumStr {
 
     // Type-safe comparison helper for mixed numeric types
     template<typename T, typename U>
+    [[deprecated("This lib is not ready enough")]]
     bool Compare(T a, U b) {
         if constexpr (std::is_floating_point_v<T> || std::is_floating_point_v<U>) {
             return static_cast<double>(a) <= static_cast<double>(b);
@@ -45,11 +46,13 @@ namespace Tools::NumStr {
 
     // Improved range checking with proper type handling
     template<typename T, typename U, typename V>
+    [[deprecated("This lib is not ready enough")]]
     bool IsInRangeI(T value, U upper_bound, V lower_bound) {
         return Compare(lower_bound, value) && Compare(value, upper_bound);
     }
 
     template<typename T, typename U, typename V>
+    [[deprecated("This lib is not ready enough")]]
     bool IsInRange(const Numbers& var, const Numbers& upper_bound, const Numbers& lower_bound) {
         struct RangeChecker {
             bool operator()(T value, U upper, V lower) const {
@@ -61,6 +64,7 @@ namespace Tools::NumStr {
     }
 
     // Convert string to number with proper type selection
+    [[deprecated("This lib is not ready enough")]]
     inline Numbers GetNumber(const str& var_input) {
         str var = var_input; // Copy to modify
 
@@ -119,6 +123,7 @@ namespace Tools::NumStr {
 
     // Template function to get input with specific type
     template<typename T>
+    [[deprecated("This lib is not ready enough")]]
     T GetInput(const str& prompt) {
         static_assert(is_numeric_v<T>, "T must be a numeric type");
 
@@ -154,6 +159,7 @@ namespace Tools::NumStr {
     }
 
     // Specialization for getting Numbers variant
+    [[deprecated("This lib is not ready enough")]]
     inline Numbers GetInput(const str& prompt) {
         while (true) {
             std::cout << prompt;
@@ -175,6 +181,7 @@ namespace Tools::NumStr {
     }
 
     // Convert Numbers variant back to string
+    [[deprecated("This lib is not ready enough")]]
     inline str GetValue(const Numbers& num) {
         return std::visit([](auto&& value) -> str {
             return std::to_string(value);
@@ -183,6 +190,7 @@ namespace Tools::NumStr {
 
     // Type-safe getters
     template<typename T>
+    [[deprecated("This lib is not ready enough")]]
     T GetValueT(const Numbers& num) {
         static_assert(is_numeric_v<T>, "T must be a numeric type");
         return std::get<T>(num);
@@ -190,11 +198,13 @@ namespace Tools::NumStr {
 
     // Check the type of the stored value
     template<typename T>
+    [[deprecated("This lib is not ready enough")]]
     bool HoldsType(const Numbers& num) {
         return std::holds_alternative<T>(num);
     }
 
     // Get the type name as string
+    [[deprecated("This lib is not ready enough")]]
     inline str GetType(const Numbers& num) {
         return std::visit([](auto&& value) -> str {
             using T = std::decay_t<decltype(value)>;
