@@ -1,0 +1,51 @@
+#pragma once
+
+/* ONLY STANDARD LIBS ARE ALLOWED */
+#include <fileapi.h>
+#include <windows.h>
+#include <winnt.h>
+#include <winspool.h>
+
+#include <iostream>
+#include <format>
+#include "../Types.hpp"
+
+/* Get current terminal size
+ * Directions: X for horizontal (return), Y for vertical (return), B for both (print)
+ */
+namespace Tools::Win32::Terminal {
+    i32 TerminalSize(cstr DIR, i32 offset) {
+        CONSOLE_SCREEN_BUFFER_INFO CSBI;
+
+        // Get console screen buffer info
+        if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CSBI)) {
+            fprintf(stderr, "Failed to retrieve console screen buffer info.\n");
+            return -1; // Indicate failure
+        }
+
+        // Calculate columns and rows
+        i32 cols = CSBI.srWindow.Right - CSBI.srWindow.Left + 1;
+        i32 rows = CSBI.srWindow.Bottom - CSBI.srWindow.Top + 1;
+
+        // Handle input based on COR
+        if (strcmp(DIR, "B") == 0) {
+            std::cout << std::format("Columns:{}d\n", cols);
+            std::cout << std::format("Rows: {}\n", rows);
+            return 0; // Indicate success
+        } else if (strcmp(DIR, "X") == 0) {
+            return cols + offset;
+        } else if (strcmp(DIR, "Y") == 0) {
+            return rows + offset;
+        } else {
+            return 0; // Default return value for invalid input
+        }
+    }
+
+    i32 TerminalSizeWidth(i32 offset){
+        return TerminalSize("X", offset);
+    }
+
+    i32 TerminalSizeHeight(i32 offset){
+        return TerminalSize("X", offset);
+    }
+}

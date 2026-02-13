@@ -118,8 +118,8 @@ class ivec {
     T& refend();         // Last iterator ref
 
     /** Conversion **/
-    vec<T> toVector();     // To std::vector
-    span<T> toSpan();      // To std::span
+    vec<T> toVector();   // To std::vector
+    span<T> toSpan();    // To std::span
     template <idx S>    
     arr<T, S> toArray(); // To std::arrat<T, S>
     T* toCArr();         // To C-Style array
@@ -134,10 +134,12 @@ class ivec {
     void push_back(const T& Element);       // Add Single element (legacy)
     void push_front(const T& Element);      // Append from first index (Legacy-ish)
 
+    T at(const idx Index);                  // getter (legacy)
+
     void insert(const ivec<T>& v);          // Extend using elemnent from ivector (legacy)
     void insert(const vec<T>& v);           // Extend using elemnent from vector (legacy)
     void insert(const T& Element, idx At);  // Append at Nth index (legacy)
     void insert(const T* A, const T* B);    // Extend using elemnent from any iterable (legacy iterator)
-
 };
+
 END_NAMESPACE

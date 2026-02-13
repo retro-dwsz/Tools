@@ -27,6 +27,12 @@ void Tools::ivec<T>::insert(const vec<T>& v){
     extend(std::forward<T>(v));
 }
 
+// Legacy getter
+template <typename T>
+T Tools::ivec<T>::at(idx Index){
+    return this[Index];
+}
+
 // Append at Nth index (legacy)
 template <typename T>
 void Tools::ivec<T>::insert(const T& Element, idx At){
