@@ -12,7 +12,7 @@
 // Process hacks
 namespace Tools::Linux::Process {
     template <typename T>
-    T ReadFromProcess(idx PID, uintptr_t Address) {
+    T ReadProcess(idx PID, uintptr_t Address) {
         T value{};
         
         struct iovec local_iov{};

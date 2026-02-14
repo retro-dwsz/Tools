@@ -23,7 +23,7 @@ namespace Tools::OS::Process {
     }
 
     template <typename T>
-    T ReadFromProcess(idx PID, uintptr_t Address) {
+    T ReadProcess(idx PID, uintptr_t Address) {
         T buffer{};
         mach_port_t task = MACH_PORT_NULL;
 

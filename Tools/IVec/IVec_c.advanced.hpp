@@ -196,6 +196,68 @@ Tools::ivec<T> Tools::ivec<T>::reverse() {
     return out;
 }
 
+/* Eraser */
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(T* pos){
+    ivec out(this);
+    out.eraseInl(pos);
+    return out;
+}
+
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(T* first, T* last){
+    ivec out(this);
+    out.eraseInl(first, last);
+    return out;
+}
+
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(T* pos){
+    if (!pos || pos < ivec_data || pos >= ivec_data + ivec_size)
+        return; // or throw
+
+    idx index = pos - ivec_data; // pointer arithmetic
+
+    // destroy element
+    ivec_data[index].~T();
+
+    // shift left
+    for (idx i = index; i + 1 < ivec_size; ++i){
+        new (ivec_data + i) T(std::move(ivec_data[i + 1]));
+        ivec_data[i + 1].~T();
+    }
+
+    --ivec_size;
+}
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(T* first, T* last){
+    if (!first || !last) return;
+    if (first < ivec_data) first = ivec_data;
+    if (last > ivec_data + ivec_size) last = ivec_data + ivec_size;
+    if (first >= last) return;
+
+    idx begin_idx = first - ivec_data;
+    idx end_idx   = last - ivec_data;
+    idx count     = end_idx - begin_idx;
+
+    // destroy range
+    for (idx i = begin_idx; i < end_idx; ++i)
+        ivec_data[i].~T();
+
+    // shift tail
+    for (idx i = end_idx; i < ivec_size; ++i){
+        new (ivec_data + (i - count)) T(std::move(ivec_data[i]));
+        ivec_data[i].~T();
+    }
+
+    ivec_size -= count;
+}
+
+/* Remove duplicates (make all unique) */
+
+
 template <typename T>
 u64 Tools::ivec<T>::memory() {
     u64 s = sizeof(T) * this->ivec_size;
@@ -248,5 +310,59 @@ str Tools::ivec<T>::fstr() {
     }
 
     out += "]";
+    return out;
+}
+
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
+    // vec<T> Out(this);
+    // auto U = std::unique(Out.begin(), Out.end());
+    // Out.erase(U, Out.end());
+    // return ivec<T>(Out);
+
+    if (n <= 0 || ivec_size <= 1) return;
+
+    std::unordered_map<T, idx> freq;
+    idx write = 0;
+
+    for (idx read = 0; read < ivec_size; ++read){
+        T& val = ivec_data[read];
+        idx& count = freq[val];
+
+        if (count < n){
+            if (write != read){
+                // move element forward
+                new (ivec_data + write) T(std::move(val));
+                ivec_data[read].~T();
+            }
+            ++write;
+            ++count;
+        } else {
+            // destroy skipped duplicate
+            ivec_data[read].~T();
+        }
+    }
+
+    ivec_size = write;
+}
+
+template <typename T>
+void Tools::ivec<T>::uniquesInl(idx n){
+    Tools::ivec<T> out;
+    if (n <= 0 || ivec_size == 0) return out;
+
+    out.reserve(ivec_size);
+    std::unordered_map<T, idx> freq;
+
+    for (idx i = 0; i < ivec_size; ++i){
+        const T& val = ivec_data[i];
+        idx& count = freq[val];
+
+        if (count < n){
+            out.append(val);
+            ++count;
+        }
+    }
+
     return out;
 }

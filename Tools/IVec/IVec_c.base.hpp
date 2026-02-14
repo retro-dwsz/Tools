@@ -6,6 +6,9 @@
 #define BEGIN_NAMESPACE(name) namespace name {
 #define END_NAMESPACE }
 
+template <typename T>
+using iterator = T*;
+
 BEGIN_NAMESPACE(Tools)
 
 template <typename T>
@@ -77,8 +80,9 @@ class ivec {
     bool contains(const T& Element);             // Find element, return true or false
     idx find(const T& Element);                  // Find element, return index 
     idx findFreq(const T& Element);              // Find element, return how many appeared
-    pair<idx, vec<T>> findAll(const T& Element);   // Find element, return how many appeared and indexes
+    pair<idx, vec<T>> findAll(const T& Element); // Find element, return how many appeared and indexes
     
+    /* Orders */
     ivec<T> shuffle();                 // return shuffling
     void shuffleInl();                 // inline shuffling
     ivec<T> sort();                    // return sorting with std::sort
@@ -86,7 +90,13 @@ class ivec {
     ivec<T> rsort();                   // return reverse sorting with std::sort
     void rsortInl();                   // inline reverse sorting with std::sort
     ivec<T> reverse();                 // return reverse order
-    void reverseInl();                 // inline reverse order 
+    void reverseInl();                 // inline reverse order
+    ivec<T> erase(T* pos);             // return erased specific
+    void eraseInl(T* pos);             // inline erased specific
+    ivec<T> erase(T* begin, T* end);   // return erased range
+    void eraseInl(T* begin, T* end);   // inline erased range
+    ivec<T> uniques(idx n = 1);        // return remove duplicated values
+    void uniquesInl(idx n = 1);        // inline remove duplicated values
     
     T popFirst();                       // get first element, then remove it
     T popLast();                        // get last element, then remove it

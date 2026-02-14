@@ -13,7 +13,7 @@
 #endif
 
 #if !defined (__WIN32)
-#pragma "Linking are only for windows!"
+#pragma "Tools.Linking are only for windows!"
 #endif
 
 #include <type_traits>
@@ -22,17 +22,22 @@
 #include <windows.h>
 
 namespace Tools::Linking {
-    str GetFile(const str& File) {
+    str GetFile(
+        const str& File                 /* Base name of the .dll*/
+    ) {
         if (File.size() >= 3 && File.substr(File.size() - 3) == "dll")
             return File;
         return std::format("{}.dll", File);
     }
 
     template<typename T>
-    T LoadSymbol(const HMODULE lib, const str& name) {
-        auto sym = reinterpret_cast<T>(GetProcAddress(lib, name.c_str()));
+    T LoadSymbol(
+        const HMODULE lib,              /* File to be loaded */
+        const str& EntryPoint           /* Entry point */
+    ) {
+        auto sym = reinterpret_cast<T>(GetProcAddress(lib, EntryPoint.c_str()));
         if (!sym)
-            throw std::runtime_error(std::format("Missing symbol '{}'", name));
+            throw std::runtime_error(std::format("Missing symbol '{}'", EntryPoint));
         return sym;
     }
 
@@ -326,7 +331,7 @@ namespace Tools::Linking {
         return std::stoi(Result_s);
     }
 
-    // safer CallFunctionC
+    // Slightly safer CallFunctionC
     int CallFunctionC_s(                /* Function IV B */
         const str& File,                /* File to find */
         const str& EntryPoint,          /* Finnction to call (disable magle!) */
@@ -398,7 +403,10 @@ namespace Tools::Linking {
 
     #if __has_include(<cxxabi.h>)
     template <typename T>
-    str RemoveSignature(const str& Func, bool WithArgs = true) {
+    str RemoveSignature(
+        const str& Func,                /* Mangled function name with itanium format */
+        bool WithArgs = true            /* Include args or not*/
+    ) {
         const char* Name = Func.c_str();
         int status = 0;
         std::unique_ptr<char, void(*)(void*)> res{

@@ -5,7 +5,6 @@
 #include <string>
 #include <string_view>
 
-using Char = const char;
 using cstr = const char*;
 using cwstr = const wchar_t*;
 using cstr16 = const char16_t*;

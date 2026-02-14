@@ -11,7 +11,7 @@
 /* Process hacks */
 namespace Tools::OS::Process {
     template <typename T>
-    T ReadFromProcess(idx PID, uintptr_t Address){
+    T ReadProcess(idx PID, uintptr_t Address){
         HANDLE h = OpenProcess(
             PROCESS_VM_READ,
             FALSE,

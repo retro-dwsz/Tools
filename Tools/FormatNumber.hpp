@@ -104,18 +104,18 @@ namespace Tools::FormatNumber {
     /* Customs */
     /* For i8..i64 && u8..u64 */
     template <Integer T>
-    str Format(const T n, Char Separator, const i32 Digits) {
+    str Format(const T n, const char Separator, const i32 Digits) {
         return FormatIntegerPart(n, Separator, Digits);
     }
 
     /* for f32, f64, and fld */
     template <Float T>
-    str Format(const T n, Char Separator, const i32 Digits) {
+    str Format(const T n, const char Separator, const i32 Digits) {
         return FormatFloat(n, Separator, '.', Digits); // default decimal is '.'
     }
 
     template <Float T>
-    str Format(const T n, Char Separator, Char Decimal, const i32 Digits) {
+    str Format(const T n, const char Separator, const char Decimal, const i32 Digits) {
         return FormatFloat(n, Separator, Decimal, Digits);
     }
 }
