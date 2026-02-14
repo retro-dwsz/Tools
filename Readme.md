@@ -7,7 +7,7 @@
 
 Types aliasing to make you less typing just for data types
 
-|Integers || Unsiged Integers|| Floating ||
+|Integers | Unsiged Integers|| Floating ||
 |--------|--------|--------|--------|-------|--------|
 |Original|Aliased|Original|Aliased|Original|Aliased|
 |`int8_t`| `i8`|`uint8_t`| `u8`|`float`| `f32`|
