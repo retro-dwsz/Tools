@@ -684,11 +684,11 @@ This is a library for essential OS API functions, but make it easier.
     ~~~~~~~~~~~~~~~~[ My Cool C++ App! ]~~~~~~~~~~~~~~~~
     ```
 
-    > `Tools::Styling::PrintMid(" My magial C++ App! ", '/')`
+    > `Tools::Styling::PrintMid(" My magcial C++ App! ", '/')`
 
     > return: 
     ```
-    //////////////// My Cool C++ App! ////////////////
+    //////////////// My magcial C++ App! ////////////////
     ```
 
 ---
