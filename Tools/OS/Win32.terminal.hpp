@@ -13,8 +13,8 @@
 /* Get current terminal size
  * Directions: X for horizontal (return), Y for vertical (return), B for both (print)
  */
-namespace Tools::Win32::Terminal {
-    i32 TerminalSize(cstr DIR, i32 offset) {
+namespace Tools::OS::Terminal {
+    i32 TerminalSize(cstr DIR = "X", i32 offset = 0) {
         CONSOLE_SCREEN_BUFFER_INFO CSBI;
 
         // Get console screen buffer info
@@ -41,11 +41,18 @@ namespace Tools::Win32::Terminal {
         }
     }
 
-    i32 TerminalSizeWidth(i32 offset){
+    i32 TerminalSizeWidth(i32 offset = 0){
         return TerminalSize("X", offset);
     }
 
-    i32 TerminalSizeHeight(i32 offset){
-        return TerminalSize("X", offset);
+    i32 TerminalSizeHeight(i32 offset = 0){
+        return TerminalSize("Y", offset);
+    }
+
+    umap<cstr, i32> TerminalSizeMap(){
+        return umap<cstr, i32>{
+            {"X", TerminalSizeWidth(0)},
+            {"Y", TerminalSizeHeight(0)}
+        };
     }
 }

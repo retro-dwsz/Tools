@@ -1,10 +1,9 @@
 #pragma once
 
-#include <memory>
-#include <string>
+#include <iostream>
+#include <format>
+
 #include <cstring>
-#include <print>
-#include <vector>
 #include <fstream>
 
 #include "Types.hpp"
@@ -20,7 +19,7 @@ namespace Tools::Files {
                 std::istreambuf_iterator<char>()
             );
         } catch(std::exception& e){
-            std::println("Error while reading file -> {}", e.what());
+            std::cout << std::format("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
@@ -37,7 +36,7 @@ namespace Tools::Files {
                     // Out << Content << "\n\n";
                     Out.close();
                 } catch (std::exception& e){
-                    std::println("Error while writing to file -> {}", e.what());
+                    std::cout << std::format("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -52,7 +51,7 @@ namespace Tools::Files {
             auto C = std::make_unique<cstr>(ReadFile(File).c_str());
             return *C;
         } catch(std::exception& e){
-            std::println("Error while reading file -> {}", e.what());
+            std::cout << std::format("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
@@ -69,7 +68,7 @@ namespace Tools::Files {
                     // Out << Content << "\n\n";
                     Out.close();
                 } catch (std::exception& e){
-                    std::println("Error while writing to file -> {}", e.what());
+                    std::cout << std::format("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -102,7 +101,7 @@ namespace Tools::Files {
 
         std::ofstream out(File, std::ios::binary | std::ios::trunc);
         if(!out){
-            std::println("Error: cannot open {}", File);
+            std::cout << std::format("Error: cannot open {}", File);
             std::exit(2);
         }
 

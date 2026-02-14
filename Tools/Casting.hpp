@@ -1,25 +1,13 @@
 #pragma once
 
-// alias: static_cast = "scast"
-// alias: dynamic_cast = "dcast"
-// alias: const_cast = "ccast"
-// alias: reinterpret_cast = "rcast"
-// alias: any_cast = "acast"
-// make: cast<B>(A)
-
-// ============================================================
-// Tools::Cast
 // ------------------------------------------------------------
+// Tools::Cast
 // Lightweight casting helpers.
-// Tujuan:
-// - Memberi alias eksplisit untuk C++ cast keywords
-// - Meningkatkan readability (niat casting kebaca)
-// - Tetap zero-overhead (compiler tetap bisa inline)
-//
-// Catatan penting:
-// - Ini BUKAN pengganti type system
-// - Ini hanya membungkus keyword cast agar lebih eksplisit & konsisten
-//
+// 
+// Notes!
+// - This is NOT replacement of system types
+// - This file only pack long casting keywords
+// 
 // Alias mapping:
 //   static_cast      -> scast
 //   dynamic_cast     -> dcast
@@ -27,28 +15,27 @@
 //   reinterpret_cast -> rcast
 //   std::any_cast    -> acast
 //
-// Gaya pemakaian:
+// Usage:
 //   auto x = Tools::Cast::scast<double>(i);
 //   auto p = Tools::Cast::dcast<Base*>(derived);
 //   auto v = Tools::Cast::acast<int>(any_val);
 //
-// ============================================================
+// ------------------------------------------------------------
 
 #include <any>
 #include <utility>
-// #include <type_traits>
 
 namespace Tools::Cast {
 
     // scast<T>(value)
     //
-    // Alias untuk static_cast.
+    // Alias for static_cast.
     //
-    // - Aman untuk konversi yang diverifikasi di compile-time
-    // - Bisa dievaluasi di compile-time jika argumen constexpr
+    // - Compile time conversion
+    // - Can be evaluated on compile-time if you use constexpr
     // - Zero runtime overhead
     //
-    // Gunakan untuk:
+    // Used for:
     // - Numeric conversion
     // - Upcast/downcast non-polymorphic
     template <typename To, typename From>
@@ -58,14 +45,14 @@ namespace Tools::Cast {
 
     // dcast<T>(value)
     //
-    // Alias untuk dynamic_cast.
+    // Alias for dynamic_cast.
     //
-    // - HANYA untuk pointer atau reference
-    // - Membutuhkan RTTI
-    // - Runtime-only (tidak constexpr)
+    // - ONLY for pointers and references
+    // - Needs RTTI
+    // - Runtime-only (not constexpr compatible)
     //
-    // Gunakan untuk:
-    // - Downcast polymorphic yang perlu runtime checking
+    // Used for:
+    // - Downcast polymorphic which needs runtime checking
     template <typename To, typename From>
     To dcast(From&& value) {
         return dynamic_cast<To>(std::forward<From>(value));
@@ -73,13 +60,13 @@ namespace Tools::Cast {
 
     // ccast<T>(value)
     //
-    // Alias untuk const_cast.
+    // Alias for const_cast.
     //
-    // - Menghapus / menambahkan qualifier const
-    // - Tidak mengubah tipe dasar
+    // - Deletes/adds qualifier "const"
+    // - Not changing base type
     //
     // WARNING:
-    // - Menghapus const dari object yang benar-benar const = UB
+    // - Deleting const from absolute const object will cause Undefined Behaviour
     template <typename To, typename From>
     constexpr To ccast(From&& value) noexcept {
         return const_cast<To>(std::forward<From>(value));
@@ -87,15 +74,15 @@ namespace Tools::Cast {
 
     // rcast<T>(value)
     //
-    // Alias untuk reinterpret_cast.
+    // Alias for reinterpret_cast.
     //
     // - Bit-level cast
-    // - Paling berbahaya
-    // - Hampir selalu last resort
+    // - Most dangerous
+    // - Always for last resort
     //
-    // Gunakan HANYA jika:
-    // - Kamu tahu layout memori
-    // - Tidak ada alternatif yang aman
+    // Use ONLY if:
+    // - You don't know memory layout
+    // - No other safe alternatives
     template <typename To, typename From>
     constexpr To rcast(From&& value) noexcept {
         return reinterpret_cast<To>(std::forward<From>(value));
@@ -103,10 +90,10 @@ namespace Tools::Cast {
 
     // acast<T>(std::any)
     //
-    // Alias untuk std::any_cast.
+    // Alias for std::any_cast.
     //
     // - Runtime checked
-    // - Akan throw std::bad_any_cast jika tipe salah
+    // - Will throw std::bad_any_cast if type is wrong/bad
     template <typename To>
     To acast(const std::any& a) {
         return std::any_cast<To>(a);
@@ -118,15 +105,14 @@ namespace Tools::Cast {
     //
     // "One-door" casting API.
     //
-    // Filosofi:
-    // - Default ke static_cast
-    // - Tidak mencoba pintar
-    // - Explicit > implicit
+    // Philosophy:
+    // - Default to static_cast
+    // - Not trying to be smart
     //
-    // Catatan:
-    // - Fungsi ini sengaja sederhana
-    // - Jika kamu butuh RTTI / const removal / bit cast,
-    //   gunakan scast / dcast / ccast / rcast secara eksplisit
+    // Note:
+    // - This Function is intended to be simple
+    // - If you need RTTI / const removal / bit cast,
+    //   use scast / dcast / ccast / rcast
     template <typename To, typename From>
     constexpr To cast(From&& value) {
         return scast<To>(std::forward<From>(value));

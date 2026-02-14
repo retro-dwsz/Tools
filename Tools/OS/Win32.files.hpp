@@ -9,7 +9,7 @@
 
 /* Files I/O + system */
 namespace Tools::Win32::File {
-    cstr cstr_safe(strv s, str& temp) {
+    cstr cstr_safe(strview s, str& temp) {
         if (s.data()[s.size()] == '\0')
             return s.data();
 
@@ -17,7 +17,7 @@ namespace Tools::Win32::File {
         return temp.c_str();
     }
 
-    bool WriteFile(strv path, strv text){
+    bool WriteFile(strview path, strview text){
         str temp;
         cstr p = cstr_safe(path, temp);
 
@@ -46,7 +46,7 @@ namespace Tools::Win32::File {
         return ok && written == text.size();
     }
 
-    str ReadFile(strv path) {
+    str ReadFile(strview path) {
         str temp;
         cstr p = cstr_safe(path, temp);
 
@@ -83,7 +83,7 @@ namespace Tools::Win32::File {
     }
 
 
-    bool Exists(strv path) {
+    bool Exists(strview path) {
         str temp;
         cstr p = cstr_safe(path, temp);
 
@@ -91,14 +91,14 @@ namespace Tools::Win32::File {
         return attr != INVALID_FILE_ATTRIBUTES;
     }
 
-    bool Remove(strv path) {
+    bool Remove(strview path) {
         str temp;
         cstr p = cstr_safe(path, temp);
 
         return DeleteFileA(p);
     }
 
-    bool Move(strv from, strv to) {
+    bool Move(strview from, strview to) {
         str ftmp, ttmp;
         cstr f = cstr_safe(from, ftmp);
         cstr t = cstr_safe(to, ttmp);

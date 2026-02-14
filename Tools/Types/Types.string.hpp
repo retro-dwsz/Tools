@@ -5,6 +5,7 @@
 #include <string>
 #include <string_view>
 
+using Char = const char;
 using cstr = const char*;
 using cwstr = const wchar_t*;
 using cstr16 = const char16_t*;
@@ -15,7 +16,7 @@ using wstr = std::wstring;
 using str16 = std::u16string;
 using str32 = std::u32string;
 
-using strv = std::string_view;
+using strview = std::string_view;
 using sstream = std::stringstream;
 using ostream = std::ostringstream;
 

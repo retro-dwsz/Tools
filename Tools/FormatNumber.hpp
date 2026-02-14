@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Types.hpp"
+
 #include <iostream>
 #include <cstdint>
 #include <format>
@@ -9,9 +10,10 @@
 #include <cmath>
 
 namespace Tools::FormatNumber {
+    /* Internal Helper functions */
     namespace {
         template <Integer T>
-        str FormatIntegerPart(T value, char Separator, i32 GroupSize) {
+        str static FormatIntegerPart(T value, char Separator, i32 GroupSize) {
             if (GroupSize <= 0) GroupSize = 3; // safety
 
             bool negative = false;
@@ -46,7 +48,7 @@ namespace Tools::FormatNumber {
         }
 
         template <Float T>
-        str FormatFloat(T n, char Separator, char DecimalChar, i32 GroupSize) {
+        str static FormatFloat(T n, char Separator, char DecimalChar, i32 GroupSize) {
             if (GroupSize <= 0) GroupSize = 3;
 
             // Handle special cases
@@ -86,20 +88,34 @@ namespace Tools::FormatNumber {
         }
     }
 
+    /* Defaults */
     /* For i8..i64 && u8..u64 */
     template <Integer T>
-    str Format(const T n, const char Separator, const i32 Digits) {
+    str Format(const T n) {
+        return FormatIntegerPart(n, '\'', 3);
+    }
+    
+    /* for f32, f64, and fld */
+    template <Float T>
+    str Format(const T n) {
+        return FormatFloat(n, '\'', '.', 3);
+    }
+
+    /* Customs */
+    /* For i8..i64 && u8..u64 */
+    template <Integer T>
+    str Format(const T n, Char Separator, const i32 Digits) {
         return FormatIntegerPart(n, Separator, Digits);
     }
 
     /* for f32, f64, and fld */
     template <Float T>
-    str Format(const T n, const char Separator, const i32 Digits) {
+    str Format(const T n, Char Separator, const i32 Digits) {
         return FormatFloat(n, Separator, '.', Digits); // default decimal is '.'
     }
 
     template <Float T>
-    str Format(const T n, const char Separator, const char Decimal, const i32 Digits) {
+    str Format(const T n, Char Separator, Char Decimal, const i32 Digits) {
         return FormatFloat(n, Separator, Decimal, Digits);
     }
 }

@@ -6,7 +6,7 @@
 #include "../Types.hpp"
 
 /* Sleep function using winapi */
-namespace Tools::Win32::Sleep {
+namespace Tools::OS::Sleep {
     inline void SleepMs(u32 ms) {
         ::Sleep(ms);
     }
