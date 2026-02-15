@@ -98,7 +98,7 @@
 ---
 
 
-# I. Lib `Tools.Types`
+# `I`. Lib `Tools.Types`
 
 Types aliasing to make you less typing just for data types
 
@@ -194,7 +194,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# II. Lib `Tools.Casting`
+# `II`. Lib `Tools.Casting`
 
 - ### Decription
     This is just aliases for `static_`, `dynamic_`, `const_`, `reintepret_`, and `any_` cast, because using 2 words for me looks like too verbose.
@@ -281,7 +281,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# III. Lib `Tools.Edges`
+# `III`. Lib `Tools.Edges`
 
 - ### Description
     Should've named "limits", but I pick "Edges" just because people won't confuse `<limits>` and `Tools.Limits`, so `Tools.Edges` were chosen.
@@ -309,7 +309,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# IV. Lib `Tools.Files`
+# `IV`. Lib `Tools.Files`
 
 code:
 ```cpp
@@ -337,7 +337,7 @@ Suffixes: \
 
 ---
 
-# V. Lib `Tools.FormatNumber`
+# `V`. Lib `Tools.FormatNumber`
 
 code:
 ```cpp
@@ -384,12 +384,12 @@ Example:
 
 ---
 
-# VI. Lib `Tools.IVec`
+# `VI`. Lib `Tools.IVec`
 
 IVec or "*I*mproved *Vec*tor" is a container just like `std::vector`, but with better choice of diction, for example: `push_back` is now `append` (just like Python).
 All description is already in `IVec/IVec_c.base.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
 
-# VII. Lib `Tools.Linking`
+# `VII`. Lib `Tools.Linking`
 
 Code:
 ```cpp
@@ -691,7 +691,7 @@ Recommended DLL Signature generation
 
 ---
 
-# VIII. Lib `Tools.OS`
+# `VIII`. Lib `Tools.OS`
 
 - ### Description:
     - This is a library for essential OS API functions, but make it easier.
@@ -767,7 +767,7 @@ Recommended DLL Signature generation
 
 ---
 
-# IX. Lib `Tools.Style`
+# `IX`. Lib `Tools.Style`
 
 - ### Description:
     - Library to make you borix text into something from like Ms. Word or something, like colors, italic, bold, etc etc. Use only `Bold`, `Italic`, `Under`, `Strike`, `ColorFG/BG` only.
@@ -829,7 +829,7 @@ Recommended DLL Signature generation
 
 ---
 
-# X. Lib `Tools.StyleW`
+# `X`. Lib `Tools.StyleW`
 
 - ### Description:
     - Same as `Tools.Style`, but with `std::wstring` (`wstr`) support, slightly different choise of diction, but still good, and maybe kinda simpler. THe Name of the functions are already describe itself.
@@ -854,7 +854,7 @@ Recommended DLL Signature generation
 
 ---
 
-# XI. Lib `Tools.PrintHeader`
+# `XI`. Lib `Tools.PrintHeader`
 
 - ### Description:
     This function is to make something like this:
@@ -891,7 +891,7 @@ Recommended DLL Signature generation
 
 ---
 
-# XII. Lib `Tools.Random`
+# `XII`. Lib `Tools.Random`
  * ### Code suffixes you'll find on Random functions
     | **Suffix**|      **Meaning**      | **Types** |       **Meaning**      |
     |-----------|-----------------------|-----------|------------------------|
@@ -959,7 +959,7 @@ Recommended DLL Signature generation
 
 ---
 
-# XIII. Lib `Tools.RandomHW`
+# `XIII`. Lib `Tools.RandomHW`
 
 - Basically same as `Tools.Random`, but with better seeder from `x86` function called `RDSEED` and `RDRAND`, you just add the `HW` on the namespace (`Tools::Random` -> `Tools::RandomHW`), and you can access the functions.
 - This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad. 
@@ -1029,7 +1029,7 @@ Recommended DLL Signature generation
 
 ---
 
-# XIV. Lib `Tools.Randomizer`
+# `XIV`. Lib `Tools.Randomizer`
 
 Library used internally for `Tools.Random` and `Tools.RandomHW`, this just contain aliases for some objects.
 
@@ -1051,7 +1051,7 @@ Library used internally for `Tools.Random` and `Tools.RandomHW`, this just conta
 
 ---
 
-# XV. Lib `Tools.Rounding`
+# `XV`. Lib `Tools.Rounding`
 
 Library to round floating numbers just like Python and common math knowledge.
 
@@ -1076,7 +1076,7 @@ Library to round floating numbers just like Python and common math knowledge.
 
 ---
 
-# XVI. Lib `Tools.Vector`
+# `XVI`. Lib `Tools.Vector`
 
 Library to do some calculation with vector. Per section includes:
 - `Vector/Vector.accumulator.hpp` : For sum, product, and averages
