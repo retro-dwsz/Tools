@@ -125,60 +125,60 @@ namespace Tools::Cast {
 }
 ```
 
-`scast<T>(value)`: Alias for static_cast.
+### 1. `scast<T>(value)`: Alias for static_cast.
 
-Advantage:
-- Compile time conversion
-- Can be evaluated on compile-time if you use constexpr
-- Zero runtime overhead
+- ### Advantage:
+    - Compile time conversion
+    - Can be evaluated on compile-time if you use constexpr
+    - Zero runtime overhead
 
-Used for:
-- Numeric conversion
-- Upcast/downcast non-polymorphic
+- ### Used for:
+    - Numeric conversion
+    - Upcast/downcast non-polymorphic
 
-`dcast<T>(value)`: Alias for dynamic_cast.
+### 2. `dcast<T>(value)`: Alias for dynamic_cast.
 
-Advantage:
-- ONLY for pointers and references
-- Needs RTTI
-- Runtime-only (not constexpr compatible)
-Used for:
-- Downcast polymorphic which needs runtime checking
+- ### Advantage:
+    - ONLY for pointers and references
+    - Needs RTTI
+    - Runtime-only (not constexpr compatible)
+    Used for:
+    - Downcast polymorphic which needs runtime checking
 
-`ccast<T>(value)` Alias for const_cast.
+### 3. `ccast<T>(value)` Alias for const_cast.
 
-Used for:
-- Deletes/adds qualifier "const"
-- Not changing base type
+- ### Used for:
+    - Deletes/adds qualifier "const"
+    - Not changing base type
 
-WARNING:
-- Deleting const from absolute const object will cause Undefined Behaviour
+- ### WARNING:
+    - Deleting const from absolute const object will cause Undefined Behaviour
 
-`rcast<T>(value)` Alias for reinterpret_cast.
+### 4. `rcast<T>(value)` Alias for reinterpret_cast.
 
-Advantage:
-- Bit-level cast
-- Most dangerous
-- Always for last resort
+- ### Advantage:
+    - Bit-level cast
+    - Most dangerous
+    - Always for last resort
 
-Use ONLY if:
-- You don't know memory layout
-- No other safe alternatives
+- ### Use ONLY if:
+    - You don't know memory layout
+    - No other safe alternatives
 
-`acast<T>(std::any)` Alias for std::any_cast.
+### 5. `acast<T>(std::any)` Alias for std::any_cast.
 
-- Runtime checked
-- Will throw std::bad_any_cast if type is wrong/bad
+- ### Advantage:
+    - Runtime checked
+    - Will throw std::bad_any_cast if type is wrong/bad
 
-`cast<T>(value)` "One-door" casting API.
+### 6. `cast<T>(value)` "One-door" casting API.
 
-Philosophy:
-- Default to static_cast
-- Not trying to be smart
-Note:
-- This Function is intended to be simple
-- If you need RTTI / const removal / bit cast,
-use `scast` / `dcast` / `ccast` / `rcast`
+- ### Philosophy:
+    - Default to static_cast
+    - Not trying to be smart
+    Note:
+    - This Function is intended to be simple
+    - If you need RTTI / const removal / bit cast, use `scast` / `dcast` / `ccast` / `rcast`
 
 ---
 
