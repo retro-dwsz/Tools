@@ -1,6 +1,7 @@
 #pragma once
 
 /* ONLY STANDARD LIBS ARE ALLOWED */
+#include <unistr.h>
 #include <fileapi.h>
 #include <windows.h>
 #include <winnt.h>
@@ -54,5 +55,25 @@ namespace Tools::OS::Terminal {
             {"X", TerminalSizeWidth(0)},
             {"Y", TerminalSizeHeight(0)}
         };
+    }
+
+    void Clear() {
+        HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+        DWORD mode = 0;
+        if (!GetConsoleMode(hStdOut, &mode)) {
+            return;
+        }
+
+        const DWORD originalMode = mode;
+        mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+        if (!SetConsoleMode(hStdOut, mode)) {
+            return;
+        }
+
+        PCWSTR sequence = L"\x1b[2J\x1b[3J"; // Clear display and scrollback
+        DWORD written = 0;
+        WriteConsoleW(hStdOut, sequence, (DWORD)wcslen(sequence), &written, NULL);
+
+        SetConsoleMode(hStdOut, originalMode); // Restore original mode
     }
 }

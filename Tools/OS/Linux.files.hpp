@@ -11,7 +11,7 @@
 // File utils
 namespace Tools::Linux::File {
     // Ensure null-terminated C string for POSIX APIs
-    cstr cstr_safe(strview s, str& temp) {
+    cstr static cstr_safe(strview s, str& temp) {
         if (s.empty()) return "";
 
         // If already null-terminated, use directly

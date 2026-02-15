@@ -42,55 +42,80 @@
     |`Tools/Vector/*`       | Common operations for Vector implementations      |
 
 - ### `Tools/Types/*` :
-    |                   Files               |           What is this?            |
-    |---------------------------------------|------------------------------------|
-    | `Tools/Types/Types.containers.hpp`    | Containers aliases                 |
-    | `Tools/Types/Types.int.hpp`           | Signed interger aliases            |
-    | `Tools/Types/Types.uint.hpp`          | Unsigned integer aliases           |
-    | `Tools/Types/Types.float.hpp`         | Floating aliases                   |
-    | `Tools/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
-    | `Tools/Types/Types.string.hpp`        | String type aliases                |
-    | `Tools/Types/Types.memory.hpp`        | Smart pointer aliases              |
+    |               Files              |           What is this?            |
+    |----------------------------------|------------------------------------|
+    | `/Types/Types.containers.hpp`    | Containers aliases                 |
+    | `/Types/Types.int.hpp`           | Signed interger aliases            |
+    | `/Types/Types.uint.hpp`          | Unsigned integer aliases           |
+    | `/Types/Types.float.hpp`         | Floating aliases                   |
+    | `/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
+    | `/Types/Types.string.hpp`        | String type aliases                |
+    | `/Types/Types.memory.hpp`        | Smart pointer aliases              |
 
 - ### `Tools/IVec/*` :
-    |               File                |                           What is this?                            |
-    |-----------------------------------|--------------------------------------------------------------------|
-    |`Tools/IVec/IVec.hpp`              | All include packed                                                 |
-    |`Tools/IVec/IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
-    |`Tools/IVec/IVec_c.base.hpp`       | Base IVec class                                                    |
-    |`Tools/IVec/IVec_c.init.hpp`       | Initializers for IVec                                              |
-    |`Tools/IVec/IVec_c.basic.hpp`      | Minimal functions                                                  |
-    |`Tools/IVec/IVec_c.advanced.hpp`   | Extended functions                                                 |
-    |`Tools/IVec/IVec_c.convert.hpp`    | Conversion utilities to something else                             |
-    |`Tools/IVec/IVec_c.data.hpp`       | Return pointer data                                                |
-    |`Tools/IVec/IVec_c.getset.hpp`     | Getter and setter functions                                        |
-    |`Tools/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
-    |`Tools/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
+    |             File             |                           What is this?                            |
+    |----------------------------- |--------------------------------------------------------------------|
+    |`/IVec/IVec.hpp`              | All include packed                                                 |
+    |`/IVec/IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
+    |`/IVec/IVec_c.base.hpp`       | Base IVec class                                                    |
+    |`/IVec/IVec_c.init.hpp`       | Initializers for IVec                                              |
+    |`/IVec/IVec_c.basic.hpp`      | Minimal functions                                                  |
+    |`/IVec/IVec_c.advanced.hpp`   | Extended functions                                                 |
+    |`/IVec/IVec_c.convert.hpp`    | Conversion utilities to something else                             |
+    |`/IVec/IVec_c.data.hpp`       | Return pointer data                                                |
+    |`/IVec/IVec_c.getset.hpp`     | Getter and setter functions                                        |
+    |`/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
+    |`/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
 
 - ### `Tools/OS/*`:
-    |...|...|
-    |---|---|
-    |...|...|
+    |           File          |         What is this?      |
+    |-------------------------|----------------------------|
+    | `/OS/{OS}.API.hpp`      | All APIs wrapped           |
+    | `/OS/{OS}.files.hpp`    | I/O + manage Files         |
+    | `/OS/{OS}.proc.hpp`     | I/O to Processes           |
+    | `/OS/{OS}.sleep.hpp`    | OS-level sleep             |
+    | `/OS/{OS}.terminal.hpp` | Terminal size, celar, etc  |
 
 - ### `Tools/Random/*`:
-    |...|...|
-    |---|---|
-    |...|...|
+    |               File            |                         What is this?                          |
+    |-------------------------------|---------------------------------------------------------------|
+    | `/Random/Random.common.hpp`   | Internal utility for other files                              |
+    | `/Random/Random.single.hpp`   | Single number generator                                       |
+    | `/Random/Random.vector.hpp`   | Generator for `std::vector<>`                                 |
+    | `/Random/Random.bundle.hpp`   | Generator for `std::vector<std::vector<>>`                    |
+    | `/Random/Random.sbundle.hpp`  | Just like `bundle`, but every sub-vector's size are different |
 
 - ### `Tools/Random.Basic/*`:
-    |...|...|
-    |---|---|
-    |...|...|
+    Just like `Tools.Random`, but `Twister32`&`Twister64` are initialized on single number generator. So `vector`, `bundle`, and `sbundle` are repeated use of `single`, which is not a good practice of use.
+    |               File                        |       What is this?      |
+    |-------------------------------------------|--------------------------|
+    | `/Random.Basic/Random.basic.hpp`          | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.common.basic.hpp`   | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.single.basic.hpp`   | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.vector.basic.hpp`   | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.bundle.basic.hpp`   | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.sbundle.basic.hpp`  | _Same as `Tools.Random`_ |
+
 
 - ### `Tools/RandomHW/*`:
-    |...|...|
-    |---|---|
-    |...|...|
+    Just like `Tools.Random`, but optimized for x86 command called `RDSEED` and `RDRAND`
+    |               File               |                      What is this?                            |
+    |----------------------------------|---------------------------------------------------------------|
+    | `/RandomHW/RandomHW.common.hpp`  | Single number HW generator                                    |
+    | `/RandomHW/RandomHW.single.hpp`  | Generator for `std::vector<std::vector<>>`                    |
+    | `/RandomHW/RandomHW.vector.hpp`  | Just like `bundle`, but every sub-vector's size are different |
+    | `/RandomHW/RandomHW.bundle.hpp`  | Internal utility for other files                              |
+    | `/RandomHW/RandomHW.sbundle.hpp` | Generator for `std::vector<>`                                 |
 
 - ### `Tools/Vector/*`:
-    |...|...|
-    |---|---|
-    |...|...|
+    |               File                |                                What is this?                              |
+    |-----------------------------------|---------------------------------------------------------------------------|
+    | `/Vector/Vector.accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average            |
+    | `/Vector/Vector.find.hpp`         | Find value and/or index in a vector utilities                             |
+    | `/Vector/Vector.order.hpp`        | Value order utilities and return new vector                               |
+    | `/Vector/Vector.order.inl.hpp`    | Value order utilities and do it inplace                                   |
+    | `/Vector/Vector.slice.hpp`        | Scissors for vector, `0->n` or `0<-n` or `x<->y`, then return new vector  |
+    | `/Vector/Vector.slice.inl.hpp`    | Scissors for vector, and do it inplace                                    |
 
 ---
 
@@ -100,84 +125,85 @@
 Types aliasing to make you less typing just for data types
 
 ### Integer, Unsiged Integer, and Floating
-|Original|Aliased|Original|Aliased|Original|Aliased|
-|--------|--------|--------|--------|-------|--------|
-|`int8_t`| `i8`|`uint8_t`| `u8`|`float`| `f32`|
-|`int16_t`| `i16`|`uint16_t`| `u16`|`double`| `f64`|
-|`int32_t`| `i32`|`uint32_t`| `u32`|`long double`| `fld`|
-|`int64_t`| `i64`|`uint64_t`| `u64`| |  |
-|`ssize_t` | `sidx` |`size_t`| `idx`| |  |
+| Original | Aliased |  Original | Aliased |   Original   | Aliased |
+|----------|---------|-----------|---------|--------------|---------|
+|`int8_t`  | `i8`    | `uint8_t` | `u8`    |`float`       | `f32`   |
+|`int16_t` | `i16`   | `uint16_t`| `u16`   |`double`      | `f64`   |
+|`int32_t` | `i32`   | `uint32_t`| `u32`   |`long double` | `fld`   |
+|`int64_t` | `i64`   | `uint64_t`| `u64`   |              |         |
+|`ssize_t` | `sidx`  | `size_t`  | `idx`   |              |         |
 
 ### C & C++ String 
-|Original|Aliased|Original|Aliased|
-|--------|--------|--------|--------|
-|`const char*` |`cstr`|`std::string`|`str`|
-|`const char16_t*`|`cstr16`| `std::wstring`|`wstr`|
-|`const char32_t*`|`cstr32`| `std::u16string`|`str16`|
-|||`std::string_view`|`strview`| `std::u32string`|`str32`|
-|||`std::stringstream`|`sstream`|
-|||`std::ostringstream`|`ostream`|
+|      Original     |  Aliased |       Original       |  Aliased  |
+|-------------------|----------|----------------------|-----------|
+| `const char*`     | `cstr`   | `std::string`        | `str`     |
+| `const char16_t*` | `cstr16` | `std::wstring`       | `wstr`    |
+| `const char32_t*` | `cstr32` | `std::u16string`     | `str16`   |
+|                   |          | `std::u32string`     | `str32`   |
+|                   |          | `std::string_view`   | `strview` |
+|                   |          | `std::stringstream`  | `sstream` |
+|                   |          | `std::ostringstream` | `ostream` |
 
 ### C++ Value Containers
-|Original|Aliased|
-|--------|--------|
-| `std::vector<T>` | `vec<T>` |
-| `std::array<T, idx>` | `arr<T, idx>` |
-| `std::map<K, V>` | `map<K, V>` |
-| `std::unordered_map<K, V>` | `umap<K, V>` |
-| `std::set<T>` | `set<T>` |
-| `std::unordered_set<T>` | `uset<T>` |
-| `std::pair<K, V>` | `pair<K, V>` |
-| `std::initializer_list<T>` | `initl<T>` |
-| `std::span<T>` | `span<T>` |
-| `std::tuple<T...>` | `tuple<T...>` |
-| `std::list<T>` | `list<T>` |
+|          Original          |    Aliased    |
+|----------------------------|---------------|
+| `std::vector<T>`           | `vec<T>`      |
+| `std::array<T, idx>`       | `arr<T, idx>` |
+| `std::map<K, V>`           | `map<K, V>`   |
+| `std::unordered_map<K, V>` | `umap<K, V>`  |
+| `std::set<T>`              | `set<T>`      |
+| `std::unordered_set<T>`    | `uset<T>`     |
+| `std::pair<K, V>`          | `pair<K, V>`  |
+| `std::initializer_list<T>` | `initl<T>`    |
+| `std::span<T>`             | `span<T>`     |
+| `std::tuple<T...>`         | `tuple<T...>` |
+| `std::list<T>`             | `list<T>`     |
 
 ### C++ Type Containers
-|Original|Aliased|
-|--------|--------|
-| `std::optional<T>` | `topt<T>` |
-| `std::variant<T...>` | `tvar<T...>` |
-| `std::expected<A, B>` | `texp<A, B>` |
+|        Original       |    Aliased    |
+|-----------------------|---------------|
+| `std::optional<T>`    | `topt<T>`     |
+| `std::variant<T...>`  | `tvar<T...>`  |
+| `std::expected<A, B>` | `texp<A, B>`  |
 
 Another type alias that you and I may not use often
 
 ### Basic C/C++ Pointers
 
-|Name|Original|Aliased |
-|-|--------|--------|
-| Pointer to data | `T*` | `ptr<T>` |
-| Pointer to constant data | `const T*` | `ptrcd<T>` |
-| Constant pointer to data | `T const*` | `cptr<T>` |
+|               Name                |     Original     |   Aliased   |
+|-----------------------------------|------------------|-------------|
+| Pointer to data                   | `T*`             | `ptr<T>`    |
+| Pointer to constant data          | `const T*`       | `ptrcd<T>`  |
+| Constant pointer to data          | `T const*`       | `cptr<T>`   |
 | Constant pointer to constant data | `const T *const` | `cptrcd<T>` |
 
 ### C++ Smart Pointers
 
-|Original|Aliased|
-|--------|--------|
+|       Original       |  Aliased  |
+|----------------------|-----------|
 | `std::unique_ptr<T>` | `uptr<T>` |
 | `std::shared_ptr<T>` | `sptr<T>` |
-| `std::weak_ptr<T>` | `wptr<T>` |
+| `std::weak_ptr<T>`   | `wptr<T>` |
 
 ### Commonly used packed type with `concept`
-| Concept | Types convered |
-|---|---|
-| `Nx32` | `i32, f32` |
-| `Nx64` | `i64, f64` |
-| `Int` | `i8, i16, i32, i64` |
-| `CInt` | `i32, i64` |
-| `UInt` | `u8, u16, u32, u64` |
-| `CUInt` | `u32, u64` |
-| `Float` | `f32, f64, fld` |
-| `CFloat` | `f32, f64` |
-| `CSize` | `idx, sidx` |
-| `Integer` | `Int` + `UInt` |
-| `CNumber` | `CInt` + `CUInt` + `CFloat` + `CSize` |
-| `CTypes` | `CInt` + `CUInt` + `CFloat` + `Strings` |
-| `Numbers` | `Int` + `UInt` + `Float` + `CSize` |
-| `Strings` | `str, cstr` |
-| `WStrings` | `wstr, cwstr` |
-| `Iterable` | `std::ranges::range<T>` |
+|   Concept  |              Types convered              |
+|------------|------------------------------------------|
+| `Nx32`     | `i32, f32`                               |
+| `Nx64`     | `i64, f64`                               |
+| `Int`      | `i8, i16, i32, i64`                      |
+| `CInt`     | `i32, i64`                               |
+| `UInt`     | `u8, u16, u32, u64`                      |
+| `CUInt`    | `u32, u64`                               |
+| `Float`    | `f32, f64, fld`                          |
+| `CFloat`   | `f32, f64`                               |
+| `CSize`    | `idx, sidx`                              |
+| `Integer`  | `Int` + `UInt`                           |
+| `CNumber`  | `CInt` + `CUInt` + `CFloat` + `CSize`    |
+| `CTypes`   | `CInt` + `CUInt` + `CFloat` + `Strings`  |
+| `Numbers`  | `Int` + `UInt` + `Float` + `CSize`       |
+| `Strings`  | `str, cstr`                              |
+| `WStrings` | `wstr, cwstr`                            |
+| `Iterable` | `std::ranges::range<T>`                  |
 
 An example of implementation:
 ```cpp
@@ -703,6 +729,7 @@ Recommended DLL Signature generation
         umap<cstr, i32> TerminalSizeMap(){
             return umap<cstr, i32>{{"X", TerminalSizeWidth(0)},{"Y", TerminalSizeHeight(0)}};
         }
+        void Clear();
     }
 
     // File utils
@@ -752,6 +779,7 @@ Recommended DLL Signature generation
     ### 1. Terminal
     - The function `TerminalSize` returns current terminal size (duh), you have 2 choises, `X` (row) axis or `Y` (collumn) axis. You pass it on 1st parameter.
     - There are 3 other function that wraps 1st function. `-Width`, `-Height`, and `-Map`. 2nd and 3rd are obvious, 4th return an `std::unordered_map` of `X` and `Y` axis.
+    - `Clear()` are for clear the entire console screen (duh)
 
     ### 2. File
     - You can ignore the `cstr_safe` function, it's just used internally for converting stuffs. All function are using `std::string_view` as parameter, and maybe it'll be changed to `std::string` or maybe `const char*`

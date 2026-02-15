@@ -9,7 +9,7 @@
 
 /* Files I/O + system */
 namespace Tools::Win32::File {
-    cstr cstr_safe(strview s, str& temp) {
+    cstr static cstr_safe(strview s, str& temp) {
         if (s.data()[s.size()] == '\0')
             return s.data();
 

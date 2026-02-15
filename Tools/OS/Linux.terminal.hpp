@@ -5,6 +5,7 @@
 #include <sys/ioctl.h>   // ioctl, winsize, Linux only!
 #include <unistd.h>      // STDOUT_FILENO
 #include <cstdio>        // fileno, stdout
+#include <iostream>
 
 // Terminal utils
 namespace Tools::OS::Terminal{
@@ -46,5 +47,20 @@ namespace Tools::OS::Terminal{
             {"X", TerminalSizeWidth(0)},
             {"Y", TerminalSizeHeight(0)}
         };
+    }
+
+     void Clear(const bool clear_scrollback = true) {
+        // If not a real terminal (pipe/file), do nothing
+        if (!isatty(STDOUT_FILENO)) return;
+
+        if (clear_scrollback) {
+            // Clear screen + scrollback + move cursor home
+            std::cout << "\x1b[2J\x1b[3J\x1b[H";
+        } else {
+            // Clear visible screen only + move cursor home
+            std::cout << "\x1b[2J\x1b[H";
+        }
+
+        std::cout.flush();
     }
 }
