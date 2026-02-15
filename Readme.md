@@ -3,6 +3,59 @@
 ### A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money
 ### I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
 
+# File Structure
+```
+Header files:
+Tools/Casting.hpp ......................................: Type Casting aliases.
+Tools/Edges.hpp ........................................: Min/max getter for types
+Tools/Files.hpp ........................................: I/O files utility
+Tools/FormatNumber.hpp .................................: Number formatter
+Tools/IVec.hpp .........................................: "Improved Vector", custom made container
+Tools/Linking.hpp ......................................: Linking utility to dynamic linked (.dll) using windows API
+Tools/OS.hpp ...........................................: Some utilities using OS APIs
+Tools/Random.hpp .......................................: Random Number generator 
+Tools/RandomHW.hpp .....................................: Hardware-level random generator (x86 only)
+Tools/Randomizer.hpp ...................................: Stuff to make random number (used by Random and RandomHW)
+Tools/Rounding.hpp .....................................: Python-like rounding utility
+Tools/Style.hpp ........................................: Text styler for str
+Tools/StyleW.hpp .......................................: Text styler for wstr
+Tools/Types.hpp ........................................: Type aliases
+Tools/Vector.hpp .......................................: Pyhton-like functions for vector
+Tools/VectorSlice.hpp ..................................: Vector slicing function
+Tools/Win32.hpp ........................................: Windows API utility
+
+Folders:
+Tools/Deprecated/* .....................................: Deprecated libs, because it'll break you project instead making coding more fun and productive++
+Tools/Types/* ..........................................: Types aliased "concept" + "using" implementations
+Tools/IVec/* ...........................................: Improved vector implementations
+Tools/Random/* .........................................: Random number implementations
+Tools/RandomHW/* .......................................: Hardware-level random number implementations
+Tools/OS/* .............................................: Some utilities using OS APIs implementations
+
+Tools/IVec/* :
+Tools/IVec/IVec.hpp ....................................: All include packed
+Tools/IVec/IVecfmt.hpp .................................: Formatter for {fmt} [deprecated, this thing has already iterators]
+Tools/IVec/IVec_c.base.hpp .............................: Base IVec class
+Tools/IVec/IVec_c.init.hpp .............................: Initializers for IVec
+Tools/IVec/IVec_c.basic.hpp  ...........................: Minimal functions
+Tools/IVec/IVec_c.advanced.hpp .........................: Extended functions
+Tools/IVec/IVec_c.convert.hpp ..........................: Conversion utilities to std::vector, std::span, and something else
+Tools/IVec/IVec_c.data.hpp .............................: Return pointer data
+Tools/IVec/IVec_c.getset.hpp ...........................: Getter and setter functions
+Tools/IVec/IVec_c.iter.hpp .............................: Iterators functions
+Tools/IVec/IVec_c.legacy.hpp ...........................: Legacy functions with vector-like dictions
+
+Tools/Types/* :
+Tools/Types/Types.containers.hpp .......................: Containers aliases
+Tools/Types/Types.int.hpp ..............................: Signed interger aliases
+Tools/Types/Types.uint.hpp .............................: Unsigned integer aliases
+Tools/Types/Types.float.hpp ............................: Floating aliases 
+Tools/Types/Types.ptr.hpp ..............................: Pointer aliases [not recommended to use]
+Tools/Types/Types.string.hpp ...........................: String type aliases
+Tools/Types/Types.memory.hpp ...........................: Smart pointer aliases
+
+```
+
 # Lib `Tools.Types`
 
 Types aliasing to make you less typing just for data types
@@ -57,7 +110,7 @@ Another type alias that you and I may not use often
 | Pointer to data | `T*` | `ptr<T>` |
 | Pointer to constant data | `const T*` | `ptrcd<T>` |
 | Constant pointer to data | `T const*` | `cptr<T>` |
-| Constant pointer to constant data | `const T *const` |
+| Constant pointer to constant data | `const T *const` | `cptrcd<T>` |
 
 ### C++ Smart Pointers
 
@@ -66,7 +119,6 @@ Another type alias that you and I may not use often
 | `std::unique_ptr<T>` | `uptr<T>` |
 | `std::shared_ptr<T>` | `sptr<T>` |
 | `std::weak_ptr<T>` | `wptr<T>` |
-| `cptrcd<T>` |
 
 ### Commonly used packed type with `concept`
 | Concept | Types convered |
@@ -102,30 +154,33 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 # Lib `Tools.Casting`
 
-Code:
-```cpp
-namespace Tools::Cast {
-    template <typename To, typename From>
-    constexpr To scast(From&& value) noexcept;
+- ### Decription
+    This is just aliases for `static_`, `dynamic_`, `const_`, `reintepret_`, and `any_` cast, because using 2 words for me looks like too verbose.
 
-    template <typename To, typename From>
-    To dcast(From&& value);
+- ### Code:
+    ```cpp
+    namespace Tools::Cast {
+        template <typename To, typename From>
+        constexpr To scast(From&& value) noexcept;
 
-    template <typename To, typename From>
-    constexpr To ccast(From&& value) noexcept;
+        template <typename To, typename From>
+        To dcast(From&& value);
 
-    template <typename To, typename From>
-    constexpr To rcast(From&& value) noexcept;
+        template <typename To, typename From>
+        constexpr To ccast(From&& value) noexcept;
 
-    template <typename To>
-    To acast(const std::any& a);
+        template <typename To, typename From>
+        constexpr To rcast(From&& value) noexcept;
 
-    template <typename To, typename From>
-    constexpr To cast(From&& value);
-}
-```
+        template <typename To>
+        To acast(const std::any& a);
 
-### 1. `scast<T>(value)`: Alias for static_cast.
+        template <typename To, typename From>
+        constexpr To cast(From&& value);
+    }
+    ```
+
+### 1. `scast<T>(value)` alias for `static_cast`.
 
 - ### Advantage:
     - Compile time conversion
@@ -136,16 +191,18 @@ namespace Tools::Cast {
     - Numeric conversion
     - Upcast/downcast non-polymorphic
 
-### 2. `dcast<T>(value)`: Alias for dynamic_cast.
+### 2. `dcast<T>(value)` alias for `dynamic_cast`.
 
 - ### Advantage:
+    - Runtime castings
+- ### Used for:
     - ONLY for pointers and references
     - Needs RTTI
     - Runtime-only (not constexpr compatible)
     Used for:
     - Downcast polymorphic which needs runtime checking
 
-### 3. `ccast<T>(value)` Alias for const_cast.
+### 3. `ccast<T>(value)` alias for `const_cast`.
 
 - ### Used for:
     - Deletes/adds qualifier "const"
@@ -154,7 +211,7 @@ namespace Tools::Cast {
 - ### WARNING:
     - Deleting const from absolute const object will cause Undefined Behaviour
 
-### 4. `rcast<T>(value)` Alias for reinterpret_cast.
+### 4. `rcast<T>(value)` alias for `reinterpret_cast`.
 
 - ### Advantage:
     - Bit-level cast
@@ -165,7 +222,7 @@ namespace Tools::Cast {
     - You don't know memory layout
     - No other safe alternatives
 
-### 5. `acast<T>(std::any)` Alias for std::any_cast.
+### 5. `acast<T>(std::any)` alias for `std::any_cast`.
 
 - ### Advantage:
     - Runtime checked
@@ -184,26 +241,26 @@ namespace Tools::Cast {
 
 # Lib `Tools.Edges`
 
-code:
-```cpp
-#pragma once
+- ### Description
+    Should've named "limits", but I pick "Edges" just because people won't confuse `<limits>` and `Tools.Limits`, so `Tools.Edges` were chosen.
+- ### API Code:
+    ```cpp
+    #pragma once
 
-#include <limits>
+    #include <limits>
 
-// Macro shortcut
-#define GET_MAX(T) std::numeric_limits<T>::max()
-#define GET_MIN(T) std::numeric_limits<T>::min()
+    // Macro shortcut
+    #define GET_MAX(T) std::numeric_limits<T>::max()
+    #define GET_MIN(T) std::numeric_limits<T>::min()
 
-namespace Tools::Edge {
-    template <typename T>
-    T GetMax();
+    namespace Tools::Edge {
+        template <typename T>
+        T GetMax();
 
-    template <typename T>
-    T GetMin()
-}
-```
-
-Should've named "limits", but I pick "Edges" just because people won't confuse `<limits>` and `Tools.Limits`, so `Tools.Edges` were chosen.
+        template <typename T>
+        T GetMin()
+    }
+    ```
 
 `GetMax<T>` : To get max value of given types \
 `GetMin<T>` : To get min value of given types
@@ -567,7 +624,7 @@ Recommended DLL Signature generation
     ```
 
 - ### Description
-    > - This is basically `CallFunctionC` but with slightly safe hacks
+    - This is basically `CallFunctionC` but with slightly safe hacks
 
 ### 9. RemoveSignature (Optional - Itanium ABI)
 - ### API Code
@@ -653,18 +710,18 @@ Recommended DLL Signature generation
     #endif
     ```
 
-1. ### Terminal
-    The function `TerminalSize` returns current terminal size (duh), you have 2 choises, `X` (row) axis or `Y` (collumn) axis. You pass it on 1st parameter.
-    There are 3 other function that wraps 1st function. `-Width`, `-Height`, and `-Map`. 2nd and 3rd are obvious, 4th return an `std::unordered_map` of `X` and `Y` axis.
+    ### 1. Terminal
+    - The function `TerminalSize` returns current terminal size (duh), you have 2 choises, `X` (row) axis or `Y` (collumn) axis. You pass it on 1st parameter.
+    - There are 3 other function that wraps 1st function. `-Width`, `-Height`, and `-Map`. 2nd and 3rd are obvious, 4th return an `std::unordered_map` of `X` and `Y` axis.
 
-2. ### File
-    You can ignore the `cstr_safe` function, it's just used internally for converting stuffs. All function are using `std::string_view` as parameter, and maybe it'll be changed to `std::string` or maybe `const char*`
+    ### 2. File
+    - You can ignore the `cstr_safe` function, it's just used internally for converting stuffs. All function are using `std::string_view` as parameter, and maybe it'll be changed to `std::string` or maybe `const char*`
 
-3. ### Sleep
-    This is sleep function provides by your OS, sometimes `std::this_thread::sleep_for(std::chrono::seconds(n));` can sometimes be inaccurate if you pass _too complex_ number.
+    ### 3. Sleep
+    - This is sleep function provides by your OS, sometimes `std::this_thread::sleep_for(std::chrono::seconds(n));` can sometimes be inaccurate if you pass _too complex_ number.
 
-4. ### Process
-    Yes, this is some sort of a process hacking tools, you can read, write (yes, an actual writing on specified address like how game h*kcing). Please use it fairly and wisely, because wrong movement can crash your project or even you OS. Also, you can check if _**a** process_ or _**this** process_ is running with admin privilege.
+    ### 4. Process
+    - Yes, this is some sort of a process hacking tools, you can read, write (yes, an actual writing on specified address like how game h*kcing). Please use it fairly and wisely, because wrong movement can crash your project or even you OS. Also, you can check if _**a** process_ or _**this** process_ is running with admin privilege.
 
 ---
 
@@ -758,10 +815,10 @@ Recommended DLL Signature generation
 # Lib `Tools.PrintHeader`
 
 - ### Description:
-    - This function is to make something like this:
-        ```
-        ----------------[ Hello! ]----------------
-        ```
+    This function is to make something like this:
+    ```
+    ----------------[ Hello! ]----------------
+    ```
 
 - ### API Code:
     ```cpp
@@ -771,7 +828,7 @@ Recommended DLL Signature generation
             char borderChar = '=',
             int offset = 0,
             bool printing = false
-        ) { ... };
+        );
     }
     ```
 
