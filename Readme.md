@@ -34,11 +34,23 @@
     |        Folder         |                   What is this?                   |
     |-----------------------|---------------------------------------------------|
     |`Tools/Deprecated/*`   | Deprecated libs, because it'll break you project instead making coding more fun and productive++|
-    |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
     |`Tools/IVec/*`         | Improved vector implementations                   |
+    |`Tools/OS/*`           | Some utilities using OS APIs implementations      |
     |`Tools/Random/*`       | Random number implementations                     |
     |`Tools/RandomHW/*`     | Hardware-level random number implementations      |
-    |`Tools/OS/*`           | Some utilities using OS APIs implementations      |
+    |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
+    |`Tools/Vector/*`       | Common operations for Vector implementations      |
+
+- ### `Tools/Types/*` :
+    |                   Files               |           What is this?            |
+    |---------------------------------------|------------------------------------|
+    | `Tools/Types/Types.containers.hpp`    | Containers aliases                 |
+    | `Tools/Types/Types.int.hpp`           | Signed interger aliases            |
+    | `Tools/Types/Types.uint.hpp`          | Unsigned integer aliases           |
+    | `Tools/Types/Types.float.hpp`         | Floating aliases                   |
+    | `Tools/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
+    | `Tools/Types/Types.string.hpp`        | String type aliases                |
+    | `Tools/Types/Types.memory.hpp`        | Smart pointer aliases              |
 
 - ### `Tools/IVec/*` :
     |               File                |                           What is this?                            |
@@ -55,17 +67,30 @@
     |`Tools/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
     |`Tools/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
 
+- ### `Tools/OS/*`:
+    |...|...|
+    |---|---|
+    |...|...|
 
-- ### `Tools/Types/*` :
-    |                   Files               |           What is this?            |
-    |---------------------------------------|------------------------------------|
-    | `Tools/Types/Types.containers.hpp`    | Containers aliases                 |
-    | `Tools/Types/Types.int.hpp`           | Signed interger aliases            |
-    | `Tools/Types/Types.uint.hpp`          | Unsigned integer aliases           |
-    | `Tools/Types/Types.float.hpp`         | Floating aliases                   |
-    | `Tools/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
-    | `Tools/Types/Types.string.hpp`        | String type aliases                |
-    | `Tools/Types/Types.memory.hpp`        | Smart pointer aliases              |
+- ### `Tools/Random/*`:
+    |...|...|
+    |---|---|
+    |...|...|
+
+- ### `Tools/Random.Basic/*`:
+    |...|...|
+    |---|---|
+    |...|...|
+
+- ### `Tools/RandomHW/*`:
+    |...|...|
+    |---|---|
+    |...|...|
+
+- ### `Tools/Vector/*`:
+    |...|...|
+    |---|---|
+    |...|...|
 
 ---
 
