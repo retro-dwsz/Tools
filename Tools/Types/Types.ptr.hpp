@@ -1,6 +1,6 @@
 #pragma once
 
-/* Pointer to data*/
+/* Pointer to data */
 template <typename T>
 using ptr = T*;
 
@@ -12,6 +12,6 @@ using ptrcd = const T*;
 template <typename T>
 using cptr = T const*;
 
-/* Constant pointer to constant data*/
+/* Constant pointer to constant data */
 template <typename T>
 using cptrcd = const T *const;

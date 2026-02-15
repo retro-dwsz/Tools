@@ -8,7 +8,7 @@ namespace Tools::Vector {
     template <typename T>
     vec<T> Slice(const vec<T>& vec, idx x, idx y) {
         // Handle negative indices
-        const auto size = static_cast<idx>(vec.size());
+        const idx size = vec.size();
         if (x < 0) x = size + x;
         if (y < 0) y = size + y;
 
@@ -22,7 +22,7 @@ namespace Tools::Vector {
 
     template <typename T>
     vec<T> Slice(const vec<T>& vec, idx n) {
-        const auto size = static_cast<idx>(vec.size());
+        const idx size = vec.size();
         idx start, end;
 
         if (n >= 0) {

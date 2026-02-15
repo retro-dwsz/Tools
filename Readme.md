@@ -1,24 +1,24 @@
 # Tools.cpp
 
-### A simple lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money
+### A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money
 ### I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
 
 # Lib `Tools.Types`
 
 Types aliasing to make you less typing just for data types
 
-|Integers || Unsiged Integers|| Floating ||
-|--------|--------|--------|--------|-------|--------|
+### Integer, Unsiged Integer, and Floating
 |Original|Aliased|Original|Aliased|Original|Aliased|
+|--------|--------|--------|--------|-------|--------|
 |`int8_t`| `i8`|`uint8_t`| `u8`|`float`| `f32`|
 |`int16_t`| `i16`|`uint16_t`| `u16`|`double`| `f64`|
 |`int32_t`| `i32`|`uint32_t`| `u32`|`long double`| `fld`|
 |`int64_t`| `i64`|`uint64_t`| `u64`| |  |
 |`ssize_t` | `sidx` |`size_t`| `idx`| |  |
 
-|C string || C++ String ||
-|--------|--------|--------|--------|
+### C & C++ String 
 |Original|Aliased|Original|Aliased|
+|--------|--------|--------|--------|
 |`const char*` |`cstr`|`std::string`|`str`|
 |`const char16_t*`|`cstr16`| `std::wstring`|`wstr`|
 |`const char32_t*`|`cstr32`| `std::u16string`|`str16`|
@@ -26,9 +26,9 @@ Types aliasing to make you less typing just for data types
 |||`std::stringstream`|`sstream`|
 |||`std::ostringstream`|`ostream`|
 
-|C++ Value Containers||
-|--------|--------|
+### C++ Value Containers
 |Original|Aliased|
+|--------|--------|
 | `std::vector<T>` | `vec<T>` |
 | `std::array<T, idx>` | `arr<T, idx>` |
 | `std::map<K, V>` | `map<K, V>` |
@@ -41,24 +41,34 @@ Types aliasing to make you less typing just for data types
 | `std::tuple<T...>` | `tuple<T...>` |
 | `std::list<T>` | `list<T>` |
 
-|C++ Type Containers||
-|--------|--------|
+### C++ Type Containers
 |Original|Aliased|
+|--------|--------|
 | `std::optional<T>` | `topt<T>` |
 | `std::variant<T...>` | `tvar<T...>` |
 | `std::expected<A, B>` | `texp<A, B>` |
 
 Another type alias that you and I may not use often
 
-|C/C++ Pointers | | C++ Smart Pointers | |
-|--------|--------|--------|--------|
-|Original|Aliased|Original|Aliased|
-| `T*` | `ptr<T>` | `std::unique_ptr<T>` | `uptr<T>` |
-| `const T*` | `ptrcd<T>` | `std::shared_ptr<T>` | `sptr<T>` |
-| `T const*` | `cptr<T>` | `std::weak_ptr<T>` | `wptr<T>` |
-| `const T *const` | `cptrcd<T>` |
+### Basic C/C++ Pointers
 
-Commonly used packed type with `concept`
+|Name|Original|Aliased |
+|-|--------|--------|
+| Pointer to data | `T*` | `ptr<T>` |
+| Pointer to constant data | `const T*` | `ptrcd<T>` |
+| Constant pointer to data | `T const*` | `cptr<T>` |
+| Constant pointer to constant data | `const T *const` |
+
+### C++ Smart Pointers
+
+|Original|Aliased|
+|--------|--------|
+| `std::unique_ptr<T>` | `uptr<T>` |
+| `std::shared_ptr<T>` | `sptr<T>` |
+| `std::weak_ptr<T>` | `wptr<T>` |
+| `cptrcd<T>` |
+
+### Commonly used packed type with `concept`
 | Concept | Types convered |
 |---|---|
 | `Nx32` | `i32, f32` |
@@ -94,7 +104,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 Code:
 ```cpp
-namespace Tools::Cast{
+namespace Tools::Cast {
     template <typename To, typename From>
     constexpr To scast(From&& value) noexcept;
 
@@ -259,10 +269,10 @@ Parameters for 1st and 2nd functions:\
 - Seperator between N digits this is because not every country use the same formatting.
 - In Europe, we use dot (.) for thousands, and comma for decimal (,), and the opposite in the US and around it. 
 - Some EU countries even use space for thousands seperator, usually around France or Scandinavia.
-- For example: 
+- ### For example: 
     - `€1.000,50` or `€1 000,50` in C will be `1000.50`
     - `$1,000.50` in C will be `1000.50`
-- Example of code usage:
+- ### Example of code usage:
     - `Format(314217)` will return `314'217`
     - `Format(314217, '\'', 3)` will return `314'217`
     - `Format(3142.17, '\'', 3)` will return `3'142.17`
@@ -362,33 +372,33 @@ This is a windows-specific tool to call a .dll during runtime.
 
 Functions:
 ### 1. `GetFile`
-- Code
+- ### API Code
     ```cpp
     str GetFile(
         const str& File
     );
     ```
-- Description
-    > Resolves and returns the DLL file path based on the given base name.
+- ### Description
+    Resolves and returns the DLL file path based on the given base name.
 
-- Parameters
-    > File — Base name of the .dll file (e.g. "Test.dll")
+- ### Parameters
+    File — Base name of the .dll file (e.g. "Test.dll")
 
-- Returns
-    > Resolved file path as str
+- ### Returns
+    Resolved file path as str
 
-- Notes
-    > - Intended for internal path normalization
-    > - Can be extended to support custom search directories
+- ### Notes
+    - Intended for internal path normalization
+    - Can be extended to support custom search directories
 
-- Example
+- ### Example
     ```cpp
     str File = GetFile("DynamicLib");
     fmt::println("file {}", File);  // DynamicLib.dll
     ```
 
 ### 2. `LoadSymbol`
-- Code
+- ### API Code
     ```cpp
     T LoadSymbol(
         const HMODULE lib,
@@ -396,22 +406,22 @@ Functions:
     );
     ```
 
-- Description
-    > Loads a function symbol (entry point) from a previously loaded DLL module.
+- ### Description
+    Loads a function symbol (entry point) from a previously loaded DLL module.
 
-- Parameters
-    > lib — Handle returned by LoadLibrary
-    > EntryPoint — Exported function name (must match exactly)
+- ### Parameters
+    lib — Handle returned by LoadLibrary
+    EntryPoint — Exported function name (must match exactly)
 
-- Returns
-    > Function pointer of type T
+- ### Returns
+    Function pointer of type T
 
 - Warning ⚠️
-    > - Incorrect function signature casting will cause undefined behavior or crashes.
-    > - Used internally only
+    - Incorrect function signature casting will cause undefined behavior or crashes.
+    - Used internally only
 
 ### 3. `CallFunction` (Generic Template)
-- Code
+- ### API Code
     ```cpp
     template<typename Return, typename... Args>
     Return CallFunction(
@@ -420,18 +430,18 @@ Functions:
         Args... args
     );
     ```
-- Description
-    > Fully generic function caller for DLL exports with arbitrary arguments and return type.
+- ### Description
+    Fully generic function caller for DLL exports with arbitrary arguments and return type.
 
-- Parameters
-    > - `File` — Target DLL file
-    > - `EntryPoint` — Function name (mangling must be disabled with extern "C")
-    > - `Args...` — Arguments forwarded to the function
+- ### Parameters
+    - `File` — Target DLL file
+    - `EntryPoint` — Function name (mangling must be disabled with extern "C")
+    - `Args...` — Arguments forwarded to the function
 
-- Returns
-    > Function return value of type Return
+- ### Returns
+    Function return value of type Return
 
-- Example
+- ### Example
     ```cpp
     int result = Tools::Linking::CallFunction<int>(
         "Math.dll",
@@ -444,7 +454,7 @@ Functions:
     ```
 
 ### 4. `CallFunctionA` (String Message)
-- Code
+- ### API Code
     ```cpp
     void CallFunctionA(
         str& File,
@@ -454,15 +464,15 @@ Functions:
         const bool debug = true
     );
     ```
-- Description
-    > Calls a DLL function that accepts a narrow string (std::string / char*) message.
+- ### Description
+    Calls a DLL function that accepts a narrow string (std::string / char*) message.
 
-- Parameters
-    > - `File` — Target DLL file
-    > - `Msg` — Message forwarded to DLL
-    > - `EntryPoint` — Exported function name
-    > `TerminalSize` — Optional formatting/log width
-    > `debug` — Enables debug output
+- ### Parameters
+    - `File` — Target DLL file
+    - `Msg` — Message forwarded to DLL
+    - `EntryPoint` — Exported function name
+    `TerminalSize` — Optional formatting/log width
+    `debug` — Enables debug output
 
 Recommended DLL Signature generation
     ```cpp
@@ -470,7 +480,7 @@ Recommended DLL Signature generation
     ```
 
 ### 5. `CallFunctionAW` (Wide String)
-- Code
+- ### API Code
     ```cpp
     void CallFunctionAW(
         str& File,
@@ -480,20 +490,20 @@ Recommended DLL Signature generation
         const bool debug = true
     );
     ```
-- Description
-    > Wide-character version of CallFunctionA, designed for Unicode-safe messaging.
+- ### Description
+    Wide-character version of CallFunctionA, designed for Unicode-safe messaging.
 
 - Recommended DLL Signature
     ```
     extern "C" void MyFunction(const wchar_t* msg);
     ```
 
-- Notes
-    > - Useful for UTF-16 Windows APIs
-    > - Avoids encoding mismatch issues
+- ### Notes
+    - Useful for UTF-16 Windows APIs
+    - Avoids encoding mismatch issues
 
 ### 6. `CallFunctionB` (No Arguments)
-- Code:
+- ### API Code:
     ```cpp
     void CallFunctionB(
         str& File,
@@ -502,15 +512,15 @@ Recommended DLL Signature generation
         const bool debug = true
     );
     ```
-- Description
-    > - Calls a DLL function that takes no parameters.
+- ### Description
+    - Calls a DLL function that takes no parameters.
 
-- Example DLL Export
+- ### Example DLL Export
     ```cpp
     extern "C" void Init();
     ```
 
-- Example Usage
+- ### Example Usage
     ```cpp
     Tools::Linking::CallFunctionB(
         "Plugin.dll",
@@ -519,7 +529,7 @@ Recommended DLL Signature generation
     ```
 
 ### 7. CallFunctionC (C-style argv)
-- Code
+- ### API Code
     ```cpp
     int CallFunctionC(
         str& File,
@@ -529,11 +539,11 @@ Recommended DLL Signature generation
         const bool debug = true
     );
     ```
-- Description
-    > - Simulates int main(int argc, const char** argv) style function calls inside a DLL.
+- ### Description
+    - Simulates int main(int argc, const char** argv) style function calls inside a DLL.
 
-- Parameters
-    > -Args — Safe vector representation of argv (argc inferred)
+- ### Parameters
+    - Args — Safe vector representation of argv (argc inferred)
 
 - Recommended DLL Signature
     ```cpp
@@ -541,11 +551,11 @@ Recommended DLL Signature generation
     ```
 
 - Why vector instead of raw argv?
-    > - Because raw pointer mismatches = instant crash.
-    > - Vector is safer and controlled.
+    - Because raw pointer mismatches = instant crash.
+    - Vector is safer and controlled.
 
 ### 8. CallFunctionC_s (Safer Variant)
-- Code
+- ### API Code
     ```cpp
     int CallFunctionC_s(
         const str& File,
@@ -556,11 +566,11 @@ Recommended DLL Signature generation
     );
     ```
 
-- Description
+- ### Description
     > - This is basically `CallFunctionC` but with slightly safe hacks
 
 ### 9. RemoveSignature (Optional - Itanium ABI)
-- Code
+- ### API Code
     ```cpp
     template <typename T>
     str RemoveSignature(
@@ -570,23 +580,27 @@ Recommended DLL Signature generation
     ```
 
 - Availability
-    > Only enabled if `__has_include(<cxxabi.h>)`
+    Only enabled if `__has_include(<cxxabi.h>)`
 
-- Description
-    > - Removes C++ mangled signatures (Itanium ABI) to produce readable function names.
+- ### Description
+    - Removes C++ mangled signatures (Itanium ABI) to produce readable function names.
 
 - Use Case
-    > - Debugging symbol names
-    > - Reflection utilities
-    > - Cross-platform demangling (Clang/GCC)
+    - Debugging symbol names
+    - Reflection utilities
+    - Cross-platform demangling (Clang/GCC)
 
 ---
 
-# Lib Tools.OS
-- API Codes:
+# Lib `Tools.OS`
+
+- ### Description:
+    - This is a library for essential OS API functions, but make it easier.
+
+- ### API Codes:
     ```cpp
     // Terminal utils
-    namespace Tools::OS::Terminal{
+    namespace Tools::OS::Terminal {
         i32 TerminalSize(cstr DIR = "X", const i32 offset = 0)
         i32 TerminalSizeWidth(const i32 offset = 0){return TerminalSize("X", offset);}
         i32 TerminalSizeHeight(const i32 offset = 0){return TerminalSize("Y", offset);}
@@ -639,26 +653,117 @@ Recommended DLL Signature generation
     #endif
     ```
 
-This is a library for essential OS API functions, but make it easier.
+1. ### Terminal
+    The function `TerminalSize` returns current terminal size (duh), you have 2 choises, `X` (row) axis or `Y` (collumn) axis. You pass it on 1st parameter.
+    There are 3 other function that wraps 1st function. `-Width`, `-Height`, and `-Map`. 2nd and 3rd are obvious, 4th return an `std::unordered_map` of `X` and `Y` axis.
 
-1. Terminal
-    > The function `TerminalSize` returns current terminal size (duh), you have 2 choises, `X` (row) axis or `Y` (collumn) axis. You pass it on 1st parameter.
-    > There are 3 other function that wraps 1st function. `-Width`, `-Height`, and `-Map`. 2nd and 3rd are obvious, 4th return an `std::unordered_map` of `X` and `Y` axis.
+2. ### File
+    You can ignore the `cstr_safe` function, it's just used internally for converting stuffs. All function are using `std::string_view` as parameter, and maybe it'll be changed to `std::string` or maybe `const char*`
 
-2. File
-    > You can ignore the `cstr_safe` function, it's just used internally for converting stuffs. All function are using `std::string_view` as parameter, and maybe it'll be changed to `std::string` or maybe `const char*`
+3. ### Sleep
+    This is sleep function provides by your OS, sometimes `std::this_thread::sleep_for(std::chrono::seconds(n));` can sometimes be inaccurate if you pass _too complex_ number.
 
-3. Sleep
-    > This is sleep function provides by your OS, sometimes `std::this_thread::sleep_for(std::chrono::seconds(n));` can sometimes be inaccurate if you pass _too complex_ number.
-
-4. Process
-    > Yes, this is some sort of a process hacking tools, you can read, write (yes, an actual writing on specified address like how game h*kcing). Please use it fairly and wisely, because wrong movement can crash your project or even you OS. Also, you can check if _**a** process_ or _**this** process_ is running with admin privilege.
+4. ### Process
+    Yes, this is some sort of a process hacking tools, you can read, write (yes, an actual writing on specified address like how game h*kcing). Please use it fairly and wisely, because wrong movement can crash your project or even you OS. Also, you can check if _**a** process_ or _**this** process_ is running with admin privilege.
 
 ---
 
-# Lib Tools.PrintHeader
+# Lib `Tools.Style`
 
-- Code:
+- ### Description:
+    - Library to make you borix text into something from like Ms. Word or something, like colors, italic, bold, etc etc. Use only `Bold`, `Italic`, `Under`, `Strike`, `ColorFG/BG` only.
+
+- ### API Codes
+    ```cpp
+    namespace Tools::Styling {
+        /* RGB Color */
+        struct Color;
+        
+        /* Basic FG coloring*/
+        str Colorize(const str& Text, const u64 Hex);
+
+        /* Helper function to extract RGB components from a 32-bit color value */
+        void static ExtractRGB(u32& Alpha, u8& Red, u8& Green, u8& Blue);
+
+        /* Convert hex in str -> actual useable number*/
+        u32 ParseHex(const str& s);
+
+        /* Blend color with opacity */
+        u32 BlendRGB(u32 color_v, i32 alpha);
+        
+        /* Blend FG + BG color with opacity */
+        u8 BlendRGB(u8 fg, u8 bg, i32 alpha);
+        
+        /* ---- To make everything after "0x" caps */
+        str CapsPtr(str& s);
+        
+        /* ---- Basic styles ---- */
+        /* Bold text */
+        str Bold(const str& Text = "Hello, world!");
+        
+        /* Italic text */
+        str Italic(const str& Text = "Hello, world!");
+        
+        /* Underline text */
+        str Under(const str& Text = "Hello, world!");
+        
+        /* Strikethrough text */
+        str Strike(const str& Text = "Hello, world!");
+        
+        /* ---- Coloring styles ---- */
+        /* Foreground color with opacity */
+        str ColorFG(const str& Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100);
+        
+        /* Background color with opacity */
+        str ColorBG(const str& Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100);
+        
+        /* Foreground color with opacity using struct Color */
+        str ColorizeFG(const str text, Color rgb);
+        
+        /* Background color with opacity using struct Color */
+        str ColorizeBG(const str text, Color rgb);
+        
+        /* ---- To reset mess you've made before ---- */
+        void Reset(str& Text);
+    }
+    ```
+
+---
+
+# Lib `Tools.StyleW`
+
+- ### Description:
+    - Same as `Tools.Style`, but with `std::wstring` (`wstr`) support, slightly different choise of diction, but still good, and maybe kinda simpler. THe Name of the functions are already describe itself.
+
+- API Codes:
+    ```cpp
+    namespace Tools::StylingW {
+        str Colorize(const str& Text, const u64&Hex);
+        str CapsPtr(str& s);
+        str Bold(const str& Text);
+        str Italic(const str& Text);
+        str Under(const str& Text);
+        str Strike(const str& Text);
+        str ColorFG(const str& Text, u32 color_tx = 0xFF8A46, i32 alpha = 100);
+        str ColorBG(const str& Text, u32 color_bg = 0x092655, i32 alpha = 100);
+        str ColorFG(const str& text, CommonW::Color& rgb);
+        str ColorBG(const str& text, CommonW::Color& rgb);
+        str Reset(const str& Text);
+    }
+
+    ```
+
+---
+
+# Lib `Tools.PrintHeader`
+
+- ### Description:
+    - This function is to make something like this:
+        ```
+        ----------------[ Hello! ]----------------
+        ```
+
+- ### API Code:
     ```cpp
     namespace Tools::Styling {
         str PrintMid (
@@ -670,31 +775,25 @@ This is a library for essential OS API functions, but make it easier.
     }
     ```
 
-- Description:
-    > This function is to make something like this:
-    ```
-    ----------------[ Hello! ]----------------
-    ```
+- ### Examples:
+    - `Tools::Styling::PrintMid("[ My Cool C++ App! ]", '~')`
 
-- Examples:
-    > `Tools::Styling::PrintMid("[ My Cool C++ App! ]", '~')`
+    - return: 
+        ```
+        ~~~~~~~~~~~~~~~~[ My Cool C++ App! ]~~~~~~~~~~~~~~~~
+        ```
 
-    > return: 
-    ```
-    ~~~~~~~~~~~~~~~~[ My Cool C++ App! ]~~~~~~~~~~~~~~~~
-    ```
+    - `Tools::Styling::PrintMid(" My magcial C++ App! ", '/')`
 
-    > `Tools::Styling::PrintMid(" My magcial C++ App! ", '/')`
-
-    > return: 
-    ```
-    //////////////// My magcial C++ App! ////////////////
-    ```
+    - return: 
+        ```
+        //////////////// My magcial C++ App! ////////////////
+        ```
 
 ---
 
 # Lib `Tools.Random`
- * Code suffixes you'll find on Random functions
+ * ### Code suffixes you'll find on Random functions
     | **Suffix**|      **Meaning**      | **Types** |       **Meaning**      |
     |-----------|-----------------------|-----------|------------------------|
     | `I`       | Integer (i32)         |  `VI`     |  Vector i32            |
@@ -712,7 +811,7 @@ This is a library for essential OS API functions, but make it easier.
     |           |                       |  `SBD`    |  Scattered Bundled f64 |
 
 - ### **_Example_** API Codes:
-    > Supported types are `i32`, `i64`, `f32`, and `f64`
+    - Supported types are `i32`, `i64`, `f32`, and `f64`. `Num` will return single value, `Nums` will returna bunch of numbers.
     ```cpp
     namespace Tools::Random {
         /* Singles */
@@ -750,21 +849,21 @@ This is a library for essential OS API functions, but make it easier.
     }
     ```
 
-- Explanations
-    > - `Singes` return single random value
-    > - `Vector` returns multiple random number in `std::vector<T>`
-    > - `Bundled` returns multiple random number in `std::vector<std::vector<T>>`
-    > - `Scattered Bundled` returns multiple random number in `std::vector<std::vector<T>>` but with different count of each sub-vector
+- ### Explanations
+    - `Singes` return single random value
+    - `Vector` returns multiple random number in `std::vector<T>`
+    - `Bundled` returns multiple random number in `std::vector<std::vector<T>>`
+    - `Scattered Bundled` returns multiple random number in `std::vector<std::vector<T>>` but with different count of each sub-vector
 
-- Note:
-    > I **_don't_** recommend using singles function inside a loop, instead, generate multiple value then iterate through that container instead
+- ### Note:
+    - I **_don't_** recommend using singles function inside a loop, instead, generate multiple value then iterate through that container instead
 
 ---
 
 # Lib `Tools.RandomHW`
 
 - Basically same as `Tools.Random`, but with better seeder from `x86` function called `RDSEED` and `RDRAND`, you just add the `HW` on the namespace (`Tools::Random` -> `Tools::RandomHW`), and you can access the functions.
-- This lib is limited to `x86`, using this on ARM may invalid or maybe cause something bad. 
+- This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad. 
 - Make sure to add `-mrdseed` `-mrdrnd` `-march=native` flag on your compiler
 
 - API Codes
@@ -833,18 +932,154 @@ This is a library for essential OS API functions, but make it easier.
 
 # Lib `Tools.Randomizer`
 
+Library used internally for `Tools.Random` and `Tools.RandomHW`, this just contain aliases for some objects.
+
+- Code
+    ```cpp
+    #include <random>
+    #include "Types.hpp"
+
+    using Twister32 = std::mt19937;
+    using Twister64 = std::mt19937_64;
+    using RdDevice  = std::random_device;
+
+    template <Integer T>
+    using DistInt = std::uniform_int_distribution<T>;
+
+    template <Float T>
+    using DistReal = std::uniform_real_distribution<T>;
+    ```
+
 ---
 
 # Lib `Tools.Rounding`
 
----
+Library to round floating numbers just like Python and common math knowledge.
 
-# Lib `Tools.Style`
+- API Codes:
+    ```cpp
+    namespace Tools::Round {
+        // Internal helper
+        f64 static BankersRound(f64 x);
+        
+        // Rounder
+        template <Float T>
+        T Round(const T value, const i32 digits);
+    }
+    ```
 
----
-
-# Lib `Tools.StyleW`
+- ### Example:
+    ```cpp
+    double a = 3.14159;
+    double b = Tools::Round::Round(a, 2);
+    fmt::println("a = {} -> {}", a, b);  // a = 3.14159 -> 3.14
+    ```
 
 ---
 
 # Lib `Tools.Vector`
+
+Library to do some calculation with vector. Per section includes:
+- `Vector/Vector.accumulator.hpp`
+- `Vector/Vector.find.hpp`
+- `Vector/Vector.order.hpp`
+- `Vector/Vector.order.inl.hpp`
+- `Vector/Vector.slice.hpp`
+- `Vector/Vector.slice.inl.hpp`
+
+- API Codes:
+    ```cpp
+    // Accumulators
+    namespace Tools::Vector {
+        template<Numbers T>
+        T Sum(const vec<T>& v);     // +
+        
+        template<Numbers T>
+        T Product(const vec<T>& v); // *
+        
+        template <Numbers T>
+        T Avg(const vec<T>& v);
+    }
+
+    // Find
+    namespace Tools::Vector {
+        // Binary search
+        template<Numbers T>
+        T Find_binary(const vec<T>& v, const T Element);
+        
+        // Binary search, first index + value, return pair of index and value itself
+        template<Numbers T>
+        pair<idx, T> FindP_binary(const vec<T>& v, const T Element);
+        
+        // Linear search
+        template <Numbers T>
+        T Find_line(const vec<T>& v, const T Element);
+        
+        // Linear search, first index + value, return pair of index and value itself
+        template <Numbers T>
+        T FindP_line(const vec<T>& v, const T Element);
+        
+        // Find an element frequency
+        template<Numbers T>
+        idx FindFreq(const vec<T>& v, const T Element);
+        
+        // Find elements and frequency
+        template<Numbers T>
+        umap<T, idx> FindNFreq(const vec<T>& v);
+        
+        // Extractor
+        template<Numbers T>
+        vec<T> ExtractUnique(const vec<T>& v);
+        
+        // Remove duplicated values
+        template<typename T>
+        vec<T> RemoveDuplicates(const vec<T>& Data);
+        
+        // Remove duplicated values inline
+        template<typename T>
+        void RemoveDuplicatesIln(vec<T>& Data);
+    }
+
+    // Order
+    namespace Tools::Vector {
+        template <Numbers T>
+        vec<T> Sort(const vec<T>& v);
+        
+        template <Numbers T>
+        vec<T> Shuffle(const vec<T>& v);
+        
+        template <Numbers T>
+        vec<T> Reverse(const vec<T>& v);
+    }
+
+    // Order Inline
+    namespace Tools::VectorInl {
+        template <Numbers T>
+        void Sort(vec<T>& v);
+        
+        template <Numbers T>
+        void Shuffle(vec<T>& v);
+        
+        template <Numbers T>
+        void Reverse(vec<T>& v);
+    }
+
+    // Slices (return new)
+    namespace Tools::Vector {
+        template <typename T>
+        vec<T> Slice(const vec<T>& vec, idx x, idx y);
+
+        template <typename T>
+        vec<T> Slice(const vec<T>& vec, idx n);
+    }
+
+    // Slices Inline
+    namespace Tools::VectorInl {
+        template <typename T>
+        void Slice(vec<T>& vec, idx x, idx y);
+
+        template <typename T>
+        void Slice(vec<T>& vec, idx n);
+    }
+
+    ```

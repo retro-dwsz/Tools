@@ -8,7 +8,7 @@ namespace Tools::VectorInl {
     template <typename T>
     void Slice(vec<T>& vec, idx x, idx y) {
         // Handle negative indices
-        const auto size = static_cast<idx>(vec.size());
+        const idx size = vec.size();
         if (x < 0) x = size + x;
         if (y < 0) y = size + y;
 
@@ -24,8 +24,8 @@ namespace Tools::VectorInl {
 
     template <typename T>
     void Slice(vec<T>& vec, idx n) {
-        idx size = static_cast<idx>(vec.size());
-        int start, end;
+        const idx size = vec.size();
+        idx start, end;
 
         if (n >= 0) {
             // From beginning: [0, n]

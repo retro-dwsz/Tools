@@ -26,7 +26,7 @@ namespace Tools::Styling {
     }
 
     // Helper function to extract RGB components from a 32-bit color value
-    void ExtractRGB(u32& Alpha, u8& Red, u8& Green, u8& Blue) {
+    void static ExtractRGB(u32& Alpha, u8& Red, u8& Green, u8& Blue) {
         Red = (Alpha >> 16) & 0xFF;     // Red
         Green = (Alpha >> 8) & 0xFF;    // Green
         Blue = Alpha & 0xFF;            // Blue
@@ -119,12 +119,12 @@ namespace Tools::Styling {
     }
 
     // Foreground color with opacity using struct Color
-    str ColorizeFG(const str text, Color rgb) {
+    str ColorFG(const str text, Color rgb) {
         return std::format("\033[38;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
     }
 
     // Background color with opacity using struct Color
-    str ColorizeBG(const str text, Color rgb) {
+    str ColorBG(const str text, Color rgb) {
         return std::format("\033[48;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
     }
 

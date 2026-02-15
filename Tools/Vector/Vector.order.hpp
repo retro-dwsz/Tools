@@ -4,7 +4,7 @@
 #include "../Types.hpp"
 #include <algorithm>
 
-namespace Tools::Vector {    
+namespace Tools::Vector {
     template <Numbers T>
     vec<T> Sort(const vec<T>& v){
         vec<T> out(v);
