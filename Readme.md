@@ -3,60 +3,102 @@
 ### A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money
 ### I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
 
-# File Structure
-```
-Header files:
-Tools/Casting.hpp ......................................: Type Casting aliases.
-Tools/Edges.hpp ........................................: Min/max getter for types
-Tools/Files.hpp ........................................: I/O files utility
-Tools/FormatNumber.hpp .................................: Number formatter
-Tools/IVec.hpp .........................................: "Improved Vector", custom made container
-Tools/Linking.hpp ......................................: Linking utility to dynamic linked (.dll) using windows API
-Tools/OS.hpp ...........................................: Some utilities using OS APIs
-Tools/Random.hpp .......................................: Random Number generator 
-Tools/RandomHW.hpp .....................................: Hardware-level random generator (x86 only)
-Tools/Randomizer.hpp ...................................: Stuff to make random number (used by Random and RandomHW)
-Tools/Rounding.hpp .....................................: Python-like rounding utility
-Tools/Style.hpp ........................................: Text styler for str
-Tools/StyleW.hpp .......................................: Text styler for wstr
-Tools/Types.hpp ........................................: Type aliases
-Tools/Vector.hpp .......................................: Pyhton-like functions for vector
-Tools/VectorSlice.hpp ..................................: Vector slicing function
-Tools/Win32.hpp ........................................: Windows API utility
+# Abstract of File Structure
 
-Folders:
-Tools/Deprecated/* .....................................: Deprecated libs, because it'll break you project instead making coding more fun and productive++
-Tools/Types/* ..........................................: Types aliased "concept" + "using" implementations
-Tools/IVec/* ...........................................: Improved vector implementations
-Tools/Random/* .........................................: Random number implementations
-Tools/RandomHW/* .......................................: Hardware-level random number implementations
-Tools/OS/* .............................................: Some utilities using OS APIs implementations
+- ### Header files:
+    - `Tools/Casting.hpp`
+        Type Casting aliases.
+    - `Tools/Edges.hpp`
+        Min/max getter for types
+    - `Tools/Files.hpp`
+        I/O files utility
+    - `Tools/FormatNumber.hpp`
+        Number formatter
+    - `Tools/IVec.hpp`
+        "Improved Vector", custom made container
+    - `Tools/Linking.hpp`
+        Linking utility to dynamic linked (.dll) using windows API
+    - `Tools/OS.hpp`
+        Some utilities using OS APIs
+    - `Tools/Random.hpp`
+        Random Number generator 
+    - `Tools/RandomHW.hpp`
+        Hardware-level random generator (x86 only)
+    - `Tools/Randomizer.hpp`
+        Stuff to make random number (used by Random and RandomHW)
+    - `Tools/Rounding.hpp`
+        Python-like rounding utility
+    - `Tools/Style.hpp`
+        Text styler for str
+    - `Tools/StyleW.hpp`
+        Text styler for wstr
+    - `Tools/Types.hpp`
+        Type aliases
+    - `Tools/Vector.hpp`
+        Pyhton-like functions for vector
+    - `Tools/VectorSlice.hpp`
+        Vector slicing function
+    - `Tools/OS.hpp`
+        OS (Windows, Linux, and MacOS) API utility
 
-Tools/IVec/* :
-Tools/IVec/IVec.hpp ....................................: All include packed
-Tools/IVec/IVecfmt.hpp .................................: Formatter for {fmt} [deprecated, this thing has already iterators]
-Tools/IVec/IVec_c.base.hpp .............................: Base IVec class
-Tools/IVec/IVec_c.init.hpp .............................: Initializers for IVec
-Tools/IVec/IVec_c.basic.hpp  ...........................: Minimal functions
-Tools/IVec/IVec_c.advanced.hpp .........................: Extended functions
-Tools/IVec/IVec_c.convert.hpp ..........................: Conversion utilities to std::vector, std::span, and something else
-Tools/IVec/IVec_c.data.hpp .............................: Return pointer data
-Tools/IVec/IVec_c.getset.hpp ...........................: Getter and setter functions
-Tools/IVec/IVec_c.iter.hpp .............................: Iterators functions
-Tools/IVec/IVec_c.legacy.hpp ...........................: Legacy functions with vector-like dictions
+- ### Folders:
+    - `Tools/Deprecated/*`
+        Deprecated libs, because it'll break you project instead making coding more fun and productive++
+    - `Tools/Types/*`
+        Types aliased "concept" + "using" implementations
+    - `Tools/IVec/*`
+        Improved vector implementations
+    - `Tools/Random/*`
+        Random number implementations
+    - `Tools/RandomHW/*`
+        Hardware-level random number implementations
+    - `Tools/OS/*`
+        Some utilities using OS APIs implementations
 
-Tools/Types/* :
-Tools/Types/Types.containers.hpp .......................: Containers aliases
-Tools/Types/Types.int.hpp ..............................: Signed interger aliases
-Tools/Types/Types.uint.hpp .............................: Unsigned integer aliases
-Tools/Types/Types.float.hpp ............................: Floating aliases 
-Tools/Types/Types.ptr.hpp ..............................: Pointer aliases [not recommended to use]
-Tools/Types/Types.string.hpp ...........................: String type aliases
-Tools/Types/Types.memory.hpp ...........................: Smart pointer aliases
+- ### `Tools/IVec/*` :
+    - `Tools/IVec/IVec.hpp`
+        All include packed
+    - `Tools/IVec/IVecfmt.hpp`
+        Formatter for {fmt} [deprecated, this thing has already iterators]
+    - `Tools/IVec/IVec_c.base.hpp`
+        Base IVec class
+    - `Tools/IVec/IVec_c.init.hpp`
+        Initializers for IVec
+    - `Tools/IVec/IVec_c.basic.hpp`
+        Minimal functions
+    - `Tools/IVec/IVec_c.advanced.hpp`
+        Extended functions
+    - `Tools/IVec/IVec_c.convert.hpp`
+        Conversion utilities to std::vector, std::span, and something else
+    - `Tools/IVec/IVec_c.data.hpp`
+        Return pointer data
+    - `Tools/IVec/IVec_c.getset.hpp`
+        Getter and setter functions
+    - `Tools/IVec/IVec_c.iter.hpp`
+        Iterators functions
+    - `Tools/IVec/IVec_c.legacy.hpp`
+        Legacy functions with vector-like dictions
 
-```
+- ### `Tools/Types/*` :
+    - `Tools/Types/Types.containers.hpp`
+        Containers aliases
+    - `Tools/Types/Types.int.hpp`
+        Signed interger aliases
+    - `Tools/Types/Types.uint.hpp`
+        Unsigned integer aliases
+    - `Tools/Types/Types.float.hpp`
+        Floating aliases 
+    - `Tools/Types/Types.ptr.hpp`
+        Pointer aliases [not recommended to use]
+    - `Tools/Types/Types.string.hpp`
+        String type aliases
+    - `Tools/Types/Types.memory.hpp`
+        Smart pointer aliases
 
-# Lib `Tools.Types`
+---
+
+
+# I. Lib `Tools.Types`
 
 Types aliasing to make you less typing just for data types
 
@@ -152,7 +194,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# Lib `Tools.Casting`
+# II. Lib `Tools.Casting`
 
 - ### Decription
     This is just aliases for `static_`, `dynamic_`, `const_`, `reintepret_`, and `any_` cast, because using 2 words for me looks like too verbose.
@@ -239,7 +281,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# Lib `Tools.Edges`
+# III. Lib `Tools.Edges`
 
 - ### Description
     Should've named "limits", but I pick "Edges" just because people won't confuse `<limits>` and `Tools.Limits`, so `Tools.Edges` were chosen.
@@ -267,7 +309,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
 
 ---
 
-# Lib `Tools.Files`
+# IV. Lib `Tools.Files`
 
 code:
 ```cpp
@@ -295,7 +337,7 @@ Suffixes: \
 
 ---
 
-# Lib `Tools.FormatNumber`
+# V. Lib `Tools.FormatNumber`
 
 code:
 ```cpp
@@ -342,12 +384,12 @@ Example:
 
 ---
 
-# Lib `Tools.IVec`
+# VI. Lib `Tools.IVec`
 
 IVec or "*I*mproved *Vec*tor" is a container just like `std::vector`, but with better choice of diction, for example: `push_back` is now `append` (just like Python).
 All description is already in `IVec/IVec_c.base.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
 
-# Legends `Tools.Linking`
+# VII. Lib `Tools.Linking`
 
 Code:
 ```cpp
@@ -649,7 +691,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.OS`
+# VIII. Lib `Tools.OS`
 
 - ### Description:
     - This is a library for essential OS API functions, but make it easier.
@@ -725,7 +767,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.Style`
+# IX. Lib `Tools.Style`
 
 - ### Description:
     - Library to make you borix text into something from like Ms. Word or something, like colors, italic, bold, etc etc. Use only `Bold`, `Italic`, `Under`, `Strike`, `ColorFG/BG` only.
@@ -787,7 +829,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.StyleW`
+# X. Lib `Tools.StyleW`
 
 - ### Description:
     - Same as `Tools.Style`, but with `std::wstring` (`wstr`) support, slightly different choise of diction, but still good, and maybe kinda simpler. THe Name of the functions are already describe itself.
@@ -812,7 +854,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.PrintHeader`
+# XI. Lib `Tools.PrintHeader`
 
 - ### Description:
     This function is to make something like this:
@@ -849,7 +891,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.Random`
+# XII. Lib `Tools.Random`
  * ### Code suffixes you'll find on Random functions
     | **Suffix**|      **Meaning**      | **Types** |       **Meaning**      |
     |-----------|-----------------------|-----------|------------------------|
@@ -917,7 +959,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.RandomHW`
+# XIII. Lib `Tools.RandomHW`
 
 - Basically same as `Tools.Random`, but with better seeder from `x86` function called `RDSEED` and `RDRAND`, you just add the `HW` on the namespace (`Tools::Random` -> `Tools::RandomHW`), and you can access the functions.
 - This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad. 
@@ -987,7 +1029,7 @@ Recommended DLL Signature generation
 
 ---
 
-# Lib `Tools.Randomizer`
+# XIV. Lib `Tools.Randomizer`
 
 Library used internally for `Tools.Random` and `Tools.RandomHW`, this just contain aliases for some objects.
 
@@ -1009,7 +1051,7 @@ Library used internally for `Tools.Random` and `Tools.RandomHW`, this just conta
 
 ---
 
-# Lib `Tools.Rounding`
+# XV. Lib `Tools.Rounding`
 
 Library to round floating numbers just like Python and common math knowledge.
 
@@ -1034,7 +1076,7 @@ Library to round floating numbers just like Python and common math knowledge.
 
 ---
 
-# Lib `Tools.Vector`
+# XVI. Lib `Tools.Vector`
 
 Library to do some calculation with vector. Per section includes:
 - `Vector/Vector.accumulator.hpp` : For sum, product, and averages
