@@ -1078,15 +1078,18 @@ Library to round floating numbers just like Python and common math knowledge.
 
 # `XVI`. Lib `Tools.Vector`
 
-Library to do some calculation with vector. Per section includes:
-- `Vector/Vector.accumulator.hpp` : For sum, product, and averages
-- `Vector/Vector.find.hpp` : Finding utilities
-- `Vector/Vector.order.hpp` : Data order utilities
-- `Vector/Vector.order.inl.hpp` : Data order utilities inline
-- `Vector/Vector.slice.hpp` : Slice elements 
-- `Vector/Vector.slice.inl.hpp` : Slice elements inline
+Library to do some calculation with vector. Those choise of diction for function names are chosen carefully so it can describe itself without you have to guess and doing unnecessary trial & error.
 
-- API Codes:
+- ### Per section includes:
+    - `Vector/Vector.accumulator.hpp` : For sum, product, and averages
+    - `Vector/Vector.find.hpp` : Finding utilities
+    - `Vector/Vector.order.hpp` : Data order utilities
+    - `Vector/Vector.order.inl.hpp` : Data order utilities inline
+    - `Vector/Vector.slice.hpp` : Slice elements 
+    - `Vector/Vector.slice.inl.hpp` : Slice elements inline
+
+
+- ### API Codes:
     ```cpp
     // Accumulators
     namespace Tools::Vector {
@@ -1181,3 +1184,10 @@ Library to do some calculation with vector. Per section includes:
         void Slice(vec<T>& vec, idx n);
     }
     ```
+
+---
+
+# `XVII`. Lib `Tools.TVector` (to be continued)
+
+- ### Description
+    `Tools.Vector` but using multithreading concepts
