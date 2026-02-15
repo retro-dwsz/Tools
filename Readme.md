@@ -10,94 +10,62 @@
 # Abstract of File Structure
 
 - ### Header files:
-    - `Tools/Casting.hpp`
-        Type Casting aliases.
-    - `Tools/Edges.hpp`
-        Min/max getter for types
-    - `Tools/Files.hpp`
-        I/O files utility
-    - `Tools/FormatNumber.hpp`
-        Number formatter
-    - `Tools/IVec.hpp`
-        "Improved Vector", custom made container
-    - `Tools/Linking.hpp`
-        Linking utility to dynamic linked (.dll) using windows API
-    - `Tools/OS.hpp`
-        Some utilities using OS APIs
-    - `Tools/Random.hpp`
-        Random Number generator 
-    - `Tools/RandomHW.hpp`
-        Hardware-level random generator (x86 only)
-    - `Tools/Randomizer.hpp`
-        Stuff to make random number (used by Random and RandomHW)
-    - `Tools/Rounding.hpp`
-        Python-like rounding utility
-    - `Tools/Style.hpp`
-        Text styler for str
-    - `Tools/StyleW.hpp`
-        Text styler for wstr
-    - `Tools/Types.hpp`
-        Type aliases
-    - `Tools/Vector.hpp`
-        Pyhton-like functions for vector
-    - `Tools/VectorSlice.hpp`
-        Vector slicing function
-    - `Tools/OS.hpp`
-        OS (Windows, Linux, and MacOS) API utility
+    |            Files          |                         What is this?                         |
+    |---------------------------|---------------------------------------------------------------|
+    |`Tools/Casting.hpp`        | Type Casting aliases.                                         |
+    |`Tools/Edges.hpp`          | Min/max getter for types                                      |
+    |`Tools/Files.hpp`          | I/O files utility                                             |
+    |`Tools/FormatNumber.hpp`   | Number formatter                                              |
+    |`Tools/IVec.hpp`           | "Improved Vector", custom made container                      |
+    |`Tools/Linking.hpp`        | Linking utility to dynamic linked (.dll) using windows API    |
+    |`Tools/OS.hpp`             | Some utilities using OS APIs                                  |
+    |`Tools/Random.hpp`         | Random Number generator                                       |
+    |`Tools/RandomHW.hpp`       | Hardware-level random generator (x86 only)                    |
+    |`Tools/Randomizer.hpp`     | Stuff to make random number (used by Random and RandomHW)     |
+    |`Tools/Rounding.hpp`       | Python-like rounding utility                                  |
+    |`Tools/Style.hpp`          | Text styler for str                                           |
+    |`Tools/StyleW.hpp`         | Text styler for wstr                                          |
+    |`Tools/Types.hpp`          | Type aliases                                                  |
+    |`Tools/Vector.hpp`         | Pyhton-like functions for vector                              |
+    |`Tools/VectorSlice.hpp`    | Vector slicing function                                       |
+    |`Tools/OS.hpp`             | OS (Windows, Linux, and MacOS) API utility|
 
 - ### Folders:
-    - `Tools/Deprecated/*`
-        Deprecated libs, because it'll break you project instead making coding more fun and productive++
-    - `Tools/Types/*`
-        Types aliased "concept" + "using" implementations
-    - `Tools/IVec/*`
-        Improved vector implementations
-    - `Tools/Random/*`
-        Random number implementations
-    - `Tools/RandomHW/*`
-        Hardware-level random number implementations
-    - `Tools/OS/*`
-        Some utilities using OS APIs implementations
+    |        Folder         |                   What is this?                   |
+    |-----------------------|---------------------------------------------------|
+    |`Tools/Deprecated/*`   | Deprecated libs, because it'll break you project instead making coding more fun and productive++|
+    |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
+    |`Tools/IVec/*`         | Improved vector implementations                   |
+    |`Tools/Random/*`       | Random number implementations                     |
+    |`Tools/RandomHW/*`     | Hardware-level random number implementations      |
+    |`Tools/OS/*`           | Some utilities using OS APIs implementations      |
 
 - ### `Tools/IVec/*` :
-    - `Tools/IVec/IVec.hpp`
-        All include packed
-    - `Tools/IVec/IVecfmt.hpp`
-        Formatter for {fmt} [deprecated, this thing has already iterators]
-    - `Tools/IVec/IVec_c.base.hpp`
-        Base IVec class
-    - `Tools/IVec/IVec_c.init.hpp`
-        Initializers for IVec
-    - `Tools/IVec/IVec_c.basic.hpp`
-        Minimal functions
-    - `Tools/IVec/IVec_c.advanced.hpp`
-        Extended functions
-    - `Tools/IVec/IVec_c.convert.hpp`
-        Conversion utilities to std::vector, std::span, and something else
-    - `Tools/IVec/IVec_c.data.hpp`
-        Return pointer data
-    - `Tools/IVec/IVec_c.getset.hpp`
-        Getter and setter functions
-    - `Tools/IVec/IVec_c.iter.hpp`
-        Iterators functions
-    - `Tools/IVec/IVec_c.legacy.hpp`
-        Legacy functions with vector-like dictions
+    |               File                |                           What is this?                            |
+    |-----------------------------------|--------------------------------------------------------------------|
+    |`Tools/IVec/IVec.hpp`              | All include packed                                                 |
+    |`Tools/IVec/IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
+    |`Tools/IVec/IVec_c.base.hpp`       | Base IVec class                                                    |
+    |`Tools/IVec/IVec_c.init.hpp`       | Initializers for IVec                                              |
+    |`Tools/IVec/IVec_c.basic.hpp`      | Minimal functions                                                  |
+    |`Tools/IVec/IVec_c.advanced.hpp`   | Extended functions                                                 |
+    |`Tools/IVec/IVec_c.convert.hpp`    | Conversion utilities to something else                             |
+    |`Tools/IVec/IVec_c.data.hpp`       | Return pointer data                                                |
+    |`Tools/IVec/IVec_c.getset.hpp`     | Getter and setter functions                                        |
+    |`Tools/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
+    |`Tools/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
+
 
 - ### `Tools/Types/*` :
-    - `Tools/Types/Types.containers.hpp`
-        Containers aliases
-    - `Tools/Types/Types.int.hpp`
-        Signed interger aliases
-    - `Tools/Types/Types.uint.hpp`
-        Unsigned integer aliases
-    - `Tools/Types/Types.float.hpp`
-        Floating aliases 
-    - `Tools/Types/Types.ptr.hpp`
-        Pointer aliases [not recommended to use]
-    - `Tools/Types/Types.string.hpp`
-        String type aliases
-    - `Tools/Types/Types.memory.hpp`
-        Smart pointer aliases
+    |                   Files               |           What is this?            |
+    |---------------------------------------|------------------------------------|
+    | `Tools/Types/Types.containers.hpp`    | Containers aliases                 |
+    | `Tools/Types/Types.int.hpp`           | Signed interger aliases            |
+    | `Tools/Types/Types.uint.hpp`          | Unsigned integer aliases           |
+    | `Tools/Types/Types.float.hpp`         | Floating aliases                   |
+    | `Tools/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
+    | `Tools/Types/Types.string.hpp`        | String type aliases                |
+    | `Tools/Types/Types.memory.hpp`        | Smart pointer aliases              |
 
 ---
 
