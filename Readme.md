@@ -604,7 +604,7 @@ Recommended DLL Signature generation
 
 - Recommended DLL Signature
     ```cpp
-    extern "C" int Entry(int argc, const char** argv);
+    extern "C" i32 Entry(const i32 argc, const char** argv);
     ```
 
 - Why vector instead of raw argv?
@@ -614,11 +614,11 @@ Recommended DLL Signature generation
 ### 8. CallFunctionC_s (Safer Variant)
 - ### API Code
     ```cpp
-    int CallFunctionC_s(
-        const str& File,
+    i32 CallFunctionC_s(
+        str& File,
         const str& EntryPoint,
         const vec<str>& Args,
-        int TerminalSize = 50,
+        const i32 TerminalSize = 50,
         bool debug = true
     );
     ```
@@ -636,13 +636,13 @@ Recommended DLL Signature generation
     );
     ```
 
-- Availability
-    Only enabled if `__has_include(<cxxabi.h>)`
+- ### Availability
+    **_Only_** enabled if `__has_include(<cxxabi.h>)`
 
 - ### Description
     - Removes C++ mangled signatures (Itanium ABI) to produce readable function names.
 
-- Use Case
+- ### Use Case
     - Debugging symbol names
     - Reflection utilities
     - Cross-platform demangling (Clang/GCC)
@@ -687,10 +687,10 @@ Recommended DLL Signature generation
     // Process hacks 
     namespace Tools::OS::Process {
         template <typename T>
-        T ReadFromProcess(idx PID, uintptr_t Address);
+        T ReadFromProcess(idx PID, u32ptr Address);
         
         template <typename T>
-        bool WriteProcess(idx PID, uintptr_t Address, T data);
+        bool WriteProcess(idx PID, u32ptr Address, T data);
         
         // Current process
         bool IsAdmin();
@@ -1037,12 +1037,12 @@ Library to round floating numbers just like Python and common math knowledge.
 # Lib `Tools.Vector`
 
 Library to do some calculation with vector. Per section includes:
-- `Vector/Vector.accumulator.hpp`
-- `Vector/Vector.find.hpp`
-- `Vector/Vector.order.hpp`
-- `Vector/Vector.order.inl.hpp`
-- `Vector/Vector.slice.hpp`
-- `Vector/Vector.slice.inl.hpp`
+- `Vector/Vector.accumulator.hpp` : For sum, product, and averages
+- `Vector/Vector.find.hpp` : Finding utilities
+- `Vector/Vector.order.hpp` : Data order utilities
+- `Vector/Vector.order.inl.hpp` : Data order utilities inline
+- `Vector/Vector.slice.hpp` : Slice elements 
+- `Vector/Vector.slice.inl.hpp` : Slice elements inline
 
 - API Codes:
     ```cpp
@@ -1094,7 +1094,7 @@ Library to do some calculation with vector. Per section includes:
         
         // Remove duplicated values inline
         template<typename T>
-        void RemoveDuplicatesIln(vec<T>& Data);
+        void RemoveDuplicatesInl(vec<T>& Data);
     }
 
     // Order
@@ -1138,5 +1138,4 @@ Library to do some calculation with vector. Per section includes:
         template <typename T>
         void Slice(vec<T>& vec, idx n);
     }
-
     ```

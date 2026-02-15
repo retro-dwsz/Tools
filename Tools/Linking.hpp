@@ -9,10 +9,11 @@
 #include <memory>
 
 #if __has_include(<cxxabi.h>)
+#define ITANIUM_ENABLED
 #include <cxxabi.h>
 #endif
 
-#if !defined (__WIN32)
+#if !defined(__WIN32)
 #pragma "Tools.Linking are only for windows!"
 #endif
 
@@ -332,24 +333,24 @@ namespace Tools::Linking {
     }
 
     // Slightly safer CallFunctionC
-    int CallFunctionC_s(                /* Function IV B */
-        const str& File,                /* File to find */
+    i32 CallFunctionC_s(                /* Function IV B */
+        str& File,                      /* File to find */
         const str& EntryPoint,          /* Finnction to call (disable magle!) */
         const vec<str>& Args,           /* C Argv in vector */
-        int TerminalSize = 50,          /* Optional Terminal size */
+        i32 TerminalSize = 50,          /* Optional Terminal size */
         bool debug = true               /* Optional Debugging log */
     ) {
-        const str dllFile = GetFile(File);
+        File = GetFile(File);
 
-        if (debug) std::cout << std::format("> Loading {}", dllFile);
+        if (debug) std::cout << std::format("> Loading {}", File);
 
-        HMODULE Lib = LoadLibraryA(dllFile.c_str());
+        HMODULE Lib = LoadLibraryA(File.c_str());
         if (!Lib) {
-            std::cout << std::format("> Failed to load {}", dllFile);
+            std::cout << std::format("> Failed to load {}", File);
             return -1;
         }
 
-        // expected C signature: int func(int, const char**)
+        // expected C signature: i32 func(int, const char**)
         using Entry = int(__cdecl *)(int, const char**); // use __cdecl explicitly if DLL uses C-calling conv
         Entry EntryFunc = nullptr;
 
@@ -375,13 +376,13 @@ namespace Tools::Linking {
         // Null-terminate argv per C convention: argv[argc] == nullptr
         argv.push_back(nullptr);
 
-        int argc = static_cast<int>(argv.size() - 1); // exclude trailing nullptr
+        int argc = static_cast<i32>(argv.size() - 1); // exclude trailing nullptr
 
         if (debug) {
             std::cout << std::format("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize));
         }
 
-        int result = -1;
+        i32 result = -1;
         try {
             // call
             result = EntryFunc(argc, argv.data());
@@ -401,13 +402,13 @@ namespace Tools::Linking {
         return result;
     }
 
-    #if __has_include(<cxxabi.h>)
+    #if defined(ITANIUM_ENABLED)
     template <typename T>
     str RemoveSignature(
         const str& Func,                /* Mangled function name with itanium format */
         bool WithArgs = true            /* Include args or not*/
     ) {
-        const char* Name = Func.c_str();
+        cstr Name = Func.c_str();
         int status = 0;
         std::unique_ptr<char, void(*)(void*)> res{
             abi::__cxa_demangle(Name, 0, 0, &status),

@@ -114,7 +114,7 @@ namespace Tools::Vector {
 
     // Remove duplicated values inline
     template<typename T>
-    void RemoveDuplicatesIln(vec<T>& Data){
+    void RemoveDuplicatesInl(vec<T>& Data){
         auto U = std::unique(Data.begin(), Data.end());
         Data.erase(U, Data.end());
     }
