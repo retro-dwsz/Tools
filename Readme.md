@@ -9,7 +9,7 @@
 
 # Abstract of File Structure
 
-- ### Header files:
+- ### Header files
     |            Files          |                         What is this?                         |
     |---------------------------|---------------------------------------------------------------|
     |`Tools/Casting.hpp`        | Type Casting aliases.                                         |
@@ -30,7 +30,7 @@
     |`Tools/VectorSlice.hpp`    | Vector slicing function                                       |
     |`Tools/OS.hpp`             | OS (Windows, Linux, and MacOS) API utility|
 
-- ### Folders:
+- ### Folders
     |        Folder         |                   What is this?                   |
     |-----------------------|---------------------------------------------------|
     |`Tools/Deprecated/*`   | Deprecated libs, because it'll break you project instead making coding more fun and productive++|
@@ -41,7 +41,7 @@
     |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
     |`Tools/Vector/*`       | Common operations for Vector implementations      |
 
-- ### `Tools/Types/*` :
+- ### Folder `Tools/Types/*`
     |               Files              |           What is this?            |
     |----------------------------------|------------------------------------|
     | `/Types/Types.containers.hpp`    | Containers aliases                 |
@@ -52,7 +52,7 @@
     | `/Types/Types.string.hpp`        | String type aliases                |
     | `/Types/Types.memory.hpp`        | Smart pointer aliases              |
 
-- ### `Tools/IVec/*` :
+- ### Folder `Tools/IVec/*`
     |             File             |                           What is this?                            |
     |----------------------------- |--------------------------------------------------------------------|
     |`/IVec/IVec.hpp`              | All include packed                                                 |
@@ -67,7 +67,7 @@
     |`/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
     |`/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
 
-- ### `Tools/OS/*`:
+- ### Folder `Tools/OS/*`
     |           File          |         What is this?      |
     |-------------------------|----------------------------|
     | `/OS/{OS}.API.hpp`      | All APIs wrapped           |
@@ -76,7 +76,7 @@
     | `/OS/{OS}.sleep.hpp`    | OS-level sleep             |
     | `/OS/{OS}.terminal.hpp` | Terminal size, celar, etc  |
 
-- ### `Tools/Random/*`:
+- ### Folder `Tools/Random/*`
     |               File            |                         What is this?                          |
     |-------------------------------|---------------------------------------------------------------|
     | `/Random/Random.common.hpp`   | Internal utility for other files                              |
@@ -85,19 +85,19 @@
     | `/Random/Random.bundle.hpp`   | Generator for `std::vector<std::vector<>>`                    |
     | `/Random/Random.sbundle.hpp`  | Just like `bundle`, but every sub-vector's size are different |
 
-- ### `Tools/Random.Basic/*`:
+- ### Folder `Tools/Random.Basic/*`
     Just like `Tools.Random`, but `Twister32`&`Twister64` are initialized on single number generator. So `vector`, `bundle`, and `sbundle` are repeated use of `single`, which is not a good practice of use.
     |               File                        |       What is this?      |
     |-------------------------------------------|--------------------------|
     | `/Random.Basic/Random.basic.hpp`          | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.common.basic.hpp`   | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.single.basic.hpp`   | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.vector.basic.hpp`   | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.bundle.basic.hpp`   | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.sbundle.basic.hpp`  | _Same as `Tools.Random`_ |
+    | `/Random.Basic/Random.common.basic.hpp`   | _Same as `Tools.Random.Common`_ |
+    | `/Random.Basic/Random.single.basic.hpp`   | _Same as `Tools.Random.Single`_ |
+    | `/Random.Basic/Random.vector.basic.hpp`   | _Same as `Tools.Random.Vector`_ |
+    | `/Random.Basic/Random.bundle.basic.hpp`   | _Same as `Tools.Random.Bundle`_ |
+    | `/Random.Basic/Random.sbundle.basic.hpp`  | _Same as `Tools.Random.SBundle`_ |
 
 
-- ### `Tools/RandomHW/*`:
+- ### Folder `Tools/RandomHW/*`
     Just like `Tools.Random`, but optimized for x86 command called `RDSEED` and `RDRAND`
     |               File               |                      What is this?                            |
     |----------------------------------|---------------------------------------------------------------|
@@ -107,7 +107,7 @@
     | `/RandomHW/RandomHW.bundle.hpp`  | Internal utility for other files                              |
     | `/RandomHW/RandomHW.sbundle.hpp` | Generator for `std::vector<>`                                 |
 
-- ### `Tools/Vector/*`:
+- ### Folder `Tools/Vector/*`
     |               File                |                                What is this?                              |
     |-----------------------------------|---------------------------------------------------------------------------|
     | `/Vector/Vector.accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average            |
@@ -480,7 +480,7 @@ namespace Tools::Linking {
         bool debug = true               /* Optional Debugging log */
     );
 
-    #if __has_include(<cxxabi.h>)
+    #if defined(ITANIUM_ENABLED)
     template <typename T>
     str RemoveSignature(
         const str& Func,                /* Mangled function name with itanium format */
