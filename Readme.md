@@ -1212,7 +1212,11 @@ Library to do some calculation with vector. Those choise of diction for function
 
 ---
 
+<!--
+
 # `XVII`. Lib `Tools.TVector` (to be continued)
 
 - ### Description
     `Tools.Vector` but using multithreading concepts
+    
+-->
