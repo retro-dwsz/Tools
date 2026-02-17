@@ -28,7 +28,8 @@
     |`Tools/Types.hpp`          | Type aliases                                                  |
     |`Tools/Vector.hpp`         | Pyhton-like functions for vector                              |
     |`Tools/VectorSlice.hpp`    | Vector slicing function                                       |
-    |`Tools/OS.hpp`             | OS (Windows, Linux, and MacOS) API utility|
+    |`Tools/OS.hpp`             | OS (Windows, Linux, and MacOS) API utility                    |
+    |`Tools/Version.hpp`        | Version infos of this library                                 |
 
 - ### Folders
     |        Folder         |                   What is this?                   |
@@ -116,6 +117,15 @@
     | `/Vector/Vector.order.inl.hpp`    | Value order utilities and do it inplace                                   |
     | `/Vector/Vector.slice.hpp`        | Scissors for vector, `0->n` or `0<-n` or `x<->y`, then return new vector  |
     | `/Vector/Vector.slice.inl.hpp`    | Scissors for vector, and do it inplace                                    |
+
+- ### Folder Tools/Lib
+    This lib but make it linkable, this is NOT included in msys package pack (in folder `/Msys/*.pkg.tar.zst`) and NOT installed in your `/lib` folder in you environment, so in deployment, this lib is STILL header only.
+    Kinda stupid, because I compile the `.hpp` file instead of `.cpp` file.
+    |            File           |              What is this?              |
+    |---------------------------|-----------------------------------------|
+    | `Tools.Processed.win.hpp` | A preprocessed `Tools.hpp` file, you may can use this, but I don't think you should|
+    | `Tools.Processed.win.o`   | Compiled object of `ToolsProcessed.hpp` |
+    | `libTools.a`              | Packed with `ar rcs` of `Tools.o` file  |
 
 ---
 
