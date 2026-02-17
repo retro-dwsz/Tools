@@ -14,6 +14,12 @@
     #define VERSION     0
 #endif
 
+#define FIRST(Text) &Text[0]
+#define LAST(Text) &Text[strlen(Text)-1]
+
+// #include <D:/Code/Msys2/Files/clang64/lib/clang/21/include/stdint.h>
+// #include <../lib/clang/21/include/stdint.h>
+
 int main(){
     const char* t1 = "Tools-cpp is awsome!";
     const char* t2 = "v1.0";
@@ -24,8 +30,8 @@ int main(){
     snprintf(t4, sizeof(t4), " using compiler %s version %d with standard %ld", COMPILER, VERSION, __cplusplus);
     strcat(t3, t4);
 
-    char* First = &t3[0];
-    char* Last  = &t3[strlen(t3)-1];
+    char* First = FIRST(t3); // &t3[0];
+    char* Last  = LAST(t3);  // &t3[strlen(t3)-1];
 
     std::string tx = std::format("{}", t3);
 

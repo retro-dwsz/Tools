@@ -5,12 +5,12 @@
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "Test/Test.cpp" 2
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 1 3
-# 101 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config_site" 1 3
-# 47 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config_site" 3
+# 1 "c++/v1/cstdio" 1 3
+# 101 "c++/v1/cstdio" 3
+# 1 "c++/v1/__config" 1 3
+# 13 "c++/v1/__config" 3
+# 1 "c++/v1/__config_site" 1 3
+# 47 "c++/v1/__config_site" 3
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmacro-redefined"
 
@@ -20,28 +20,28 @@
 
 
 #pragma clang diagnostic pop
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/abi.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/abi.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/compiler.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/compiler.h" 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/abi.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/platform.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/platform.h" 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/abi.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/abi.h" 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/availability.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/availability.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/language.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/language.h" 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/availability.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__configuration/availability.h" 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__config" 3
-# 102 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/size_t.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/size_t.h" 3
+# 14 "c++/v1/__config" 2 3
+# 1 "c++/v1/__configuration/abi.h" 1 3
+# 14 "c++/v1/__configuration/abi.h" 3
+# 1 "c++/v1/__configuration/compiler.h" 1 3
+# 17 "c++/v1/__configuration/compiler.h" 3
+# 15 "c++/v1/__configuration/abi.h" 2 3
+# 1 "c++/v1/__configuration/platform.h" 1 3
+# 17 "c++/v1/__configuration/platform.h" 3
+# 16 "c++/v1/__configuration/abi.h" 2 3
+# 19 "c++/v1/__configuration/abi.h" 3
+# 15 "c++/v1/__config" 2 3
+# 1 "c++/v1/__configuration/availability.h" 1 3
+# 14 "c++/v1/__configuration/availability.h" 3
+# 1 "c++/v1/__configuration/language.h" 1 3
+# 17 "c++/v1/__configuration/language.h" 3
+# 15 "c++/v1/__configuration/availability.h" 2 3
+# 18 "c++/v1/__configuration/availability.h" 3
+# 16 "c++/v1/__config" 2 3
+# 22 "c++/v1/__config" 3
+# 102 "c++/v1/cstdio" 2 3
+# 1 "c++/v1/__cstddef/size_t.h" 1 3
+# 16 "c++/v1/__cstddef/size_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -49,35 +49,35 @@
 using size_t = decltype(sizeof(int));
 
 } }
-# 103 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 2 3
+# 103 "c++/v1/cstdio" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 1 3
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 3
-
-
-
-
-
-
-# 1 "D:/Code/Msys2/Files/clang64/include/stdio.h" 1 3
+# 1 "c++/v1/stdio.h" 1 3
+# 97 "c++/v1/stdio.h" 3
 
 
 
 
 
 
+# 1 "stdio.h" 1 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/corecrt_stdio_config.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/corecrt_stdio_config.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw_mac.h" 1 3
-# 11 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw_secapi.h" 1 3
-# 44 "D:/Code/Msys2/Files/clang64/include/_mingw_secapi.h" 3
+
+
+
+
+
+
+# 1 "corecrt_stdio_config.h" 1 3
+# 10 "corecrt_stdio_config.h" 3
+# 1 "corecrt.h" 1 3
+# 10 "corecrt.h" 3
+# 1 "_mingw.h" 1 3
+# 10 "_mingw.h" 3
+# 1 "_mingw_mac.h" 1 3
+# 11 "_mingw.h" 2 3
+# 1 "_mingw_secapi.h" 1 3
+# 44 "_mingw_secapi.h" 3
 extern "C++" {
 template <bool __test, typename __dsttype>
   struct __if_array;
@@ -86,11 +86,11 @@ template <typename __dsttype>
     typedef __dsttype __type;
 };
 }
-# 12 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 2 3
-# 306 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/vadefs.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/vadefs.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/vadefs.h" 1 3
+# 12 "_mingw.h" 2 3
+# 306 "_mingw.h" 3
+# 1 "../lib/clang/21/include/vadefs.h" 1 3
+# 12 "../lib/clang/21/include/vadefs.h" 3
+# 1 "vadefs.h" 1 3
 
 
 
@@ -99,11 +99,11 @@ template <typename __dsttype>
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 1 3
-# 685 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/sdks/_mingw_ddk.h" 1 3
-# 686 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 2 3
-# 10 "D:/Code/Msys2/Files/clang64/include/vadefs.h" 2 3
+# 1 "_mingw.h" 1 3
+# 685 "_mingw.h" 3
+# 1 "sdks/_mingw_ddk.h" 1 3
+# 686 "_mingw.h" 2 3
+# 10 "vadefs.h" 2 3
 
 
 
@@ -126,17 +126,17 @@ extern "C" {
 
 
   typedef __gnuc_va_list va_list;
-# 99 "D:/Code/Msys2/Files/clang64/include/vadefs.h" 3
+# 99 "vadefs.h" 3
 }
 
 
 
 #pragma pack(pop)
-# 13 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/vadefs.h" 2 3
-# 307 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 2 3
-# 592 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
+# 13 "../lib/clang/21/include/vadefs.h" 2 3
+# 307 "_mingw.h" 2 3
+# 592 "_mingw.h" 3
 extern "C" {
-# 604 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
+# 604 "_mingw.h" 3
 void __attribute__((__cdecl__)) __debugbreak(void);
 extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) void __attribute__((__cdecl__)) __debugbreak(void)
 {
@@ -150,7 +150,7 @@ extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) void __attri
 
 
 }
-# 625 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
+# 625 "_mingw.h" 3
 void __attribute__((__cdecl__)) __attribute__ ((__noreturn__)) __fastfail(unsigned int code);
 extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) void __attribute__((__cdecl__)) __attribute__ ((__noreturn__)) __fastfail(unsigned int code)
 {
@@ -167,20 +167,20 @@ extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) void __attri
 
   __builtin_unreachable();
 }
-# 665 "D:/Code/Msys2/Files/clang64/include/_mingw.h" 3
+# 665 "_mingw.h" 3
 const char *__mingw_get_crt_info (void);
 
 
 }
-# 11 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 2 3
+# 11 "corecrt.h" 2 3
 
 
 
 
 #pragma pack(push,_CRT_PACKING)
-# 35 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 35 "corecrt.h" 3
 __extension__ typedef unsigned long long size_t;
-# 45 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 45 "corecrt.h" 3
 __extension__ typedef long long ssize_t;
 
 
@@ -189,13 +189,13 @@ __extension__ typedef long long ssize_t;
 
 
 typedef size_t rsize_t;
-# 62 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 62 "corecrt.h" 3
 __extension__ typedef long long intptr_t;
-# 75 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 75 "corecrt.h" 3
 __extension__ typedef unsigned long long uintptr_t;
-# 88 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 88 "corecrt.h" 3
 __extension__ typedef long long ptrdiff_t;
-# 106 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 106 "corecrt.h" 3
 typedef unsigned short wint_t;
 typedef unsigned short wctype_t;
 
@@ -214,13 +214,13 @@ typedef long __time32_t;
 
 
 __extension__ typedef long long __time64_t;
-# 138 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 138 "corecrt.h" 3
 typedef __time64_t time_t;
-# 157 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 157 "corecrt.h" 3
 __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _invalid_parameter_noinfo(void);
 __attribute__ ((__dllimport__)) __attribute__ ((__noreturn__)) void __attribute__((__cdecl__)) _invalid_parameter_noinfo_noreturn(void);
 __attribute__ ((__dllimport__)) __attribute__ ((__noreturn__)) void __attribute__((__cdecl__)) _invoke_watson(const wchar_t *expression, const wchar_t *function_name, const wchar_t *file_name, unsigned int line_number, uintptr_t reserved);
-# 437 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 437 "corecrt.h" 3
 struct threadlocaleinfostruct;
 struct threadmbcinfostruct;
 typedef struct threadlocaleinfostruct *pthreadlocinfo;
@@ -248,11 +248,11 @@ typedef struct threadlocaleinfostruct {
   const unsigned short *_locale_pctype;
   int _locale_mb_cur_max;
   unsigned int _locale_lc_codepage;
-# 489 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 489 "corecrt.h" 3
 } threadlocinfo;
-# 508 "D:/Code/Msys2/Files/clang64/include/corecrt.h" 3
+# 508 "corecrt.h" 3
 #pragma pack(pop)
-# 11 "D:/Code/Msys2/Files/clang64/include/corecrt_stdio_config.h" 2 3
+# 11 "corecrt_stdio_config.h" 2 3
 
 
 extern "C" {
@@ -260,22 +260,22 @@ extern "C" {
 
 unsigned long long* __attribute__((__cdecl__)) __local_stdio_printf_options(void);
 unsigned long long* __attribute__((__cdecl__)) __local_stdio_scanf_options(void);
-# 39 "D:/Code/Msys2/Files/clang64/include/corecrt_stdio_config.h" 3
+# 39 "corecrt_stdio_config.h" 3
 }
-# 10 "D:/Code/Msys2/Files/clang64/include/stdio.h" 2 3
+# 10 "stdio.h" 2 3
 
 #pragma pack(push,_CRT_PACKING)
-# 23 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 23 "stdio.h" 3
 extern "C" {
-# 33 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 33 "stdio.h" 3
   struct _iobuf {
 
     void *_Placeholder;
-# 46 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 46 "stdio.h" 3
   };
   typedef struct _iobuf FILE;
-# 99 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw_off_t.h" 1 3
+# 99 "stdio.h" 3
+# 1 "_mingw_off_t.h" 1 3
 
 
 
@@ -291,16 +291,16 @@ extern "C" {
   __extension__ typedef long long _off64_t;
 
   __extension__ typedef long long off64_t;
-# 26 "D:/Code/Msys2/Files/clang64/include/_mingw_off_t.h" 3
+# 26 "_mingw_off_t.h" 3
 typedef off32_t off_t;
-# 100 "D:/Code/Msys2/Files/clang64/include/stdio.h" 2 3
+# 100 "stdio.h" 2 3
 
 __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func(unsigned index);
 
   __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __iob_func(void);
-# 112 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 112 "stdio.h" 3
   __extension__ typedef long long fpos_t;
-# 156 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 156 "stdio.h" 3
 extern
   __attribute__((__format__(__scanf__, 2,3))) __attribute__ ((__nonnull__ (2)))
   int __attribute__((__cdecl__)) __mingw_sscanf(const char * __restrict__ _Src,const char * __restrict__ _Format,...);
@@ -416,7 +416,7 @@ extern
   int __attribute__((__cdecl__)) __stdio_common_vfprintf(unsigned long long options, FILE *file, const char *format, _locale_t locale, va_list valist);
   int __attribute__((__cdecl__)) __stdio_common_vsscanf(unsigned long long options, const char *input, size_t length, const char *format, _locale_t locale, va_list valist);
   int __attribute__((__cdecl__)) __stdio_common_vfscanf(unsigned long long options, FILE *file, const char *format, _locale_t locale, va_list valist);
-# 444 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 444 "stdio.h" 3
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
 
@@ -460,7 +460,7 @@ extern
 
 
 #pragma GCC diagnostic pop
-# 535 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 535 "stdio.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _filbuf(FILE *_File);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _flsbuf(int _Ch,FILE *_File);
 
@@ -593,7 +593,7 @@ extern
   int __attribute__((__cdecl__)) _vsnprintf(char * __restrict__ _Dest,size_t _Count,const char * __restrict__ _Format,va_list _Args) ;
   __attribute__((__format__ (__printf__, 3, 4))) __attribute__ ((__nonnull__ (3)))
   int __attribute__((__cdecl__)) _snprintf(char * __restrict__ _Dest,size_t _Count,const char * __restrict__ _Format,...) ;
-# 718 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 718 "stdio.h" 3
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
 
@@ -602,9 +602,9 @@ extern
 
   __attribute__((__format__ (__printf__, 3, 4))) __attribute__ ((__nonnull__ (3)))
   int snprintf (char * __restrict__ __stream, size_t __n, const char * __restrict__ __format, ...);
-# 784 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 784 "stdio.h" 3
 #pragma GCC diagnostic pop
-# 886 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 886 "stdio.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _set_printf_count_output(int _Value);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _get_printf_count_output(void);
 
@@ -691,7 +691,7 @@ extern
   int __attribute__((__cdecl__)) __stdio_common_vfwprintf(unsigned long long options, FILE *file, const wchar_t *format, _locale_t locale, va_list valist);
   int __attribute__((__cdecl__)) __stdio_common_vswscanf(unsigned long long options, const wchar_t *input, size_t length, const wchar_t *format, _locale_t locale, va_list valist);
   int __attribute__((__cdecl__)) __stdio_common_vfwscanf(unsigned long long options, FILE *file, const wchar_t *format, _locale_t locale, va_list valist);
-# 1081 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1081 "stdio.h" 3
   int __attribute__((__cdecl__)) fwscanf(FILE * __restrict__ _File,const wchar_t * __restrict__ _Format,...);
 
 
@@ -718,7 +718,7 @@ extern
   int __attribute__((__cdecl__)) vswprintf(wchar_t * __restrict__ _Dest,size_t _Count,const wchar_t * __restrict__ _Format,va_list _Args);
   int __attribute__((__cdecl__)) snwprintf(wchar_t * __restrict__ s, size_t n, const wchar_t * __restrict__ format, ...);
   int __attribute__((__cdecl__)) vsnwprintf(wchar_t * __restrict__ s, size_t n, const wchar_t * __restrict__ format, va_list arg);
-# 1116 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1116 "stdio.h" 3
   __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) _wfsopen(const wchar_t *_Filename,const wchar_t *_Mode,int _ShFlag);
 
 
@@ -748,8 +748,8 @@ extern
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _vswprintf(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Format,va_list _Args);
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/swprintf.inl" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/swprintf.inl" 3
+# 1 "swprintf.inl" 1 3
+# 12 "swprintf.inl" 3
 extern "C++" {
 
                                                       __attribute__ ((__nonnull__ (2)))
@@ -759,8 +759,8 @@ int vswprintf (wchar_t *__stream, const wchar_t *__format, __builtin_va_list __l
 int swprintf (wchar_t *__stream, const wchar_t *__format, ...) __asm__("_swprintf");
 
 }
-# 1146 "D:/Code/Msys2/Files/clang64/include/stdio.h" 2 3
-# 1159 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1146 "stdio.h" 2 3
+# 1159 "stdio.h" 3
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _wtempnam(const wchar_t *_Directory,const wchar_t *_FilePrefix);
 
 
@@ -785,15 +785,15 @@ int swprintf (wchar_t *__stream, const wchar_t *__format, ...) __asm__("_swprint
   __attribute__ ((__dllimport__)) wint_t __attribute__((__cdecl__)) _fgetwc_nolock(FILE *_File);
   __attribute__ ((__dllimport__)) wint_t __attribute__((__cdecl__)) _fputwc_nolock(wchar_t _Ch,FILE *_File);
   __attribute__ ((__dllimport__)) wint_t __attribute__((__cdecl__)) _ungetwc_nolock(wint_t _Ch,FILE *_File);
-# 1191 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1191 "stdio.h" 3
   inline wint_t __attribute__((__cdecl__)) getwchar() {return (fgetwc((__acrt_iob_func(0)))); }
   inline wint_t __attribute__((__cdecl__)) putwchar(wchar_t _C) {return (fputwc(_C,(__acrt_iob_func(1)))); }
-# 1207 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1207 "stdio.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _fgetc_nolock(FILE *_File);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _fputc_nolock(int _Char, FILE *_File);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _getc_nolock(FILE *_File);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _putc_nolock(int _Char, FILE *_File);
-# 1222 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1222 "stdio.h" 3
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _lock_file(FILE *_File);
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _unlock_file(FILE *_File);
 
@@ -806,7 +806,7 @@ int swprintf (wchar_t *__stream, const wchar_t *__format, ...) __asm__("_swprint
   __extension__ __attribute__ ((__dllimport__)) long long __attribute__((__cdecl__)) _ftelli64_nolock(FILE *_File);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _fwrite_nolock(const void * __restrict__ _DstBuf,size_t _Size,size_t _Count,FILE * __restrict__ _File);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _ungetc_nolock(int _Ch,FILE *_File);
-# 1244 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1244 "stdio.h" 3
   char *__attribute__((__cdecl__)) tempnam(const char *_Directory,const char *_FilePrefix) ;
 
 
@@ -820,11 +820,11 @@ int swprintf (wchar_t *__stream, const wchar_t *__format, ...) __asm__("_swprint
   int __attribute__((__cdecl__)) getw(FILE *_File) ;
   int __attribute__((__cdecl__)) putw(int _Ch,FILE *_File) ;
   int __attribute__((__cdecl__)) rmtmp(void) ;
-# 1273 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1273 "stdio.h" 3
 int __attribute__((__cdecl__)) __mingw_str_wide_utf8 (const wchar_t * const wptr, char **mbptr, size_t * buflen);
-# 1287 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1287 "stdio.h" 3
 int __attribute__((__cdecl__)) __mingw_str_utf8_wide (const char *const mbptr, wchar_t ** wptr, size_t * buflen);
-# 1296 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1296 "stdio.h" 3
 void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
 
 
@@ -840,7 +840,7 @@ void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wspawnve(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wspawnvp(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wspawnvpe(int _Mode,const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
-# 1327 "D:/Code/Msys2/Files/clang64/include/stdio.h" 3
+# 1327 "stdio.h" 3
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _spawnv(int _Mode,const char *_Filename,const char *const *_ArgList);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _spawnve(int _Mode,const char *_Filename,const char *const *_ArgList,const char *const *_Env);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _spawnvp(int _Mode,const char *_Filename,const char *const *_ArgList);
@@ -859,7 +859,7 @@ void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
 
 #pragma pack(pop)
 
-# 1 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 1 3
+# 1 "sec_api/stdio_s.h" 1 3
 
 
 
@@ -868,18 +868,18 @@ void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 1 3
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 3
+# 1 "c++/v1/stdio.h" 1 3
+# 97 "c++/v1/stdio.h" 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/stdio.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 2 3
-# 10 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 3
+# 1 "stdio.h" 1 3
+# 104 "c++/v1/stdio.h" 2 3
+# 10 "sec_api/stdio_s.h" 2 3
+# 21 "sec_api/stdio_s.h" 3
 extern "C" {
 
 
@@ -1373,7 +1373,7 @@ extern "C" {
     __builtin_va_end(_ArgList);
     return _Ret;
   }
-# 583 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 3
+# 583 "sec_api/stdio_s.h" 3
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) vsnprintf_s(char (&_DstBuf)[__size], size_t _MaxCount, const char* _Format, va_list _ArgList) { return vsnprintf_s(_DstBuf,__size,_MaxCount,_Format,_ArgList); } }
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) _vsnprintf_s(char (&_DstBuf)[__size], size_t _MaxCount, const char* _Format, va_list _ArgList) { return _vsnprintf_s(_DstBuf,__size,_MaxCount,_Format,_ArgList); } }
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) vsprintf_s(char (&_DstBuf)[__size], const char* _Format, va_list _ArgList) { return vsprintf_s(_DstBuf,__size,_Format,_ArgList); } }
@@ -1620,7 +1620,7 @@ extern "C" {
     __builtin_va_end(_ArgList);
     return _Ret;
   }
-# 862 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 3
+# 862 "sec_api/stdio_s.h" 3
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) vswprintf_s(wchar_t (&_Dst)[__size], const wchar_t* _Format, va_list _ArgList) { return vswprintf_s(_Dst,__size,_Format,_ArgList); } }
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) swprintf_s(wchar_t (&_Dst)[__size], const wchar_t* _Format, ...) { va_list __vaargs; __builtin_va_start(__vaargs,_Format); int __retval = vswprintf_s(_Dst,__size,_Format,__vaargs); __builtin_va_end(__vaargs); return __retval; } }
   extern "C++" { template <size_t __size> inline int __attribute__((__cdecl__)) _vsnwprintf_s(wchar_t (&_DstBuf)[__size], size_t _MaxCount, const wchar_t* _Format, va_list _ArgList) { return _vsnwprintf_s(_DstBuf,__size,_MaxCount,_Format,_ArgList); } }
@@ -1631,16 +1631,16 @@ extern "C" {
 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wtmpnam_s(wchar_t *_DstBuf,size_t _SizeInWords);
   extern "C++" { template <size_t __size> inline errno_t __attribute__((__cdecl__)) _wtmpnam_s(wchar_t (&_DstBuf)[__size]) { return _wtmpnam_s(_DstBuf,__size); } }
-# 912 "D:/Code/Msys2/Files/clang64/include/sec_api/stdio_s.h" 3
+# 912 "sec_api/stdio_s.h" 3
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _fread_nolock_s(void *_DstBuf,size_t _DstSize,size_t _ElementSize,size_t _Count,FILE *_File);
 
 
 
 }
-# 1346 "D:/Code/Msys2/Files/clang64/include/stdio.h" 2 3
-# 104 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 2 3
-# 105 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 2 3
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdio" 3
+# 1346 "stdio.h" 2 3
+# 104 "c++/v1/stdio.h" 2 3
+# 105 "c++/v1/cstdio" 2 3
+# 116 "c++/v1/cstdio" 3
 
 
  namespace std { inline namespace __1 {
@@ -1702,26 +1702,26 @@ using ::vprintf __attribute__((__using_if_exists__));
 
 } }
 # 2 "Test/Test.cpp" 2
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 1 3
-# 200 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_n.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_n.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_floating_point.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_floating_point.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/integral_constant.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/integral_constant.h" 3
+# 1 "c++/v1/format" 1 3
+# 200 "c++/v1/format" 3
+# 1 "c++/v1/__format/buffer.h" 1 3
+# 13 "c++/v1/__format/buffer.h" 3
+# 1 "c++/v1/__algorithm/copy_n.h" 1 3
+# 12 "c++/v1/__algorithm/copy_n.h" 3
+# 1 "c++/v1/__algorithm/copy.h" 1 3
+# 12 "c++/v1/__algorithm/copy.h" 3
+# 1 "c++/v1/__algorithm/copy_move_common.h" 1 3
+# 12 "c++/v1/__algorithm/copy_move_common.h" 3
+# 1 "c++/v1/__algorithm/unwrap_iter.h" 1 3
+# 13 "c++/v1/__algorithm/unwrap_iter.h" 3
+# 1 "c++/v1/__iterator/iterator_traits.h" 1 3
+# 13 "c++/v1/__iterator/iterator_traits.h" 3
+# 1 "c++/v1/__concepts/arithmetic.h" 1 3
+# 13 "c++/v1/__concepts/arithmetic.h" 3
+# 1 "c++/v1/__type_traits/is_floating_point.h" 1 3
+# 13 "c++/v1/__type_traits/is_floating_point.h" 3
+# 1 "c++/v1/__type_traits/integral_constant.h" 1 3
+# 16 "c++/v1/__type_traits/integral_constant.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1749,9 +1749,9 @@ using bool_constant = integral_constant<bool, __b>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_floating_point.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_cv.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_cv.h" 3
+# 14 "c++/v1/__type_traits/is_floating_point.h" 2 3
+# 1 "c++/v1/__type_traits/remove_cv.h" 1 3
+# 16 "c++/v1/__type_traits/remove_cv.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1775,8 +1775,8 @@ using remove_cv_t = __remove_cv_t<_Tp>;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_floating_point.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_floating_point.h" 3
+# 15 "c++/v1/__type_traits/is_floating_point.h" 2 3
+# 18 "c++/v1/__type_traits/is_floating_point.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1797,9 +1797,9 @@ template <class _Tp>
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_integral.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_integral.h" 3
+# 14 "c++/v1/__concepts/arithmetic.h" 2 3
+# 1 "c++/v1/__type_traits/is_integral.h" 1 3
+# 18 "c++/v1/__type_traits/is_integral.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1812,13 +1812,13 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_integral_v = __is_integral(_Tp);
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_integral.h" 3
+# 72 "c++/v1/__type_traits/is_integral.h" 3
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_signed.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_signed.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_arithmetic.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_arithmetic.h" 3
+# 15 "c++/v1/__concepts/arithmetic.h" 2 3
+# 1 "c++/v1/__type_traits/is_signed.h" 1 3
+# 14 "c++/v1/__type_traits/is_signed.h" 3
+# 1 "c++/v1/__type_traits/is_arithmetic.h" 1 3
+# 19 "c++/v1/__type_traits/is_arithmetic.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1833,8 +1833,8 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_signed.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_signed.h" 3
+# 15 "c++/v1/__type_traits/is_signed.h" 2 3
+# 18 "c++/v1/__type_traits/is_signed.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1847,10 +1847,10 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_signed_v = __is_signed(_Tp);
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_signed.h" 3
+# 50 "c++/v1/__type_traits/is_signed.h" 3
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/arithmetic.h" 3
+# 16 "c++/v1/__concepts/arithmetic.h" 2 3
+# 19 "c++/v1/__concepts/arithmetic.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1874,13 +1874,13 @@ concept floating_point = is_floating_point_v<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/convertible_to.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/convertible_to.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_convertible.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_convertible.h" 3
+# 14 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__concepts/constructible.h" 1 3
+# 12 "c++/v1/__concepts/constructible.h" 3
+# 1 "c++/v1/__concepts/convertible_to.h" 1 3
+# 13 "c++/v1/__concepts/convertible_to.h" 3
+# 1 "c++/v1/__type_traits/is_convertible.h" 1 3
+# 17 "c++/v1/__type_traits/is_convertible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1904,9 +1904,9 @@ template <class _Tp, class _Up>
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/convertible_to.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/declval.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/declval.h" 3
+# 14 "c++/v1/__concepts/convertible_to.h" 2 3
+# 1 "c++/v1/__utility/declval.h" 1 3
+# 16 "c++/v1/__utility/declval.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1914,9 +1914,9 @@ template <class _Tp, class _Up>
 
 
 #pragma GCC diagnostic push
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/declval.h" 3
+# 22 "c++/v1/__utility/declval.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/declval.h" 3
+# 22 "c++/v1/__utility/declval.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <class _Tp>
 _Tp&& __declval(int);
@@ -1932,8 +1932,8 @@ template <class _Tp>
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/convertible_to.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/convertible_to.h" 3
+# 15 "c++/v1/__concepts/convertible_to.h" 2 3
+# 18 "c++/v1/__concepts/convertible_to.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1948,15 +1948,15 @@ concept convertible_to = is_convertible_v<_From, _To> && requires { static_cast<
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/destructible.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/destructible.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_destructible.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_destructible.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_function.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_function.h" 3
+# 13 "c++/v1/__concepts/constructible.h" 2 3
+# 1 "c++/v1/__concepts/destructible.h" 1 3
+# 13 "c++/v1/__concepts/destructible.h" 3
+# 1 "c++/v1/__type_traits/is_nothrow_destructible.h" 1 3
+# 15 "c++/v1/__type_traits/is_nothrow_destructible.h" 3
+# 1 "c++/v1/__type_traits/is_destructible.h" 1 3
+# 14 "c++/v1/__type_traits/is_destructible.h" 3
+# 1 "c++/v1/__type_traits/is_function.h" 1 3
+# 17 "c++/v1/__type_traits/is_function.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1970,9 +1970,9 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference.h" 3
+# 15 "c++/v1/__type_traits/is_destructible.h" 2 3
+# 1 "c++/v1/__type_traits/is_reference.h" 1 3
+# 17 "c++/v1/__type_traits/is_reference.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -1998,11 +1998,11 @@ template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_lvalue_reference_v = __is_lvalue_reference(_Tp);
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_rvalue_reference_v = __is_rvalue_reference(_Tp);
-# 66 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference.h" 3
+# 66 "c++/v1/__type_traits/is_reference.h" 3
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_all_extents.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_all_extents.h" 3
+# 16 "c++/v1/__type_traits/is_destructible.h" 2 3
+# 1 "c++/v1/__type_traits/remove_all_extents.h" 1 3
+# 16 "c++/v1/__type_traits/remove_all_extents.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2026,8 +2026,8 @@ using remove_all_extents_t = __remove_all_extents_t<_Tp>;
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 3
+# 17 "c++/v1/__type_traits/is_destructible.h" 2 3
+# 21 "c++/v1/__type_traits/is_destructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2040,10 +2040,10 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_destructible_v = __is_destructible(_Tp);
-# 95 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_destructible.h" 3
+# 95 "c++/v1/__type_traits/is_destructible.h" 3
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_destructible.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_destructible.h" 3
+# 16 "c++/v1/__type_traits/is_nothrow_destructible.h" 2 3
+# 20 "c++/v1/__type_traits/is_nothrow_destructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2052,14 +2052,14 @@ template <class _Tp>
 
 template <class _Tp>
 struct [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] is_nothrow_destructible : integral_constant<bool, __is_nothrow_destructible(_Tp)> {};
-# 55 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_destructible.h" 3
+# 55 "c++/v1/__type_traits/is_nothrow_destructible.h" 3
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_nothrow_destructible_v = is_nothrow_destructible<_Tp>::value;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/destructible.h" 2 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/destructible.h" 3
+# 14 "c++/v1/__concepts/destructible.h" 2 3
+# 17 "c++/v1/__concepts/destructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2074,12 +2074,12 @@ concept destructible = is_nothrow_destructible_v<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 2 3
+# 14 "c++/v1/__concepts/constructible.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constructible.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constructible.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_reference.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_reference.h" 3
+# 1 "c++/v1/__type_traits/is_constructible.h" 1 3
+# 13 "c++/v1/__type_traits/is_constructible.h" 3
+# 1 "c++/v1/__type_traits/add_reference.h" 1 3
+# 16 "c++/v1/__type_traits/add_reference.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2121,8 +2121,8 @@ using add_rvalue_reference_t = __add_rvalue_reference_t<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constructible.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constructible.h" 3
+# 14 "c++/v1/__type_traits/is_constructible.h" 2 3
+# 18 "c++/v1/__type_traits/is_constructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2162,8 +2162,8 @@ template <class _Tp>
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/constructible.h" 3
+# 16 "c++/v1/__concepts/constructible.h" 2 3
+# 19 "c++/v1/__concepts/constructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2199,18 +2199,18 @@ concept copy_constructible =
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
+# 15 "c++/v1/__iterator/iterator_traits.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/copyable.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/copyable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/common_reference_with.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/common_reference_with.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/same_as.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/same_as.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_same.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_same.h" 3
+# 1 "c++/v1/__concepts/copyable.h" 1 3
+# 12 "c++/v1/__concepts/copyable.h" 3
+# 1 "c++/v1/__concepts/assignable.h" 1 3
+# 12 "c++/v1/__concepts/assignable.h" 3
+# 1 "c++/v1/__concepts/common_reference_with.h" 1 3
+# 13 "c++/v1/__concepts/common_reference_with.h" 3
+# 1 "c++/v1/__concepts/same_as.h" 1 3
+# 13 "c++/v1/__concepts/same_as.h" 3
+# 1 "c++/v1/__type_traits/is_same.h" 1 3
+# 17 "c++/v1/__type_traits/is_same.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2221,7 +2221,7 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp, class _Up>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_same_v = __is_same(_Tp, _Up);
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_same.h" 3
+# 36 "c++/v1/__type_traits/is_same.h" 3
 template <class _Tp, class _Up>
 using _IsSame [[__gnu__::__nodebug__]] = _BoolConstant<__is_same(_Tp, _Up)>;
 
@@ -2229,8 +2229,8 @@ template <class _Tp, class _Up>
 using _IsNotSame [[__gnu__::__nodebug__]] = _BoolConstant<!__is_same(_Tp, _Up)>;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/same_as.h" 2 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/same_as.h" 3
+# 14 "c++/v1/__concepts/same_as.h" 2 3
+# 17 "c++/v1/__concepts/same_as.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2248,16 +2248,16 @@ concept same_as = __same_as_impl<_Tp, _Up> && __same_as_impl<_Up, _Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/common_reference_with.h" 2 3
+# 14 "c++/v1/__concepts/common_reference_with.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_referenceable.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_referenceable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/void_t.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/void_t.h" 3
+# 1 "c++/v1/__type_traits/common_reference.h" 1 3
+# 13 "c++/v1/__type_traits/common_reference.h" 3
+# 1 "c++/v1/__type_traits/add_pointer.h" 1 3
+# 13 "c++/v1/__type_traits/add_pointer.h" 3
+# 1 "c++/v1/__type_traits/is_referenceable.h" 1 3
+# 13 "c++/v1/__type_traits/is_referenceable.h" 3
+# 1 "c++/v1/__type_traits/void_t.h" 1 3
+# 16 "c++/v1/__type_traits/void_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2271,8 +2271,8 @@ template <class...>
 using __void_t [[__gnu__::__nodebug__]] = void;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_referenceable.h" 2 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_referenceable.h" 3
+# 14 "c++/v1/__type_traits/is_referenceable.h" 2 3
+# 17 "c++/v1/__type_traits/is_referenceable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2289,9 +2289,9 @@ concept __referenceable = __is_referenceable_v<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_void.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_void.h" 3
+# 14 "c++/v1/__type_traits/add_pointer.h" 2 3
+# 1 "c++/v1/__type_traits/is_void.h" 1 3
+# 17 "c++/v1/__type_traits/is_void.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2305,9 +2305,9 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_reference.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_reference.h" 3
+# 15 "c++/v1/__type_traits/add_pointer.h" 2 3
+# 1 "c++/v1/__type_traits/remove_reference.h" 1 3
+# 16 "c++/v1/__type_traits/remove_reference.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2320,14 +2320,14 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 using __libcpp_remove_reference_t [[__gnu__::__nodebug__]] = __remove_reference_t(_Tp);
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_reference.h" 3
+# 41 "c++/v1/__type_traits/remove_reference.h" 3
 template <class _Tp>
 using remove_reference_t = __libcpp_remove_reference_t<_Tp>;
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 3
+# 16 "c++/v1/__type_traits/add_pointer.h" 2 3
+# 19 "c++/v1/__type_traits/add_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2345,17 +2345,17 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 using __add_pointer_t [[__gnu__::__nodebug__]] = __add_pointer(_Tp);
-# 59 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/add_pointer.h" 3
+# 59 "c++/v1/__type_traits/add_pointer.h" 3
 template <class _Tp>
 using add_pointer_t = __add_pointer_t<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/conditional.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/conditional.h" 3
+# 14 "c++/v1/__type_traits/common_reference.h" 2 3
+# 1 "c++/v1/__type_traits/common_type.h" 1 3
+# 13 "c++/v1/__type_traits/common_type.h" 3
+# 1 "c++/v1/__type_traits/conditional.h" 1 3
+# 16 "c++/v1/__type_traits/conditional.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2403,9 +2403,9 @@ template <bool _Bp, class _If, class _Then>
 using __conditional_t [[__gnu__::__nodebug__]] = typename conditional<_Bp, _If, _Then>::type;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/decay.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/decay.h" 3
+# 14 "c++/v1/__type_traits/common_type.h" 2 3
+# 1 "c++/v1/__type_traits/decay.h" 1 3
+# 16 "c++/v1/__type_traits/decay.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2429,14 +2429,14 @@ using decay_t = __decay_t<_Tp>;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 2 3
+# 15 "c++/v1/__type_traits/common_type.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_cvref.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_cvref.h" 3
+# 1 "c++/v1/__type_traits/remove_cvref.h" 1 3
+# 16 "c++/v1/__type_traits/remove_cvref.h" 3
 
 
  namespace std { inline namespace __1 {
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_cvref.h" 3
+# 29 "c++/v1/__type_traits/remove_cvref.h" 3
 template <class _Tp>
 using __remove_cvref_t [[__gnu__::__nodebug__]] = __remove_cvref(_Tp);
 
@@ -2452,9 +2452,9 @@ using remove_cvref_t = __remove_cvref_t<_Tp>;
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/type_identity.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/type_identity.h" 3
+# 17 "c++/v1/__type_traits/common_type.h" 2 3
+# 1 "c++/v1/__type_traits/type_identity.h" 1 3
+# 16 "c++/v1/__type_traits/type_identity.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2477,11 +2477,11 @@ using type_identity_t = typename type_identity<_Tp>::type;
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 2 3
+# 18 "c++/v1/__type_traits/common_type.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/empty.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/empty.h" 3
+# 1 "c++/v1/__utility/empty.h" 1 3
+# 16 "c++/v1/__utility/empty.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2489,8 +2489,8 @@ using type_identity_t = typename type_identity<_Tp>::type;
 struct __empty {};
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 2 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 3
+# 21 "c++/v1/__type_traits/common_type.h" 2 3
+# 24 "c++/v1/__type_traits/common_type.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2505,15 +2505,15 @@ using __common_type_t [[__gnu__::__nodebug__]] = typename common_type<_Args...>:
 
 template <class... _Args>
 struct common_type : __builtin_common_type<__common_type_t, __type_identity, __empty, _Args...> {};
-# 111 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_type.h" 3
+# 111 "c++/v1/__type_traits/common_type.h" 3
 template <class... _Tp>
 using common_type_t = typename common_type<_Tp...>::type;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/copy_cv.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/copy_cv.h" 3
+# 15 "c++/v1/__type_traits/common_reference.h" 2 3
+# 1 "c++/v1/__type_traits/copy_cv.h" 1 3
+# 16 "c++/v1/__type_traits/copy_cv.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2548,9 +2548,9 @@ template <class _From, class _To>
 using __copy_cv_t [[__gnu__::__nodebug__]] = typename __copy_cv<_From>::template __apply<_To>;
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/copy_cvref.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/copy_cvref.h" 3
+# 16 "c++/v1/__type_traits/common_reference.h" 2 3
+# 1 "c++/v1/__type_traits/copy_cvref.h" 1 3
+# 18 "c++/v1/__type_traits/copy_cvref.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2577,8 +2577,8 @@ template <class _From, class _To>
 using __copy_cvref_t [[__gnu__::__nodebug__]] = typename __copy_cvref<_From>::template __apply<_To>;
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/common_reference.h" 3
+# 17 "c++/v1/__type_traits/common_reference.h" 2 3
+# 25 "c++/v1/__type_traits/common_reference.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2755,8 +2755,8 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/common_reference_with.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/common_reference_with.h" 3
+# 16 "c++/v1/__concepts/common_reference_with.h" 2 3
+# 19 "c++/v1/__concepts/common_reference_with.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2773,12 +2773,12 @@ concept common_reference_with =
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 2 3
+# 13 "c++/v1/__concepts/assignable.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_const_lvalue_ref.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_const_lvalue_ref.h" 3
+# 1 "c++/v1/__type_traits/make_const_lvalue_ref.h" 1 3
+# 17 "c++/v1/__type_traits/make_const_lvalue_ref.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2787,9 +2787,9 @@ template <class _Tp>
 using __make_const_lvalue_ref [[__gnu__::__nodebug__]] = const __libcpp_remove_reference_t<_Tp>&;
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/forward.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/forward.h" 3
+# 17 "c++/v1/__concepts/assignable.h" 2 3
+# 1 "c++/v1/__utility/forward.h" 1 3
+# 19 "c++/v1/__utility/forward.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2808,8 +2808,8 @@ forward([[_Clang::__lifetimebound__]] __libcpp_remove_reference_t<_Tp>&& __t) no
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/assignable.h" 3
+# 18 "c++/v1/__concepts/assignable.h" 2 3
+# 21 "c++/v1/__concepts/assignable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2829,16 +2829,16 @@ concept assignable_from =
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/copyable.h" 2 3
+# 13 "c++/v1/__concepts/copyable.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/movable.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/movable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_class.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_class.h" 3
+# 1 "c++/v1/__concepts/movable.h" 1 3
+# 14 "c++/v1/__concepts/movable.h" 3
+# 1 "c++/v1/__concepts/swappable.h" 1 3
+# 13 "c++/v1/__concepts/swappable.h" 3
+# 1 "c++/v1/__concepts/class_or_enum.h" 1 3
+# 13 "c++/v1/__concepts/class_or_enum.h" 3
+# 1 "c++/v1/__type_traits/is_class.h" 1 3
+# 17 "c++/v1/__type_traits/is_class.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2852,9 +2852,9 @@ template <class _Tp>
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_enum.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_enum.h" 3
+# 14 "c++/v1/__concepts/class_or_enum.h" 2 3
+# 1 "c++/v1/__type_traits/is_enum.h" 1 3
+# 17 "c++/v1/__type_traits/is_enum.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2878,9 +2878,9 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_union.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_union.h" 3
+# 15 "c++/v1/__concepts/class_or_enum.h" 2 3
+# 1 "c++/v1/__type_traits/is_union.h" 1 3
+# 17 "c++/v1/__type_traits/is_union.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2894,8 +2894,8 @@ template <class _Tp>
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/class_or_enum.h" 3
+# 16 "c++/v1/__concepts/class_or_enum.h" 2 3
+# 19 "c++/v1/__concepts/class_or_enum.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2910,13 +2910,13 @@ concept __class_or_enum = is_class_v<_Tp> || is_union_v<_Tp> || is_enum_v<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
+# 14 "c++/v1/__concepts/swappable.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/extent.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/extent.h" 3
+# 1 "c++/v1/__type_traits/extent.h" 1 3
+# 18 "c++/v1/__type_traits/extent.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2929,11 +2929,11 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp, unsigned _Ip = 0>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr size_t extent_v = __array_extent(_Tp, _Ip);
-# 52 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/extent.h" 3
+# 52 "c++/v1/__type_traits/extent.h" 3
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_assignable.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_assignable.h" 3
+# 19 "c++/v1/__concepts/swappable.h" 2 3
+# 1 "c++/v1/__type_traits/is_nothrow_assignable.h" 1 3
+# 18 "c++/v1/__type_traits/is_nothrow_assignable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -2967,9 +2967,9 @@ template <class _Tp>
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_constructible.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_nothrow_constructible.h" 3
+# 20 "c++/v1/__concepts/swappable.h" 2 3
+# 1 "c++/v1/__type_traits/is_nothrow_constructible.h" 1 3
+# 18 "c++/v1/__type_traits/is_nothrow_constructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3014,17 +3014,17 @@ template <class _Tp>
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
+# 21 "c++/v1/__concepts/swappable.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exchange.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exchange.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/move.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/move.h" 3
+# 1 "c++/v1/__utility/exchange.h" 1 3
+# 16 "c++/v1/__utility/exchange.h" 3
+# 1 "c++/v1/__utility/move.h" 1 3
+# 21 "c++/v1/__utility/move.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/move.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 25 "c++/v1/__utility/move.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -3046,13 +3046,13 @@ move_if_noexcept([[_Clang::__lifetimebound__]] _Tp& __x) noexcept {
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exchange.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exchange.h" 3
+# 17 "c++/v1/__utility/exchange.h" 2 3
+# 20 "c++/v1/__utility/exchange.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exchange.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__utility/exchange.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -3067,13 +3067,13 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 3
+# 23 "c++/v1/__concepts/swappable.h" 2 3
+# 28 "c++/v1/__concepts/swappable.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/swappable.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 32 "c++/v1/__concepts/swappable.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -3161,10 +3161,10 @@ concept swappable_with = common_reference_with<_Tp, _Up> && requires(_Tp&& __t, 
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/movable.h" 2 3
+# 15 "c++/v1/__concepts/movable.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_object.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_object.h" 3
+# 1 "c++/v1/__type_traits/is_object.h" 1 3
+# 17 "c++/v1/__type_traits/is_object.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3178,8 +3178,8 @@ template <class _Tp>
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/movable.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/movable.h" 3
+# 17 "c++/v1/__concepts/movable.h" 2 3
+# 20 "c++/v1/__concepts/movable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3194,8 +3194,8 @@ concept movable = is_object_v<_Tp> && move_constructible<_Tp> && assignable_from
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/copyable.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/copyable.h" 3
+# 15 "c++/v1/__concepts/copyable.h" 2 3
+# 19 "c++/v1/__concepts/copyable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3217,11 +3217,11 @@ concept copyable =
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/equality_comparable.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/equality_comparable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/boolean_testable.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/boolean_testable.h" 3
+# 17 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__concepts/equality_comparable.h" 1 3
+# 12 "c++/v1/__concepts/equality_comparable.h" 3
+# 1 "c++/v1/__concepts/boolean_testable.h" 1 3
+# 18 "c++/v1/__concepts/boolean_testable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3241,8 +3241,8 @@ concept __boolean_testable = __boolean_testable_impl<_Tp> && requires(_Tp&& __t)
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/equality_comparable.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/equality_comparable.h" 3
+# 13 "c++/v1/__concepts/equality_comparable.h" 2 3
+# 20 "c++/v1/__concepts/equality_comparable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3278,10 +3278,10 @@ concept equality_comparable_with =
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
+# 18 "c++/v1/__iterator/iterator_traits.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/totally_ordered.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/totally_ordered.h" 3
+# 1 "c++/v1/__concepts/totally_ordered.h" 1 3
+# 20 "c++/v1/__concepts/totally_ordered.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3320,10 +3320,10 @@ concept totally_ordered_with =
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
+# 20 "c++/v1/__iterator/iterator_traits.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/ptrdiff_t.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/ptrdiff_t.h" 3
+# 1 "c++/v1/__cstddef/ptrdiff_t.h" 1 3
+# 16 "c++/v1/__cstddef/ptrdiff_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3331,11 +3331,11 @@ concept totally_ordered_with =
 using ptrdiff_t = decltype(static_cast<int*>(nullptr) - static_cast<int*>(nullptr));
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/pair.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/pair.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/tuple.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/tuple.h" 3
+# 22 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__fwd/pair.h" 1 3
+# 14 "c++/v1/__fwd/pair.h" 3
+# 1 "c++/v1/__fwd/tuple.h" 1 3
+# 17 "c++/v1/__fwd/tuple.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3370,8 +3370,8 @@ get(const tuple<_Tp...>&&) noexcept;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/pair.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/pair.h" 3
+# 15 "c++/v1/__fwd/pair.h" 2 3
+# 18 "c++/v1/__fwd/pair.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3404,13 +3404,13 @@ get(const pair<_T1, _T2>&&) noexcept;
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/incrementable_traits.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/incrementable_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_primary_template.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_primary_template.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/enable_if.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/enable_if.h" 3
+# 23 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__iterator/incrementable_traits.h" 1 3
+# 18 "c++/v1/__iterator/incrementable_traits.h" 3
+# 1 "c++/v1/__type_traits/is_primary_template.h" 1 3
+# 13 "c++/v1/__type_traits/is_primary_template.h" 3
+# 1 "c++/v1/__type_traits/enable_if.h" 1 3
+# 16 "c++/v1/__type_traits/enable_if.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3437,10 +3437,10 @@ using enable_if_t = typename enable_if<_Bp, _Tp>::type;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_primary_template.h" 2 3
+# 14 "c++/v1/__type_traits/is_primary_template.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_valid_expansion.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_valid_expansion.h" 3
+# 1 "c++/v1/__type_traits/is_valid_expansion.h" 1 3
+# 17 "c++/v1/__type_traits/is_valid_expansion.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3454,8 +3454,8 @@ template <template <class...> class _Templ, class... _Args>
 using _IsValidExpansion [[__gnu__::__nodebug__]] = decltype(std::__sfinae_test_impl<_Templ, _Args...>(0));
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_primary_template.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_primary_template.h" 3
+# 16 "c++/v1/__type_traits/is_primary_template.h" 2 3
+# 19 "c++/v1/__type_traits/is_primary_template.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3468,11 +3468,11 @@ template <class _Tp>
 using __is_primary_template [[__gnu__::__nodebug__]] = _IsValidExpansion<__test_for_primary_template, _Tp>;
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/incrementable_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_signed.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_signed.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/type_list.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/type_list.h" 3
+# 19 "c++/v1/__iterator/incrementable_traits.h" 2 3
+# 1 "c++/v1/__type_traits/make_signed.h" 1 3
+# 17 "c++/v1/__type_traits/make_signed.h" 3
+# 1 "c++/v1/__type_traits/type_list.h" 1 3
+# 17 "c++/v1/__type_traits/type_list.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3502,8 +3502,8 @@ struct __find_first<__type_list<_Head, _Tail...>, _Size, false> {
 };
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_signed.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_signed.h" 3
+# 18 "c++/v1/__type_traits/make_signed.h" 2 3
+# 21 "c++/v1/__type_traits/make_signed.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3512,7 +3512,7 @@ struct __find_first<__type_list<_Head, _Tail...>, _Size, false> {
 
 template <class _Tp>
 using __make_signed_t [[__gnu__::__nodebug__]] = __make_signed(_Tp);
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_signed.h" 3
+# 72 "c++/v1/__type_traits/make_signed.h" 3
 template <class _Tp>
 struct [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] make_signed {
   using type [[__gnu__::__nodebug__]] = __make_signed_t<_Tp>;
@@ -3524,8 +3524,8 @@ using make_signed_t = __make_signed_t<_Tp>;
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/incrementable_traits.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/incrementable_traits.h" 3
+# 20 "c++/v1/__iterator/incrementable_traits.h" 2 3
+# 25 "c++/v1/__iterator/incrementable_traits.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3579,11 +3579,11 @@ using iter_difference_t =
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/readable_traits.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/readable_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_array.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_array.h" 3
+# 24 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__iterator/readable_traits.h" 1 3
+# 16 "c++/v1/__iterator/readable_traits.h" 3
+# 1 "c++/v1/__type_traits/is_array.h" 1 3
+# 17 "c++/v1/__type_traits/is_array.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3597,13 +3597,13 @@ template <class _Tp>
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/readable_traits.h" 2 3
+# 17 "c++/v1/__iterator/readable_traits.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_extent.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_extent.h" 3
+# 1 "c++/v1/__type_traits/remove_extent.h" 1 3
+# 16 "c++/v1/__type_traits/remove_extent.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3627,8 +3627,8 @@ using remove_extent_t = __remove_extent_t<_Tp>;
 
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/readable_traits.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/readable_traits.h" 3
+# 22 "c++/v1/__iterator/readable_traits.h" 2 3
+# 25 "c++/v1/__iterator/readable_traits.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3684,13 +3684,13 @@ struct indirectly_readable_traits<_Tp> : __cond_value_type<typename _Tp::value_t
 
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_element.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_element.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_indices.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_indices.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/integer_sequence.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/integer_sequence.h" 3
+# 25 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__tuple/tuple_element.h" 1 3
+# 14 "c++/v1/__tuple/tuple_element.h" 3
+# 1 "c++/v1/__tuple/tuple_indices.h" 1 3
+# 14 "c++/v1/__tuple/tuple_indices.h" 3
+# 1 "c++/v1/__utility/integer_sequence.h" 1 3
+# 18 "c++/v1/__utility/integer_sequence.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3711,7 +3711,7 @@ struct __integer_sequence {
 template <size_t _Ep, size_t _Sp>
 using __make_indices_imp [[__gnu__::__nodebug__]] =
     typename __make_integer_seq<__integer_sequence, size_t, _Ep - _Sp>::template __to_tuple_indices<_Sp>;
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/integer_sequence.h" 3
+# 48 "c++/v1/__utility/integer_sequence.h" 3
 template <class _Tp, _Tp... _Ip>
 struct integer_sequence {
   typedef _Tp value_type;
@@ -3726,7 +3726,7 @@ using index_sequence = integer_sequence<size_t, _Ip...>;
 
 template <class _Tp, _Tp _Ep>
 using make_integer_sequence [[__gnu__::__nodebug__]] = __make_integer_seq<integer_sequence, _Tp, _Ep>;
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/integer_sequence.h" 3
+# 72 "c++/v1/__utility/integer_sequence.h" 3
 template <size_t _Np>
 using make_index_sequence = make_integer_sequence<size_t, _Np>;
 
@@ -3744,8 +3744,8 @@ template <size_t... _Index, class _Function>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_indices.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_indices.h" 3
+# 15 "c++/v1/__tuple/tuple_indices.h" 2 3
+# 18 "c++/v1/__tuple/tuple_indices.h" 3
 
 
 
@@ -3762,9 +3762,9 @@ struct __make_tuple_indices {
 };
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_element.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_types.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_types.h" 3
+# 15 "c++/v1/__tuple/tuple_element.h" 2 3
+# 1 "c++/v1/__tuple/tuple_types.h" 1 3
+# 16 "c++/v1/__tuple/tuple_types.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3773,8 +3773,8 @@ template <class... _Tp>
 struct __tuple_types {};
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_element.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_element.h" 3
+# 16 "c++/v1/__tuple/tuple_element.h" 2 3
+# 19 "c++/v1/__tuple/tuple_element.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3813,11 +3813,11 @@ using tuple_element_t [[__gnu__::__nodebug__]] = typename tuple_element<_Ip, _Tp
 
 
 } }
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
+# 26 "c++/v1/__iterator/iterator_traits.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/detected_or.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/detected_or.h" 3
+# 1 "c++/v1/__type_traits/detected_or.h" 1 3
+# 17 "c++/v1/__type_traits/detected_or.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3836,9 +3836,9 @@ template <class _Default, template <class...> class _Op, class... _Args>
 using __detected_or_t [[__gnu__::__nodebug__]] = typename __detector<_Default, void, _Op, _Args...>::type;
 
 } }
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/disjunction.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/disjunction.h" 3
+# 29 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__type_traits/disjunction.h" 1 3
+# 17 "c++/v1/__type_traits/disjunction.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3879,15 +3879,15 @@ template <class... _Args>
 
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
+# 30 "c++/v1/__iterator/iterator_traits.h" 2 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/nat.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/nat.h" 3
+# 1 "c++/v1/__type_traits/nat.h" 1 3
+# 16 "c++/v1/__type_traits/nat.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3902,9 +3902,9 @@ struct __nat {
 };
 
 } }
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_const.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_const.h" 3
+# 37 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 1 "c++/v1/__type_traits/remove_const.h" 1 3
+# 16 "c++/v1/__type_traits/remove_const.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -3917,14 +3917,14 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 using __remove_const_t [[__gnu__::__nodebug__]] = __remove_const(_Tp);
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_const.h" 3
+# 43 "c++/v1/__type_traits/remove_const.h" 3
 template <class _Tp>
 using remove_const_t = __remove_const_t<_Tp>;
 
 
 } }
-# 38 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 2 3
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
+# 38 "c++/v1/__iterator/iterator_traits.h" 2 3
+# 45 "c++/v1/__iterator/iterator_traits.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4164,7 +4164,7 @@ template <class _Ip>
 struct iterator_traits : __iterator_traits<_Ip> {
   using __primary_template [[__gnu__::__nodebug__]] = iterator_traits;
 };
-# 336 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
+# 336 "c++/v1/__iterator/iterator_traits.h" 3
 template <class _Tp>
 
   requires is_object_v<_Tp>
@@ -4208,7 +4208,7 @@ using __has_bidirectional_iterator_category [[__gnu__::__nodebug__]] =
 template <class _Tp>
 using __has_random_access_iterator_category [[__gnu__::__nodebug__]] =
     __has_iterator_category_convertible_to<_Tp, random_access_iterator_tag>;
-# 388 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
+# 388 "c++/v1/__iterator/iterator_traits.h" 3
 template <class _Tp>
 struct __libcpp_is_contiguous_iterator
     : _Or< __has_iterator_category_convertible_to<_Tp, contiguous_iterator_tag>,
@@ -4257,7 +4257,7 @@ template <class _InputIterator>
 using __iter_to_alloc_type [[__gnu__::__nodebug__]] =
     pair<const tuple_element_t<0, __iter_value_type<_InputIterator>>,
          tuple_element_t<1, __iter_value_type<_InputIterator>>>;
-# 450 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
+# 450 "c++/v1/__iterator/iterator_traits.h" 3
 template <class _Iter>
 using __iterator_category_type [[__gnu__::__nodebug__]] = typename iterator_traits<_Iter>::iterator_category;
 
@@ -4269,7 +4269,7 @@ using __iter_diff_t [[__gnu__::__nodebug__]] = typename iterator_traits<_Iter>::
 
 template <class _Iter>
 using __iter_reference [[__gnu__::__nodebug__]] = typename iterator_traits<_Iter>::reference;
-# 470 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator_traits.h" 3
+# 470 "c++/v1/__iterator/iterator_traits.h" 3
 template <class _Ip>
 using iter_value_t =
     typename conditional_t<__is_primary_template<iterator_traits<remove_cvref_t<_Ip> > >::value,
@@ -4279,11 +4279,11 @@ using iter_value_t =
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/addressof.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/addressof.h" 3
+# 14 "c++/v1/__algorithm/unwrap_iter.h" 2 3
+# 1 "c++/v1/__memory/pointer_traits.h" 1 3
+# 15 "c++/v1/__memory/pointer_traits.h" 3
+# 1 "c++/v1/__memory/addressof.h" 1 3
+# 17 "c++/v1/__memory/addressof.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4292,16 +4292,16 @@ template <class _Tp>
 inline constexpr __attribute__((__no_sanitize__("cfi"))) __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) _Tp* addressof(_Tp& __x) noexcept {
   return __builtin_addressof(__x);
 }
-# 53 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/addressof.h" 3
+# 53 "c++/v1/__memory/addressof.h" 3
 template <class _Tp>
 _Tp* addressof(const _Tp&&) noexcept = delete;
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 2 3
+# 16 "c++/v1/__memory/pointer_traits.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/conjunction.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/conjunction.h" 3
+# 1 "c++/v1/__type_traits/conjunction.h" 1 3
+# 20 "c++/v1/__type_traits/conjunction.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4351,13 +4351,13 @@ template <class... _Args>
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 2 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 3
+# 18 "c++/v1/__memory/pointer_traits.h" 2 3
+# 32 "c++/v1/__memory/pointer_traits.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/pointer_traits.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 36 "c++/v1/__memory/pointer_traits.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -4590,16 +4590,16 @@ constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attribute__
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 3
+# 15 "c++/v1/__algorithm/unwrap_iter.h" 2 3
+# 22 "c++/v1/__algorithm/unwrap_iter.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 26 "c++/v1/__algorithm/unwrap_iter.h" 2 3
 
  namespace std { inline namespace __1 {
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_iter.h" 3
+# 37 "c++/v1/__algorithm/unwrap_iter.h" 3
 template <class _Iter, bool = __libcpp_is_contiguous_iterator<_Iter>::value>
 struct __unwrap_iter_impl {
   static __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _Iter __rewrap(_Iter, _Iter __iter) { return __iter; }
@@ -4645,15 +4645,15 @@ template <class _OrigIter, class _Iter, class _Impl = __unwrap_iter_impl<_OrigIt
 }
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/derived_from.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/derived_from.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_base_of.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_base_of.h" 3
+# 13 "c++/v1/__algorithm/copy_move_common.h" 2 3
+# 1 "c++/v1/__algorithm/unwrap_range.h" 1 3
+# 15 "c++/v1/__algorithm/unwrap_range.h" 3
+# 1 "c++/v1/__iterator/concepts.h" 1 3
+# 18 "c++/v1/__iterator/concepts.h" 3
+# 1 "c++/v1/__concepts/derived_from.h" 1 3
+# 13 "c++/v1/__concepts/derived_from.h" 3
+# 1 "c++/v1/__type_traits/is_base_of.h" 1 3
+# 17 "c++/v1/__type_traits/is_base_of.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4664,10 +4664,10 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Bp, class _Dp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_base_of_v = __is_base_of(_Bp, _Dp);
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_base_of.h" 3
+# 41 "c++/v1/__type_traits/is_base_of.h" 3
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/derived_from.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/derived_from.h" 3
+# 14 "c++/v1/__concepts/derived_from.h" 2 3
+# 18 "c++/v1/__concepts/derived_from.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4682,16 +4682,16 @@ concept derived_from = is_base_of_v<_Bp, _Dp> && is_convertible_v<const volatile
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
+# 19 "c++/v1/__iterator/concepts.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/invocable.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/invocable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/invoke.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/invoke.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_core_convertible.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_core_convertible.h" 3
+# 1 "c++/v1/__concepts/invocable.h" 1 3
+# 13 "c++/v1/__concepts/invocable.h" 3
+# 1 "c++/v1/__functional/invoke.h" 1 3
+# 14 "c++/v1/__functional/invoke.h" 3
+# 1 "c++/v1/__type_traits/invoke.h" 1 3
+# 19 "c++/v1/__type_traits/invoke.h" 3
+# 1 "c++/v1/__type_traits/is_core_convertible.h" 1 3
+# 17 "c++/v1/__type_traits/is_core_convertible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4728,9 +4728,9 @@ inline const bool __is_nothrow_core_convertible_v<_Tp, _Up, true> =
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_member_pointer.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_member_pointer.h" 3
+# 20 "c++/v1/__type_traits/invoke.h" 2 3
+# 1 "c++/v1/__type_traits/is_member_pointer.h" 1 3
+# 17 "c++/v1/__type_traits/is_member_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4756,11 +4756,11 @@ template <class _Tp>
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference_wrapper.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference_wrapper.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/functional.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/functional.h" 3
+# 21 "c++/v1/__type_traits/invoke.h" 2 3
+# 1 "c++/v1/__type_traits/is_reference_wrapper.h" 1 3
+# 13 "c++/v1/__type_traits/is_reference_wrapper.h" 3
+# 1 "c++/v1/__fwd/functional.h" 1 3
+# 16 "c++/v1/__fwd/functional.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4779,8 +4779,8 @@ template <class>
 class reference_wrapper;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference_wrapper.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_reference_wrapper.h" 3
+# 14 "c++/v1/__type_traits/is_reference_wrapper.h" 2 3
+# 19 "c++/v1/__type_traits/is_reference_wrapper.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4793,9 +4793,9 @@ template <class _Tp>
 struct __is_reference_wrapper : __is_reference_wrapper_impl<__remove_cv_t<_Tp> > {};
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 2 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 3
-# 66 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 3
+# 22 "c++/v1/__type_traits/invoke.h" 2 3
+# 31 "c++/v1/__type_traits/invoke.h" 3
+# 66 "c++/v1/__type_traits/invoke.h" 3
  namespace std { inline namespace __1 {
 
 
@@ -4861,7 +4861,7 @@ inline const bool __is_nothrow_invocable_r_impl<true, _Ret, _Args...> =
 template <class _Ret, class... _Args>
 inline const bool __is_nothrow_invocable_r_v =
     __is_nothrow_invocable_r_impl<__is_nothrow_invocable_v<_Args...>, _Ret, _Args...>;
-# 330 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/invoke.h" 3
+# 330 "c++/v1/__type_traits/invoke.h" 3
 template <class _Ret, bool = is_void<_Ret>::value>
 struct __invoke_void_return_wrapper {
   template <class... _Args>
@@ -4924,8 +4924,8 @@ using invoke_result_t = __invoke_result_t<_Fn, _Args...>;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/invoke.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/invoke.h" 3
+# 15 "c++/v1/__functional/invoke.h" 2 3
+# 20 "c++/v1/__functional/invoke.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4960,8 +4960,8 @@ invoke_r(_Fn&& __f, _Args&&... __args) noexcept(is_nothrow_invocable_r_v<_Result
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/invocable.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/invocable.h" 3
+# 14 "c++/v1/__concepts/invocable.h" 2 3
+# 18 "c++/v1/__concepts/invocable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -4983,10 +4983,10 @@ concept regular_invocable = invocable<_Fn, _Args...>;
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
+# 21 "c++/v1/__iterator/concepts.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/predicate.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/predicate.h" 3
+# 1 "c++/v1/__concepts/predicate.h" 1 3
+# 19 "c++/v1/__concepts/predicate.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5001,11 +5001,11 @@ concept predicate = regular_invocable<_Fn, _Args...> && __boolean_testable<invok
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/regular.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/regular.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/semiregular.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/semiregular.h" 3
+# 23 "c++/v1/__iterator/concepts.h" 2 3
+# 1 "c++/v1/__concepts/regular.h" 1 3
+# 13 "c++/v1/__concepts/regular.h" 3
+# 1 "c++/v1/__concepts/semiregular.h" 1 3
+# 18 "c++/v1/__concepts/semiregular.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5020,8 +5020,8 @@ concept semiregular = copyable<_Tp> && default_initializable<_Tp>;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/regular.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/regular.h" 3
+# 14 "c++/v1/__concepts/regular.h" 2 3
+# 18 "c++/v1/__concepts/regular.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5036,9 +5036,9 @@ concept regular = semiregular<_Tp> && equality_comparable<_Tp>;
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/relation.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/relation.h" 3
+# 24 "c++/v1/__iterator/concepts.h" 2 3
+# 1 "c++/v1/__concepts/relation.h" 1 3
+# 17 "c++/v1/__concepts/relation.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5064,19 +5064,19 @@ concept strict_weak_order = relation<_Rp, _Tp, _Up>;
 
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
+# 25 "c++/v1/__iterator/concepts.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_move.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_move.h" 3
+# 1 "c++/v1/__iterator/iter_move.h" 1 3
+# 25 "c++/v1/__iterator/iter_move.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_move.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 29 "c++/v1/__iterator/iter_move.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -5149,10 +5149,10 @@ using iter_rvalue_reference_t = decltype(ranges::iter_move(std::declval<_Tp&>())
 
 
 } }
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
-# 40 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_pointer.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_pointer.h" 3
+# 31 "c++/v1/__iterator/concepts.h" 2 3
+# 40 "c++/v1/__iterator/concepts.h" 3
+# 1 "c++/v1/__type_traits/is_pointer.h" 1 3
+# 17 "c++/v1/__type_traits/is_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5166,8 +5166,8 @@ template <class _Tp>
 
 
 } }
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 2 3
-# 51 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/concepts.h" 3
+# 41 "c++/v1/__iterator/concepts.h" 2 3
+# 51 "c++/v1/__iterator/concepts.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5443,20 +5443,20 @@ using __has_random_access_iterator_category_or_concept [[__gnu__::__nodebug__]]
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/next.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/next.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assert" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assert" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__log_hardening_failure" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__log_hardening_failure" 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_abort" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_abort" 3
+# 16 "c++/v1/__algorithm/unwrap_range.h" 2 3
+# 1 "c++/v1/__iterator/next.h" 1 3
+# 14 "c++/v1/__iterator/next.h" 3
+# 1 "c++/v1/__iterator/advance.h" 1 3
+# 13 "c++/v1/__iterator/advance.h" 3
+# 1 "c++/v1/__assert" 1 3
+# 13 "c++/v1/__assert" 3
+# 1 "c++/v1/__assertion_handler" 1 3
+# 19 "c++/v1/__assertion_handler" 3
+# 1 "c++/v1/__log_hardening_failure" 1 3
+# 17 "c++/v1/__log_hardening_failure" 3
+# 20 "c++/v1/__assertion_handler" 2 3
+# 1 "c++/v1/__verbose_abort" 1 3
+# 17 "c++/v1/__verbose_abort" 3
 
 
  namespace std { inline namespace __1 {
@@ -5464,21 +5464,21 @@ using __has_random_access_iterator_category_or_concept [[__gnu__::__nodebug__]]
 
 
 [[__noreturn__]] __attribute__((__format__(__printf__, 1, 2))) void __libcpp_verbose_abort(const char* __format, ...) noexcept;
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_abort" 3
+# 50 "c++/v1/__verbose_abort" 3
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_trap" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_trap" 3
+# 21 "c++/v1/__assertion_handler" 2 3
+# 1 "c++/v1/__verbose_trap" 1 3
+# 17 "c++/v1/__verbose_trap" 3
 
 
  namespace std { inline namespace __1 {
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__verbose_trap" 3
+# 34 "c++/v1/__verbose_trap" 3
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 2 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assertion_handler" 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assert" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__assert" 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 2 3
+# 22 "c++/v1/__assertion_handler" 2 3
+# 26 "c++/v1/__assertion_handler" 3
+# 14 "c++/v1/__assert" 2 3
+# 18 "c++/v1/__assert" 3
+# 14 "c++/v1/__iterator/advance.h" 2 3
 
 
 
@@ -5487,10 +5487,10 @@ using __has_random_access_iterator_category_or_concept [[__gnu__::__nodebug__]]
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/convert_to_integral.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/convert_to_integral.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/underlying_type.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/underlying_type.h" 3
+# 1 "c++/v1/__utility/convert_to_integral.h" 1 3
+# 16 "c++/v1/__utility/convert_to_integral.h" 3
+# 1 "c++/v1/__type_traits/underlying_type.h" 1 3
+# 17 "c++/v1/__type_traits/underlying_type.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5524,8 +5524,8 @@ using underlying_type_t = __underlying_type_t<_Tp>;
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/convert_to_integral.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/convert_to_integral.h" 3
+# 17 "c++/v1/__utility/convert_to_integral.h" 2 3
+# 20 "c++/v1/__utility/convert_to_integral.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5573,11 +5573,11 @@ __convert_to_integral(_Tp __val) {
 }
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 2 3
+# 23 "c++/v1/__iterator/advance.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/unreachable.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/unreachable.h" 3
+# 1 "c++/v1/__utility/unreachable.h" 1 3
+# 17 "c++/v1/__utility/unreachable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -5594,17 +5594,17 @@ __convert_to_integral(_Tp __val) {
 
 
 } }
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 1 3
-# 114 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 3
+# 26 "c++/v1/__iterator/advance.h" 2 3
+# 1 "c++/v1/limits" 1 3
+# 114 "c++/v1/limits" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 118 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/version" 1 3
-# 290 "D:/Code/Msys2/Files/clang64/include/c++/v1/version" 3
-# 119 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 118 "c++/v1/limits" 2 3
+# 1 "c++/v1/version" 1 3
+# 290 "c++/v1/version" 3
+# 119 "c++/v1/limits" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -5971,9 +5971,9 @@ public:
   static inline constexpr const bool has_quiet_NaN = __base::has_quiet_NaN;
   static inline constexpr const bool has_signaling_NaN = __base::has_signaling_NaN;
 #pragma GCC diagnostic push
-# 484 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 3
+# 484 "c++/v1/limits" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 484 "D:/Code/Msys2/Files/clang64/include/c++/v1/limits" 3
+# 484 "c++/v1/limits" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
   static inline __attribute__((__deprecated__)) constexpr const float_denorm_style has_denorm = __base::has_denorm;
   static inline __attribute__((__deprecated__)) constexpr const bool has_denorm_loss = __base::has_denorm_loss;
@@ -6010,13 +6010,13 @@ template <class _Tp>
 class numeric_limits<const volatile _Tp> : public numeric_limits<_Tp> {};
 
 } }
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 3
+# 27 "c++/v1/__iterator/advance.h" 2 3
+# 30 "c++/v1/__iterator/advance.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/advance.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 34 "c++/v1/__iterator/advance.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -6179,8 +6179,8 @@ inline constexpr auto advance = __advance{};
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/next.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/next.h" 3
+# 15 "c++/v1/__iterator/next.h" 2 3
+# 22 "c++/v1/__iterator/next.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6232,15 +6232,15 @@ inline constexpr auto next = __next{};
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 2 3
+# 17 "c++/v1/__algorithm/unwrap_range.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/common_comparison_category.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/common_comparison_category.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/ordering.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/ordering.h" 3
+# 1 "c++/v1/__utility/pair.h" 1 3
+# 12 "c++/v1/__utility/pair.h" 3
+# 1 "c++/v1/__compare/common_comparison_category.h" 1 3
+# 12 "c++/v1/__compare/common_comparison_category.h" 3
+# 1 "c++/v1/__compare/ordering.h" 1 3
+# 18 "c++/v1/__compare/ordering.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6504,8 +6504,8 @@ concept __comparison_category =
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/common_comparison_category.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/common_comparison_category.h" 3
+# 13 "c++/v1/__compare/common_comparison_category.h" 2 3
+# 19 "c++/v1/__compare/common_comparison_category.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6572,11 +6572,11 @@ using common_comparison_category_t = typename common_comparison_category<_Ts...>
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/synth_three_way.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/synth_three_way.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/three_way_comparable.h" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/three_way_comparable.h" 3
+# 13 "c++/v1/__utility/pair.h" 2 3
+# 1 "c++/v1/__compare/synth_three_way.h" 1 3
+# 13 "c++/v1/__compare/synth_three_way.h" 3
+# 1 "c++/v1/__compare/three_way_comparable.h" 1 3
+# 24 "c++/v1/__compare/three_way_comparable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6607,8 +6607,8 @@ concept three_way_comparable_with =
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/synth_three_way.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/synth_three_way.h" 3
+# 14 "c++/v1/__compare/synth_three_way.h" 2 3
+# 20 "c++/v1/__compare/synth_three_way.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6641,10 +6641,10 @@ using __synth_three_way_result [[__gnu__::__nodebug__]] =
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 14 "c++/v1/__utility/pair.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/different_from.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__concepts/different_from.h" 3
+# 1 "c++/v1/__concepts/different_from.h" 1 3
+# 18 "c++/v1/__concepts/different_from.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6657,11 +6657,11 @@ concept __different_from = !same_as<remove_cvref_t<_Tp>, remove_cvref_t<_Up>>;
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 16 "c++/v1/__utility/pair.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/array.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/array.h" 3
+# 1 "c++/v1/__fwd/array.h" 1 3
+# 18 "c++/v1/__fwd/array.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6690,29 +6690,29 @@ template <class _Tp, size_t _Size>
 inline const bool __is_std_array_v<array<_Tp, _Size> > = true;
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 19 "c++/v1/__utility/pair.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/complex.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/complex.h" 3
+# 1 "c++/v1/__tuple/tuple_like_no_subrange.h" 1 3
+# 15 "c++/v1/__tuple/tuple_like_no_subrange.h" 3
+# 1 "c++/v1/__fwd/complex.h" 1 3
+# 17 "c++/v1/__fwd/complex.h" 3
 
 
  namespace std { inline namespace __1 {
 
 template <class _Tp>
 class complex;
-# 40 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/complex.h" 3
+# 40 "c++/v1/__fwd/complex.h" 3
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 2 3
+# 16 "c++/v1/__tuple/tuple_like_no_subrange.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_const.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_const.h" 3
+# 1 "c++/v1/__tuple/tuple_size.h" 1 3
+# 18 "c++/v1/__tuple/tuple_size.h" 3
+# 1 "c++/v1/__type_traits/is_const.h" 1 3
+# 17 "c++/v1/__type_traits/is_const.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6726,9 +6726,9 @@ template <class _Tp>
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_volatile.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_volatile.h" 3
+# 19 "c++/v1/__tuple/tuple_size.h" 2 3
+# 1 "c++/v1/__type_traits/is_volatile.h" 1 3
+# 17 "c++/v1/__type_traits/is_volatile.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6742,8 +6742,8 @@ template <class _Tp>
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 3
+# 20 "c++/v1/__tuple/tuple_size.h" 2 3
+# 23 "c++/v1/__tuple/tuple_size.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6768,7 +6768,7 @@ struct tuple_size<
 template <class _Tp>
 struct tuple_size<__enable_if_tuple_size_imp<const volatile _Tp, decltype(tuple_size<_Tp>::value)>>
     : public integral_constant<size_t, tuple_size<_Tp>::value> {};
-# 59 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_size.h" 3
+# 59 "c++/v1/__tuple/tuple_size.h" 3
 template <class... _Tp>
 struct tuple_size<tuple<_Tp...> > : public integral_constant<size_t, sizeof...(_Tp)> {};
 
@@ -6783,8 +6783,8 @@ inline constexpr size_t tuple_size_v = tuple_size<_Tp>::value;
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 3
+# 19 "c++/v1/__tuple/tuple_like_no_subrange.h" 2 3
+# 23 "c++/v1/__tuple/tuple_like_no_subrange.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6802,7 +6802,7 @@ inline constexpr bool __tuple_like_no_subrange_impl<pair<_T1, _T2>> = true;
 
 template <class _Tp, size_t _Size>
 inline constexpr bool __tuple_like_no_subrange_impl<array<_Tp, _Size>> = true;
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_no_subrange.h" 3
+# 48 "c++/v1/__tuple/tuple_like_no_subrange.h" 3
 template <class _Tp>
 concept __tuple_like_no_subrange = __tuple_like_no_subrange_impl<remove_cvref_t<_Tp>>;
 
@@ -6815,15 +6815,15 @@ concept __pair_like_no_subrange = __tuple_like_no_subrange<_Tp> && tuple_size<re
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 23 "c++/v1/__utility/pair.h" 2 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_assignable.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_assignable.h" 3
+# 1 "c++/v1/__type_traits/is_assignable.h" 1 3
+# 18 "c++/v1/__type_traits/is_assignable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6855,11 +6855,11 @@ template <class _Tp>
 
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 30 "c++/v1/__utility/pair.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_implicitly_default_constructible.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_implicitly_default_constructible.h" 3
+# 1 "c++/v1/__type_traits/is_implicitly_default_constructible.h" 1 3
+# 18 "c++/v1/__type_traits/is_implicitly_default_constructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -6887,45 +6887,45 @@ struct __is_implicitly_default_constructible<_Tp,
 
 
 } }
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 33 "c++/v1/__utility/pair.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_copyable.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_copyable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdint" 1 3
-# 149 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdint" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stdint.h" 1 3
-# 56 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stdint.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/stdint.h" 1 3
-# 28 "D:/Code/Msys2/Files/clang64/include/stdint.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/crtdefs.h" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/stdint.h" 2 3
-
-
-
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 3
+# 1 "c++/v1/__type_traits/is_replaceable.h" 1 3
+# 16 "c++/v1/__type_traits/is_replaceable.h" 3
+# 1 "c++/v1/__type_traits/is_trivially_copyable.h" 1 3
+# 14 "c++/v1/__type_traits/is_trivially_copyable.h" 3
+# 1 "c++/v1/cstdint" 1 3
+# 149 "c++/v1/cstdint" 3
+# 1 "../lib/clang/21/include/stdint.h" 1 3
+# 56 "../lib/clang/21/include/stdint.h" 3
+# 1 "stdint.h" 1 3
+# 28 "stdint.h" 3
+# 1 "crtdefs.h" 1 3
+# 29 "stdint.h" 2 3
 
 
 
+# 1 "c++/v1/stddef.h" 1 3
+# 34 "c++/v1/stddef.h" 3
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 1 3
-# 103 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_wchar_t.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 135 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_wint_t.h" 1 3
-# 136 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 2 3
+
+
+
+# 1 "../lib/clang/21/include/stddef.h" 1 3
+# 103 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_wchar_t.h" 1 3
+# 104 "../lib/clang/21/include/stddef.h" 2 3
+# 135 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_wint_t.h" 1 3
+# 136 "../lib/clang/21/include/stddef.h" 2 3
+# 39 "c++/v1/stddef.h" 2 3
 
 
 
 
 
 typedef decltype(nullptr) nullptr_t;
-# 33 "D:/Code/Msys2/Files/clang64/include/stdint.h" 2 3
+# 33 "stdint.h" 2 3
 
 
 typedef signed char int8_t;
@@ -6963,9 +6963,9 @@ __extension__ typedef unsigned long long uint_fast64_t;
 
 __extension__ typedef long long intmax_t;
 __extension__ typedef unsigned long long uintmax_t;
-# 57 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stdint.h" 2 3
-# 150 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdint" 2 3
-# 154 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdint" 3
+# 57 "../lib/clang/21/include/stdint.h" 2 3
+# 150 "c++/v1/cstdint" 2 3
+# 154 "c++/v1/cstdint" 3
 
 
  namespace std { inline namespace __1 {
@@ -7007,8 +7007,8 @@ using ::intmax_t __attribute__((__using_if_exists__));
 using ::uintmax_t __attribute__((__using_if_exists__));
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_copyable.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_copyable.h" 3
+# 15 "c++/v1/__type_traits/is_trivially_copyable.h" 2 3
+# 18 "c++/v1/__type_traits/is_trivially_copyable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7025,12 +7025,12 @@ template <class _Tp>
 inline const bool __is_cheap_to_copy = __is_trivially_copyable(_Tp) && sizeof(_Tp) <= sizeof(std::intmax_t);
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 3
+# 17 "c++/v1/__type_traits/is_replaceable.h" 2 3
+# 20 "c++/v1/__type_traits/is_replaceable.h" 3
 
 
  namespace std { inline namespace __1 {
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 3
+# 35 "c++/v1/__type_traits/is_replaceable.h" 3
 template <class _Tp, class = void>
 struct __is_replaceable : is_trivially_copyable<_Tp> {};
 
@@ -7039,7 +7039,7 @@ struct __is_replaceable<_Tp, __enable_if_t<is_same<_Tp, typename _Tp::__replacea
 
 template <class _Tp>
 inline const bool __is_replaceable_v = __is_replaceable<_Tp>::value;
-# 51 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h" 3
+# 51 "c++/v1/__type_traits/is_replaceable.h" 3
 template <class _AllocatorTraits>
 struct __container_allocator_is_replaceable
     : integral_constant<bool,
@@ -7049,10 +7049,10 @@ struct __container_allocator_is_replaceable
                               _AllocatorTraits::propagate_on_container_copy_assignment::value))> {};
 
 } }
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 36 "c++/v1/__utility/pair.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_swappable.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_swappable.h" 3
+# 1 "c++/v1/__type_traits/is_swappable.h" 1 3
+# 26 "c++/v1/__type_traits/is_swappable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7132,13 +7132,13 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 
 } }
-# 38 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_relocatable.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_relocatable.h" 3
+# 38 "c++/v1/__utility/pair.h" 2 3
+# 1 "c++/v1/__type_traits/is_trivially_relocatable.h" 1 3
+# 19 "c++/v1/__type_traits/is_trivially_relocatable.h" 3
 
 
  namespace std { inline namespace __1 {
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_relocatable.h" 3
+# 33 "c++/v1/__type_traits/is_trivially_relocatable.h" 3
 template <class _Tp, class = void>
 struct __libcpp_is_trivially_relocatable : is_trivially_copyable<_Tp> {};
 
@@ -7149,10 +7149,10 @@ struct __libcpp_is_trivially_relocatable<_Tp,
     : true_type {};
 
 } }
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 39 "c++/v1/__utility/pair.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/unwrap_ref.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/unwrap_ref.h" 3
+# 1 "c++/v1/__type_traits/unwrap_ref.h" 1 3
+# 18 "c++/v1/__type_traits/unwrap_ref.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7185,12 +7185,12 @@ using unwrap_ref_decay_t = __unwrap_ref_decay_t<_Tp>;
 
 
 } }
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 41 "c++/v1/__utility/pair.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/piecewise_construct.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/piecewise_construct.h" 3
+# 1 "c++/v1/__utility/piecewise_construct.h" 1 3
+# 16 "c++/v1/__utility/piecewise_construct.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7206,13 +7206,13 @@ inline constexpr piecewise_construct_t piecewise_construct = piecewise_construct
 
 
 } }
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 3
+# 45 "c++/v1/__utility/pair.h" 2 3
+# 48 "c++/v1/__utility/pair.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 52 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 52 "c++/v1/__utility/pair.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -7270,7 +7270,7 @@ struct pair
 
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) pair(pair const&) = default;
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) pair(pair&&) = default;
-# 138 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 3
+# 138 "c++/v1/__utility/pair.h" 3
   template <class _CheckArgsDep = __check_pair_construction<_T1, _T2>,
             __enable_if_t<_CheckArgsDep::__enable_default(), int> = 0>
   explicit(!_CheckArgsDep::__enable_implicit_default()) __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr pair() noexcept(
@@ -7462,7 +7462,7 @@ struct pair
     second = std::get<1>(std::forward<_PairLike>(__p));
     return *this;
   }
-# 420 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 3
+# 420 "c++/v1/__utility/pair.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void swap(pair& __p)
       noexcept(__is_nothrow_swappable_v<first_type>&& __is_nothrow_swappable_v<second_type>) {
     using std::swap;
@@ -7524,7 +7524,7 @@ operator<=>(const pair<_T1, _T2>& __x, const pair<_U1, _U2>& __y) {
   }
   return std::__synth_three_way(__x.second, __y.second);
 }
-# 517 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/pair.h" 3
+# 517 "c++/v1/__utility/pair.h" 3
 template <class _T1, class _T2, class _U1, class _U2, template <class> class _TQual, template <class> class _UQual>
   requires requires {
     typename pair<common_reference_t<_TQual<_T1>, _UQual<_U1>>, common_reference_t<_TQual<_T2>, _UQual<_U2>>>;
@@ -7697,13 +7697,13 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 3
+# 20 "c++/v1/__algorithm/unwrap_range.h" 2 3
+# 23 "c++/v1/__algorithm/unwrap_range.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 27 "c++/v1/__algorithm/unwrap_range.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -7760,19 +7760,19 @@ template < class _Sent, class _Iter, class _Unwrapped>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _Iter __rewrap_range(_Iter __orig_iter, _Unwrapped __iter) {
   return __unwrap_range_impl<_Iter, _Sent>::__rewrap(std::move(__orig_iter), std::move(__iter));
 }
-# 95 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/unwrap_range.h" 3
+# 95 "c++/v1/__algorithm/unwrap_range.h" 3
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 2 3
+# 14 "c++/v1/__algorithm/copy_move_common.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/construct_at.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/construct_at.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/placement_new_delete.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/placement_new_delete.h" 3
+# 1 "c++/v1/__string/constexpr_c_functions.h" 1 3
+# 15 "c++/v1/__string/constexpr_c_functions.h" 3
+# 1 "c++/v1/__memory/construct_at.h" 1 3
+# 16 "c++/v1/__memory/construct_at.h" 3
+# 1 "c++/v1/__new/placement_new_delete.h" 1 3
+# 17 "c++/v1/__new/placement_new_delete.h" 3
 
 
 
@@ -7788,13 +7788,13 @@ operator new[](std::size_t, void* __p) noexcept {
 }
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void operator delete(void*, void*) noexcept {}
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void operator delete[](void*, void*) noexcept {}
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/construct_at.h" 2 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/construct_at.h" 3
+# 17 "c++/v1/__memory/construct_at.h" 2 3
+# 24 "c++/v1/__memory/construct_at.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/construct_at.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 28 "c++/v1/__memory/construct_at.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -7857,9 +7857,9 @@ template <class _Tp, enable_if_t<is_array_v<_Tp>, int> = 0>
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/datasizeof.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/datasizeof.h" 3
+# 16 "c++/v1/__string/constexpr_c_functions.h" 2 3
+# 1 "c++/v1/__type_traits/datasizeof.h" 1 3
+# 17 "c++/v1/__type_traits/datasizeof.h" 3
 
 
 
@@ -7892,10 +7892,10 @@ inline const size_t __datasizeof_v = __builtin_offsetof(_FirstPaddingByte<_Tp>, 
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
+# 17 "c++/v1/__string/constexpr_c_functions.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_always_bitcastable.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_always_bitcastable.h" 3
+# 1 "c++/v1/__type_traits/is_always_bitcastable.h" 1 3
+# 20 "c++/v1/__type_traits/is_always_bitcastable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7915,7 +7915,7 @@ struct __is_always_bitcastable {
   static const bool value =
 
       (is_same<_UnqualFrom, _UnqualTo>::value && is_trivially_copyable<_UnqualFrom>::value) ||
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_always_bitcastable.h" 3
+# 72 "c++/v1/__type_traits/is_always_bitcastable.h" 3
       (
         sizeof(_From) == sizeof(_To) &&
         is_integral<_From>::value &&
@@ -7926,10 +7926,10 @@ struct __is_always_bitcastable {
 };
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
+# 19 "c++/v1/__string/constexpr_c_functions.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constant_evaluated.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_constant_evaluated.h" 3
+# 1 "c++/v1/__type_traits/is_constant_evaluated.h" 1 3
+# 16 "c++/v1/__type_traits/is_constant_evaluated.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7945,10 +7945,10 @@ struct __is_always_bitcastable {
 }
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
+# 21 "c++/v1/__string/constexpr_c_functions.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_equality_comparable.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_equality_comparable.h" 3
+# 1 "c++/v1/__type_traits/is_equality_comparable.h" 1 3
+# 25 "c++/v1/__type_traits/is_equality_comparable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -7959,7 +7959,7 @@ struct __is_equality_comparable : false_type {};
 template <class _Tp, class _Up>
 struct __is_equality_comparable<_Tp, _Up, __void_t<decltype(std::declval<_Tp>() == std::declval<_Up>())> > : true_type {
 };
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_equality_comparable.h" 3
+# 50 "c++/v1/__type_traits/is_equality_comparable.h" 3
 template <class _Tp, class _Up, class = void>
 struct __libcpp_is_trivially_equality_comparable_impl : false_type {};
 
@@ -7997,14 +7997,14 @@ using __libcpp_is_trivially_equality_comparable [[__gnu__::__nodebug__]] =
     __libcpp_is_trivially_equality_comparable_impl<__remove_cv_t<_Tp>, __remove_cv_t<_Up> >;
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
+# 23 "c++/v1/__string/constexpr_c_functions.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/byte.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/byte.h" 3
+# 1 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 1 3
+# 13 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
+# 1 "c++/v1/__fwd/byte.h" 1 3
+# 16 "c++/v1/__fwd/byte.h" 3
 
 
 
@@ -8013,11 +8013,11 @@ using __libcpp_is_trivially_equality_comparable [[__gnu__::__nodebug__]] =
 enum class byte : unsigned char;
 
 }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 2 3
+# 14 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unsigned.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unsigned.h" 3
+# 1 "c++/v1/__type_traits/is_unsigned.h" 1 3
+# 18 "c++/v1/__type_traits/is_unsigned.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8030,14 +8030,14 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_unsigned_v = __is_unsigned(_Tp);
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unsigned.h" 3
+# 50 "c++/v1/__type_traits/is_unsigned.h" 3
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
+# 17 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 2 3
+# 23 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
 
 
  namespace std { inline namespace __1 {
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
+# 45 "c++/v1/__type_traits/is_trivially_lexicographically_comparable.h" 3
 template <class _Tp>
 inline const bool __is_std_byte_v = false;
 
@@ -8055,10 +8055,10 @@ inline const bool __is_trivially_lexicographically_comparable_v =
     (is_unsigned<_Tp>::value || __is_std_byte_v<_Tp>);
 
 } }
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
+# 27 "c++/v1/__string/constexpr_c_functions.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/element_count.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/element_count.h" 3
+# 1 "c++/v1/__utility/element_count.h" 1 3
+# 17 "c++/v1/__utility/element_count.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8068,13 +8068,13 @@ inline const bool __is_trivially_lexicographically_comparable_v =
 enum class __element_count : size_t {};
 
 } }
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_pointer_in_range.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_pointer_in_range.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/desugars_to.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/desugars_to.h" 3
+# 29 "c++/v1/__string/constexpr_c_functions.h" 2 3
+# 1 "c++/v1/__utility/is_pointer_in_range.h" 1 3
+# 12 "c++/v1/__utility/is_pointer_in_range.h" 3
+# 1 "c++/v1/__algorithm/comp.h" 1 3
+# 13 "c++/v1/__algorithm/comp.h" 3
+# 1 "c++/v1/__type_traits/desugars_to.h" 1 3
+# 16 "c++/v1/__type_traits/desugars_to.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8100,7 +8100,7 @@ struct __greater_tag {};
 
 
 struct __totally_ordered_less_tag {};
-# 52 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/desugars_to.h" 3
+# 52 "c++/v1/__type_traits/desugars_to.h" 3
 template <class _CanonicalTag, class _Operation, class... _Args>
 inline const bool __desugars_to_v = false;
 
@@ -8117,8 +8117,8 @@ inline const bool __desugars_to_v<_CanonicalTag, _Operation&&, _Args...> =
     __desugars_to_v<_CanonicalTag, _Operation, _Args...>;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp.h" 3
+# 14 "c++/v1/__algorithm/comp.h" 2 3
+# 18 "c++/v1/__algorithm/comp.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8153,7 +8153,7 @@ template <class _Tp>
 inline const bool __desugars_to_v<__totally_ordered_less_tag, __less<>, _Tp, _Tp> = is_integral<_Tp>::value;
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_pointer_in_range.h" 2 3
+# 13 "c++/v1/__utility/is_pointer_in_range.h" 2 3
 
 
 
@@ -8161,8 +8161,8 @@ inline const bool __desugars_to_v<__totally_ordered_less_tag, __less<>, _Tp, _Tp
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_valid_range.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_valid_range.h" 3
+# 1 "c++/v1/__utility/is_valid_range.h" 1 3
+# 18 "c++/v1/__utility/is_valid_range.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8181,8 +8181,8 @@ __is_valid_range(const _Tp* __first, const _Tp* __last) {
 }
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_pointer_in_range.h" 2 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/is_pointer_in_range.h" 3
+# 21 "c++/v1/__utility/is_pointer_in_range.h" 2 3
+# 24 "c++/v1/__utility/is_pointer_in_range.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8228,8 +8228,8 @@ __is_overlapping_range(const _Tp* __begin, const _Tp* __end, const _Up* __begin2
 }
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 2 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 3
+# 30 "c++/v1/__string/constexpr_c_functions.h" 2 3
+# 33 "c++/v1/__string/constexpr_c_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8350,7 +8350,7 @@ template <class _Tp, class _Up>
     return static_cast<_Tp*>(__builtin_memchr(__str, __value_buffer, __count));
   }
 }
-# 164 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/constexpr_c_functions.h" 3
+# 164 "c++/v1/__string/constexpr_c_functions.h" 3
 template <class _Tp, class _Up, __enable_if_t<is_assignable<_Tp&, _Up const&>::value, int> = 0>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _Tp& __assign_trivially_copyable(_Tp& __dest, _Up const& __src) {
   __dest = __src;
@@ -8422,13 +8422,13 @@ __constexpr_memmove(_Tp* __dest, _Up* __src, __element_count __n) {
 }
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 2 3
+# 19 "c++/v1/__algorithm/copy_move_common.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_assignable.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_assignable.h" 3
+# 1 "c++/v1/__type_traits/is_trivially_assignable.h" 1 3
+# 18 "c++/v1/__type_traits/is_trivially_assignable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8466,13 +8466,13 @@ template <class _Tp>
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 3
+# 24 "c++/v1/__algorithm/copy_move_common.h" 2 3
+# 30 "c++/v1/__algorithm/copy_move_common.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_move_common.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 34 "c++/v1/__algorithm/copy_move_common.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -8549,18 +8549,18 @@ __copy_move_unwrap_iters(_InIter __first, _Sent __last, _OutIter __out_first) {
 }
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_segment.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_segment.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/segmented_iterator.h" 1 3
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/segmented_iterator.h" 3
+# 13 "c++/v1/__algorithm/copy.h" 2 3
+# 1 "c++/v1/__algorithm/for_each_segment.h" 1 3
+# 13 "c++/v1/__algorithm/for_each_segment.h" 3
+# 1 "c++/v1/__iterator/segmented_iterator.h" 1 3
+# 50 "c++/v1/__iterator/segmented_iterator.h" 3
 
 
  namespace std { inline namespace __1 {
 
 template <class _Iterator>
 struct __segmented_iterator_traits;
-# 69 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/segmented_iterator.h" 3
+# 69 "c++/v1/__iterator/segmented_iterator.h" 3
 template <class _Tp, size_t = 0>
 struct __has_specialization : false_type {};
 
@@ -8576,8 +8576,8 @@ struct __has_random_access_local_iterator
           typename __segmented_iterator_traits< _SegmentedIterator >::__local_iterator > {};
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_segment.h" 2 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_segment.h" 3
+# 14 "c++/v1/__algorithm/for_each_segment.h" 2 3
+# 17 "c++/v1/__algorithm/for_each_segment.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8613,11 +8613,11 @@ __for_each_segment(_SegmentedIterator __first, _SegmentedIterator __last, _Funct
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp_ref_type.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/comp_ref_type.h" 3
+# 14 "c++/v1/__algorithm/copy.h" 2 3
+# 1 "c++/v1/__algorithm/min.h" 1 3
+# 13 "c++/v1/__algorithm/min.h" 3
+# 1 "c++/v1/__algorithm/comp_ref_type.h" 1 3
+# 18 "c++/v1/__algorithm/comp_ref_type.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8666,11 +8666,11 @@ using __comp_ref_type [[__gnu__::__nodebug__]] = _Comp&;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/identity.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/identity.h" 3
+# 14 "c++/v1/__algorithm/min.h" 2 3
+# 1 "c++/v1/__algorithm/min_element.h" 1 3
+# 15 "c++/v1/__algorithm/min_element.h" 3
+# 1 "c++/v1/__functional/identity.h" 1 3
+# 20 "c++/v1/__functional/identity.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8715,11 +8715,11 @@ struct __is_identity<reference_wrapper<const identity> > : true_type {};
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 2 3
+# 16 "c++/v1/__algorithm/min_element.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_callable.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_callable.h" 3
+# 1 "c++/v1/__type_traits/is_callable.h" 1 3
+# 18 "c++/v1/__type_traits/is_callable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8733,13 +8733,13 @@ template <class _Func, class... _Args>
 struct __is_callable : decltype(std::__is_callable_helper<_Func, _Args...>(0)) {};
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 3
+# 19 "c++/v1/__algorithm/min_element.h" 2 3
+# 23 "c++/v1/__algorithm/min_element.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min_element.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 27 "c++/v1/__algorithm/min_element.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -8781,10 +8781,10 @@ min_element(_ForwardIterator __first, _ForwardIterator __last) {
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 2 3
+# 15 "c++/v1/__algorithm/min.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/initializer_list" 1 3
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/initializer_list" 3
+# 1 "c++/v1/initializer_list" 1 3
+# 54 "c++/v1/initializer_list" 3
 
 
 namespace std
@@ -8832,13 +8832,13 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 
 
 }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 3
+# 17 "c++/v1/__algorithm/min.h" 2 3
+# 20 "c++/v1/__algorithm/min.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/min.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__algorithm/min.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -8870,10 +8870,10 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 2 3
+# 15 "c++/v1/__algorithm/copy.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/bit_reference.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/bit_reference.h" 3
+# 1 "c++/v1/__fwd/bit_reference.h" 1 3
+# 16 "c++/v1/__fwd/bit_reference.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -8901,13 +8901,13 @@ template <class _StorageType>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _StorageType __middle_mask(unsigned __clz, unsigned __ctz);
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 3
+# 17 "c++/v1/__algorithm/copy.h" 2 3
+# 27 "c++/v1/__algorithm/copy.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 31 "c++/v1/__algorithm/copy.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -9128,8 +9128,8 @@ copy(_InputIterator __first, _InputIterator __last, _OutputIterator __result) {
 }
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_n.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_n.h" 3
+# 13 "c++/v1/__algorithm/copy_n.h" 2 3
+# 20 "c++/v1/__algorithm/copy_n.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9169,14 +9169,14 @@ copy_n(_InputIterator __first, _Size __orig_n, _OutputIterator __result) {
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/fill_n.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/fill_n.h" 3
+# 14 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__algorithm/fill_n.h" 1 3
+# 20 "c++/v1/__algorithm/fill_n.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/fill_n.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__algorithm/fill_n.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -9239,11 +9239,11 @@ fill_n(_OutputIterator __first, _Size __n, const _Tp& __value) {
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max_element.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max_element.h" 3
+# 15 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__algorithm/max.h" 1 3
+# 14 "c++/v1/__algorithm/max.h" 3
+# 1 "c++/v1/__algorithm/max_element.h" 1 3
+# 20 "c++/v1/__algorithm/max_element.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9277,13 +9277,13 @@ max_element(_ForwardIterator __first, _ForwardIterator __last) {
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max.h" 3
+# 15 "c++/v1/__algorithm/max.h" 2 3
+# 20 "c++/v1/__algorithm/max.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/max.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__algorithm/max.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -9315,17 +9315,17 @@ template <class _Tp>
 
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
+# 16 "c++/v1/__format/buffer.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_out_result.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_out_result.h" 3
+# 1 "c++/v1/__algorithm/ranges_copy.h" 1 3
+# 13 "c++/v1/__algorithm/ranges_copy.h" 3
+# 1 "c++/v1/__algorithm/in_out_result.h" 1 3
+# 19 "c++/v1/__algorithm/in_out_result.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_out_result.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__algorithm/in_out_result.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -9356,14 +9356,14 @@ struct in_out_result {
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 2 3
+# 14 "c++/v1/__algorithm/ranges_copy.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/access.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/access.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/enable_borrowed_range.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/enable_borrowed_range.h" 3
+# 1 "c++/v1/__ranges/access.h" 1 3
+# 18 "c++/v1/__ranges/access.h" 3
+# 1 "c++/v1/__ranges/enable_borrowed_range.h" 1 3
+# 21 "c++/v1/__ranges/enable_borrowed_range.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9382,15 +9382,15 @@ inline constexpr bool enable_borrowed_range = false;
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/access.h" 2 3
+# 19 "c++/v1/__ranges/access.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/auto_cast.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/auto_cast.h" 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/access.h" 2 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/access.h" 3
+# 1 "c++/v1/__utility/auto_cast.h" 1 3
+# 18 "c++/v1/__utility/auto_cast.h" 3
+# 24 "c++/v1/__ranges/access.h" 2 3
+# 28 "c++/v1/__ranges/access.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9572,13 +9572,13 @@ inline constexpr auto cend = __cend::__fn{};
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/data.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/data.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_pointer.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_pointer.h" 3
+# 18 "c++/v1/__algorithm/ranges_copy.h" 2 3
+# 1 "c++/v1/__ranges/concepts.h" 1 3
+# 25 "c++/v1/__ranges/concepts.h" 3
+# 1 "c++/v1/__ranges/data.h" 1 3
+# 23 "c++/v1/__ranges/data.h" 3
+# 1 "c++/v1/__type_traits/remove_pointer.h" 1 3
+# 16 "c++/v1/__type_traits/remove_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9595,14 +9595,14 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 using __remove_pointer_t [[__gnu__::__nodebug__]] = __remove_pointer(_Tp);
-# 47 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/remove_pointer.h" 3
+# 47 "c++/v1/__type_traits/remove_pointer.h" 3
 template <class _Tp>
 using remove_pointer_t = __remove_pointer_t<_Tp>;
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/data.h" 2 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/data.h" 3
+# 24 "c++/v1/__ranges/data.h" 2 3
+# 29 "c++/v1/__ranges/data.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9675,10 +9675,10 @@ inline constexpr auto cdata = __cdata::__fn{};
 
 
 } }
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 2 3
+# 26 "c++/v1/__ranges/concepts.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/enable_view.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/enable_view.h" 3
+# 1 "c++/v1/__ranges/enable_view.h" 1 3
+# 21 "c++/v1/__ranges/enable_view.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9707,11 +9707,11 @@ inline constexpr bool enable_view = derived_from<_Tp, view_base> || requires {
 
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/size.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/size.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_unsigned.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_unsigned.h" 3
+# 28 "c++/v1/__ranges/concepts.h" 2 3
+# 1 "c++/v1/__ranges/size.h" 1 3
+# 23 "c++/v1/__ranges/size.h" 3
+# 1 "c++/v1/__type_traits/make_unsigned.h" 1 3
+# 23 "c++/v1/__type_traits/make_unsigned.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9720,7 +9720,7 @@ inline constexpr bool enable_view = derived_from<_Tp, view_base> || requires {
 
 template <class _Tp>
 using __make_unsigned_t [[__gnu__::__nodebug__]] = __make_unsigned(_Tp);
-# 74 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_unsigned.h" 3
+# 74 "c++/v1/__type_traits/make_unsigned.h" 3
 template <class _Tp>
 struct [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] make_unsigned {
   using type [[__gnu__::__nodebug__]] = __make_unsigned_t<_Tp>;
@@ -9740,8 +9740,8 @@ template <class _Tp, class _Up>
 using __copy_unsigned_t [[__gnu__::__nodebug__]] = __conditional_t<is_unsigned<_Tp>::value, __make_unsigned_t<_Up>, _Up>;
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/size.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/size.h" 3
+# 24 "c++/v1/__ranges/size.h" 2 3
+# 30 "c++/v1/__ranges/size.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9849,8 +9849,8 @@ inline constexpr auto ssize = __ssize::__fn{};
 
 
 } }
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 2 3
-# 40 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 3
+# 29 "c++/v1/__ranges/concepts.h" 2 3
+# 40 "c++/v1/__ranges/concepts.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -9900,7 +9900,7 @@ concept sized_range = range<_Tp> && requires(_Tp& __t) { ranges::size(__t); };
 
 template <sized_range _Rp>
 using range_size_t = decltype(ranges::size(std::declval<_Rp&>()));
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/concepts.h" 3
+# 97 "c++/v1/__ranges/concepts.h" 3
 template <class _Tp>
 concept view = range<_Tp> && movable<_Tp> && enable_view<_Tp>;
 
@@ -9985,9 +9985,9 @@ concept __concatable = requires {
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/dangling.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/dangling.h" 3
+# 19 "c++/v1/__algorithm/ranges_copy.h" 2 3
+# 1 "c++/v1/__ranges/dangling.h" 1 3
+# 20 "c++/v1/__ranges/dangling.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10009,13 +10009,13 @@ using borrowed_iterator_t = _If<borrowed_range<_Rp>, iterator_t<_Rp>, dangling>;
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 3
+# 20 "c++/v1/__algorithm/ranges_copy.h" 2 3
+# 25 "c++/v1/__algorithm/ranges_copy.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_copy.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 29 "c++/v1/__algorithm/ranges_copy.h" 2 3
 
 
 
@@ -10050,9 +10050,9 @@ inline constexpr auto copy = __copy{};
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/transform.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/transform.h" 3
+# 18 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__algorithm/transform.h" 1 3
+# 16 "c++/v1/__algorithm/transform.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10078,24 +10078,24 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
+# 19 "c++/v1/__format/buffer.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_error.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_error.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdexcept" 1 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdexcept" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__exception/exception.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__exception/exception.h" 3
+# 1 "c++/v1/__format/concepts.h" 1 3
+# 16 "c++/v1/__format/concepts.h" 3
+# 1 "c++/v1/__format/format_parse_context.h" 1 3
+# 14 "c++/v1/__format/format_parse_context.h" 3
+# 1 "c++/v1/__format/format_error.h" 1 3
+# 15 "c++/v1/__format/format_error.h" 3
+# 1 "c++/v1/stdexcept" 1 3
+# 48 "c++/v1/stdexcept" 3
+# 1 "c++/v1/__exception/exception.h" 1 3
+# 22 "c++/v1/__exception/exception.h" 3
 
 
  namespace std {
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__exception/exception.h" 3
+# 72 "c++/v1/__exception/exception.h" 3
 class exception {
 public:
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) exception() noexcept {}
@@ -10117,11 +10117,11 @@ public:
 
 
 }
-# 49 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdexcept" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/memory.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/memory.h" 3
+# 49 "c++/v1/stdexcept" 2 3
+# 1 "c++/v1/__fwd/string.h" 1 3
+# 13 "c++/v1/__fwd/string.h" 3
+# 1 "c++/v1/__fwd/memory.h" 1 3
+# 16 "c++/v1/__fwd/memory.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10133,9 +10133,9 @@ template <class _Tp>
 class shared_ptr;
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/memory_resource.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/memory_resource.h" 3
+# 14 "c++/v1/__fwd/string.h" 2 3
+# 1 "c++/v1/__fwd/memory_resource.h" 1 3
+# 16 "c++/v1/__fwd/memory_resource.h" 3
 
 
 
@@ -10148,8 +10148,8 @@ class polymorphic_allocator;
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string.h" 3
+# 15 "c++/v1/__fwd/string.h" 2 3
+# 18 "c++/v1/__fwd/string.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10238,8 +10238,8 @@ class [[_Clang::__preferred_name__(string)]]
 
 
 } }
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdexcept" 2 3
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdexcept" 3
+# 50 "c++/v1/stdexcept" 2 3
+# 54 "c++/v1/stdexcept" 3
 
 
  namespace std { inline namespace __1 {
@@ -10468,8 +10468,8 @@ public:
 }
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_error.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_error.h" 3
+# 16 "c++/v1/__format/format_error.h" 2 3
+# 19 "c++/v1/__format/format_error.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10500,12 +10500,12 @@ public:
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 2 3
+# 15 "c++/v1/__format/format_parse_context.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 1 3
-# 214 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/nullptr_t.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/nullptr_t.h" 3
+# 1 "c++/v1/string_view" 1 3
+# 214 "c++/v1/string_view" 3
+# 1 "c++/v1/__cstddef/nullptr_t.h" 1 3
+# 16 "c++/v1/__cstddef/nullptr_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10513,17 +10513,17 @@ public:
 using nullptr_t = decltype(nullptr);
 
 } }
-# 215 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 215 "c++/v1/string_view" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/unary_function.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/unary_function.h" 3
+# 1 "c++/v1/__functional/hash.h" 1 3
+# 14 "c++/v1/__functional/hash.h" 3
+# 1 "c++/v1/__functional/unary_function.h" 1 3
+# 16 "c++/v1/__functional/unary_function.h" 3
 
 
  namespace std { inline namespace __1 {
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/unary_function.h" 3
+# 30 "c++/v1/__functional/unary_function.h" 3
 template <class _Arg, class _Result>
 struct __unary_function_keep_layout_base {
 
@@ -10543,10 +10543,10 @@ using __unary_function [[__gnu__::__nodebug__]] = __unary_function_keep_layout_b
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 2 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unqualified.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unqualified.h" 3
+# 15 "c++/v1/__functional/hash.h" 2 3
+# 24 "c++/v1/__functional/hash.h" 3
+# 1 "c++/v1/__type_traits/is_unqualified.h" 1 3
+# 16 "c++/v1/__type_traits/is_unqualified.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -10555,16 +10555,16 @@ template <class _Tp>
 inline const bool __is_unqualified_v = __is_same(_Tp, __remove_cvref(_Tp));
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 2 3
+# 25 "c++/v1/__functional/hash.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/swap.h" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/swap.h" 3
+# 1 "c++/v1/__utility/swap.h" 1 3
+# 24 "c++/v1/__utility/swap.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/swap.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 28 "c++/v1/__utility/swap.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -10594,19 +10594,19 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 2 3
+# 28 "c++/v1/__functional/hash.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstring" 1 3
-# 66 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstring" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/string.h" 1 3
-# 61 "D:/Code/Msys2/Files/clang64/include/c++/v1/string.h" 3
+# 1 "c++/v1/cstring" 1 3
+# 66 "c++/v1/cstring" 3
+# 1 "c++/v1/string.h" 1 3
+# 61 "c++/v1/string.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/string.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/string.h" 3
+# 1 "string.h" 1 3
+# 21 "string.h" 3
 extern "C" {
-# 45 "D:/Code/Msys2/Files/clang64/include/string.h" 3
+# 45 "string.h" 3
   __attribute__ ((__dllimport__)) void *__attribute__((__cdecl__)) _memccpy(void *_Dst,const void *_Src,int _Val,size_t _MaxCount);
                 void *__attribute__((__cdecl__)) memchr(const void *_Buf ,int _Val,size_t _MaxCount);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _memicmp(const void *_Buf1,const void *_Buf2,size_t _Size);
@@ -10702,7 +10702,7 @@ extern "C" {
   char *__attribute__((__cdecl__)) strrev(char *_Str) ;
   char *__attribute__((__cdecl__)) strset(char *_Str,int _Val) ;
   char *__attribute__((__cdecl__)) strupr(char *_Str) ;
-# 149 "D:/Code/Msys2/Files/clang64/include/string.h" 3
+# 149 "string.h" 3
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _wcsdup(const wchar_t *_Str);
 
 
@@ -10779,7 +10779,7 @@ extern "C" {
 }
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/sec_api/string_s.h" 1 3
+# 1 "sec_api/string_s.h" 1 3
 
 
 
@@ -10788,9 +10788,9 @@ extern "C" {
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/string.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/sec_api/string_s.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/sec_api/string_s.h" 3
+# 1 "c++/v1/string.h" 1 3
+# 10 "sec_api/string_s.h" 2 3
+# 21 "sec_api/string_s.h" 3
 extern "C" {
 
 
@@ -10874,9 +10874,9 @@ extern "C" {
 
 
 }
-# 226 "D:/Code/Msys2/Files/clang64/include/string.h" 2 3
-# 65 "D:/Code/Msys2/Files/clang64/include/c++/v1/string.h" 2 3
-# 76 "D:/Code/Msys2/Files/clang64/include/c++/v1/string.h" 3
+# 226 "string.h" 2 3
+# 65 "c++/v1/string.h" 2 3
+# 76 "c++/v1/string.h" 3
 extern "C++" {
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) __attribute__((__enable_if__(true, ""))) const char* strchr(const char* __s, int __c) {
   return __builtin_strchr(__s, __c);
@@ -10913,8 +10913,8 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
   return __builtin_strstr(__s1, __s2);
 }
 }
-# 67 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstring" 2 3
-# 78 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstring" 3
+# 67 "c++/v1/cstring" 2 3
+# 78 "c++/v1/cstring" 3
 
 
  namespace std { inline namespace __1 {
@@ -10943,8 +10943,8 @@ using ::strerror __attribute__((__using_if_exists__));
 using ::strlen __attribute__((__using_if_exists__));
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 2 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 3
+# 30 "c++/v1/__functional/hash.h" 2 3
+# 33 "c++/v1/__functional/hash.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11309,7 +11309,7 @@ struct __hash_impl<long double> : __scalar_hash<long double> {
 
     if (__v == 0.0L)
       return 0;
-# 416 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/hash.h" 3
+# 416 "c++/v1/__functional/hash.h" 3
     union {
       long double __t;
       struct {
@@ -11364,10 +11364,10 @@ using __enable_hash_helper [[__gnu__::__nodebug__]] =
 
 
 } }
-# 218 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 218 "c++/v1/string_view" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/ostream.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/ostream.h" 3
+# 1 "c++/v1/__fwd/ostream.h" 1 3
+# 17 "c++/v1/__fwd/ostream.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11385,10 +11385,10 @@ template <class _CharT, class _Traits>
 class [[_Clang::__preferred_name__(ostream)]] [[_Clang::__preferred_name__(wostream)]] basic_ostream;
 
 } }
-# 220 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 220 "c++/v1/string_view" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string_view.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/string_view.h" 3
+# 1 "c++/v1/__fwd/string_view.h" 1 3
+# 18 "c++/v1/__fwd/string_view.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11420,17 +11420,17 @@ class [[_Clang::__preferred_name__(string_view)]]
       basic_string_view;
 
 } }
-# 222 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 1 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 3
+# 222 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/bounded_iter.h" 1 3
+# 30 "c++/v1/__iterator/bounded_iter.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 34 "c++/v1/__iterator/bounded_iter.h" 2 3
 
  namespace std { inline namespace __1 {
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 3
+# 54 "c++/v1/__iterator/bounded_iter.h" 3
 template <class _Iterator>
 struct __bounded_iter {
   static_assert(__libcpp_is_contiguous_iterator<_Iterator>::value,
@@ -11470,7 +11470,7 @@ struct __bounded_iter {
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) __bounded_iter& operator=(__bounded_iter&&) = default;
 
 private:
-# 101 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 3
+# 101 "c++/v1/__iterator/bounded_iter.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107")))
   constexpr explicit __bounded_iter(_Iterator __current, _Iterator __begin, _Iterator __end)
       : __current_(__current), __begin_(__begin), __end_(__end) {
@@ -11588,7 +11588,7 @@ public:
   operator==(__bounded_iter const& __x, __bounded_iter const& __y) noexcept {
     return __x.__current_ == __y.__current_;
   }
-# 243 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/bounded_iter.h" 3
+# 243 "c++/v1/__iterator/bounded_iter.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr friend strong_ordering
   operator<=>(__bounded_iter const& __x, __bounded_iter const& __y) noexcept {
     if constexpr (three_way_comparable<_Iterator, strong_ordering>) {
@@ -11636,13 +11636,13 @@ struct pointer_traits<__bounded_iter<_Iterator> > {
 };
 
 } }
-# 223 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 223 "c++/v1/string_view" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_three_way_result.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_three_way_result.h" 3
+# 1 "c++/v1/__iterator/reverse_iterator.h" 1 3
+# 14 "c++/v1/__iterator/reverse_iterator.h" 3
+# 1 "c++/v1/__compare/compare_three_way_result.h" 1 3
+# 18 "c++/v1/__compare/compare_three_way_result.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11670,7 +11670,7 @@ using compare_three_way_result_t = typename compare_three_way_result<_Tp, _Up>::
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 2 3
+# 15 "c++/v1/__iterator/reverse_iterator.h" 2 3
 
 
 
@@ -11678,13 +11678,13 @@ using compare_three_way_result_t = typename compare_three_way_result<_Tp, _Up>::
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_swap.h" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_swap.h" 3
+# 1 "c++/v1/__iterator/iter_swap.h" 1 3
+# 27 "c++/v1/__iterator/iter_swap.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iter_swap.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 31 "c++/v1/__iterator/iter_swap.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -11759,9 +11759,9 @@ concept indirectly_swappable =
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/iterator.h" 3
+# 23 "c++/v1/__iterator/reverse_iterator.h" 2 3
+# 1 "c++/v1/__iterator/iterator.h" 1 3
+# 18 "c++/v1/__iterator/iterator.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11776,16 +11776,16 @@ struct __attribute__((__deprecated__)) iterator {
 };
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 2 3
+# 24 "c++/v1/__iterator/reverse_iterator.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/prev.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/prev.h" 3
+# 1 "c++/v1/__iterator/prev.h" 1 3
+# 23 "c++/v1/__iterator/prev.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/prev.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 27 "c++/v1/__iterator/prev.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -11840,16 +11840,16 @@ inline constexpr auto prev = __prev{};
 
 
 } }
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 2 3
+# 27 "c++/v1/__iterator/reverse_iterator.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/subrange.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/subrange.h" 3
+# 1 "c++/v1/__ranges/subrange.h" 1 3
+# 21 "c++/v1/__ranges/subrange.h" 3
+# 1 "c++/v1/__fwd/subrange.h" 1 3
+# 19 "c++/v1/__fwd/subrange.h" 3
 
 
 
@@ -11877,12 +11877,12 @@ template <size_t _Index, class _Iter, class _Sent, subrange_kind _Kind>
 using ranges::get;
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 2 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/view_interface.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/view_interface.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/empty.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/empty.h" 3
+# 22 "c++/v1/__ranges/subrange.h" 2 3
+# 31 "c++/v1/__ranges/subrange.h" 3
+# 1 "c++/v1/__ranges/view_interface.h" 1 3
+# 23 "c++/v1/__ranges/view_interface.h" 3
+# 1 "c++/v1/__ranges/empty.h" 1 3
+# 21 "c++/v1/__ranges/empty.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -11932,8 +11932,8 @@ inline constexpr auto empty = __empty::__fn{};
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/view_interface.h" 2 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/view_interface.h" 3
+# 24 "c++/v1/__ranges/view_interface.h" 2 3
+# 31 "c++/v1/__ranges/view_interface.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -12072,13 +12072,13 @@ public:
 
 
 } }
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 2 3
-# 47 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 3
+# 32 "c++/v1/__ranges/subrange.h" 2 3
+# 47 "c++/v1/__ranges/subrange.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 51 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/subrange.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 51 "c++/v1/__ranges/subrange.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -12299,16 +12299,16 @@ struct tuple_element<1, const ranges::subrange<_Ip, _Sp, _Kp>> {
 
 
 } }
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 2 3
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
+# 33 "c++/v1/__iterator/reverse_iterator.h" 2 3
+# 45 "c++/v1/__iterator/reverse_iterator.h" 3
 
 
  namespace std { inline namespace __1 {
 
 #pragma GCC diagnostic push
-# 49 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
+# 49 "c++/v1/__iterator/reverse_iterator.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 49 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
+# 49 "c++/v1/__iterator/reverse_iterator.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <class _Iter>
 class reverse_iterator
@@ -12371,7 +12371,7 @@ public:
     __t_ = current = __u.base();
     return *this;
   }
-# 129 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
+# 129 "c++/v1/__iterator/reverse_iterator.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _Iter base() const { return current; }
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr reference operator*() const {
     _Iter __tmp = current;
@@ -12536,7 +12536,7 @@ operator-(const reverse_iterator<_Iter1>& __x,
           const reverse_iterator<_Iter2>& __y) -> decltype(__y.base() - __x.base()) {
   return __y.base() - __x.base();
 }
-# 301 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_iterator.h" 3
+# 301 "c++/v1/__iterator/reverse_iterator.h" 3
 template <class _Iter>
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr reverse_iterator<_Iter>
 operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_iterator<_Iter>& __x) {
@@ -12583,9 +12583,9 @@ struct __unwrap_iter_impl<reverse_iterator<reverse_iterator<_Iter> >, __b> {
 };
 
 } }
-# 226 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/wrap_iter.h" 1 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/wrap_iter.h" 3
+# 226 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/wrap_iter.h" 1 3
+# 30 "c++/v1/__iterator/wrap_iter.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -12701,7 +12701,7 @@ template <class _Iter1, class _Iter2>
 operator<(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) noexcept {
   return __x.base() < __y.base();
 }
-# 195 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/wrap_iter.h" 3
+# 195 "c++/v1/__iterator/wrap_iter.h" 3
 template <class _Iter1, class _Iter2>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr strong_ordering
 operator<=>(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) noexcept {
@@ -12757,19 +12757,19 @@ struct pointer_traits<__wrap_iter<_It> > {
 };
 
 } }
-# 227 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 227 "c++/v1/string_view" 2 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_segment_if.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_segment_if.h" 3
+# 1 "c++/v1/__string/char_traits.h" 1 3
+# 13 "c++/v1/__string/char_traits.h" 3
+# 1 "c++/v1/__algorithm/find.h" 1 3
+# 13 "c++/v1/__algorithm/find.h" 3
+# 1 "c++/v1/__algorithm/find_segment_if.h" 1 3
+# 17 "c++/v1/__algorithm/find_segment_if.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -12814,13 +12814,13 @@ __find_segment_if(_SegmentedIterator __first, _SegmentedIterator __last, _Pred _
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 2 3
+# 14 "c++/v1/__algorithm/find.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countr.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countr.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/integer_traits.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/integer_traits.h" 3
+# 1 "c++/v1/__bit/countr.h" 1 3
+# 13 "c++/v1/__bit/countr.h" 3
+# 1 "c++/v1/__type_traits/integer_traits.h" 1 3
+# 16 "c++/v1/__type_traits/integer_traits.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -12877,13 +12877,13 @@ concept __signed_or_unsigned_integer = __signed_integer<_Tp> || __unsigned_integ
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countr.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countr.h" 3
+# 14 "c++/v1/__bit/countr.h" 2 3
+# 18 "c++/v1/__bit/countr.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countr.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 22 "c++/v1/__bit/countr.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -12908,9 +12908,9 @@ template <__unsigned_integer _Tp>
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/invert_if.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/invert_if.h" 3
+# 17 "c++/v1/__algorithm/find.h" 2 3
+# 1 "c++/v1/__bit/invert_if.h" 1 3
+# 17 "c++/v1/__bit/invert_if.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -12923,40 +12923,40 @@ template <bool _Invert, class _Tp>
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 2 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 1 3
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwctype" 1 3
-# 56 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwctype" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cctype" 1 3
-# 42 "D:/Code/Msys2/Files/clang64/include/c++/v1/cctype" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/ctype.h" 1 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/ctype.h" 3
+# 18 "c++/v1/__algorithm/find.h" 2 3
+# 32 "c++/v1/__algorithm/find.h" 3
+# 1 "c++/v1/cwchar" 1 3
+# 116 "c++/v1/cwchar" 3
+# 1 "c++/v1/cwctype" 1 3
+# 56 "c++/v1/cwctype" 3
+# 1 "c++/v1/cctype" 1 3
+# 42 "c++/v1/cctype" 3
+# 1 "c++/v1/ctype.h" 1 3
+# 39 "c++/v1/ctype.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/ctype.h" 1 3
-
-
-
-
+# 1 "ctype.h" 1 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 3
+
+
+
+
+# 1 "corecrt_wctype.h" 1 3
+# 12 "corecrt_wctype.h" 3
 extern "C" {
-# 31 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 3
+# 31 "corecrt_wctype.h" 3
   __attribute__ ((__dllimport__)) const unsigned short* __pctype_func(void);
-# 45 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 3
+# 45 "corecrt_wctype.h" 3
   extern const unsigned short ** __imp__wctype;
 
 
 
   __attribute__ ((__dllimport__)) const wctype_t * __attribute__((__cdecl__)) __pwctype_func(void);
-# 72 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 3
+# 72 "corecrt_wctype.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) iswalpha(wint_t _C);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) iswupper(wint_t _C);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) iswlower(wint_t _C);
@@ -13007,13 +13007,13 @@ extern "C" {
 
 
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) is_wctype(wint_t _C,wctype_t _Type);
-# 161 "D:/Code/Msys2/Files/clang64/include/corecrt_wctype.h" 3
+# 161 "corecrt_wctype.h" 3
 }
-# 10 "D:/Code/Msys2/Files/clang64/include/ctype.h" 2 3
+# 10 "ctype.h" 2 3
 
 
 extern "C" {
-# 21 "D:/Code/Msys2/Files/clang64/include/ctype.h" 3
+# 21 "ctype.h" 3
   extern const unsigned char __newclmap[];
   extern const unsigned char __newcumap[];
   extern pthreadlocinfo __ptlocinfo;
@@ -13065,17 +13065,17 @@ extern "C" {
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) __toascii(int _C);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) __iscsymf(int _C);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) __iscsym(int _C);
-# 81 "D:/Code/Msys2/Files/clang64/include/ctype.h" 3
+# 81 "ctype.h" 3
 __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) ___mb_cur_max_func(void);
-# 134 "D:/Code/Msys2/Files/clang64/include/ctype.h" 3
+# 134 "ctype.h" 3
 }
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/ctype.h" 2 3
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/cctype" 2 3
-# 53 "D:/Code/Msys2/Files/clang64/include/c++/v1/cctype" 3
+# 43 "c++/v1/ctype.h" 2 3
+# 43 "c++/v1/cctype" 2 3
+# 53 "c++/v1/cctype" 3
 
 
  namespace std { inline namespace __1 {
-# 113 "D:/Code/Msys2/Files/clang64/include/c++/v1/cctype" 3
+# 113 "c++/v1/cctype" 3
 using ::isalnum __attribute__((__using_if_exists__));
 using ::isalpha __attribute__((__using_if_exists__));
 using ::isblank __attribute__((__using_if_exists__));
@@ -13092,13 +13092,13 @@ using ::tolower __attribute__((__using_if_exists__));
 using ::toupper __attribute__((__using_if_exists__));
 
 } }
-# 57 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwctype" 2 3
+# 57 "c++/v1/cwctype" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/wctype.h" 1 3
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/wctype.h" 3
-# 66 "D:/Code/Msys2/Files/clang64/include/c++/v1/wctype.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/wctype.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/wctype.h" 3
+# 1 "c++/v1/wctype.h" 1 3
+# 54 "c++/v1/wctype.h" 3
+# 66 "c++/v1/wctype.h" 3
+# 1 "wctype.h" 1 3
+# 12 "wctype.h" 3
 extern "C" {
 
 
@@ -13109,9 +13109,9 @@ extern "C" {
 
 
 }
-# 67 "D:/Code/Msys2/Files/clang64/include/c++/v1/wctype.h" 2 3
-# 59 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwctype" 2 3
-# 70 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwctype" 3
+# 67 "c++/v1/wctype.h" 2 3
+# 59 "c++/v1/cwctype" 2 3
+# 70 "c++/v1/cwctype" 3
 
 
  namespace std { inline namespace __1 {
@@ -13141,15 +13141,15 @@ using ::wctrans __attribute__((__using_if_exists__));
 
 
 } }
-# 117 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 2 3
+# 117 "c++/v1/cwchar" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 3
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/wchar.h" 1 3
-# 11 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/corecrt_wstdlib.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/corecrt_wstdlib.h" 3
+# 1 "c++/v1/wchar.h" 1 3
+# 104 "c++/v1/wchar.h" 3
+# 116 "c++/v1/wchar.h" 3
+# 1 "wchar.h" 1 3
+# 11 "wchar.h" 3
+# 1 "corecrt_wstdlib.h" 1 3
+# 12 "corecrt_wstdlib.h" 3
 extern "C" {
 
 
@@ -13190,15 +13190,15 @@ extern "C" {
 
 
 }
-# 12 "D:/Code/Msys2/Files/clang64/include/wchar.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 12 "wchar.h" 2 3
+# 27 "wchar.h" 3
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 61 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 61 "wchar.h" 3
 __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func(unsigned index);
-# 75 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 75 "wchar.h" 3
   typedef unsigned long _fsize_t;
 
 
@@ -13239,7 +13239,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
     __extension__ long long size;
     wchar_t name[260];
   };
-# 167 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 167 "wchar.h" 3
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _wgetcwd(wchar_t *_DstBuf,int _SizeInWords);
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _wgetdcwd(int _Drive,wchar_t *_DstBuf,int _SizeInWords);
 
@@ -13297,7 +13297,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wexecve(const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wexecvp(const wchar_t *_Filename,const wchar_t *const *_ArgList);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _wexecvpe(const wchar_t *_Filename,const wchar_t *const *_ArgList,const wchar_t *const *_Env);
-# 240 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 240 "wchar.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wsystem(const wchar_t *_Command);
 
 
@@ -13320,8 +13320,8 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/_mingw_stat64.h" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/_mingw_stat64.h" 3
+# 1 "_mingw_stat64.h" 1 3
+# 29 "_mingw_stat64.h" 3
   struct _stat32 {
     _dev_t st_dev;
    _ino_t st_ino;
@@ -13377,7 +13377,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
     __time64_t st_mtime;
     __time64_t st_ctime;
   };
-# 263 "D:/Code/Msys2/Files/clang64/include/wchar.h" 2 3
+# 263 "wchar.h" 2 3
 
 
 
@@ -13386,7 +13386,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wstat32i64(const wchar_t *_Name,struct _stat32i64 *_Stat);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wstat64i32(const wchar_t *_Name,struct _stat64i32 *_Stat);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wstat64(const wchar_t *_Name,struct _stat64 *_Stat);
-# 281 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 281 "wchar.h" 3
   __attribute__ ((__dllimport__)) wchar_t *_cgetws(wchar_t *_Buffer) ;
   __attribute__ ((__dllimport__)) wint_t __attribute__((__cdecl__)) _getwch(void);
   __attribute__ ((__dllimport__)) wint_t __attribute__((__cdecl__)) _getwche(void);
@@ -13471,7 +13471,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
     __builtin_va_end(_ArgList);
     return _Ret;
   }
-# 379 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 379 "wchar.h" 3
   wint_t __attribute__((__cdecl__)) _putwch_nolock(wchar_t _WCh);
   wint_t __attribute__((__cdecl__)) _getwch_nolock(void);
   wint_t __attribute__((__cdecl__)) _getwche_nolock(void);
@@ -13482,7 +13482,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
 
   int __attribute__((__cdecl__)) __stdio_common_vswprintf_p(unsigned long long _Options, wchar_t *_Str, size_t _Len, const wchar_t *_Format, _locale_t _Locale, va_list _ArgList);
   int __attribute__((__cdecl__)) __stdio_common_vfwprintf_p(unsigned long long _Options, FILE *_File, const wchar_t *_Format, _locale_t _Locale, va_list _ArgList);
-# 993 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 993 "wchar.h" 3
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _itow(int _Value,wchar_t *_Dest,int _Radix) ;
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _ltow(long _Value,wchar_t *_Dest,int _Radix) ;
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _ultow(unsigned long _Value,wchar_t *_Dest,int _Radix) ;
@@ -13491,7 +13491,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
   double __attribute__((__cdecl__)) __mingw_wcstod(const wchar_t * __restrict__ _Str,wchar_t ** __restrict__ _EndPtr);
   float __attribute__((__cdecl__)) __mingw_wcstof(const wchar_t * __restrict__ nptr, wchar_t ** __restrict__ endptr);
   long double __attribute__((__cdecl__)) __mingw_wcstold(const wchar_t * __restrict__, wchar_t ** __restrict__);
-# 1013 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1013 "wchar.h" 3
   double __attribute__((__cdecl__)) wcstod(const wchar_t * __restrict__ _Str,wchar_t ** __restrict__ _EndPtr);
   float __attribute__((__cdecl__)) wcstof(const wchar_t * __restrict__ nptr, wchar_t ** __restrict__ endptr);
 
@@ -13522,7 +13522,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
   __extension__ __attribute__ ((__dllimport__)) long long __attribute__((__cdecl__)) _wcstoi64_l(const wchar_t *_Str,wchar_t **_EndPtr,int _Radix,_locale_t _Locale);
   __extension__ __attribute__ ((__dllimport__)) unsigned long long __attribute__((__cdecl__)) _wcstoui64(const wchar_t *_Str,wchar_t **_EndPtr,int _Radix);
   __extension__ __attribute__ ((__dllimport__)) unsigned long long __attribute__((__cdecl__)) _wcstoui64_l(const wchar_t *_Str,wchar_t **_EndPtr,int _Radix,_locale_t _Locale);
-# 1052 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1052 "wchar.h" 3
   __attribute__ ((__dllimport__)) wchar_t *__attribute__((__cdecl__)) _wfullpath(wchar_t *_FullPath,const wchar_t *_Path,size_t _SizeInWords);
 
 
@@ -13535,7 +13535,7 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wputenv(const wchar_t *_EnvString);
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _wsearchenv(const wchar_t *_Filename,const wchar_t *_EnvVar,wchar_t *_ResultPath) ;
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _wsplitpath(const wchar_t *_FullPath,wchar_t *_Drive,wchar_t *_Dir,wchar_t *_Filename,wchar_t *_Ext) ;
-# 1147 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1147 "wchar.h" 3
   struct tm {
     int tm_sec;
     int tm_min;
@@ -13569,9 +13569,9 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
 
 
   wchar_t *__attribute__((__cdecl__)) _wctime(const time_t *_Time) __asm__("_wctime64") ;
-# 1188 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1188 "wchar.h" 3
   errno_t __attribute__((__cdecl__)) _wctime_s (wchar_t *_Buffer,size_t _SizeInWords,const time_t *_Time) __asm__("_wctime64_s");
-# 1197 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1197 "wchar.h" 3
   typedef struct _Mbstatet {
     unsigned long _Wchar;
     unsigned short _Byte, _State;
@@ -13637,13 +13637,13 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
     }
     return (_S);
   }
-# 1306 "D:/Code/Msys2/Files/clang64/include/wchar.h" 3
+# 1306 "wchar.h" 3
 }
 
 
 #pragma pack(pop)
 
-# 1 "D:/Code/Msys2/Files/clang64/include/sec_api/wchar_s.h" 1 3
+# 1 "sec_api/wchar_s.h" 1 3
 
 
 
@@ -13652,81 +13652,81 @@ __attribute__ ((__dllimport__)) FILE *__attribute__((__cdecl__)) __acrt_iob_func
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 3
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/wchar.h" 1 3
-# 117 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 2 3
+# 1 "c++/v1/wchar.h" 1 3
+# 104 "c++/v1/wchar.h" 3
+# 116 "c++/v1/wchar.h" 3
+# 1 "wchar.h" 1 3
+# 117 "c++/v1/wchar.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mbstate_t.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mbstate_t.h" 3
-# 47 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mbstate_t.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/wchar.h" 1 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mbstate_t.h" 2 3
-# 123 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 3
+# 1 "c++/v1/__mbstate_t.h" 1 3
+# 17 "c++/v1/__mbstate_t.h" 3
+# 47 "c++/v1/__mbstate_t.h" 3
+# 1 "wchar.h" 1 3
+# 48 "c++/v1/__mbstate_t.h" 2 3
+# 123 "c++/v1/wchar.h" 2 3
+# 1 "c++/v1/stddef.h" 1 3
+# 34 "c++/v1/stddef.h" 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 1 3
-# 84 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_header_macro.h" 1 3
-# 85 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 1 "../lib/clang/21/include/stddef.h" 1 3
+# 84 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_header_macro.h" 1 3
+# 85 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 3
 typedef long long int ptrdiff_t;
-# 89 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 89 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_size_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_size_t.h" 3
 typedef long long unsigned int size_t;
-# 94 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 103 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_wchar_t.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 94 "../lib/clang/21/include/stddef.h" 2 3
+# 103 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_wchar_t.h" 1 3
+# 104 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_null.h" 1 3
-# 109 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 1 "../lib/clang/21/include/__stddef_null.h" 1 3
+# 109 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_nullptr_t.h" 1 3
-# 114 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 123 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_max_align_t.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_max_align_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_nullptr_t.h" 1 3
+# 114 "../lib/clang/21/include/stddef.h" 2 3
+# 123 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_max_align_t.h" 1 3
+# 19 "../lib/clang/21/include/__stddef_max_align_t.h" 3
 typedef struct {
   long long __clang_max_align_nonce1
       __attribute__((__aligned__(__alignof__(long long))));
   long double __clang_max_align_nonce2
       __attribute__((__aligned__(__alignof__(long double))));
 } max_align_t;
-# 124 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 124 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_offsetof.h" 1 3
-# 129 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 2 3
-# 124 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 2 3
-# 140 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 3
+# 1 "../lib/clang/21/include/__stddef_offsetof.h" 1 3
+# 129 "../lib/clang/21/include/stddef.h" 2 3
+# 39 "c++/v1/stddef.h" 2 3
+# 124 "c++/v1/wchar.h" 2 3
+# 140 "c++/v1/wchar.h" 3
 extern "C++" {
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) wchar_t* __libcpp_wcschr(const wchar_t* __s, wchar_t __c) {
   return (wchar_t*)wcschr(__s, __c);
@@ -13790,8 +13790,8 @@ size_t mbsnrtowcs(
 size_t wcsnrtombs(
     char* __restrict __dst, const wchar_t** __restrict __src, size_t __nwc, size_t __len, mbstate_t* __restrict __ps);
 }
-# 10 "D:/Code/Msys2/Files/clang64/include/sec_api/wchar_s.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/sec_api/wchar_s.h" 3
+# 10 "sec_api/wchar_s.h" 2 3
+# 21 "sec_api/wchar_s.h" 3
 extern "C" {
 
 
@@ -13810,13 +13810,13 @@ extern "C" {
   __attribute__((dllimport)) int __attribute__((__cdecl__)) _vcwprintf_s (const wchar_t *_Format,va_list _ArgList);
   __attribute__((dllimport)) int __attribute__((__cdecl__)) _cwprintf_s_l (const wchar_t *_Format,_locale_t _Locale,...);
   __attribute__((dllimport)) int __attribute__((__cdecl__)) _vcwprintf_s_l (const wchar_t *_Format,_locale_t _Locale,va_list _ArgList);
-# 360 "D:/Code/Msys2/Files/clang64/include/sec_api/wchar_s.h" 3
+# 360 "sec_api/wchar_s.h" 3
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _wasctime_s (wchar_t *_Buf,size_t _SizeInWords,const struct tm *_Tm);
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _wctime32_s (wchar_t *_Buf,size_t _SizeInWords,const __time32_t *_Time);
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _wstrdate_s (wchar_t *_Buf,size_t _SizeInWords);
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _wstrtime_s (wchar_t *_Buf,size_t _SizeInWords);
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _wctime64_s (wchar_t *_Buf,size_t _SizeInWords,const __time64_t *_Time);
-# 375 "D:/Code/Msys2/Files/clang64/include/sec_api/wchar_s.h" 3
+# 375 "sec_api/wchar_s.h" 3
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) mbsrtowcs_s(size_t *_Retval,wchar_t *_Dst,size_t _SizeInWords,const char **_PSrc,size_t _N,mbstate_t *_State);
   extern "C++" { template <size_t __size> inline errno_t __attribute__((__cdecl__)) mbsrtowcs_s(size_t* _Retval, wchar_t (&_Dst)[__size], const char** _PSrc, size_t _N, mbstate_t _State) { return mbsrtowcs_s(_Retval, _Dst, __size, _PSrc, _N, _State); } }
 
@@ -13832,10 +13832,10 @@ extern "C" {
 
 
 }
-# 1312 "D:/Code/Msys2/Files/clang64/include/wchar.h" 2 3
-# 117 "D:/Code/Msys2/Files/clang64/include/c++/v1/wchar.h" 2 3
-# 119 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 2 3
-# 130 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 3
+# 1312 "wchar.h" 2 3
+# 117 "c++/v1/wchar.h" 2 3
+# 119 "c++/v1/cwchar" 2 3
+# 130 "c++/v1/cwchar" 3
 
 
  namespace std { inline namespace __1 {
@@ -13909,14 +13909,14 @@ using ::wprintf __attribute__((__using_if_exists__));
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr size_t __constexpr_wcslen(const wchar_t* __str) {
 
   return __builtin_wcslen(__str);
-# 212 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 3
+# 212 "c++/v1/cwchar" 3
 }
 
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr int
 __constexpr_wmemcmp(const wchar_t* __lhs, const wchar_t* __rhs, size_t __count) {
 
   return __builtin_wmemcmp(__lhs, __rhs, __count);
-# 230 "D:/Code/Msys2/Files/clang64/include/c++/v1/cwchar" 3
+# 230 "c++/v1/cwchar" 3
 }
 
 template <class _Tp, class _Up>
@@ -13947,13 +13947,13 @@ template <class _Tp, class _Up>
 }
 
 } }
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 2 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 3
+# 33 "c++/v1/__algorithm/find.h" 2 3
+# 37 "c++/v1/__algorithm/find.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 41 "c++/v1/__algorithm/find.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -14094,13 +14094,13 @@ find(_InputIterator __first, _InputIterator __last, const _Tp& __value) {
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_end.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_end.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iter_swap.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iter_swap.h" 3
+# 14 "c++/v1/__string/char_traits.h" 2 3
+# 1 "c++/v1/__algorithm/find_end.h" 1 3
+# 14 "c++/v1/__algorithm/find_end.h" 3
+# 1 "c++/v1/__algorithm/iterator_operations.h" 1 3
+# 12 "c++/v1/__algorithm/iterator_operations.h" 3
+# 1 "c++/v1/__algorithm/iter_swap.h" 1 3
+# 18 "c++/v1/__algorithm/iter_swap.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14113,14 +14113,14 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_iterator_concept.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_iterator_concept.h" 3
+# 13 "c++/v1/__algorithm/iterator_operations.h" 2 3
+# 1 "c++/v1/__algorithm/ranges_iterator_concept.h" 1 3
+# 19 "c++/v1/__algorithm/ranges_iterator_concept.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_iterator_concept.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__algorithm/ranges_iterator_concept.h" 2 3
 
 
 
@@ -14149,12 +14149,12 @@ using __iterator_concept [[__gnu__::__nodebug__]] = decltype(ranges::__get_itera
 
 }
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 2 3
+# 14 "c++/v1/__algorithm/iterator_operations.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/distance.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/distance.h" 3
+# 1 "c++/v1/__iterator/distance.h" 1 3
+# 25 "c++/v1/__iterator/distance.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14224,13 +14224,13 @@ inline constexpr auto distance = __distance{};
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 2 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 3
+# 18 "c++/v1/__algorithm/iterator_operations.h" 2 3
+# 35 "c++/v1/__algorithm/iterator_operations.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/iterator_operations.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 39 "c++/v1/__algorithm/iterator_operations.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -14415,8 +14415,8 @@ template <class _AlgPolicy, class _Iter>
 using __policy_iter_diff_t [[__gnu__::__nodebug__]] = typename _IterOps<_AlgPolicy>::template __difference_type<_Iter>;
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_end.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_end.h" 3
+# 15 "c++/v1/__algorithm/find_end.h" 2 3
+# 23 "c++/v1/__algorithm/find_end.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14511,9 +14511,9 @@ find_end(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIterator
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_first_of.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_first_of.h" 3
+# 15 "c++/v1/__string/char_traits.h" 2 3
+# 1 "c++/v1/__algorithm/find_first_of.h" 1 3
+# 18 "c++/v1/__algorithm/find_first_of.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14549,7 +14549,7 @@ template <class _ForwardIterator1, class _ForwardIterator2>
 }
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
+# 16 "c++/v1/__string/char_traits.h" 2 3
 
 
 
@@ -14558,8 +14558,8 @@ template <class _ForwardIterator1, class _ForwardIterator2>
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__std_mbstate_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__std_mbstate_t.h" 3
+# 1 "c++/v1/__std_mbstate_t.h" 1 3
+# 18 "c++/v1/__std_mbstate_t.h" 3
 
 
 
@@ -14570,16 +14570,16 @@ template <class _ForwardIterator1, class _ForwardIterator2>
 using ::mbstate_t __attribute__((__using_if_exists__));
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
+# 25 "c++/v1/__string/char_traits.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 1 3
-# 112 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/fstream.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/fstream.h" 3
+# 1 "c++/v1/iosfwd" 1 3
+# 112 "c++/v1/iosfwd" 3
+# 1 "c++/v1/__fwd/fstream.h" 1 3
+# 17 "c++/v1/__fwd/fstream.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14615,9 +14615,9 @@ template <class _CharT, class _Traits>
 class [[_Clang::__preferred_name__(fstream)]] [[_Clang::__preferred_name__(wfstream)]] basic_fstream;
 
 } }
-# 113 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/ios.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/ios.h" 3
+# 113 "c++/v1/iosfwd" 2 3
+# 1 "c++/v1/__fwd/ios.h" 1 3
+# 17 "c++/v1/__fwd/ios.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14643,9 +14643,9 @@ using streamoff = long long;
 
 
 } }
-# 114 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/istream.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/istream.h" 3
+# 114 "c++/v1/iosfwd" 2 3
+# 1 "c++/v1/__fwd/istream.h" 1 3
+# 17 "c++/v1/__fwd/istream.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14671,11 +14671,11 @@ template <class _CharT, class _Traits>
 class [[_Clang::__preferred_name__(iostream)]] [[_Clang::__preferred_name__(wiostream)]] basic_iostream;
 
 } }
-# 115 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 2 3
+# 115 "c++/v1/iosfwd" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/sstream.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/sstream.h" 3
+# 1 "c++/v1/__fwd/sstream.h" 1 3
+# 18 "c++/v1/__fwd/sstream.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14715,9 +14715,9 @@ class [[_Clang::__preferred_name__(stringstream)]]
     [[_Clang::__preferred_name__(wstringstream)]] basic_stringstream;
 
 } }
-# 118 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/streambuf.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/streambuf.h" 3
+# 118 "c++/v1/iosfwd" 2 3
+# 1 "c++/v1/__fwd/streambuf.h" 1 3
+# 17 "c++/v1/__fwd/streambuf.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -14735,8 +14735,8 @@ template <class _CharT, class _Traits>
 class [[_Clang::__preferred_name__(streambuf)]] [[_Clang::__preferred_name__(wstreambuf)]] basic_streambuf;
 
 } }
-# 119 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 2 3
-# 125 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 3
+# 119 "c++/v1/iosfwd" 2 3
+# 125 "c++/v1/iosfwd" 3
 
 
  namespace std { inline namespace __1 {
@@ -14757,7 +14757,7 @@ typedef fpos<mbstate_t> u8streampos;
 
 typedef fpos<mbstate_t> u16streampos;
 typedef fpos<mbstate_t> u32streampos;
-# 166 "D:/Code/Msys2/Files/clang64/include/c++/v1/iosfwd" 3
+# 166 "c++/v1/iosfwd" 3
 template <class _CharT, class _Traits>
 class __save_flags {
   typedef basic_ios<_CharT, _Traits> __stream_type;
@@ -14780,19 +14780,19 @@ public:
 };
 
 } }
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
-# 38 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 3
+# 31 "c++/v1/__string/char_traits.h" 2 3
+# 38 "c++/v1/__string/char_traits.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 42 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 42 "c++/v1/__string/char_traits.h" 2 3
 
  namespace std { inline namespace __1 {
 
 template <class _CharT>
 struct char_traits;
-# 80 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 3
+# 80 "c++/v1/__string/char_traits.h" 3
 template <>
 struct char_traits<char> {
   using char_type = char;
@@ -14824,7 +14824,7 @@ struct char_traits<char> {
     if (__libcpp_is_constant_evaluated()) {
 
       return __builtin_memcmp(__lhs, __rhs, __count);
-# 124 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/char_traits.h" 3
+# 124 "c++/v1/__string/char_traits.h" 3
     } else {
       return __builtin_memcmp(__lhs, __rhs, __count);
     }
@@ -15235,12 +15235,12 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 234 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 234 "c++/v1/string_view" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_standard_layout.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_standard_layout.h" 3
+# 1 "c++/v1/__type_traits/is_standard_layout.h" 1 3
+# 17 "c++/v1/__type_traits/is_standard_layout.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15254,9 +15254,9 @@ template <class _Tp>
 
 
 } }
-# 238 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_constructible.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_constructible.h" 3
+# 238 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__type_traits/is_trivially_constructible.h" 1 3
+# 18 "c++/v1/__type_traits/is_trivially_constructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15302,10 +15302,10 @@ template <class _Tp>
 
 
 } }
-# 239 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 251 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/access.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/access.h" 3
+# 239 "c++/v1/string_view" 2 3
+# 251 "c++/v1/string_view" 3
+# 1 "c++/v1/__iterator/access.h" 1 3
+# 18 "c++/v1/__iterator/access.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15354,11 +15354,11 @@ template <class _Cp>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr auto cend(const _Cp& __c) noexcept(noexcept(std::end(__c))) -> decltype(std::end(__c)) {
   return std::end(__c);
 }
-# 93 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/access.h" 3
+# 93 "c++/v1/__iterator/access.h" 3
 } }
-# 252 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/data.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/data.h" 3
+# 252 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/data.h" 1 3
+# 18 "c++/v1/__iterator/data.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15388,9 +15388,9 @@ template <class _Ep>
 
 
 } }
-# 253 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/empty.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/empty.h" 3
+# 253 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/empty.h" 1 3
+# 18 "c++/v1/__iterator/empty.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15416,9 +15416,9 @@ template <class _Ep>
 
 
 } }
-# 254 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_access.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/reverse_access.h" 3
+# 254 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/reverse_access.h" 1 3
+# 19 "c++/v1/__iterator/reverse_access.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15478,9 +15478,9 @@ template <class _Cp>
 
 
 } }
-# 255 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/size.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/size.h" 3
+# 255 "c++/v1/string_view" 2 3
+# 1 "c++/v1/__iterator/size.h" 1 3
+# 21 "c++/v1/__iterator/size.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15519,17 +15519,17 @@ template <class _Tp, ptrdiff_t _Sz>
 
 
 } }
-# 256 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 256 "c++/v1/string_view" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 1 3
-# 150 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_partial_order_fallback.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_partial_order_fallback.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/partial_order.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/partial_order.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_three_way.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_three_way.h" 3
+# 1 "c++/v1/compare" 1 3
+# 150 "c++/v1/compare" 3
+# 1 "c++/v1/__compare/compare_partial_order_fallback.h" 1 3
+# 13 "c++/v1/__compare/compare_partial_order_fallback.h" 3
+# 1 "c++/v1/__compare/partial_order.h" 1 3
+# 12 "c++/v1/__compare/partial_order.h" 3
+# 1 "c++/v1/__compare/compare_three_way.h" 1 3
+# 19 "c++/v1/__compare/compare_three_way.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15550,14 +15550,14 @@ struct compare_three_way {
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/partial_order.h" 2 3
+# 13 "c++/v1/__compare/partial_order.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/weak_order.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/weak_order.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/bit_cast.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/bit_cast.h" 3
+# 1 "c++/v1/__compare/weak_order.h" 1 3
+# 14 "c++/v1/__compare/weak_order.h" 3
+# 1 "c++/v1/__compare/strong_order.h" 1 3
+# 12 "c++/v1/__compare/strong_order.h" 3
+# 1 "c++/v1/__bit/bit_cast.h" 1 3
+# 18 "c++/v1/__bit/bit_cast.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15583,14 +15583,14 @@ template <class _ToType, class _FromType>
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 2 3
+# 13 "c++/v1/__compare/strong_order.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/exponential_functions.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/exponential_functions.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/promote.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/promote.h" 3
+# 1 "c++/v1/__math/exponential_functions.h" 1 3
+# 17 "c++/v1/__math/exponential_functions.h" 3
+# 1 "c++/v1/__type_traits/promote.h" 1 3
+# 18 "c++/v1/__type_traits/promote.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15615,8 +15615,8 @@ using __promote_t [[__gnu__::__nodebug__]] =
     decltype((__enable_if_t<(is_arithmetic<_Args>::value && ...)>)0, (std::__promote_impl(_Args()) + ...));
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/exponential_functions.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/exponential_functions.h" 3
+# 18 "c++/v1/__math/exponential_functions.h" 2 3
+# 21 "c++/v1/__math/exponential_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15766,15 +15766,15 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/traits.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/traits.h" 3
+# 17 "c++/v1/__compare/strong_order.h" 2 3
+# 1 "c++/v1/__math/traits.h" 1 3
+# 20 "c++/v1/__math/traits.h" 3
 
 
  namespace std { inline namespace __1 {
 
 namespace __math {
-# 38 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/traits.h" 3
+# 38 "c++/v1/__math/traits.h" 3
 template <class = void>
 [[__nodiscard__]] inline constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) bool signbit(float __x) noexcept {
   return __builtin_signbit(__x);
@@ -15932,14 +15932,14 @@ template <class _A1, class _A2, __enable_if_t<is_arithmetic<_A1>::value && is_ar
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 2 3
+# 18 "c++/v1/__compare/strong_order.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/priority_tag.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/priority_tag.h" 3
+# 1 "c++/v1/__utility/priority_tag.h" 1 3
+# 17 "c++/v1/__utility/priority_tag.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -15950,13 +15950,13 @@ template <>
 struct __priority_tag<0> {};
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 2 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 3
+# 24 "c++/v1/__compare/strong_order.h" 2 3
+# 29 "c++/v1/__compare/strong_order.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/strong_order.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 33 "c++/v1/__compare/strong_order.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -16064,8 +16064,8 @@ inline constexpr auto strong_order = __strong_order::__fn{};
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/weak_order.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/weak_order.h" 3
+# 15 "c++/v1/__compare/weak_order.h" 2 3
+# 25 "c++/v1/__compare/weak_order.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16145,8 +16145,8 @@ inline constexpr auto weak_order = __weak_order::__fn{};
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/partial_order.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/partial_order.h" 3
+# 15 "c++/v1/__compare/partial_order.h" 2 3
+# 23 "c++/v1/__compare/partial_order.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16200,8 +16200,8 @@ inline constexpr auto partial_order = __partial_order::__fn{};
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_partial_order_fallback.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_partial_order_fallback.h" 3
+# 14 "c++/v1/__compare/compare_partial_order_fallback.h" 2 3
+# 23 "c++/v1/__compare/compare_partial_order_fallback.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16253,9 +16253,9 @@ inline constexpr auto compare_partial_order_fallback = __compare_partial_order_f
 
 
 } }
-# 151 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_strong_order_fallback.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_strong_order_fallback.h" 3
+# 151 "c++/v1/compare" 2 3
+# 1 "c++/v1/__compare/compare_strong_order_fallback.h" 1 3
+# 23 "c++/v1/__compare/compare_strong_order_fallback.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16304,11 +16304,11 @@ inline constexpr auto compare_strong_order_fallback = __compare_strong_order_fal
 
 
 } }
-# 152 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 2 3
+# 152 "c++/v1/compare" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_weak_order_fallback.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/compare_weak_order_fallback.h" 3
+# 1 "c++/v1/__compare/compare_weak_order_fallback.h" 1 3
+# 23 "c++/v1/__compare/compare_weak_order_fallback.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16358,9 +16358,9 @@ inline constexpr auto compare_weak_order_fallback = __compare_weak_order_fallbac
 
 
 } }
-# 155 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/is_eq.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__compare/is_eq.h" 3
+# 155 "c++/v1/compare" 2 3
+# 1 "c++/v1/__compare/is_eq.h" 1 3
+# 17 "c++/v1/__compare/is_eq.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16377,15 +16377,15 @@ inline constexpr auto compare_weak_order_fallback = __compare_weak_order_fallbac
 
 
 } }
-# 156 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 2 3
-# 168 "D:/Code/Msys2/Files/clang64/include/c++/v1/compare" 3
-# 259 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
-# 262 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 3
+# 156 "c++/v1/compare" 2 3
+# 168 "c++/v1/compare" 3
+# 259 "c++/v1/string_view" 2 3
+# 262 "c++/v1/string_view" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 266 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 266 "c++/v1/string_view" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -16875,7 +16875,7 @@ template <class _CharT, class _Traits>
     return static_cast<weak_ordering>(__lhs.compare(__rhs) <=> 0);
   }
 }
-# 882 "D:/Code/Msys2/Files/clang64/include/c++/v1/string_view" 3
+# 882 "c++/v1/string_view" 3
 template <class _CharT, class _Traits>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, basic_string_view<_CharT, _Traits> __str);
@@ -16941,8 +16941,8 @@ operator""sv(const char32_t* __str, size_t __len) noexcept {
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 3
+# 17 "c++/v1/__format/format_parse_context.h" 2 3
+# 20 "c++/v1/__format/format_parse_context.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -16977,7 +16977,7 @@ public:
 
     if (__indexing_ == __unknown)
       __indexing_ = __automatic;
-# 63 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 3
+# 63 "c++/v1/__format/format_parse_context.h" 3
     if (is_constant_evaluated() && __next_arg_id_ >= __num_args_)
       std::__throw_format_error("Argument index outside the valid range");
 
@@ -16989,7 +16989,7 @@ public:
 
     if (__indexing_ == __unknown)
       __indexing_ = __manual;
-# 82 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_parse_context.h" 3
+# 82 "c++/v1/__format/format_parse_context.h" 3
     if (is_constant_evaluated() && __id >= __num_args_)
       std::__throw_format_error("Argument index outside the valid range");
   }
@@ -17012,9 +17012,9 @@ using wformat_parse_context = basic_format_parse_context<wchar_t>;
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/format.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/format.h" 3
+# 17 "c++/v1/__format/concepts.h" 2 3
+# 1 "c++/v1/__fwd/format.h" 1 3
+# 18 "c++/v1/__fwd/format.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17034,11 +17034,11 @@ struct formatter;
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 2 3
+# 18 "c++/v1/__format/concepts.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_specialization.h" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_specialization.h" 3
+# 1 "c++/v1/__type_traits/is_specialization.h" 1 3
+# 29 "c++/v1/__type_traits/is_specialization.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17054,8 +17054,8 @@ inline constexpr bool __is_specialization_v<_Template<_Args...>, _Template> = tr
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/concepts.h" 3
+# 21 "c++/v1/__format/concepts.h" 2 3
+# 27 "c++/v1/__format/concepts.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17111,9 +17111,9 @@ concept __fmt_pair_like =
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/enable_insertable.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/enable_insertable.h" 3
+# 23 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__format/enable_insertable.h" 1 3
+# 17 "c++/v1/__format/enable_insertable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17131,9 +17131,9 @@ inline constexpr bool __enable_insertable = false;
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_to_n_result.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_to_n_result.h" 3
+# 24 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__format/format_to_n_result.h" 1 3
+# 18 "c++/v1/__format/format_to_n_result.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17150,21 +17150,21 @@ template <class... _Tag> [[maybe_unused]] format_to_n_result(typename _Tag::__al
 
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/back_insert_iterator.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/back_insert_iterator.h" 3
+# 25 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__iterator/back_insert_iterator.h" 1 3
+# 22 "c++/v1/__iterator/back_insert_iterator.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/back_insert_iterator.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 26 "c++/v1/__iterator/back_insert_iterator.h" 2 3
 
  namespace std { inline namespace __1 {
 
 #pragma GCC diagnostic push
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/back_insert_iterator.h" 3
+# 29 "c++/v1/__iterator/back_insert_iterator.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/back_insert_iterator.h" 3
+# 29 "c++/v1/__iterator/back_insert_iterator.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <class _Container>
 class back_insert_iterator
@@ -17218,18 +17218,18 @@ back_inserter(_Container& __x) {
 }
 
 } }
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
+# 26 "c++/v1/__format/buffer.h" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocate_at_least.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocate_at_least.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_empty.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_empty.h" 3
+# 1 "c++/v1/__memory/allocate_at_least.h" 1 3
+# 14 "c++/v1/__memory/allocate_at_least.h" 3
+# 1 "c++/v1/__memory/allocator_traits.h" 1 3
+# 21 "c++/v1/__memory/allocator_traits.h" 3
+# 1 "c++/v1/__type_traits/is_empty.h" 1 3
+# 17 "c++/v1/__type_traits/is_empty.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17243,20 +17243,20 @@ template <class _Tp>
 
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 2 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 22 "c++/v1/__memory/allocator_traits.h" 2 3
+# 32 "c++/v1/__memory/allocator_traits.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 36 "c++/v1/__memory/allocator_traits.h" 2 3
 
  namespace std { inline namespace __1 {
 
 #pragma GCC diagnostic push
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 39 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 39 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 template <class _Tp>
@@ -17350,9 +17350,9 @@ using __propagate_on_container_swap [[__gnu__::__nodebug__]] =
     __detected_or_t<false_type, __propagate_on_container_swap_member, _Alloc>;
 
 #pragma GCC diagnostic push
-# 131 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 131 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 131 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 131 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 template <class _Tp>
@@ -17387,9 +17387,9 @@ template <class _Alloc, class _Tp>
 using __allocator_traits_rebind_t [[__gnu__::__nodebug__]] = typename __allocator_traits_rebind<_Alloc, _Tp>::type;
 
 #pragma GCC diagnostic push
-# 164 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 164 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 164 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 164 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 
@@ -17472,7 +17472,7 @@ struct allocator_traits {
   using rebind_alloc = __allocator_traits_rebind_t<allocator_type, _Tp>;
   template <class _Tp>
   using rebind_traits = allocator_traits<rebind_alloc<_Tp> >;
-# 257 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 257 "c++/v1/__memory/allocator_traits.h" 3
   [[__nodiscard__]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr static pointer
   allocate(allocator_type& __a, size_type __n) {
     return __a.allocate(__n);
@@ -17482,9 +17482,9 @@ struct allocator_traits {
   [[__nodiscard__]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr static pointer
   allocate(allocator_type& __a, size_type __n, const_void_pointer __hint) {
 #pragma GCC diagnostic push
-# 265 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 265 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 265 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 265 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     return __a.allocate(__n, __hint);
 #pragma GCC diagnostic pop
@@ -17516,9 +17516,9 @@ struct allocator_traits {
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr static void
   construct(allocator_type& __a, _Tp* __p, _Args&&... __args) {
 #pragma GCC diagnostic push
-# 295 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 295 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 295 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 295 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     __a.construct(__p, std::forward<_Args>(__args)...);
 #pragma GCC diagnostic pop
@@ -17532,9 +17532,9 @@ struct allocator_traits {
   template <class _Tp, __enable_if_t<__has_destroy_v<allocator_type, _Tp*>, int> = 0>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr static void destroy(allocator_type& __a, _Tp* __p) {
 #pragma GCC diagnostic push
-# 307 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 307 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 307 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 307 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     __a.destroy(__p);
 #pragma GCC diagnostic pop
@@ -17547,9 +17547,9 @@ struct allocator_traits {
   template <class _Ap = _Alloc, __enable_if_t<__has_max_size_v<const _Ap>, int> = 0>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr static size_type max_size(const allocator_type& __a) noexcept {
 #pragma GCC diagnostic push
-# 318 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 318 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 318 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_traits.h" 3
+# 318 "c++/v1/__memory/allocator_traits.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     return __a.max_size();
 #pragma GCC diagnostic pop
@@ -17610,8 +17610,8 @@ inline const bool __is_cpp17_copy_insertable_v =
       __has_construct_v<_Alloc, typename _Alloc::value_type*, const typename _Alloc::value_type&>));
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocate_at_least.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocate_at_least.h" 3
+# 15 "c++/v1/__memory/allocate_at_least.h" 2 3
+# 18 "c++/v1/__memory/allocate_at_least.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17622,56 +17622,56 @@ template <class _Alloc>
 [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr auto __allocate_at_least(_Alloc& __alloc, size_t __n) {
   return std::allocator_traits<_Alloc>::allocate_at_least(__alloc, __n);
 }
-# 46 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocate_at_least.h" 3
+# 46 "c++/v1/__memory/allocate_at_least.h" 3
 } }
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/max_align_t.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/max_align_t.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 3
+# 32 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__memory/allocator.h" 1 3
+# 19 "c++/v1/__memory/allocator.h" 3
+# 1 "c++/v1/__new/allocate.h" 1 3
+# 13 "c++/v1/__new/allocate.h" 3
+# 1 "c++/v1/__cstddef/max_align_t.h" 1 3
+# 13 "c++/v1/__cstddef/max_align_t.h" 3
+# 1 "c++/v1/stddef.h" 1 3
+# 34 "c++/v1/stddef.h" 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 1 3
-# 88 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 3
+# 1 "../lib/clang/21/include/stddef.h" 1 3
+# 88 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 3
 typedef long long int ptrdiff_t;
-# 89 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 89 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_size_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_size_t.h" 3
 typedef long long unsigned int size_t;
-# 94 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 103 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_wchar_t.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 94 "../lib/clang/21/include/stddef.h" 2 3
+# 103 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_wchar_t.h" 1 3
+# 104 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_null.h" 1 3
-# 109 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 1 "../lib/clang/21/include/__stddef_null.h" 1 3
+# 109 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_nullptr_t.h" 1 3
-# 114 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 128 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_offsetof.h" 1 3
-# 129 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 2 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/max_align_t.h" 2 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/max_align_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_nullptr_t.h" 1 3
+# 114 "../lib/clang/21/include/stddef.h" 2 3
+# 128 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_offsetof.h" 1 3
+# 129 "../lib/clang/21/include/stddef.h" 2 3
+# 39 "c++/v1/stddef.h" 2 3
+# 14 "c++/v1/__cstddef/max_align_t.h" 2 3
+# 17 "c++/v1/__cstddef/max_align_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17681,10 +17681,10 @@ using ::max_align_t __attribute__((__using_if_exists__));
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 2 3
+# 14 "c++/v1/__new/allocate.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/align_val_t.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/align_val_t.h" 3
+# 1 "c++/v1/__new/align_val_t.h" 1 3
+# 17 "c++/v1/__new/align_val_t.h" 3
 
 
  namespace std {
@@ -17696,11 +17696,11 @@ enum class align_val_t : size_t {};
 
 
 }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/exceptions.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/exceptions.h" 3
+# 16 "c++/v1/__new/allocate.h" 2 3
+# 1 "c++/v1/__new/global_new_delete.h" 1 3
+# 15 "c++/v1/__new/global_new_delete.h" 3
+# 1 "c++/v1/__new/exceptions.h" 1 3
+# 18 "c++/v1/__new/exceptions.h" 3
 
 
  namespace std {
@@ -17723,7 +17723,7 @@ public:
   ~bad_array_new_length() noexcept override;
   const char* what() const noexcept override;
 };
-# 62 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/exceptions.h" 3
+# 62 "c++/v1/__new/exceptions.h" 3
 [[__noreturn__]] void __throw_bad_alloc();
 
 [[__noreturn__]] inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void __throw_bad_array_new_length() {
@@ -17734,9 +17734,9 @@ public:
 
 }
 }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/nothrow_t.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/nothrow_t.h" 3
+# 16 "c++/v1/__new/global_new_delete.h" 2 3
+# 1 "c++/v1/__new/nothrow_t.h" 1 3
+# 16 "c++/v1/__new/nothrow_t.h" 3
 
 
 
@@ -17748,9 +17748,9 @@ struct nothrow_t {
 };
 extern const nothrow_t nothrow;
 }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 2 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/global_new_delete.h" 3
+# 17 "c++/v1/__new/global_new_delete.h" 2 3
+# 20 "c++/v1/__new/global_new_delete.h" 3
+# 37 "c++/v1/__new/global_new_delete.h" 3
 [[__nodiscard__]] void* operator new(std::size_t __sz) ;
 [[__nodiscard__]] void* operator new(std::size_t __sz, const std::nothrow_t&) noexcept
     __attribute__((__malloc__));
@@ -17785,8 +17785,8 @@ operator new[](std::size_t __sz, std::align_val_t) ;
 operator new[](std::size_t __sz, std::align_val_t, const std::nothrow_t&) noexcept __attribute__((__malloc__));
                              void operator delete[](void* __p, std::align_val_t) noexcept;
                              void operator delete[](void* __p, std::align_val_t, const std::nothrow_t&) noexcept;
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__new/allocate.h" 3
+# 17 "c++/v1/__new/allocate.h" 2 3
+# 22 "c++/v1/__new/allocate.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -17843,15 +17843,15 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
   return __builtin_operator_delete(__ptr);
 }
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 3
+# 20 "c++/v1/__memory/allocator.h" 2 3
+# 30 "c++/v1/__memory/allocator.h" 3
 
 
  namespace std { inline namespace __1 {
 
 template <class _Tp>
 class allocator;
-# 66 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 3
+# 66 "c++/v1/__memory/allocator.h" 3
 template <bool _Cond, class _Unique>
 struct __non_trivial_if {};
 
@@ -17909,7 +17909,7 @@ public:
       std::__libcpp_deallocate<_Tp>(__p, __element_count(__n));
     }
   }
-# 158 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 3
+# 158 "c++/v1/__memory/allocator.h" 3
 };
 
 template <class _Tp, class _Up>
@@ -17917,18 +17917,18 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 operator==(const allocator<_Tp>&, const allocator<_Up>&) noexcept {
   return true;
 }
-# 175 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator.h" 3
+# 175 "c++/v1/__memory/allocator.h" 3
 } }
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
+# 33 "c++/v1/__format/buffer.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/destroy.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/destroy.h" 3
+# 1 "c++/v1/__memory/destroy.h" 1 3
+# 20 "c++/v1/__memory/destroy.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/destroy.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__memory/destroy.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -17973,16 +17973,16 @@ template <class _ForwardIterator, class _Size>
 
 
 } }
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move.h" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move.h" 3
+# 36 "c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__memory/uninitialized_algorithms.h" 1 3
+# 14 "c++/v1/__memory/uninitialized_algorithms.h" 3
+# 1 "c++/v1/__algorithm/move.h" 1 3
+# 29 "c++/v1/__algorithm/move.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 33 "c++/v1/__algorithm/move.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -18086,10 +18086,10 @@ move(_InputIterator __first, _InputIterator __last, _OutputIterator __result) {
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 2 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unbounded_array.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_unbounded_array.h" 3
+# 15 "c++/v1/__memory/uninitialized_algorithms.h" 2 3
+# 35 "c++/v1/__memory/uninitialized_algorithms.h" 3
+# 1 "c++/v1/__type_traits/is_unbounded_array.h" 1 3
+# 17 "c++/v1/__type_traits/is_unbounded_array.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -18110,19 +18110,19 @@ template <class _Tp>
 
 
 } }
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 2 3
+# 36 "c++/v1/__memory/uninitialized_algorithms.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exception_guard.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exception_guard.h" 3
+# 1 "c++/v1/__utility/exception_guard.h" 1 3
+# 19 "c++/v1/__utility/exception_guard.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exception_guard.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__utility/exception_guard.h" 2 3
 
  namespace std { inline namespace __1 {
-# 63 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/exception_guard.h" 3
+# 63 "c++/v1/__utility/exception_guard.h" 3
 template <class _Rollback>
 struct __exception_guard_exceptions {
   __exception_guard_exceptions() = delete;
@@ -18200,13 +18200,13 @@ template <class _Rollback>
 }
 
 } }
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 2 3
-# 44 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 39 "c++/v1/__memory/uninitialized_algorithms.h" 2 3
+# 44 "c++/v1/__memory/uninitialized_algorithms.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 48 "c++/v1/__memory/uninitialized_algorithms.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -18518,7 +18518,7 @@ uninitialized_move_n(_InputIterator __ifirst, _Size __n, _ForwardIterator __ofir
   return std::__uninitialized_move_n<_ValueType>(
       std::move(__ifirst), __n, std::move(__ofirst), __always_false(), __iter_move);
 }
-# 367 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 367 "c++/v1/__memory/uninitialized_algorithms.h" 3
 template <class _Alloc,
           class _BidirIter,
           __enable_if_t<__has_bidirectional_iterator_category<_BidirIter>::value, int> = 0>
@@ -18549,7 +18549,7 @@ __allocator_destroy_multidimensional(_Alloc& __alloc, _BidirIter __first, _Bidir
     } while (__last != __first);
   }
 }
-# 405 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 405 "c++/v1/__memory/uninitialized_algorithms.h" 3
 template <class _Alloc, class _Tp>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void __allocator_construct_at_multidimensional(_Alloc& __alloc, _Tp* __loc) {
   static_assert(is_same_v<typename allocator_traits<_Alloc>::value_type, _Tp>,
@@ -18574,7 +18574,7 @@ template <class _Alloc, class _Tp>
     allocator_traits<_Alloc>::construct(__alloc, __loc);
   }
 }
-# 440 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 440 "c++/v1/__memory/uninitialized_algorithms.h" 3
 template <class _Alloc, class _Tp, class _Arg>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void
 __allocator_construct_at_multidimensional(_Alloc& __alloc, _Tp* __loc, _Arg const& __arg) {
@@ -18603,7 +18603,7 @@ __allocator_construct_at_multidimensional(_Alloc& __alloc, _Tp* __loc, _Arg cons
     allocator_traits<_Alloc>::construct(__alloc, __loc, __arg);
   }
 }
-# 476 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 476 "c++/v1/__memory/uninitialized_algorithms.h" 3
 template <class _Alloc,
           class _BidirIter,
           class _Tp,
@@ -18726,7 +18726,7 @@ inline const bool __allocator_has_trivial_destroy_v = !__has_destroy_v<_Alloc, _
 
 template <class _Tp, class _Up>
 inline const bool __allocator_has_trivial_destroy_v<allocator<_Tp>, _Up> = true;
-# 611 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uninitialized_algorithms.h" 3
+# 611 "c++/v1/__memory/uninitialized_algorithms.h" 3
 template <class _Alloc, class _ContiguousIterator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void __uninitialized_allocator_relocate(
     _Alloc& __alloc, _ContiguousIterator __first, _ContiguousIterator __last, _ContiguousIterator __result) {
@@ -18761,13 +18761,13 @@ template <class _Alloc, class _ContiguousIterator>
 }
 
 } }
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
-# 46 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
+# 37 "c++/v1/__format/buffer.h" 2 3
+# 46 "c++/v1/__format/buffer.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 50 "c++/v1/__format/buffer.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -18798,7 +18798,7 @@ private:
 
   size_t __code_units_written_{0};
 };
-# 181 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
+# 181 "c++/v1/__format/buffer.h" 3
 template <__fmt_char_type _CharT>
 class __output_buffer {
 public:
@@ -18844,7 +18844,7 @@ public:
 
   template <__fmt_char_type _InCharT>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void __copy(basic_string_view<_InCharT> __str) {
-# 237 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
+# 237 "c++/v1/__format/buffer.h" 3
     size_t __n = __str.size();
     if (__max_output_size_) {
       __n = __max_output_size_->__write_request(__n);
@@ -18933,7 +18933,7 @@ concept __enable_direct_output =
 
 
      || same_as<_OutIt, __wrap_iter<_CharT*>>);
-# 333 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
+# 333 "c++/v1/__format/buffer.h" 3
 template <class _Container>
 concept __insertable =
     __enable_insertable<_Container> && __fmt_char_type<typename _Container::value_type> &&
@@ -19160,7 +19160,7 @@ private:
 
   }
 };
-# 578 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/buffer.h" 3
+# 578 "c++/v1/__format/buffer.h" 3
 template <__fmt_char_type _CharT>
 class __retarget_buffer {
   using _Alloc [[__gnu__::__nodebug__]] = allocator<_CharT>;
@@ -19288,16 +19288,16 @@ private:
 
 
 } }
-# 201 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 2 3
+# 201 "c++/v1/format" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 3
-
-
+# 1 "c++/v1/__format/container_adaptor.h" 1 3
+# 15 "c++/v1/__format/container_adaptor.h" 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter.h" 3
+
+
+# 1 "c++/v1/__format/formatter.h" 1 3
+# 18 "c++/v1/__format/formatter.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19309,7 +19309,7 @@ struct __disabled_formatter {
   __disabled_formatter(const __disabled_formatter&) = delete;
   __disabled_formatter& operator=(const __disabled_formatter&) = delete;
 };
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter.h" 3
+# 39 "c++/v1/__format/formatter.h" 3
 template <class _Tp, class _CharT>
 struct formatter : __disabled_formatter {};
 
@@ -19328,14 +19328,14 @@ template <class _Tp>
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_default_formatter.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_default_formatter.h" 3
+# 20 "c++/v1/__format/container_adaptor.h" 2 3
+# 1 "c++/v1/__format/range_default_formatter.h" 1 3
+# 15 "c++/v1/__format/range_default_formatter.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__chrono/statically_widen.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__chrono/statically_widen.h" 3
+# 1 "c++/v1/__chrono/statically_widen.h" 1 3
+# 21 "c++/v1/__chrono/statically_widen.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19350,15 +19350,15 @@ template <__fmt_char_type _CharT>
   else
     return __wstr;
 }
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__chrono/statically_widen.h" 3
+# 50 "c++/v1/__chrono/statically_widen.h" 3
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_default_formatter.h" 2 3
+# 19 "c++/v1/__format/range_default_formatter.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 3
+# 1 "c++/v1/__format/range_formatter.h" 1 3
+# 15 "c++/v1/__format/range_formatter.h" 3
 
 
 
@@ -19367,12 +19367,12 @@ template <__fmt_char_type _CharT>
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__variant/monostate.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__variant/monostate.h" 3
+# 1 "c++/v1/__format/format_context.h" 1 3
+# 16 "c++/v1/__format/format_context.h" 3
+# 1 "c++/v1/__format/format_arg.h" 1 3
+# 27 "c++/v1/__format/format_arg.h" 3
+# 1 "c++/v1/__variant/monostate.h" 1 3
+# 20 "c++/v1/__variant/monostate.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19388,7 +19388,7 @@ struct monostate {};
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline constexpr strong_ordering operator<=>(monostate, monostate) noexcept {
   return strong_ordering::equal;
 }
-# 50 "D:/Code/Msys2/Files/clang64/include/c++/v1/__variant/monostate.h" 3
+# 50 "c++/v1/__variant/monostate.h" 3
 template <>
 struct hash<monostate> {
 
@@ -19404,20 +19404,20 @@ struct hash<monostate> {
 
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 2 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
+# 28 "c++/v1/__format/format_arg.h" 2 3
+# 33 "c++/v1/__format/format_arg.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 37 "c++/v1/__format/format_arg.h" 2 3
 
  namespace std { inline namespace __1 {
 
 
 
 namespace __format {
-# 61 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
+# 61 "c++/v1/__format/format_arg.h" 3
 enum class __arg_t : uint8_t {
   __none,
   __boolean,
@@ -19508,7 +19508,7 @@ template <class _Visitor, class _Context>
 
   __libcpp_unreachable();
 }
-# 209 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
+# 209 "c++/v1/__format/format_arg.h" 3
 template <class _Context>
 class __basic_format_arg_value {
   using _CharT [[__gnu__::__nodebug__]] = typename _Context::char_type;
@@ -19587,10 +19587,10 @@ public:
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) basic_format_arg() noexcept : __type_{__format::__arg_t::__none} {}
 
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) explicit operator bool() const noexcept { return __type_ != __format::__arg_t::__none; }
-# 334 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
+# 334 "c++/v1/__format/format_arg.h" 3
 private:
   using char_type = typename _Context::char_type;
-# 348 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg.h" 3
+# 348 "c++/v1/__format/format_arg.h" 3
 public:
   __basic_format_arg_value<_Context> __value_;
   __format::__arg_t __type_;
@@ -19642,16 +19642,16 @@ template <class _Visitor, class _Context>
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg_store.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg_store.h" 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg_store.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 1 3
-# 594 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_if.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/find_if.h" 3
+# 17 "c++/v1/__format/format_context.h" 2 3
+# 1 "c++/v1/__format/format_arg_store.h" 1 3
+# 15 "c++/v1/__format/format_arg_store.h" 3
+# 27 "c++/v1/__format/format_arg_store.h" 3
+# 1 "c++/v1/string" 1 3
+# 594 "c++/v1/string" 3
+# 1 "c++/v1/__algorithm/remove.h" 1 3
+# 13 "c++/v1/__algorithm/remove.h" 3
+# 1 "c++/v1/__algorithm/find_if.h" 1 3
+# 17 "c++/v1/__algorithm/find_if.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19666,13 +19666,13 @@ find_if(_InputIterator __first, _InputIterator __last, _Predicate __pred) {
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove.h" 3
+# 14 "c++/v1/__algorithm/remove.h" 2 3
+# 19 "c++/v1/__algorithm/remove.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__algorithm/remove.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -19693,14 +19693,14 @@ remove(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value) {
 }
 
 } }
-# 595 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove_if.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove_if.h" 3
+# 595 "c++/v1/string" 2 3
+# 1 "c++/v1/__algorithm/remove_if.h" 1 3
+# 18 "c++/v1/__algorithm/remove_if.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/remove_if.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 22 "c++/v1/__algorithm/remove_if.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -19721,14 +19721,14 @@ remove_if(_ForwardIterator __first, _ForwardIterator __last, _Predicate __pred) 
 }
 
 } }
-# 596 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 596 "c++/v1/string" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__debug_utils/sanitizers.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__debug_utils/sanitizers.h" 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__debug_utils/sanitizers.h" 3
+# 1 "c++/v1/__debug_utils/sanitizers.h" 1 3
+# 18 "c++/v1/__debug_utils/sanitizers.h" 3
+# 33 "c++/v1/__debug_utils/sanitizers.h" 3
  namespace std { inline namespace __1 {
-# 52 "D:/Code/Msys2/Files/clang64/include/c++/v1/__debug_utils/sanitizers.h" 3
+# 52 "c++/v1/__debug_utils/sanitizers.h" 3
 template <class _Allocator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void __annotate_double_ended_contiguous_container(
     const void* __first_storage,
@@ -19744,7 +19744,7 @@ template <class _Allocator>
   (void)__last_old_contained;
   (void)__first_new_contained;
   (void)__last_new_contained;
-# 77 "D:/Code/Msys2/Files/clang64/include/c++/v1/__debug_utils/sanitizers.h" 3
+# 77 "c++/v1/__debug_utils/sanitizers.h" 3
 }
 
 
@@ -19771,13 +19771,13 @@ template <class _Allocator>
 }
 
 } }
-# 599 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 599 "c++/v1/string" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ios/fpos.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ios/fpos.h" 3
+# 1 "c++/v1/__ios/fpos.h" 1 3
+# 18 "c++/v1/__ios/fpos.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19835,12 +19835,12 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 604 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 613 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_final.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_final.h" 3
+# 604 "c++/v1/string" 2 3
+# 613 "c++/v1/string" 3
+# 1 "c++/v1/__memory/compressed_pair.h" 1 3
+# 17 "c++/v1/__memory/compressed_pair.h" 3
+# 1 "c++/v1/__type_traits/is_final.h" 1 3
+# 17 "c++/v1/__type_traits/is_final.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19859,12 +19859,12 @@ template <class _Tp>
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 3
+# 18 "c++/v1/__memory/compressed_pair.h" 2 3
+# 21 "c++/v1/__memory/compressed_pair.h" 3
 
 
  namespace std { inline namespace __1 {
-# 59 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 3
+# 59 "c++/v1/__memory/compressed_pair.h" 3
 template <class _Tp>
 inline const size_t __compressed_pair_alignment = alignof(_Tp);
 
@@ -19888,12 +19888,12 @@ class __compressed_pair_padding {
 
 template <class _ToPad>
 class __compressed_pair_padding<_ToPad, true> {};
-# 134 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/compressed_pair.h" 3
+# 134 "c++/v1/__memory/compressed_pair.h" 3
 } }
-# 614 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 614 "c++/v1/string" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/noexcept_move_assign_container.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/noexcept_move_assign_container.h" 3
+# 1 "c++/v1/__memory/noexcept_move_assign_container.h" 1 3
+# 19 "c++/v1/__memory/noexcept_move_assign_container.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19911,10 +19911,10 @@ struct __noexcept_move_assign_container
 };
 
 } }
-# 616 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 616 "c++/v1/string" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/swap_allocator.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/swap_allocator.h" 3
+# 1 "c++/v1/__memory/swap_allocator.h" 1 3
+# 20 "c++/v1/__memory/swap_allocator.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -19948,11 +19948,11 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 618 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/byte.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__cstddef/byte.h" 3
+# 618 "c++/v1/string" 2 3
+# 1 "c++/v1/__memory_resource/polymorphic_allocator.h" 1 3
+# 14 "c++/v1/__memory_resource/polymorphic_allocator.h" 3
+# 1 "c++/v1/__cstddef/byte.h" 1 3
+# 19 "c++/v1/__cstddef/byte.h" 3
 
 
 
@@ -20017,11 +20017,11 @@ template <class _Integer, __enable_if_t<is_integral<_Integer>::value, int> = 0>
 }
 
 }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
+# 15 "c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/memory_resource.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/memory_resource.h" 3
+# 1 "c++/v1/__memory_resource/memory_resource.h" 1 3
+# 19 "c++/v1/__memory_resource/memory_resource.h" 3
 
 
 
@@ -20062,7 +20062,7 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 operator==(const memory_resource& __lhs, const memory_resource& __rhs) noexcept {
   return &__lhs == &__rhs || __lhs.is_equal(__rhs);
 }
-# 71 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/memory_resource.h" 3
+# 71 "c++/v1/__memory_resource/memory_resource.h" 3
 [[__gnu__::__returns_nonnull__]] memory_resource*
 get_default_resource() noexcept;
 
@@ -20078,17 +20078,17 @@ null_memory_resource() noexcept;
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
+# 18 "c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 1 3
-# 225 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_arg_t.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_arg_t.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uses_allocator.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/uses_allocator.h" 3
+# 1 "c++/v1/tuple" 1 3
+# 225 "c++/v1/tuple" 3
+# 1 "c++/v1/__memory/allocator_arg_t.h" 1 3
+# 14 "c++/v1/__memory/allocator_arg_t.h" 3
+# 1 "c++/v1/__memory/uses_allocator.h" 1 3
+# 19 "c++/v1/__memory/uses_allocator.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20121,8 +20121,8 @@ inline constexpr bool uses_allocator_v = uses_allocator<_Tp, _Alloc>::value;
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_arg_t.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_arg_t.h" 3
+# 15 "c++/v1/__memory/allocator_arg_t.h" 2 3
+# 22 "c++/v1/__memory/allocator_arg_t.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20133,7 +20133,7 @@ struct allocator_arg_t {
 
 
 inline constexpr allocator_arg_t allocator_arg = allocator_arg_t();
-# 40 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/allocator_arg_t.h" 3
+# 40 "c++/v1/__memory/allocator_arg_t.h" 3
 template <class _Tp, class _Alloc, class... _Args>
 struct __uses_alloc_ctor_imp {
   using _RawAlloc [[__gnu__::__nodebug__]] = __remove_cvref_t<_Alloc>;
@@ -20168,10 +20168,10 @@ __user_alloc_construct_impl(integral_constant<int, 2>, _Tp* __storage, const _Al
 
 
 } }
-# 226 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
+# 226 "c++/v1/tuple" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/find_index.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/find_index.h" 3
+# 1 "c++/v1/__tuple/find_index.h" 1 3
+# 18 "c++/v1/__tuple/find_index.h" 3
 
 
 
@@ -20213,9 +20213,9 @@ template <typename _T1, typename... _Args>
 struct __find_exactly_one_t : public __find_detail::__find_exactly_one_checked<_T1, _Args...> {};
 
 } }
-# 228 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/ignore.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/ignore.h" 3
+# 228 "c++/v1/tuple" 2 3
+# 1 "c++/v1/__tuple/ignore.h" 1 3
+# 16 "c++/v1/__tuple/ignore.h" 3
 
 
 
@@ -20236,9 +20236,9 @@ inline constexpr __ignore_type ignore;
 
 
 } }
-# 229 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/make_tuple_types.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/make_tuple_types.h" 3
+# 229 "c++/v1/tuple" 2 3
+# 1 "c++/v1/__tuple/make_tuple_types.h" 1 3
+# 26 "c++/v1/__tuple/make_tuple_types.h" 3
 
 
 
@@ -20290,11 +20290,11 @@ struct __make_tuple_types<__tuple_types<_Types...>, _Ep, 0, true> {
 };
 
 } }
-# 230 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/sfinae_helpers.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/sfinae_helpers.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_ext.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/tuple_like_ext.h" 3
+# 230 "c++/v1/tuple" 2 3
+# 1 "c++/v1/__tuple/sfinae_helpers.h" 1 3
+# 17 "c++/v1/__tuple/sfinae_helpers.h" 3
+# 1 "c++/v1/__tuple/tuple_like_ext.h" 1 3
+# 22 "c++/v1/__tuple/tuple_like_ext.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20324,8 +20324,8 @@ template <class... _Tp>
 struct __tuple_like_ext<__tuple_types<_Tp...> > : true_type {};
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/sfinae_helpers.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__tuple/sfinae_helpers.h" 3
+# 18 "c++/v1/__tuple/sfinae_helpers.h" 2 3
+# 30 "c++/v1/__tuple/sfinae_helpers.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20437,10 +20437,10 @@ struct __sfinae_assign_base<false, true> {
 
 
 } }
-# 231 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 258 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/lazy.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/lazy.h" 3
+# 231 "c++/v1/tuple" 2 3
+# 258 "c++/v1/tuple" 3
+# 1 "c++/v1/__type_traits/lazy.h" 1 3
+# 16 "c++/v1/__type_traits/lazy.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20449,9 +20449,9 @@ template <template <class...> class _Func, class... _Args>
 struct _Lazy : _Func<_Args...> {};
 
 } }
-# 259 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/maybe_const.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/maybe_const.h" 3
+# 259 "c++/v1/tuple" 2 3
+# 1 "c++/v1/__type_traits/maybe_const.h" 1 3
+# 17 "c++/v1/__type_traits/maybe_const.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20460,10 +20460,10 @@ template <bool _Const, class _Tp>
 using __maybe_const [[__gnu__::__nodebug__]] = __conditional_t<_Const, const _Tp, _Tp>;
 
 } }
-# 260 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
+# 260 "c++/v1/tuple" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/negation.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/negation.h" 3
+# 1 "c++/v1/__type_traits/negation.h" 1 3
+# 17 "c++/v1/__type_traits/negation.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20479,9 +20479,9 @@ template <class _Tp>
 
 
 } }
-# 262 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/reference_constructs_from_temporary.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/reference_constructs_from_temporary.h" 3
+# 262 "c++/v1/tuple" 2 3
+# 1 "c++/v1/__type_traits/reference_constructs_from_temporary.h" 1 3
+# 17 "c++/v1/__type_traits/reference_constructs_from_temporary.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -20508,13 +20508,13 @@ inline const bool __reference_constructs_from_temporary_v = __reference_construc
 
 
 } }
-# 263 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
-# 282 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 3
+# 263 "c++/v1/tuple" 2 3
+# 282 "c++/v1/tuple" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 286 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 286 "c++/v1/tuple" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -21416,7 +21416,7 @@ template <class... _Tp, class... _Up>
 operator<=>(const tuple<_Tp...>& __x, const tuple<_Up...>& __y) {
   return std::__tuple_compare_three_way(__x, __y, index_sequence_for<_Tp...>{});
 }
-# 1246 "D:/Code/Msys2/Files/clang64/include/c++/v1/tuple" 3
+# 1246 "c++/v1/tuple" 3
 template <class _Tp, class _Up>
 struct __tuple_cat_type;
 
@@ -21602,13 +21602,13 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 3
+# 23 "c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
+# 26 "c++/v1/__memory_resource/polymorphic_allocator.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 30 "c++/v1/__memory_resource/polymorphic_allocator.h" 2 3
 
 
 
@@ -21762,7 +21762,7 @@ public:
   operator==(const polymorphic_allocator& __lhs, const polymorphic_allocator& __rhs) noexcept {
     return *__lhs.resource() == *__rhs.resource();
   }
-# 192 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 3
+# 192 "c++/v1/__memory_resource/polymorphic_allocator.h" 3
 private:
   template <class... _Args, size_t... _Is>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) tuple<_Args&&...>
@@ -21798,15 +21798,15 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 operator==(const polymorphic_allocator<_Tp>& __lhs, const polymorphic_allocator<_Up>& __rhs) noexcept {
   return *__lhs.resource() == *__rhs.resource();
 }
-# 238 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory_resource/polymorphic_allocator.h" 3
+# 238 "c++/v1/__memory_resource/polymorphic_allocator.h" 3
 }
 
 } }
-# 619 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 619 "c++/v1/string" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/container_compatible_range.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/container_compatible_range.h" 3
+# 1 "c++/v1/__ranges/container_compatible_range.h" 1 3
+# 19 "c++/v1/__ranges/container_compatible_range.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -21820,9 +21820,9 @@ concept _ContainerCompatibleRange =
 
 
 } }
-# 622 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/from_range.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/from_range.h" 3
+# 622 "c++/v1/string" 2 3
+# 1 "c++/v1/__ranges/from_range.h" 1 3
+# 17 "c++/v1/__ranges/from_range.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -21838,16 +21838,16 @@ inline constexpr from_range_t from_range{};
 
 
 } }
-# 623 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 623 "c++/v1/string" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/extern_template_lists.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__string/extern_template_lists.h" 3
-# 626 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 1 "c++/v1/__string/extern_template_lists.h" 1 3
+# 16 "c++/v1/__string/extern_template_lists.h" 3
+# 626 "c++/v1/string" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_allocator.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_allocator.h" 3
+# 1 "c++/v1/__type_traits/is_allocator.h" 1 3
+# 20 "c++/v1/__type_traits/is_allocator.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -21861,15 +21861,15 @@ struct __is_allocator<_Alloc,
                       __void_t<decltype(std::declval<_Alloc&>().allocate(size_t(0)))> > : true_type {};
 
 } }
-# 629 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 646 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/scope_guard.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/scope_guard.h" 3
+# 629 "c++/v1/string" 2 3
+# 646 "c++/v1/string" 3
+# 1 "c++/v1/__utility/scope_guard.h" 1 3
+# 18 "c++/v1/__utility/scope_guard.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/scope_guard.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 22 "c++/v1/__utility/scope_guard.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -21900,25 +21900,25 @@ template <class _Func>
 }
 
 } }
-# 647 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
+# 647 "c++/v1/string" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/climits" 1 3
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/climits" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/limits.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/limits.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/limits.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/limits.h" 2 3
-# 46 "D:/Code/Msys2/Files/clang64/include/c++/v1/climits" 2 3
-# 49 "D:/Code/Msys2/Files/clang64/include/c++/v1/climits" 3
-# 650 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 676 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 1 "c++/v1/climits" 1 3
+# 45 "c++/v1/climits" 3
+# 1 "../lib/clang/21/include/limits.h" 1 3
+# 25 "../lib/clang/21/include/limits.h" 3
+# 1 "limits.h" 1 3
+# 26 "../lib/clang/21/include/limits.h" 2 3
+# 46 "c++/v1/climits" 2 3
+# 49 "c++/v1/climits" 3
+# 650 "c++/v1/string" 2 3
+# 676 "c++/v1/string" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 680 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 2 3
-# 692 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 680 "c++/v1/string" 2 3
+# 692 "c++/v1/string" 3
  namespace std { inline namespace __1 {
 
 
@@ -21969,7 +21969,7 @@ public:
   using const_reference = const value_type&;
   using pointer = typename __alloc_traits::pointer;
   using const_pointer = typename __alloc_traits::const_pointer;
-# 764 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 764 "c++/v1/string" 3
   using __trivially_relocatable [[__gnu__::__nodebug__]] = __conditional_t<
       __libcpp_is_trivially_relocatable<allocator_type>::value && __libcpp_is_trivially_relocatable<pointer>::value,
       basic_string,
@@ -21979,7 +21979,7 @@ public:
       __conditional_t<__is_replaceable_v<pointer> && __container_allocator_is_replaceable<__alloc_traits>::value,
                       basic_string,
                       void>;
-# 798 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 798 "c++/v1/string" 3
   static_assert(!is_array<value_type>::value, "Character type of basic_string must not be an array");
   static_assert(is_standard_layout<value_type>::value, "Character type of basic_string must be standard-layout");
   static_assert(is_trivially_default_constructible<value_type>::value,
@@ -21990,7 +21990,7 @@ public:
   static_assert(is_same<typename allocator_type::value_type, value_type>::value,
                 "Allocator::value_type must be same type as value_type");
   static_assert(__check_valid_allocator<allocator_type>::value, "");
-# 816 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 816 "c++/v1/string" 3
   using iterator = __wrap_iter<pointer>;
   using const_iterator = __wrap_iter<const_pointer>;
 
@@ -21999,7 +21999,7 @@ public:
 
 private:
   static_assert(8 == 8, "This implementation assumes that one byte contains 8 bits");
-# 867 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 867 "c++/v1/string" 3
   static const size_type __endian_factor = 2;
 
 
@@ -22077,7 +22077,7 @@ private:
   }
 
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr iterator __make_iterator(pointer __p) {
-# 956 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 956 "c++/v1/string" 3
     return iterator(__p);
 
   }
@@ -23366,7 +23366,7 @@ private:
   __annotate_contiguous_container(const void* __old_mid, const void* __new_mid) const {
     (void)__old_mid;
     (void)__new_mid;
-# 2252 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2252 "c++/v1/string" 3
   }
 
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void __annotate_new(size_type __current_size) const noexcept {
@@ -23420,7 +23420,7 @@ private:
 
   inline constexpr void __init(const value_type* __s, size_type __sz);
   inline constexpr void __init(size_type __n, value_type __c);
-# 2314 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2314 "c++/v1/string" 3
   constexpr __attribute__((__noinline__)) void __init_copy_ctor_external(const value_type* __s, size_type __sz);
 
   template <class _InputIterator, __enable_if_t<__has_exactly_input_iterator_category<_InputIterator>::value, int> = 0>
@@ -23600,7 +23600,7 @@ private:
 
 
 };
-# 2503 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2503 "c++/v1/string" 3
 extern template void basic_string<char>::__init(const value_type*, size_type); extern template void basic_string<char>::__init(size_type, value_type); extern template basic_string<char>::basic_string(const basic_string&, size_type, size_type, const allocator<char>&); extern template basic_string<char>::~basic_string(); extern template basic_string<char>& basic_string<char>::operator=(value_type); extern template basic_string<char>& basic_string<char>::assign(size_type, value_type); extern template basic_string<char>& basic_string<char>::assign(const basic_string&, size_type, size_type); extern template basic_string<char>& basic_string<char>::append(size_type, value_type); extern template basic_string<char>& basic_string<char>::append(const value_type*); extern template basic_string<char>& basic_string<char>::append(const value_type*, size_type); extern template basic_string<char>& basic_string<char>::append(const basic_string&, size_type, size_type); extern template void basic_string<char>::push_back(value_type); extern template basic_string<char>& basic_string<char>::insert(size_type, const value_type*); extern template basic_string<char>& basic_string<char>::insert(size_type, size_type, value_type); extern template basic_string<char>& basic_string<char>::insert(size_type, const value_type*, size_type); extern template basic_string<char>& basic_string<char>::insert(size_type, const basic_string&, size_type, size_type); extern template basic_string<char>::iterator basic_string<char>::insert(basic_string::const_iterator, value_type); extern template basic_string<char>& basic_string<char>::replace(size_type, size_type, const value_type*); extern template basic_string<char>& basic_string<char>::replace(size_type, size_type, size_type, value_type); extern template basic_string<char>& basic_string<char>::replace(size_type, size_type, const value_type*, size_type); extern template basic_string<char>& basic_string<char>::replace(size_type, size_type, const basic_string&, size_type, size_type); extern template void basic_string<char>::__grow_by_and_replace(size_type, size_type, size_type, size_type, size_type, size_type, const value_type*); extern template void basic_string<char>::resize(size_type, value_type); extern template void basic_string<char>::reserve(size_type); extern template basic_string<char>::size_type basic_string<char>::copy(value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find(value_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find(const value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::rfind(value_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::rfind(const value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find_first_of(const value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find_last_of(const value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find_first_not_of(const value_type*, size_type, size_type) const; extern template basic_string<char>::size_type basic_string<char>::find_last_not_of(const value_type*, size_type, size_type) const; extern template char& basic_string<char>::at(size_type); extern template const char& basic_string<char>::at(size_type) const; extern template int basic_string<char>::compare(const value_type*) const; extern template int basic_string<char>::compare(size_type, size_type, const value_type*) const; extern template int basic_string<char>::compare(size_type, size_type, const value_type*, size_type) const; extern template int basic_string<char>::compare(size_type, size_type, const basic_string&, size_type, size_type) const; extern template const basic_string<char>::size_type basic_string<char>::npos; extern template basic_string<char>::basic_string(const basic_string&); extern template basic_string<char>::basic_string(const basic_string&, const allocator<char>&); extern template basic_string<char>& basic_string<char>::assign(const value_type*); extern template basic_string<char>& basic_string<char>::assign(const value_type*, size_type); extern template basic_string<char>& basic_string<char>::operator=(basic_string const&); extern template void basic_string<char>::__grow_by(size_type, size_type, size_type, size_type, size_type, size_type); extern template basic_string<char>& basic_string<char>::erase(size_type, size_type);
 
 extern template void basic_string<wchar_t>::__init(const value_type*, size_type); extern template void basic_string<wchar_t>::__init(size_type, value_type); extern template basic_string<wchar_t>::basic_string(const basic_string&, size_type, size_type, const allocator<wchar_t>&); extern template basic_string<wchar_t>::~basic_string(); extern template basic_string<wchar_t>& basic_string<wchar_t>::operator=(value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::assign(size_type, value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::assign(const basic_string&, size_type, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::append(size_type, value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::append(const value_type*); extern template basic_string<wchar_t>& basic_string<wchar_t>::append(const value_type*, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::append(const basic_string&, size_type, size_type); extern template void basic_string<wchar_t>::push_back(value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::insert(size_type, const value_type*); extern template basic_string<wchar_t>& basic_string<wchar_t>::insert(size_type, size_type, value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::insert(size_type, const value_type*, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::insert(size_type, const basic_string&, size_type, size_type); extern template basic_string<wchar_t>::iterator basic_string<wchar_t>::insert(basic_string::const_iterator, value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::replace(size_type, size_type, const value_type*); extern template basic_string<wchar_t>& basic_string<wchar_t>::replace(size_type, size_type, size_type, value_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::replace(size_type, size_type, const value_type*, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::replace(size_type, size_type, const basic_string&, size_type, size_type); extern template void basic_string<wchar_t>::__grow_by_and_replace(size_type, size_type, size_type, size_type, size_type, size_type, const value_type*); extern template void basic_string<wchar_t>::resize(size_type, value_type); extern template void basic_string<wchar_t>::reserve(size_type); extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::copy(value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find(value_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find(const value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::rfind(value_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::rfind(const value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find_first_of(const value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find_last_of(const value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find_first_not_of(const value_type*, size_type, size_type) const; extern template basic_string<wchar_t>::size_type basic_string<wchar_t>::find_last_not_of(const value_type*, size_type, size_type) const; extern template wchar_t& basic_string<wchar_t>::at(size_type); extern template const wchar_t& basic_string<wchar_t>::at(size_type) const; extern template int basic_string<wchar_t>::compare(const value_type*) const; extern template int basic_string<wchar_t>::compare(size_type, size_type, const value_type*) const; extern template int basic_string<wchar_t>::compare(size_type, size_type, const value_type*, size_type) const; extern template int basic_string<wchar_t>::compare(size_type, size_type, const basic_string&, size_type, size_type) const; extern template const basic_string<wchar_t>::size_type basic_string<wchar_t>::npos; extern template basic_string<wchar_t>::basic_string(const basic_string&); extern template basic_string<wchar_t>::basic_string(const basic_string&, const allocator<wchar_t>&); extern template basic_string<wchar_t>& basic_string<wchar_t>::assign(const value_type*); extern template basic_string<wchar_t>& basic_string<wchar_t>::assign(const value_type*, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::operator=(basic_string const&); extern template void basic_string<wchar_t>::__grow_by(size_type, size_type, size_type, size_type, size_type, size_type); extern template basic_string<wchar_t>& basic_string<wchar_t>::erase(size_type, size_type);
@@ -23874,9 +23874,9 @@ basic_string<_CharT, _Traits, _Allocator>::__grow_by_without_replace(
   __annotate_delete();
   auto __guard = std::__make_scope_guard(__annotate_new_size(*this));
 #pragma GCC diagnostic push
-# 2775 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2775 "c++/v1/string" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 2775 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2775 "c++/v1/string" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
   __grow_by(__old_cap, __delta_cap, __old_sz, __n_copy, __n_del, __n_add);
 #pragma GCC diagnostic pop
@@ -24038,7 +24038,7 @@ basic_string<_CharT, _Traits, _Allocator>::__move_assign(basic_string& __str, tr
 
 
     __str.__annotate_new(0);
-# 2944 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 2944 "c++/v1/string" 3
   if (!__is_long() && std::addressof(__str) != this)
 
     __annotate_new(__get_short_size());
@@ -24686,7 +24686,7 @@ operator==(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT*
     return false;
   return __lhs.compare(0, _String::npos, __rhs, __rhs_len) == 0;
 }
-# 3602 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 3602 "c++/v1/string" 3
 template <class _CharT, class _Traits, class _Allocator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr auto operator<=>(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
                                                  const basic_string<_CharT, _Traits, _Allocator>& __rhs) noexcept {
@@ -24698,7 +24698,7 @@ template <class _CharT, class _Traits, class _Allocator>
 operator<=>(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs) {
   return basic_string_view<_CharT, _Traits>(__lhs) <=> basic_string_view<_CharT, _Traits>(__rhs);
 }
-# 3717 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 3717 "c++/v1/string" 3
 template <class _CharT, class _Traits, class _Allocator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr basic_string<_CharT, _Traits, _Allocator>
 __concatenate_strings(const _Allocator& __alloc,
@@ -24750,7 +24750,7 @@ operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs) 
   return std::__concatenate_strings<_CharT, _Traits>(
       __lhs.get_allocator(), __lhs, basic_string_view<_CharT, _Traits>(std::addressof(__rhs), 1));
 }
-# 3788 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 3788 "c++/v1/string" 3
 template <class _CharT, class _Traits, class _Allocator>
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr basic_string<_CharT, _Traits, _Allocator>
 operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<_CharT, _Traits, _Allocator>& __rhs) {
@@ -24794,7 +24794,7 @@ operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs) {
   __lhs.push_back(__rhs);
   return std::move(__lhs);
 }
-# 3854 "D:/Code/Msys2/Files/clang64/include/c++/v1/string" 3
+# 3854 "c++/v1/string" 3
 template <class _CharT, class _Traits, class _Allocator>
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void
 swap(basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_CharT, _Traits, _Allocator>& __rhs)
@@ -24963,7 +24963,7 @@ inline constexpr bool __format::__enable_insertable<std::basic_string<wchar_t>> 
 
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_arg_store.h" 2 3
+# 28 "c++/v1/__format/format_arg_store.h" 2 3
 
 
  namespace std { inline namespace __1 {
@@ -25217,9 +25217,9 @@ struct __format_arg_store {
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_args.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_args.h" 3
+# 18 "c++/v1/__format/format_context.h" 2 3
+# 1 "c++/v1/__format/format_args.h" 1 3
+# 22 "c++/v1/__format/format_args.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -25275,29 +25275,29 @@ basic_format_args(__format_arg_store<_Context, _Args...>) -> basic_format_args<_
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/locale_base_api.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/locale_base_api.h" 3
-# 119 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/locale_base_api.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/clocale" 1 3
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/clocale" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/locale.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/locale.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 1 3
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 3
-# 13 "D:/Code/Msys2/Files/clang64/include/locale.h" 2 3
+# 19 "c++/v1/__format/format_context.h" 2 3
+# 28 "c++/v1/__format/format_context.h" 3
+# 1 "c++/v1/__locale" 1 3
+# 17 "c++/v1/__locale" 3
+# 1 "c++/v1/__locale_dir/locale_base_api.h" 1 3
+# 16 "c++/v1/__locale_dir/locale_base_api.h" 3
+# 119 "c++/v1/__locale_dir/locale_base_api.h" 3
+# 1 "c++/v1/__locale_dir/support/windows.h" 1 3
+# 15 "c++/v1/__locale_dir/support/windows.h" 3
+# 1 "c++/v1/clocale" 1 3
+# 43 "c++/v1/clocale" 3
+# 1 "locale.h" 1 3
+# 12 "locale.h" 3
+# 1 "c++/v1/stdio.h" 1 3
+# 97 "c++/v1/stdio.h" 3
+# 13 "locale.h" 2 3
 
 
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 45 "D:/Code/Msys2/Files/clang64/include/locale.h" 3
+# 45 "locale.h" 3
   struct lconv {
     char *decimal_point;
     char *thousands_sep;
@@ -25328,7 +25328,7 @@ extern "C" {
     wchar_t* _W_negative_sign;
 
   };
-# 89 "D:/Code/Msys2/Files/clang64/include/locale.h" 3
+# 89 "locale.h" 3
   int __attribute__((__cdecl__)) _configthreadlocale(int _Flag);
   char *__attribute__((__cdecl__)) setlocale(int _Category,const char *_Locale);
   __attribute__ ((__dllimport__)) struct lconv *__attribute__((__cdecl__)) localeconv(void);
@@ -25351,13 +25351,13 @@ extern "C" {
 
 
   __attribute__ ((__dllimport__)) _locale_t __attribute__((__cdecl__)) _wcreate_locale(int _Category, const wchar_t *_Locale);
-# 120 "D:/Code/Msys2/Files/clang64/include/locale.h" 3
+# 120 "locale.h" 3
 }
 
 
 #pragma pack(pop)
-# 44 "D:/Code/Msys2/Files/clang64/include/c++/v1/clocale" 2 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/clocale" 3
+# 44 "c++/v1/clocale" 2 3
+# 48 "c++/v1/clocale" 3
 
 
  namespace std { inline namespace __1 {
@@ -25367,73 +25367,73 @@ using ::setlocale __attribute__((__using_if_exists__));
 using ::localeconv __attribute__((__using_if_exists__));
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstddef" 1 3
-# 42 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstddef" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 1 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 3
+# 16 "c++/v1/__locale_dir/support/windows.h" 2 3
+# 1 "c++/v1/cstddef" 1 3
+# 42 "c++/v1/cstddef" 3
+# 1 "c++/v1/stddef.h" 1 3
+# 34 "c++/v1/stddef.h" 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 1 3
-# 88 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_ptrdiff_t.h" 3
+# 1 "../lib/clang/21/include/stddef.h" 1 3
+# 88 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_ptrdiff_t.h" 3
 typedef long long int ptrdiff_t;
-# 89 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 89 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_size_t.h" 3
+# 1 "../lib/clang/21/include/__stddef_size_t.h" 1 3
+# 18 "../lib/clang/21/include/__stddef_size_t.h" 3
 typedef long long unsigned int size_t;
-# 94 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 103 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_wchar_t.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 94 "../lib/clang/21/include/stddef.h" 2 3
+# 103 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_wchar_t.h" 1 3
+# 104 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_null.h" 1 3
-# 109 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
+# 1 "../lib/clang/21/include/__stddef_null.h" 1 3
+# 109 "../lib/clang/21/include/stddef.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_nullptr_t.h" 1 3
-# 114 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 128 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/__stddef_offsetof.h" 1 3
-# 129 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/stddef.h" 2 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/stddef.h" 2 3
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstddef" 2 3
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstddef" 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 2 3
+# 1 "../lib/clang/21/include/__stddef_nullptr_t.h" 1 3
+# 114 "../lib/clang/21/include/stddef.h" 2 3
+# 128 "../lib/clang/21/include/stddef.h" 3
+# 1 "../lib/clang/21/include/__stddef_offsetof.h" 1 3
+# 129 "../lib/clang/21/include/stddef.h" 2 3
+# 39 "c++/v1/stddef.h" 2 3
+# 43 "c++/v1/cstddef" 2 3
+# 54 "c++/v1/cstddef" 3
+# 17 "c++/v1/__locale_dir/support/windows.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 1 3
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdio.h" 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 1 3
-# 83 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
-
-
-
+# 1 "c++/v1/stdio.h" 1 3
+# 97 "c++/v1/stdio.h" 3
+# 20 "c++/v1/__locale_dir/support/windows.h" 2 3
+# 1 "c++/v1/stdlib.h" 1 3
+# 83 "c++/v1/stdlib.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+
+
+
+# 1 "stdlib.h" 1 3
+# 26 "stdlib.h" 3
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 50 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 50 "stdlib.h" 3
   typedef int (__attribute__((__cdecl__)) *_onexit_t)(void);
-# 60 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 60 "stdlib.h" 3
   typedef struct _div_t {
     int quot;
     int rem;
@@ -25478,7 +25478,7 @@ extern "C" {
     unsigned char ld12[12];
   } _LDBL12;
 #pragma pack()
-# 135 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 135 "stdlib.h" 3
   typedef void (__attribute__((__cdecl__)) *_purecall_handler)(void);
 
   __attribute__ ((__dllimport__)) _purecall_handler __attribute__((__cdecl__)) _set_purecall_handler(_purecall_handler _Handler);
@@ -25515,16 +25515,16 @@ extern "C" {
   errno_t __attribute__((__cdecl__)) _get_wpgmptr(wchar_t **_Value);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _set_fmode(int _Mode);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _get_fmode(int *_PMode);
-# 221 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 221 "stdlib.h" 3
   __attribute__ ((__dllimport__)) char ***__attribute__((__cdecl__)) __p__environ(void);
   __attribute__ ((__dllimport__)) wchar_t ***__attribute__((__cdecl__)) __p__wenviron(void);
-# 234 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 234 "stdlib.h" 3
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__osplatform(void);
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__osver(void);
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__winver(void);
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__winmajor(void);
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__winminor(void);
-# 256 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 256 "stdlib.h" 3
   errno_t __attribute__((__cdecl__)) _get_osplatform(unsigned int *_Value);
   errno_t __attribute__((__cdecl__)) _get_osver(unsigned int *_Value);
   errno_t __attribute__((__cdecl__)) _get_winver(unsigned int *_Value);
@@ -25630,7 +25630,7 @@ extern "C" {
   int __attribute__((__cdecl__)) rand(void);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _set_error_mode(int _Mode);
   void __attribute__((__cdecl__)) srand(unsigned int _Seed);
-# 387 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 387 "stdlib.h" 3
   double __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) strtod(const char * __restrict__ _Str,char ** __restrict__ _EndPtr);
   float __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) strtof(const char * __restrict__ nptr, char ** __restrict__ endptr);
 
@@ -25665,7 +25665,7 @@ extern "C" {
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wctomb_l(char *_MbCh,wchar_t _WCh,_locale_t _Locale) ;
   size_t __attribute__((__cdecl__)) wcstombs(char * __restrict__ _Dest,const wchar_t * __restrict__ _Source,size_t _MaxCount) ;
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _wcstombs_l(char * __restrict__ _Dest,const wchar_t * __restrict__ _Source,size_t _MaxCount,_locale_t _Locale) ;
-# 454 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 454 "stdlib.h" 3
   void *__attribute__((__cdecl__)) calloc(size_t _NumOfElements,size_t _SizeOfElements);
   void __attribute__((__cdecl__)) free(void *_Memory);
   void *__attribute__((__cdecl__)) malloc(size_t _Size);
@@ -25679,10 +25679,10 @@ extern "C" {
   __attribute__ ((__dllimport__)) void *__attribute__((__cdecl__)) _aligned_recalloc(void *_Memory,size_t _Count,size_t _Size,size_t _Alignment);
   __attribute__ ((__dllimport__)) void *__attribute__((__cdecl__)) _aligned_offset_recalloc(void *_Memory,size_t _Count,size_t _Size,size_t _Alignment,size_t _Offset);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _aligned_msize(void *_Memory,size_t _Alignment,size_t _Offset);
-# 546 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 546 "stdlib.h" 3
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _putenv(const char *_EnvString);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wputenv(const wchar_t *_EnvString);
-# 556 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 556 "stdlib.h" 3
   __attribute__ ((__dllimport__)) char *__attribute__((__cdecl__)) _fullpath(char *_FullPath,const char *_Path,size_t _SizeInBytes);
 
 
@@ -25697,7 +25697,7 @@ extern "C" {
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _atodbl_l(_CRT_DOUBLE *_Result,char *_Str,_locale_t _Locale);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _atoldbl_l(_LDOUBLE *_Result,char *_Str,_locale_t _Locale);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _atoflt_l(_CRT_FLOAT *_Result,char *_Str,_locale_t _Locale);
-# 585 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 585 "stdlib.h" 3
 unsigned long __attribute__((__cdecl__)) _lrotl(unsigned long,int);
 unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
 
@@ -25707,7 +25707,7 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
 
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _makepath(char *_Path,const char *_Drive,const char *_Dir,const char *_Filename,const char *_Ext);
   _onexit_t __attribute__((__cdecl__)) _onexit(_onexit_t _Func);
-# 603 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 603 "stdlib.h" 3
   __extension__ unsigned long long __attribute__((__cdecl__)) _rotl64(unsigned long long _Val,int _Shift);
   __extension__ unsigned long long __attribute__((__cdecl__)) _rotr64(unsigned long long Value,int Shift);
 
@@ -25724,12 +25724,12 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _searchenv(const char *_Filename,const char *_EnvVar,char *_ResultPath) ;
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _splitpath(const char *_FullPath,char *_Drive,char *_Dir,char *_Filename,char *_Ext) ;
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _swab(char *_Buf1,char *_Buf2,int _SizeInBytes);
-# 639 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 639 "stdlib.h" 3
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _beep(unsigned _Frequency,unsigned _Duration) __attribute__ ((__deprecated__));
 
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _seterrormode(int _Mode) __attribute__ ((__deprecated__));
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _sleep(unsigned long _Duration) __attribute__ ((__deprecated__));
-# 663 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 663 "stdlib.h" 3
   char *__attribute__((__cdecl__)) ecvt(double _Val,int _NumOfDigits,int *_PtDec,int *_PtSign) ;
   char *__attribute__((__cdecl__)) fcvt(double _Val,int _NumOfDec,int *_PtDec,int *_PtSign) ;
   char *__attribute__((__cdecl__)) gcvt(double _Val,int _NumOfDigits,char *_DstBuf) ;
@@ -25763,13 +25763,13 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
 
 
   __extension__ long long __attribute__((__cdecl__)) atoll (const char *);
-# 717 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 3
+# 717 "stdlib.h" 3
 }
 
 
 #pragma pack(pop)
 
-# 1 "D:/Code/Msys2/Files/clang64/include/sec_api/stdlib_s.h" 1 3
+# 1 "sec_api/stdlib_s.h" 1 3
 
 
 
@@ -25778,16 +25778,16 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 1 3
-# 83 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
+# 1 "c++/v1/stdlib.h" 1 3
+# 83 "c++/v1/stdlib.h" 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 1 3
-# 90 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 2 3
+# 1 "stdlib.h" 1 3
+# 90 "c++/v1/stdlib.h" 2 3
 
 
 
@@ -25795,9 +25795,9 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
 
 
 extern "C++" {
-# 109 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/abs.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/abs.h" 3
+# 109 "c++/v1/stdlib.h" 3
+# 1 "c++/v1/__math/abs.h" 1 3
+# 18 "c++/v1/__math/abs.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -25849,16 +25849,16 @@ template <class = int>
 }
 
 } }
-# 110 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 2 3
+# 110 "c++/v1/stdlib.h" 2 3
 using std::__math::abs;
-# 126 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
+# 126 "c++/v1/stdlib.h" 3
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) ldiv_t div(long __x, long __y) noexcept { return ::ldiv(__x, __y); }
 
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) lldiv_t div(long long __x, long long __y) noexcept { return ::lldiv(__x, __y); }
 
 
 }
-# 10 "D:/Code/Msys2/Files/clang64/include/sec_api/stdlib_s.h" 2 3
+# 10 "sec_api/stdlib_s.h" 2 3
 
 
 extern "C" {
@@ -25916,14 +25916,14 @@ extern "C" {
 
 
 }
-# 723 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/malloc.h" 1 3
-# 11 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 723 "stdlib.h" 2 3
+# 1 "malloc.h" 1 3
+# 11 "malloc.h" 3
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 52 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 52 "malloc.h" 3
   typedef struct _heapinfo {
     int *_pentry;
     size_t _size;
@@ -25933,7 +25933,7 @@ extern "C" {
 
 
   __attribute__ ((__dllimport__)) unsigned int *__attribute__((__cdecl__)) __p__amblksiz(void);
-# 129 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 129 "malloc.h" 3
 void * __mingw_aligned_malloc (size_t _Size, size_t _Alignment);
 void __mingw_aligned_free (void *_Memory);
 void * __mingw_aligned_offset_realloc (void *_Memory, size_t _Size, size_t _Alignment, size_t _Offset);
@@ -25943,24 +25943,24 @@ size_t __mingw_aligned_msize (void *memblock, size_t alignment, size_t offset);
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/mm_malloc.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/mm_malloc.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 1 3
-# 83 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
+# 1 "../lib/clang/21/include/mm_malloc.h" 1 3
+# 13 "../lib/clang/21/include/mm_malloc.h" 3
+# 1 "c++/v1/stdlib.h" 1 3
+# 83 "c++/v1/stdlib.h" 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 1 3
-# 90 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 2 3
-# 14 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/mm_malloc.h" 2 3
+# 1 "stdlib.h" 1 3
+# 90 "c++/v1/stdlib.h" 2 3
+# 14 "../lib/clang/21/include/mm_malloc.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/malloc.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/mm_malloc.h" 2 3
-# 30 "D:/Code/Msys2/Files/clang64/lib/clang/21/include/mm_malloc.h" 3
+# 1 "malloc.h" 1 3
+# 17 "../lib/clang/21/include/mm_malloc.h" 2 3
+# 30 "../lib/clang/21/include/mm_malloc.h" 3
 static __inline__ void *__attribute__((__always_inline__, __nodebug__,
                                        __malloc__, __alloc_size__(1),
                                        __alloc_align__(2)))
@@ -25996,7 +25996,7 @@ _mm_free(void *__p)
 
 
 }
-# 139 "D:/Code/Msys2/Files/clang64/include/malloc.h" 2 3
+# 139 "malloc.h" 2 3
 
 
 
@@ -26014,7 +26014,7 @@ _mm_free(void *__p)
 
   __attribute__ ((__dllimport__)) void *__attribute__((__cdecl__)) _expand(void *_Memory,size_t _NewSize);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _msize(void *_Memory);
-# 167 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 167 "malloc.h" 3
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _get_sbh_threshold(void);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _set_sbh_threshold(size_t _NewValue);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _set_amblksiz(size_t _Value);
@@ -26026,7 +26026,7 @@ _mm_free(void *__p)
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _heapwalk(_HEAPINFO *_EntryInfo);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _heapused(size_t *_Used,size_t *_Commit);
   __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) _get_heap_handle(void);
-# 190 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 190 "malloc.h" 3
   static __inline void *_MarkAllocaS(void *_Ptr,unsigned int _Marker) {
     if(_Ptr) {
       *((unsigned int*)_Ptr) = _Marker;
@@ -26034,7 +26034,7 @@ _mm_free(void *__p)
     }
     return _Ptr;
   }
-# 218 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 218 "malloc.h" 3
   static __inline void __attribute__((__cdecl__)) _freea(void *_Memory) {
     unsigned int _Marker;
     if(_Memory) {
@@ -26050,25 +26050,25 @@ _mm_free(void *__p)
 
     }
   }
-# 261 "D:/Code/Msys2/Files/clang64/include/malloc.h" 3
+# 261 "malloc.h" 3
 }
 
 
 #pragma pack(pop)
-# 724 "D:/Code/Msys2/Files/clang64/include/stdlib.h" 2 3
-# 90 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 2 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 2 3
+# 724 "stdlib.h" 2 3
+# 90 "c++/v1/stdlib.h" 2 3
+# 21 "c++/v1/__locale_dir/support/windows.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/time.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/time.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 3
+# 1 "time.h" 1 3
+# 25 "time.h" 3
+# 1 "sys/timeb.h" 1 3
+# 15 "sys/timeb.h" 3
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 53 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 3
+# 53 "sys/timeb.h" 3
   struct __timeb32 {
     __time32_t time;
     unsigned short millitm;
@@ -26096,7 +26096,7 @@ extern "C" {
 
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _ftime64(struct __timeb64 *_Time);
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _ftime32(struct __timeb32 *_Time);
-# 95 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 3
+# 95 "sys/timeb.h" 3
 struct _timespec32 {
   __time32_t tv_sec;
   long tv_nsec;
@@ -26118,7 +26118,7 @@ struct itimerspec {
   struct timespec it_interval;
   struct timespec it_value;
 };
-# 125 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 3
+# 125 "sys/timeb.h" 3
   int __attribute__((__cdecl__)) ftime (struct timeb *) __asm__("ftime64");
 
 
@@ -26132,10 +26132,10 @@ struct itimerspec {
 
 #pragma pack(pop)
 
-# 1 "D:/Code/Msys2/Files/clang64/include/sec_api/sys/timeb_s.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/sec_api/sys/timeb_s.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 1 3
-# 11 "D:/Code/Msys2/Files/clang64/include/sec_api/sys/timeb_s.h" 2 3
+# 1 "sec_api/sys/timeb_s.h" 1 3
+# 10 "sec_api/sys/timeb_s.h" 3
+# 1 "sys/timeb.h" 1 3
+# 11 "sec_api/sys/timeb_s.h" 2 3
 
 
 extern "C" {
@@ -26143,23 +26143,23 @@ extern "C" {
 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ftime32_s(struct __timeb32 *_Time);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ftime64_s(struct __timeb64 *_Time);
-# 26 "D:/Code/Msys2/Files/clang64/include/sec_api/sys/timeb_s.h" 3
+# 26 "sec_api/sys/timeb_s.h" 3
 }
-# 139 "D:/Code/Msys2/Files/clang64/include/sys/timeb.h" 2 3
-# 26 "D:/Code/Msys2/Files/clang64/include/time.h" 2 3
+# 139 "sys/timeb.h" 2 3
+# 26 "time.h" 2 3
 
 #pragma pack(push,_CRT_PACKING)
 
 
 extern "C" {
-# 63 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 63 "time.h" 3
   typedef long clock_t;
-# 119 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 119 "time.h" 3
   __attribute__ ((__dllimport__)) int *__attribute__((__cdecl__)) __daylight(void);
   __attribute__ ((__dllimport__)) long *__attribute__((__cdecl__)) __dstbias(void);
   __attribute__ ((__dllimport__)) long *__attribute__((__cdecl__)) __timezone(void);
   __attribute__ ((__dllimport__)) char **__attribute__((__cdecl__)) __tzname(void);
-# 138 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 138 "time.h" 3
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _get_daylight(int *_Daylight);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _get_dstbias(long *_Daylight_savings_bias);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _get_timezone(long *_Timezone);
@@ -26214,7 +26214,7 @@ extern "C" {
 
   unsigned __attribute__((__cdecl__)) _getsystime(struct tm *_Tm);
   unsigned __attribute__((__cdecl__)) _setsystime(struct tm *_Tm,unsigned _MilliSec);
-# 250 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 250 "time.h" 3
 time_t __attribute__((__cdecl__)) time(time_t *_Time) __asm__("_time64");
 
 int __attribute__((__cdecl__)) timespec_get(struct timespec* _Ts, int _Base) __asm__("_timespec64_get");
@@ -26228,21 +26228,21 @@ char *__attribute__((__cdecl__)) ctime(const time_t *_Time) __asm__("_ctime64");
 errno_t __attribute__((__cdecl__)) ctime_s(char *_Buf,size_t _SizeInBytes,const time_t *_Time) __asm__("_ctime64_s");
 time_t __attribute__((__cdecl__)) mktime(struct tm *_Tm) __asm__("_mktime64");
 time_t __attribute__((__cdecl__)) _mkgmtime(struct tm *_Tm) __asm__("_mkgmtime64");
-# 280 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 280 "time.h" 3
   __attribute__ ((__dllimport__)) extern int daylight __attribute__ ((__deprecated__("Only provided for source compatibility; this variable might " "not always be accurate when linking to UCRT.")));
   __attribute__ ((__dllimport__)) extern long timezone __attribute__ ((__deprecated__("Only provided for source compatibility; this variable might " "not always be accurate when linking to UCRT.")));
   __attribute__ ((__dllimport__)) extern char *tzname[2] __attribute__ ((__deprecated__("Only provided for source compatibility; this variable might " "not always be accurate when linking to UCRT.")));
   void __attribute__((__cdecl__)) tzset(void) ;
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/_timeval.h" 1 3
-# 10 "D:/Code/Msys2/Files/clang64/include/_timeval.h" 3
+# 1 "_timeval.h" 1 3
+# 10 "_timeval.h" 3
 struct timeval
 {
  long tv_sec;
  long tv_usec;
 };
-# 287 "D:/Code/Msys2/Files/clang64/include/time.h" 2 3
+# 287 "time.h" 2 3
 
 
 
@@ -26255,13 +26255,13 @@ struct timezone {
 
 
 #pragma pack(pop)
-# 320 "D:/Code/Msys2/Files/clang64/include/time.h" 3
+# 320 "time.h" 3
 }
-# 329 "D:/Code/Msys2/Files/clang64/include/time.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/pthread_time.h" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/pthread_time.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/pthread_compat.h" 1 3
-# 78 "D:/Code/Msys2/Files/clang64/include/pthread_compat.h" 3
+# 329 "time.h" 3
+# 1 "pthread_time.h" 1 3
+# 27 "pthread_time.h" 3
+# 1 "pthread_compat.h" 1 3
+# 78 "pthread_compat.h" 3
 typedef int clockid_t;
 
 
@@ -26269,8 +26269,8 @@ typedef int clockid_t;
 
 
 typedef unsigned short mode_t;
-# 28 "D:/Code/Msys2/Files/clang64/include/pthread_time.h" 2 3
-# 74 "D:/Code/Msys2/Files/clang64/include/pthread_time.h" 3
+# 28 "pthread_time.h" 2 3
+# 74 "pthread_time.h" 3
 extern "C" {
 
 
@@ -26331,9 +26331,9 @@ __inline__ __attribute__((__always_inline__)) int __attribute__((__cdecl__)) clo
 
 
 }
-# 330 "D:/Code/Msys2/Files/clang64/include/time.h" 2 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
+# 330 "time.h" 2 3
+# 24 "c++/v1/__locale_dir/support/windows.h" 2 3
+# 27 "c++/v1/__locale_dir/support/windows.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -26384,7 +26384,7 @@ private:
   std::string __positive_sign_;
   std::string __negative_sign_;
 };
-# 93 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
+# 93 "c++/v1/__locale_dir/support/windows.h" 3
 class __locale_t {
 public:
   __locale_t() : __locale_(nullptr), __locale_str_(nullptr), __lc_(nullptr) {}
@@ -26447,7 +26447,7 @@ private:
   const char* __locale_str_;
   __lconv_storage* __lc_ = nullptr;
 };
-# 181 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
+# 181 "c++/v1/__locale_dir/support/windows.h" 3
                           float __strtof(const char*, char**, __locale_t);
                           long double __strtold(const char*, char**, __locale_t);
 
@@ -26470,7 +26470,7 @@ __strtoull(const char* __nptr, char** __endptr, int __base, __locale_t __loc) {
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) int __isdigit(int __c, __locale_t __loc) { return (((__loc)!=0 && (((_locale_t)(__loc))->locinfo->_locale_mb_cur_max) > 1) ? _isctype_l(__c,(0x4),__loc) : (!__loc ? (__pctype_func()[(unsigned char)(__c)] & (0x4)) : ((_locale_t)__loc)->locinfo->_locale_pctype[(unsigned char)(__c)] & (0x4))); }
 
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) int __isxdigit(int __c, __locale_t __loc) { return (((__loc)!=0 && (((_locale_t)(__loc))->locinfo->_locale_mb_cur_max) > 1) ? _isctype_l(__c,(0x80),__loc) : (!__loc ? (__pctype_func()[(unsigned char)(__c)] & (0x80)) : ((_locale_t)__loc)->locinfo->_locale_pctype[(unsigned char)(__c)] & (0x80))); }
-# 277 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
+# 277 "c++/v1/__locale_dir/support/windows.h" 3
                           __attribute__((__format__(__printf__, 4, 5))) int __snprintf(
     char* __ret, size_t __n, __locale_t __loc, const char* __format, ...);
 
@@ -26492,16 +26492,16 @@ template <class... _Args>
   return ::_sscanf_l(__dest, __format, __loc, std::forward<_Args>(__args)...);
 }
 #pragma clang diagnostic pop
-# 334 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/support/windows.h" 3
+# 334 "c++/v1/__locale_dir/support/windows.h" 3
 }
 } }
-# 120 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale_dir/locale_base_api.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
+# 120 "c++/v1/__locale_dir/locale_base_api.h" 2 3
+# 18 "c++/v1/__locale" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/shared_count.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/shared_count.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/typeinfo" 1 3
-# 73 "D:/Code/Msys2/Files/clang64/include/c++/v1/typeinfo" 3
+# 1 "c++/v1/__memory/shared_count.h" 1 3
+# 14 "c++/v1/__memory/shared_count.h" 3
+# 1 "c++/v1/typeinfo" 1 3
+# 73 "c++/v1/typeinfo" 3
 
 
 
@@ -26510,7 +26510,7 @@ template <class... _Args>
 
 namespace std
 {
-# 189 "D:/Code/Msys2/Files/clang64/include/c++/v1/typeinfo" 3
+# 189 "c++/v1/typeinfo" 3
 struct __type_info_implementations {
   struct __string_impl_base {
     typedef const char* __type_name_t;
@@ -26604,7 +26604,7 @@ struct __type_info_implementations {
 
           __impl;
 };
-# 296 "D:/Code/Msys2/Files/clang64/include/c++/v1/typeinfo" 3
+# 296 "c++/v1/typeinfo" 3
 class [[_Clang::__ptrauth_vtable_pointer__( process_independent, no_address_discrimination, no_extra_discrimination)]] type_info {
   type_info& operator=(const type_info&);
   type_info(const type_info&);
@@ -26661,7 +26661,7 @@ public:
 };
 
 }
-# 379 "D:/Code/Msys2/Files/clang64/include/c++/v1/typeinfo" 3
+# 379 "c++/v1/typeinfo" 3
  namespace std { inline namespace __1 {
 [[__noreturn__]] inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void __throw_bad_cast() {
 
@@ -26671,12 +26671,12 @@ public:
 
 }
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/shared_count.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/shared_count.h" 3
+# 15 "c++/v1/__memory/shared_count.h" 2 3
+# 18 "c++/v1/__memory/shared_count.h" 3
 
 
  namespace std { inline namespace __1 {
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__memory/shared_count.h" 3
+# 33 "c++/v1/__memory/shared_count.h" 3
 template <class _ValueType>
 inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) _ValueType __libcpp_relaxed_load(_ValueType const* __value) {
 
@@ -26780,14 +26780,14 @@ private:
 };
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 3
+# 20 "c++/v1/__locale" 2 3
+# 1 "c++/v1/__mutex/once_flag.h" 1 3
+# 27 "c++/v1/__mutex/once_flag.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 31 "c++/v1/__mutex/once_flag.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -26797,7 +26797,7 @@ struct once_flag;
 
 template <class _Callable, class... _Args>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) void call_once(once_flag&, _Callable&&, _Args&&...);
-# 51 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 3
+# 51 "c++/v1/__mutex/once_flag.h" 3
 struct once_flag {
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr once_flag() noexcept : __state_(_Unset) {}
   once_flag(const once_flag&) = delete;
@@ -26848,7 +26848,7 @@ private:
     std::__invoke(std::get<0>(std::move(__f_)), std::get<_Indices>(std::move(__f_))...);
   }
 };
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 3
+# 116 "c++/v1/__mutex/once_flag.h" 3
 template <class _Fp>
 void __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) __call_once_proxy(void* __vp) {
   __call_once_param<_Fp>* __p = static_cast<__call_once_param<_Fp>*>(__vp);
@@ -26868,12 +26868,12 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
     std::__call_once(__flag.__state_, std::addressof(__p), std::addressof(__call_once_proxy<_Gp>));
   }
 }
-# 156 "D:/Code/Msys2/Files/clang64/include/c++/v1/__mutex/once_flag.h" 3
+# 156 "c++/v1/__mutex/once_flag.h" 3
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
+# 21 "c++/v1/__locale" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/no_destroy.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/no_destroy.h" 3
+# 1 "c++/v1/__utility/no_destroy.h" 1 3
+# 18 "c++/v1/__utility/no_destroy.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -26908,9 +26908,9 @@ private:
 };
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/private_constructor_tag.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/private_constructor_tag.h" 3
+# 23 "c++/v1/__locale" 2 3
+# 1 "c++/v1/__utility/private_constructor_tag.h" 1 3
+# 17 "c++/v1/__utility/private_constructor_tag.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -26921,16 +26921,16 @@ private:
 struct __private_constructor_tag {};
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
+# 24 "c++/v1/__locale" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdlib" 1 3
-# 90 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdlib" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 1 3
-# 83 "D:/Code/Msys2/Files/clang64/include/c++/v1/stdlib.h" 3
-# 91 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdlib" 2 3
-# 102 "D:/Code/Msys2/Files/clang64/include/c++/v1/cstdlib" 3
+# 1 "c++/v1/cstdlib" 1 3
+# 90 "c++/v1/cstdlib" 3
+# 1 "c++/v1/stdlib.h" 1 3
+# 83 "c++/v1/stdlib.h" 3
+# 91 "c++/v1/cstdlib" 2 3
+# 102 "c++/v1/cstdlib" 3
 
 
  namespace std { inline namespace __1 {
@@ -26985,8 +26985,8 @@ using ::aligned_alloc __attribute__((__using_if_exists__));
 
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 2 3
-# 42 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 28 "c++/v1/__locale" 2 3
+# 42 "c++/v1/__locale" 3
 
 
  namespace std { inline namespace __1 {
@@ -27246,7 +27246,7 @@ protected:
 
 class ctype_base {
 public:
-# 338 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 338 "c++/v1/__locale" 3
   typedef unsigned short mask;
   static const mask space = 0x8;
   static const mask print = 0x40 | 0x10 | (0x0100|0x1|0x2) | 0x4;
@@ -27259,7 +27259,7 @@ public:
   static const mask xdigit = 0x80;
   static const mask blank = 0x40;
   static const mask __regex_word = 0x4000;
-# 442 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 442 "c++/v1/__locale" 3
   static const mask alnum = alpha | digit;
   static const mask graph = alnum | punct;
 
@@ -28057,9 +28057,9 @@ protected:
 };
 
 #pragma GCC diagnostic push
-# 1238 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1238 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 1238 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1238 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <class _InternT, class _ExternT, class _StateT>
 codecvt_byname<_InternT, _ExternT, _StateT>::~codecvt_byname() {}
@@ -28095,9 +28095,9 @@ struct __narrow_to_utf8<8> {
 };
 
 #pragma GCC diagnostic push
-# 1272 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1272 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 1272 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1272 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <>
 struct __narrow_to_utf8<16> : public codecvt<char16_t, char, mbstate_t> {
@@ -28127,9 +28127,9 @@ struct __narrow_to_utf8<16> : public codecvt<char16_t, char, mbstate_t> {
 };
 
 #pragma GCC diagnostic push
-# 1300 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1300 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 1300 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1300 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <>
 struct __narrow_to_utf8<32> : public codecvt<char32_t, char, mbstate_t> {
@@ -28175,9 +28175,9 @@ struct __widen_from_utf8<8> {
 };
 
 #pragma GCC diagnostic push
-# 1344 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1344 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 1344 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1344 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <>
 struct __widen_from_utf8<16> : public codecvt<char16_t, char, mbstate_t> {
@@ -28207,9 +28207,9 @@ struct __widen_from_utf8<16> : public codecvt<char16_t, char, mbstate_t> {
 };
 
 #pragma GCC diagnostic push
-# 1372 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1372 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 1372 "D:/Code/Msys2/Files/clang64/include/c++/v1/__locale" 3
+# 1372 "c++/v1/__locale" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 template <>
 struct __widen_from_utf8<32> : public codecvt<char32_t, char, mbstate_t> {
@@ -28343,13 +28343,13 @@ private:
 
 
 } }
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 1 3
-# 216 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_scalar.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_scalar.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_null_pointer.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_null_pointer.h" 3
+# 29 "c++/v1/__format/format_context.h" 2 3
+# 1 "c++/v1/optional" 1 3
+# 216 "c++/v1/optional" 3
+# 1 "c++/v1/__type_traits/is_scalar.h" 1 3
+# 17 "c++/v1/__type_traits/is_scalar.h" 3
+# 1 "c++/v1/__type_traits/is_null_pointer.h" 1 3
+# 18 "c++/v1/__type_traits/is_null_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -28368,8 +28368,8 @@ template <class _Tp>
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_scalar.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_scalar.h" 3
+# 18 "c++/v1/__type_traits/is_scalar.h" 2 3
+# 22 "c++/v1/__type_traits/is_scalar.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -28382,14 +28382,14 @@ struct [[_Clang::__no_specializations__("Users are not allowed to specialize thi
 
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_scalar_v = __is_scalar(_Tp);
-# 67 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_scalar.h" 3
+# 67 "c++/v1/__type_traits/is_scalar.h" 3
 } }
-# 217 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 2 3
+# 217 "c++/v1/optional" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_destructible.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_destructible.h" 3
+# 1 "c++/v1/__type_traits/is_trivially_destructible.h" 1 3
+# 18 "c++/v1/__type_traits/is_trivially_destructible.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -28399,13 +28399,13 @@ template <class _Tp>
 template <class _Tp>
 struct [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] is_trivially_destructible
     : integral_constant<bool, __is_trivially_destructible(_Tp)> {};
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_trivially_destructible.h" 3
+# 41 "c++/v1/__type_traits/is_trivially_destructible.h" 3
 template <class _Tp>
 [[_Clang::__no_specializations__("Users are not allowed to specialize this standard library entity")]] inline constexpr bool is_trivially_destructible_v = is_trivially_destructible<_Tp>::value;
 
 
 } }
-# 221 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 2 3
+# 221 "c++/v1/optional" 2 3
 
 
 
@@ -28414,8 +28414,8 @@ template <class _Tp>
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/in_place.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/in_place.h" 3
+# 1 "c++/v1/__utility/in_place.h" 1 3
+# 19 "c++/v1/__utility/in_place.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -28460,13 +28460,13 @@ using __is_inplace_index [[__gnu__::__nodebug__]] = __is_inplace_index_imp<__rem
 
 
 } }
-# 230 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 2 3
-# 243 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 3
+# 230 "c++/v1/optional" 2 3
+# 243 "c++/v1/optional" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 247 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 247 "c++/v1/optional" 2 3
 
 namespace std
 {
@@ -29302,7 +29302,7 @@ template <class _Tp>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr bool operator==(const optional<_Tp>& __x, nullopt_t) noexcept {
   return !static_cast<bool>(__x);
 }
-# 1142 "D:/Code/Msys2/Files/clang64/include/c++/v1/optional" 3
+# 1142 "c++/v1/optional" 3
 template <class _Tp>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr strong_ordering operator<=>(const optional<_Tp>& __x, nullopt_t) noexcept {
   return __x.has_value() <=> false;
@@ -29461,13 +29461,13 @@ struct hash< __enable_hash_helper<optional<_Tp>, remove_const_t<_Tp>> > {
 };
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 30 "c++/v1/__format/format_context.h" 2 3
+# 34 "c++/v1/__format/format_context.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 38 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 38 "c++/v1/__format/format_context.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -29490,7 +29490,7 @@ __format_context_create(_OutIt __out_it,
                         optional<std::locale>&& __loc = nullopt) {
   return std::basic_format_context(std::move(__out_it), __args, std::move(__loc));
 }
-# 68 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 68 "c++/v1/__format/format_context.h" 3
 using format_context = basic_format_context<back_insert_iterator<__format::__output_buffer<char>>, char>;
 
 using wformat_context = basic_format_context< back_insert_iterator<__format::__output_buffer<wchar_t>>, wchar_t>;
@@ -29522,7 +29522,7 @@ public:
 private:
   iterator __out_it_;
   basic_format_args<basic_format_context> __args_;
-# 110 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 110 "c++/v1/__format/format_context.h" 3
   optional<std::locale> __loc_;
 
   template <class _OtherOutIt, class _OtherCharT>
@@ -29533,12 +29533,12 @@ private:
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) explicit basic_format_context(
       _OutIt __out_it, basic_format_args<basic_format_context> __args, optional<std::locale>&& __loc)
       : __out_it_(std::move(__out_it)), __args_(__args), __loc_(std::move(__loc)) {}
-# 129 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 129 "c++/v1/__format/format_context.h" 3
 public:
   basic_format_context(const basic_format_context&) = delete;
   basic_format_context& operator=(const basic_format_context&) = delete;
 };
-# 150 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 150 "c++/v1/__format/format_context.h" 3
 template <class _CharT>
 class basic_format_context<typename __format::__retarget_buffer<_CharT>::__iterator, _CharT> {
 public:
@@ -29571,9 +29571,9 @@ public:
 
 
 #pragma GCC diagnostic push
-# 181 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 181 "c++/v1/__format/format_context.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 181 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_context.h" 3
+# 181 "c++/v1/__format/format_context.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
           return std::visit_format_arg(std::move(__visitor), static_cast<_Context*>(__c)->arg(__id));
 #pragma GCC diagnostic pop
@@ -29605,18 +29605,18 @@ template <class... _Tag> [[maybe_unused]] basic_format_context(typename _Tag::__
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 2 3
+# 24 "c++/v1/__format/range_formatter.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_fill_n.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_fill_n.h" 3
+# 1 "c++/v1/__format/formatter_output.h" 1 3
+# 14 "c++/v1/__format/formatter_output.h" 3
+# 1 "c++/v1/__algorithm/ranges_fill_n.h" 1 3
+# 20 "c++/v1/__algorithm/ranges_fill_n.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_fill_n.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 24 "c++/v1/__algorithm/ranges_fill_n.h" 2 3
 
 
 
@@ -29637,16 +29637,16 @@ inline constexpr auto fill_n = __fill_n{};
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_in_out_result.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_in_out_result.h" 3
+# 15 "c++/v1/__format/formatter_output.h" 2 3
+# 1 "c++/v1/__algorithm/ranges_transform.h" 1 3
+# 12 "c++/v1/__algorithm/ranges_transform.h" 3
+# 1 "c++/v1/__algorithm/in_in_out_result.h" 1 3
+# 19 "c++/v1/__algorithm/in_in_out_result.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_in_out_result.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__algorithm/in_in_out_result.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -29680,15 +29680,15 @@ struct in_in_out_result {
 
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 2 3
+# 13 "c++/v1/__algorithm/ranges_transform.h" 2 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/projected.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/projected.h" 3
+# 1 "c++/v1/__iterator/projected.h" 1 3
+# 20 "c++/v1/__iterator/projected.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -29729,13 +29729,13 @@ using projected = typename __projected_impl<_It, _Proj>::__type;
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 3
+# 20 "c++/v1/__algorithm/ranges_transform.h" 2 3
+# 27 "c++/v1/__algorithm/ranges_transform.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_transform.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 31 "c++/v1/__algorithm/ranges_transform.h" 2 3
 
 
 
@@ -29875,14 +29875,14 @@ inline constexpr auto transform = __transform{};
 }
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countl.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countl.h" 3
+# 16 "c++/v1/__format/formatter_output.h" 2 3
+# 1 "c++/v1/__bit/countl.h" 1 3
+# 18 "c++/v1/__bit/countl.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__bit/countl.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 22 "c++/v1/__bit/countl.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -29907,7 +29907,7 @@ template <__unsigned_integer _Tp>
 
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 2 3
+# 17 "c++/v1/__format/formatter_output.h" 2 3
 
 
 
@@ -29915,10 +29915,10 @@ template <__unsigned_integer _Tp>
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 1 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_string.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_string.h" 3
+# 1 "c++/v1/__format/parser_std_format_spec.h" 1 3
+# 28 "c++/v1/__format/parser_std_format_spec.h" 3
+# 1 "c++/v1/__format/format_string.h" 1 3
+# 23 "c++/v1/__format/format_string.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -29938,7 +29938,7 @@ __parse_number_result(_Iterator, uint32_t) -> __parse_number_result<_Iterator>;
 
 template <contiguous_iterator _Iterator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __parse_number_result<_Iterator> __parse_number(_Iterator __begin, _Iterator __end);
-# 54 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_string.h" 3
+# 54 "c++/v1/__format/format_string.h" 3
 inline constexpr uint32_t __number_max = 2147483647;
 
 namespace __detail {
@@ -30044,17 +30044,17 @@ __parse_arg_id(_Iterator __begin, _Iterator __end, auto& __parse_ctx) {
 
 
 } }
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 1 3
-# 64 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_upper_bound.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_upper_bound.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lower_bound.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lower_bound.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/half_positive.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/half_positive.h" 3
+# 29 "c++/v1/__format/parser_std_format_spec.h" 2 3
+# 1 "c++/v1/__format/unicode.h" 1 3
+# 17 "c++/v1/__format/unicode.h" 3
+# 1 "c++/v1/__format/extended_grapheme_cluster_table.h" 1 3
+# 64 "c++/v1/__format/extended_grapheme_cluster_table.h" 3
+# 1 "c++/v1/__algorithm/ranges_upper_bound.h" 1 3
+# 13 "c++/v1/__algorithm/ranges_upper_bound.h" 3
+# 1 "c++/v1/__algorithm/lower_bound.h" 1 3
+# 13 "c++/v1/__algorithm/lower_bound.h" 3
+# 1 "c++/v1/__algorithm/half_positive.h" 1 3
+# 19 "c++/v1/__algorithm/half_positive.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -30072,8 +30072,8 @@ template <typename _Tp, __enable_if_t<!is_integral<_Tp>::value, int> = 0>
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lower_bound.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lower_bound.h" 3
+# 14 "c++/v1/__algorithm/lower_bound.h" 2 3
+# 25 "c++/v1/__algorithm/lower_bound.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -30098,7 +30098,7 @@ template <class _AlgPolicy, class _Iter, class _Type, class _Proj, class _Comp>
   }
   return __first;
 }
-# 59 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lower_bound.h" 3
+# 59 "c++/v1/__algorithm/lower_bound.h" 3
 template <class _AlgPolicy, class _ForwardIterator, class _Sent, class _Type, class _Proj, class _Comp>
 [[__nodiscard__]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _ForwardIterator
 __lower_bound_onesided(_ForwardIterator __first, _Sent __last, const _Type& __value, _Comp& __comp, _Proj& __proj) {
@@ -30147,12 +30147,12 @@ lower_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __valu
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_upper_bound.h" 2 3
+# 14 "c++/v1/__algorithm/ranges_upper_bound.h" 2 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/ranges_operations.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/ranges_operations.h" 3
+# 1 "c++/v1/__functional/ranges_operations.h" 1 3
+# 21 "c++/v1/__functional/ranges_operations.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -30246,8 +30246,8 @@ inline const bool __desugars_to_v<__greater_tag, ranges::greater, _Tp, _Up> = tr
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_upper_bound.h" 2 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_upper_bound.h" 3
+# 18 "c++/v1/__algorithm/ranges_upper_bound.h" 2 3
+# 26 "c++/v1/__algorithm/ranges_upper_bound.h" 3
 
 
 
@@ -30291,8 +30291,8 @@ inline constexpr auto upper_bound = __upper_bound{};
 }
 
 } }
-# 65 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 2 3
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 3
+# 65 "c++/v1/__format/extended_grapheme_cluster_table.h" 2 3
+# 72 "c++/v1/__format/extended_grapheme_cluster_table.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -30327,7 +30327,7 @@ enum class __property : uint8_t {
 
   __none
 };
-# 128 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 3
+# 128 "c++/v1/__format/extended_grapheme_cluster_table.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline constexpr uint32_t __entries[1501] = {
     0x00000091,
     0x00005005,
@@ -31834,7 +31834,7 @@ enum class __property : uint8_t {
 
 
 [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __property __get_property(const char32_t __code_point) noexcept {
-# 1650 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/extended_grapheme_cluster_table.h" 3
+# 1650 "c++/v1/__format/extended_grapheme_cluster_table.h" 3
   ptrdiff_t __i = std::ranges::upper_bound(__entries, (__code_point << 11) | 0x7ffu) - __entries;
   if (__i == 0)
     return __property::__none;
@@ -31852,9 +31852,9 @@ enum class __property : uint8_t {
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/indic_conjunct_break_table.h" 1 3
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/indic_conjunct_break_table.h" 3
+# 18 "c++/v1/__format/unicode.h" 2 3
+# 1 "c++/v1/__format/indic_conjunct_break_table.h" 1 3
+# 72 "c++/v1/__format/indic_conjunct_break_table.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -31872,7 +31872,7 @@ enum class __property : uint8_t {
 
   __none
 };
-# 110 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/indic_conjunct_break_table.h" 3
+# 110 "c++/v1/__format/indic_conjunct_break_table.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline constexpr uint32_t __entries[403] = {
     0x001801bd,
     0x00241819,
@@ -32281,7 +32281,7 @@ enum class __property : uint8_t {
 
 
 [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __property __get_property(const char32_t __code_point) noexcept {
-# 534 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/indic_conjunct_break_table.h" 3
+# 534 "c++/v1/__format/indic_conjunct_break_table.h" 3
   ptrdiff_t __i = std::ranges::upper_bound(__entries, (__code_point << 11) | 0x7ffu) - __entries;
   if (__i == 0)
     return __property::__none;
@@ -32299,8 +32299,8 @@ enum class __property : uint8_t {
 
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 2 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
+# 19 "c++/v1/__format/unicode.h" 2 3
+# 26 "c++/v1/__format/unicode.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -32308,7 +32308,7 @@ enum class __property : uint8_t {
 
 
 namespace __unicode {
-# 43 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
+# 43 "c++/v1/__format/unicode.h" 3
 struct __consume_result {
 
 
@@ -32322,7 +32322,7 @@ struct __consume_result {
   } __status : 1 {__ok};
 };
 static_assert(sizeof(__consume_result) == sizeof(char32_t));
-# 72 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
+# 72 "c++/v1/__format/unicode.h" 3
 inline constexpr char32_t __replacement_character = U'\ufffd';
 
 
@@ -32385,7 +32385,7 @@ public:
 
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr bool __at_end() const noexcept { return __first_ == __last_; }
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr _Iterator __position() const noexcept { return __first_; }
-# 157 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
+# 157 "c++/v1/__format/unicode.h" 3
   [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __consume_result __consume() noexcept {
     ((void)0);
 
@@ -32797,15 +32797,15 @@ private:
 
 template <contiguous_iterator _Iterator>
 __extended_grapheme_cluster_view(_Iterator, _Iterator) -> __extended_grapheme_cluster_view<iter_value_t<_Iterator>>;
-# 596 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/unicode.h" 3
+# 596 "c++/v1/__format/unicode.h" 3
 }
 
 
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/width_estimation_table.h" 1 3
-# 71 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/width_estimation_table.h" 3
+# 30 "c++/v1/__format/parser_std_format_spec.h" 2 3
+# 1 "c++/v1/__format/width_estimation_table.h" 1 3
+# 71 "c++/v1/__format/width_estimation_table.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -32813,7 +32813,7 @@ __extended_grapheme_cluster_view(_Iterator, _Iterator) -> __extended_grapheme_cl
 
 
 namespace __width_estimation_table {
-# 122 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/width_estimation_table.h" 3
+# 122 "c++/v1/__format/width_estimation_table.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline constexpr uint32_t __entries[110] = {
     0x0440005f ,
     0x08c68001 ,
@@ -32964,13 +32964,13 @@ inline constexpr uint32_t __table_upper_bound = 0x0003fffd;
 
 
 } }
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 2 3
-# 44 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 31 "c++/v1/__format/parser_std_format_spec.h" 2 3
+# 44 "c++/v1/__format/parser_std_format_spec.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 48 "c++/v1/__format/parser_std_format_spec.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -33009,13 +33009,13 @@ __parse_arg_id(_Iterator __begin, _Iterator __end, _ParseContext& __ctx) {
 
 template <class _Context>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr uint32_t __substitute_arg_id(basic_format_arg<_Context> __format_arg) {
-# 94 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 94 "c++/v1/__format/parser_std_format_spec.h" 3
   return std::__visit_format_arg(
       [](auto __arg) -> uint32_t {
         using _Type = decltype(__arg);
         if constexpr (same_as<_Type, monostate>)
           std::__throw_format_error("The argument index value is too large for the number of arguments supplied");
-# 110 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 110 "c++/v1/__format/parser_std_format_spec.h" 3
         if constexpr (same_as<_Type, int> || same_as<_Type, unsigned int> ||
                       same_as<_Type, long long> || same_as<_Type, unsigned long long>) {
           if constexpr (signed_integral<_Type>) {
@@ -33182,7 +33182,7 @@ template <>
 struct __code_point<wchar_t> {
   wchar_t __data[4 / sizeof(wchar_t)] = {L' '};
 };
-# 287 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 287 "c++/v1/__format/parser_std_format_spec.h" 3
 template <class _CharT>
 struct __parsed_specifications {
   union {
@@ -33223,11 +33223,11 @@ static_assert(is_trivially_copyable_v<__parsed_specifications<char>>);
 
 static_assert(sizeof(__parsed_specifications<wchar_t>) == 16);
 static_assert(is_trivially_copyable_v<__parsed_specifications<wchar_t>>);
-# 337 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 337 "c++/v1/__format/parser_std_format_spec.h" 3
 template <class _CharT>
 class __parser {
 public:
-# 353 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 353 "c++/v1/__format/parser_std_format_spec.h" 3
   template <class _ParseContext>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr typename _ParseContext::iterator __parse(_ParseContext& __ctx, __fields __fields) {
     auto __begin = __ctx.begin();
@@ -33294,7 +33294,7 @@ public:
 
     return __begin;
   }
-# 450 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 450 "c++/v1/__format/parser_std_format_spec.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void
   __validate(__fields __fields, const char* __id, uint32_t __type_mask = -1) const {
     if (!__fields.__sign_ && __sign_ != __sign::__default) {
@@ -33490,7 +33490,7 @@ private:
     ++__begin;
     return true;
   }
-# 675 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 675 "c++/v1/__format/parser_std_format_spec.h" 3
   template <contiguous_iterator _Iterator>
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr bool __parse_sign(_Iterator& __begin) {
     switch (*__begin) {
@@ -33833,7 +33833,7 @@ struct __column_width_result {
 
 template <contiguous_iterator _Iterator>
 __column_width_result(size_t, _Iterator) -> __column_width_result<_Iterator>;
-# 1027 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 1027 "c++/v1/__format/parser_std_format_spec.h" 3
 enum class __column_width_rounding { __down, __up };
 
 
@@ -33866,9 +33866,9 @@ template <contiguous_iterator _Iterator>
 }
 
 }
-# 1089 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 1089 "c++/v1/__format/parser_std_format_spec.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr bool __is_ascii(char32_t __c) { return __c < 0x80; }
-# 1105 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 1105 "c++/v1/__format/parser_std_format_spec.h" 3
 template <class _CharT, class _Iterator = typename basic_string_view<_CharT>::const_iterator>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __column_width_result<_Iterator> __estimate_column_width(
     basic_string_view<_CharT> __str, size_t __maximum, __column_width_rounding __rounding) noexcept {
@@ -33881,7 +33881,7 @@ template <class _CharT, class _Iterator = typename basic_string_view<_CharT>::co
 
   if (__str.empty() || __maximum == 0)
     return {0, __str.begin()};
-# 1125 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 1125 "c++/v1/__format/parser_std_format_spec.h" 3
   auto __it = __str.begin();
   if (__format_spec::__is_ascii(*__it)) {
     do {
@@ -33908,19 +33908,19 @@ template <class _CharT, class _Iterator = typename basic_string_view<_CharT>::co
   __result.__width_ += __ascii_size;
   return __result;
 }
-# 1164 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/parser_std_format_spec.h" 3
+# 1164 "c++/v1/__format/parser_std_format_spec.h" 3
 }
 
 
 
 } }
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 2 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 3
+# 25 "c++/v1/__format/formatter_output.h" 2 3
+# 37 "c++/v1/__format/formatter_output.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 41 "c++/v1/__format/formatter_output.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -34066,7 +34066,7 @@ template <__fmt_char_type _CharT, output_iterator<const _CharT&> _OutIt>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) _OutIt __fill(_OutIt __out_it, size_t __n, __format_spec::__code_point<_CharT> __value) {
   return __formatter::__fill(std::move(__out_it), __n, __value.__data[0]);
 }
-# 215 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_output.h" 3
+# 215 "c++/v1/__format/formatter_output.h" 3
 template <class _CharT, class _ParserCharT>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) auto
 __write(basic_string_view<_CharT> __str,
@@ -34166,8 +34166,8 @@ template <class _CharT>
 
 
 } }
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 2 3
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 3
+# 27 "c++/v1/__format/range_formatter.h" 2 3
+# 36 "c++/v1/__format/range_formatter.h" 3
  namespace std { inline namespace __1 {
 
 
@@ -34221,7 +34221,7 @@ struct range_formatter {
 
     __ctx.advance_to(__begin);
     __begin = __underlying_.parse(__ctx);
-# 97 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 3
+# 97 "c++/v1/__format/range_formatter.h" 3
     if (__begin != __end && *__begin != _CharT('}'))
       std::__throw_format_error("The format specifier should consume the input or end with a '}'");
 
@@ -34253,7 +34253,7 @@ struct range_formatter {
 
     if (!__specs.__has_width())
       return __format_range(__range, __ctx, __specs);
-# 141 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_formatter.h" 3
+# 141 "c++/v1/__format/range_formatter.h" 3
     std::size_t __capacity_hint = 0;
     if constexpr (std::ranges::sized_range<_Rp>)
       __capacity_hint = 8 * ranges::size(__range);
@@ -34376,8 +34376,8 @@ private:
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_default_formatter.h" 2 3
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/range_default_formatter.h" 3
+# 24 "c++/v1/__format/range_default_formatter.h" 2 3
+# 34 "c++/v1/__format/range_default_formatter.h" 3
  namespace std { inline namespace __1 {
 
 
@@ -34557,17 +34557,17 @@ struct formatter<_Rp, _CharT> : __range_default_formatter<format_kind<_Rp>, _Rp,
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/operations.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/operations.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/binary_function.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/binary_function.h" 3
+# 21 "c++/v1/__format/container_adaptor.h" 2 3
+# 1 "c++/v1/__fwd/queue.h" 1 3
+# 13 "c++/v1/__fwd/queue.h" 3
+# 1 "c++/v1/__functional/operations.h" 1 3
+# 14 "c++/v1/__functional/operations.h" 3
+# 1 "c++/v1/__functional/binary_function.h" 1 3
+# 17 "c++/v1/__functional/binary_function.h" 3
 
 
  namespace std { inline namespace __1 {
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/binary_function.h" 3
+# 32 "c++/v1/__functional/binary_function.h" 3
 template <class _Arg1, class _Arg2, class _Result>
 struct __binary_function_keep_layout_base {
 
@@ -34588,8 +34588,8 @@ using __binary_function [[__gnu__::__nodebug__]] = __binary_function_keep_layout
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/operations.h" 2 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__functional/operations.h" 3
+# 15 "c++/v1/__functional/operations.h" 2 3
+# 23 "c++/v1/__functional/operations.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35117,9 +35117,9 @@ struct logical_or<void> {
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/deque.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/deque.h" 3
+# 14 "c++/v1/__fwd/queue.h" 2 3
+# 1 "c++/v1/__fwd/deque.h" 1 3
+# 17 "c++/v1/__fwd/deque.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35128,9 +35128,9 @@ template <class _Tp, class _Allocator = allocator<_Tp> >
 class deque;
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/vector.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/vector.h" 3
+# 15 "c++/v1/__fwd/queue.h" 2 3
+# 1 "c++/v1/__fwd/vector.h" 1 3
+# 17 "c++/v1/__fwd/vector.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35142,8 +35142,8 @@ template <class _Allocator>
 class vector<bool, _Allocator>;
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 2 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/queue.h" 3
+# 16 "c++/v1/__fwd/queue.h" 2 3
+# 19 "c++/v1/__fwd/queue.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35155,9 +35155,9 @@ template <class _Tp, class _Container = vector<_Tp>, class _Compare = less<typen
 class priority_queue;
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/stack.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__fwd/stack.h" 3
+# 22 "c++/v1/__format/container_adaptor.h" 2 3
+# 1 "c++/v1/__fwd/stack.h" 1 3
+# 17 "c++/v1/__fwd/stack.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35166,9 +35166,9 @@ template <class _Tp, class _Container = deque<_Tp> >
 class stack;
 
 } }
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/ref_view.h" 1 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__ranges/ref_view.h" 3
+# 23 "c++/v1/__format/container_adaptor.h" 2 3
+# 1 "c++/v1/__ranges/ref_view.h" 1 3
+# 33 "c++/v1/__ranges/ref_view.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35224,12 +35224,12 @@ inline constexpr bool enable_borrowed_range<ref_view<_Tp>> = true;
 
 
 } }
-# 24 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 2 3
+# 24 "c++/v1/__format/container_adaptor.h" 2 3
 
 
 
  namespace std { inline namespace __1 {
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/container_adaptor.h" 3
+# 37 "c++/v1/__format/container_adaptor.h" 3
 template <class _Adaptor, class _CharT>
 struct __formatter_container_adaptor {
 private:
@@ -35265,10 +35265,10 @@ struct formatter<stack<_Tp, _Container>, _CharT>
 
 
 } }
-# 203 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 2 3
+# 203 "c++/v1/format" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/escaped_output_table.h" 1 3
-# 71 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/escaped_output_table.h" 3
+# 1 "c++/v1/__format/escaped_output_table.h" 1 3
+# 71 "c++/v1/__format/escaped_output_table.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -35276,7 +35276,7 @@ struct formatter<stack<_Tp, _Container>, _CharT>
 
 
 namespace __escaped_output_table {
-# 112 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/escaped_output_table.h" 3
+# 112 "c++/v1/__format/escaped_output_table.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline constexpr uint32_t __entries[735] = {
     0x00000020 ,
     0x001fc021 ,
@@ -36013,7 +36013,7 @@ namespace __escaped_output_table {
     0xbb9789a1 ,
     0xbe8785e1 ,
     0xc4d2c004 };
-# 861 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/escaped_output_table.h" 3
+# 861 "c++/v1/__format/escaped_output_table.h" 3
 [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr bool __needs_escape(const char32_t __code_point) noexcept {
 
 
@@ -36039,17 +36039,17 @@ namespace __escaped_output_table {
 
 
 } }
-# 205 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 2 3
+# 205 "c++/v1/format" 2 3
 
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/clamp.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/clamp.h" 3
+# 1 "c++/v1/__format/format_functions.h" 1 3
+# 13 "c++/v1/__format/format_functions.h" 3
+# 1 "c++/v1/__algorithm/clamp.h" 1 3
+# 18 "c++/v1/__algorithm/clamp.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -36075,11 +36075,11 @@ clamp([[_Clang::__lifetimebound__]] const _Tp& __v,
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_find_first_of.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_find_first_of.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/indirectly_comparable.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/indirectly_comparable.h" 3
+# 14 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__algorithm/ranges_find_first_of.h" 1 3
+# 17 "c++/v1/__algorithm/ranges_find_first_of.h" 3
+# 1 "c++/v1/__iterator/indirectly_comparable.h" 1 3
+# 20 "c++/v1/__iterator/indirectly_comparable.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -36092,13 +36092,13 @@ concept indirectly_comparable = indirect_binary_predicate<_Rp, projected<_I1, _P
 
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_find_first_of.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_find_first_of.h" 3
+# 18 "c++/v1/__algorithm/ranges_find_first_of.h" 2 3
+# 25 "c++/v1/__algorithm/ranges_find_first_of.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_find_first_of.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 29 "c++/v1/__algorithm/ranges_find_first_of.h" 2 3
 
 
 
@@ -36169,16 +36169,16 @@ inline constexpr auto find_first_of = __find_first_of{};
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_bool.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_bool.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 1 3
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/tables.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/tables.h" 3
+# 15 "c++/v1/__format/format_functions.h" 2 3
+# 29 "c++/v1/__format/format_functions.h" 3
+# 1 "c++/v1/__format/formatter_bool.h" 1 3
+# 19 "c++/v1/__format/formatter_bool.h" 3
+# 1 "c++/v1/__format/formatter_integral.h" 1 3
+# 13 "c++/v1/__format/formatter_integral.h" 3
+# 1 "c++/v1/__charconv/to_chars_integral.h" 1 3
+# 16 "c++/v1/__charconv/to_chars_integral.h" 3
+# 1 "c++/v1/__charconv/tables.h" 1 3
+# 18 "c++/v1/__charconv/tables.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -36319,14 +36319,14 @@ inline constexpr const char __digits_base_10[200] = {
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_base_10.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_base_10.h" 3
+# 17 "c++/v1/__charconv/to_chars_integral.h" 2 3
+# 1 "c++/v1/__charconv/to_chars_base_10.h" 1 3
+# 22 "c++/v1/__charconv/to_chars_base_10.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_base_10.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 26 "c++/v1/__charconv/to_chars_base_10.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -36425,7 +36425,7 @@ __base_10_u64(char* __buffer, uint64_t __value) noexcept {
   }
   return __itoa::__append10(__buffer, __value);
 }
-# 133 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_base_10.h" 3
+# 133 "c++/v1/__charconv/to_chars_base_10.h" 3
 constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline __uint128_t __pow_10(int __exp) noexcept {
   ((void)0);
   return __pow10_128[__exp - __pow10_128_offset];
@@ -36434,7 +36434,7 @@ constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attribute__
 constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline char*
 __base_10_u128(char* __buffer, __uint128_t __value) noexcept {
   ((void)0);
-# 153 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_base_10.h" 3
+# 153 "c++/v1/__charconv/to_chars_base_10.h" 3
   if (__value >= __itoa::__pow_10(38)) {
 
     __buffer = __itoa::__append1(__buffer, static_cast<uint32_t>(__value / __itoa::__pow_10(38)));
@@ -36463,31 +36463,31 @@ __base_10_u128(char* __buffer, __uint128_t __value) noexcept {
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_result.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_result.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 1 3
-# 104 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cerrno" 1 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/cerrno" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/errno.h" 1 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/errno.h" 3
+# 18 "c++/v1/__charconv/to_chars_integral.h" 2 3
+# 1 "c++/v1/__charconv/to_chars_result.h" 1 3
+# 14 "c++/v1/__charconv/to_chars_result.h" 3
+# 1 "c++/v1/__system_error/errc.h" 1 3
+# 104 "c++/v1/__system_error/errc.h" 3
+# 1 "c++/v1/cerrno" 1 3
+# 30 "c++/v1/cerrno" 3
+# 1 "c++/v1/errno.h" 1 3
+# 32 "c++/v1/errno.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/errno.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/errno.h" 3
+# 1 "errno.h" 1 3
+# 12 "errno.h" 3
 extern "C" {
-# 239 "D:/Code/Msys2/Files/clang64/include/errno.h" 3
+# 239 "errno.h" 3
 }
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/errno.h" 2 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/cerrno" 2 3
-# 42 "D:/Code/Msys2/Files/clang64/include/c++/v1/cerrno" 3
-# 105 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 2 3
-# 108 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
-# 128 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 36 "c++/v1/errno.h" 2 3
+# 31 "c++/v1/cerrno" 2 3
+# 42 "c++/v1/cerrno" 3
+# 105 "c++/v1/__system_error/errc.h" 2 3
+# 108 "c++/v1/__system_error/errc.h" 3
+# 128 "c++/v1/__system_error/errc.h" 3
  namespace std { inline namespace __1 {
-# 143 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 143 "c++/v1/__system_error/errc.h" 3
 enum class errc{
     address_family_not_supported = 102,
     address_in_use = 100,
@@ -36532,9 +36532,9 @@ enum class errc{
 
     no_message_available __attribute__((__deprecated__)) =
 #pragma GCC diagnostic push
-# 186 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 186 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 186 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 186 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
                                               120
@@ -36550,9 +36550,9 @@ enum class errc{
 
     no_stream_resources __attribute__((__deprecated__)) =
 #pragma GCC diagnostic push
-# 200 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 200 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 200 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 200 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
                                               124
@@ -36571,9 +36571,9 @@ enum class errc{
 
     not_a_stream __attribute__((__deprecated__)) =
 #pragma GCC diagnostic push
-# 217 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 217 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 217 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 217 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
                                       125
@@ -36603,9 +36603,9 @@ enum class errc{
 
     stream_timeout __attribute__((__deprecated__)) =
 #pragma GCC diagnostic push
-# 245 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 245 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated"
-# 245 "D:/Code/Msys2/Files/clang64/include/c++/v1/__system_error/errc.h" 3
+# 245 "c++/v1/__system_error/errc.h" 3
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
                                         137
@@ -36626,8 +36626,8 @@ enum class errc{
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_result.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_result.h" 3
+# 15 "c++/v1/__charconv/to_chars_result.h" 2 3
+# 18 "c++/v1/__charconv/to_chars_result.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -36657,14 +36657,14 @@ struct __to_chars_result {
 };
 
 } }
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/traits.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/traits.h" 3
+# 19 "c++/v1/__charconv/to_chars_integral.h" 2 3
+# 1 "c++/v1/__charconv/traits.h" 1 3
+# 26 "c++/v1/__charconv/traits.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/traits.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 30 "c++/v1/__charconv/traits.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -36820,7 +36820,7 @@ inline constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attr
 }
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
+# 20 "c++/v1/__charconv/to_chars_integral.h" 2 3
 
 
 
@@ -36828,8 +36828,8 @@ inline constexpr __attribute__((__exclude_from_explicit_instantiation__)) __attr
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_32_64_or_128_bit.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/make_32_64_or_128_bit.h" 3
+# 1 "c++/v1/__type_traits/make_32_64_or_128_bit.h" 1 3
+# 22 "c++/v1/__type_traits/make_32_64_or_128_bit.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -36856,13 +36856,13 @@ using __make_32_64_or_128_bit_t [[__gnu__::__nodebug__]] =
 
 
 } }
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 3
+# 28 "c++/v1/__charconv/to_chars_integral.h" 2 3
+# 35 "c++/v1/__charconv/to_chars_integral.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_integral.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 39 "c++/v1/__charconv/to_chars_integral.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -37164,17 +37164,17 @@ to_chars(char* __first, char* __last, _Tp __value, int __base) {
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 2 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 1 3
-# 117 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/equal.h" 1 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/equal.h" 3
+# 14 "c++/v1/__format/formatter_integral.h" 2 3
+# 29 "c++/v1/__format/formatter_integral.h" 3
+# 1 "c++/v1/array" 1 3
+# 117 "c++/v1/array" 3
+# 1 "c++/v1/__algorithm/equal.h" 1 3
+# 33 "c++/v1/__algorithm/equal.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/equal.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 37 "c++/v1/__algorithm/equal.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -37427,20 +37427,20 @@ equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first
 
 
 } }
-# 118 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
+# 118 "c++/v1/array" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 3
+# 1 "c++/v1/__algorithm/lexicographical_compare.h" 1 3
+# 14 "c++/v1/__algorithm/lexicographical_compare.h" 3
+# 1 "c++/v1/__algorithm/mismatch.h" 1 3
+# 15 "c++/v1/__algorithm/mismatch.h" 3
+# 1 "c++/v1/__algorithm/simd_utils.h" 1 3
+# 23 "c++/v1/__algorithm/simd_utils.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 2 3
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 27 "c++/v1/__algorithm/simd_utils.h" 2 3
+# 45 "c++/v1/__algorithm/simd_utils.h" 3
  namespace std { inline namespace __1 {
 
 template <class _Tp>
@@ -37470,10 +37470,10 @@ struct __get_as_integer_type_impl<8> {
 
 template <class _Tp>
 using __get_as_integer_type_t [[__gnu__::__nodebug__]] = typename __get_as_integer_type_impl<sizeof(_Tp)>::type;
-# 82 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 3
+# 82 "c++/v1/__algorithm/simd_utils.h" 3
 template <class _Tp>
 inline constexpr size_t __native_vector_size = 16 / sizeof(_Tp);
-# 92 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/simd_utils.h" 3
+# 92 "c++/v1/__algorithm/simd_utils.h" 3
 template <class _ArithmeticT, size_t _Np>
 using __simd_vector __attribute__((__ext_vector_type__(_Np))) [[__gnu__::__nodebug__]] = _ArithmeticT;
 
@@ -37541,13 +37541,13 @@ template <class _Tp, size_t _Np>
 }
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 2 3
+# 16 "c++/v1/__algorithm/mismatch.h" 2 3
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/aliasing_iterator.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/aliasing_iterator.h" 3
+# 1 "c++/v1/__iterator/aliasing_iterator.h" 1 3
+# 22 "c++/v1/__iterator/aliasing_iterator.h" 3
 
 
 
@@ -37655,13 +37655,13 @@ template <class _BaseT, class _Alias>
 using __aliasing_iterator [[__gnu__::__nodebug__]] = typename __aliasing_iterator_wrapper<_BaseT, _Alias>::__iterator;
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 2 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 3
+# 21 "c++/v1/__algorithm/mismatch.h" 2 3
+# 33 "c++/v1/__algorithm/mismatch.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 37 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/mismatch.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 37 "c++/v1/__algorithm/mismatch.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -37840,13 +37840,13 @@ mismatch(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __fi
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 2 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 3
+# 15 "c++/v1/__algorithm/lexicographical_compare.h" 2 3
+# 35 "c++/v1/__algorithm/lexicographical_compare.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 39 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 39 "c++/v1/__algorithm/lexicographical_compare.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -37864,7 +37864,7 @@ template <class _Iter1, class _Sent1, class _Iter2, class _Sent2, class _Proj1, 
   }
   return false;
 }
-# 64 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare.h" 3
+# 64 "c++/v1/__algorithm/lexicographical_compare.h" 3
 template <class _Tp,
           class _Proj1,
           class _Proj2,
@@ -37927,11 +37927,11 @@ template <class _InputIterator1, class _InputIterator2>
 }
 
 } }
-# 120 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare_three_way.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare_three_way.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/three_way_comp_ref_type.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/three_way_comp_ref_type.h" 3
+# 120 "c++/v1/array" 2 3
+# 1 "c++/v1/__algorithm/lexicographical_compare_three_way.h" 1 3
+# 13 "c++/v1/__algorithm/lexicographical_compare_three_way.h" 3
+# 1 "c++/v1/__algorithm/three_way_comp_ref_type.h" 1 3
+# 20 "c++/v1/__algorithm/three_way_comp_ref_type.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -37985,13 +37985,13 @@ using __three_way_comp_ref_type [[__gnu__::__nodebug__]] = _Comp&;
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare_three_way.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare_three_way.h" 3
+# 14 "c++/v1/__algorithm/lexicographical_compare_three_way.h" 2 3
+# 25 "c++/v1/__algorithm/lexicographical_compare_three_way.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/lexicographical_compare_three_way.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 29 "c++/v1/__algorithm/lexicographical_compare_three_way.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -38085,14 +38085,14 @@ template <class _InputIterator1, class _InputIterator2>
 
 
 } }
-# 121 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/swap_ranges.h" 1 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/swap_ranges.h" 3
+# 121 "c++/v1/array" 2 3
+# 1 "c++/v1/__algorithm/swap_ranges.h" 1 3
+# 22 "c++/v1/__algorithm/swap_ranges.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/swap_ranges.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 26 "c++/v1/__algorithm/swap_ranges.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -38288,19 +38288,19 @@ swap_ranges(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardItera
 }
 
 } }
-# 122 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
+# 122 "c++/v1/array" 2 3
 
 
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/static_bounded_iter.h" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/static_bounded_iter.h" 3
+# 1 "c++/v1/__iterator/static_bounded_iter.h" 1 3
+# 31 "c++/v1/__iterator/static_bounded_iter.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/static_bounded_iter.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 35 "c++/v1/__iterator/static_bounded_iter.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -38498,7 +38498,7 @@ public:
   operator==(__static_bounded_iter const& __x, __static_bounded_iter const& __y) noexcept {
     return __x.__current() == __y.__current();
   }
-# 257 "D:/Code/Msys2/Files/clang64/include/c++/v1/__iterator/static_bounded_iter.h" 3
+# 257 "c++/v1/__iterator/static_bounded_iter.h" 3
   __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr friend strong_ordering
   operator<=>(__static_bounded_iter const& __x, __static_bounded_iter const& __y) noexcept {
     if constexpr (three_way_comparable<_Iterator, strong_ordering>) {
@@ -38557,13 +38557,13 @@ struct pointer_traits<__static_bounded_iter<_Iterator, _Size> > {
 };
 
 } }
-# 128 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
-# 168 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 3
+# 128 "c++/v1/array" 2 3
+# 168 "c++/v1/array" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 172 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 172 "c++/v1/array" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -38844,7 +38844,7 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 operator==(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y) {
   return std::equal(__x.begin(), __x.end(), __y.begin());
 }
-# 482 "D:/Code/Msys2/Files/clang64/include/c++/v1/array" 3
+# 482 "c++/v1/array" 3
 template <class _Tp, size_t _Size>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr __synth_three_way_result<_Tp>
 operator<=>(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y) {
@@ -38925,13 +38925,13 @@ to_array(_Tp (&&__arr)[_Size]) noexcept(is_nothrow_move_constructible_v<_Tp>) {
 
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 2 3
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 3
+# 30 "c++/v1/__format/formatter_integral.h" 2 3
+# 41 "c++/v1/__format/formatter_integral.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 45 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 45 "c++/v1/__format/formatter_integral.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -38964,7 +38964,7 @@ template <contiguous_iterator _Iterator>
 
   return __buf;
 }
-# 93 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 3
+# 93 "c++/v1/__format/formatter_integral.h" 3
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) inline string __determine_grouping(ptrdiff_t __size, const string& __grouping) {
   ((void)0);
 
@@ -39123,7 +39123,7 @@ template <class _OutIt, contiguous_iterator _Iterator, class _CharT>
   auto __r = __grouping.rbegin();
   auto __e = __grouping.rend() - 1;
   ((void)0);
-# 263 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integral.h" 3
+# 263 "c++/v1/__format/formatter_integral.h" 3
   while (true) {
     if (__specs.__std_.__type_ == __format_spec::__type::__hexadecimal_upper_case) {
       __last = __first + *__r;
@@ -39304,8 +39304,8 @@ __format_bool(bool __value, _FormatContext& __ctx, __format_spec::__parsed_speci
 
 
 } }
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_bool.h" 2 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_bool.h" 3
+# 20 "c++/v1/__format/formatter_bool.h" 2 3
+# 29 "c++/v1/__format/formatter_bool.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -39356,20 +39356,20 @@ inline constexpr bool enable_nonlocking_formatter_optimization<bool> = true;
 
 
 } }
-# 30 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_char.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_char.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 1 3
-# 12 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each.h" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each.h" 3
+# 30 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__format/formatter_char.h" 1 3
+# 21 "c++/v1/__format/formatter_char.h" 3
+# 1 "c++/v1/__format/write_escaped.h" 1 3
+# 14 "c++/v1/__format/write_escaped.h" 3
+# 1 "c++/v1/__algorithm/ranges_for_each.h" 1 3
+# 12 "c++/v1/__algorithm/ranges_for_each.h" 3
+# 1 "c++/v1/__algorithm/for_each.h" 1 3
+# 23 "c++/v1/__algorithm/for_each.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 27 "c++/v1/__algorithm/for_each.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -39405,11 +39405,11 @@ for_each(_InputIterator __first, _InputIterator __last, _Func __f) {
 }
 
 } }
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n_segment.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n_segment.h" 3
+# 13 "c++/v1/__algorithm/ranges_for_each.h" 2 3
+# 1 "c++/v1/__algorithm/for_each_n.h" 1 3
+# 14 "c++/v1/__algorithm/for_each_n.h" 3
+# 1 "c++/v1/__algorithm/for_each_n_segment.h" 1 3
+# 18 "c++/v1/__algorithm/for_each_n_segment.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -39454,13 +39454,13 @@ __for_each_n_segment(_SegmentedIterator __first, _Size __orig_n, _Functor __func
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n.h" 2 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n.h" 3
+# 15 "c++/v1/__algorithm/for_each_n.h" 2 3
+# 28 "c++/v1/__algorithm/for_each_n.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/for_each_n.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 32 "c++/v1/__algorithm/for_each_n.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -39528,14 +39528,14 @@ for_each_n(_InputIterator __first, _Size __orig_n, _Func __f) {
 
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_fun_result.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_fun_result.h" 3
+# 14 "c++/v1/__algorithm/ranges_for_each.h" 2 3
+# 1 "c++/v1/__algorithm/in_fun_result.h" 1 3
+# 19 "c++/v1/__algorithm/in_fun_result.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 23 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/in_fun_result.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 23 "c++/v1/__algorithm/in_fun_result.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -39564,13 +39564,13 @@ struct in_fun_result {
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 3
+# 15 "c++/v1/__algorithm/ranges_for_each.h" 2 3
+# 27 "c++/v1/__algorithm/ranges_for_each.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/ranges_for_each.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 31 "c++/v1/__algorithm/ranges_for_each.h" 2 3
 
 
 
@@ -39624,13 +39624,13 @@ inline constexpr auto for_each = __for_each{};
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 2 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 3
+# 15 "c++/v1/__format/write_escaped.h" 2 3
+# 32 "c++/v1/__format/write_escaped.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 36 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 36 "c++/v1/__format/write_escaped.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -39701,7 +39701,7 @@ template <class _CharT>
 template <class _CharT>
 [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) bool
 __is_escaped_sequence_written(basic_string<_CharT>& __str, bool __last_escaped, char32_t __value) {
-# 116 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 3
+# 116 "c++/v1/__format/write_escaped.h" 3
   if (!__escaped_output_table::__needs_escape(__value))
 
 
@@ -39759,7 +39759,7 @@ template <class _CharT>
     __str += __value;
     return true;
   }
-# 182 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/write_escaped.h" 3
+# 182 "c++/v1/__format/write_escaped.h" 3
   return __formatter::__is_escaped_sequence_written(__str, __last_escaped, __formatter::__to_char32(__value));
 }
 
@@ -39817,8 +39817,8 @@ __format_escaped_string(basic_string_view<_CharT> __values,
 }
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_char.h" 2 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_char.h" 3
+# 22 "c++/v1/__format/formatter_char.h" 2 3
+# 27 "c++/v1/__format/formatter_char.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -39892,18 +39892,18 @@ inline constexpr bool enable_nonlocking_formatter_optimization<wchar_t> = true;
 
 
 } }
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 1 3
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 1 3
-# 13 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_backward.h" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_backward.h" 3
+# 31 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__format/formatter_floating_point.h" 1 3
+# 17 "c++/v1/__format/formatter_floating_point.h" 3
+# 1 "c++/v1/__algorithm/rotate.h" 1 3
+# 13 "c++/v1/__algorithm/rotate.h" 3
+# 1 "c++/v1/__algorithm/copy_backward.h" 1 3
+# 29 "c++/v1/__algorithm/copy_backward.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/copy_backward.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 33 "c++/v1/__algorithm/copy_backward.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -40138,16 +40138,16 @@ copy_backward(_BidirectionalIterator1 __first, _BidirectionalIterator1 __last, _
 }
 
 } }
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 2 3
+# 14 "c++/v1/__algorithm/rotate.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move_backward.h" 1 3
-# 28 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move_backward.h" 3
+# 1 "c++/v1/__algorithm/move_backward.h" 1 3
+# 28 "c++/v1/__algorithm/move_backward.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/move_backward.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 32 "c++/v1/__algorithm/move_backward.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -40262,13 +40262,13 @@ move_backward(_BidirectionalIterator1 __first, _BidirectionalIterator1 __last, _
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 2 3
-# 31 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 3
+# 17 "c++/v1/__algorithm/rotate.h" 2 3
+# 31 "c++/v1/__algorithm/rotate.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__algorithm/rotate.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 35 "c++/v1/__algorithm/rotate.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -40474,13 +40474,13 @@ rotate(_ForwardIterator __first, _ForwardIterator __middle, _ForwardIterator __l
 }
 
 } }
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 2 3
+# 18 "c++/v1/__format/formatter_floating_point.h" 2 3
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/chars_format.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/chars_format.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/to_underlying.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__utility/to_underlying.h" 3
+# 1 "c++/v1/__charconv/chars_format.h" 1 3
+# 14 "c++/v1/__charconv/chars_format.h" 3
+# 1 "c++/v1/__utility/to_underlying.h" 1 3
+# 18 "c++/v1/__utility/to_underlying.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40500,8 +40500,8 @@ template <class _Tp>
 
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/chars_format.h" 2 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/chars_format.h" 3
+# 15 "c++/v1/__charconv/chars_format.h" 2 3
+# 18 "c++/v1/__charconv/chars_format.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40544,9 +40544,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 
 
 } }
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_floating_point.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__charconv/to_chars_floating_point.h" 3
+# 21 "c++/v1/__format/formatter_floating_point.h" 2 3
+# 1 "c++/v1/__charconv/to_chars_floating_point.h" 1 3
+# 19 "c++/v1/__charconv/to_chars_floating_point.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40582,14 +40582,14 @@ to_chars(char* __first, char* __last, long double __value, chars_format __fmt, i
 
 
 } }
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 2 3
-# 40 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 1 3
-# 319 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 1 3
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/min_max.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/min_max.h" 3
+# 22 "c++/v1/__format/formatter_floating_point.h" 2 3
+# 40 "c++/v1/__format/formatter_floating_point.h" 3
+# 1 "c++/v1/cmath" 1 3
+# 319 "c++/v1/cmath" 3
+# 1 "c++/v1/__math/hypot.h" 1 3
+# 15 "c++/v1/__math/hypot.h" 3
+# 1 "c++/v1/__math/min_max.h" 1 3
+# 20 "c++/v1/__math/min_max.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40643,9 +40643,9 @@ template <class _A1, class _A2, __enable_if_t<is_arithmetic<_A1>::value && is_ar
 }
 
 } }
-# 16 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/roots.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/roots.h" 3
+# 16 "c++/v1/__math/hypot.h" 2 3
+# 1 "c++/v1/__math/roots.h" 1 3
+# 18 "c++/v1/__math/roots.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40689,13 +40689,13 @@ template <class _A1, __enable_if_t<is_integral<_A1>::value, int> = 0>
 }
 
 } }
-# 17 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 2 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 3
+# 17 "c++/v1/__math/hypot.h" 2 3
+# 25 "c++/v1/__math/hypot.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 29 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hypot.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 29 "c++/v1/__math/hypot.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -40773,12 +40773,12 @@ template <class _A1,
 }
 
 } }
-# 320 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 2 3
-# 330 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/special_functions.h" 1 3
-# 14 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/special_functions.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/copysign.h" 1 3
-# 19 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/copysign.h" 3
+# 320 "c++/v1/cmath" 2 3
+# 330 "c++/v1/cmath" 3
+# 1 "c++/v1/__math/special_functions.h" 1 3
+# 14 "c++/v1/__math/special_functions.h" 3
+# 1 "c++/v1/__math/copysign.h" 1 3
+# 19 "c++/v1/__math/copysign.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40803,8 +40803,8 @@ template <class _A1, class _A2, __enable_if_t<is_arithmetic<_A1>::value && is_ar
 }
 
 } }
-# 15 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/special_functions.h" 2 3
-# 22 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/special_functions.h" 3
+# 15 "c++/v1/__math/special_functions.h" 2 3
+# 22 "c++/v1/__math/special_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -40866,14 +40866,14 @@ template <class _Integer, std::enable_if_t<std::is_integral_v<_Integer>, int> = 
 
 
 } }
-# 331 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 1 3
-# 301 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 3
+# 331 "c++/v1/cmath" 2 3
+# 1 "c++/v1/math.h" 1 3
+# 301 "c++/v1/math.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/math.h" 1 3
-# 11 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 1 "math.h" 1 3
+# 11 "math.h" 3
 
 
 
@@ -40881,7 +40881,7 @@ template <class _Integer, std::enable_if_t<std::is_integral_v<_Integer>, int> = 
 struct _exception;
 
 #pragma pack(push,_CRT_PACKING)
-# 75 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 75 "math.h" 3
 extern "C++" {
 template <typename type1, typename type2> struct __mingw_types_compatible_p {
   static const bool result = false;
@@ -40899,7 +40899,7 @@ template <typename type1> struct __mingw_types_compatible_p<type1, const type1> 
   static const bool result = true;
 };
 }
-# 109 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 109 "math.h" 3
 extern "C" {
 
 
@@ -40936,7 +40936,7 @@ extern "C" {
 
 
   extern double * __imp__HUGE;
-# 156 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 156 "math.h" 3
   struct _exception {
     int type;
     const char *name;
@@ -40949,7 +40949,7 @@ extern "C" {
          double rslt);
   void __mingw_setusermatherr (int (__attribute__((__cdecl__)) *)(struct _exception *));
   __attribute__ ((__dllimport__)) void __setusermatherr(int (__attribute__((__cdecl__)) *)(struct _exception *));
-# 182 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 182 "math.h" 3
   double __attribute__((__cdecl__)) sin(double _X);
   double __attribute__((__cdecl__)) cos(double _X);
   double __attribute__((__cdecl__)) tan(double _X);
@@ -41018,7 +41018,7 @@ extern "C" {
   void __attribute__((__cdecl__)) sincos (double __x, double *p_sin, double *p_cos);
   void __attribute__((__cdecl__)) sincosl (long double __x, long double *p_sin, long double *p_cos);
   void __attribute__((__cdecl__)) sincosf (float __x, float *p_sin, float *p_cos);
-# 267 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 267 "math.h" 3
   struct _complex {
     double x;
     double y;
@@ -41036,7 +41036,7 @@ extern "C" {
 
 
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _matherr (struct _exception *);
-# 294 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 294 "math.h" 3
   __attribute__ ((__dllimport__)) double __attribute__((__cdecl__)) _chgsign (double _X);
   __attribute__ ((__dllimport__)) double __attribute__((__cdecl__)) _copysign (double _Number,double _Sign);
   __attribute__ ((__dllimport__)) double __attribute__((__cdecl__)) _logb (double);
@@ -41045,10 +41045,10 @@ extern "C" {
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _finite (double);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _fpclass (double);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _isnan (double);
-# 370 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 370 "math.h" 3
 typedef float float_t;
 typedef double double_t;
-# 405 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 405 "math.h" 3
   extern int __attribute__((__cdecl__)) __fpclassifyl (long double);
   extern int __attribute__((__cdecl__)) __fpclassifyf (float);
   extern int __attribute__((__cdecl__)) __fpclassify (double);
@@ -41121,7 +41121,7 @@ typedef double double_t;
 
 
   }
-# 518 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 518 "math.h" 3
   extern int __attribute__((__cdecl__)) __isnan (double);
   extern int __attribute__((__cdecl__)) __isnanf (float);
   extern int __attribute__((__cdecl__)) __isnanl (long double);
@@ -41189,7 +41189,7 @@ typedef double double_t;
 
 
   }
-# 605 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 605 "math.h" 3
   extern int __attribute__((__cdecl__)) __signbit (double);
   extern int __attribute__((__cdecl__)) __signbitf (float);
   extern int __attribute__((__cdecl__)) __signbitl (long double);
@@ -41232,7 +41232,7 @@ typedef double double_t;
 
 
   }
-# 662 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 662 "math.h" 3
   extern float __attribute__((__cdecl__)) sinf(float _X);
   extern long double __attribute__((__cdecl__)) sinl(long double);
 
@@ -41501,7 +41501,7 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
   extern double __attribute__((__cdecl__)) nan(const char *tagp);
   extern float __attribute__((__cdecl__)) nanf(const char *tagp);
   extern long double __attribute__((__cdecl__)) nanl(const char *tagp);
-# 938 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 938 "math.h" 3
   extern double __attribute__((__cdecl__)) nextafter (double, double);
   extern float __attribute__((__cdecl__)) nextafterf (float, float);
   extern long double __attribute__((__cdecl__)) nextafterl (long double, long double);
@@ -41537,7 +41537,7 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
   extern double __attribute__((__cdecl__)) fma (double, double, double);
   extern float __attribute__((__cdecl__)) fmaf (float, float, float);
   extern long double __attribute__((__cdecl__)) fmal (long double, long double, long double);
-# 1021 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 1021 "math.h" 3
    __attribute__ ((__dllimport__)) float __attribute__((__cdecl__)) _copysignf (float _Number,float _Sign);
    __attribute__ ((__dllimport__)) float __attribute__((__cdecl__)) _chgsignf (float _X);
    __attribute__ ((__dllimport__)) float __attribute__((__cdecl__)) _logbf(float _X);
@@ -41549,14 +41549,14 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
 
 
    extern long double __attribute__((__cdecl__)) _chgsignl (long double);
-# 1416 "D:/Code/Msys2/Files/clang64/include/math.h" 3
+# 1416 "math.h" 3
 }
 
 
 
 
 #pragma pack(pop)
-# 305 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 305 "c++/v1/math.h" 2 3
 
 
 
@@ -41564,9 +41564,9 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
 
 
 extern "C++" {
-# 363 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/error_functions.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/error_functions.h" 3
+# 363 "c++/v1/math.h" 3
+# 1 "c++/v1/__math/error_functions.h" 1 3
+# 18 "c++/v1/__math/error_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41608,10 +41608,10 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 364 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 364 "c++/v1/math.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/fdim.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/fdim.h" 3
+# 1 "c++/v1/__math/fdim.h" 1 3
+# 20 "c++/v1/__math/fdim.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41639,9 +41639,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 366 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/fma.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/fma.h" 3
+# 366 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/fma.h" 1 3
+# 20 "c++/v1/__math/fma.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41676,9 +41676,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 367 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/gamma.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/gamma.h" 3
+# 367 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/gamma.h" 1 3
+# 18 "c++/v1/__math/gamma.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41722,9 +41722,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 368 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hyperbolic_functions.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/hyperbolic_functions.h" 3
+# 368 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/hyperbolic_functions.h" 1 3
+# 18 "c++/v1/__math/hyperbolic_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41782,10 +41782,10 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 369 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 369 "c++/v1/math.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/inverse_hyperbolic_functions.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/inverse_hyperbolic_functions.h" 3
+# 1 "c++/v1/__math/inverse_hyperbolic_functions.h" 1 3
+# 18 "c++/v1/__math/inverse_hyperbolic_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41843,9 +41843,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 371 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/inverse_trigonometric_functions.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/inverse_trigonometric_functions.h" 3
+# 371 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/inverse_trigonometric_functions.h" 1 3
+# 21 "c++/v1/__math/inverse_trigonometric_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -41923,9 +41923,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 372 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/logarithms.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/logarithms.h" 3
+# 372 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/logarithms.h" 1 3
+# 18 "c++/v1/__math/logarithms.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -42031,10 +42031,10 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 373 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 373 "c++/v1/math.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/modulo.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/modulo.h" 3
+# 1 "c++/v1/__math/modulo.h" 1 3
+# 20 "c++/v1/__math/modulo.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -42077,9 +42077,9 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 375 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/remainder.h" 1 3
-# 20 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/remainder.h" 3
+# 375 "c++/v1/math.h" 2 3
+# 1 "c++/v1/__math/remainder.h" 1 3
+# 20 "c++/v1/__math/remainder.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -42131,10 +42131,10 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 376 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 376 "c++/v1/math.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/rounding_functions.h" 1 3
-# 21 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/rounding_functions.h" 3
+# 1 "c++/v1/__math/rounding_functions.h" 1 3
+# 21 "c++/v1/__math/rounding_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -42358,10 +42358,10 @@ template <class _A1, __enable_if_t<is_integral<_A1>::value, int> = 0>
 }
 
 } }
-# 378 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 378 "c++/v1/math.h" 2 3
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/trigonometric_functions.h" 1 3
-# 18 "D:/Code/Msys2/Files/clang64/include/c++/v1/__math/trigonometric_functions.h" 3
+# 1 "c++/v1/__math/trigonometric_functions.h" 1 3
+# 18 "c++/v1/__math/trigonometric_functions.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -42419,7 +42419,7 @@ inline __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((_
 }
 
 } }
-# 380 "D:/Code/Msys2/Files/clang64/include/c++/v1/math.h" 2 3
+# 380 "c++/v1/math.h" 2 3
 
 
 
@@ -42537,13 +42537,13 @@ using std::__math::tgamma;
 using std::__math::trunc;
 
 }
-# 332 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 2 3
-# 343 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 3
+# 332 "c++/v1/cmath" 2 3
+# 343 "c++/v1/cmath" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 347 "D:/Code/Msys2/Files/clang64/include/c++/v1/cmath" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 347 "c++/v1/cmath" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -42809,13 +42809,13 @@ template <class _A1, class _A2, class _A3>
 
 
 } }
-# 41 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 2 3
-# 48 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 41 "c++/v1/__format/formatter_floating_point.h" 2 3
+# 48 "c++/v1/__format/formatter_floating_point.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 52 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 52 "c++/v1/__format/formatter_floating_point.h" 2 3
 
  namespace std { inline namespace __1 {
 
@@ -42843,7 +42843,7 @@ template <floating_point _Tp>
   ((void)0);
   return __r.ptr;
 }
-# 110 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 110 "c++/v1/__format/formatter_floating_point.h" 3
 template <class _Tp>
 struct __traits;
 
@@ -42882,10 +42882,10 @@ class __float_buffer {
   using _Traits [[__gnu__::__nodebug__]] = __traits<_Fp>;
 
 public:
-# 156 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 156 "c++/v1/__format/formatter_floating_point.h" 3
   explicit __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) __float_buffer(int __precision)
       : __precision_(__precision != -1 ? __precision : _Traits::__max_fractional) {
-# 167 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 167 "c++/v1/__format/formatter_floating_point.h" 3
     if (__precision_ > _Traits::__max_fractional) {
       __num_trailing_zeros_ = __precision_ - _Traits::__max_fractional;
       __precision_ = _Traits::__max_fractional;
@@ -43004,7 +43004,7 @@ template <class _Fp, class _Tp>
   char* __first = __integral + 1;
   if (*__first == '.') {
     __result.__radix_point = __first;
-# 298 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 298 "c++/v1/__format/formatter_floating_point.h" 3
     static_assert(__traits<_Fp>::__hex_precision_digits <= 4, "Guard against possible underflow.");
 
     char* __last = __result.__last - 2;
@@ -43139,7 +43139,7 @@ __format_buffer_general_upper_case(__float_buffer<_Fp>& __buffer, _Tp __value, i
     *__result.__exponent = 'E';
   return __result;
 }
-# 448 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 448 "c++/v1/__format/formatter_floating_point.h" 3
 template <class _Fp, class _Tp>
 
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) __float_result __format_buffer(
@@ -43299,7 +43299,7 @@ template <class _OutIt, class _CharT>
 
   return __formatter::__write(__buffer, __last, std::move(__out_it), __specs);
 }
-# 616 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 616 "c++/v1/__format/formatter_floating_point.h" 3
 template <class _CharT, class _ParserCharT>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) auto __write_using_trailing_zeros(
     const _CharT* __first,
@@ -43328,7 +43328,7 @@ __format_floating_point(_Tp __value, _FormatContext& __ctx, __format_spec::__par
 
   if (!std::isfinite(__value)) [[unlikely]]
     return __formatter::__format_floating_point_non_finite(__ctx.out(), __specs, __negative, std::isnan(__value));
-# 652 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 652 "c++/v1/__format/formatter_floating_point.h" 3
   if (__negative)
     __value = -__value;
 
@@ -43355,7 +43355,7 @@ __format_floating_point(_Tp __value, _FormatContext& __ctx, __format_spec::__par
 
       ++__result.__exponent;
     }
-# 686 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_floating_point.h" 3
+# 686 "c++/v1/__format/formatter_floating_point.h" 3
     bool __is_general = __specs.__std_.__type_ == __format_spec::__type::__general_lower_case ||
                         __specs.__std_.__type_ == __format_spec::__type::__general_upper_case;
 
@@ -43459,9 +43459,9 @@ inline constexpr bool enable_nonlocking_formatter_optimization<long double> = tr
 
 
 } }
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integer.h" 1 3
-# 26 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_integer.h" 3
+# 32 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__format/formatter_integer.h" 1 3
+# 26 "c++/v1/__format/formatter_integer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -43561,9 +43561,9 @@ inline constexpr bool enable_nonlocking_formatter_optimization<__uint128_t> = tr
 
 
 } }
-# 33 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_pointer.h" 1 3
-# 25 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_pointer.h" 3
+# 33 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__format/formatter_pointer.h" 1 3
+# 25 "c++/v1/__format/formatter_pointer.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -43618,9 +43618,9 @@ inline constexpr bool enable_nonlocking_formatter_optimization<const void*> = tr
 
 
 } }
-# 34 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_string.h" 1 3
-# 27 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_string.h" 3
+# 34 "c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__format/formatter_string.h" 1 3
+# 27 "c++/v1/__format/formatter_string.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -43766,16 +43766,16 @@ inline constexpr bool enable_nonlocking_formatter_optimization<basic_string_view
 
 
 } }
-# 35 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
-# 51 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
+# 35 "c++/v1/__format/format_functions.h" 2 3
+# 51 "c++/v1/__format/format_functions.h" 3
 
 
 
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__undef_macros" 1 3
-# 55 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 2 3
+# 1 "c++/v1/__undef_macros" 1 3
+# 55 "c++/v1/__format/format_functions.h" 2 3
 
  namespace std { inline namespace __1 {
-# 65 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
+# 65 "c++/v1/__format/format_functions.h" 3
 using format_args = basic_format_args<format_context>;
 
 using wformat_args = basic_format_args<wformat_context>;
@@ -43863,7 +43863,7 @@ private:
   const __compile_time_handle<_CharT>* __handles_;
   size_t __size_;
 };
-# 161 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
+# 161 "c++/v1/__format/format_functions.h" 3
 template <class _CharT, class _Tp, bool _HasPrecision = false>
  __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr void __compile_time_validate_argument(
     basic_format_parse_context<_CharT>& __parse_ctx, __compile_time_basic_format_context<_CharT>& __ctx) {
@@ -44045,7 +44045,7 @@ template <class _ParseCtx, class _Ctx>
 }
 
 }
-# 367 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/format_functions.h" 3
+# 367 "c++/v1/__format/format_functions.h" 3
 template <class _CharT, class... _Args>
 struct basic_format_string {
   template <class _Tp>
@@ -44398,10 +44398,10 @@ formatted_size(locale __loc, wformat_string<_Args...> __fmt, _Args&&... __args) 
 
 
 } }
-# 212 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 2 3
-# 222 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 3
-# 1 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_tuple.h" 1 3
-# 32 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_tuple.h" 3
+# 212 "c++/v1/format" 2 3
+# 222 "c++/v1/format" 3
+# 1 "c++/v1/__format/formatter_tuple.h" 1 3
+# 32 "c++/v1/__format/formatter_tuple.h" 3
 
 
  namespace std { inline namespace __1 {
@@ -44464,7 +44464,7 @@ struct __formatter_tuple {
 
     if (!__specs.__has_width())
       return __format_tuple(__tuple, __ctx);
-# 107 "D:/Code/Msys2/Files/clang64/include/c++/v1/__format/formatter_tuple.h" 3
+# 107 "c++/v1/__format/formatter_tuple.h" 3
     __format::__retarget_buffer<_CharT> __buffer{8 * tuple_size_v<_Tuple>};
     basic_format_context<typename __format::__retarget_buffer<_CharT>::__iterator, _CharT> __c{
         __buffer.__make_output_iterator(), __ctx};
@@ -44505,10 +44505,10 @@ struct formatter<tuple<_Args...>, _CharT> : public __formatter_tuple<_CharT, tup
 
 
 } }
-# 223 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 2 3
-# 234 "D:/Code/Msys2/Files/clang64/include/c++/v1/format" 3
+# 223 "c++/v1/format" 2 3
+# 234 "c++/v1/format" 3
 # 3 "Test/Test.cpp" 2
-# 17 "Test/Test.cpp"
+# 20 "Test/Test.cpp"
 int main(){
     const char* t1 = "Tools-cpp is awsome!";
     const char* t2 = "v1.0";
