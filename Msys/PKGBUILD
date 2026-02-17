@@ -1,6 +1,6 @@
 # Create tarball:
 # tar -czf ./Msys/tools-cpp.tar.gz Tools Tools.hpp
-# 
+#
 # Install using selected environment
 # pacman -U <packagename>
 #
@@ -9,7 +9,7 @@
 
 pkgname=${MINGW_PACKAGE_PREFIX:-msys}-tools-cpp
 pkgdesc="Personal header-only C++ utility library"
-pkgver=12022026
+pkgver=17022026
 pkgrel=1
 arch=('any')
 
@@ -27,5 +27,3 @@ package() {
   cp -r "${srcdir}/Tools" \
         "${pkgdir}${MINGW_PREFIX}/include/"
 }
-
-

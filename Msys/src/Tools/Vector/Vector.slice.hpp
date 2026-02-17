@@ -6,9 +6,9 @@
 namespace Tools::Vector {
     // Return new vector versions
     template <typename T>
-    vec<T> Slice(cref<vec<T>> vec, idx x, idx y) {
+    vec<T> Slice(const vec<T>& vec, idx x, idx y) {
         // Handle negative indices
-        const auto size = static_cast<idx>(vec.size());
+        const idx size = vec.size();
         if (x < 0) x = size + x;
         if (y < 0) y = size + y;
 
@@ -21,8 +21,8 @@ namespace Tools::Vector {
     }
 
     template <typename T>
-    vec<T> Slice(cref<vec<T>> vec, idx n) {
-        const auto size = static_cast<idx>(vec.size());
+    vec<T> Slice(const vec<T>& vec, idx n) {
+        const idx size = vec.size();
         idx start, end;
 
         if (n >= 0) {
@@ -43,3 +43,13 @@ namespace Tools::Vector {
         return ::vec<T>(vec.begin() + start, vec.begin() + end + 1);
     }
 }
+
+template vec<i32> Tools::Vector::Slice<i32>(const vec<i32>& vec, idx x, idx y);
+template vec<i64> Tools::Vector::Slice<i64>(const vec<i64>& vec, idx x, idx y);
+template vec<f32> Tools::Vector::Slice<f32>(const vec<f32>& vec, idx x, idx y);
+template vec<f64> Tools::Vector::Slice<f64>(const vec<f64>& vec, idx x, idx y);
+
+template vec<i32> Tools::Vector::Slice<i32>(const vec<i32>& vec, idx n);
+template vec<i64> Tools::Vector::Slice<i64>(const vec<i64>& vec, idx n);
+template vec<f32> Tools::Vector::Slice<f32>(const vec<f32>& vec, idx n);
+template vec<f64> Tools::Vector::Slice<f64>(const vec<f64>& vec, idx n);

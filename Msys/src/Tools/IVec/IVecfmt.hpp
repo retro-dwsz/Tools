@@ -1,8 +1,9 @@
 #pragma once
 
+#include "IVec_c.base.hpp"
+
 #include <fmt/format.h>
 #include <fmt/ranges.h>
-#include "IVec.hpp"
 
 namespace fmt {
 

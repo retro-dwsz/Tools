@@ -1,17 +1,16 @@
 #pragma once
 
-#include <memory>
-#include <string>
+#include <iostream>
+#include <format>
+
 #include <cstring>
-#include <print>
-#include <vector>
 #include <fstream>
 
 #include "Types.hpp"
 
 namespace Tools::Files {
     /* ---- CPP str ---- */
-    str ReadFile(cref<str> File){
+    str ReadFile(const str& File){
         try {
             std::ifstream in(File, std::ios::binary);
 
@@ -20,12 +19,12 @@ namespace Tools::Files {
                 std::istreambuf_iterator<char>()
             );
         } catch(std::exception& e){
-            std::println("Error while reading file -> {}", e.what());
+            std::cout << std::format("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
 
-    void WriteFile(cref<str> File, cref<str> Content){
+    void WriteFile(const str& File, const str& Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -37,7 +36,7 @@ namespace Tools::Files {
                     // Out << Content << "\n\n";
                     Out.close();
                 } catch (std::exception& e){
-                    std::println("Error while writing to file -> {}", e.what());
+                    std::cout << std::format("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -47,17 +46,17 @@ namespace Tools::Files {
     }
 
     /* ---- C str ---- */
-    cstr ReadFileC(cref<str> File){
+    cstr ReadFileC(const str& File){
         try {
             auto C = std::make_unique<cstr>(ReadFile(File).c_str());
             return *C;
         } catch(std::exception& e){
-            std::println("Error while reading file -> {}", e.what());
+            std::cout << std::format("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
 
-    void WriteFileC(cref<str> File, cstr& Content){
+    void WriteFileC(const str& File, cstr& Content){
         if(File == "__NONE__"){
             return;
         } else {
@@ -69,7 +68,7 @@ namespace Tools::Files {
                     // Out << Content << "\n\n";
                     Out.close();
                 } catch (std::exception& e){
-                    std::println("Error while writing to file -> {}", e.what());
+                    std::cout << std::format("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -79,7 +78,7 @@ namespace Tools::Files {
     }
 
     /* ---- Wide String ---- */
-    wstr ReadFileW(cref<str> File){
+    wstr ReadFileW(const str& File){
         std::ifstream in(File, std::ios::binary);
         if(!in) throw std::runtime_error("Cannot open");
 
@@ -97,12 +96,12 @@ namespace Tools::Files {
         return out;
     }
 
-    void WriteFileW(cref<str> File, const wstr& Content){
+    void WriteFileW(const str& File, const wstr& Content){
         if(File == "__NONE__") return;
 
         std::ofstream out(File, std::ios::binary | std::ios::trunc);
         if(!out){
-            std::println("Error: cannot open {}", File);
+            std::cout << std::format("Error: cannot open {}", File);
             std::exit(2);
         }
 

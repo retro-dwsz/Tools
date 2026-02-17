@@ -1,11 +1,11 @@
 format = 2
 pkgname = mingw-w64-clang-aarch64-tools-cpp
 pkgbase = mingw-w64-clang-aarch64-tools-cpp
-pkgver = 12022026-1
+pkgver = 17022026-1
 pkgarch = any
-pkgbuild_sha256sum = 18c018d819e34801baaf4689cf1146de6b559cd6f19a59ba094a31b649c1bf74
+pkgbuild_sha256sum = f637fb94c8931a26c0e97545562c00f741fff3c932af19679cf1bb06f197c79f
 packager = Unknown Packager
-builddate = 1770836194
+builddate = 1771306199
 builddir = /d/Code/_CLIB/Tools/Msys
 startdir = /d/Code/_CLIB/Tools/Msys
 buildtool = makepkg

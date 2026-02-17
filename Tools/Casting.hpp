@@ -3,11 +3,11 @@
 // ------------------------------------------------------------
 // Tools::Cast
 // Lightweight casting helpers.
-// 
+//
 // Notes!
 // - This is NOT replacement of system types
 // - This file only pack long casting keywords
-// 
+//
 // Alias mapping:
 //   static_cast      -> scast
 //   dynamic_cast     -> dcast
@@ -118,3 +118,7 @@ namespace Tools::Cast {
         return scast<To>(std::forward<From>(value));
     }
 }
+
+#ifdef FLAT_TOOLS_CAST
+using Tools::Cast;
+#endif

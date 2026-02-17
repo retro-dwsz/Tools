@@ -27,3 +27,6 @@ template <typename T>
 concept CUInt =
     std::same_as<T, u32>
     || std::same_as<T, u64>;
+
+using idx = size_t;
+using sidx = ssize_t;

@@ -47,8 +47,8 @@ using span = std::span<T>;
 
 /* Less commonly used */
 #include <tuple>
-template<typename T>
-using tuple = std::tuple<T>;
+template<typename ...T>
+using tuple = std::tuple<T...>;
 
 #include <list>
 template<typename T>

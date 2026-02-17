@@ -36,3 +36,7 @@ namespace Tools::Round {
         }
     }
 }
+
+template f32 Tools::Round::Round(const f32 value, const i32 digits);
+template f64 Tools::Round::Round(const f64 value, const i32 digits);
+template fld Tools::Round::Round(const fld value, const i32 digits);

@@ -5,9 +5,9 @@
 #include "Casting.hpp"
 
 namespace Tools::Round {
-    double BankersRound(double x) {
-        double intpart;
-        double frac = std::modf(x, &intpart);
+    f64 static BankersRound(f64 x) {
+        f64 intpart;
+        f64 frac = std::modf(x, &intpart);
 
         if (std::fabs(frac) == 0.5) {
             return (Cast::scast<long long>(intpart) % 2 == 0)
@@ -17,8 +17,8 @@ namespace Tools::Round {
         return std::round(x);
     }
 
-    template <Numbers T>
-    T Round(const T value, const int digits) {
+    template <Float T>
+    T Round(const T value, const i32 digits) {
         static_assert(std::is_arithmetic_v<T>, "Round only supports numbers");
 
         if constexpr (std::is_integral_v<T>) {
@@ -26,13 +26,17 @@ namespace Tools::Round {
 
             T factor = Cast::scast<T>(std::pow(10, -digits));
             return Cast::scast<T>(
-                BankersRound(Cast::scast<double>(value) / factor) * factor
+                BankersRound(Cast::scast<f64>(value) / factor) * factor
             );
         } else {
-            double factor = std::pow(10.0, digits);
+            f64 factor = std::pow(10.0, digits);
             return Cast::scast<T>(
-                BankersRound(Cast::scast<double>(value) * factor) / factor
+                BankersRound(Cast::scast<f64>(value) * factor) / factor
             );
         }
     }
 }
+
+template f32 Tools::Round::Round(const f32 value, const i32 digits);
+template f64 Tools::Round::Round(const f64 value, const i32 digits);
+template fld Tools::Round::Round(const fld value, const i32 digits);

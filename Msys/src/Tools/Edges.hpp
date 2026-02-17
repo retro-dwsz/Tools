@@ -1,3 +1,4 @@
+#pragma once
 #include <limits>
 
 // Macro shortcut
@@ -9,11 +10,9 @@ namespace Tools::Edge {
     T GetMax(){
         return std::numeric_limits<T>::max();
     }
-        
+
     template <typename T>
     T GetMin(){
         return std::numeric_limits<T>::min();
-    }    
-
-    
+    }
 }

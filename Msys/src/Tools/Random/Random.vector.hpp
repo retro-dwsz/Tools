@@ -72,7 +72,7 @@ namespace Tools::Random {
         sthread Twister32 gen(rd());
 
         for (idx i = 0; i < Count; ++i) {
-            auto n = DistInt<i32>(Min, Max)(gen);
+            auto n = DistReal<f32>(Min, Max)(gen);
             result.push_back(Tools::Round::Round(n, Rounding));
         }
         return result;
@@ -97,7 +97,7 @@ namespace Tools::Random {
         sthread Twister64 gen(rd());
 
         for (idx i = 0; i < Count; ++i) {
-            auto n = DistInt<i64>(Min, Max)(gen);
+            auto n = DistReal<f64>(Min, Max)(gen);
             result.push_back(Tools::Round::Round(n, Rounding));
         }
         return result;

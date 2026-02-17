@@ -2,11 +2,11 @@
 pkgname = mingw-w64-clang-aarch64-tools-cpp
 pkgbase = mingw-w64-clang-aarch64-tools-cpp
 xdata = pkgtype=pkg
-pkgver = 12022026-1
+pkgver = 17022026-1
 pkgdesc = Personal header-only C++ utility library
 url = 
-builddate = 1770836194
+builddate = 1771306199
 packager = Unknown Packager
-size = 682668
+size = 713341
 arch = any
 license = MIT

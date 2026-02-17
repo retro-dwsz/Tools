@@ -15,7 +15,7 @@ using wstr = std::wstring;
 using str16 = std::u16string;
 using str32 = std::u32string;
 
-using strv = std::string_view;
+using strview = std::string_view;
 using sstream = std::stringstream;
 using ostream = std::ostringstream;
 

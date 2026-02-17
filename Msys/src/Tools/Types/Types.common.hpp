@@ -18,21 +18,25 @@ concept OneOf = (Same<T, Ts> || ...);
     concept name = (Same<T, __VA_ARGS__> || ...);
 
 template <typename T>
-concept nx32 = OneOf<T, i32, f32>;
+concept Nx32 = OneOf<T, i32, f32>;
 
 template <typename T>
-concept nx64 = OneOf<T, i64, f64>;
+concept Nx64 = OneOf<T, i64, f64>;
 
 template <typename T>
-concept CommonNumber = OneOf<T, i32, i64, f32, f64>;
+concept CNumber = OneOf<T, i32, i64, u32, u64, f32, f64, sidx>;
 
 template <typename T>
-concept CommonTypes = OneOf<i32, i64, f32, f64, cstr, str>;
+concept CTypes = OneOf<T, i32, i64, f32, f64, cstr, str>;
+
+template <typename T>
+concept CSize = OneOf<T, idx, sidx>;
 
 template <typename T>
 concept Numbers = OneOf<T, i8, i16, i32, i64,
                            u8, u16, u32, u64,
-                           f32, f64, fld
+                           f32, f64, fld,
+                           sidx, idx 
                   >;
 
 template <typename T>
@@ -43,14 +47,12 @@ concept Integer = OneOf<T, i8, i16, i32, i64,
 template <typename T>
 concept Ref = OneOf<T, T&, const T&>;
 
-/* * * * * * References * * * * * */
-template <typename T>
-using cref = const T&;
-
-template <typename T>
-using ref = T&;
-
 template <Numbers T>
 void CheckRange(T& min, T& max) {
     if (max < min) std::swap(min, max);
+}
+
+template <Numbers T>
+std::pair<T, T> CheckRangeR(T min, T max) {
+    if (max < min) return std::pair<T, T>(max, min);
 }

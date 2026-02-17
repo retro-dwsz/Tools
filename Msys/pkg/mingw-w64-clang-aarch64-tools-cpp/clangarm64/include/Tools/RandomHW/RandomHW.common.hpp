@@ -117,27 +117,27 @@ namespace Tools::RandomHW {
 }
 
 namespace Tools::RandomHW {
-    Twister32 MakeHWEngine32() {
-        u32 seed{};
+    Twister32 MakeHWEngine32(u32 seed = UINT32_MAX) {
+        // u32 seed{};
         if(!_rdseed32_step(&seed)) {
             seed = RdDevice{}();
         }
         return Twister32(seed);
     }
 
-    Twister32 MakeEngine32(const u32 seed = UINT32_MAX) {
-        return Twister32(seed);
-    }
+    // Twister32 MakeEngine32S(const u32 seed = UINT32_MAX) {
+    //     return Twister32(seed);
+    // }
 
-    Twister64 MakeHWEngine64() {
-        u64 seed{};
+    Twister64 MakeHWEngine64(u64 seed = UINT64_MAX) {
+        // u64 seed{};
         if(!_rdseed64_step(&seed)) {
             seed = RdDevice{}();
         }
         return Twister64(seed);
     }
 
-    Twister64 MakeEngine64(const u64 seed = UINT64_MAX) {
-        return Twister64(seed);
-    }
+    // Twister64 MakeEngine64S(const u64 seed = UINT64_MAX) {
+    //     return Twister64(seed);
+    // }
 }

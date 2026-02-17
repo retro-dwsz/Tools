@@ -8,6 +8,7 @@ namespace Tools::RandomHW {
         DistInt<i32> dist(min, max);
         return dist(gen);
     }
+    
     i64 RandomNumL(Twister64& gen, i64 min, i64 max) {
         CheckRange(min, max);
         DistInt<i64> dist(min, max);

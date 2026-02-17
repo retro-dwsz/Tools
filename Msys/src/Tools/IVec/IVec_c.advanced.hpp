@@ -1,6 +1,7 @@
 #pragma once
 
-#include "IVec.hpp"
+#include "IVec_c.base.hpp"
+
 #include <utility>
 #include <random>
 #include <algorithm>
@@ -8,17 +9,17 @@
 
 /* Slicers */
 template <typename T>
-void Tools::ivec<T>::slice(i64 x, i64 y) {
-    *this = rslice(x, y);
+void Tools::ivec<T>::sliceInl(i64 x, i64 y) {
+    *this = slice(x, y);
 };
 
 template <typename T>
-void Tools::ivec<T>::slice(i64 n) {
-    *this = rslice(n);
+void Tools::ivec<T>::sliceIln(i64 n) {
+    *this = slice(n);
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rslice(i64 x, i64 y) {
+Tools::ivec<T> Tools::ivec<T>::slice(i64 x, i64 y) {
     if (ivec_size == 0) return {};
 
     if (x < 0) x += ivec_size;
@@ -38,13 +39,13 @@ Tools::ivec<T> Tools::ivec<T>::rslice(i64 x, i64 y) {
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rslice(i64 n) {
+Tools::ivec<T> Tools::ivec<T>::slice(i64 n) {
     if (ivec_size == 0) return {};
 
     if (n >= 0)
-        return rslice(0, n);
+        return slice(0, n);
     else
-        return rslice(ivec_size + n, ivec_size - 1);
+        return slice(ivec_size + n, ivec_size - 1);
 }
 
 /* Find utils */
@@ -66,7 +67,7 @@ void Tools::ivec<T>::appendFirst(const T& Element) {
     if (ivec_size == ivec_capacity)
         reserve(ivec_capacity == 0 ? 1 : ivec_capacity * 2);
 
-    // Shift all elements to right by 1, from backward so no one is overriden 
+    // Shift all elements to right by 1, from backward so no one is overriden
     for (idx i = ivec_size; i > 0; --i) {
         new (ivec_data + i) T(std::move_if_noexcept(ivec_data[i - 1]));
         ivec_data[i - 1].~T();
@@ -144,55 +145,114 @@ pair<idx, vec<T>> Tools::ivec<T>::findAll(
 /* Random utils */
 
 template <typename T>
-void Tools::ivec<T>::shuffle() {
+void Tools::ivec<T>::shuffleInl() {
     static std::mt19937_64 rng{ std::random_device{}() };
     std::shuffle(begin(), end(), rng);
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rshuffle() {
+Tools::ivec<T> Tools::ivec<T>::shuffle() {
     Tools::ivec<T> out(*this);
-    out.shuffle();
+    out.shuffleInl();
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::sort() {
+void Tools::ivec<T>::sortInl() {
     // std::ranges::sort(*this);
     std::sort(begin(), end());
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rsort() {
+Tools::ivec<T> Tools::ivec<T>::sort() {
     Tools::ivec<T> out(*this);
-    out.reverse();
+    out.reverseInl();
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::revsort() {
+void Tools::ivec<T>::rsortInl() {
     // std::ranges::sort(*this, std::ranges::greater{});
     std::sort(begin(), end(), std::greater<T>{});
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rrevsort() {
+Tools::ivec<T> Tools::ivec<T>::rsort() {
     Tools::ivec<T> out(*this);
     std::sort(*out, std::greater<T>{});
     return out;
 }
 
 template <typename T>
-void Tools::ivec<T>::reverse() {
+void Tools::ivec<T>::reverseInl() {
     // std::ranges::reverse(*this);
     std::reverse(begin(), end());
 }
 
 template <typename T>
-Tools::ivec<T> Tools::ivec<T>::rreverse() {
+Tools::ivec<T> Tools::ivec<T>::reverse() {
     Tools::ivec<T> out(*this);
-    out.reverse();
+    out.reverseInl();
     return out;
+}
+
+/* Eraser */
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(T* pos){
+    ivec out(this);
+    out.eraseInl(pos);
+    return out;
+}
+
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(T* first, T* last){
+    ivec out(this);
+    out.eraseInl(first, last);
+    return out;
+}
+
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(T* pos){
+    if (!pos || pos < ivec_data || pos >= ivec_data + ivec_size)
+        return; // or throw
+
+    idx index = pos - ivec_data; // pointer arithmetic
+
+    // destroy element
+    ivec_data[index].~T();
+
+    // shift left
+    for (idx i = index; i + 1 < ivec_size; ++i){
+        new (ivec_data + i) T(std::move(ivec_data[i + 1]));
+        ivec_data[i + 1].~T();
+    }
+
+    --ivec_size;
+}
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(T* first, T* last){
+    if (!first || !last) return;
+    if (first < ivec_data) first = ivec_data;
+    if (last > ivec_data + ivec_size) last = ivec_data + ivec_size;
+    if (first >= last) return;
+
+    idx begin_idx = first - ivec_data;
+    idx end_idx   = last - ivec_data;
+    idx count     = end_idx - begin_idx;
+
+    // destroy range
+    for (idx i = begin_idx; i < end_idx; ++i)
+        ivec_data[i].~T();
+
+    // shift tail
+    for (idx i = end_idx; i < ivec_size; ++i){
+        new (ivec_data + (i - count)) T(std::move(ivec_data[i]));
+        ivec_data[i].~T();
+    }
+
+    ivec_size -= count;
 }
 
 template <typename T>
@@ -247,5 +307,60 @@ str Tools::ivec<T>::fstr() {
     }
 
     out += "]";
+    return out;
+}
+
+/* Remove duplicates (make all unique) */
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
+    // vec<T> Out(this);
+    // auto U = std::unique(Out.begin(), Out.end());
+    // Out.erase(U, Out.end());
+    // return ivec<T>(Out);
+
+    if (n <= 0 || ivec_size <= 1) return;
+
+    std::unordered_map<T, idx> freq;
+    idx write = 0;
+
+    for (idx read = 0; read < ivec_size; ++read){
+        T& val = ivec_data[read];
+        idx& count = freq[val];
+
+        if (count < n){
+            if (write != read){
+                // move element forward
+                new (ivec_data + write) T(std::move(val));
+                ivec_data[read].~T();
+            }
+            ++write;
+            ++count;
+        } else {
+            // destroy skipped duplicate
+            ivec_data[read].~T();
+        }
+    }
+
+    ivec_size = write;
+}
+
+template <typename T>
+void Tools::ivec<T>::uniquesInl(idx n){
+    Tools::ivec<T> out;
+    if (n <= 0 || ivec_size == 0) return out;
+
+    out.reserve(ivec_size);
+    std::unordered_map<T, idx> freq;
+
+    for (idx i = 0; i < ivec_size; ++i){
+        const T& val = ivec_data[i];
+        idx& count = freq[val];
+
+        if (count < n){
+            out.append(val);
+            ++count;
+        }
+    }
+
     return out;
 }

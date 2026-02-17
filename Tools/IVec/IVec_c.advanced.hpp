@@ -67,7 +67,7 @@ void Tools::ivec<T>::appendFirst(const T& Element) {
     if (ivec_size == ivec_capacity)
         reserve(ivec_capacity == 0 ? 1 : ivec_capacity * 2);
 
-    // Shift all elements to right by 1, from backward so no one is overriden 
+    // Shift all elements to right by 1, from backward so no one is overriden
     for (idx i = ivec_size; i > 0; --i) {
         new (ivec_data + i) T(std::move_if_noexcept(ivec_data[i - 1]));
         ivec_data[i - 1].~T();
@@ -255,9 +255,6 @@ void Tools::ivec<T>::eraseInl(T* first, T* last){
     ivec_size -= count;
 }
 
-/* Remove duplicates (make all unique) */
-
-
 template <typename T>
 u64 Tools::ivec<T>::memory() {
     u64 s = sizeof(T) * this->ivec_size;
@@ -313,6 +310,7 @@ str Tools::ivec<T>::fstr() {
     return out;
 }
 
+/* Remove duplicates (make all unique) */
 template <typename T>
 Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
     // vec<T> Out(this);
