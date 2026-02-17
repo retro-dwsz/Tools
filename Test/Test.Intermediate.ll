@@ -1,5 +1,5 @@
-; ModuleID = 'Test.cpp'
-source_filename = "Test.cpp"
+; ModuleID = 'Test/Test.cpp'
+source_filename = "Test/Test.cpp"
 target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-w64-windows-gnu"
 
@@ -30,12 +30,14 @@ $_ZTSSt11logic_error = comdat any
 @.str = private unnamed_addr constant [21 x i8] c"Tools-cpp is awsome!\00", align 1
 @.str.1 = private unnamed_addr constant [5 x i8] c"v1.0\00", align 1
 @.str.2 = private unnamed_addr constant [25 x i8] c"%s Current verison is %s\00", align 1
-@.str.4 = private unnamed_addr constant [69 x i8] c"%s\0A\0AThat string is %llu char long and took %llu bytes of your memory\00", align 1
+@.str.3 = private unnamed_addr constant [48 x i8] c" using compiler %s version %d with standard %ld\00", align 1
+@.str.4 = private unnamed_addr constant [6 x i8] c"Clang\00", align 1
+@.str.6 = private unnamed_addr constant [106 x i8] c"%s\0A\0A> That string aboce is %llu char long and took %llu bytes of your memory\0A> Pointers are at 0x%p..0x%p\00", align 1
 @_ZTVN10__cxxabiv120__si_class_type_infoE = external global [0 x ptr]
 @_ZTISt9exception = linkonce_odr dso_local constant { ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv117__class_type_infoE, i64 2), ptr @_ZTSSt9exception }, comdat, align 8
 @_ZTVN10__cxxabiv117__class_type_infoE = external global [0 x ptr]
 @_ZTSSt9exception = linkonce_odr dso_local constant [13 x i8] c"St9exception\00", comdat, align 1
-@.str.34 = private unnamed_addr constant [13 x i8] c"basic_string\00", align 1
+@.str.36 = private unnamed_addr constant [13 x i8] c"basic_string\00", align 1
 @_ZTISt12length_error = linkonce_odr dso_local constant { ptr, ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2), ptr @_ZTSSt12length_error, ptr @_ZTISt11logic_error }, comdat, align 8
 @_ZTSSt12length_error = linkonce_odr dso_local constant [17 x i8] c"St12length_error\00", comdat, align 1
 @_ZTISt11logic_error = linkonce_odr dso_local constant { ptr, ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2), ptr @_ZTSSt11logic_error, ptr @_ZTISt9exception }, comdat, align 8
@@ -47,100 +49,108 @@ define dso_local noundef i32 @main() local_unnamed_addr #0 personality ptr @__gx
   %1 = alloca %"class.std::__1::basic_string", align 8
   %2 = alloca [12 x i8], align 1
   %3 = alloca [128 x i8], align 16
-  %4 = alloca %"class.std::__1::basic_string", align 8
-  call void @llvm.lifetime.start.p0(i64 128, ptr nonnull %3) #13
-  %5 = call i32 (ptr, i64, ptr, ...) @snprintf(ptr noundef nonnull dereferenceable(1) %3, i64 noundef 128, ptr noundef nonnull @.str.2, ptr noundef nonnull @.str, ptr noundef nonnull @.str.1) #13
-  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %4) #13
-  %6 = call noundef ptr @memchr(ptr noundef nonnull align 1 dereferenceable(128) %3, i32 noundef 0, i64 noundef 128) #13, !noalias !8
-  %7 = ptrtoint ptr %6 to i64
-  %8 = ptrtoint ptr %3 to i64
-  %9 = sub i64 %7, %8
+  %4 = alloca [128 x i8], align 16
+  %5 = alloca %"class.std::__1::basic_string", align 8
+  call void @llvm.lifetime.start.p0(i64 128, ptr nonnull %3) #14
+  call void @llvm.lifetime.start.p0(i64 128, ptr nonnull %4) #14
+  %6 = call i32 (ptr, i64, ptr, ...) @snprintf(ptr noundef nonnull dereferenceable(1) %3, i64 noundef 128, ptr noundef nonnull @.str.2, ptr noundef nonnull @.str, ptr noundef nonnull @.str.1) #14
+  %7 = call i32 (ptr, i64, ptr, ...) @snprintf(ptr noundef nonnull dereferenceable(1) %4, i64 noundef 128, ptr noundef nonnull @.str.3, ptr noundef nonnull @.str.4, i32 noundef 21, i32 noundef 202302) #14
+  %8 = call ptr @strcat(ptr noundef nonnull dereferenceable(1) %3, ptr noundef nonnull dereferenceable(1) %4) #14
+  %9 = call i64 @strlen(ptr noundef nonnull dereferenceable(1) %3) #14
+  %10 = add i64 %9, -1
+  %11 = getelementptr inbounds nuw [128 x i8], ptr %3, i64 0, i64 %10
+  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %5) #14
+  %12 = call noundef ptr @memchr(ptr noundef nonnull align 1 dereferenceable(128) %3, i32 noundef 0, i64 noundef 128) #14, !noalias !8
+  %13 = ptrtoint ptr %12 to i64
+  %14 = ptrtoint ptr %3 to i64
+  %15 = sub i64 %13, %14
   call void @llvm.lifetime.start.p0(i64 12, ptr nonnull %2)
-  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %1) #13, !noalias !15
-  %10 = icmp ugt i64 %9, -10
-  br i1 %10, label %11, label %12
+  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %1) #14, !noalias !15
+  %16 = icmp ugt i64 %15, -10
+  br i1 %16, label %17, label %18
 
-11:                                               ; preds = %0
-  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() #14, !noalias !15
+17:                                               ; preds = %0
+  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() #15, !noalias !15
   unreachable
 
-12:                                               ; preds = %0
-  %13 = icmp ult i64 %9, 23
-  br i1 %13, label %23, label %14
+18:                                               ; preds = %0
+  %19 = icmp ult i64 %15, 23
+  br i1 %19, label %29, label %20
 
-14:                                               ; preds = %12
-  %15 = or i64 %9, 7
-  %16 = icmp eq i64 %15, 23
-  %17 = add nuw i64 %15, 1
-  %18 = select i1 %16, i64 26, i64 %17
-  %19 = call noalias noundef nonnull ptr @_Znwy(i64 noundef %18) #15, !noalias !26
-  %20 = getelementptr inbounds nuw i8, ptr %1, i64 16
-  store ptr %19, ptr %20, align 8, !tbaa !33, !noalias !15
-  %21 = or disjoint i64 %18, 1
-  store i64 %21, ptr %1, align 8, !noalias !15
-  %22 = getelementptr inbounds nuw i8, ptr %1, i64 8
-  store i64 %9, ptr %22, align 8, !tbaa !33, !noalias !15
-  br label %28
+20:                                               ; preds = %18
+  %21 = or i64 %15, 7
+  %22 = icmp eq i64 %21, 23
+  %23 = add nuw i64 %21, 1
+  %24 = select i1 %22, i64 26, i64 %23
+  %25 = call noalias noundef nonnull ptr @_Znwy(i64 noundef %24) #16, !noalias !26
+  %26 = getelementptr inbounds nuw i8, ptr %1, i64 16
+  store ptr %25, ptr %26, align 8, !tbaa !33, !noalias !15
+  %27 = or disjoint i64 %24, 1
+  store i64 %27, ptr %1, align 8, !noalias !15
+  %28 = getelementptr inbounds nuw i8, ptr %1, i64 8
+  store i64 %15, ptr %28, align 8, !tbaa !33, !noalias !15
+  br label %34
 
-23:                                               ; preds = %12
-  %24 = trunc nuw nsw i64 %9 to i8
-  %25 = shl nuw nsw i8 %24, 1
-  store i8 %25, ptr %1, align 8, !noalias !15
-  %26 = getelementptr inbounds nuw i8, ptr %1, i64 1
-  %27 = icmp eq ptr %6, %3
-  br i1 %27, label %30, label %28
+29:                                               ; preds = %18
+  %30 = trunc nuw nsw i64 %15 to i8
+  %31 = shl nuw nsw i8 %30, 1
+  store i8 %31, ptr %1, align 8, !noalias !15
+  %32 = getelementptr inbounds nuw i8, ptr %1, i64 1
+  %33 = icmp eq ptr %12, %3
+  br i1 %33, label %36, label %34
 
-28:                                               ; preds = %23, %14
-  %29 = phi ptr [ %19, %14 ], [ %26, %23 ]
-  call void @llvm.memcpy.p0.p0.i64(ptr nonnull align 1 %29, ptr nonnull align 16 %3, i64 %9, i1 false), !noalias !15
-  br label %30
+34:                                               ; preds = %29, %20
+  %35 = phi ptr [ %25, %20 ], [ %32, %29 ]
+  call void @llvm.memcpy.p0.p0.i64(ptr nonnull align 1 %35, ptr nonnull align 16 %3, i64 %15, i1 false), !noalias !15
+  br label %36
 
-30:                                               ; preds = %28, %23
-  %31 = phi ptr [ %26, %23 ], [ %29, %28 ]
-  %32 = getelementptr inbounds nuw i8, ptr %31, i64 %9
-  store i8 0, ptr %32, align 1, !tbaa !33, !noalias !15
-  %33 = load i8, ptr %1, align 8, !noalias !36
-  %34 = getelementptr inbounds nuw i8, ptr %1, i64 1
-  %35 = load i16, ptr %34, align 1, !noalias !36
-  %36 = getelementptr inbounds nuw i8, ptr %1, i64 3
-  %37 = load i8, ptr %36, align 1, !noalias !36
-  %38 = getelementptr inbounds nuw i8, ptr %1, i64 4
-  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 1 dereferenceable(12) %2, ptr noundef nonnull align 4 dereferenceable(12) %38, i64 12, i1 false), !tbaa.struct !37, !noalias !36
-  %39 = getelementptr inbounds nuw i8, ptr %1, i64 16
-  %40 = load ptr, ptr %39, align 8, !tbaa !33, !noalias !36
-  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %1) #13, !noalias !15
-  store i8 %33, ptr %4, align 8
-  %41 = getelementptr inbounds nuw i8, ptr %4, i64 1
-  store i16 %35, ptr %41, align 1
-  %42 = getelementptr inbounds nuw i8, ptr %4, i64 3
-  store i8 %37, ptr %42, align 1
-  %43 = getelementptr inbounds nuw i8, ptr %4, i64 4
-  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 4 dereferenceable(12) %43, ptr noundef nonnull align 1 dereferenceable(12) %2, i64 12, i1 false), !tbaa.struct !37
-  %44 = getelementptr inbounds nuw i8, ptr %4, i64 16
-  store ptr %40, ptr %44, align 8, !tbaa !33
+36:                                               ; preds = %34, %29
+  %37 = phi ptr [ %32, %29 ], [ %35, %34 ]
+  %38 = getelementptr inbounds nuw i8, ptr %37, i64 %15
+  store i8 0, ptr %38, align 1, !tbaa !33, !noalias !15
+  %39 = load i8, ptr %1, align 8, !noalias !36
+  %40 = getelementptr inbounds nuw i8, ptr %1, i64 1
+  %41 = load i16, ptr %40, align 1, !noalias !36
+  %42 = getelementptr inbounds nuw i8, ptr %1, i64 3
+  %43 = load i8, ptr %42, align 1, !noalias !36
+  %44 = getelementptr inbounds nuw i8, ptr %1, i64 4
+  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 1 dereferenceable(12) %2, ptr noundef nonnull align 4 dereferenceable(12) %44, i64 12, i1 false), !tbaa.struct !37, !noalias !36
+  %45 = getelementptr inbounds nuw i8, ptr %1, i64 16
+  %46 = load ptr, ptr %45, align 8, !tbaa !33, !noalias !36
+  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %1) #14, !noalias !15
+  store i8 %39, ptr %5, align 8
+  %47 = getelementptr inbounds nuw i8, ptr %5, i64 1
+  store i16 %41, ptr %47, align 1
+  %48 = getelementptr inbounds nuw i8, ptr %5, i64 3
+  store i8 %43, ptr %48, align 1
+  %49 = getelementptr inbounds nuw i8, ptr %5, i64 4
+  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 4 dereferenceable(12) %49, ptr noundef nonnull align 1 dereferenceable(12) %2, i64 12, i1 false), !tbaa.struct !37
+  %50 = getelementptr inbounds nuw i8, ptr %5, i64 16
+  store ptr %46, ptr %50, align 8, !tbaa !33
   call void @llvm.lifetime.end.p0(i64 12, ptr nonnull %2)
-  %45 = and i8 %33, 1
-  %46 = icmp eq i8 %45, 0
-  %47 = select i1 %46, ptr %41, ptr %40
-  %48 = getelementptr inbounds nuw i8, ptr %4, i64 8
-  %49 = load i64, ptr %48, align 8
-  %50 = lshr i8 %33, 1
-  %51 = zext nneg i8 %50 to i64
-  %52 = select i1 %46, i64 %51, i64 %49
-  %53 = call i32 (ptr, ...) @printf(ptr noundef nonnull dereferenceable(1) @.str.4, ptr noundef %47, i64 noundef %52, i64 noundef 8)
-  %54 = load i8, ptr %4, align 8
-  %55 = and i8 %54, 1
-  %56 = icmp eq i8 %55, 0
-  br i1 %56, label %59, label %57
+  %51 = and i8 %39, 1
+  %52 = icmp eq i8 %51, 0
+  %53 = select i1 %52, ptr %47, ptr %46
+  %54 = getelementptr inbounds nuw i8, ptr %5, i64 8
+  %55 = load i64, ptr %54, align 8
+  %56 = lshr i8 %39, 1
+  %57 = zext nneg i8 %56 to i64
+  %58 = select i1 %52, i64 %57, i64 %55
+  %59 = call i32 (ptr, ...) @printf(ptr noundef nonnull dereferenceable(1) @.str.6, ptr noundef %53, i64 noundef %58, i64 noundef 8, ptr noundef nonnull %3, ptr noundef nonnull %11)
+  %60 = load i8, ptr %5, align 8
+  %61 = and i8 %60, 1
+  %62 = icmp eq i8 %61, 0
+  br i1 %62, label %65, label %63
 
-57:                                               ; preds = %30
-  %58 = load ptr, ptr %44, align 8, !tbaa !33
-  call void @_ZdlPv(ptr noundef %58) #16
-  br label %59
+63:                                               ; preds = %36
+  %64 = load ptr, ptr %50, align 8, !tbaa !33
+  call void @_ZdlPv(ptr noundef %64) #17
+  br label %65
 
-59:                                               ; preds = %30, %57
-  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %4) #13
-  call void @llvm.lifetime.end.p0(i64 128, ptr nonnull %3) #13
+65:                                               ; preds = %36, %63
+  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %5) #14
+  call void @llvm.lifetime.end.p0(i64 128, ptr nonnull %4) #14
+  call void @llvm.lifetime.end.p0(i64 128, ptr nonnull %3) #14
   ret i32 0
 }
 
@@ -149,6 +159,12 @@ declare void @llvm.lifetime.start.p0(i64 immarg, ptr captures(none)) #1
 
 ; Function Attrs: nofree nounwind
 declare dso_local noundef i32 @snprintf(ptr noalias noundef writeonly captures(none), i64 noundef, ptr noundef readonly captures(none), ...) local_unnamed_addr #2
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite)
+declare dso_local ptr @strcat(ptr noalias noundef returned, ptr noalias noundef readonly captures(none)) local_unnamed_addr #3
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: read)
+declare dso_local i64 @strlen(ptr noundef captures(none)) local_unnamed_addr #4
 
 ; Function Attrs: nofree nounwind
 declare dso_local noundef i32 @printf(ptr noundef readonly captures(none), ...) local_unnamed_addr #2
@@ -159,83 +175,84 @@ declare dso_local i32 @__gxx_personality_seh0(...)
 declare void @llvm.lifetime.end.p0(i64 immarg, ptr captures(none)) #1
 
 ; Function Attrs: nobuiltin nounwind
-declare dso_local void @_ZdlPv(ptr noundef) local_unnamed_addr #3
+declare dso_local void @_ZdlPv(ptr noundef) local_unnamed_addr #5
 
 ; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite)
-declare void @llvm.memcpy.p0.p0.i64(ptr noalias writeonly captures(none), ptr noalias readonly captures(none), i64, i1 immarg) #4
+declare void @llvm.memcpy.p0.p0.i64(ptr noalias writeonly captures(none), ptr noalias readonly captures(none), i64, i1 immarg) #6
 
 declare dso_local ptr @__cxa_allocate_exception(i64) local_unnamed_addr
 
 ; Function Attrs: cold noreturn
-declare dso_local void @__cxa_throw(ptr, ptr, ptr) local_unnamed_addr #5
+declare dso_local void @__cxa_throw(ptr, ptr, ptr) local_unnamed_addr #7
 
 ; Function Attrs: nobuiltin allocsize(0)
-declare dso_local noundef nonnull ptr @_Znwy(i64 noundef) local_unnamed_addr #6
+declare dso_local noundef nonnull ptr @_Znwy(i64 noundef) local_unnamed_addr #8
 
 declare dso_local void @__cxa_free_exception(ptr) local_unnamed_addr
 
 ; Function Attrs: mustprogress noreturn uwtable
-define linkonce_odr dso_local void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() local_unnamed_addr #7 comdat align 2 {
-  tail call void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef nonnull @.str.34) #14
+define linkonce_odr dso_local void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() local_unnamed_addr #9 comdat align 2 {
+  tail call void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef nonnull @.str.36) #15
   unreachable
 }
 
 ; Function Attrs: inlinehint mustprogress noreturn uwtable
-define linkonce_odr dso_local void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef %0) local_unnamed_addr #8 comdat personality ptr @__gxx_personality_seh0 {
-  %2 = tail call ptr @__cxa_allocate_exception(i64 16) #13
+define linkonce_odr dso_local void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef %0) local_unnamed_addr #10 comdat personality ptr @__gxx_personality_seh0 {
+  %2 = tail call ptr @__cxa_allocate_exception(i64 16) #14
   invoke void @_ZNSt12length_errorC2B8ne210107EPKc(ptr noundef nonnull align 8 dereferenceable(16) %2, ptr noundef %0)
           to label %3 unwind label %4
 
 3:                                                ; preds = %1
-  tail call void @__cxa_throw(ptr nonnull %2, ptr nonnull @_ZTISt12length_error, ptr nonnull @_ZNSt12length_errorD1Ev) #14
+  tail call void @__cxa_throw(ptr nonnull %2, ptr nonnull @_ZTISt12length_error, ptr nonnull @_ZNSt12length_errorD1Ev) #15
   unreachable
 
 4:                                                ; preds = %1
   %5 = landingpad { ptr, i32 }
           cleanup
-  tail call void @__cxa_free_exception(ptr nonnull %2) #13
+  tail call void @__cxa_free_exception(ptr nonnull %2) #14
   resume { ptr, i32 } %5
 }
 
 ; Function Attrs: mustprogress uwtable
-define linkonce_odr dso_local void @_ZNSt12length_errorC2B8ne210107EPKc(ptr noundef nonnull align 8 dereferenceable(16) %0, ptr noundef %1) unnamed_addr #9 comdat align 2 {
+define linkonce_odr dso_local void @_ZNSt12length_errorC2B8ne210107EPKc(ptr noundef nonnull align 8 dereferenceable(16) %0, ptr noundef %1) unnamed_addr #11 comdat align 2 {
   tail call void @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8 dereferenceable(16) %0, ptr noundef %1)
   store ptr getelementptr inbounds nuw inrange(-16, 24) (i8, ptr @_ZTVSt12length_error, i64 16), ptr %0, align 8, !tbaa !38
   ret void
 }
 
 ; Function Attrs: nounwind
-declare dso_local void @_ZNSt12length_errorD1Ev(ptr noundef nonnull align 8 dereferenceable(16)) unnamed_addr #10
+declare dso_local void @_ZNSt12length_errorD1Ev(ptr noundef nonnull align 8 dereferenceable(16)) unnamed_addr #12
 
-declare dso_local void @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8 dereferenceable(16), ptr noundef) unnamed_addr #11
+declare dso_local void @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8 dereferenceable(16), ptr noundef) unnamed_addr #13
 
 ; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: read)
-declare dso_local ptr @memchr(ptr noundef, i32 noundef, i64 noundef) local_unnamed_addr #12
+declare dso_local ptr @memchr(ptr noundef, i32 noundef, i64 noundef) local_unnamed_addr #4
 
 attributes #0 = { mustprogress norecurse uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
 attributes #1 = { mustprogress nocallback nofree nosync nounwind willreturn memory(argmem: readwrite) }
 attributes #2 = { nofree nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #3 = { nobuiltin nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #4 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite) }
-attributes #5 = { cold noreturn }
-attributes #6 = { nobuiltin allocsize(0) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #7 = { mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #8 = { inlinehint mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #9 = { mustprogress uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #10 = { nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #11 = { "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #12 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: read) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #13 = { nounwind }
-attributes #14 = { noreturn }
-attributes #15 = { builtin allocsize(0) }
-attributes #16 = { builtin nounwind }
+attributes #3 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #4 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: read) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #5 = { nobuiltin nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #6 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite) }
+attributes #7 = { cold noreturn }
+attributes #8 = { nobuiltin allocsize(0) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #9 = { mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #10 = { inlinehint mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #11 = { mustprogress uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #12 = { nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #13 = { "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #14 = { nounwind }
+attributes #15 = { noreturn }
+attributes #16 = { builtin allocsize(0) }
+attributes #17 = { builtin nounwind }
 
 !llvm.dbg.cu = !{!0}
 !llvm.module.flags = !{!2, !3, !4, !5, !6}
 !llvm.ident = !{!7}
 
 !0 = distinct !DICompileUnit(language: DW_LANG_C_plus_plus_14, file: !1, producer: "clang version 21.1.7", isOptimized: true, runtimeVersion: 0, emissionKind: NoDebug, splitDebugInlining: false, nameTableKind: None)
-!1 = !DIFile(filename: "Test.cpp", directory: "D:/Code/_CLIB/Tools")
+!1 = !DIFile(filename: "Test/Test.cpp", directory: "D:/Code/_CLIB/Tools")
 !2 = !{i32 2, !"Debug Info Version", i32 3}
 !3 = !{i32 1, !"wchar_size", i32 2}
 !4 = !{i32 8, !"PIC Level", i32 2}
