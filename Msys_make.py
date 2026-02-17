@@ -1,10 +1,14 @@
-import sys, os
+import sys, os, pathlib
 
-try:
-    Path = sys.argv[1]
-except Exception:
-    print("Invalid version")
-    exit(1)
+Path = f"{pathlib.Path.cwd()}" + "\\Msys"
+
+Path = Path.replace("\\", "/")
+
+# try:
+#     Path = sys.argv[1]
+# except Exception:
+#     print("Invalid version")
+#     exit(1)
 
 syss = [
     "Msys",
@@ -14,6 +18,8 @@ syss = [
     "Clang64",
     "Clang64Arm",
 ]
+
+print("This dir: ", Path)
 
 packages = [
     f"msys2_shell.cmd -defterm -here -no-start -msys -c \"cd {Path} && makepkg -Cf >null 2>&1\"",
