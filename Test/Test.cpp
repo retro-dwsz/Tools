@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <format>
-#include <string.h>
 #include <string>
+#include <string.h>
 
 #if defined(__clang__) && defined(__clang_major__)
     #define COMPILER    "Clang"
