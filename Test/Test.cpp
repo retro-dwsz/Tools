@@ -36,7 +36,7 @@ int main(){
     std::string tx = std::format("{}", t3);
 
     std::printf(
-        "%s\n\n> That string aboce is %llu char long and took %llu bytes of your memory\n> Pointers are at 0x%p..0x%p",
+        "%s\n\n> That string above is %llu char long and took %llu bytes of your memory\n> Pointers are at 0x%p..0x%p",
         tx.c_str(),
         tx.length(),
         sizeof(tx.c_str()),
