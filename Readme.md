@@ -435,8 +435,8 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
 
         /** Helper **/
         inline idx Normalize(i64 i) ;
-        idx ivec_size;       // Actual size
-        idx ivec_capacity;   // How many elements that can be fitted without reallocation
+        idx ivec_size;
+        idx ivec_capacity;
         
         public:
         
@@ -461,187 +461,345 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         void reserve(const idx Size);
         void resize(const idx Size, const T& fill = T{});
 
-        void append(const T& Element);      // Single element (the most basic thing)
-        void append(const T&& Element);     // Single element (but lvalue)
-        void append(const ivec<T>& iv);     // ivec->ivec     ivec<i32> a{1, 2, 3}.append(ivec<i32>{4, 5, 6}) == ivec<i32> a{1, 2, 3, {4, 5, 6}}  (obviously, duh)
-        void append(const vec<T>& v);       // vec->ivec      ivec<i32> a{1, 2, 3}.append(vec<i32>{4, 5, 6}) == ivec<i32> a{1, 2, 3, {4, 5, 6}} (auto convert vec->ivec)
+        void append(const T& Element);
+        void append(const T&& Element);
+        void append(const ivec<T>& iv);
+        void append(const vec<T>& v);
         
-        void extend(const ivec<T>& v);      // Extend using elements from ivector   ivec<i32> a{1, 2, 3}.Extend(ivec<i32>{1, 2, 3}) == ivec<i32> a{1, 2, 3, 4, 5, 6}
-        void extend(const vec<T>& v);       // Extend using elements from vector    ivec<i32> a{1, 2, 3}.Extend(vec<i32>{1, 2, 3}) == ivec<i32> a{1, 2, 3, 4, 5, 6}
+        void extend(const ivec<T>& v);
+        void extend(const vec<T>& v);
 
-        idx GetSize() const noexcept;       // Current element count
+        idx GetSize() const noexcept;
 
         /** Getter and setter **/
-        T pop(const idx& Index);            // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4} 
-        T& operator[](idx Index);           // setter + getter
+        T pop(const idx& Index);
+        T& operator[](idx Index);
 
-        const T& operator[](idx Index) const;        // getter (read-only)
-        ivec<T>& operator=(const ivec& Other);       // setter (write-only)
+        const T& operator[](idx Index) const;
+        ivec<T>& operator=(const ivec& Other);
 
         /** Advanced **/
-        void sliceInl(i64 x, i64 y);       // Slice x<->y
-        void sliceIln(i64 n);              // Slice First->n or n<-Last
-        ivec<T> slice(i64 x, i64 y);       // Slice x<->y, then return
-        ivec<T> slice(i64 n);              // Slice First->n or n<-Last, then return
+        void sliceInl(i64 x, i64 y);
+        void sliceIln(i64 n);
+        ivec<T> slice(i64 x, i64 y);
+        ivec<T> slice(i64 n);
         
-        void clear();                                // Nuke all elements, keep slots
-        bool isEmpty();                              // Is this empty?
+        void clear();
+        bool isEmpty();
 
-        void appendFirst(const T& Element);          // Append from first index
-        void appendAt(const T& Element, idx At);     // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}    
-        bool contains(const T& Element);             // Find element, return true or false
-        idx find(const T& Element);                  // Find element, return index 
-        idx findFreq(const T& Element);              // Find element, return how many appeared
-        pair<idx, vec<T>> findAll(const T& Element); // Find element, return how many appeared and indexes
+        void appendFirst(const T& Element);
+        void appendAt(const T& Element, idx At);
+        bool contains(const T& Element);
+        idx find(const T& Element);
+        idx findFreq(const T& Element);
+        pair<idx, vec<T>> findAll(const T& Element);
         
         /* Orders */
-        ivec<T> shuffle();                 // return shuffling
-        void shuffleInl();                 // inline shuffling
-        ivec<T> sort();                    // return sorting with std::sort
-        void sortInl();                    // inline sorting with std::sort
-        ivec<T> rsort();                   // return reverse sorting with std::sort
-        void rsortInl();                   // inline reverse sorting with std::sort
-        ivec<T> reverse();                 // return reverse order
-        void reverseInl();                 // inline reverse order
-        ivec<T> erase(T* pos);             // return erased specific
-        void eraseInl(T* pos);             // inline erased specific
-        ivec<T> erase(T* begin, T* end);   // return erased range
-        void eraseInl(T* begin, T* end);   // inline erased range
-        ivec<T> uniques(idx n = 1);        // return remove duplicated values
-        void uniquesInl(idx n = 1);        // inline remove duplicated values
+        ivec<T> shuffle();
+        void shuffleInl();
         
-        T popFirst();                       // get first element, then remove it
-        T popLast();                        // get last element, then remove it
+        ivec<T> sort();
+        void sortInl();
+        
+        ivec<T> rsort();
+        void rsortInl();
+        
+        ivec<T> reverse();
+        void reverseInl();
+        
+        ivec<T> erase(T* pos);
+        void eraseInl(T* pos);
+        
+        ivec<T> erase(T* begin, T* end);
+        void eraseInl(T* begin, T* end);
 
-        u64 memory();                       // total object size in bytes
+        ivec<T> uniques(idx n = 1);
+        void uniquesInl(idx n = 1);
+        
+        T popFirst();
+        T popLast();
+
+        u64 memory();
 
         template<typename... Args>
-        void emplace(Args&&... args);           // Build and append object on-fly
+        void emplace(Args&&... args);
         
         template<typename... Args>
-        void emplaceFront(Args&&... args);      // Build and append in front object on-fly
+        void emplaceFront(Args&&... args);
         
         template<typename... Args>
-        void emplaceAt(Args&&... args, idx n);  // Build and append in Nth index object on-fly
+        void emplaceAt(Args&&... args, idx n);
 
-        str fstr();          // Make to string literally (almost) anything
+        str fstr();
 
         /** Iterators **/
-        T first();           // First index getter
-        T front();           // First index getter (legacy)
-        T* begin();          // First iterator
-        const T* cbegin();   // First iterator
-        T& refbegin();       // First iterator ref
+        T first();
+        T front();
+        T* begin();
+        const T* cbegin();
+        T& refbegin();
 
-        T last();            // Last index getter
-        T back();            // Last index getter (legacy)
-        T* end();            // Last iterator
-        const T* cend();     // Last iterator
-        T& refend();         // Last iterator ref
+        T last();
+        T back();
+        T* end();
+        const T* cend();
+        T& refend();
 
         /** Conversion **/
-        vec<T> toVector();   // To std::vector
-        span<T> toSpan();    // To std::span
+        vec<T> toVector();
+        span<T> toSpan();
         template <idx S>    
-        arr<T, S> toArray(); // To std::arrat<T, S>
-        T* toCArr();         // To C-Style array
+        arr<T, S> toArray();
+        T* toCArr();
 
         /* Legacy functions */
-        void push_back(const T& Element);       // Add Single element (legacy)
-        void push_front(const T& Element);      // Append from first index (Legacy-ish)
+        void push_back(const T& Element);
+        void push_front(const T& Element);
 
-        T at(const idx Index);                  // getter (legacy)
+        T at(const idx Index);
 
-        void insert(const ivec<T>& v);          // Extend using elemnent from ivector (legacy)
-        void insert(const vec<T>& v);           // Extend using elemnent from vector (legacy)
-        void insert(const T& Element, idx At);  // Append at Nth index (legacy)
-        void insert(const T* A, const T* B);    // Extend using elemnent from any iterable (legacy iterator)
+        void insert(const ivec<T>& v);
+        void insert(const vec<T>& v);
+        void insert(const T& Element, idx At);
+        void insert(const T* A, const T* B);
     };
     ```
 
-    Yes, the function name and comments can already tell itself what are they doing
+    Yes, the function name can already tell itself what are they doing. But here's the breakdown if you want it anyway
+
+- ### Breakdown
+    Let's start with the private functions
+
+    1. `ivec_data` Current array
+    2. `ivec_size` Current size
+    3. `ivec_capacity` Current capacity
+    4. `Normalize` Normalizer `i64` to `idx`
+
+    And then public, we have a lot of sections
+
+    ### 1. Data utility
+    1. `data()` returns current array (raw, C-Style array)
+    2. `size()` returns current size
+    3. `capacity()` return current capacity
+    
+    > ### Warning
+    > If you think size is the same as capacity, then no, size is current element count, capacity is current element count + reserved slots. So size and capacity will not alway be the same.
+
+
+    ### 2. Constructors
+
+    4. `ivec();` The default constructor with nothing in it
+    5. `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
+    6. `ivec(const vec<T>& Data);` Constructor to auto convert `std::vector` to `Tools::ivec`
+    7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
+    8. `ivec(ivec&& other);` Same as 4th but you write it inplace
+
+    ### 3. Destructor
+    
+    06. `~ivec()` to remove everything
+
+    ### 4. Basic functions
+
+    9. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
+    10. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
+    11. `void append(const T& Element);` Push elements to back 
+    12. `void append(const T&& Element);` Push elements to back by rvalue
+    13. `void append(const ivec<T>& iv);` Append `ivec` to current `ivec`, example `ivec{1, 2, 3}.append(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, ivec{4, 5, 6}}`
+    14. `void append(const vec<T>& v);` Append `vec` to current `ivec`, example is same as 11th
+        
+    15. `void extend(const ivec<T>& v);` Extend with `ivec` to current `ivec`, example `ivec a{1, 2, 3}.extend(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, 4, 5, 6}`
+    16. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
+    17. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
+
+    ### 5. Advanced functions
+
+    18. `T pop(const idx& Index);` To get and remove immediately selected index
+    19. `T& operator[](idx Index);` To get selected index with the `[]` thing
+    20. `const T& operator[](idx Index) const;` Same as before, but make it constant
+    21. `ivec<T>& operator=(const ivec& Other);` Setter to selected index
+
+
+    ### 6. Advanced functions
+    
+    > ### Note
+    > Default function is return new, suffix -`Inl` indicates inline
+
+    22. `void sliceInl(i64 x, i64 y);` Slice inlinely from range `x..y`
+    23. `void sliceInl(i64 n);` Slice `0..n` or `n..Size`. Positive will iterate from 0 to `n` (forward), negative will iterate from `ivec_size` to `n` (backward)
+    24. `ivec<T> slice(i64 x, i64 y);` Same as 20, but return new ivec
+    25. `ivec<T> slice(i64 n);` Same as 21, but return new ivec
+    26. `void clear();` To nuke everything inside
+    27. `bool isEmpty();` Check is this thing is empty or no
+
+    28. `void appendFirst(const T& Element);` Append an element at 1st index
+    29. `void appendAt(const T& Element, idx At);` Append an element at specified index
+    30. `bool contains(const T& Element);` Check if this ivec contains specific Element
+    31. `idx find(const T& Element);` Find index of an element 
+    32. `idx findFreq(const T& Element);` Find frequency of selected element
+    33. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
+
+    ### 7. Orders & Find
+
+    34. `ivec<T> shuffle();` Shuffle current ivec, then return new
+    35. `void shuffleInl();` Shuffle current ivec inlinely
+    36. `ivec<T> sort();` Sort current ivec, then return new
+    37. `void sortInl();` Sort current ivec inlinely
+    38. `ivec<T> rsort();` Sort, then reverse current ivec, then return new
+    39. `void rsortInl();` Sort, then reverse current ivec inlinely
+    40. `ivec<T> reverse();` Reverse current ivec, then return new
+    41. `void reverseInl();` Reverse current ivec inlinely
+    42. `ivec<T> erase(idx pos);` (*) Erase specific position (unlike pop, this one is not return selected index(es)), then return new
+    43. `void eraseInl(idx pos);` (*) Erase specific position inlinely
+    44. `ivec<T> erase(idx begin, idx end);` (*) Erase specific range, then return new
+    45. `void eraseInl(idx begin, idx end);` (*) Erase specific range inlinely
+    46. `ivec<T> uniques(idx n = 1);` Make elements appeared maximum `n` times, then return new; `n=1` means everything only appear once
+    47. `void uniquesInl(idx n = 1);` Make elements appeared maximum `n` times inlinely
+    48. `T popFirst();` Get index 0 and remove immediately
+    49. `T popLast();` Get index last and remove immidiately
+    50. `u64 memory();` Get total memory used for current array
+    51. `void emplace(Args&&... args);` Build object in array on-fly at last index
+    53. `void emplaceFront(Args&&... args);` Build object in array on-fly at first index
+    54. `void emplaceAt(Args&&... args, idx n);` Build object in array on-fly at specific index
+
+    > ### Note*
+    > `slice` and `erase` might be simmilar, but it's different! Example:
+    > ```cpp
+    > ivec<i32> a{11, 12, 13, 14, 15, 16, 17, 18, 19, 110};
+    > 
+    > // Keep only a[1..4], delete everything else
+    > ivec<i32> a_s = a.slice(1, 4);  // [12, 13, 14, 15]
+    > fmt::println("{}", a_s);
+    > 
+    > // Delete only a[1..4], keep everything else
+    > ivec<i32> a_e = a.erase(1, 5);  // [11, 16, 17, 18, 19, 110]
+    > fmt::println("{}", a_e);
+    > ```
+    > ㅤ
+
+    ### 8. Conversion
+    54. `str fstr();` Formatted STRing, make everything everything inside and (almost) every data type into a string
+    55. `vec<T> toVector();` `ivec` to `std::vector` converter
+    56. `span<T> toSpan();` `ivec` to `std::span` converter
+    57. `arr<T, S> toArray();` `ivec` to `std::array` converter
+    58. `T* toCArr();` `ivec` to raw pointer converter
+    
+    ### 9. Iterators
+    59. `T first();` First index getter
+    60. `T first(idx n);` First + n index getter
+    61. `T front();` First index getter (legacy choise of diction)
+    62. `T* begin();` First index iterator
+    63. `const T* cbegin` Constant first index iterator
+    64. `T& refbegin();` Reference of first index iterator
+        
+    65. `T last();` Last index getter
+    66. `T last(idx n);` Last - n index getter
+    67. `T back();` Last index getter (legacy choise of diction)
+    68. `T* end();` Last index iterator 
+    69. `const T* cend();` Constant last index iterator
+    70. `T& refend();` Reference of last index iterator
+
+    ### 10. Legacies
+
+    This one is to make renaming `vec` to `ivec` possible without breaking current `vec` codes, but only some, not everything.
+    
+    71. `void push_back(const T& Element);` The same as `std::vector<T>::push_back`
+    72. `void push_front(const T& Element);` Not standard from STL, but STL-isch choise of diction
+    73. `T at(const idx Index);` Specific index getter, I have absolutely zero why `.at` even exist, but oké
+    74. `ivec<T> erase(T* pos);` Specific index eraser with iterator, then return new
+    75. `void eraseInl(T* pos);` Specific index eraser with iterator inlinely
+    76. `ivec<T> erase(T* begin, T* end);` Range eraser with iterator, then return new
+    77. `void eraseInl(T* begin, T* end);` Range erasee with iterator inlinely
+    78. `void insert(const ivec<T>& v);` Extender like from `std::range::insert` specificly for `ivec`
+    79. `void insert(const vec<T>& v);` Extender like from `std::range::insert` specificly for `std::vector`
+    80. `void insert(const T& Element, idx At);` Append to specific index
+    81. `void insert(const T* A, const T* B);` Extender like from `std::vector<T>::insert` with iterators, yes, you can extend current container from other containers
+
+    > ### Note
+    > `erase` functions from `advanced` are the wrapper from `legacy` \
+    > ㅤ
 
 # `VII`. Lib `Tools.Linking`
 
-Code:
-```cpp
-namespace Tools::Linking {
-    str GetFile(
-        const str& File                 /* Base name of the .dll*/
-    );
-
-    T LoadSymbol(
-        const HMODULE lib,              /* File to be loaded */
-        const str& EntryPoint           /* Entry point */
-    );
-
-    // Call function in .dll with any args
-    template<typename Return, typename... Args>
-    Return CallFunction(                /* Function I */
-        str File,                       /* File to find */
-        str EntryPoint,                 /* Function to find (disable magle!) */
-        Args... args                    /* Args */
-    );
-
-    // Call dll with str msg
-    void CallFunctionA(                 /* Function II  */
-        str& File,                      /* File to find */
-        const str& Msg,                 /* Message to forward (str) */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
-        const int TerminalSize = 50,    /* Optional Terminal size */
-        const bool debug = true         /* Optional Debugging log */
-    );
-
-    // Call DLL with wstr
-    void CallFunctionAW(                /* Function II  */
-        str& File,                      /* File to find */
-        const wstr& MsgW,               /* Message to forward (wstr) */
-        const str& EntryPoint,          /* Function to call (auto mangle on main.cpp) */
-        const int TerminalSize = 50,    /* Optional Terminal size */
-        const bool debug = true         /* Optional Debugging log */
-    );
-
-    // Call dll without any args
-    void CallFunctionB(                 /* Function III */
-        str& File,                      /* File to find */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
-        const int TerminalSize = 50,    /* Optional Terminal size */
-        const bool debug = true         /* Optional Debugging log */
-    );
-
-    // Call dll file with C-like args (int argc, const char** argv)
-    int CallFunctionC(                  /* Function IV A */
-        str& File,                      /* File to find */
-        const str& EntryPoint,          /* Function to call (disable magle!) */
-    //  const int Argc                  /* C argc, not really necessary */
-    //  const char** Argv,              /* C argv, not really safe, mismatch can lead to crash */
-        const vec<str> Args,            /* C argv (+argc), but safer */
-        const int TerminalSize = 50,    /* Optional Terminal size */
-        const bool debug = true         /* Optional Debugging log */
-    );
-
-    // Slightly safer CallFunctionC
-    int CallFunctionC_s(                /* Function IV B */
-        const str& File,                /* File to find */
-        const str& EntryPoint,          /* Finnction to call (disable magle!) */
-        const vec<str>& Args,           /* C Argv in vector */
-        int TerminalSize = 50,          /* Optional Terminal size */
-        bool debug = true               /* Optional Debugging log */
-    );
-
-    #if defined(ITANIUM_ENABLED)
-    template <typename T>
-    str RemoveSignature(
-        const str& Func,                /* Mangled function name with itanium format */
-        bool WithArgs = true            /* Include args or not*/
-    );
-    #endif
-}
-```
-
 This is a windows-specific tool to call a .dll during runtime. 
 
-Functions:
+- ### API Codes:
+    ```cpp
+    namespace Tools::Linking {
+        str GetFile(
+            const str& File                 /* Base name of the .dll*/
+        );
+
+        T LoadSymbol(
+            const HMODULE lib,              /* File to be loaded */
+            const str& EntryPoint           /* Entry point */
+        );
+
+        // Call function in .dll with any args
+        template<typename Return, typename... Args>
+        Return CallFunction(                /* Function I */
+            str File,                       /* File to find */
+            str EntryPoint,                 /* Function to find (disable magle!) */
+            Args... args                    /* Args */
+        );
+
+        // Call dll with str msg
+        void CallFunctionA(                 /* Function II  */
+            str& File,                      /* File to find */
+            const str& Msg,                 /* Message to forward (str) */
+            const str& EntryPoint,          /* Function to call (disable magle!) */
+            const int TerminalSize = 50,    /* Optional Terminal size */
+            const bool debug = true         /* Optional Debugging log */
+        );
+
+        // Call DLL with wstr
+        void CallFunctionAW(                /* Function II  */
+            str& File,                      /* File to find */
+            const wstr& MsgW,               /* Message to forward (wstr) */
+            const str& EntryPoint,          /* Function to call (auto mangle on main.cpp) */
+            const int TerminalSize = 50,    /* Optional Terminal size */
+            const bool debug = true         /* Optional Debugging log */
+        );
+
+        // Call dll without any args
+        void CallFunctionB(                 /* Function III */
+            str& File,                      /* File to find */
+            const str& EntryPoint,          /* Function to call (disable magle!) */
+            const int TerminalSize = 50,    /* Optional Terminal size */
+            const bool debug = true         /* Optional Debugging log */
+        );
+
+        // Call dll file with C-like args (int argc, const char** argv)
+        int CallFunctionC(                  /* Function IV A */
+            str& File,                      /* File to find */
+            const str& EntryPoint,          /* Function to call (disable magle!) */
+        //  const int Argc                  /* C argc, not really necessary */
+        //  const char** Argv,              /* C argv, not really safe, mismatch can lead to crash */
+            const vec<str> Args,            /* C argv (+argc), but safer */
+            const int TerminalSize = 50,    /* Optional Terminal size */
+            const bool debug = true         /* Optional Debugging log */
+        );
+
+        // Slightly safer CallFunctionC
+        int CallFunctionC_s(                /* Function IV B */
+            const str& File,                /* File to find */
+            const str& EntryPoint,          /* Finnction to call (disable magle!) */
+            const vec<str>& Args,           /* C Argv in vector */
+            int TerminalSize = 50,          /* Optional Terminal size */
+            bool debug = true               /* Optional Debugging log */
+        );
+
+        #if defined(ITANIUM_ENABLED)
+        template <typename T>
+        str RemoveSignature(
+            const str& Func,                /* Mangled function name with itanium format */
+            bool WithArgs = true            /* Include args or not*/
+        );
+        #endif
+    }
+    ```
+
+
+### Functions:
 ### 1. `GetFile`
 - ### API Code
     ```cpp
@@ -1129,7 +1287,7 @@ Recommended DLL Signature generation
     - `Scattered Bundled` returns multiple random number in `std::vector<std::vector<T>>` but with different count of each sub-vector
 
 - ### Note:
-    - I **_don't_** recommend using singles function inside a loop, instead, generate multiple value then iterate through that container instead
+    - I **_don't_** recommend using singles function inside a loop, instead, generate multiple value, then iterate through that container instead
 
 ---
 

@@ -14,7 +14,7 @@ void Tools::ivec<T>::sliceInl(i64 x, i64 y) {
 };
 
 template <typename T>
-void Tools::ivec<T>::sliceIln(i64 n) {
+void Tools::ivec<T>::sliceInl(i64 n) {
     *this = slice(n);
 }
 
@@ -231,6 +231,28 @@ void Tools::ivec<T>::eraseInl(T* pos){
     --ivec_size;
 }
 
+/* Eraser modern */
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(idx pos){
+    return this->erase(this->begin() + pos);
+}
+
+template <typename T>
+Tools::ivec<T> Tools::ivec<T>::erase(idx begin, idx end){
+    return this->erase(this->begin() + begin, this->begin() + end);
+}
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(idx pos) {
+    this->eraseInl(this->begin() + pos);
+}
+
+template <typename T>
+void Tools::ivec<T>::eraseInl(idx begin, idx end){
+    this->eraseInl(this->begin() + begin, this->begin() + end);
+}
+
+
 template <typename T>
 void Tools::ivec<T>::eraseInl(T* first, T* last){
     if (!first || !last) return;
@@ -289,25 +311,6 @@ void Tools::ivec<T>::emplaceAt(Args&&... args, idx n) {
     new (ivec_data + n) T(std::forward<Args>(args)...);
 
     ++ivec_size;
-}
-
-template <typename T>
-template<typename... Args>
-void Tools::ivec<T>::emplaceFront(Args&&... args) {
-    emplaceAt(std::forward<Args>(args)..., 0);
-}
-
-template <typename T>
-str Tools::ivec<T>::fstr() {
-    str out = "[";
-
-    for (idx i = 0; i < ivec_size; ++i) {
-        out += std::format("{}", ivec_data[i]);
-        if (i + 1 < ivec_size) out += ", ";
-    }
-
-    out += "]";
-    return out;
 }
 
 /* Remove duplicates (make all unique) */

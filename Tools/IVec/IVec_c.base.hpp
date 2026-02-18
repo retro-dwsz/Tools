@@ -68,7 +68,7 @@ class ivec {
 
     /** Advanced **/
     void sliceInl(i64 x, i64 y);       // Slice x<->y
-    void sliceIln(i64 n);              // Slice First->n or n<-Last
+    void sliceInl(i64 n);              // Slice First->n or n<-Last
     ivec<T> slice(i64 x, i64 y);       // Slice x<->y, then return
     ivec<T> slice(i64 n);              // Slice First->n or n<-Last, then return
     
@@ -91,10 +91,10 @@ class ivec {
     void rsortInl();                   // inline reverse sorting with std::sort
     ivec<T> reverse();                 // return reverse order
     void reverseInl();                 // inline reverse order
-    ivec<T> erase(T* pos);             // return erased specific
-    void eraseInl(T* pos);             // inline erased specific
-    ivec<T> erase(T* begin, T* end);   // return erased range
-    void eraseInl(T* begin, T* end);   // inline erased range
+    ivec<T> erase(idx pos);             // return erased specific
+    void eraseInl(idx pos);             // inline erased specific
+    ivec<T> erase(idx begin, idx end);  // return erased range
+    void eraseInl(idx begin, idx end);  // inline erased range
     ivec<T> uniques(idx n = 1);        // return remove duplicated values
     void uniquesInl(idx n = 1);        // inline remove duplicated values
     
@@ -112,27 +112,28 @@ class ivec {
     template<typename... Args>
     void emplaceAt(Args&&... args, idx n);  // Build and append in Nth index object on-fly
 
-    str fstr();          // Make to string literally (almost) anything
-
-    /** Iterators **/
-    T first();           // First index getter
-    T front();           // First index getter (legacy)
-    T* begin();          // First iterator
-    const T* cbegin();   // First iterator
-    T& refbegin();       // First iterator ref
-
-    T last();            // Last index getter
-    T back();            // Last index getter (legacy)
-    T* end();            // Last iterator
-    const T* cend();     // Last iterator
-    T& refend();         // Last iterator ref
-
     /** Conversion **/
+    str fstr();          // Make to string literally (almost) anything
     vec<T> toVector();   // To std::vector
     span<T> toSpan();    // To std::span
     template <idx S>    
     arr<T, S> toArray(); // To std::arrat<T, S>
     T* toCArr();         // To C-Style array
+    
+    /** Iterators **/
+    T first();           // First index getter
+    T first(idx n);      // First + n index getter
+    T front();           // First index getter (legacy)
+    T* begin();          // First iterator
+    const T* cbegin();   // Constant First iterator
+    T& refbegin();       // First iterator ref
+    
+    T last();            // Last index getter
+    T last(idx n);       // Last - n index getter
+    T back();            // Last index getter (legacy)
+    T* end();            // Last iterator
+    const T* cend();     // Constant Last iterator
+    T& refend();         // Last iterator ref
 
     // struct test {
     //     static cstr Test(){
@@ -145,6 +146,11 @@ class ivec {
     void push_front(const T& Element);      // Append from first index (Legacy-ish)
 
     T at(const idx Index);                  // getter (legacy)
+
+    ivec<T> erase(T* pos);                  // return erased specific
+    void eraseInl(T* pos);                  // inline erased specific
+    ivec<T> erase(T* begin, T* end);        // return erased range
+    void eraseInl(T* begin, T* end);        // inline erased range
 
     void insert(const ivec<T>& v);          // Extend using elemnent from ivector (legacy)
     void insert(const vec<T>& v);           // Extend using elemnent from vector (legacy)
