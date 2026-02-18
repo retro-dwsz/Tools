@@ -1,5 +1,6 @@
 #pragma once
 
+#include <format>
 #include "IVec_c.base.hpp"
 
 /* To Vector */
@@ -48,4 +49,24 @@ T* Tools::ivec<T>::toCArr() {
         new (out + i) T(ivec_data[i]);
     }
     return out; 
+}
+
+/* Convert almost everything to string */
+template <typename T>
+template<typename... Args>
+void Tools::ivec<T>::emplaceFront(Args&&... args) {
+    emplaceAt(std::forward<Args>(args)..., 0);
+}
+
+template <typename T>
+str Tools::ivec<T>::fstr() {
+    str out = "[";
+
+    for (idx i = 0; i < ivec_size; ++i) {
+        out += std::format("{}", ivec_data[i]);
+        if (i + 1 < ivec_size) out += ", ";
+    }
+
+    out += "]";
+    return out;
 }

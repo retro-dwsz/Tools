@@ -9,6 +9,11 @@ inline T Tools::ivec<T>::first() {
 }
 
 template <typename T>
+inline T Tools::ivec<T>::first(idx n) {
+    return ivec_data[0 + n];
+}
+
+template <typename T>
 inline T Tools::ivec<T>::front() {
     return first();
 }
@@ -17,6 +22,11 @@ inline T Tools::ivec<T>::front() {
 template <typename T>
 inline T Tools::ivec<T>::last() {
     return ivec_data[ivec_size-1];
+}
+
+template <typename T>
+inline T Tools::ivec<T>::last(idx n) {
+    return ivec_data[ivec_size-1 - n];
 }
 
 template <typename T>
