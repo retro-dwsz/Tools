@@ -1,371 +1,293 @@
-	.def	@feat.00;
-	.scl	3;
-	.type	0;
-	.endef
-	.globl	@feat.00
-@feat.00 = 0
-	.file	"Test.cpp"
-	.def	main;
-	.scl	2;
-	.type	32;
-	.endef
-	.text
-	.globl	main                            # -- Begin function main
-	.p2align	4
-main:                                   # @main
-.seh_proc main
-# %bb.0:
-	pushq	%rbp
-	.seh_pushreg %rbp
-	pushq	%r15
-	.seh_pushreg %r15
-	pushq	%r14
-	.seh_pushreg %r14
-	pushq	%r12
-	.seh_pushreg %r12
-	pushq	%rsi
-	.seh_pushreg %rsi
-	pushq	%rdi
-	.seh_pushreg %rdi
-	pushq	%rbx
-	.seh_pushreg %rbx
-	subq	$352, %rsp                      # imm = 0x160
-	.seh_stackalloc 352
-	leaq	128(%rsp), %rbp
-	.seh_setframe %rbp, 128
-	.seh_endprologue
-	callq	__main
-	leaq	.L.str.1(%rip), %rax
-	movq	%rax, 32(%rsp)
-	leaq	.L.str.2(%rip), %r8
-	leaq	.L.str(%rip), %r9
-	leaq	64(%rbp), %rsi
-	movl	$128, %edx
-	movq	%rsi, %rcx
-	callq	snprintf
-	movl	$202302, 40(%rsp)               # imm = 0x3163E
-	movl	$21, 32(%rsp)
-	leaq	.L.str.3(%rip), %r8
-	leaq	.L.str.4(%rip), %r9
-	leaq	-64(%rbp), %rdi
-	movl	$128, %edx
-	movq	%rdi, %rcx
-	callq	snprintf
-	movq	%rsi, %rcx
-	movq	%rdi, %rdx
-	callq	strcat
-	movq	%rsi, %rcx
-	callq	strlen
-	movq	%rax, %rdi
-	movl	$128, %r8d
-	movq	%rsi, %rcx
-	xorl	%edx, %edx
-	callq	memchr
-	movq	%rax, %rbx
-	subq	%rsi, %rbx
-	cmpq	$-9, %rbx
-	jae	.LBB0_8
-# %bb.1:
-	leaq	(%rdi,%rsi), %r12
-	decq	%r12
-	leaq	201(%rbp), %rdi
-	cmpq	$23, %rbx
-	jae	.LBB0_2
-# %bb.3:
-	leal	(%rbx,%rbx), %ecx
-	movb	%cl, 200(%rbp)
-	movq	%rdi, %r14
-	cmpq	%rsi, %rax
-	jne	.LBB0_4
-	jmp	.LBB0_5
-.LBB0_2:
-	movq	%rbx, %rax
-	orq	$7, %rax
-	leaq	1(%rax), %rcx
-	cmpq	$23, %rax
-	movl	$26, %r15d
-	cmovneq	%rcx, %r15
-	movq	%r15, %rcx
-	callq	_Znwy
-	movq	%rax, %r14
-	movq	%rax, 216(%rbp)
-	incq	%r15
-	movq	%r15, 200(%rbp)
-	movq	%rbx, 208(%rbp)
-.LBB0_4:
-	leaq	64(%rbp), %rdx
-	movq	%r14, %rcx
-	movq	%rbx, %r8
-	callq	memcpy
-.LBB0_5:
-	movb	$0, (%r14,%rbx)
-	movzbl	200(%rbp), %eax
-	movzwl	201(%rbp), %ecx
-	movzbl	203(%rbp), %edx
-	movl	212(%rbp), %r8d
-	movq	204(%rbp), %r9
-	movq	216(%rbp), %r10
-	movb	%al, 200(%rbp)
-	movw	%cx, 201(%rbp)
-	movb	%dl, 203(%rbp)
-	movq	%r9, 204(%rbp)
-	movl	%r8d, 212(%rbp)
-	movl	%eax, %r8d
-	shrl	%r8d
-	testb	$1, %al
-	cmovneq	%r10, %rdi
-	movq	%r10, 216(%rbp)
-	cmovneq	208(%rbp), %r8
-	movq	%r12, 40(%rsp)
-	movq	%rsi, 32(%rsp)
-	leaq	.L.str.6(%rip), %rcx
-	movl	$8, %r9d
-	movq	%rdi, %rdx
-	callq	printf
-	testb	$1, 200(%rbp)
-	je	.LBB0_7
-# %bb.6:
-	movq	216(%rbp), %rcx
-	callq	_ZdlPv
-.LBB0_7:
-	xorl	%eax, %eax
-	.seh_startepilogue
-	addq	$352, %rsp                      # imm = 0x160
-	popq	%rbx
-	popq	%rdi
-	popq	%rsi
-	popq	%r12
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	.seh_endepilogue
-	retq
-.LBB0_8:
-	callq	_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev
-	int3
-	.seh_endproc
-                                        # -- End function
-	.def	_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev;
-	.scl	2;
-	.type	32;
-	.endef
-	.section	.text$_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev,"xr",discard,_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev
-	.globl	_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev # -- Begin function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev
-	.p2align	4
-_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev: # @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev
-.seh_proc _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev
-# %bb.0:
-	subq	$40, %rsp
-	.seh_stackalloc 40
-	.seh_endprologue
-	leaq	.L.str.36(%rip), %rcx
-	callq	_ZNSt3__120__throw_length_errorB8ne210107EPKc
-	int3
-	.seh_endproc
-                                        # -- End function
-	.def	_ZNSt3__120__throw_length_errorB8ne210107EPKc;
-	.scl	2;
-	.type	32;
-	.endef
-	.section	.text$_ZNSt3__120__throw_length_errorB8ne210107EPKc,"xr",discard,_ZNSt3__120__throw_length_errorB8ne210107EPKc
-	.globl	_ZNSt3__120__throw_length_errorB8ne210107EPKc # -- Begin function _ZNSt3__120__throw_length_errorB8ne210107EPKc
-	.p2align	4
-_ZNSt3__120__throw_length_errorB8ne210107EPKc: # @_ZNSt3__120__throw_length_errorB8ne210107EPKc
-.Lfunc_begin0:
-.seh_proc _ZNSt3__120__throw_length_errorB8ne210107EPKc
-	.seh_handler __gxx_personality_seh0, @unwind, @except
-# %bb.0:
-	pushq	%rsi
-	.seh_pushreg %rsi
-	pushq	%rdi
-	.seh_pushreg %rdi
-	subq	$40, %rsp
-	.seh_stackalloc 40
-	.seh_endprologue
-	movq	%rcx, %rdi
-	movl	$16, %ecx
-	callq	__cxa_allocate_exception
-	movq	%rax, %rsi
-.Ltmp0:
-	movq	%rax, %rcx
-	movq	%rdi, %rdx
-	callq	_ZNSt12length_errorC2B8ne210107EPKc
-.Ltmp1:
-# %bb.1:
-	leaq	_ZTISt12length_error(%rip), %rdx
-	leaq	_ZNSt12length_errorD1Ev(%rip), %r8
-	movq	%rsi, %rcx
-	callq	__cxa_throw
-.LBB2_2:
-.Ltmp2:
-	movq	%rax, %rdi
-	movq	%rsi, %rcx
-	callq	__cxa_free_exception
-	movq	%rdi, %rcx
-	callq	_Unwind_Resume
-	int3
-.Lfunc_end0:
-	.seh_handlerdata
-	.section	.text$_ZNSt3__120__throw_length_errorB8ne210107EPKc,"xr",discard,_ZNSt3__120__throw_length_errorB8ne210107EPKc
-	.seh_endproc
-	.section	.xdata$_ZNSt3__120__throw_length_errorB8ne210107EPKc,"dr"
-	.linkonce	discard
-	.p2align	2, 0x0
-GCC_except_table2:
-.Lexception0:
-	.byte	255                             # @LPStart Encoding = omit
-	.byte	255                             # @TType Encoding = omit
-	.byte	1                               # Call site Encoding = uleb128
-	.uleb128 .Lcst_end0-.Lcst_begin0
-.Lcst_begin0:
-	.uleb128 .Lfunc_begin0-.Lfunc_begin0    # >> Call Site 1 <<
-	.uleb128 .Ltmp0-.Lfunc_begin0           #   Call between .Lfunc_begin0 and .Ltmp0
-	.byte	0                               #     has no landing pad
-	.byte	0                               #   On action: cleanup
-	.uleb128 .Ltmp0-.Lfunc_begin0           # >> Call Site 2 <<
-	.uleb128 .Ltmp1-.Ltmp0                  #   Call between .Ltmp0 and .Ltmp1
-	.uleb128 .Ltmp2-.Lfunc_begin0           #     jumps to .Ltmp2
-	.byte	0                               #   On action: cleanup
-	.uleb128 .Ltmp1-.Lfunc_begin0           # >> Call Site 3 <<
-	.uleb128 .Lfunc_end0-.Ltmp1             #   Call between .Ltmp1 and .Lfunc_end0
-	.byte	0                               #     has no landing pad
-	.byte	0                               #   On action: cleanup
-.Lcst_end0:
-	.p2align	2, 0x0
-	.section	.text$_ZNSt3__120__throw_length_errorB8ne210107EPKc,"xr",discard,_ZNSt3__120__throw_length_errorB8ne210107EPKc
-                                        # -- End function
-	.def	_ZNSt12length_errorC2B8ne210107EPKc;
-	.scl	2;
-	.type	32;
-	.endef
-	.section	.text$_ZNSt12length_errorC2B8ne210107EPKc,"xr",discard,_ZNSt12length_errorC2B8ne210107EPKc
-	.globl	_ZNSt12length_errorC2B8ne210107EPKc # -- Begin function _ZNSt12length_errorC2B8ne210107EPKc
-	.p2align	4
-_ZNSt12length_errorC2B8ne210107EPKc:    # @_ZNSt12length_errorC2B8ne210107EPKc
-.seh_proc _ZNSt12length_errorC2B8ne210107EPKc
-# %bb.0:
-	pushq	%rsi
-	.seh_pushreg %rsi
-	subq	$32, %rsp
-	.seh_stackalloc 32
-	.seh_endprologue
-	movq	%rcx, %rsi
-	callq	_ZNSt11logic_errorC2EPKc
-	movq	.refptr._ZTVSt12length_error(%rip), %rax
-	addq	$16, %rax
-	movq	%rax, (%rsi)
-	.seh_startepilogue
-	addq	$32, %rsp
-	popq	%rsi
-	.seh_endepilogue
-	retq
-	.seh_endproc
-                                        # -- End function
-	.section	.rdata,"dr"
-.L.str:                                 # @.str
-	.asciz	"Tools-cpp is awsome!"
+; ModuleID = 'Test/Test.cpp'
+source_filename = "Test/Test.cpp"
+target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-w64-windows-gnu"
 
-.L.str.1:                               # @.str.1
-	.asciz	"v1.0"
+%"class.std::__1::basic_string" = type { %struct.anon }
+%struct.anon = type { %"union.std::__1::basic_string<char>::__rep" }
+%"union.std::__1::basic_string<char>::__rep" = type { %"struct.std::__1::basic_string<char>::__long" }
+%"struct.std::__1::basic_string<char>::__long" = type { %struct.anon.1, i64, ptr }
+%struct.anon.1 = type { i64 }
 
-.L.str.2:                               # @.str.2
-	.asciz	"%s Current verison is %s"
+$_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev = comdat any
 
-.L.str.3:                               # @.str.3
-	.asciz	" using compiler %s version %d with standard %ld"
+$_ZNSt3__120__throw_length_errorB8ne210107EPKc = comdat any
 
-.L.str.4:                               # @.str.4
-	.asciz	"Clang"
+$_ZNSt12length_errorC2B8ne210107EPKc = comdat any
 
-.L.str.6:                               # @.str.6
-	.asciz	"%s\n\n> That string aboce is %llu char long and took %llu bytes of your memory\n> Pointers are at 0x%p..0x%p"
+$_ZTISt9exception = comdat any
 
-	.section	.rdata$_ZTISt9exception,"dr",discard,_ZTISt9exception
-	.globl	_ZTISt9exception                # @_ZTISt9exception
-	.p2align	3, 0x0
-_ZTISt9exception:
-	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
-	.quad	_ZTSSt9exception
+$_ZTSSt9exception = comdat any
 
-	.section	.rdata$_ZTSSt9exception,"dr",discard,_ZTSSt9exception
-	.globl	_ZTSSt9exception                # @_ZTSSt9exception
-_ZTSSt9exception:
-	.asciz	"St9exception"
+$_ZTISt12length_error = comdat any
 
-	.section	.rdata,"dr"
-.L.str.36:                              # @.str.36
-	.asciz	"basic_string"
+$_ZTSSt12length_error = comdat any
 
-	.section	.rdata$_ZTISt12length_error,"dr",discard,_ZTISt12length_error
-	.globl	_ZTISt12length_error            # @_ZTISt12length_error
-	.p2align	3, 0x0
-_ZTISt12length_error:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTSSt12length_error
-	.quad	_ZTISt11logic_error
+$_ZTISt11logic_error = comdat any
 
-	.section	.rdata$_ZTSSt12length_error,"dr",discard,_ZTSSt12length_error
-	.globl	_ZTSSt12length_error            # @_ZTSSt12length_error
-_ZTSSt12length_error:
-	.asciz	"St12length_error"
+$_ZTSSt11logic_error = comdat any
 
-	.section	.rdata$_ZTISt11logic_error,"dr",discard,_ZTISt11logic_error
-	.globl	_ZTISt11logic_error             # @_ZTISt11logic_error
-	.p2align	3, 0x0
-_ZTISt11logic_error:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTSSt11logic_error
-	.quad	_ZTISt9exception
+@.str = private unnamed_addr constant [21 x i8] c"Tools-cpp is awsome!\00", align 1
+@.str.1 = private unnamed_addr constant [5 x i8] c"v1.0\00", align 1
+@.str.2 = private unnamed_addr constant [25 x i8] c"%s Current verison is %s\00", align 1
+@.str.3 = private unnamed_addr constant [48 x i8] c" using compiler %s version %d with standard %ld\00", align 1
+@.str.4 = private unnamed_addr constant [6 x i8] c"Clang\00", align 1
+@.str.6 = private unnamed_addr constant [106 x i8] c"%s\0A\0A> That string above is %llu char long and took %llu bytes of your memory\0A> Pointers are at 0x%p..0x%p\00", align 1
+@_ZTVN10__cxxabiv120__si_class_type_infoE = external global [0 x ptr]
+@_ZTISt9exception = linkonce_odr dso_local constant { ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv117__class_type_infoE, i64 2), ptr @_ZTSSt9exception }, comdat, align 8
+@_ZTVN10__cxxabiv117__class_type_infoE = external global [0 x ptr]
+@_ZTSSt9exception = linkonce_odr dso_local constant [13 x i8] c"St9exception\00", comdat, align 1
+@.str.36 = private unnamed_addr constant [13 x i8] c"basic_string\00", align 1
+@_ZTISt12length_error = linkonce_odr dso_local constant { ptr, ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2), ptr @_ZTSSt12length_error, ptr @_ZTISt11logic_error }, comdat, align 8
+@_ZTSSt12length_error = linkonce_odr dso_local constant [17 x i8] c"St12length_error\00", comdat, align 1
+@_ZTISt11logic_error = linkonce_odr dso_local constant { ptr, ptr, ptr } { ptr getelementptr inbounds (ptr, ptr @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2), ptr @_ZTSSt11logic_error, ptr @_ZTISt9exception }, comdat, align 8
+@_ZTSSt11logic_error = linkonce_odr dso_local constant [16 x i8] c"St11logic_error\00", comdat, align 1
+@_ZTVSt12length_error = external unnamed_addr constant { [5 x ptr] }, align 8
 
-	.section	.rdata$_ZTSSt11logic_error,"dr",discard,_ZTSSt11logic_error
-	.globl	_ZTSSt11logic_error             # @_ZTSSt11logic_error
-_ZTSSt11logic_error:
-	.asciz	"St11logic_error"
+; Function Attrs: mustprogress norecurse uwtable
+define dso_local noundef i32 @main() local_unnamed_addr #0 personality ptr @__gxx_personality_seh0 {
+  %1 = alloca %"class.std::__1::basic_string", align 8
+  %2 = alloca [12 x i8], align 1
+  %3 = alloca [128 x i8], align 16
+  %4 = alloca [128 x i8], align 16
+  %5 = alloca %"class.std::__1::basic_string", align 8
+  call void @llvm.lifetime.start.p0(i64 128, ptr nonnull %3) #14
+  call void @llvm.lifetime.start.p0(i64 128, ptr nonnull %4) #14
+  %6 = call i32 (ptr, i64, ptr, ...) @snprintf(ptr noundef nonnull dereferenceable(1) %3, i64 noundef 128, ptr noundef nonnull @.str.2, ptr noundef nonnull @.str, ptr noundef nonnull @.str.1) #14
+  %7 = call i32 (ptr, i64, ptr, ...) @snprintf(ptr noundef nonnull dereferenceable(1) %4, i64 noundef 128, ptr noundef nonnull @.str.3, ptr noundef nonnull @.str.4, i32 noundef 21, i32 noundef 202302) #14
+  %8 = call ptr @strcat(ptr noundef nonnull dereferenceable(1) %3, ptr noundef nonnull dereferenceable(1) %4) #14
+  %9 = call i64 @strlen(ptr noundef nonnull dereferenceable(1) %3) #14
+  %10 = add i64 %9, -1
+  %11 = getelementptr inbounds nuw [128 x i8], ptr %3, i64 0, i64 %10
+  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %5) #14
+  %12 = call noundef ptr @memchr(ptr noundef nonnull align 1 dereferenceable(128) %3, i32 noundef 0, i64 noundef 128) #14, !noalias !8
+  %13 = ptrtoint ptr %12 to i64
+  %14 = ptrtoint ptr %3 to i64
+  %15 = sub i64 %13, %14
+  call void @llvm.lifetime.start.p0(i64 12, ptr nonnull %2)
+  call void @llvm.lifetime.start.p0(i64 24, ptr nonnull %1) #14, !noalias !15
+  %16 = icmp ugt i64 %15, -10
+  br i1 %16, label %17, label %18
 
-	.section	.rdata$.refptr._ZTVSt12length_error,"dr",discard,.refptr._ZTVSt12length_error
-	.p2align	3, 0x0
-	.globl	.refptr._ZTVSt12length_error
-.refptr._ZTVSt12length_error:
-	.quad	_ZTVSt12length_error
-	.section	.debug$S,"dr"
-	.p2align	2, 0x0
-	.long	4                               # Debug section magic
-	.long	241
-	.long	.Ltmp4-.Ltmp3                   # Subsection size
-.Ltmp3:
-	.short	.Ltmp6-.Ltmp5                   # Record length
-.Ltmp5:
-	.short	4353                            # Record kind: S_OBJNAME
-	.long	0                               # Signature
-	.byte	0                               # Object name
-	.p2align	2, 0x0
-.Ltmp6:
-	.short	.Ltmp8-.Ltmp7                   # Record length
-.Ltmp7:
-	.short	4412                            # Record kind: S_COMPILE3
-	.long	1                               # Flags and language
-	.short	208                             # CPUType
-	.short	21                              # Frontend version
-	.short	1
-	.short	7
-	.short	0
-	.short	21017                           # Backend version
-	.short	0
-	.short	0
-	.short	0
-	.asciz	"clang version 21.1.7"          # Null-terminated compiler version string
-	.p2align	2, 0x0
-.Ltmp8:
-.Ltmp4:
-	.p2align	2, 0x0
-	.addrsig
-	.addrsig_sym __gxx_personality_seh0
-	.addrsig_sym _Unwind_Resume
-	.addrsig_sym _ZTVN10__cxxabiv120__si_class_type_infoE
-	.addrsig_sym _ZTISt9exception
-	.addrsig_sym _ZTVN10__cxxabiv117__class_type_infoE
-	.addrsig_sym _ZTSSt9exception
-	.addrsig_sym _ZTISt12length_error
-	.addrsig_sym _ZTSSt12length_error
-	.addrsig_sym _ZTISt11logic_error
-	.addrsig_sym _ZTSSt11logic_error
+17:                                               ; preds = %0
+  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() #15, !noalias !15
+  unreachable
+
+18:                                               ; preds = %0
+  %19 = icmp ult i64 %15, 23
+  br i1 %19, label %29, label %20
+
+20:                                               ; preds = %18
+  %21 = or i64 %15, 7
+  %22 = icmp eq i64 %21, 23
+  %23 = add nuw i64 %21, 1
+  %24 = select i1 %22, i64 26, i64 %23
+  %25 = call noalias noundef nonnull ptr @_Znwy(i64 noundef %24) #16, !noalias !26
+  %26 = getelementptr inbounds nuw i8, ptr %1, i64 16
+  store ptr %25, ptr %26, align 8, !tbaa !33, !noalias !15
+  %27 = or disjoint i64 %24, 1
+  store i64 %27, ptr %1, align 8, !noalias !15
+  %28 = getelementptr inbounds nuw i8, ptr %1, i64 8
+  store i64 %15, ptr %28, align 8, !tbaa !33, !noalias !15
+  br label %34
+
+29:                                               ; preds = %18
+  %30 = trunc nuw nsw i64 %15 to i8
+  %31 = shl nuw nsw i8 %30, 1
+  store i8 %31, ptr %1, align 8, !noalias !15
+  %32 = getelementptr inbounds nuw i8, ptr %1, i64 1
+  %33 = icmp eq ptr %12, %3
+  br i1 %33, label %36, label %34
+
+34:                                               ; preds = %29, %20
+  %35 = phi ptr [ %25, %20 ], [ %32, %29 ]
+  call void @llvm.memcpy.p0.p0.i64(ptr nonnull align 1 %35, ptr nonnull align 16 %3, i64 %15, i1 false), !noalias !15
+  br label %36
+
+36:                                               ; preds = %34, %29
+  %37 = phi ptr [ %32, %29 ], [ %35, %34 ]
+  %38 = getelementptr inbounds nuw i8, ptr %37, i64 %15
+  store i8 0, ptr %38, align 1, !tbaa !33, !noalias !15
+  %39 = load i8, ptr %1, align 8, !noalias !36
+  %40 = getelementptr inbounds nuw i8, ptr %1, i64 1
+  %41 = load i16, ptr %40, align 1, !noalias !36
+  %42 = getelementptr inbounds nuw i8, ptr %1, i64 3
+  %43 = load i8, ptr %42, align 1, !noalias !36
+  %44 = getelementptr inbounds nuw i8, ptr %1, i64 4
+  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 1 dereferenceable(12) %2, ptr noundef nonnull align 4 dereferenceable(12) %44, i64 12, i1 false), !tbaa.struct !37, !noalias !36
+  %45 = getelementptr inbounds nuw i8, ptr %1, i64 16
+  %46 = load ptr, ptr %45, align 8, !tbaa !33, !noalias !36
+  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %1) #14, !noalias !15
+  store i8 %39, ptr %5, align 8
+  %47 = getelementptr inbounds nuw i8, ptr %5, i64 1
+  store i16 %41, ptr %47, align 1
+  %48 = getelementptr inbounds nuw i8, ptr %5, i64 3
+  store i8 %43, ptr %48, align 1
+  %49 = getelementptr inbounds nuw i8, ptr %5, i64 4
+  call void @llvm.memcpy.p0.p0.i64(ptr noundef nonnull align 4 dereferenceable(12) %49, ptr noundef nonnull align 1 dereferenceable(12) %2, i64 12, i1 false), !tbaa.struct !37
+  %50 = getelementptr inbounds nuw i8, ptr %5, i64 16
+  store ptr %46, ptr %50, align 8, !tbaa !33
+  call void @llvm.lifetime.end.p0(i64 12, ptr nonnull %2)
+  %51 = and i8 %39, 1
+  %52 = icmp eq i8 %51, 0
+  %53 = select i1 %52, ptr %47, ptr %46
+  %54 = getelementptr inbounds nuw i8, ptr %5, i64 8
+  %55 = load i64, ptr %54, align 8
+  %56 = lshr i8 %39, 1
+  %57 = zext nneg i8 %56 to i64
+  %58 = select i1 %52, i64 %57, i64 %55
+  %59 = call i32 (ptr, ...) @printf(ptr noundef nonnull dereferenceable(1) @.str.6, ptr noundef %53, i64 noundef %58, i64 noundef 8, ptr noundef nonnull %3, ptr noundef nonnull %11)
+  %60 = load i8, ptr %5, align 8
+  %61 = and i8 %60, 1
+  %62 = icmp eq i8 %61, 0
+  br i1 %62, label %65, label %63
+
+63:                                               ; preds = %36
+  %64 = load ptr, ptr %50, align 8, !tbaa !33
+  call void @_ZdlPv(ptr noundef %64) #17
+  br label %65
+
+65:                                               ; preds = %36, %63
+  call void @llvm.lifetime.end.p0(i64 24, ptr nonnull %5) #14
+  call void @llvm.lifetime.end.p0(i64 128, ptr nonnull %4) #14
+  call void @llvm.lifetime.end.p0(i64 128, ptr nonnull %3) #14
+  ret i32 0
+}
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)
+declare void @llvm.lifetime.start.p0(i64 immarg, ptr captures(none)) #1
+
+; Function Attrs: nofree nounwind
+declare dso_local noundef i32 @snprintf(ptr noalias noundef writeonly captures(none), i64 noundef, ptr noundef readonly captures(none), ...) local_unnamed_addr #2
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite)
+declare dso_local ptr @strcat(ptr noalias noundef returned, ptr noalias noundef readonly captures(none)) local_unnamed_addr #3
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: read)
+declare dso_local i64 @strlen(ptr noundef captures(none)) local_unnamed_addr #4
+
+; Function Attrs: nofree nounwind
+declare dso_local noundef i32 @printf(ptr noundef readonly captures(none), ...) local_unnamed_addr #2
+
+declare dso_local i32 @__gxx_personality_seh0(...)
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)
+declare void @llvm.lifetime.end.p0(i64 immarg, ptr captures(none)) #1
+
+; Function Attrs: nobuiltin nounwind
+declare dso_local void @_ZdlPv(ptr noundef) local_unnamed_addr #5
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite)
+declare void @llvm.memcpy.p0.p0.i64(ptr noalias writeonly captures(none), ptr noalias readonly captures(none), i64, i1 immarg) #6
+
+declare dso_local ptr @__cxa_allocate_exception(i64) local_unnamed_addr
+
+; Function Attrs: cold noreturn
+declare dso_local void @__cxa_throw(ptr, ptr, ptr) local_unnamed_addr #7
+
+; Function Attrs: nobuiltin allocsize(0)
+declare dso_local noundef nonnull ptr @_Znwy(i64 noundef) local_unnamed_addr #8
+
+declare dso_local void @__cxa_free_exception(ptr) local_unnamed_addr
+
+; Function Attrs: mustprogress noreturn uwtable
+define linkonce_odr dso_local void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB8ne210107Ev() local_unnamed_addr #9 comdat align 2 {
+  tail call void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef nonnull @.str.36) #15
+  unreachable
+}
+
+; Function Attrs: inlinehint mustprogress noreturn uwtable
+define linkonce_odr dso_local void @_ZNSt3__120__throw_length_errorB8ne210107EPKc(ptr noundef %0) local_unnamed_addr #10 comdat personality ptr @__gxx_personality_seh0 {
+  %2 = tail call ptr @__cxa_allocate_exception(i64 16) #14
+  invoke void @_ZNSt12length_errorC2B8ne210107EPKc(ptr noundef nonnull align 8 dereferenceable(16) %2, ptr noundef %0)
+          to label %3 unwind label %4
+
+3:                                                ; preds = %1
+  tail call void @__cxa_throw(ptr nonnull %2, ptr nonnull @_ZTISt12length_error, ptr nonnull @_ZNSt12length_errorD1Ev) #15
+  unreachable
+
+4:                                                ; preds = %1
+  %5 = landingpad { ptr, i32 }
+          cleanup
+  tail call void @__cxa_free_exception(ptr nonnull %2) #14
+  resume { ptr, i32 } %5
+}
+
+; Function Attrs: mustprogress uwtable
+define linkonce_odr dso_local void @_ZNSt12length_errorC2B8ne210107EPKc(ptr noundef nonnull align 8 dereferenceable(16) %0, ptr noundef %1) unnamed_addr #11 comdat align 2 {
+  tail call void @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8 dereferenceable(16) %0, ptr noundef %1)
+  store ptr getelementptr inbounds nuw inrange(-16, 24) (i8, ptr @_ZTVSt12length_error, i64 16), ptr %0, align 8, !tbaa !38
+  ret void
+}
+
+; Function Attrs: nounwind
+declare dso_local void @_ZNSt12length_errorD1Ev(ptr noundef nonnull align 8 dereferenceable(16)) unnamed_addr #12
+
+declare dso_local void @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8 dereferenceable(16), ptr noundef) unnamed_addr #13
+
+; Function Attrs: mustprogress nocallback nofree nounwind willreturn memory(argmem: read)
+declare dso_local ptr @memchr(ptr noundef, i32 noundef, i64 noundef) local_unnamed_addr #4
+
+attributes #0 = { mustprogress norecurse uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #1 = { mustprogress nocallback nofree nosync nounwind willreturn memory(argmem: readwrite) }
+attributes #2 = { nofree nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #3 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #4 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: read) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #5 = { nobuiltin nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #6 = { mustprogress nocallback nofree nounwind willreturn memory(argmem: readwrite) }
+attributes #7 = { cold noreturn }
+attributes #8 = { nobuiltin allocsize(0) "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #9 = { mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #10 = { inlinehint mustprogress noreturn uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #11 = { mustprogress uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #12 = { nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #13 = { "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #14 = { nounwind }
+attributes #15 = { noreturn }
+attributes #16 = { builtin allocsize(0) }
+attributes #17 = { builtin nounwind }
+
+!llvm.dbg.cu = !{!0}
+!llvm.module.flags = !{!2, !3, !4, !5, !6}
+!llvm.ident = !{!7}
+
+!0 = distinct !DICompileUnit(language: DW_LANG_C_plus_plus_14, file: !1, producer: "clang version 21.1.7", isOptimized: true, runtimeVersion: 0, emissionKind: NoDebug, splitDebugInlining: false, nameTableKind: None)
+!1 = !DIFile(filename: "Test/Test.cpp", directory: "D:/Code/_CLIB/Tools")
+!2 = !{i32 2, !"Debug Info Version", i32 3}
+!3 = !{i32 1, !"wchar_size", i32 2}
+!4 = !{i32 8, !"PIC Level", i32 2}
+!5 = !{i32 7, !"uwtable", i32 2}
+!6 = !{i32 1, !"MaxTLSAlign", i32 65536}
+!7 = !{!"clang version 21.1.7"}
+!8 = !{!9, !11, !13}
+!9 = distinct !{!9, !10, !"_ZNSt3__18__format19__create_format_argB8ne210107INS_20basic_format_contextINS_20back_insert_iteratorINS0_15__output_bufferIcEEEEcEEA128_cEENS_16basic_format_argIT_EERT0_: argument 0"}
+!10 = distinct !{!10, !"_ZNSt3__18__format19__create_format_argB8ne210107INS_20basic_format_contextINS_20back_insert_iteratorINS0_15__output_bufferIcEEEEcEEA128_cEENS_16basic_format_argIT_EERT0_"}
+!11 = distinct !{!11, !12, !"_ZNSt3__116make_format_argsB8ne210107INS_20basic_format_contextINS_20back_insert_iteratorINS_8__format15__output_bufferIcEEEEcEEJA128_cEEENS_18__format_arg_storeIT_JDpT0_EEEDpRSB_: argument 0"}
+!12 = distinct !{!12, !"_ZNSt3__116make_format_argsB8ne210107INS_20basic_format_contextINS_20back_insert_iteratorINS_8__format15__output_bufferIcEEEEcEEJA128_cEEENS_18__format_arg_storeIT_JDpT0_EEEDpRSB_"}
+!13 = distinct !{!13, !14, !"_ZNSt3__16formatB8ne210107IJRA128_cEEENS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_19basic_format_stringIcJDpNS_13type_identityIT_E4typeEEEEDpOSB_: argument 0"}
+!14 = distinct !{!14, !"_ZNSt3__16formatB8ne210107IJRA128_cEEENS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_19basic_format_stringIcJDpNS_13type_identityIT_E4typeEEEEDpOSB_"}
+!15 = !{!16, !18, !20, !22, !24}
+!16 = distinct !{!16, !17, !"_ZZNSt3__18__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS4_EENS_9allocatorIS4_EEEEEENS_17basic_string_viewIS4_S6_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS0_15__output_bufferIS4_EEEES4_EEEEENKUlTyOS4_E_clIRNSB_IcNS5_IcEEEEEENS2_INS3_IcSO_NS7_IcEEEEEESL_: argument 0"}
+!17 = distinct !{!17, !"_ZZNSt3__18__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS4_EENS_9allocatorIS4_EEEEEENS_17basic_string_viewIS4_S6_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS0_15__output_bufferIS4_EEEES4_EEEEENKUlTyOS4_E_clIRNSB_IcNS5_IcEEEEEENS2_INS3_IcSO_NS7_IcEEEEEESL_"}
+!18 = distinct !{!18, !19, !"_ZNSt3__18__invokeB8ne210107IJZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_RNSC_IcNS6_IcEEEEEEENS_20__invoke_result_implIvJDpT_EE4typeEDpOSS_: argument 0"}
+!19 = distinct !{!19, !"_ZNSt3__18__invokeB8ne210107IJZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_RNSC_IcNS6_IcEEEEEEENS_20__invoke_result_implIvJDpT_EE4typeEDpOSS_"}
+!20 = distinct !{!20, !21, !"_ZNSt3__16invokeB8ne210107IZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_JRNSC_IcNS6_IcEEEEEEENS_20__invoke_result_implIvJS5_DpT0_EE4typeESM_DpOSS_: argument 0"}
+!21 = distinct !{!21, !"_ZNSt3__16invokeB8ne210107IZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_JRNSC_IcNS6_IcEEEEEEENS_20__invoke_result_implIvJS5_DpT0_EE4typeESM_DpOSS_"}
+!22 = distinct !{!22, !23, !"_ZNSt3__118__visit_format_argB8ne210107IZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_NSF_INSG_INSH_IcEEEEcEEEEDcSM_NS_16basic_format_argIT0_EE: argument 0"}
+!23 = distinct !{!23, !"_ZNSt3__118__visit_format_argB8ne210107IZNS_8__format22__try_constant_foldingB8ne210107IcEENS_8optionalINS_12basic_stringIT_NS_11char_traitsIS5_EENS_9allocatorIS5_EEEEEENS_17basic_string_viewIS5_S7_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS1_15__output_bufferIS5_EEEES5_EEEEEUlTyOS5_E_NSF_INSG_INSH_IcEEEEcEEEEDcSM_NS_16basic_format_argIT0_EE"}
+!24 = distinct !{!24, !25, !"_ZNSt3__17vformatB8ne210107IvEENS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_17basic_string_viewIcS3_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS_8__format15__output_bufferIcEEEEcEEEE: argument 0"}
+!25 = distinct !{!25, !"_ZNSt3__17vformatB8ne210107IvEENS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_17basic_string_viewIcS3_EENS_17basic_format_argsINS_20basic_format_contextINS_20back_insert_iteratorINS_8__format15__output_bufferIcEEEEcEEEE"}
+!26 = !{!27, !29, !31, !16, !18, !20, !22, !24}
+!27 = distinct !{!27, !28, !"_ZNSt3__19allocatorIcE17allocate_at_leastB8ne210107Ey: argument 0"}
+!28 = distinct !{!28, !"_ZNSt3__19allocatorIcE17allocate_at_leastB8ne210107Ey"}
+!29 = distinct !{!29, !30, !"_ZNSt3__116allocator_traitsINS_9allocatorIcEEE17allocate_at_leastB8ne210107IS2_EENS_17allocation_resultIPcyEERT_y: argument 0"}
+!30 = distinct !{!30, !"_ZNSt3__116allocator_traitsINS_9allocatorIcEEE17allocate_at_leastB8ne210107IS2_EENS_17allocation_resultIPcyEERT_y"}
+!31 = distinct !{!31, !32, !"_ZNSt3__119__allocate_at_leastB8ne210107INS_9allocatorIcEEEEDaRT_y: argument 0"}
+!32 = distinct !{!32, !"_ZNSt3__119__allocate_at_leastB8ne210107INS_9allocatorIcEEEEDaRT_y"}
+!33 = !{!34, !34, i64 0}
+!34 = !{!"omnipotent char", !35, i64 0}
+!35 = !{!"Simple C++ TBAA"}
+!36 = !{!24}
+!37 = !{i64 0, i64 20, !33}
+!38 = !{!39, !39, i64 0}
+!39 = !{!"vtable pointer", !35, i64 0}

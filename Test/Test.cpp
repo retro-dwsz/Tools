@@ -45,3 +45,14 @@ int main(){
 
     return 0;
 }
+
+/*
+
+commands:
+
+- clang++ Test/Test.cpp -std=c++23
+- clang++ -E Test/Test.cpp -o Test/Test.Processed.cpp -std=c++23 -O3
+- clang++ -S Test/Test.cpp -o Test/Test.Assembly.ll -std=c++23 -O3
+- clang++ -S -emit-llvm Test/Test.cpp -o Test/Test.Assembly.ll -std=c++23 -O3
+
+*/
