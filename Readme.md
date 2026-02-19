@@ -567,99 +567,101 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
 
     Yes, the function name can already tell itself what are they doing. But here's the breakdown if you want it anyway
 
-- ### Breakdown
-    Let's start with the private functions
+### Breakdown
+Let's start with the private functions
 
-    1. `ivec_data` Current array
-    2. `ivec_size` Current size
-    3. `ivec_capacity` Current capacity
-    4. `Normalize` Normalizer `i64` to `idx`
+1. `ivec_data` Current array
+2. `ivec_size` Current size
+3. `ivec_capacity` Current capacity
+4. `Normalize` Normalizer `i64` to `idx`
 
-    And then public, we have a lot of sections
+And then public, we have a lot of sections
 
-    ### I. Data utility
-    1. `data()` returns current array (raw, C-Style array)
-    2. `size()` returns current size
-    3. `capacity()` return current capacity
+### 1. Data utility
+1. `data()` returns current array (raw, C-Style array)
+2. `size()` returns current size
+3. `capacity()` return current capacity
     
     > ### Warning
     > If you think size is the same as capacity, then no, size is current element count, capacity is current element count + reserved slots. So size and capacity will not alway be the same.
 
 
-    ### II. Constructors
+### 2. Constructors
 
-    4. `ivec();` The default constructor with nothing in it
-    5. `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
-    6. `ivec(const vec<T>& Data);` Constructor to auto convert `std::vector` to `Tools::ivec`
-    7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
-    8. `ivec(ivec&& other);` Same as 4th but you write it inplace
+4. `ivec();` The default constructor with nothing in it
+5. `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
+6. `ivec(const vec<T>& Data);` Constructor to auto convert `std::vector` to `Tools::ivec`
+7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
+8. `ivec(ivec&& other);` Same as 4th but you write it inplace
 
-    ### III. Destructor
+### 3. Destructor
     
-    06. `~ivec()` to remove everything
+6. `~ivec()` to remove everything
 
-    ### IV. Basic functions
+### 4. Basic functions
 
-    9. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
-    10. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
-    11. `void append(const T& Element);` Push elements to back 
-    12. `void append(const T&& Element);` Push elements to back by rvalue
-    13. `void append(const ivec<T>& iv);` Append `ivec` to current `ivec`, example `ivec{1, 2, 3}.append(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, ivec{4, 5, 6}}`
-    14. `void append(const vec<T>& v);` Append `vec` to current `ivec`, example is same as 11th
-        
-    15. `void extend(const ivec<T>& v);` Extend with `ivec` to current `ivec`, example `ivec a{1, 2, 3}.extend(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, 4, 5, 6}`
-    16. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
-    17. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
-
-    ### V. Advanced functions
-
-    18. `T pop(const idx& Index);` To get and remove immediately selected index
-    19. `T& operator[](idx Index);` To get selected index with the `[]` thing
-    20. `const T& operator[](idx Index) const;` Same as before, but make it constant
-    21. `ivec<T>& operator=(const ivec& Other);` Setter to selected index
-
-
-    ### VI. Advanced functions
+9. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
+10. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
+11. `void append(const T& Element);` Push elements to back 
+12. `void append(const T&& Element);` Push elements to back by rvalue
+13. `void append(const ivec<T>& iv);` Append `ivec` to current `ivec`, example `ivec{1, 2, 3}.append(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, ivec{4, 5, 6}}`
+14. `void append(const vec<T>& v);` Append `vec` to current `ivec`, example is same as 11th
     
-    > ### Note
-    > Default function is return new, suffix -`Inl` indicates inline
+15. `void extend(const ivec<T>& v);` Extend with `ivec` to current `ivec`, example `ivec a{1, 2, 3}.extend(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, 4, 5, 6}`
+16. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
+17. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
 
-    22. `void sliceInl(i64 x, i64 y);` Slice inlinely from range `x..y`
-    23. `void sliceInl(i64 n);` Slice `0..n` or `n..Size`. Positive will iterate from 0 to `n` (forward), negative will iterate from `ivec_size` to `n` (backward)
-    24. `ivec<T> slice(i64 x, i64 y);` Same as 20, but return new ivec
-    25. `ivec<T> slice(i64 n);` Same as 21, but return new ivec
-    26. `void clear();` To nuke everything inside
-    27. `bool isEmpty();` Check is this thing is empty or no
+### 5. Common Advanced functions
 
-    28. `void appendFirst(const T& Element);` Append an element at 1st index
-    29. `void appendAt(const T& Element, idx At);` Append an element at specified index
-    30. `bool contains(const T& Element);` Check if this ivec contains specific Element
-    31. `idx find(const T& Element);` Find index of an element 
-    32. `idx findFreq(const T& Element);` Find frequency of selected element
-    33. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
+18. `T pop(const idx& Index);` To get and remove immediately selected index
+19. `T& operator[](idx Index);` To get selected index with the `[]` thing
+20. `const T& operator[](idx Index) const;` Same as before, but make it constant
+21. `ivec<T>& operator=(const ivec& Other);` Setter to selected index
 
-    ### VII. Orders & Find
 
-    34. `ivec<T> shuffle();` Shuffle current ivec, then return new
-    35. `void shuffleInl();` Shuffle current ivec inlinely
-    36. `ivec<T> sort();` Sort current ivec, then return new
-    37. `void sortInl();` Sort current ivec inlinely
-    38. `ivec<T> rsort();` Sort, then reverse current ivec, then return new
-    39. `void rsortInl();` Sort, then reverse current ivec inlinely
-    40. `ivec<T> reverse();` Reverse current ivec, then return new
-    41. `void reverseInl();` Reverse current ivec inlinely
-    42. `ivec<T> erase(idx pos);` (*) Erase specific position (unlike pop, this one is not return selected index(es)), then return new
-    43. `void eraseInl(idx pos);` (*) Erase specific position inlinely
-    44. `ivec<T> erase(idx begin, idx end);` (*) Erase specific range, then return new
-    45. `void eraseInl(idx begin, idx end);` (*) Erase specific range inlinely
-    46. `ivec<T> uniques(idx n = 1);` Make elements appeared maximum `n` times, then return new; `n=1` means everything only appear once
-    47. `void uniquesInl(idx n = 1);` Make elements appeared maximum `n` times inlinely
-    48. `T popFirst();` Get index 0 and remove immediately
-    49. `T popLast();` Get index last and remove immidiately
-    50. `u64 memory();` Get total memory used for current array
-    51. `void emplace(Args&&... args);` Build object in array on-fly at last index
-    53. `void emplaceFront(Args&&... args);` Build object in array on-fly at first index
-    54. `void emplaceAt(Args&&... args, idx n);` Build object in array on-fly at specific index
+### 6. Advanced functions
+
+> 
+> ### Note
+> Default function is return new, suffix -`Inl` indicates inline
+> 
+
+22. `void sliceInl(i64 x, i64 y);` Slice inlinely from range `x..y`
+23. `void sliceInl(i64 n);` Slice `0..n` or `n..Size`. Positive will iterate from 0 to `n` (forward), negative will iterate from `ivec_size` to `n` (backward)
+24. `ivec<T> slice(i64 x, i64 y);` Same as 20, but return new ivec
+25. `ivec<T> slice(i64 n);` Same as 21, but return new ivec
+26. `void clear();` To nuke everything inside
+27. `bool isEmpty();` Check is this thing is empty or no
+
+28. `void appendFirst(const T& Element);` Append an element at 1st index
+29. `void appendAt(const T& Element, idx At);` Append an element at specified index
+30. `bool contains(const T& Element);` Check if this ivec contains specific Element
+31. `idx find(const T& Element);` Find index of an element 
+32. `idx findFreq(const T& Element);` Find frequency of selected element
+33. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
+
+### 7. Orders & Find
+
+34. `ivec<T> shuffle();` Shuffle current ivec, then return new
+35. `void shuffleInl();` Shuffle current ivec inlinely
+36. `ivec<T> sort();` Sort current ivec, then return new
+37. `void sortInl();` Sort current ivec inlinely
+38. `ivec<T> rsort();` Sort, then reverse current ivec, then return new
+39. `void rsortInl();` Sort, then reverse current ivec inlinely
+40. `ivec<T> reverse();` Reverse current ivec, then return new
+41. `void reverseInl();` Reverse current ivec inlinely
+42. `ivec<T> erase(idx pos);` (*) Erase specific position (unlike pop, this one is not return selected index(es)), then return new
+43. `void eraseInl(idx pos);` (*) Erase specific position inlinely
+44. `ivec<T> erase(idx begin, idx end);` (*) Erase specific range, then return new
+45. `void eraseInl(idx begin, idx end);` (*) Erase specific range inlinely
+46. `ivec<T> uniques(idx n = 1);` Make elements appeared maximum `n` times, then return new; `n=1` means everything only appear once
+47. `void uniquesInl(idx n = 1);` Make elements appeared maximum `n` times inlinely
+48. `T popFirst();` Get index 0 and remove immediately
+49. `T popLast();` Get index last and remove immidiately
+50. `u64 memory();` Get total memory used for current array
+51. `void emplace(Args&&... args);` Build object in array on-fly at last index
+53. `void emplaceFront(Args&&... args);` Build object in array on-fly at first index
+54. `void emplaceAt(Args&&... args, idx n);` Build object in array on-fly at specific index
 
     > ### Note*
     > `slice` and `erase` might be simmilar, but it's different! Example:
@@ -676,43 +678,43 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     > ```
     > ㅤ
 
-    ### VIII. Conversion
-    54. `str fstr();` Formatted STRing, make everything everything inside and (almost) every data type into a string
-    55. `vec<T> toVector();` `ivec` to `std::vector` converter
-    56. `span<T> toSpan();` `ivec` to `std::span` converter
-    57. `arr<T, S> toArray();` `ivec` to `std::array` converter
-    58. `T* toCArr();` `ivec` to raw pointer converter
-    
-    ### IX. Iterators
-    59. `T first();` First index getter
-    60. `T first(idx n);` First + n index getter
-    61. `T front();` First index getter (legacy choise of diction)
-    62. `T* begin();` First index iterator
-    63. `const T* cbegin` Constant first index iterator
-    64. `T& refbegin();` Reference of first index iterator
-        
-    65. `T last();` Last index getter
-    66. `T last(idx n);` Last - n index getter
-    67. `T back();` Last index getter (legacy choise of diction)
-    68. `T* end();` Last index iterator 
-    69. `const T* cend();` Constant last index iterator
-    70. `T& refend();` Reference of last index iterator
+### 8. Conversion
+54. `str fstr();` Formatted STRing, make everything everything inside and (almost) every data type into a string
+55. `vec<T> toVector();` `ivec` to `std::vector` converter
+56. `span<T> toSpan();` `ivec` to `std::span` converter
+57. `arr<T, S> toArray();` `ivec` to `std::array` converter
+58. `T* toCArr();` `ivec` to raw pointer converter
 
-    ### X. Legacies
-
-    This one is to make renaming `vec` to `ivec` possible without breaking current `vec` codes, but only some, not everything.
+### 9. Iterators
+59. `T first();` First index getter
+60. `T first(idx n);` First + n index getter
+61. `T front();` First index getter (legacy choise of diction)
+62. `T* begin();` First index iterator
+63. `const T* cbegin` Constant first index iterator
+64. `T& refbegin();` Reference of first index iterator
     
-    71. `void push_back(const T& Element);` The same as `std::vector<T>::push_back`
-    72. `void push_front(const T& Element);` Not standard from STL, but STL-isch choise of diction
-    73. `T at(const idx Index);` Specific index getter, I have absolutely zero why `.at` even exist, but oké
-    74. `ivec<T> erase(T* pos);` Specific index eraser with iterator, then return new
-    75. `void eraseInl(T* pos);` Specific index eraser with iterator inlinely
-    76. `ivec<T> erase(T* begin, T* end);` Range eraser with iterator, then return new
-    77. `void eraseInl(T* begin, T* end);` Range erasee with iterator inlinely
-    78. `void insert(const ivec<T>& v);` Extender like from `std::range::insert` specificly for `ivec`
-    79. `void insert(const vec<T>& v);` Extender like from `std::range::insert` specificly for `std::vector`
-    80. `void insert(const T& Element, idx At);` Append to specific index
-    81. `void insert(const T* A, const T* B);` Extender like from `std::vector<T>::insert` with iterators, yes, you can extend current container from other containers
+65. `T last();` Last index getter
+66. `T last(idx n);` Last - n index getter
+67. `T back();` Last index getter (legacy choise of diction)
+68. `T* end();` Last index iterator 
+69. `const T* cend();` Constant last index iterator
+70. `T& refend();` Reference of last index iterator
+
+### 10. Legacies
+
+This one is to make renaming `vec` to `ivec` possible without breaking current `vec` codes, but only some, not everything.
+
+71. `void push_back(const T& Element);` The same as `std::vector<T>::push_back`
+72. `void push_front(const T& Element);` Not standard from STL, but STL-isch choise of diction
+73. `T at(const idx Index);` Specific index getter, I have absolutely zero why `.at` even exist, but oké
+74. `ivec<T> erase(T* pos);` Specific index eraser with iterator, then return new
+75. `void eraseInl(T* pos);` Specific index eraser with iterator inlinely
+76. `ivec<T> erase(T* begin, T* end);` Range eraser with iterator, then return new
+77. `void eraseInl(T* begin, T* end);` Range erasee with iterator inlinely
+78. `void insert(const ivec<T>& v);` Extender like from `std::range::insert` specificly for `ivec`
+79. `void insert(const vec<T>& v);` Extender like from `std::range::insert` specificly for `std::vector`
+80. `void insert(const T& Element, idx At);` Append to specific index
+81. `void insert(const T* A, const T* B);` Extender like from `std::vector<T>::insert` with iterators, yes, you can extend current container from other containers
 
     > ### Note
     > `erase` functions from `advanced` are the wrapper from `legacy` \
