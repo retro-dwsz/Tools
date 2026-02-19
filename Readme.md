@@ -577,7 +577,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
 
     And then public, we have a lot of sections
 
-    ### 1. Data utility
+    ### I. Data utility
     1. `data()` returns current array (raw, C-Style array)
     2. `size()` returns current size
     3. `capacity()` return current capacity
@@ -586,7 +586,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     > If you think size is the same as capacity, then no, size is current element count, capacity is current element count + reserved slots. So size and capacity will not alway be the same.
 
 
-    ### 2. Constructors
+    ### II. Constructors
 
     4. `ivec();` The default constructor with nothing in it
     5. `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
@@ -594,11 +594,11 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
     8. `ivec(ivec&& other);` Same as 4th but you write it inplace
 
-    ### 3. Destructor
+    ### III. Destructor
     
     06. `~ivec()` to remove everything
 
-    ### 4. Basic functions
+    ### IV. Basic functions
 
     9. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
     10. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
@@ -611,7 +611,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     16. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
     17. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
 
-    ### 5. Advanced functions
+    ### V. Advanced functions
 
     18. `T pop(const idx& Index);` To get and remove immediately selected index
     19. `T& operator[](idx Index);` To get selected index with the `[]` thing
@@ -619,7 +619,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     21. `ivec<T>& operator=(const ivec& Other);` Setter to selected index
 
 
-    ### 6. Advanced functions
+    ### VI. Advanced functions
     
     > ### Note
     > Default function is return new, suffix -`Inl` indicates inline
@@ -638,7 +638,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     32. `idx findFreq(const T& Element);` Find frequency of selected element
     33. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
 
-    ### 7. Orders & Find
+    ### VII. Orders & Find
 
     34. `ivec<T> shuffle();` Shuffle current ivec, then return new
     35. `void shuffleInl();` Shuffle current ivec inlinely
@@ -676,14 +676,14 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     > ```
     > ㅤ
 
-    ### 8. Conversion
+    ### VIII. Conversion
     54. `str fstr();` Formatted STRing, make everything everything inside and (almost) every data type into a string
     55. `vec<T> toVector();` `ivec` to `std::vector` converter
     56. `span<T> toSpan();` `ivec` to `std::span` converter
     57. `arr<T, S> toArray();` `ivec` to `std::array` converter
     58. `T* toCArr();` `ivec` to raw pointer converter
     
-    ### 9. Iterators
+    ### IX. Iterators
     59. `T first();` First index getter
     60. `T first(idx n);` First + n index getter
     61. `T front();` First index getter (legacy choise of diction)
@@ -698,7 +698,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     69. `const T* cend();` Constant last index iterator
     70. `T& refend();` Reference of last index iterator
 
-    ### 10. Legacies
+    ### X. Legacies
 
     This one is to make renaming `vec` to `ivec` possible without breaking current `vec` codes, but only some, not everything.
     
