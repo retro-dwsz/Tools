@@ -1032,7 +1032,7 @@ Recommended DLL Signature generation
     ```cpp
     // Terminal utils
     namespace Tools::OS::Terminal {
-        i32 TerminalSize(cstr DIR = "X", const i32 offset = 0)
+        i32 TerminalSize(cstr DIR = "X", const i32 offset = 0);
         i32 TerminalSizeWidth(const i32 offset = 0){return TerminalSize("X", offset);}
         i32 TerminalSizeHeight(const i32 offset = 0){return TerminalSize("Y", offset);}
         umap<cstr, i32> TerminalSizeMap(){
