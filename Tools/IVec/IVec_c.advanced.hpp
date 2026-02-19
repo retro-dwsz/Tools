@@ -313,14 +313,30 @@ void Tools::ivec<T>::emplaceAt(Args&&... args, idx n) {
     ++ivec_size;
 }
 
-/* Remove duplicates (make all unique) */
+/* Remove duplicated elements by n times */
 template <typename T>
 Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
-    // vec<T> Out(this);
-    // auto U = std::unique(Out.begin(), Out.end());
-    // Out.erase(U, Out.end());
-    // return ivec<T>(Out);
+    Tools::ivec<T> out;
+    if (n <= 0 || ivec_size == 0) return;
 
+    out.reserve(ivec_size);
+    std::unordered_map<T, idx> freq;
+
+    for (idx i = 0; i < ivec_size; ++i){
+        const T& val = ivec_data[i];
+        idx& count = freq[val];
+
+        if (count < n){
+            out.append(val);
+            ++count;
+        }
+    }
+
+    return out;
+}
+
+template <typename T>
+void Tools::ivec<T>::uniquesInl(idx n){
     if (n <= 0 || ivec_size <= 1) return;
 
     std::unordered_map<T, idx> freq;
@@ -345,25 +361,5 @@ Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
     }
 
     ivec_size = write;
-}
 
-template <typename T>
-void Tools::ivec<T>::uniquesInl(idx n){
-    Tools::ivec<T> out;
-    if (n <= 0 || ivec_size == 0) return out;
-
-    out.reserve(ivec_size);
-    std::unordered_map<T, idx> freq;
-
-    for (idx i = 0; i < ivec_size; ++i){
-        const T& val = ivec_data[i];
-        idx& count = freq[val];
-
-        if (count < n){
-            out.append(val);
-            ++count;
-        }
-    }
-
-    return out;
 }
