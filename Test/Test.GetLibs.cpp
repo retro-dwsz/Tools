@@ -42,8 +42,9 @@ void Win32() {
     };
 
     fmt::println("Win32 Libs = {}", Win32Libs);
-    Win32Libs.uniquesInl();
-    fmt::println("Win32 Libs = {}", Win32Libs);
+    fmt::println("Win32 Libs = {}", 
+        Tools::Vector::RemoveDuplicates(Win32Libs.toVector())
+    );
 }
 
 void Linux() {

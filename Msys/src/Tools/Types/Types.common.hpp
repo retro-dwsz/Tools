@@ -36,13 +36,13 @@ template <typename T>
 concept Numbers = OneOf<T, i8, i16, i32, i64,
                            u8, u16, u32, u64,
                            f32, f64, fld,
-                           sidx, idx 
-                  >;
+                           sidx, idx
+                        >;
 
 template <typename T>
 concept Integer = OneOf<T, i8, i16, i32, i64,
                            u8, u16, u32, u64
-                           >;
+                        >;
 
 template <typename T>
 concept Ref = OneOf<T, T&, const T&>;

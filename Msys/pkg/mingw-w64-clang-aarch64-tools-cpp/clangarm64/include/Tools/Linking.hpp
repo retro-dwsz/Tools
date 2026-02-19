@@ -9,12 +9,12 @@
 #include <memory>
 
 #if __has_include(<cxxabi.h>)
-#define ITANIUM_ENABLED
-#include <cxxabi.h>
+    #define ITANIUM_ENABLED
+    #include <cxxabi.h>
 #endif
 
 #if !defined(__WIN32)
-#pragma "Tools.Linking are only for windows!"
+#error "Tools.Linking are only for windows!"
 #endif
 
 #include <type_traits>
@@ -418,4 +418,3 @@ namespace Tools::Linking {
     }
     #endif
 }
-

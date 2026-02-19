@@ -87,7 +87,7 @@ namespace Tools::Vector {
         return result;
     }
 
-    // Extractor
+    // Extractor for numbers
     template<Numbers T>
     vec<T> ExtractUnique(const vec<T>& v){
         umap<T, bool> seen;
@@ -103,7 +103,7 @@ namespace Tools::Vector {
         return out;
     }
 
-    // Remove duplicated values
+    // Remove duplicated values for any others
     template<typename T>
     vec<T> RemoveDuplicates(const vec<T>& Data){
         vec<T> Out(Data);
