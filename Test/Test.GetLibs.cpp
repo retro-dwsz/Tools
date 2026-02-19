@@ -1,4 +1,3 @@
-#include "Tools/Vector/Vector.find.hpp"
 #include <fmt/format.h>
 #include <fmt/ranges.h>
 
@@ -6,27 +5,56 @@
 #include <Tools/Types.hpp>
 #include <Tools/IVec.hpp>
 
+// // Remove duplicated values for any others
+// template<typename T>
+// vec<T> RemoveDuplicates(const vec<T>& Data, const idx MaxCount = 1) {
+//     vec<T> Out(Data);
+//     if (MaxCount == 0) {
+//         Out.clear();
+//         return Data;
+//     }
+
+//     umap<T, i32> count;
+//     vec<T> result;
+//     result.reserve(Out.size());
+
+//     for (const auto& item : Out) {
+//         i32& c = count[item];
+//         if (c < MaxCount) {
+//             ++c;
+//             result.push_back(item);
+//         }
+//     }
+    
+//     Out = std::move(result);
+//     return Out;
+// }
+
+// // Remove duplicated values inline
 // template <typename T>
-// class ivec {
-//     private:
-    
-//     T* ivec_data;
+// void RemoveDuplicates(vec<T>& Data, const idx MaxCount = 1) {
+//     if (MaxCount == 0) {
+//         Data.clear();
+//         return;
+//     }
 
-//     //  Helper
-//     inline idx Normalize(i64 i);
+//     umap<T, i32> count;
+//     vec<T> result;
+//     result.reserve(Data.size());
 
-//     idx ivec_size;       // Actual size
-//     idx ivec_capacity;   // How many elements that can be fitted without reallocation
-    
-//     public: 
-//     ivec<T> uniques(idx n = 1);        // return remove duplicated values
-//     void uniquesInl(idx n = 1);        // inline remove duplicated values
-//     /* ... */
-// };
+//     for (const auto& item : Data) {
+//         i32& c = count[item];
+//         if (c < MaxCount) {
+//             ++c;
+//             result.push_back(item);
+//         }
+//     }
 
+//     Data = std::move(result);
+// }
 
 void Win32() {
-    ivec<str> Win32Libs = {
+    ivec Win32Libs = {
         "fileapi.h",
         "windows.h",
         "fileapi.h",
@@ -40,11 +68,11 @@ void Win32() {
         "iostream",
         "format"
     };
+    
+    ivec Win32LibsV = Tools::Vector::RemoveDuplicates(Win32Libs.toVector());
 
     fmt::println("Win32 Libs = {}", Win32Libs);
-    fmt::println("Win32 Libs = {}", 
-        Tools::Vector::RemoveDuplicates(Win32Libs.toVector())
-    );
+    fmt::println("Win32 Libs = {}", Win32LibsV);
 }
 
 void Linux() {

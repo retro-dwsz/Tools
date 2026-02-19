@@ -361,5 +361,4 @@ void Tools::ivec<T>::uniquesInl(idx n){
     }
 
     ivec_size = write;
-
 }
