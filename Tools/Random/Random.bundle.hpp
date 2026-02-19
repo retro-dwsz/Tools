@@ -6,7 +6,7 @@
 
 namespace Tools::Random {
     vec<vec<i32>> RandomNumsBI(idx Sub = 64, idx Count = 256, i32 Min = 0, i32 Max = 100) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Sub > INT32_MAX || Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -57,7 +57,7 @@ namespace Tools::Random {
     }
 
     vec<vec<f32>> RandomNumsBF(idx Sub = 64, idx Count = 256, f32 Min = 10.01, f32 Max = 50.99, const i32 Rounding = 2) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Sub > INT32_MAX || Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -87,7 +87,7 @@ namespace Tools::Random {
     }
 
     vec<vec<f64>> RandomNumsBD(idx Sub = 64, idx Count = 256, f64 Min = 10.01, f64 Max = 50.99, const i32 Rounding = 2) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Sub > INT32_MAX || Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";

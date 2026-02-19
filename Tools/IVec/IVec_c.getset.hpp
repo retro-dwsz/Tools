@@ -2,6 +2,33 @@
 
 #include "IVec_c.base.hpp"
 
+/* Python like functions */
+
+// __add__
+
+// __iadd__
+
+// __mul__
+
+// __imul__
+
+// __eq__
+
+// __ne__
+
+// __contains__
+
+// __len__
+
+// __lt__
+
+// __le__
+
+// __gt__
+
+// __ge__
+
+
 /* Pop */
 template <typename T>
 T Tools::ivec<T>::pop(const idx& Index) {

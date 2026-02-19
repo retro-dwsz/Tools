@@ -6,7 +6,7 @@
 
 namespace Tools::Random {
     vec<i32> RandomNumsVI(idx Count, i32 Min, i32 Max) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Count < 0){ Count = Count*(-1); }
         
         if(Count > INT32_MAX){
@@ -30,7 +30,7 @@ namespace Tools::Random {
     }
 
     vec<i64> RandomNumsVL(idx Count, i64 Min, i64 Max) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Count < 0){ Count = Count*(-1); }
         
         if(Count > INT32_MAX){
@@ -54,7 +54,7 @@ namespace Tools::Random {
     }
 
     vec<f32> RandomNumsVF(idx Count, f32 Min, f32 Max, const i32 Rounding) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Count < 0){ Count = Count*(-1); }
         
         if(Count > INT32_MAX){
@@ -79,7 +79,7 @@ namespace Tools::Random {
     }
 
     vec<f64> RandomNumsVD(idx Count, f64 Min, f64 Max, const i32 Rounding) {
-        if(Max < Min){ swap(Min, Max); }
+        if(Max < Min){ std::swap(Min, Max); }
         if(Count < 0){ Count = Count*(-1); }
         
         if(Count > INT32_MAX){
