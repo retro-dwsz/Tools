@@ -5,12 +5,12 @@
 /* First index getter */
 template <typename T>
 inline T Tools::ivec<T>::first() {
-    return ivec_data[0];
+    return IVecData[0];
 }
 
 template <typename T>
 inline T Tools::ivec<T>::first(idx n) {
-    return ivec_data[0 + n];
+    return IVecData[0 + n];
 }
 
 template <typename T>
@@ -21,12 +21,12 @@ inline T Tools::ivec<T>::front() {
 /* Last index getter */
 template <typename T>
 inline T Tools::ivec<T>::last() {
-    return ivec_data[ivec_size-1];
+    return IVecData[IVecSize-1];
 }
 
 template <typename T>
 inline T Tools::ivec<T>::last(idx n) {
-    return ivec_data[ivec_size-1 - n];
+    return IVecData[IVecSize-1 - n];
 }
 
 template <typename T>
@@ -37,39 +37,39 @@ inline T Tools::ivec<T>::back() {
 /* First index iterator */
 template <typename T>
 inline T* Tools::ivec<T>::begin() {
-    return ivec_data;
+    return IVecData;
 }
 
 /* Last index iterator */
 template <typename T>
 inline T* Tools::ivec<T>::end() {
-    return ivec_data + ivec_size;
+    return IVecData + IVecSize;
 }
 
 /* Constant First index iterator */
 template <typename T>
 inline const T* Tools::ivec<T>::cbegin() {
-    return ivec_data;
+    return IVecData;
 }
 
 /* Constant Last index iterator */
 template <typename T>
 inline const T* Tools::ivec<T>::cend() {
-    return ivec_data + ivec_size;
+    return IVecData + IVecSize;
 }
 
 /* First index reference */
 template <typename T>
 inline T& Tools::ivec<T>::refbegin() {
-    if (ivec_size == 0)
+    if (IVecSize == 0)
         throw std::out_of_range("ivec is empty");
-    return ivec_data[0];
+    return IVecData[0];
 }
 
 /* Last index reference */
 template <typename T>
 inline T& Tools::ivec<T>::refend() {
-    if (ivec_size == 0)
+    if (IVecSize == 0)
         throw std::out_of_range("ivec is empty");
-    return ivec_data[ivec_size - 1];
+    return IVecData[IVecSize - 1];
 }
