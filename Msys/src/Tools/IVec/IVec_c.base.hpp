@@ -15,17 +15,17 @@ template <typename T>
 class ivec {
     private:
     
-    T* ivec_data;
+    T* IVecData;
 
+    idx IVecSize;       // Actual size
+    idx IVecCapacity;   // How many elements that can be fitted without reallocation
+    
     /** Helper **/
     inline idx Normalize(i64 i) {
-        if (i < 0) i += ivec_size;
-        return (i < 0 ? 0 : (i >= ivec_size ? ivec_size - 1 : i));
+        if (i < 0) i += IVecSize;
+        return (i < 0 ? 0 : (i >= IVecSize ? IVecSize - 1 : i));
     }
 
-    idx ivec_size;       // Actual size
-    idx ivec_capacity;   // How many elements that can be fitted without reallocation
-    
     public:
     
     /** Data features **/
@@ -65,6 +65,37 @@ class ivec {
 
     const T& operator[](idx Index) const;        // getter (read-only)
     ivec<T>& operator=(const ivec& Other);       // setter (write-only)
+
+    /* Pyhton-y dunders */
+    // // __add__
+    ivec<T> operator+(const ivec<T>& other);
+
+    // // __iadd__
+    // void operator+(const ivec& other);
+
+    // // __mul__
+    ivec<T> operator*(const idx Count);
+
+    // // __imul__
+    // void operator*(const ivec& other);
+
+    // __eq__
+    bool operator==(const ivec& other);
+    
+    // // __ne__
+    // bool operator!=(const ivec& other);
+    
+    // // __lt__
+    // bool operator<(const ivec& other);
+    
+    // // __le__
+    // bool operator<=(const ivec& other);
+    
+    // // __gt__
+    // bool operator>(const ivec& other);
+    
+    // // __ge__
+    // bool operator>=(const ivec& other);
 
     /** Advanced **/
     void sliceInl(i64 x, i64 y);       // Slice x<->y

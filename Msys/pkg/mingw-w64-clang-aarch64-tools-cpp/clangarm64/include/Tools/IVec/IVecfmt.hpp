@@ -9,12 +9,12 @@ namespace fmt {
 
 template <typename T>
 struct fmt::formatter<Tools::ivec<T>, char> {
-
     constexpr auto parse(format_parse_context& ctx) {
         return ctx.begin();
     }
 
     template <typename FormatContext>
+    [[deprecated("Message")]]
     auto format(const Tools::ivec<T>& v, FormatContext& ctx) const {
         auto out = ctx.out();
         out = fmt::format_to(out, "[");

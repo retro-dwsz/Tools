@@ -4,15 +4,15 @@
 
 template <typename T>
 T* Tools::ivec<T>::data() {
-    return ivec_data;
+    return IVecData;
 }
 
 template <typename T>
 idx Tools::ivec<T>::size() {
-    return ivec_size;
+    return IVecSize;
 }
 
 template <typename T>
 idx Tools::ivec<T>::capacity() {
-    return ivec_capacity;
+    return IVecCapacity;
 }

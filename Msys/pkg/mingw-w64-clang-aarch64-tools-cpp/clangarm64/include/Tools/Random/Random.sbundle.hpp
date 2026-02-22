@@ -6,8 +6,8 @@
 
 namespace Tools::Random {
     vec<vec<i32>> RandomNumsSBI(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i32 Min = 0, i32 Max = 10) {
-        if(Max < Min) swap(Min, Max);
-        if(CountMax < CountMin) swap(CountMin, CountMax);
+        if(Max < Min) std::swap(Min, Max);
+        if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -41,8 +41,8 @@ namespace Tools::Random {
     }
 
     vec<vec<i64>> RandomNumsSBL(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i64 Min = 0, i64 Max = 10) {
-        if(Max < Min) swap(Min, Max);
-        if(CountMax < CountMin) swap(CountMin, CountMax);
+        if(Max < Min) std::swap(Min, Max);
+        if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -76,8 +76,8 @@ namespace Tools::Random {
     }
 
     vec<vec<f32>> RandomNumsSBF(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f32 Min = 0.01, f32 Max = 10.0, int Rounding = 2) {
-        if(Max < Min) swap(Min, Max);
-        if(CountMax < CountMin) swap(CountMin, CountMax);
+        if(Max < Min) std::swap(Min, Max);
+        if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -113,8 +113,8 @@ namespace Tools::Random {
     }
 
     vec<vec<f64>> RandomNumsSBD(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f64 Min = 0.01, f64 Max = 10.0, int Rounding = 2) {
-        if(Max < Min) swap(Min, Max);
-        if(CountMax < CountMin) swap(CountMin, CountMax);
+        if(Max < Min) std::swap(Min, Max);
+        if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT

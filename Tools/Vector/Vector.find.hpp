@@ -103,19 +103,43 @@ namespace Tools::Vector {
         return out;
     }
 
-    // Remove duplicated values for any others
-    template<typename T>
-    vec<T> RemoveDuplicates(const vec<T>& Data){
-        vec<T> Out(Data);
-        auto U = std::unique(Out.begin(), Out.end());
-        Out.erase(U, Out.end());
-        return Out;
-    }
-
     // Remove duplicated values inline
     template<typename T>
-    void RemoveDuplicatesInl(vec<T>& Data){
-        auto U = std::unique(Data.begin(), Data.end());
-        Data.erase(U, Data.end());
+    void RemoveDuplicatesInl(vec<T>& Data, const idx MaxCount = 1, const bool Sorted = false) {
+        if(Sorted){
+            auto U = std::unique(Data.begin(), Data.end());
+            Data.erase(U, Data.end());
+        } else if(!Sorted){
+            if (MaxCount == 0) {
+                Data.clear();
+                return;
+            }
+            umap<T, idx> count;
+            vec<T> result;
+            result.reserve(Data.size());
+
+            for (const auto& item : Data) {
+                idx& c = count[item];
+                if (c < MaxCount) {
+                    ++c;
+                    result.push_back(item);
+                }
+            }
+            Data = std::move(result);
+        }
+    }
+    
+    // Remove duplicated values for any others
+    template<typename T>
+    vec<T> RemoveDuplicates(const vec<T>& Data, const idx MaxCount = 1, const bool Sorted = false) {
+        vec<T> Out(Data);
+        if(Sorted){
+            auto U = std::unique(Out.begin(), Out.end());
+            Out.erase(U, Out.end());
+        } else if(!Sorted){
+            RemoveDuplicatesInl(Out);
+        }
+
+        return Out;
     }
 }
