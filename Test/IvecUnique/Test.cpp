@@ -33,18 +33,20 @@
 
 void vec_test(){
     vec<str> Win32{
-        "fileapi.h",
-        "windows.h",
-        "fileapi.h",
-        "windows.h",
-        "winnt.h",
-        "winspool.h",
-        "fileapi.h",
-        "windows.h",
-        "winnt.h",
-        "winspool.h",
+        "fstream",
+        "filesystem",
+        "unistd.h",
+        "sys/stat.h",
+        "cstdio",
+        "mach/mach.h",
+        "unistd.h",
+        "sys/types.h",
+        "time.h",
+        "errno.h",
+        "sys/ioctl.h",
+        "unistd.h",
+        "cstdio",
         "iostream",
-        "format"
     };
     
     uset<str> _Apple(Win32.begin(), Win32.end());
