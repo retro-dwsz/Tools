@@ -20,6 +20,9 @@
 // #include <D:/Code/Msys2/Files/clang64/lib/clang/21/include/stdint.h>
 // #include <../lib/clang/21/include/stdint.h>
 
+// #include "D:/Code/Msys2/Files/clang64/include/c++/v1/__type_traits/is_replaceable.h"
+// #include <c++/v1/__type_traits/is_replaceable.h>
+
 
 int main(){
     const char* t1 = "Tools-cpp is awsome!";
