@@ -8,6 +8,8 @@
 - ### Disclaimer
     I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
 
+- ### Better markdown in Notion
+    Better markdown for this documentation is typed using Notion.so [here](https://dwsz-249.notion.site/C-Tools-2f08edc33f1f80a2b877c0c4b19b800f?source=copy_link) (under construction)
 
 # Abstract of File Structure
 
