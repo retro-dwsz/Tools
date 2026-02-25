@@ -5,7 +5,7 @@
 #include "Random.common.hpp"
 
 namespace Tools::Random {
-    vec<vec<i32>> RandomNumsSBI(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i32 Min = 0, i32 Max = 10) {
+    vec<vec<i32>> RandomNumsSBI(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i32 Min = -10, i32 Max = 10) {
         if(Max < Min) std::swap(Min, Max);
         if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
@@ -40,7 +40,7 @@ namespace Tools::Random {
         return result;
     }
 
-    vec<vec<i64>> RandomNumsSBL(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i64 Min = 0, i64 Max = 10) {
+    vec<vec<i64>> RandomNumsSBL(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i64 Min = -100, i64 Max = 100) {
         if(Max < Min) std::swap(Min, Max);
         if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
@@ -75,7 +75,7 @@ namespace Tools::Random {
         return result;
     }
 
-    vec<vec<f32>> RandomNumsSBF(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f32 Min = 0.01, f32 Max = 10.0, int Rounding = 2) {
+    vec<vec<f32>> RandomNumsSBF(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f32 Min = -2.71, f32 Max = 2.71, int Rounding = 2) {
         if(Max < Min) std::swap(Min, Max);
         if(CountMax < CountMin) std::swap(CountMin, CountMax);
 
@@ -112,7 +112,7 @@ namespace Tools::Random {
         return result;
     }
 
-    vec<vec<f64>> RandomNumsSBD(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f64 Min = 0.01, f64 Max = 10.0, int Rounding = 2) {
+    vec<vec<f64>> RandomNumsSBD(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f64 Min = -3.14, f64 Max = 3.14, int Rounding = 2) {
         if(Max < Min) std::swap(Min, Max);
         if(CountMax < CountMin) std::swap(CountMin, CountMax);
 

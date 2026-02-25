@@ -5,10 +5,9 @@
 #include "Random.common.hpp"
 
 namespace Tools::Random {
-    vec<i32> RandomNumsVI(idx Count, i32 Min, i32 Max) {
+    vec<i32> RandomNumsVI(idx Count = 10, i32 Min = -10, i32 Max = 10) {
         if(Max < Min){ std::swap(Min, Max); }
-        if(Count < 0){ Count = Count*(-1); }
-        
+
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -29,10 +28,9 @@ namespace Tools::Random {
         return result;
     }
 
-    vec<i64> RandomNumsVL(idx Count, i64 Min, i64 Max) {
+    vec<i64> RandomNumsVL(idx Count = 10, i64 Min = -100, i64 Max = 100) {
         if(Max < Min){ std::swap(Min, Max); }
-        if(Count < 0){ Count = Count*(-1); }
-        
+
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -53,10 +51,9 @@ namespace Tools::Random {
         return result;
     }
 
-    vec<f32> RandomNumsVF(idx Count, f32 Min, f32 Max, const i32 Rounding) {
+    vec<f32> RandomNumsVF(idx Count = 10, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
         if(Max < Min){ std::swap(Min, Max); }
-        if(Count < 0){ Count = Count*(-1); }
-        
+
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -71,17 +68,33 @@ namespace Tools::Random {
         sthread RdDevice rd;
         sthread Twister32 gen(rd());
 
-        for (idx i = 0; i < Count; ++i) {
-            auto n = DistReal<f32>(Min, Max)(gen);
-            result.push_back(Tools::Round::Round(n, Rounding));
-        }
+        // for (idx i = 0; i < Count; ++i) {
+        //     auto n = DistReal<f32>(Min, Max)(gen);
+        //     if(Rounding > 0){
+        //         result.push_back(Tools::Round::Round(n, Rounding));
+        //     } else {
+        //         result.push_back(n);
+        //     }
+        // }
+        
+        // if(Rounding > 0){
+            for (idx i = 0; i < Count; ++i) {
+                auto n = DistReal<f32>(Min, Max)(gen);
+                result.push_back(Tools::Round::Round(n, Rounding));
+            }
+        // } else {
+        //     for (idx i = 0; i < Count; ++i) {
+        //         auto n = DistReal<f32>(Min, Max)(gen);
+        //         result.push_back(n);
+        //     }
+        // }
+
         return result;
     }
 
-    vec<f64> RandomNumsVD(idx Count, f64 Min, f64 Max, const i32 Rounding) {
+    vec<f64> RandomNumsVD(idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
         if(Max < Min){ std::swap(Min, Max); }
-        if(Count < 0){ Count = Count*(-1); }
-        
+
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
@@ -96,10 +109,18 @@ namespace Tools::Random {
         sthread RdDevice rd;
         sthread Twister64 gen(rd());
 
-        for (idx i = 0; i < Count; ++i) {
-            auto n = DistReal<f64>(Min, Max)(gen);
-            result.push_back(Tools::Round::Round(n, Rounding));
-        }
+        // if(Rounding > 0){
+            for (idx i = 0; i < Count; ++i) {
+                auto n = DistReal<f64>(Min, Max)(gen);
+                result.push_back(Tools::Round::Round(n, Rounding));
+            }
+        // } else {
+        //     for (idx i = 0; i < Count; ++i) {
+        //         auto n = DistReal<f64>(Min, Max)(gen);
+        //         result.push_back(n);
+        //     }
+        // }
+
         return result;
     }
 
