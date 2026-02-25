@@ -5,8 +5,8 @@ xdata = pkgtype=pkg
 pkgver = 25022026-1
 pkgdesc = Personal header-only C++ utility library
 url = 
-builddate = 1772010209
+builddate = 1772044173
 packager = Unknown Packager
-size = 247696
+size = 250176
 arch = any
 license = MIT
