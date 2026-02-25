@@ -5,10 +5,10 @@
 #include <string>
 #include <string_view>
 
-using cstr = const char*;
-using cwstr = const wchar_t*;
-using cstr16 = const char16_t*;
-using cstr32 = const char32_t*;
+using cstr      = const char*;
+using cwstr     = const wchar_t*;
+using cstr16    = const char16_t*;
+using cstr32    = const char32_t*;
 
 using str       = std::string;
 using strview   = std::string_view;
