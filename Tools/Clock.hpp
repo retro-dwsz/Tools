@@ -3,25 +3,29 @@
 #include "Types/Types.uint.hpp"
 #include "Types/Types.clock.hpp"
 #include <functional>
+#include <thread>
 #include <chrono>
 
 namespace Tools::Clock {
-    inline std::function TimeNow = std::chrono::high_resolution_clock::now;
-
-    template <typename T>
+    template <Duration T>
     u64 Count(const HClock& Begin, const HClock& End){
-        return DurCast<ms>(End-Begin).count();
+        return DurCast<T>(End-Begin).count();
     }
 
     // Main function: Measure time taken by a callable
-    template <typename F, typename DurationUnit> /* std::chrono::milliseconds */
+    template <typename F, typename DurationUnit>
     requires std::invocable<F>
     auto FunctionElapsed(F&& f) -> u64 {
-        using Clock = std::chrono::high_resolution_clock;
-        auto start = Clock::now();
+        auto start = HTimeNow();
         std::forward<F>(f)();
-        auto end = Clock::now();
+        auto end = HTimeNow();
         auto diff = end - start;
-        return to_uint64(DurCast<DurationUnit>(diff));
+
+        return to_u64(DurCast<DurationUnit>(diff));
+    }
+
+    template <Duration T>
+    void Sleep(u64 ms) {
+        std::this_thread::sleep_for(T(ms));
     }
 }
