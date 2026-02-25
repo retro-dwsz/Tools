@@ -6,13 +6,13 @@
 
 namespace Tools::Styling {
     // Centered Text with Borders
-    str PrintMid(const str& text = "Hello", char borderChar = '=', i32 offset = 0, bool printing = false) {
-        i32 termWidth = OS::Terminal::TerminalSizeWidth(offset);
+    str PrintMid(const str& text = "Hello", const char borderChar = '=', const u32 offset = 0, const bool printing = false) {
+        const i32 termWidth = OS::Terminal::TerminalSizeWidth(offset);
 
-        i32 padding = (termWidth - static_cast<i32>(text.size()) - 4) / 2;
+        const i32 padding = (termWidth - static_cast<i32>(text.size()) - 4) / 2;
 
-        str border = str(padding, borderChar);
-        str content = border + "[" + text + "]" + border;
+        const str border = str(padding, borderChar);
+        const str content = border + "[" + text + "]" + border;
 
         if (printing){
             return content;

@@ -7,6 +7,14 @@
 
 // __fp16 a = 3.14;
 
+// Other types of floating point that are rarely used
+// _Float16
+// _Float32
+// _Float32x
+// _Float64
+// _Float64x
+// _Float128
+
 using f16 = _Float16;
 using f32 = float;
 using f64 = double;

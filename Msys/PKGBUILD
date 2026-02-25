@@ -9,7 +9,7 @@
 
 pkgname=${MINGW_PACKAGE_PREFIX:-msys}-tools-cpp
 pkgdesc="Personal header-only C++ utility library"
-pkgver=17022026
+pkgver=25022026
 pkgrel=1
 arch=('any')
 
