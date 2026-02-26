@@ -1527,6 +1527,13 @@ Library to do some calculation with vector. Those choise of diction for function
 
 A library (but more liek shortcut) to do some calculations with Time
 
+Target of this library:
+- **Simplicity**: No complex template magic - just works
+- **Precision**: Uses high-resolution clock by default
+- **Type Safety**: Concepts ensure correct usage
+- **Modern C++**: Leverages C++20 features
+- **Zero Overhead**: All operations are compile-time checked
+
 - ### API Codes
     ```cpp
     namespace Tools::Clock {
@@ -1534,10 +1541,15 @@ A library (but more liek shortcut) to do some calculations with Time
         template <Duration T>
         u64 Count(const HClock& Begin, const HClock& End);
 
-        // Run function directly
-        template <typename F, typename DurationUnit>
+        // Run function directly (no return)
+        template <typename F, Duration T>
         requires std::invocable<F>
-        u64 FunctionElapsed(F&& f);
+        u64 FunctionElapsed(F&& func);
+
+        // Run function directly (with return)
+        template <typename F, Duration T>
+        requires (!std::same_as<std::invoke_result_t<F>, void>)
+        u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result);
 
         // Sleep in miliseconds
         template <Duration T>
@@ -1548,67 +1560,97 @@ A library (but more liek shortcut) to do some calculations with Time
 
 - ### Example of usage
     1. Elapsed time
-    ```cpp
-    #include <fmt/format.h>
-    #include <Tools/Types.hpp>
+        ```cpp
+        #include <fmt/format.h>
+        #include <Tools/Types.hpp>
 
-    void Heavy() {
-        u128 result = 0;
-        i16 max = GET_MAX(i16);
-        for(i16 i = 0; i < max; i++){
-            result += i;
-        }
-        fmt::println("0+1+...+{} = {}", max, result);
-    }
-
-    i32 main(){
-        HClock Begin = HTimeNow();      // get current time point (before task)
-        Heavy();                        // simulate some task
-        HClock End = HTimeNow();        // get current time point (after task)
-        fmt::println(
-            "Heavy took {} μs",
-            Count<us>(Begin, End).count()   // get elapsed time
-        );
-    }
-    ```
-
-    2. Run function directly
-    ```cpp
-    #include <fmt/format.h>
-    #include <Tools/Types.hpp>
-
-    std::function<void()> Heavy = []() {
-        u128 result = 0;
-        i16 max = GET_MAX(i16);
-        for(i16 i = 0; i < max; i++) {
-            result += i;
-        }
-        fmt::println("0+1+...+{} = {}", max, result);
-    }
-
-    i32 main(){
-        u64 Time = FunctionElapsed(
-            []() {
-                u128 result = 0;
-                i16 max = GET_MAX(i16);
-                for(i16 i = 0; i < max; i++) {
-                    result += i;
-                }
-                fmt::println("0+1+...+{} = {}", max, result);
+        void Heavy() {
+            u128 result = 0;
+            i16 max = GET_MAX(i16);
+            for(i16 i = 0; i < max; i++){
+                result += i;
             }
-        );
-        
-        /* or */
-        
-        fmt::println(
-            "Heavy took {} μs",
-            Time   // get elapsed time
-        );
+            fmt::println("0+1+...+{} = {}", max, result);
+        }
 
-        u64 TimeB = FunctionElapsed(Heavy)
-        fmt::println(
-            "Heavy took {} μs",
-            TimeB  // get elapsed time
-        );
-    }
-    ```
+        i32 main(){
+            HClock Begin = HTimeNow();      // get current time point (before task)
+            Heavy();                        // simulate some task
+            HClock End = HTimeNow();        // get current time point (after task)
+            fmt::println(
+                "Heavy took {} μs",
+                Count<us>(Begin, End).count()   // get elapsed time
+            );
+        }
+        ```
+
+    2. Run function directly (`void`)
+        ```cpp
+        #include "Tools/Clock.hpp"
+
+        i32 main() {
+            // Time a void function directly
+            auto timeMs = Tools::Clock::FunctionElapsed<Tools::Clock::ms>([] {
+                std::vector<i32> v(1000000);
+                std::iota(v.begin(), v.end(), 0);
+                std::sort(v.begin(), v.end(), std::greater<i32>());
+            });
+            
+            fmt::println("Sorting took {} ms", timeMs);
+            return 0;
+        }
+        ```
+    
+    3.  Run function directly (`T`)
+        ```cpp
+        #include "Tools/Clock.hpp"
+
+        i32 main() {
+            i32 result;
+            
+            // Time a function AND get its result
+            auto timeUs = Tools::Clock::FunctionElapsed<Tools::Clock::us>(
+                [] { 
+                    return std::accumulate(std::vector<i32>(1000, 1).begin(), 
+                                        std::vector<i32>(1000, 1).end(), 0); 
+                },
+                result
+            );
+            
+            fmt::println("Sum of 1000 ones = {}", result);
+            fmt::println("Calculation took {} μs", timeUs);
+            return 0;
+        }
+        ```
+    
+    4. Precise Sleep
+        ```cpp
+        #include "Tools/Clock.hpp"
+
+        int main() {
+            fmt::println("Starting...");
+            
+            // Sleep for 1.5 seconds
+            Tools::Clock::Sleep<Tools::Clock::ms>(1500);
+            
+            fmt::println("1.5 s (seconds) later...");
+            
+            // Sleep for 250 microseconds
+            Tools::Clock::Sleep<Tools::Clock::us>(250);
+            
+            fmt::println("250 μs (microseconds) later...");
+            return 0;
+        }
+        ```
+
+- ### Common mistakes
+    1. Time Point vs. Duration Confusion
+        - Wrong: `auto dur = HTimeNow();` (this is a time point, not duration)
+        - Right: `auto dur = end - begin;` (this gives a duration)
+    2. Unit Selection Tips
+        - Use `us` (`microseconds`) for most performance measurements
+        - Use `ns` (`nanoseconds`) for extremely precise measurements
+        - Use `ms` (`milliseconds`) for user-facing timing info
+    3. Clock Selection Guide
+        - `HTimeNow()`: _**Highest**_ precision, but may vary if system clock changes
+        - `TimeNow()`: _**Steady**_ clock, better for measuring intervals (not implemented in current API but available)
