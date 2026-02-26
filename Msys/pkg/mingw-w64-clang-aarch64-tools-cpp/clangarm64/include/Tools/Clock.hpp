@@ -2,30 +2,38 @@
 
 #include "Types/Types.uint.hpp"
 #include "Types/Types.clock.hpp"
-#include <functional>
+
 #include <thread>
-#include <chrono>
 
 namespace Tools::Clock {
     template <Duration T>
     u64 Count(const HClock& Begin, const HClock& End){
-        return DurCast<T>(End-Begin).count();
+        return DurCast<T>(End-Begin);
     }
 
-    // Main function: Measure time taken by a callable
-    template <typename F, typename DurationUnit>
+    // Measure time taken by a callable (return none)
+    // Able to run function, std::function, lamba
+    template <typename F, Duration T>
     requires std::invocable<F>
-    auto FunctionElapsed(F&& f) -> u64 {
-        auto start = HTimeNow();
-        std::forward<F>(f)();
-        auto end = HTimeNow();
-        auto diff = end - start;
+    u64 FunctionElapsed(F&& func) {
+        HClock start = HTimeNow();
+        std::forward<F>(func)();
+        HClock end = HTimeNow();
+        return Count<T>(start, end);
+    }
 
-        return to_u64(DurCast<DurationUnit>(diff));
+    // Measure time taken by a callable (return somthing)
+    template <typename F, Duration T>
+    requires (!std::same_as<std::invoke_result_t<F>, void>)
+    u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result) {
+        HClock start = HTimeNow();
+        result = std::forward<F>(func)();  // Store result
+        HClock end = HTimeNow();
+        return Count<T>(start, end);
     }
 
     template <Duration T>
     void Sleep(u64 ms) {
-        std::this_thread::sleep_for(T(ms));
+        std::this_thread::sleep_for(T{ms});
     }
 }

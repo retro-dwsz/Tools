@@ -1522,3 +1522,93 @@ Library to do some calculation with vector. Those choise of diction for function
     ```
 
 ---
+
+# `XVII`. Lib `Tools.Clock`
+
+A library (but more liek shortcut) to do some calculations with Time
+
+- ### API Codes
+    ```cpp
+    namespace Tools::Clock {
+        // Return elapsed time based on 1 time points in selectected unit
+        template <Duration T>
+        u64 Count(const HClock& Begin, const HClock& End);
+
+        // Run function directly
+        template <typename F, typename DurationUnit>
+        requires std::invocable<F>
+        u64 FunctionElapsed(F&& f);
+
+        // Sleep in miliseconds
+        template <Duration T>
+        void Sleep(u64 ms);
+    }
+
+    ```
+
+- ### Example of usage
+    1. Elapsed time
+    ```cpp
+    #include <fmt/format.h>
+    #include <Tools/Types.hpp>
+
+    void Heavy() {
+        u128 result = 0;
+        i16 max = GET_MAX(i16);
+        for(i16 i = 0; i < max; i++){
+            result += i;
+        }
+        fmt::println("0+1+...+{} = {}", max, result);
+    }
+
+    i32 main(){
+        HClock Begin = HTimeNow();      // get current time point (before task)
+        Heavy();                        // simulate some task
+        HClock End = HTimeNow();        // get current time point (after task)
+        fmt::println(
+            "Heavy took {} μs",
+            Count<us>(Begin, End).count()   // get elapsed time
+        );
+    }
+    ```
+
+    2. Run function directly
+    ```cpp
+    #include <fmt/format.h>
+    #include <Tools/Types.hpp>
+
+    std::function<void()> Heavy = []() {
+        u128 result = 0;
+        i16 max = GET_MAX(i16);
+        for(i16 i = 0; i < max; i++) {
+            result += i;
+        }
+        fmt::println("0+1+...+{} = {}", max, result);
+    }
+
+    i32 main(){
+        u64 Time = FunctionElapsed(
+            []() {
+                u128 result = 0;
+                i16 max = GET_MAX(i16);
+                for(i16 i = 0; i < max; i++) {
+                    result += i;
+                }
+                fmt::println("0+1+...+{} = {}", max, result);
+            }
+        );
+        
+        /* or */
+        
+        fmt::println(
+            "Heavy took {} μs",
+            Time   // get elapsed time
+        );
+
+        u64 TimeB = FunctionElapsed(Heavy)
+        fmt::println(
+            "Heavy took {} μs",
+            TimeB  // get elapsed time
+        );
+    }
+    ```
