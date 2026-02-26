@@ -68,26 +68,10 @@ namespace Tools::Random {
         sthread RdDevice rd;
         sthread Twister32 gen(rd());
 
-        // for (idx i = 0; i < Count; ++i) {
-        //     auto n = DistReal<f32>(Min, Max)(gen);
-        //     if(Rounding > 0){
-        //         result.push_back(Tools::Round::Round(n, Rounding));
-        //     } else {
-        //         result.push_back(n);
-        //     }
-        // }
-        
-        // if(Rounding > 0){
-            for (idx i = 0; i < Count; ++i) {
-                auto n = DistReal<f32>(Min, Max)(gen);
-                result.push_back(Tools::Round::Round(n, Rounding));
-            }
-        // } else {
-        //     for (idx i = 0; i < Count; ++i) {
-        //         auto n = DistReal<f32>(Min, Max)(gen);
-        //         result.push_back(n);
-        //     }
-        // }
+        for (idx i = 0; i < Count; ++i) {
+            auto n = DistReal<f32>(Min, Max)(gen);
+            result.push_back(Tools::Round::Round(n, Rounding));
+        }
 
         return result;
     }
@@ -109,17 +93,10 @@ namespace Tools::Random {
         sthread RdDevice rd;
         sthread Twister64 gen(rd());
 
-        // if(Rounding > 0){
-            for (idx i = 0; i < Count; ++i) {
-                auto n = DistReal<f64>(Min, Max)(gen);
-                result.push_back(Tools::Round::Round(n, Rounding));
-            }
-        // } else {
-        //     for (idx i = 0; i < Count; ++i) {
-        //         auto n = DistReal<f64>(Min, Max)(gen);
-        //         result.push_back(n);
-        //     }
-        // }
+        for (idx i = 0; i < Count; ++i) {
+            auto n = DistReal<f64>(Min, Max)(gen);
+            result.push_back(Tools::Round::Round(n, Rounding));
+        }
 
         return result;
     }

@@ -12,27 +12,25 @@ inline std::function HTimeNow = std::chrono::high_resolution_clock::now;
 inline std::function TimeNow = std::chrono::steady_clock::now;
 
 // Clocks
-using HClock    = std::chrono::time_point<std::chrono::high_resolution_clock>;
+using Clock     = std::chrono::time_point<std::chrono::high_resolution_clock>;
 using SClock    = std::chrono::time_point<std::chrono::steady_clock>;
-using Clock     = HClock;
+using HClock    = Clock;
 
 // Units (fixed: us = microseconds, Ms = milliseconds)
-using ns     = std::chrono::nanoseconds;
-using us     = std::chrono::microseconds;  // ✅ microseconds
-using ms     = std::chrono::milliseconds;  // ✅ milliseconds
-using sec    = std::chrono::seconds;
-using min    = std::chrono::minutes;
-using hrs    = std::chrono::hours;
+/* "seconds" */
+using ns        = std::chrono::nanoseconds;
+using us        = std::chrono::microseconds;
+using ms        = std::chrono::milliseconds;
+using sec       = std::chrono::seconds;
 
-using days   = std::chrono::days;
-using weeks  = std::chrono::weeks;
-using months = std::chrono::months;
+/* Minutes and Hours */
+using min       = std::chrono::minutes;
+using hrs       = std::chrono::hours;
 
-// Helper: Convert duration to u64 (for display or storage)
-template <typename D>
-constexpr u64 to_u4(const D& d) {
-    return static_cast<u64>(d.count());
-}
+/* 24+ Hours */
+using days      = std::chrono::days;
+using weeks     = std::chrono::weeks;
+using months    = std::chrono::months;
 
 // Durations
 template <typename T>
@@ -45,6 +43,12 @@ concept Duration = std::same_as<T, ns>
     || std::same_as<T, days>
     || std::same_as<T, weeks>
     || std::same_as<T, months>;
+
+// Helper: Convert duration to u64 (for display or storage)
+template <typename D>
+constexpr u64 to_u64(const D& d) {
+    return static_cast<u64>(d.count());
+}
 
 // Helper: Cast duration to another unit
 template <typename To, typename From>

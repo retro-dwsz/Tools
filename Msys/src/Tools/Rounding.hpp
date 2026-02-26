@@ -18,28 +18,28 @@ namespace Tools::Round {
     }
 
     template <Float T>
-    T Round(const T value, const u32 digits) {
+    T Round(const T value, const u32 digits = -1) {
         static_assert(std::is_arithmetic_v<T>, "Round only supports numbers");
 
-        // Do nothing if digit is 0
-        if(digits <= 0){
-            return value;
-        } else {
-            T factor = Cast::scast<T>(std::pow(10, -digits));
-            return Cast::scast<T>(
-                BankersRound(Cast::scast<f64>(value) / factor) * factor
-            );
-        }
-
-        // if constexpr (std::is_integral_v<T>) {
-        //     if (digits >= 0) return value;
-
+        // if(digits <= 0){
+        //     return value;
         // } else {
-        //     f64 factor = std::pow(10.0, digits);
+        //     T factor = Cast::scast<T>(std::pow(10, -digits));
         //     return Cast::scast<T>(
-        //         BankersRound(Cast::scast<f64>(value) * factor) / factor
+        //         BankersRound(Cast::scast<f64>(value) / factor) * factor
         //     );
         // }
+        
+        // Do nothing if digit is 0
+        if constexpr (std::is_integral_v<T>) {
+            if (digits == 0) return value;
+
+        } else {
+            f64 factor = std::pow(10.0, digits);
+            return Cast::scast<T>(
+                BankersRound(Cast::scast<f64>(value) * factor) / factor
+            );
+        }
     }
 }
 
