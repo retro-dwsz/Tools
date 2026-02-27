@@ -7,8 +7,13 @@
 
 namespace Tools::Clock {
     template <Duration T>
-    u64 Count(const HClock& Begin, const HClock& End){
-        return DurCast<T>(End-Begin);
+    u64 CountDuration(const ::Clock::HClock& Begin, const ::Clock::HClock& End){
+        return std::chrono::duration_cast<T>(End-Begin).count();
+    }
+
+    template <Duration T>
+    void Sleep(u64 dur) {
+        std::this_thread::sleep_for(T{dur});
     }
 
     // Measure time taken by a callable (return none)
@@ -16,24 +21,19 @@ namespace Tools::Clock {
     template <typename F, Duration T>
     requires std::invocable<F>
     u64 FunctionElapsed(F&& func) {
-        HClock start = HTimeNow();
+        ::Clock::HClock start = ::Clock::HTimeNow();
         std::forward<F>(func)();
-        HClock end = HTimeNow();
-        return Count<T>(start, end);
+        ::Clock::HClock end = ::Clock::HTimeNow();
+        return CountDuration<T>(start, end);
     }
 
     // Measure time taken by a callable (return somthing)
     template <typename F, Duration T>
     requires (!std::same_as<std::invoke_result_t<F>, void>)
     u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result) {
-        HClock start = HTimeNow();
+        ::Clock::HClock start = ::Clock::HTimeNow();
         result = std::forward<F>(func)();  // Store result
-        HClock end = HTimeNow();
-        return Count<T>(start, end);
-    }
-
-    template <Duration T>
-    void Sleep(u64 ms) {
-        std::this_thread::sleep_for(T{ms});
+        ::Clock::HClock end = ::Clock::HTimeNow();
+        return CountDuration<T>(start, end);
     }
 }

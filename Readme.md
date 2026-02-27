@@ -1579,7 +1579,7 @@ Target of this library:
             HClock End = HTimeNow();        // get current time point (after task)
             fmt::println(
                 "Heavy took {} μs",
-                Count<us>(Begin, End).count()   // get elapsed time
+                CountDuration<us>(Begin, End).count()   // get elapsed time
             );
         }
         ```
