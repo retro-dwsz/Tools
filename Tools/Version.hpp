@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define __TOOLS_CPP_VER_    10
+#define __TOOLS_CPP_VER__   10
 #define __TOOLS_CPP_MAJOR__ 1
 #define __TOOLS_CPP_MINOR__ 0
 
