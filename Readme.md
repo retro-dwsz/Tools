@@ -1562,7 +1562,7 @@ Target of this library:
 
         // Sleep in miliseconds
         template <Duration T>
-        void Sleep(u64 ms);
+        void Sleep(u64 value);
     }
 
     ```
