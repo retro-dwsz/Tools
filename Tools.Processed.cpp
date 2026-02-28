@@ -8,3 +8,7 @@
 
 // #include "D:/Code/Msys2/Files/clang64/include/wchar.h"
 // #include "../include/wchar.h"
+
+i32 main(){
+    PrintVersion();
+}
