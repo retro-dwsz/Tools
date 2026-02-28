@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_ITER_HPP
+#define TOOLS_IVEC_ITER_HPP
+
 #include "IVec_c.base.hpp"
 
 /* First index getter */
@@ -73,3 +76,5 @@ inline T& Tools::ivec<T>::refend() {
         throw std::out_of_range("ivec is empty");
     return IVecData[IVecSize - 1];
 }
+
+#endif

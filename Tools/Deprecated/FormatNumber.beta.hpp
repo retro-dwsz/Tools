@@ -1,3 +1,10 @@
+#pragma once
+
+#define DEPRECATED 1
+
+#ifndef TOOLS_FORMAT_NUMBER_BETA_HPP
+#define TOOLS_FORMAT_NUMBER_BETA_HPP
+
 #include "../Types.hpp"
 #include <sstream>
 
@@ -182,3 +189,5 @@ namespace Formatter {
         return formatIntegerString(ss.str(), group, separator);
     }
 }
+
+#endif

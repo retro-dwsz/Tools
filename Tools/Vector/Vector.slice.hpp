@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_SLICE_HPP
+#define TOOLS_VECTOR_SLICE_HPP
+
 #include "../Types.hpp"
 
 /* Slices */
@@ -53,3 +56,5 @@ template vec<i32> Tools::Vector::Slice<i32>(const vec<i32>& vec, idx n);
 template vec<i64> Tools::Vector::Slice<i64>(const vec<i64>& vec, idx n);
 template vec<f32> Tools::Vector::Slice<f32>(const vec<f32>& vec, idx n);
 template vec<f64> Tools::Vector::Slice<f64>(const vec<f64>& vec, idx n);
+
+#endif

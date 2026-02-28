@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_LINUX_FILES_HPP
+#define TOOLS_OS_LINUX_FILES_HPP
+
 #include "../Types.hpp"
 
 #include <fcntl.h>      // open
@@ -113,3 +116,5 @@ namespace Tools::Linux::File {
     }
 
 }
+
+#endif

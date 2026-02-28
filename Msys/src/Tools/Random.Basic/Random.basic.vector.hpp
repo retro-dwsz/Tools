@@ -1,7 +1,10 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_BASIC_VECTOR_HPP
+#define TOOLS_RANDOM_BASIC_VECTOR_HPP
+
 #include "../Types.hpp"
-#include "Random.common.hpp"
+#include "Random.basic.common.hpp"
 
 /* Fixed min/max value vectors */
 namespace Tools::Random::Multi {
@@ -54,5 +57,6 @@ namespace Tools::Random::Multi {
         }
         return result;
     }
-
 }
+
+#endif

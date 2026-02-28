@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_ORDER_HPP
+#define TOOLS_VECTOR_ORDER_HPP
+
 #include "../Randomizer.hpp"
 #include "../Types.hpp"
 #include <algorithm>
@@ -34,3 +37,5 @@ template vec<i32> Tools::Vector::Sort<i32>(const vec<i32>& v);
 template vec<i64> Tools::Vector::Sort<i64>(const vec<i64>& v);
 template vec<f32> Tools::Vector::Sort<f32>(const vec<f32>& v);
 template vec<f64> Tools::Vector::Sort<f64>(const vec<f64>& v);
+
+#endif

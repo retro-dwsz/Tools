@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_LEGACY_HPP
+#define TOOLS_IVEC_LEGACY_HPP
+
 #include "IVec_c.base.hpp"
 #include <utility>
 
@@ -44,3 +47,5 @@ template <typename T>
 void Tools::ivec<T>::insert(const T* A, const T* B){
     /* ??? */
 }
+
+#endif

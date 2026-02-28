@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_CONVERT_HPP
+#define TOOLS_IVEC_CONVERT_HPP
+
 #include <format>
 #include "IVec_c.base.hpp"
 
@@ -70,3 +73,5 @@ str Tools::ivec<T>::fstr() {
     out += "]";
     return out;
 }
+
+#endif

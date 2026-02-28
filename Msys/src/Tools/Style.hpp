@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_STYLE_HPP
+#define TOOLS_STYLE_HPP
+
 #include "Types.hpp"
 #include <format>
 #include <algorithm>
@@ -134,3 +137,5 @@ namespace Tools::Styling {
         Text = std::regex_replace(Text, ansi_escape, "");
     }
 }
+
+#endif

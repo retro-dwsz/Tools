@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_WIN32_PROC_HPP
+#define TOOLS_OS_WIN32_PROC_HPP
+
 /* ONLY STANDARD LIBS ARE ALLOWED */
 #include <fileapi.h>
 #include <windows.h>
@@ -118,3 +121,5 @@ namespace Tools::OS::Process {
         return isAdmin;
     }
 }
+
+#endif

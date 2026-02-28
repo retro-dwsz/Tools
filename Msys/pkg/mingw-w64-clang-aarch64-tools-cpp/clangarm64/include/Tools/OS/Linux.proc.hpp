@@ -1,5 +1,8 @@
 #pragma
 
+#ifndef TOOLS_OS_LINUX_PROC_HPP
+#define TOOLS_OS_LINUX_PROC_HPP
+
 #include "../Types.hpp"
 
 #include <unistd.h>     // geteuid
@@ -93,3 +96,4 @@ namespace Tools::Linux::Process {
         return is_root;
     }
 }
+#endif

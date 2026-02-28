@@ -3,7 +3,7 @@
 - ### What is this?
     A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money.
     
-    This project is **entirely** in C++, if you see like LLVM IR and Assembly on the github page, don't worry, it's just a testings and WON'T be included in instalation package, also those are generated with `clang++ -S -emit-llvm` and `clang++ -S`.
+    This project is **_entirely_** in C++, if you see like LLVM IR and Assembly on the github page, don't worry, it's just a testings and WON'T be included in instalation package, also those are generated with `clang++ -S -emit-llvm` and `clang++ -S`.
 
 - ### Disclaimer
     I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
@@ -16,7 +16,8 @@
 - ### Header files
     |            Files          |                         What is this?                         |
     |---------------------------|---------------------------------------------------------------|
-    |`Tools/Casting.hpp`        | Type Casting aliases.                                         |
+    |`Tools/Casting.hpp`        | Type Casting aliases                                          |
+    |`Tools/Clock.hpp`          | Time & Clock utilities                                        |
     |`Tools/Edges.hpp`          | Min/max getter for types                                      |
     |`Tools/Files.hpp`          | I/O files utility                                             |
     |`Tools/FormatNumber.hpp`   | Number formatter                                              |
@@ -49,6 +50,7 @@
 - ### Folder `Tools/Types/*`
     |               Files              |           What is this?            |
     |----------------------------------|------------------------------------|
+    | `/Types/Types.clock.hpp`         | Clocks & Units aliases             |
     | `/Types/Types.containers.hpp`    | Containers aliases                 |
     | `/Types/Types.int.hpp`           | Signed interger aliases            |
     | `/Types/Types.uint.hpp`          | Unsigned integer aliases           |
@@ -199,6 +201,13 @@ Another type alias that you and I may not use often
 | `std::unique_ptr<T>` | `uptr<T>` |
 | `std::shared_ptr<T>` | `sptr<T>` |
 | `std::weak_ptr<T>`   | `wptr<T>` |
+
+### Time Points (a.k.a clocks from `std::chrono`)
+|                           Original                            |  Aliased  |
+|---------------------------------------------------------------|-----------|
+| `std::chrono::time_point<std::chrono::high_resolution_clock>` | `HClock`  |
+| `std::chrono::time_point<std::chrono::steady_clock>`          | `SClock`  |
+| `HClock`                                                      | `Clock`   |
 
 ### Commonly used packed type with `concept`
 |   Concept  |              Types convered              |

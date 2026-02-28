@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_HPP
+#define TOOLS_OS_HPP
+
 /* Per section includes
  *
  * Tools/OS/<OS>.API.hpp         All packed APIs
@@ -15,4 +18,6 @@
     #include "OS/Linux.API.hpp"
 #elif defined(__APPLE__)
     #include "OS/Apple.API.hpp"
+#endif
+
 #endif

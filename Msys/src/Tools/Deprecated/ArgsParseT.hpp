@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_ARGPARSE_T_HPP
+#define TOOLS_ARGPARSE_T_HPP
+
 #include <string>
 #include <sstream>
 #include <map>
@@ -220,3 +225,5 @@ namespace Tools::ArgsParseT {
         return Default;
     }
 }
+
+#endif

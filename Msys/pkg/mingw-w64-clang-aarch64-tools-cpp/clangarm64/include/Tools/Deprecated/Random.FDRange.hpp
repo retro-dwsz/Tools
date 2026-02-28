@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_RANDOM_FDRANGE_HPP
+#define TOOLS_RANDOM_FDRANGE_HPP
+
 #include "../Types.hpp"
 #include "../Casting.hpp"
 #include "../Rounding.hpp"
@@ -159,3 +164,5 @@ namespace Tools::Random::Multi {
     }
 
 }
+
+#endif

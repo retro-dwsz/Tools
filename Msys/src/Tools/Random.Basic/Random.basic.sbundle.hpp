@@ -1,9 +1,12 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_BASIC_SBUNDLE_HPP
+#define TOOLS_RANDOM_BASIC_SBUNDLE_HPP
+
 #include "../Types.hpp"
-#include "Random.common.hpp"
-#include "Random.vector.basic.hpp"
-#include "Random.single.basic.hpp"
+#include "Random.basic.common.hpp"
+#include "Random.basic.vector.hpp"
+#include "Random.basic.single.hpp"
 
 /* Bundled vector with randomized elements of each sub-vector */
 namespace Tools::Random::Bundle {
@@ -59,3 +62,5 @@ namespace Tools::Random::Bundle {
         return result;
     }
 }
+
+#endif

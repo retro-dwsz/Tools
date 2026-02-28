@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_ROUNDING_HPP
+#define TOOLS_ROUNDING_HPP
+
 #include <cmath>
 #include "Types.hpp"
 #include "Casting.hpp"
@@ -46,3 +49,5 @@ namespace Tools::Round {
 template f32 Tools::Round::Round(const f32 value, const u32 digits);
 template f64 Tools::Round::Round(const f64 value, const u32 digits);
 template fld Tools::Round::Round(const fld value, const u32 digits);
+
+#endif

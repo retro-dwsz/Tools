@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_GETSET_HPP
+#define TOOLS_IVEC_GETSET_HPP
+
 #include "IVec_c.base.hpp"
 
 /* Python like functions */
@@ -139,3 +142,5 @@ Tools::ivec<T>& Tools::ivec<T>::operator=(const ivec& other) {
 
     return *this;
 }
+
+#endif

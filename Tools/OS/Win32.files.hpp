@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_WIN32_FILES_HPP
+#define TOOLS_OS_WIN32_FILES_HPP
+
 /* ONLY STANDARD LIBS ARE ALLOWED */
 #include <fileapi.h>
 #include <windows.h>
@@ -106,3 +109,5 @@ namespace Tools::Win32::File {
         return MoveFileA(f, t);
     }
 }
+
+#endif

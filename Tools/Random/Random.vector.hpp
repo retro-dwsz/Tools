@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_VECTOR_HPP
+#define TOOLS_RANDOM_VECTOR_HPP
+
 /* Vector functions with fixed min/max value vectors */
 
 #include "Random.common.hpp"
@@ -102,3 +105,5 @@ namespace Tools::Random {
     }
 
 }
+
+#endif

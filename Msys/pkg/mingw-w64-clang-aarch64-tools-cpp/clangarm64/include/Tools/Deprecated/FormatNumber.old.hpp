@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_FORMAT_NUMBER_OLD_HPP
+#define TOOLS_FORMAT_NUMBER_OLD_HPP
+
 #include "../Types.hpp"
 #include <iomanip>
 #include <string>
@@ -414,3 +419,4 @@ namespace Tools::FormatNumber {
     }
 }
 
+#endif

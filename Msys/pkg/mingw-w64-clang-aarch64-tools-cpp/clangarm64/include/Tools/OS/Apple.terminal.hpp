@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef TOOLS_OS_APPLE_TERMINAL_HPP
+#define TOOLS_OS_APPLE_TERMINAL_HPP
+
+
 #include "../Types.hpp"
 
 /* Apple / POSIX terminal includes */
@@ -71,3 +75,5 @@ namespace Tools::OS::Terminal {
         std::cout.flush();
     }
 }
+
+#endif

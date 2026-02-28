@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_APPLE_API_HPP
+#define TOOLS_OS_APPLE_API_HPP
+
 /* ONLY STANDARD LIBS + Tools ARE ALLOWED */
 /* Apple */
 // #include <time.h> 
@@ -16,3 +19,5 @@
 #include "Apple.files.hpp"
 #include "Apple.sleep.hpp"
 #include "Apple.proc.hpp"
+
+#endif

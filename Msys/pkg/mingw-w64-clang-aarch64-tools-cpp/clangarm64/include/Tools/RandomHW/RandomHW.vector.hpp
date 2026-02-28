@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_HW_VECTOR_HPP
+#define TOOLS_RANDOM_HW_VECTOR_HPP
+
 #include "RandomHW.common.hpp"
 
 namespace Tools::RandomHW {
@@ -54,3 +57,4 @@ namespace Tools::RandomHW {
         return result;
     }
 }
+#endif

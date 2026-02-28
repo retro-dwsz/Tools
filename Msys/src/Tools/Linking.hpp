@@ -2,6 +2,9 @@
 
 #pragma once
 
+#ifndef TOOLS_LINKING_HPP
+#define TOOLS_LINKING_HPP
+
 #include "Style.hpp"
 #include "Types.hpp"
 #include <iostream>
@@ -333,6 +336,8 @@ namespace Tools::Linking {
     }
 
     // Slightly safer CallFunctionC
+    [[deprecated("This thing is basically the same as in CallFunctionC (without the _s)")]]
+    [[maybe_unused]]
     i32 CallFunctionC_s(                /* Function IV B */
         str& File,                      /* File to find */
         const str& EntryPoint,          /* Finnction to call (disable magle!) */
@@ -418,3 +423,5 @@ namespace Tools::Linking {
     }
     #endif
 }
+
+#endif

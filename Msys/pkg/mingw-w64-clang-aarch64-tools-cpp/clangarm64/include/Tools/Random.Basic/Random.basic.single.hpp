@@ -1,7 +1,10 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_BASIC_SINGLE_HPP
+#define TOOLS_RANDOM_BASIC_SINGLE_HPP
+
 #include "../Types.hpp"
-#include "Random.common.hpp"
+#include "Random.basic.common.hpp"
 
 // --- SINGLE FUNCTIONS (Integer ranges) ---
 namespace Tools::Random::Single {
@@ -26,3 +29,5 @@ namespace Tools::Random::Single {
         return RandomReal(min, max);
     }
 }
+
+#endif

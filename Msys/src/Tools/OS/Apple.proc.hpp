@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef TOOLS_OS_APPLE_PROC_HPP
+#define TOOLS_OS_APPLE_PROC_HPP
+
+
 #include "../Types.hpp"
 
 /* Apple / Mach includes */
@@ -86,3 +90,5 @@ namespace Tools::OS::Process {
     }
 
 }
+
+#endif

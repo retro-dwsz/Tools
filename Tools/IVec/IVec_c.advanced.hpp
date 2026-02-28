@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_ADVANCED_HPP
+#define TOOLS_IVEC_ADVANCED_HPP
+
 #include "IVec_c.base.hpp"
 
 #include <utility>
@@ -362,3 +365,5 @@ void Tools::ivec<T>::uniquesInl(idx n){
 
     IVecSize = write;
 }
+
+#endif

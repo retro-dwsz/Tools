@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_INLINE_HPP
+#define TOOLS_VECTOR_INLINE_HPP
+
 #include "../Randomizer.hpp"
 #include "../Types.hpp"
 #include <algorithm>
@@ -27,3 +30,5 @@ template void Tools::VectorInl::Sort<i32>(vec<i32>& v);
 template void Tools::VectorInl::Sort<i64>(vec<i64>& v);
 template void Tools::VectorInl::Sort<f32>(vec<f32>& v);
 template void Tools::VectorInl::Sort<f64>(vec<f64>& v);
+
+#endif

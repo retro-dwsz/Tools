@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_STYLE_W_HPP
+#define TOOLS_STYLE_W_HPP
+
 #include <stdexcept>
 #include <algorithm>
 #include <regex>
@@ -421,4 +424,4 @@ namespace Tools::StylingW {
     }
 }
 
-
+#endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_COMMON_HPP
+#define TOOLS_RANDOM_COMMON_HPP
+
 #include "../Types.hpp"
 #include "../Casting.hpp"
 #include "../Rounding.hpp"
@@ -64,3 +67,5 @@ namespace {
         return dis(gen);
     }
 }
+
+#endif

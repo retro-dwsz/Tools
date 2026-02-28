@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_WIN32_TERMINAL_HPP
+#define TOOLS_OS_WIN32_TERMINAL_HPP
+
 /* ONLY STANDARD LIBS ARE ALLOWED */
 // #include <unistr.h>
 #include <fileapi.h>
@@ -77,3 +80,5 @@ namespace Tools::OS::Terminal {
         SetConsoleMode(hStdOut, originalMode); // Restore original mode
     }
 }
+
+#endif

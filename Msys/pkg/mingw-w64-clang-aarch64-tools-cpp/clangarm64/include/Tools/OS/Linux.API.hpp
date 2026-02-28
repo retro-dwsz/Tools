@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_LINUX_API_HPP
+#define TOOLS_OS_LINUX_API_HPP
+
 /* ONLY STANDARD LIBS + Tools ARE ALLOWED */
 /* Linux */
 // #include <fcntl.h>
@@ -24,3 +27,5 @@
 #include "Linux.proc.hpp"
 #include "Linux.sleep.hpp"
 #include "Linux.terminal.hpp"
+
+#endif

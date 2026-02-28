@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_STRING_HPP
+#define TOOLS_TYPES_STRING_HPP
+
 /* ---- String ---- */
 #include <sstream>
 #include <string>
@@ -37,3 +40,5 @@ template <typename T>
 concept WStrings =
     std::same_as<T, wstr>
     || std::same_as<T, cwstr>;
+
+#endif

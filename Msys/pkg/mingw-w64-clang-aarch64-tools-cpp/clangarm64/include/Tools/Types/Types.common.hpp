@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_COMMON_HPP
+#define TOOLS_TYPES_COMMON_HPP
+
 #include "Types.int.hpp"
 #include "Types.uint.hpp"
 #include "Types.float.hpp"
@@ -56,3 +59,5 @@ template <Numbers T>
 std::pair<T, T> CheckRangeR(T min, T max) {
     if (max < min) return std::pair<T, T>(max, min);
 }
+
+#endif

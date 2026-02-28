@@ -1,6 +1,11 @@
 #pragma once
 
-#include "../Types.containers.hpp"
+#define DEPRECATED 1
+
+#ifndef TOOLS_VECTOR_SLICE_HPP
+#define TOOLS_VECTOR_SLICE_HPP
+
+#include "../Types.hpp"
 
 namespace Tools::VectorSlice {
     // Return new vector versions
@@ -86,3 +91,5 @@ namespace Tools::VectorSlice {
         vec.erase(vec.begin(), vec.begin() + start);
     }
 }
+
+#endif

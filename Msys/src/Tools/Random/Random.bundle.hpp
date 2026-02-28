@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_BUNDLE_HPP
+#define TOOLS_RANDOM_BUNDLE_HPP
+
 /* Budled vector with random elements of each sub-vector */
 
 #include "Random.common.hpp"
@@ -116,3 +119,5 @@ namespace Tools::Random {
         return result;
     }
 }
+
+#endif

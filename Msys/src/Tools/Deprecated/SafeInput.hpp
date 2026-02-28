@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_SAFE_INPUT_HPP
+#define TOOLS_SAFE_INPUT_HPP
+
 #include "../Types.hpp"
 #include <iostream>
 
@@ -56,3 +61,5 @@ namespace Tools::SafeInput {
         );
     }
 }
+
+#endif

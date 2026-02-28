@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_POINTER_HPP
+#define TOOLS_TYPES_POINTER_HPP
+
 /* Pointer to data */
 #include <cstdint>
 template <typename T> using ptr = T*;
@@ -15,3 +18,5 @@ template <typename T> using cptrcd = const T *const;
 
 using i32p      = intptr_t;
 using u32p      = uintptr_t;
+
+#endif

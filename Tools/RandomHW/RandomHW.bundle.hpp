@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_HW_BUNDLE_HPP
+#define TOOLS_RANDOM_HW_BUNDLE_HPP
+
 #include "RandomHW.common.hpp"
 
 namespace Tools::RandomHW {
@@ -124,3 +127,5 @@ namespace Tools::RandomHW {
     }
 
 }
+
+#endif

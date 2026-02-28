@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_CASTING_HPP
+#define TOOLS_CASTING_HPP
+
 // ------------------------------------------------------------
 // Tools::Cast
 // Lightweight casting helpers.
@@ -121,4 +124,6 @@ namespace Tools::Cast {
 
 #ifdef FLAT_TOOLS_CAST
 using Tools::Cast;
+#endif
+
 #endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_FIND_HPP
+#define TOOLS_VECTOR_FIND_HPP
+
 #include "../Types.hpp"
 #include <algorithm>
 
@@ -143,3 +146,5 @@ namespace Tools::Vector {
         return Out;
     }
 }
+
+#endif

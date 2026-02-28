@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_ARGPARSE_HPP
+#define TOOLS_ARGPARSE_HPP
+
 #include <string>
 #include <concepts>
 #include <map>
@@ -120,3 +125,5 @@ namespace Tools::ArgsParse {
         return std::to_string(Default);
     }
 }
+
+#endif

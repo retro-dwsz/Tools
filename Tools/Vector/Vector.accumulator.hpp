@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_ACCUMUATOR_HPP
+#define TOOLS_VECTOR_ACCUMUATOR_HPP
+
 #include "../Types.hpp"
 
 namespace Tools::Vector{
@@ -44,3 +47,5 @@ template i32 Tools::Vector::Avg(const vec<i32>& v);
 template i64 Tools::Vector::Avg(const vec<i64>& v);
 template f32 Tools::Vector::Avg(const vec<f32>& v);
 template f64 Tools::Vector::Avg(const vec<f64>& v);
+
+#endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_HW_COMMON_HPP
+#define TOOLS_RANDOM_HW_COMMON_HPP
+
 #include "../Types.hpp"
 #include "../Style.hpp"
 #include "../Randomizer.hpp"
@@ -141,3 +144,5 @@ namespace Tools::RandomHW {
     //     return Twister64(seed);
     // }
 }
+
+#endif

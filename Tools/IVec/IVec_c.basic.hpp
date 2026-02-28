@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_BASIC_HPP
+#define TOOLS_IVEC_BASIC_HPP
+
 #include "IVec_c.base.hpp"
 
 /* Reserve (with NONE value) */
@@ -126,3 +129,5 @@ template <typename T>
 idx Tools::ivec<T>::GetSize() const noexcept {
     return this->IVecSize;
 }
+
+#endif

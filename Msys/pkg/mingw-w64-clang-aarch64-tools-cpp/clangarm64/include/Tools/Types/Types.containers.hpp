@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_CONTAINERS_HPP
+#define TOOLS_TYPES_CONTAINERS_HPP
+
 /* ---- Value Containers (Types.containers.hpp) ---- */
 
 /* Iterable */
@@ -51,3 +54,5 @@ template<typename... T>             using tvar = std::variant<T...>;
 
 #include <expected>
 template<typename A, typename B>    using texp = std::expected<A, B>;
+
+#endif

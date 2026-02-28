@@ -1,5 +1,10 @@
 #pragma once
 
+#define DEPRECATED 1
+
+#ifndef TOOLS_NUM_STR_HPP
+#define TOOLS_NUM_STR_HPP
+
 #include <iostream>
 #include <limits>
 #include <type_traits>
@@ -337,3 +342,5 @@ int main() {
 //         }, num);
 //     }
 // }
+
+#endif

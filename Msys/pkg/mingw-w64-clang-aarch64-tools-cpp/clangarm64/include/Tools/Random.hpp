@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_HPP
+#define TOOLS_RANDOM_HPP
+
 /* Legend
  * "I"   stands for "Integer" (i32)
  * "L"   stands for "Long" (i64)
@@ -39,3 +42,5 @@
 
 /** SBundled functions (vector in vector with scattered sizes) **/
 #include "Random/Random.sbundle.hpp"
+
+#endif

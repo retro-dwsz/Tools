@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_FORMAT_NUMBER_HPP
+#define TOOLS_FORMAT_NUMBER_HPP
+
 #include "Types.hpp"
 
 #include <iostream>
@@ -154,3 +157,5 @@ namespace Tools::FormatNumber {
         );
     }
 }
+
+#endif

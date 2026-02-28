@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_APPLE_FILES_HPP
+#define TOOLS_OS_APPLE_FILES_HPP
+
 #include "../Types.hpp"
 
 /* Apple / POSIX includes */
@@ -65,3 +68,5 @@ namespace Tools::OS::File {
     }
 
 }
+
+#endif

@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef TOOLS_EDGES_HPP
+#define TOOLS_EDGES_HPP
+
 #include <limits>
 
 // Macro shortcut
@@ -16,3 +20,5 @@ namespace Tools::Edge {
         return std::numeric_limits<T>::min();
     }
 }
+
+#endif

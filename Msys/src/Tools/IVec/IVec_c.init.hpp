@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_INIT_HPP
+#define TOOLS_IVEC_INIT_HPP
+
 #include "IVec_c.base.hpp"
 
 /* Init */
@@ -71,3 +74,5 @@ Tools::ivec<T>::~ivec<T>() {
 
     operator delete[](IVecData);
 }
+
+#endif

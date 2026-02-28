@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_CLOCK_HPP
+#define TOOLS_CLOCK_HPP
+
 #include "Types/Types.uint.hpp"
 #include "Types/Types.clock.hpp"
 
@@ -7,7 +10,7 @@
 
 namespace Tools::Clock {
     template <Duration T>
-    u64 CountDuration(const ::Clock::HClock& Begin, const ::Clock::HClock& End){
+    u64 CountDuration(const HClock& Begin, const HClock& End){
         return std::chrono::duration_cast<T>(End-Begin).count();
     }
 
@@ -21,9 +24,9 @@ namespace Tools::Clock {
     template <typename F, Duration T>
     requires std::invocable<F>
     u64 FunctionElapsed(F&& func) {
-        ::Clock::HClock start = ::Clock::HTimeNow();
+        HClock start = HTimeNow();
         std::forward<F>(func)();
-        ::Clock::HClock end = ::Clock::HTimeNow();
+        HClock end = HTimeNow();
         return CountDuration<T>(start, end);
     }
 
@@ -31,9 +34,11 @@ namespace Tools::Clock {
     template <typename F, Duration T>
     requires (!std::same_as<std::invoke_result_t<F>, void>)
     u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result) {
-        ::Clock::HClock start = ::Clock::HTimeNow();
+        HClock start = HTimeNow();
         result = std::forward<F>(func)();  // Store result
-        ::Clock::HClock end = ::Clock::HTimeNow();
+        HClock end = HTimeNow();
         return CountDuration<T>(start, end);
     }
 }
+
+#endif

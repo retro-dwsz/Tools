@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_WIN32_API_HPP
+#define TOOLS_OS_WIN32_API_HPP
+
 /* ONLY STANDARD LIBS + Tools ARE ALLOWED */
 /* Windows */
 // #include <cstdint>
@@ -20,3 +23,4 @@
 #include "Win32.sleep.hpp"
 #include "Win32.proc.hpp"
 
+#endif

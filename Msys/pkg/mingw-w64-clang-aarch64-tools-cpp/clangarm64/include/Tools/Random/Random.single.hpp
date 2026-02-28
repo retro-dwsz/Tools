@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_SINGLE_HPP
+#define TOOLS_RANDOM_SINGLE_HPP
+
 /* Singly functions with fixed min/max value */
 
 #include "Random.common.hpp"
@@ -35,3 +38,5 @@ namespace Tools::Random {
         // }
     }
 }
+
+#endif

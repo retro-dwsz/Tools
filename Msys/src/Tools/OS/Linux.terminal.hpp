@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_LINUX_TERMINAL_HPP
+#define TOOLS_OS_LINUX_TERMINAL_HPP
+
 #include "../Types.hpp"
 
 #include <sys/ioctl.h>   // ioctl, winsize, Linux only!
@@ -64,3 +67,4 @@ namespace Tools::OS::Terminal{
         std::cout.flush();
     }
 }
+#endif

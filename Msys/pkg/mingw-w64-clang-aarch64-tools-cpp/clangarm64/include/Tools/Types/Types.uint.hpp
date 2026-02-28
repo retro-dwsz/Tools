@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_UINT_HPP
+#define TOOLS_TYPES_UINT_HPP
+
 /* ---- Unsigned Integers ---- */
 
 #include <concepts>
@@ -27,3 +30,5 @@ concept CUInt = std::same_as<T, u32>
                 || std::same_as<T, u64>;
 
 using idx       = size_t;
+
+#endif

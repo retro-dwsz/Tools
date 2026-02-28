@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_BASE_HPP
+#define TOOLS_IVEC_BASE_HPP
+
 #include "../Types.hpp"
 
 // #define vec<T> vec<T>
@@ -190,3 +193,5 @@ class ivec {
 };
 
 END_NAMESPACE
+
+#endif

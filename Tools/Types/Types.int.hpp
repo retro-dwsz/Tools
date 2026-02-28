@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_INT_HPP
+#define TOOLS_TYPES_INT_HPP
+
 /* ---- Integers ---- */
 
 #include <concepts>
@@ -27,3 +30,5 @@ concept CInt =  std::same_as<T, i32>
                 || std::same_as<T, i64>;
 
 using sidx      = ssize_t;
+
+#endif

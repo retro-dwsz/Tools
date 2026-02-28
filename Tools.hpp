@@ -11,8 +11,9 @@
 #include "Tools/Types/Types.float.hpp"
 #include "Tools/Types/Types.containers.hpp"
 #include "Tools/Types/Types.string.hpp"
-#include "Tools/Types/Types.ptr.hpp"
+#include "Tools/Types/Types.pointer.hpp"
 
+#include "Tools/Clock.hpp"
 #include "Tools/Casting.hpp"
 #include "Tools/Files.hpp"
 #include "Tools/Linking.hpp"

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_PRINT_HEADER_HPP
+#define TOOLS_PRINT_HEADER_HPP
+
 #include <format>
 #include "OS.hpp"
 #include "Types.hpp"
@@ -23,3 +26,5 @@ namespace Tools::Styling {
         return "";
     }
 }
+
+#endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_VECTOR_SLICE_INLINE_HPP
+#define TOOLS_VECTOR_SLICE_INLINE_HPP
+
 #include "../Types.hpp"
 
 /* Inline Slices */
@@ -56,3 +59,5 @@ template void Tools::VectorInl::Slice(vec<i32>& vec, idx n);
 template void Tools::VectorInl::Slice(vec<i64>& vec, idx n);
 template void Tools::VectorInl::Slice(vec<f32>& vec, idx n);
 template void Tools::VectorInl::Slice(vec<f64>& vec, idx n);
+
+#endif

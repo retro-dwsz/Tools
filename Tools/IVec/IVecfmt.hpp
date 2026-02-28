@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_FMT_HPP
+#define TOOLS_IVEC_FMT_HPP
+
 #include "IVec_c.base.hpp"
 
 #include <fmt/format.h>
@@ -68,3 +71,5 @@ struct fmt::formatter<Tools::ivec<T>> {
 };
 
 */
+
+#endif

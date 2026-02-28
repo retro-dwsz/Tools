@@ -1,12 +1,14 @@
 #pragma once
 
+#ifndef TOOLS_OS_LINUX_SLEEP_HPP
+#define TOOLS_OS_LINUX_SLEEP_HPP
+
 #include "../Types.hpp"
 
 #include <time.h>   // nanosleep, timespec
 #include <errno.h>  // EINTR
 
 namespace Tools::Linux::Sleep {
-
     __declspec(__noinline__)
     void SleepMs(u32 ms) {
         if (ms == 0) return;
@@ -43,3 +45,4 @@ namespace Tools::Linux::Sleep {
         }
     }
 }
+#endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_FILES_HPP
+#define TOOLS_FILES_HPP
+
 #include <iostream>
 #include <format>
 
@@ -111,3 +114,5 @@ namespace Tools::Files {
         );
     }
 }
+
+#endif

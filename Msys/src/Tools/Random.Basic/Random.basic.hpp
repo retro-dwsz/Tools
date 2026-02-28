@@ -1,13 +1,18 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_BASIC_HPP
+#define TOOLS_RANDOM_BASIC_HPP
+
 /** Singly functions **/
-#include "Random.single.basic.hpp"
+#include "Random.basic.single.hpp"
 
 /** Vector functions **/
-#include "Random.vector.basic.hpp"
+#include "Random.basic.vector.hpp"
 
 /** Bundled (vector in vector) **/
-#include "Random.bundle.basic.hpp"
+#include "Random.basic.bundle.hpp"
 
 /** SBundled (vector in vector with scattered sizes) **/
-#include "Random.sbundle.basic.hpp"
+#include "Random.basic.sbundle.hpp"
+
+#endif

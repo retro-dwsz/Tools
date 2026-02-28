@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_IVEC_PACKED_HPP
+#define TOOLS_IVEC_PACKED_HPP
+
 #include "../Types.hpp"
 
 /* Legend:
@@ -44,3 +47,5 @@
 //         ivec<ivec<f32>> IArr3 = {IArr1, Iarr2};
 //     }
 // }
+
+#endif

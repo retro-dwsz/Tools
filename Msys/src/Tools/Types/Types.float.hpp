@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_TYPES_FLOAT_HPP
+#define TOOLS_TYPES_FLOAT_HPP
+
 /* ---- Float ---- */
 // #include <stdfloat>
 #include <concepts>
@@ -32,3 +35,5 @@ concept Float   = std::same_as<T, f16>
 template <typename T>
 concept CFloat  = std::same_as<T, f32>
                 || std::same_as<T, f64>;
+
+#endif

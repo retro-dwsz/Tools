@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef TOOLS_OS_APPLE_SLEEP_HPP
+#define TOOLS_OS_APPLE_SLEEP_HPP
+
+
 #include "../Types.hpp"
 
 /* macOS / POSIX includes */
@@ -41,3 +45,5 @@ namespace Tools::MacOS::Sleep {
     }
 
 }
+#endif
+

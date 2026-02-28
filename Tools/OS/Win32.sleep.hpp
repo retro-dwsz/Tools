@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TOOLS_OS_WIN32_SLEEP_HPP
+#define TOOLS_OS_WIN32_SLEEP_HPP
+
 /* ONLY STANDARD LIBS ARE ALLOWED */
 #include <windows.h>
 
@@ -27,3 +30,5 @@ namespace Tools::OS::Sleep {
         }
     }
 }
+
+#endif
