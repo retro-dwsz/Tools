@@ -1560,7 +1560,7 @@ Target of this library:
         requires (!std::same_as<std::invoke_result_t<F>, void>)
         u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result);
 
-        // Sleep in miliseconds
+        // Sleep in given duration unit
         template <Duration T>
         void Sleep(u64 value);
     }
