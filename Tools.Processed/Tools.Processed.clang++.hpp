@@ -16401,7 +16401,7 @@ concept __unqualified_end =
 struct __fn {
   template <class _Tp, size_t _Np>
   [[nodiscard]] __attribute__((__exclude_from_explicit_instantiation__)) __attribute__((__abi_tag__("ne210107"))) constexpr auto operator()(_Tp (&__t)[_Np]) const noexcept
-    requires(sizeof(_Tp) >= 0) // Disallow incomplete element types.
+    requires(sizeof(_Tp) >= 0) // Disallow incomplete element types.ze
   {
     return __t + _Np;
   }
@@ -107693,7 +107693,7 @@ extern "C" {
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _matherr (struct _exception *);
 
 
-/* These are also declared in Mingw float.h; needed here as well to work 
+/* These are also declared in Mingw float.h; needed here as well to work
    around GCC build issues.  */
 /* BEGIN FLOAT.H COPY */
 /*
@@ -107759,8 +107759,8 @@ typedef double double_t;
 
 /*
   We can't inline float or double, because we want to ensure truncation
-  to semantic type before classification. 
-  (A normal long double value might become subnormal when 
+  to semantic type before classification.
+  (A normal long double value might become subnormal when
   converted to double, and zero when converted to float.)
 */
 
@@ -108276,11 +108276,11 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
   extern long double __attribute__((__cdecl__)) fmal (long double, long double, long double);
 
 /* 7.12.14 */
-/* 
+/*
  *  With these functions, comparisons involving quiet NaNs set the FP
  *  condition code to "unordered".  The IEEE floating-point spec
  *  dictates that the result of floating-point comparisons should be
- *  false whenever a NaN is involved, with the exception of the != op, 
+ *  false whenever a NaN is involved, with the exception of the != op,
  *  which always returns true: yes, (NaN != NaN) is true).
  */
 # 1021 "D:/Code/Msys2/Files/clang64/include/math.h" 3
@@ -108297,7 +108297,7 @@ __extension__ long long __attribute__((__cdecl__)) llrintl (long double);
    extern long double __attribute__((__cdecl__)) _chgsignl (long double);
 # 1042 "D:/Code/Msys2/Files/clang64/include/math.h" 3
 /* Documentation on decimal float math
-   http://h21007.www2.hp.com/portal/site/dspp/menuitem.863c3e4cbcdc3f3515b49c108973a801?ciid=8cf166fedd1aa110VgnVCM100000a360ea10RCRD 
+   http://h21007.www2.hp.com/portal/site/dspp/menuitem.863c3e4cbcdc3f3515b49c108973a801?ciid=8cf166fedd1aa110VgnVCM100000a360ea10RCRD
  */
 # 1416 "D:/Code/Msys2/Files/clang64/include/math.h" 3
 }
@@ -148356,9 +148356,9 @@ extern "C" {
       implementations.  No special #defines are needed for this case.
 
    2) Included from the library versions of these functions (ie mingw-w64-crt\intrincs\*.c).  All
-      intrinsics in this file must also be included in the library.  In this case, only the 
+      intrinsics in this file must also be included in the library.  In this case, only the
       specific functions requested will get defined, and they will not be defined as inline.  If
-      you have followed the instructions (below) for adding functions to this file, then all you 
+      you have followed the instructions (below) for adding functions to this file, then all you
       need to have in the .c file is the following:
 
       #define __INTRINSIC_ONLYSPECIAL
@@ -148368,13 +148368,13 @@ extern "C" {
 
    3) Included from various platform sdk headers.  Some platform sdk headers (such as winnt.h)
       define a subset of intrinsics.  To avoid potential conflicts, this file is designed to
-      allow for specific subsets of functions to be defined.  This is done by defining the 
+      allow for specific subsets of functions to be defined.  This is done by defining the
       appropriate variable before including this file:
 
       #define __INTRINSIC_GROUP_WINNT
       #include <psdk_inc/intrin-impl.h>
 
-   In all cases, it is acceptable to include this file multiple times in any order (ie include 
+   In all cases, it is acceptable to include this file multiple times in any order (ie include
    winnt.h to get its subset, then include intrin.h to get everything, or vice versa).
 
    See also the comments at the top of intrin.h.
@@ -148384,14 +148384,14 @@ extern "C" {
    If the function you are adding is not in intrin.h, you should not be adding it to this file.  This file is only
    for MSVC intrinsics.
 
-   Make sure you put your definition in the right section (x86 vs x64), and use this outline when adding definitions 
+   Make sure you put your definition in the right section (x86 vs x64), and use this outline when adding definitions
    to this file:
 
 #if __INTRINSIC_PROLOG(__int2c)
 
 <prototype goes here>
 
-__INTRINSICS_USEINLINE 
+__INTRINSICS_USEINLINE
 <code goes here>
 
 #define __INTRINSIC_DEFINED___int2c
@@ -148424,7 +148424,7 @@ __INTRINSICS_USEINLINE
 #pragma GCC diagnostic ignored "-Wexpansion-to-defined"
 
 
-/* These macros are used by the routines below.  While this file may be included 
+/* These macros are used by the routines below.  While this file may be included
    multiple times, these macros only need to be defined once. */
 
 
@@ -148473,7 +148473,7 @@ Parameters: (IntNum)
 IntNum: Interrupt number in hex */
 
 
-/* This macro is used by MemoryBarrier when compiling x86 w/o SSE2. 
+/* This macro is used by MemoryBarrier when compiling x86 w/o SSE2.
 Note that on i386, xchg performs an implicit lock. */
 
 
@@ -148629,7 +148629,7 @@ supports ReadWriteBarrier, map all 3 to do the same. */
 /* The logic for this macro is:
    if the function is not yet defined AND
    (
-       (if we are not just defining special OR 
+       (if we are not just defining special OR
            (we are defining special AND this is one of the ones we are defining)
        )
    )
@@ -148649,7 +148649,7 @@ supports ReadWriteBarrier, map all 3 to do the same. */
    If no groups are defined (such as what happens when including intrin.h),
    all intrinsics are defined.   */
 
-/* If __INTRINSIC_ONLYSPECIAL is defined at this point, we are processing case 2.  In 
+/* If __INTRINSIC_ONLYSPECIAL is defined at this point, we are processing case 2.  In
    that case, don't go looking for groups */
 
 
@@ -212829,9 +212829,9 @@ _mm_maskz_cvtx2ps_ph(__mmask8 __U, __m128 __A, __m128 __B) {
 /// Convert two 256-bit vectors, \a __A and \a __B, containing packed
 ///    single-precision (32-bit) floating-point elements to a 256-bit vector
 ///    containing FP16 elements.
-///   
+///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF i < 8
 /// 		dst.fp16[i] := convert_fp32_to_fp16(__B.fp32[i])
 /// 	ELSE
@@ -212910,7 +212910,7 @@ _mm256_mask_cvtx2ps_ph(__m256h __W, __mmask16 __U, __m256 __A, __m256 __B) {
 ///    element should be zeroed instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.fp16[i] := convert_fp32_to_fp16(__B.fp32[i])
@@ -213814,7 +213814,7 @@ _mm256_maskz_cvts_biasph_hf8(__mmask16 __U, __m256i __A, __m256h __B) {
 ///    floating-point elements to a 128-bit vector containing E5M2 FP8 elements.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF i < 8
 /// 		dst.bf8[i] := convert_fp16_to_bf8(__B.fp16[i])
 /// 	ELSE
@@ -213893,7 +213893,7 @@ _mm_mask_cvt2ph_bf8(__m128i __W, __mmask16 __U, __m128h __A, __m128h __B) {
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.bf8[i] := convert_fp16_to_bf8(__B.fp16[i])
@@ -213934,8 +213934,8 @@ _mm_maskz_cvt2ph_bf8(__mmask16 __U, __m128h __A, __m128h __B) {
 ///    floating-point elements to a 256-bit vector containing E5M2 FP8 elements.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
-/// 	IF i < 16 
+/// FOR i := 0 to 31
+/// 	IF i < 16
 /// 		dst.bf8[i] := convert_fp16_to_bf8(__B.fp16[i])
 /// 	ELSE
 /// 		dst.bf8[i] := convert_fp16_to_bf8(__A.fp16[i - 16])
@@ -213969,9 +213969,9 @@ _mm256_cvt2ph_bf8(__m256h __A, __m256h __B) {
 ///    from \a __W instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.bf8[i] := convert_fp16_to_bf8(__B.fp16[i])
 /// 		ELSE
 /// 			dst.bf8[i] := convert_fp16_to_bf8(__A.fp16[i - 16])
@@ -214013,9 +214013,9 @@ static __inline__ __m256i __attribute__((__always_inline__, __nodebug__, __targe
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.bf8[i] := convert_fp16_to_bf8(__B.fp16[i])
 /// 		ELSE
 /// 			dst.bf8[i] := convert_fp16_to_bf8(__A.fp16[i - 16])
@@ -214055,7 +214055,7 @@ _mm256_maskz_cvt2ph_bf8(__mmask32 __U, __m256h __A, __m256h __B) {
 ///    Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF i < 8
 /// 		dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
 /// 	ELSE
@@ -214090,7 +214090,7 @@ _mm_cvts_2ph_bf8(__m128h __A, __m128h __B) {
 ///    from \a __W instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
@@ -214134,7 +214134,7 @@ _mm_mask_cvts_2ph_bf8(__m128i __W, __mmask16 __U, __m128h __A, __m128h __B) {
 ///    instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
@@ -214176,8 +214176,8 @@ _mm_maskz_cvts_2ph_bf8(__mmask16 __U, __m128h __A, __m128h __B) {
 ///    Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
-/// 	IF i < 16 
+/// FOR i := 0 to 31
+/// 	IF i < 16
 /// 		dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
 /// 	ELSE
 /// 		dst.bf8[i] := convert_fp16_to_bf8_saturate(__A.fp16[i - 16])
@@ -214211,9 +214211,9 @@ _mm256_cvts_2ph_bf8(__m256h __A, __m256h __B) {
 ///    from \a __W instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
 /// 		ELSE
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__A.fp16[i - 16])
@@ -214255,9 +214255,9 @@ static __inline__ __m256i __attribute__((__always_inline__, __nodebug__, __targe
 ///    instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__B.fp16[i])
 /// 		ELSE
 /// 			dst.bf8[i] := convert_fp16_to_bf8_saturate(__A.fp16[i - 16])
@@ -214296,7 +214296,7 @@ _mm256_maskz_cvts_2ph_bf8(__mmask32 __U, __m256h __A, __m256h __B) {
 ///    floating-point elements to a 128-bit vector containing E4M3 FP8 elements.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF i < 8
 /// 		dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
 /// 	ELSE
@@ -214331,7 +214331,7 @@ static __inline__ __m128i __attribute__((__always_inline__, __nodebug__, __targe
 ///    from \a __W instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
@@ -214375,7 +214375,7 @@ _mm_mask_cvt2ph_hf8(__m128i __W, __mmask16 __U, __m128h __A, __m128h __B) {
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
@@ -214416,8 +214416,8 @@ _mm_maskz_cvt2ph_hf8(__mmask16 __U, __m128h __A, __m128h __B) {
 ///    floating-point elements to a 256-bit vector containing E4M3 FP8 elements.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
-/// 	IF i < 16 
+/// FOR i := 0 to 31
+/// 	IF i < 16
 /// 		dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
 /// 	ELSE
 /// 		dst.hf8[i] := convert_fp16_to_hf8(__A.fp16[i - 16])
@@ -214451,9 +214451,9 @@ _mm256_cvt2ph_hf8(__m256h __A, __m256h __B) {
 ///    from \a __W instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
 /// 		ELSE
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__A.fp16[i - 16])
@@ -214495,9 +214495,9 @@ static __inline__ __m256i __attribute__((__always_inline__, __nodebug__, __targe
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__B.fp16[i])
 /// 		ELSE
 /// 			dst.hf8[i] := convert_fp16_to_hf8(__A.fp16[i - 16])
@@ -214537,7 +214537,7 @@ _mm256_maskz_cvt2ph_hf8(__mmask32 __U, __m256h __A, __m256h __B) {
 ///    Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF i < 8
 /// 		dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
 /// 	ELSE
@@ -214572,7 +214572,7 @@ _mm_cvts_2ph_hf8(__m128h __A, __m128h __B) {
 ///    from \a __W instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
@@ -214616,7 +214616,7 @@ _mm_mask_cvts_2ph_hf8(__m128i __W, __mmask16 __U, __m128h __A, __m128h __B) {
 ///    instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		IF i < 8
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
@@ -214658,8 +214658,8 @@ _mm_maskz_cvts_2ph_hf8(__mmask16 __U, __m128h __A, __m128h __B) {
 ///    Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
-/// 	IF i < 16 
+/// FOR i := 0 to 31
+/// 	IF i < 16
 /// 		dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
 /// 	ELSE
 /// 		dst.hf8[i] := convert_fp16_to_hf8_saturate(__A.fp16[i - 16])
@@ -214693,9 +214693,9 @@ _mm256_cvts_2ph_hf8(__m256h __A, __m256h __B) {
 ///    from \a __W instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
 /// 		ELSE
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__A.fp16[i - 16])
@@ -214737,9 +214737,9 @@ static __inline__ __m256i __attribute__((__always_inline__, __nodebug__, __targe
 ///    instead. Resulting elements are saturated in case of overflow.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 31 
+/// FOR i := 0 to 31
 /// 	IF __U[i]
-/// 		IF i < 16 
+/// 		IF i < 16
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__B.fp16[i])
 /// 		ELSE
 /// 			dst.hf8[i] := convert_fp16_to_hf8_saturate(__A.fp16[i - 16])
@@ -214902,7 +214902,7 @@ static __inline__ __m256h __attribute__((__always_inline__, __nodebug__, __targe
 ///    taken from \a __W instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.fp16[i] := convert_hf8_to_fp16(__A.hf8[i])
 /// 	ELSE
@@ -214939,7 +214939,7 @@ _mm256_mask_cvthf8_ph(__m256h __W, __mmask16 __U, __m128i __A) {
 ///    zeroed instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.fp16[i] := convert_hf8_to_fp16(__A.hf8[i])
 /// 	ELSE
@@ -214988,7 +214988,7 @@ _mm256_maskz_cvthf8_ph(__mmask16 __U, __m128i __A) {
 ///    A 128-bit vector of [8 x fp16].
 /// \returns
 ///    A 128-bit vector of [16 x bf8]. Lower elements correspond to the (converted)
-///    elements from \a __A; upper elements are zeroed. 
+///    elements from \a __A; upper elements are zeroed.
 static __inline__ __m128i __attribute__((__always_inline__, __nodebug__, __target__("avx10.2-256"), __min_vector_width__(128))) _mm_cvtph_bf8(__m128h __A) {
   return (__m128i)__builtin_ia32_vcvtph2bf8_128_mask(
       (__v8hf)__A, (__v16qi)(__m128i)_mm_undefined_si128(), (__mmask8)-1);
@@ -215095,7 +215095,7 @@ _mm256_cvtph_bf8(__m256h __A) {
 /// Convert 256-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E5M2 FP8 elements. Merging mask \a __U is
 ///    used to determine if given element should be taken from \a __W instead.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 15
 /// 	IF __U[i]
@@ -215131,7 +215131,7 @@ _mm256_mask_cvtph_bf8(__m128i __W, __mmask16 __U, __m256h __A) {
 /// Convert 256-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E5M2 FP8 elements. Zeroing mask \a __U is
 ///    used to determine if given element should be zeroed instead.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 15
 /// 	IF __U[i]
@@ -215165,7 +215165,7 @@ _mm256_maskz_cvtph_bf8(__mmask16 __U, __m256h __A) {
 /// Convert 128-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E5M2 FP8 elements. Upper elements of
 ///    resulting vector are zeroed. Results are saturated.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 7
 /// 	dst.bf8[i] := convert_fp16_to_bf8_saturate(__A.fp16[i])
@@ -215182,7 +215182,7 @@ _mm256_maskz_cvtph_bf8(__mmask16 __U, __m256h __A) {
 ///    A 128-bit vector of [8 x fp16].
 /// \returns
 ///    A 128-bit vector of [16 x bf8]. Lower elements correspond to the (converted)
-///    elements from \a __A; upper elements are zeroed. 
+///    elements from \a __A; upper elements are zeroed.
 static __inline__ __m128i __attribute__((__always_inline__, __nodebug__, __target__("avx10.2-256"), __min_vector_width__(128))) _mm_cvts_ph_bf8(__m128h __A) {
   return (__m128i)__builtin_ia32_vcvtph2bf8s_128_mask(
       (__v8hf)__A, (__v16qi)(__m128i)_mm_undefined_si128(), (__mmask8)-1);
@@ -215329,7 +215329,7 @@ _mm256_mask_cvts_ph_bf8(__m128i __W, __mmask16 __U, __m256h __A) {
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.bf8[i] := convert_fp16_to_bf8_saturate(__A.fp16[i])
 /// 	ELSE
@@ -215378,7 +215378,7 @@ _mm256_maskz_cvts_ph_bf8(__mmask16 __U, __m256h __A) {
 ///    A 128-bit vector of [8 x fp16].
 /// \returns
 ///    A 128-bit vector of [16 x hf8]. Lower elements correspond to the (converted)
-///    elements from \a __A; upper elements are zeroed. 
+///    elements from \a __A; upper elements are zeroed.
 static __inline__ __m128i __attribute__((__always_inline__, __nodebug__, __target__("avx10.2-256"), __min_vector_width__(128))) _mm_cvtph_hf8(__m128h __A) {
   return (__m128i)__builtin_ia32_vcvtph2hf8_128_mask(
       (__v8hf)__A, (__v16qi)(__m128i)_mm_undefined_si128(), (__mmask8)-1);
@@ -215485,7 +215485,7 @@ _mm256_cvtph_hf8(__m256h __A) {
 /// Convert 256-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E4M3 FP8 elements. Merging mask \a __U is
 ///    used to determine if given element should be taken from \a __W instead.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 15
 /// 	IF __U[i]
@@ -215521,7 +215521,7 @@ _mm256_mask_cvtph_hf8(__m128i __W, __mmask16 __U, __m256h __A) {
 /// Convert 256-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E4M3 FP8 elements. Zeroing mask \a __U is
 ///    used to determine if given element should be zeroed instead.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 15
 /// 	IF __U[i]
@@ -215555,7 +215555,7 @@ _mm256_maskz_cvtph_hf8(__mmask16 __U, __m256h __A) {
 /// Convert 128-bit vector \a __A containing packed FP16 floating-point elements
 ///    to a 128-bit vector containing E4M3 FP8 elements. Upper elements of
 ///    resulting vector are zeroed. Results are saturated.
-///   
+///
 /// \code{.operation}
 /// FOR i := 0 to 7
 /// 	dst.hf8[i] := convert_fp16_to_hf8_saturate(__A.fp16[i])
@@ -215572,7 +215572,7 @@ _mm256_maskz_cvtph_hf8(__mmask16 __U, __m256h __A) {
 ///    A 128-bit vector of [8 x fp16].
 /// \returns
 ///    A 128-bit vector of [16 x hf8]. Lower elements correspond to the (converted)
-///    elements from \a __A; upper elements are zeroed. 
+///    elements from \a __A; upper elements are zeroed.
 static __inline__ __m128i __attribute__((__always_inline__, __nodebug__, __target__("avx10.2-256"), __min_vector_width__(128))) _mm_cvts_ph_hf8(__m128h __A) {
   return (__m128i)__builtin_ia32_vcvtph2hf8s_128_mask(
       (__v8hf)__A, (__v16qi)(__m128i)_mm_undefined_si128(), (__mmask8)-1);
@@ -215719,7 +215719,7 @@ _mm256_mask_cvts_ph_hf8(__m128i __W, __mmask16 __U, __m256h __A) {
 ///    instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.hf8[i] := convert_fp16_to_hf8_saturate(__A.fp16[i])
 /// 	ELSE
@@ -215865,7 +215865,7 @@ static __inline__ __m256h __attribute__((__always_inline__, __nodebug__, __targe
 ///    taken from \a __W instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.fp16[i] := convert_bf8_to_fp16(__A.bf8[i])
 /// 	ELSE
@@ -215900,7 +215900,7 @@ _mm256_mask_cvtbf8_ph(__m256h __W, __mmask16 __U, __m128i __A) {
 ///    zeroed instead.
 ///
 /// \code{.operation}
-/// FOR i := 0 to 15 
+/// FOR i := 0 to 15
 /// 	IF __U[i]
 /// 		dst.fp16[i] := convert_bf8_to_fp16(__A.bf8[i])
 /// 	ELSE
@@ -227332,9 +227332,9 @@ extern "C" {
       implementations.  No special #defines are needed for this case.
 
    2) Included from the library versions of these functions (ie mingw-w64-crt\intrincs\*.c).  All
-      intrinsics in this file must also be included in the library.  In this case, only the 
+      intrinsics in this file must also be included in the library.  In this case, only the
       specific functions requested will get defined, and they will not be defined as inline.  If
-      you have followed the instructions (below) for adding functions to this file, then all you 
+      you have followed the instructions (below) for adding functions to this file, then all you
       need to have in the .c file is the following:
 
       #define __INTRINSIC_ONLYSPECIAL
@@ -227344,13 +227344,13 @@ extern "C" {
 
    3) Included from various platform sdk headers.  Some platform sdk headers (such as winnt.h)
       define a subset of intrinsics.  To avoid potential conflicts, this file is designed to
-      allow for specific subsets of functions to be defined.  This is done by defining the 
+      allow for specific subsets of functions to be defined.  This is done by defining the
       appropriate variable before including this file:
 
       #define __INTRINSIC_GROUP_WINNT
       #include <psdk_inc/intrin-impl.h>
 
-   In all cases, it is acceptable to include this file multiple times in any order (ie include 
+   In all cases, it is acceptable to include this file multiple times in any order (ie include
    winnt.h to get its subset, then include intrin.h to get everything, or vice versa).
 
    See also the comments at the top of intrin.h.
@@ -227360,14 +227360,14 @@ extern "C" {
    If the function you are adding is not in intrin.h, you should not be adding it to this file.  This file is only
    for MSVC intrinsics.
 
-   Make sure you put your definition in the right section (x86 vs x64), and use this outline when adding definitions 
+   Make sure you put your definition in the right section (x86 vs x64), and use this outline when adding definitions
    to this file:
 
 #if __INTRINSIC_PROLOG(__int2c)
 
 <prototype goes here>
 
-__INTRINSICS_USEINLINE 
+__INTRINSICS_USEINLINE
 <code goes here>
 
 #define __INTRINSIC_DEFINED___int2c
@@ -227400,7 +227400,7 @@ __INTRINSICS_USEINLINE
 #pragma GCC diagnostic ignored "-Wexpansion-to-defined"
 
 
-/* These macros are used by the routines below.  While this file may be included 
+/* These macros are used by the routines below.  While this file may be included
    multiple times, these macros only need to be defined once. */
 # 437 "D:/Code/Msys2/Files/clang64/include/psdk_inc/intrin-impl.h" 3
 /* The Barrier functions can never be in the library.  Since gcc only
@@ -227409,7 +227409,7 @@ supports ReadWriteBarrier, map all 3 to do the same. */
 /* The logic for this macro is:
    if the function is not yet defined AND
    (
-       (if we are not just defining special OR 
+       (if we are not just defining special OR
            (we are defining special AND this is one of the ones we are defining)
        )
    )
@@ -227429,7 +227429,7 @@ supports ReadWriteBarrier, map all 3 to do the same. */
    If no groups are defined (such as what happens when including intrin.h),
    all intrinsics are defined.   */
 
-/* If __INTRINSIC_ONLYSPECIAL is defined at this point, we are processing case 2.  In 
+/* If __INTRINSIC_ONLYSPECIAL is defined at this point, we are processing case 2.  In
    that case, don't go looking for groups */
 # 564 "D:/Code/Msys2/Files/clang64/include/psdk_inc/intrin-impl.h" 3
 /* Note that this gets undefined at the end of this file */
@@ -278312,7 +278312,7 @@ namespace Tools::StylingW {
     /* DEP */ /* inline */
     wstr Italic(const wstr& Text) {
         return wstr(L"\033[3m") + Text + wstr(L"\033[0m");
-        /* 
+        /*
         return std::format(
             L"\033[3m{}\033[0m",
             wstr(Text)
@@ -279338,7 +279338,7 @@ class ivec {
     idx GetSize() const noexcept; // Current element count
 
     /** Getter and setter **/
-    T pop(const idx& Index); // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4} 
+    T pop(const idx& Index); // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4}
     T& operator[](idx Index); // setter + getter
 
     const T& operator[](idx Index) const; // getter (read-only)
@@ -279385,9 +279385,9 @@ class ivec {
     bool isEmpty(); // Is this empty?
 
     void appendFirst(const T& Element); // Append from first index
-    void appendAt(const T& Element, idx At); // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}    
+    void appendAt(const T& Element, idx At); // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}
     bool contains(const T& Element); // Find element, return true or false
-    idx find(const T& Element); // Find element, return index 
+    idx find(const T& Element); // Find element, return index
     idx findFreq(const T& Element); // Find element, return how many appeared
     pair<idx, vec<T>> findAll(const T& Element); // Find element, return how many appeared and indexes
 
@@ -279510,7 +279510,7 @@ idx Tools::ivec<T>::capacity() {
 template <typename T>
 Tools::ivec<T>::ivec() : IVecData(nullptr), IVecSize(0), IVecCapacity(0) {}
 
-// Constructors 
+// Constructors
 template <typename T>
 Tools::ivec<T>::ivec(initl<T> init) : IVecData(nullptr), IVecSize(0), IVecCapacity(0) {
     if(init.size() == 0){ return; }
@@ -279564,7 +279564,7 @@ Tools::ivec<T>::ivec(const vec<T>& v) : IVecData(nullptr), IVecSize(0), IVecCapa
     }
 };
 
-// DeConstructor 
+// DeConstructor
 template <typename T>
 Tools::ivec<T>::~ivec<T>() {
     for(idx i = 0; i < IVecSize; i++){
@@ -279801,7 +279801,7 @@ T Tools::ivec<T>::pop(const idx& Index) {
         IVecData[i] = std::move(IVecData[i + 1]);
     }
 
-    // 3. destroy lst elemen 
+    // 3. destroy lst elemen
     IVecData[IVecSize - 1].~T();
 
     // 4. update ivec_size
