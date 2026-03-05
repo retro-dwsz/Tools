@@ -55,4 +55,24 @@ template<typename... T>             using tvar = std::variant<T...>;
 #include <expected>
 template<typename A, typename B>    using texp = std::expected<A, B>;
 
+template <typename T>
+concept TableMap = requires(T t) {
+    typename T::key_type;
+    typename T::mapped_type;
+    t.begin();
+    t.end();
+};
+
+template <typename T>
+concept TableVecPair = requires(T t) {
+    typename T::value_type;
+    requires requires(typename T::value_type v) {
+        v.first;
+        v.second;
+    };
+};
+
+template <typename T>
+concept Table = TableMap<T> || TableVecPair<T>;
+
 #endif
