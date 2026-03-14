@@ -320,7 +320,7 @@ void Tools::ivec<T>::emplaceAt(Args&&... args, idx n) {
 template <typename T>
 Tools::ivec<T> Tools::ivec<T>::uniques(idx n){
     Tools::ivec<T> out;
-    if (n <= 0 || IVecSize == 0) return;
+    if (n <= 0 || IVecSize == 0) return ivec<T>{};
 
     out.reserve(IVecSize);
     std::unordered_map<T, idx> freq;

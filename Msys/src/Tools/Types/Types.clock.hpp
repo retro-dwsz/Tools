@@ -7,7 +7,6 @@
 
 #include <concepts>
 #include <chrono>
-#include <__chrono/duration.h>
 
 // Clocks + Current time point getter
 inline auto HTimeNow    = [](){ return std::chrono::high_resolution_clock::now(); };
