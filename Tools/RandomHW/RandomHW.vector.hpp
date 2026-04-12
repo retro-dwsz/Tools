@@ -6,7 +6,7 @@
 #include "RandomHW.common.hpp"
 
 namespace Tools::RandomHW {
-    vec<i32> RandomNumsVI(const Twister32& gen, const idx Count, i32 Min, i32 Max) {
+    vec<i32> RandomNumsVI(Twister32& gen, const idx Count, i32 Min, i32 Max) {
         CheckRange(Min, Max);
         WARNING_A
 
@@ -18,7 +18,7 @@ namespace Tools::RandomHW {
 
         return result;
     }
-    vec<i64> RandomNumsVL(const Twister64& gen, const idx Count, i64 Min, i64 Max) {
+    vec<i64> RandomNumsVL(Twister64& gen, const idx Count, i64 Min, i64 Max) {
         CheckRange(Min, Max);
         WARNING_A
 
@@ -32,7 +32,7 @@ namespace Tools::RandomHW {
         return result;
     }
 
-    vec<f32> RandomNumsVF(const Twister32& gen, const idx Count, f32 Min, f32 Max) {
+    vec<f32> RandomNumsVF(Twister32& gen, const idx Count, f32 Min, f32 Max) {
         CheckRange(Min, Max);
         WARNING_A
 
@@ -45,7 +45,7 @@ namespace Tools::RandomHW {
         return result;
     }
     
-    vec<f32> RandomNumsVF(const Twister32& gen, const idx Count, f32 Min, f32 Max, const u32 Rounding) {
+    vec<f32> RandomNumsVF(Twister32& gen, const idx Count, f32 Min, f32 Max, const u32 Rounding) {
         CheckRange(Min, Max);
         WARNING_A
 
@@ -58,7 +58,7 @@ namespace Tools::RandomHW {
         return result;
     }
 
-    vec<f64> RandomNumsVD(const Twister64& gen, const idx Count, f64 Min, f64 Max) {
+    vec<f64> RandomNumsVD(Twister64& gen, const idx Count, f64 Min, f64 Max) {
         CheckRange(Min, Max);
         WARNING_A
 
@@ -71,7 +71,7 @@ namespace Tools::RandomHW {
         return result;
     }
 
-    vec<f64> RandomNumsVD(const Twister64& gen, const idx Count, f64 Min, f64 Max, const u32 Rounding) {
+    vec<f64> RandomNumsVD(Twister64& gen, const idx Count, f64 Min, f64 Max, const u32 Rounding) {
         CheckRange(Min, Max);
         WARNING_A
 
