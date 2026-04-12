@@ -16,7 +16,7 @@ namespace Tools::VectorInl {
     template <Numbers T>
     void Shuffle(vec<T>& v){
         RdDevice rd;
-        Twister32 gen(rd);
+        Twister32 gen(rd());
         std::shuffle(v.begin(), v.end(), gen);
     };
 

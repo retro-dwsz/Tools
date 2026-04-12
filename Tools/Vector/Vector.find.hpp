@@ -29,7 +29,7 @@ namespace Tools::Vector {
 
     // Binary search, first index + value
     template<Numbers T>
-    pair<idx, T> FindP_binary(const vec<T>& v, const T Element){
+    pair<idx, T> FindPair_binary(const vec<T>& v, const T Element){
         idx low = 0;
         idx high = v.size() - 1;
         while (low <= high) {
@@ -58,7 +58,7 @@ namespace Tools::Vector {
 
     // Linear search, first index + value
     template <Numbers T>
-    T FindP_line(const vec<T>& v, const T Element){
+    T FindPair_line(const vec<T>& v, const T Element){
         for(idx i = 0; i < v.size(); i++){
             if(v[i] == Element){
                 return pair{i, Element};
@@ -80,7 +80,7 @@ namespace Tools::Vector {
 
     // Find elements and frequency
     template<Numbers T>
-    umap<T, idx> FindNFreq(const vec<T>& v){
+    umap<T, idx> FindElementsFreq(const vec<T>& v){
         umap<T, idx> result{};
 
         for(const auto x : v){
@@ -91,20 +91,20 @@ namespace Tools::Vector {
     }
 
     // Extractor for numbers
-    template<Numbers T>
-    vec<T> ExtractUnique(const vec<T>& v){
-        umap<T, bool> seen;
-        vec<T> out;
+    // template<Numbers T>
+    // vec<T> ExtractUnique(const vec<T>& v){
+    //     umap<T, bool> seen;
+    //     vec<T> out;
 
-        for (const auto x : v){
-            if (!seen[x]){
-                out.push_back(x);
-                seen[x] = true;
-            }
-        }
+    //     for (const auto x : v){
+    //         if (!seen[x]){
+    //             out.push_back(x);
+    //             seen[x] = true;
+    //         }
+    //     }
 
-        return out;
-    }
+    //     return out;
+    // }
 
     // Remove duplicated values inline
     template<typename T>

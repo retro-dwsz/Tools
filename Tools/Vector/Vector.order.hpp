@@ -18,7 +18,7 @@ namespace Tools::Vector {
     template <Numbers T>
     vec<T> Shuffle(const vec<T>& v){
         RdDevice rd;
-        Twister32 gen(rd);
+        Twister32 gen(rd());
 
         vec<T> out(v);
         std::ranges::shuffle(out, gen);
