@@ -13,14 +13,14 @@ namespace Tools::VectorInl {
         std::sort(v.begin(), v.end());
     };
 
-    template <Numbers T>
+    template <typename T>
     void Shuffle(vec<T>& v){
         RdDevice rd;
         Twister32 gen(rd());
         std::shuffle(v.begin(), v.end(), gen);
     };
 
-    template <Numbers T>
+    template <typename T>
     void Reverse(vec<T>& v){
         std::reverse(v.begin(), v.end());
     }

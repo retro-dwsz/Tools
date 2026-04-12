@@ -15,7 +15,7 @@ namespace Tools::Vector {
         return out;
     }
 
-    template <Numbers T>
+    template <typename T>
     vec<T> Shuffle(const vec<T>& v){
         RdDevice rd;
         Twister32 gen(rd());
@@ -25,7 +25,7 @@ namespace Tools::Vector {
         return out;
     };
 
-    template <Numbers T>
+    template <typename T>
     vec<T> Reverse(const vec<T>& v){
         vec<T> out(v);
         std::ranges::reverse(out);
