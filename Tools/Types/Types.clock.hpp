@@ -9,16 +9,18 @@
 #include <chrono>
 
 // Clocks + Current time point getter
-inline auto HTimeNow    = [](){ return std::chrono::high_resolution_clock::now(); };
-inline auto TimeNow     = [](){ return std::chrono::steady_clock::now(); };
-
-using Clock     = std::chrono::time_point<std::chrono::high_resolution_clock>;
-using SClock    = std::chrono::time_point<std::chrono::steady_clock>;
-using HClock    = Clock;
+namespace Tools::Clock {
+    inline auto HTimeNow    = [](){ return std::chrono::high_resolution_clock::now(); };
+    inline auto TimeNow     = [](){ return std::chrono::steady_clock::now(); };
+    
+    using Clock     = std::chrono::time_point<std::chrono::high_resolution_clock>;
+    using SClock    = std::chrono::time_point<std::chrono::steady_clock>;
+    using HClock    = Clock;
+}
 
 template <typename T>
-concept Clocks = std::same_as<T, HClock>
-    || std::same_as<T, SClock>;
+concept Clocks = std::same_as<T, Tools::Clock::HClock>
+    || std::same_as<T, Tools::Clock::SClock>;
 
 // Units
 namespace Tools::Clock::Units {

@@ -3,6 +3,19 @@
 #ifndef TOOLS_RANDOM_HW_HPP
 #define TOOLS_RANDOM_HW_HPP
 
+#if !defined(__RDSEED__) || !defined(__RDRND__) || !defined(march)
+    #warning "HW entropy (-mrdseed, -mrdrnd) not found! Please pass \"-mrdseed\", \"-mrdrnd\" or maybe \"-march=native\" also"
+#endif
+
+#if __cplusplus < 202302L
+    #warning "This lib is intended for C++23 (-std=c++23)."
+#endif
+
+/* WARNING!
+ * - This lib is currently ONLY for x86 CPUs
+ * - You may need to pass "-mrdseed", "-mrdrnd" and maybe "-march=native"
+ */
+
 /* Legend
  * "I"   stands for "Integer" (i32)
  * "L"   stands for "Long" (i64)

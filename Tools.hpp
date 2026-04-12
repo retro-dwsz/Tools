@@ -15,7 +15,10 @@
 
 #include "Tools/Clock.hpp"
 #include "Tools/Casting.hpp"
+#include "Tools/Edges.hpp"
 #include "Tools/Files.hpp"
+#include "Tools/FormatNumber.hpp"
+#include "Tools/String.hpp"
 #include "Tools/Linking.hpp"
 #include "Tools/Random.hpp"
 #include "Tools/RandomHW.hpp"
