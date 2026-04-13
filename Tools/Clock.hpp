@@ -8,6 +8,16 @@
 
 #include <thread>
 
+/* Usage:
+ * Begin = Tools::Clock::HTimeNow();
+ * 
+ * SomeFunction();
+ * 
+ * End = Tools::Clock::HTimeNow();
+ * 
+ * Dur = Tools::Clock::CountDuration<Tools::Clock::Units::us>(Begin, End);
+ * fmt::println("Linked List test lasted: {} μs", Dur);
+ */
 namespace Tools::Clock {
     template <Duration T>
     u64 CountDuration(const HClock& Begin, const HClock& End){
