@@ -60,4 +60,9 @@ std::pair<T, T> CheckRangeR(T min, T max) {
     if (max < min) return std::pair<T, T>(max, min);
 }
 
+template <typename T, typename U>
+bool TypeCompare(const U&) {
+    return std::same_as<std::decay_t<U>, T>;
+}
+
 #endif
