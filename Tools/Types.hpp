@@ -38,7 +38,7 @@
 
         return out;
     }
-#elif defined(MSVC_DMGL)
+#elif __has_include(<windows.h>) && defined(MSVC_DMGL)
     #include <windows.h>
     #include <dbghelp.h>
     #pragma comment(lib, "Dbghelp.lib")
