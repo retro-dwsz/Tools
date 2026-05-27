@@ -1,5 +1,6 @@
 #pragma once
 
+#include <corecrt.h>
 #ifndef TOOLS_OS_WIN32_TERMINAL_HPP
 #define TOOLS_OS_WIN32_TERMINAL_HPP
 
@@ -18,7 +19,7 @@
  * Directions: X for horizontal (return), Y for vertical (return), B for both (print)
  */
 namespace Tools::OS::Terminal {
-    i32 TerminalSize(cstr DIR = "X", i32 offset = 0) {
+    idx TerminalSize(cstr DIR = "X", const idx offset = 0) {
         CONSOLE_SCREEN_BUFFER_INFO CSBI;
 
         // Get console screen buffer info
@@ -28,8 +29,8 @@ namespace Tools::OS::Terminal {
         }
 
         // Calculate columns and rows
-        i32 cols = CSBI.srWindow.Right - CSBI.srWindow.Left + 1;
-        i32 rows = CSBI.srWindow.Bottom - CSBI.srWindow.Top + 1;
+        const idx cols = CSBI.srWindow.Right - CSBI.srWindow.Left + 1;
+        const idx rows = CSBI.srWindow.Bottom - CSBI.srWindow.Top + 1;
 
         // Handle input based on COR
         if (strcmp(DIR, "B") == 0) {
@@ -45,16 +46,16 @@ namespace Tools::OS::Terminal {
         }
     }
 
-    i32 TerminalSizeWidth(i32 offset = 0){
+    idx TerminalSizeWidth(const idx offset = 0){
         return TerminalSize("X", offset);
     }
 
-    i32 TerminalSizeHeight(i32 offset = 0){
+    idx TerminalSizeHeight(const idx offset = 0){
         return TerminalSize("Y", offset);
     }
 
-    umap<cstr, i32> TerminalSizeMap(){
-        return umap<cstr, i32>{
+    umap<cstr, const idx> TerminalSizeMap(){
+        return umap<cstr, const idx>{
             {"X", TerminalSizeWidth(0)},
             {"Y", TerminalSizeHeight(0)}
         };

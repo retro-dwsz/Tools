@@ -12,7 +12,7 @@
 
 /* Files I/O + system */
 namespace Tools::Win32::File {
-    cstr static cstr_safe(strview s, str& temp) {
+    cstr static Normalize(const strview& s, str& temp) {
         if (s.data()[s.size()] == '\0')
             return s.data();
 
@@ -20,12 +20,12 @@ namespace Tools::Win32::File {
         return temp.c_str();
     }
 
-    bool WriteFile(strview path, strview text){
+    bool WriteFile(const strview& path, const strview& text){
         str temp;
-        cstr p = cstr_safe(path, temp);
+        cstr Path = Normalize(path, temp);
 
         HANDLE h = CreateFileA(
-            p,
+            Path,
             GENERIC_WRITE,
             0,
             nullptr,
@@ -49,12 +49,12 @@ namespace Tools::Win32::File {
         return ok && written == text.size();
     }
 
-    str ReadFile(strview path) {
+    str ReadFile(const strview& path) {
         str temp;
-        cstr p = cstr_safe(path, temp);
+        cstr Path = Normalize(path, temp);
 
         HANDLE h = CreateFileA(
-            p,
+            Path,
             GENERIC_READ,
             FILE_SHARE_READ,
             nullptr,
@@ -86,25 +86,25 @@ namespace Tools::Win32::File {
     }
 
 
-    bool Exists(strview path) {
+    bool Exists(const strview& path) {
         str temp;
-        cstr p = cstr_safe(path, temp);
+        cstr Path = Normalize(path, temp);
 
-        DWORD attr = GetFileAttributesA(p);
+        DWORD attr = GetFileAttributesA(Path);
         return attr != INVALID_FILE_ATTRIBUTES;
     }
 
-    bool Remove(strview path) {
+    bool Remove(const strview& path) {
         str temp;
-        cstr p = cstr_safe(path, temp);
+        cstr Path = Normalize(path, temp);
 
-        return DeleteFileA(p);
+        return DeleteFileA(Path);
     }
 
-    bool Move(strview from, strview to) {
+    bool Move(const strview& from, const strview& to) {
         str ftmp, ttmp;
-        cstr f = cstr_safe(from, ftmp);
-        cstr t = cstr_safe(to, ttmp);
+        cstr f = Normalize(from, ftmp);
+        cstr t = Normalize(to, ttmp);
 
         return MoveFileA(f, t);
     }

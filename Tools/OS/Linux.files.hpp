@@ -14,49 +14,49 @@
 // File utils
 namespace Tools::Linux::File {
     // Ensure null-terminated C string for POSIX APIs
-    cstr static cstr_safe(strview s, str& temp) {
-        if (s.empty()) return "";
+    cstr static Normalize(const strview& Tx, str& Temp) {
+        if (Tx.empty()) return "";
 
         // If already null-terminated, use directly
-        if (s.data()[s.size()] == '\0') {
-            return s.data();
+        if (Tx.data()[Tx.size()] == '\0') {
+            return Tx.data();
         }
 
-        temp.assign(s);
-        return temp.c_str();
+        Temp.assign(Tx);
+        return Temp.c_str();
     }
 
-    bool WriteFile(strview path, strview text) {
-        str ptmp;
-        cstr p = cstr_safe(path, ptmp);
+    bool WriteFile(const strview& Path, const strview& text) {
+        str PathTemp;
+        cstr PathN = Normalize(Path, PathTemp);
 
-        int fd = open(p, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+        int fd = open(PathN, O_WRONLY | O_CREAT | O_TRUNC, 0644);
         if (fd == -1) {
             return false;
         }
 
-        ssize_t total = 0;
+        ssize_t Total = 0;
         const char* data = text.data();
-        ssize_t size = static_cast<ssize_t>(text.size());
+        ssize_t Size = static_cast<ssize_t>(text.size());
 
-        while (total < size) {
-            ssize_t written = write(fd, data + total, size - total);
-            if (written <= 0) {
+        while (Total < Size) {
+            ssize_t Written = write(fd, data + Total, Size - Total);
+            if (Written <= 0) {
                 close(fd);
                 return false;
             }
-            total += written;
+            Total += Written;
         }
 
         close(fd);
         return true;
     }
 
-    str ReadFile(strview path) {
-        str ptmp;
-        cstr p = cstr_safe(path, ptmp);
+    str ReadFile(const strview& path) {
+        str PathTemp;
+        cstr PathN = Normalize(path, PathTemp);
 
-        int fd = open(p, O_RDONLY);
+        int fd = open(PathN, O_RDONLY);
         if (fd == -1) {
             return {};
         }
@@ -92,25 +92,25 @@ namespace Tools::Linux::File {
         return out;
     }
 
-    bool Exists(strview path) {
-        str ptmp;
-        cstr p = cstr_safe(path, ptmp);
+    bool Exists(const strview& Path) {
+        str PathTemp;
+        cstr PathN = Normalize(Path, PathTemp);
 
         struct stat st{};
-        return stat(p, &st) == 0;
+        return stat(PathN, &st) == 0;
     }
 
-    bool Remove(strview path) {
-        str ptmp;
-        cstr p = cstr_safe(path, ptmp);
+    bool Remove(const strview& path) {
+        str PathTemp;
+        cstr PathN = Normalize(path, PathTemp);
 
-        return unlink(p) == 0;
+        return unlink(PathN) == 0;
     }
 
-    bool Move(strview from, strview to) {
+    bool Move(const strview& from, const strview& to) {
         str ftmp, ttmp;
-        cstr f = cstr_safe(from, ftmp);
-        cstr t = cstr_safe(to, ttmp);
+        cstr f = Normalize(from, ftmp);
+        cstr t = Normalize(to, ttmp);
 
         return rename(f, t) == 0;
     }

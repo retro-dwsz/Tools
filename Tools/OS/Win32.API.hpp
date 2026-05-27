@@ -18,9 +18,10 @@
 /* Tools */
 // #include "../Types.hpp"
 
-#include "Win32.terminal.hpp"
-#include "Win32.files.hpp"
-#include "Win32.sleep.hpp"
-#include "Win32.proc.hpp"
+#include "Win32.Terminal.hpp"
+#include "Win32.Files.hpp"
+#include "Win32.Sleep.hpp"
+#include "Win32.Proc.hpp"
+#include "Win32.Env.hpp"
 
 #endif

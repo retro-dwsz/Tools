@@ -15,9 +15,9 @@
 // Process hacks
 namespace Tools::Linux::Process {
     template <typename T>
-    T ReadProcess(idx PID, uintptr_t Address) {
+    T ReadProcess(const idx PID, const uintptr_t Address) {
         T value{};
-        
+
         struct iovec local_iov{};
         local_iov.iov_base = &value;
         local_iov.iov_len  = sizeof(T);
@@ -42,7 +42,7 @@ namespace Tools::Linux::Process {
     }
 
     template <typename T>
-    bool WriteProcess(idx PID, uintptr_t Address, T data) {
+    bool WriteProcess(const idx PID, const uintptr_t Address, const T& data) {
         struct iovec local_iov{};
         local_iov.iov_base = &data;
         local_iov.iov_len  = sizeof(T);
@@ -70,7 +70,7 @@ namespace Tools::Linux::Process {
 
     // Other process: check if owned by root (simplified admin concept)
     __declspec(__noinline__)
-    bool IsAdmin(idx pid) {
+    bool IsAdmin(const idx pid) {
         // Simplest portable check: compare UID via /proc
         // Root-owned process usually UID 0
         char path[64]{};

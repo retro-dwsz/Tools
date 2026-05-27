@@ -14,62 +14,62 @@
 /* Process hacks */
 namespace Tools::OS::Process {
     template <typename T>
-    T ReadProcess(idx PID, uintptr_t Address){
-        HANDLE h = OpenProcess(
+    T ReadProcess(const idx PID, const uintptr_t Address){
+        HANDLE Handle = OpenProcess(
             PROCESS_VM_READ,
             FALSE,
             (DWORD)PID
         );
 
-        T value{};
-        if (!h) return value;
+        T Value{};
+        if (!Handle) return Value;
 
-        SIZE_T bytes = 0;
+        SIZE_T Bytes = 0;
         ReadProcessMemory(
-            h,
+            Handle,
             (LPCVOID)Address,
-            &value,
+            &Value,
             sizeof(T),
-            &bytes
+            &Bytes
         );
 
-        CloseHandle(h);
-        return value;
+        CloseHandle(Handle);
+        return Value;
     }
 
     template <typename T>
-    bool WriteProcess(idx PID, uintptr_t Address, T data){
-        HANDLE h = OpenProcess(
+    bool WriteProcess(const idx PID, const uintptr_t Address, T data){
+        HANDLE Handle = OpenProcess(
             PROCESS_VM_WRITE | PROCESS_VM_OPERATION,
             FALSE,
             (DWORD)PID
         );
 
-        if (!h) return false;
+        if (!Handle) return false;
 
-        SIZE_T bytes = 0;
-        BOOL ok = WriteProcessMemory(
-            h,
+        SIZE_T Bytes = 0;
+        BOOL Success = WriteProcessMemory(
+            Handle,
             (LPVOID)Address,
             &data,
             sizeof(T),
-            &bytes
+            &Bytes
         );
 
-        CloseHandle(h);
-        return ok && bytes == sizeof(T);
+        CloseHandle(Handle);
+        return Success && Bytes == sizeof(T);
     }
 
     /* Current process */
     bool IsAdmin() {
-        BOOL isAdmin = FALSE;
-        HANDLE token = nullptr;
+        BOOL IsAdmin = FALSE;
+        HANDLE Token = nullptr;
 
-        if (!OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &token))
+        if (!OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &Token))
             return false;
 
         SID_IDENTIFIER_AUTHORITY NtAuth = SECURITY_NT_AUTHORITY;
-        PSID adminGroup = nullptr;
+        PSID AdminGroup = nullptr;
 
         AllocateAndInitializeSid(
             &NtAuth,
@@ -77,31 +77,31 @@ namespace Tools::OS::Process {
             SECURITY_BUILTIN_DOMAIN_RID,
             DOMAIN_ALIAS_RID_ADMINS,
             0,0,0,0,0,0,
-            &adminGroup
+            &AdminGroup
         );
 
-        CheckTokenMembership(token, adminGroup, &isAdmin);
+        CheckTokenMembership(Token, AdminGroup, &IsAdmin);
 
-        FreeSid(adminGroup);
-        CloseHandle(token);
+        FreeSid(AdminGroup);
+        CloseHandle(Token);
 
-        return isAdmin;
+        return IsAdmin;
     }
 
     /* Other process */
-    bool IsAdmin(idx pid) {
-        HANDLE proc = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, (DWORD)pid);
-        if (!proc) return false;
+    bool IsAdmin(const idx pid) {
+        HANDLE Proc = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, (DWORD)pid);
+        if (!Proc) return false;
 
-        HANDLE token = nullptr;
-        if (!OpenProcessToken(proc, TOKEN_QUERY, &token)) {
-            CloseHandle(proc);
+        HANDLE Token = nullptr;
+        if (!OpenProcessToken(Proc, TOKEN_QUERY, &Token)) {
+            CloseHandle(Proc);
             return false;
         }
 
-        BOOL isAdmin = FALSE;
+        BOOL IsAdmin = FALSE;
         SID_IDENTIFIER_AUTHORITY NtAuth = SECURITY_NT_AUTHORITY;
-        PSID adminGroup = nullptr;
+        PSID AdminGroup = nullptr;
 
         AllocateAndInitializeSid(
             &NtAuth,
@@ -109,16 +109,16 @@ namespace Tools::OS::Process {
             SECURITY_BUILTIN_DOMAIN_RID,
             DOMAIN_ALIAS_RID_ADMINS,
             0,0,0,0,0,0,
-            &adminGroup
+            &AdminGroup
         );
 
-        CheckTokenMembership(token, adminGroup, &isAdmin);
+        CheckTokenMembership(Token, AdminGroup, &IsAdmin);
 
-        FreeSid(adminGroup);
-        CloseHandle(token);
-        CloseHandle(proc);
+        FreeSid(AdminGroup);
+        CloseHandle(Token);
+        CloseHandle(Proc);
 
-        return isAdmin;
+        return IsAdmin;
     }
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ranges>
 #ifndef TOOLS_STYLE_HPP
 #define TOOLS_STYLE_HPP
 
@@ -13,6 +14,22 @@
 namespace Tools::Styling {
     // using str = std::string;        // Main string
     // using wstr = std::wstring;      // Wide string (Do we even need this?)
+
+    str Reverse(const str& Tx){
+        str Result;
+        for(auto& i : Tx | std::views::reverse){
+            Result.push_back(i);
+        }
+
+        return Result;
+    }
+
+    void ReverseInl(str& Tx){
+        idx n = Tx.length();
+        for (idx i = 0; i < n / 2; i++) {
+            std::swap(Tx[i], Tx[n - i - 1]);
+        }
+    };
 
     struct Color {
         u8 r, g, b;
