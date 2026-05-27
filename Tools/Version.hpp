@@ -5,15 +5,14 @@
 
 #define _GNU_SOURCE
 
-#include <cstdint>
 #include <stdio.h>
-#include <stdlib.h>
+#include "Types.hpp"
 
-#define __TOOLS_CPP_VER__   10
-#define __TOOLS_CPP_MAJOR__ 1
-#define __TOOLS_CPP_MINOR__ 0
+constexpr u16 __TOOLS_CPP_VER__   = 10;
+constexpr u16 __TOOLS_CPP_MAJOR__ = 1;
+constexpr u16 __TOOLS_CPP_MINOR__ = 0;
 
-constexpr int16_t __TOOLS_INFO_BUFFER__MaxSize = 64;
+constexpr i16 __TOOLS_INFO_BUFFER__MaxSize = 64;
 
 void PrintVersion() {
     char __TOOLS_INFO_BUFFER__String[__TOOLS_INFO_BUFFER__MaxSize];
