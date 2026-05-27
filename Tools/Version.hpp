@@ -21,13 +21,13 @@ void PrintVersion() {
         __TOOLS_INFO_BUFFER__String,
         __TOOLS_INFO_BUFFER__MaxSize,
         #if defined(__clang__) && defined(__clang_major__)
-            "Tools.cpp v%i.%i compiled using Clang %i",
+            "Tools.cpp v%i.%i ; this project was/is compiled using Clang %i",
             __TOOLS_CPP_MAJOR__, __TOOLS_CPP_MINOR__, __clang_major__
         #elif defined(__GNUC__) && defined(__GNUC_MINOR__)
-            "Tools.cpp v%i.%i compiled using GNU GCC %i",
+            "Tools.cpp v%i.%i ; this project was/is compiled using GNU GCC %i",
             __TOOLS_CPP_MAJOR__, __TOOLS_CPP_MINOR__, __GNUC__
         #else
-            "Tools.cpp v%i.%i compiled using other compiler",
+            "Tools.cpp v%i.%i ; this project was/is compiled using other compiler",
             __TOOLS_CPP_MAJOR__, __TOOLS_CPP_MINOR__
         #endif
     );
