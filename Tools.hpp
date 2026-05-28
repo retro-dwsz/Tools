@@ -1,4 +1,7 @@
-// Tools.h
+// Begin: Tools.hpp
+
+#ifndef TOOLS_MASTER_HPP
+#define TOOLS_MASTER_HPP
 
 #pragma once
 
@@ -30,3 +33,7 @@
 #include "Tools/OS.hpp"
 
 #include "Tools/IVec.hpp"
+
+#endif
+
+// End: Tools.cpp
