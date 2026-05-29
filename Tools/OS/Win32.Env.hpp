@@ -60,7 +60,7 @@ namespace Tools::Win32::Env {
 
 // Directories & Paths
 namespace Tools::Win32::Env {
-str GetCurrentDirectory() {
+    str GetCurrentDirectory() {
         char buffer[MAX_PATH];
         DWORD bytes = ::GetCurrentDirectoryA(MAX_PATH, buffer);
         if (bytes > 0) {
@@ -85,7 +85,7 @@ str GetCurrentDirectory() {
 
 // Variables & Command Line
 namespace Tools::Win32::Env {
-str GetCommandLineArgs() {
+    str GetCommandLineArgs() {
         return str(::GetCommandLineA());
     }
 
