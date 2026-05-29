@@ -18,10 +18,13 @@
 //   reinterpret_cast -> rcast
 //   std::any_cast    -> acast
 //
-// Usage:
-//   auto x = Tools::Cast::scast<double>(i);
-//   auto p = Tools::Cast::dcast<Base*>(derived);
-//   auto v = Tools::Cast::acast<int>(any_val);
+// Usage (with `using namespace Tools::Cast):
+//   auto x = acast<int>(any_val);
+//   auto y = scast<double>(i);
+//   auto z = dcast<Base*>(derived);
+// or
+//   auto x = scast<i32>(i);
+//   auto y = scast<f64>(i);
 //
 // ------------------------------------------------------------
 
