@@ -3,7 +3,7 @@
 i32 main() {
     printf(
         "%s",
-        GetVersion()
+        Tools_GetVersion()
     );
     return 0;
 }
