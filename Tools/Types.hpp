@@ -3,6 +3,8 @@
 #ifndef TOOLS_TYPES_HPP
 #define TOOLS_TYPES_HPP
 
+#include "FeatureCheck.hpp"
+
 #include "Types/Types.common.hpp"
 
 #include "Types/Types.int.hpp"

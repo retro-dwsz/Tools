@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "Tools/FeatureCheck.hpp"
 #include "Tools/Version.hpp"
 
 #include "Tools/Types.hpp"

@@ -3,6 +3,8 @@
 #ifndef TOOLS_VECTOR_HPP
 #define TOOLS_VECTOR_HPP
 
+#include "FeatureCheck.hpp"
+
 /* Accumulators */
 #include "Vector/Vector.accumulator.hpp"
 

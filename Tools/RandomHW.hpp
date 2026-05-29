@@ -3,12 +3,16 @@
 #ifndef TOOLS_RANDOM_HW_HPP
 #define TOOLS_RANDOM_HW_HPP
 
-#if !defined(__RDSEED__) || !defined(__RDRND__) || !defined(march)
-    #warning "HW entropy (-mrdseed, -mrdrnd) not found! Please pass \"-mrdseed\", \"-mrdrnd\" or maybe \"-march=native\" also"
-#endif
-
-#if __cplusplus < 202302L
-    #warning "This lib is intended for C++23 (-std=c++23)."
+// Cara yang benar untuk deteksi RDSEED/RDRND
+#if defined(__clang__) || defined(__GNUC__)
+    // Deteksi melalui macro predefined CPU features
+    #if defined(__RDSEED__) && defined(__RDRND__)
+        // Clang/GCC mendefinisikan macro ini jika -mrdseed -mrdrnd di-set
+        #define HW_EXT_SUPPORT 1
+    #else
+        #warning "HW entropy not enabled! Please use -mrdseed -mrdrnd or -march=native"
+        #define HW_EXT_SUPPORT 0
+    #endif
 #endif
 
 /* WARNING!

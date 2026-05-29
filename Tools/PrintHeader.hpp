@@ -3,6 +3,8 @@
 #ifndef TOOLS_PRINT_HEADER_HPP
 #define TOOLS_PRINT_HEADER_HPP
 
+#include "FeatureCheck.hpp"
+
 #include <format>
 #include "OS.hpp"
 #include "Types.hpp"

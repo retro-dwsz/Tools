@@ -1,9 +1,11 @@
 #pragma once
 
-#include <ranges>
 #ifndef TOOLS_STYLE_HPP
 #define TOOLS_STYLE_HPP
 
+#include "FeatureCheck.hpp"
+
+#include <ranges>
 #include "Types.hpp"
 #include <format>
 #include <algorithm>

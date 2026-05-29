@@ -5,7 +5,7 @@
 
 #define _GNU_SOURCE
 
-#include <stdio.h>
+#include "FeatureCheck.hpp"
 #include "Types.hpp"
 
 constexpr u16 __TOOLS_CPP_VER__   = 10;

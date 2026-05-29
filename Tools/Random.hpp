@@ -3,6 +3,8 @@
 #ifndef TOOLS_RANDOM_HPP
 #define TOOLS_RANDOM_HPP
 
+#include "FeatureCheck.hpp"
+
 /* Legend
  * "I"   stands for "Integer" (i32)
  * "L"   stands for "Long" (i64)

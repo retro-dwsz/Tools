@@ -5,6 +5,8 @@
 #ifndef TOOLS_LINKING_HPP
 #define TOOLS_LINKING_HPP
 
+#include "FeatureCheck.hpp"
+
 #include "Style.hpp"
 #include "Types.hpp"
 #include <iostream>

@@ -1,5 +1,11 @@
 #pragma once
 
+#ifndef TOOLS_RANDOM_VARIANT_HPP
+#define TOOLS_RANDOM_VARIANT_HPP
+
+#include "FeatureCheck.hpp"
+
+
 #include "./Random/Random.common.hpp"
 #include "./Casting.hpp"
 
@@ -170,3 +176,5 @@ namespace Tools::Random {
         return Result;
     }
 }
+
+#endif

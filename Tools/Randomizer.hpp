@@ -3,6 +3,8 @@
 #ifndef TOOLS_RANDOMIZER_HPP
 #define TOOLS_RANDOMIZER_HPP
 
+#include "FeatureCheck.hpp"
+
 #include <random>
 #include "Types.hpp"
 

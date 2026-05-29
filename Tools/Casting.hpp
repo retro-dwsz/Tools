@@ -25,6 +25,8 @@
 //
 // ------------------------------------------------------------
 
+#include "FeatureCheck.hpp"
+
 #include <any>
 #include <utility>
 

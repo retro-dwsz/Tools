@@ -3,13 +3,12 @@
 #ifndef TOOLS_STYLE_W_HPP
 #define TOOLS_STYLE_W_HPP
 
-#include <stdexcept>
-#include <algorithm>
-#include <regex>
+#include "FeatureCheck.hpp"
 
 #include "Types.hpp"
 #include <iostream>
 #include <format>
+#include <regex>
 
 #define sconst static const
 
@@ -50,7 +49,7 @@ namespace Tools::CommonW {
         if (B < 0) B = 0; if (B > 255) B = 255;
         return (R << 16) | (G << 8) | B;
     }
-    
+
     // Proper hex parser (handles "0x" and decimal)
     // Input as string, return as useable u32
     u32 GetHex(const str& s) {
@@ -141,14 +140,14 @@ namespace Tools::StylingW {
         // return "\033[3m" + Text + "\033[0m";
         return std::format("\033[3m{}\033[0m", Text);
     }
-    
+
     // Underline text
     /* inline */
     str Under(const str& Text) {
         // return "\033[4m" + Text + "\033[0m";
         return std::format("\033[4m{}\033[0m", Text);
     }
-    
+
     // Strikethrough text
     /* inline */
     str Strike(const str& Text) {
@@ -262,7 +261,7 @@ namespace Tools::StylingW {
     /* ---- Basic styles ---- */
     // Bold text
     /* DEP */ /* inline */
-    wstr Bold(const wstr& Text) {        
+    wstr Bold(const wstr& Text) {
         return wstr(L"\033[1m") + Text + wstr(L"\033[0m");
 
         /*
@@ -277,7 +276,7 @@ namespace Tools::StylingW {
     /* DEP */ /* inline */
     wstr Italic(const wstr& Text) {
         return wstr(L"\033[3m") + Text + wstr(L"\033[0m");
-        /* 
+        /*
         return std::format(
             L"\033[3m{}\033[0m",
             wstr(Text)

@@ -3,6 +3,8 @@
 #ifndef TOOLS_ROUNDING_HPP
 #define TOOLS_ROUNDING_HPP
 
+#include "FeatureCheck.hpp"
+
 #include <cmath>
 #include "Types.hpp"
 #include "Casting.hpp"
@@ -32,7 +34,7 @@ namespace Tools::Round {
         //         BankersRound(Cast::scast<f64>(value) / factor) * factor
         //     );
         // }
-        
+
         // Do nothing if digit is 0
         if constexpr (std::is_integral_v<T>) {
             if (digits == 0) return value;

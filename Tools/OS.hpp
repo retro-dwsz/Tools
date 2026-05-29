@@ -3,6 +3,8 @@
 #ifndef TOOLS_OS_HPP
 #define TOOLS_OS_HPP
 
+#include "FeatureCheck.hpp"
+
 /* Per section includes
  *
  * Tools/OS/<OS>.API.hpp         All packed APIs

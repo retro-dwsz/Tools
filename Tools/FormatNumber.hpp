@@ -3,6 +3,8 @@
 #ifndef TOOLS_FORMAT_NUMBER_HPP
 #define TOOLS_FORMAT_NUMBER_HPP
 
+#include "FeatureCheck.hpp"
+
 #include "Types.hpp"
 
 #include <iostream>
@@ -97,7 +99,7 @@ namespace Tools::FormatNumber {
     str Format(const T n) {
         return FormatIntegerPart(n, '\'', 3);
     }
-    
+
     /* for f32, f64, and fld */
     template <Float T>
     str Format(const T n) {
@@ -128,11 +130,11 @@ namespace Tools::FormatNumber {
     void test(){
         vec<str> a = {
             /* i8..i64 */
-            Format(i8{INT8_MAX}, '\'', 3), Format(i16{INT16_MAX}, '\'', 3), Format(i32{INT32_MAX}, '\'', 3), Format(i64{INT32_MAX}, '\'', 3), 
-            
+            Format(i8{INT8_MAX}, '\'', 3), Format(i16{INT16_MAX}, '\'', 3), Format(i32{INT32_MAX}, '\'', 3), Format(i64{INT32_MAX}, '\'', 3),
+
             /* u8..u64 */
-            Format(u8{INT8_MAX}, '\'', 3), Format(u16{INT16_MAX}, '\'', 3), Format(u32{INT32_MAX}, '\'', 3), Format(u64{INT32_MAX}, '\'', 3), 
-            
+            Format(u8{INT8_MAX}, '\'', 3), Format(u16{INT16_MAX}, '\'', 3), Format(u32{INT32_MAX}, '\'', 3), Format(u64{INT32_MAX}, '\'', 3),
+
             /* f32, f64, fld */
             Format(f32{12'713.14}, '\'', ',', 3), Format(f64{12'713.14}, '\'', ',', 3), Format(fld{12'713.14}, '\'', ',', 3),
         };
@@ -146,7 +148,7 @@ namespace Tools::FormatNumber {
             u16: {}
             u32: {}
             u64: {}
-            
+
             f32: {}
             f64: {}
             fld: {}

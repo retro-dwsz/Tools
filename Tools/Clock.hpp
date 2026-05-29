@@ -3,6 +3,8 @@
 #ifndef TOOLS_CLOCK_HPP
 #define TOOLS_CLOCK_HPP
 
+#include "FeatureCheck.hpp"
+
 #include "Types/Types.uint.hpp"
 #include "Types/Types.clock.hpp"
 
@@ -10,11 +12,11 @@
 
 /* Usage:
  * Begin = Tools::Clock::HTimeNow();
- * 
+ *
  * SomeFunction();
- * 
+ *
  * End = Tools::Clock::HTimeNow();
- * 
+ *
  * Dur = Tools::Clock::CountDuration<Tools::Clock::Units::us>(Begin, End);
  * fmt::println("Linked List test lasted: {} μs", Dur);
  */

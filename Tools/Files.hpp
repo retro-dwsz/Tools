@@ -3,6 +3,8 @@
 #ifndef TOOLS_FILES_HPP
 #define TOOLS_FILES_HPP
 
+#include "FeatureCheck.hpp"
+
 #include <iostream>
 #include <format>
 
