@@ -1,6 +1,9 @@
 #include "Tools.hpp"
 
 i32 main() {
-    PrintVersion();
+    printf(
+        "%s",
+        GetVersion()
+    );
     return 0;
 }
