@@ -50,19 +50,4 @@ concept Integer = OneOf<T, i8, i16, i32, i64,
 template <typename T>
 concept Ref     = OneOf<T, T&, const T&>;
 
-template <Numbers T>
-void CheckRange(T& min, T& max) {
-    if (max < min) std::swap(min, max);
-}
-
-template <Numbers T>
-std::pair<T, T> CheckRangeR(T min, T max) {
-    if (max < min) return std::pair<T, T>(max, min);
-}
-
-template <typename T, typename U>
-bool TypeCompare(const U&) {
-    return std::same_as<std::decay_t<U>, T>;
-}
-
 #endif

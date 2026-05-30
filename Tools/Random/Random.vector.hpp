@@ -8,8 +8,10 @@
 #include "Random.common.hpp"
 
 namespace Tools::Random {
-    vec<i32> RandomNumsVI(idx Count = 10, i32 Min = -10, i32 Max = 10) {
-        if(Max < Min){ std::swap(Min, Max); }
+    using Tools::Round::Round;
+
+    vec<i32> RandomNumsVI(const idx Count = 10, i32 Min = -10, i32 Max = 10) {
+        CheckRange(Min, Max);
 
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -19,20 +21,23 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<i32> result;
-        result.reserve(Count);
+        vec<i32> Result;
+        Result.reserve(Count);
 
         sthread RdDevice rd;
-        sthread Twister32 gen(rd());
+        cthread Twister32 Gen32(rd());
+        DistInt<i32> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
-            result.push_back(DistInt<i32>(Min, Max)(gen));
+            Result.push_back(
+                NResult(Gen32)
+            );
         }
-        return result;
+        return Result;
     }
 
-    vec<i64> RandomNumsVL(idx Count = 10, i64 Min = -100, i64 Max = 100) {
-        if(Max < Min){ std::swap(Min, Max); }
+    vec<i64> RandomNumsVL(const idx Count = 10, i64 Min = -100, i64 Max = 100) {
+        CheckRange(Min, Max);
 
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -41,21 +46,24 @@ namespace Tools::Random {
             std::cout << Warning;
             #endif
         }
-        
-        vec<i64> result;
-        result.reserve(Count);
+
+        vec<i64> Result;
+        Result.reserve(Count);
 
         sthread RdDevice rd;
-        sthread Twister64 gen(rd());
+        cthread Twister64 Gen64(rd());
+        DistInt<i64> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
-            result.push_back(DistInt<i64>(Min, Max)(gen));
+            Result.push_back(
+                NResult(Gen64)
+            );
         }
-        return result;
+        return Result;
     }
 
-    vec<f32> RandomNumsVF(idx Count = 10, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
-        if(Max < Min){ std::swap(Min, Max); }
+    vec<f32> RandomNumsVF_A(const idx Count = 10, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
 
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -64,23 +72,26 @@ namespace Tools::Random {
             std::cout << Warning;
             #endif
         }
-        
-        vec<f32> result;
-        result.reserve(Count);
+
+        vec<f32> Result;
+        Result.reserve(Count);
 
         sthread RdDevice rd;
-        sthread Twister32 gen(rd());
+        cthread Twister32 Gen32(rd());
+        DistReal<f32> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
-            auto n = DistReal<f32>(Min, Max)(gen);
-            result.push_back(Tools::Round::Round(n, Rounding));
+            auto n = NResult(Gen32);
+            Result.push_back(
+                Round(n, Rounding)
+            );
         }
 
-        return result;
+        return Result;
     }
 
-    vec<f64> RandomNumsVD(idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
-        if(Max < Min){ std::swap(Min, Max); }
+    vec<f64> RandomNumsVD(const idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
 
         if(Count > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -89,19 +100,22 @@ namespace Tools::Random {
             std::cout << Warning;
             #endif
         }
-        
-        vec<f64> result;
-        result.reserve(Count);
+
+        vec<f64> Result;
+        Result.reserve(Count);
 
         sthread RdDevice rd;
-        sthread Twister64 gen(rd());
+        cthread Twister64 Gen64(rd());
+        DistReal<f64> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
-            auto n = DistReal<f64>(Min, Max)(gen);
-            result.push_back(Tools::Round::Round(n, Rounding));
+            auto n = NResult(Gen64);
+            Result.push_back(
+                Round(n, Rounding)
+            );
         }
 
-        return result;
+        return Result;
     }
 
 }

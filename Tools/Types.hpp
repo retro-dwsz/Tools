@@ -18,6 +18,21 @@
 
 #include "Types/Types.clock.hpp"
 
+template <typename T>
+void CheckRange(T& Min, T& Max) {
+    if (Max < Min) std::swap(Min, Max);
+}
+
+template <typename T>
+std::pair<T, T> CheckRangeR(T Min, T Max) {
+    if (Max < Min) return std::pair<T, T>(Max, Min);
+}
+
+template <typename T, typename U>
+bool TypeCompare(const U&) {
+    return std::same_as<std::decay_t<U>, T>;
+}
+
 #if __has_include(<cxxabi.h>) && defined(ITANIUM_DMGL)
     #include <cxxabi.h>
     str RemoveMangle(const str& mangled, bool WithArgs = true) {

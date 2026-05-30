@@ -8,9 +8,11 @@
 #include "Random.common.hpp"
 
 namespace Tools::Random {
-    vec<vec<i32>> RandomNumsBI(idx Sub = 64, idx Count = 256, i32 Min = -10, i32 Max = 10) {
-        if(Max < Min){ std::swap(Min, Max); }
-        if(Sub > INT32_MAX || Count > INT32_MAX){
+    using Tools::Round::Round;
+
+    vec<vec<i32>> RandomNumsBI(const idx SubVectorCount = 64, const idx NCount = 256, i32 Min = -10, i32 Max = 10) {
+        CheckRange(Min, Max);
+        if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
             #else
@@ -18,50 +20,32 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<i32>> result;
-        result.reserve(Sub);
+        vec<vec<i32>> Result;
+        Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        sthread Twister32 gen(rd());
-        
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<i32>{});
-            result[i].reserve(Count);
+        cthread Twister32 Gen32(rd());
+        DistInt<i32> NResult(Min, Max);
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.emplace_back(vec<i32>{});
+            Result[i].reserve(NCount);
         }
 
-        for(idx i = 0; i < Sub; i++) {
-            for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(DistInt<i32>(Min, Max)(gen));
+        for(idx i = 0; i < SubVectorCount; i++) {
+            for(idx ii = 0; ii < NCount; ii++){
+                Result[i].push_back(
+                    NResult(Gen32)
+                );
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<i64>> RandomNumsBL(idx Sub = 64, idx Count = 256, i64 Min = -100, i64 Max = 100) {
-        vec<vec<i64>> result;
-        result.reserve(Sub);
-
-        sthread RdDevice rd;
-        sthread Twister64 gen(rd());
-        
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<i64>{});
-            result[i].reserve(Count);
-        }
-
-        for(idx i = 0; i < Sub; i++) {
-            for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(DistInt<i64>(Min, Max)(gen));
-            }
-        }
-
-        return result;
-    }
-
-    vec<vec<f32>> RandomNumsBF(idx Sub = 64, idx Count = 256, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
-        if(Max < Min){ std::swap(Min, Max); }
-        if(Sub > INT32_MAX || Count > INT32_MAX){
+    vec<vec<i64>> RandomNumsBL(const idx SubVectorCount = 64, const idx NCount = 256, i64 Min = -100, i64 Max = 100) {
+        CheckRange(Min, Max);
+        if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
             #else
@@ -69,29 +53,32 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<f32>> result;
-        result.reserve(Sub);
-        
         sthread RdDevice rd;
-        sthread Twister64 gen(rd());
+        cthread Twister64 Gen64(rd());
+        DistInt<i64> NResult(Min, Max);
 
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<f32>{});
-            result[i].reserve(Count);
+        vec<vec<i64>> Result;
+        Result.reserve(SubVectorCount);
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.emplace_back(vec<i64>{});
+            Result[i].reserve(NCount);
         }
 
-        for(idx i = 0; i < Sub; i++) {
-            for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(Tools::Round::Round( DistReal<f32>(Min, Max)(gen), Rounding));
+        for(idx i = 0; i < SubVectorCount; i++) {
+            for(idx ii = 0; ii < NCount; ii++){
+                Result[i].push_back(
+                    NResult(Gen64)
+                );
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<f64>> RandomNumsBD(idx Sub = 64, idx Count = 256, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
-        if(Max < Min){ std::swap(Min, Max); }
-        if(Sub > INT32_MAX || Count > INT32_MAX){
+    vec<vec<f32>> RandomNumsBF(const idx SubVectorCount = 64, const idx NCount = 256, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
+        if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
             std::cout << "!!";
             #else
@@ -99,24 +86,60 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<f64>> result;
-        result.reserve(Sub);
+        vec<vec<f32>> Result;
+        Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        sthread Twister64 gen(rd());
-        
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<f64>{});
-            result[i].reserve(Count);
+        cthread Twister64 Gen32(rd());
+        DistReal<f32> NResult(Min, Max);
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.emplace_back(vec<f32>{});
+            Result[i].reserve(NCount);
         }
 
-        for(idx i = 0; i < Sub; i++) {
-            for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(Tools::Round::Round(DistReal<f64>(Min, Max)(gen), Rounding));
+        for(idx i = 0; i < SubVectorCount; i++) {
+            for(idx ii = 0; ii < NCount; ii++){
+                Result[i].push_back(
+                    Round(NResult(Gen32), Rounding)
+                );
             }
         }
 
-        return result;
+        return Result;
+    }
+
+    vec<vec<f64>> RandomNumsBD(const idx SubVectorCount = 64, const idx NCount = 256, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
+        if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
+            #ifdef TOOLS_RANDOM_SILENT
+            std::cout << "!!";
+            #else
+            std::cout << Warning;
+            #endif
+        }
+
+        vec<vec<f64>> Result;
+        Result.reserve(SubVectorCount);
+
+        sthread RdDevice rd;
+        cthread Twister64 Gen64(rd());
+        DistReal<f64> NResult(Min, Max);
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.emplace_back(vec<f64>{});
+            Result[i].reserve(NCount);
+        }
+
+        for(idx i = 0; i < SubVectorCount; i++) {
+            for(idx ii = 0; ii < NCount; ii++){
+                Result[i].push_back(
+                    Round(NResult(Gen64), Rounding)
+                );
+            }
+        }
+
+        return Result;
     }
 }
 

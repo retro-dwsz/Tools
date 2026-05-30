@@ -1,16 +1,18 @@
 #pragma once
 
-#ifndef TOOLS_SBUNDLE_HPP
-#define TOOLS_SBUNDLE_HPP
+#ifndef TOOLS_RANDOM_SBUNDLE_HPP
+#define TOOLS_RANDOM_SBUNDLE_HPP
 
 /* Budled vector with randomized elements of each sub-vector */
 
 #include "Random.common.hpp"
 
 namespace Tools::Random {
-    vec<vec<i32>> RandomNumsSBI(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i32 Min = -10, i32 Max = 10) {
-        if(Max < Min) std::swap(Min, Max);
-        if(CountMax < CountMin) std::swap(CountMin, CountMax);
+    using Tools::Round::Round;
+
+    vec<vec<i32>> RandomNumsSBI(const idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i32 Min = -10, i32 Max = 10) {
+        CheckRange(Min, Max);
+        CheckRange(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -20,32 +22,32 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<i32>> result;
-        result.reserve(Sub);
+        vec<vec<i32>> Result;
+        Result.reserve(Sub);
 
         RdDevice rd;
-        Twister32 gen(rd());
+        Twister32 Gen32(rd());
 
-        DistInt<idx>  dist_count(CountMin, CountMax);
-        DistInt<i32>  dist_val(Min, Max);
+        DistInt<idx>  DistCount(CountMin, CountMax);
+        DistInt<i32>  NResult(Min, Max);
 
         for(idx i = 0; i < Sub; ++i) {
-            idx c = dist_count(gen);
+            idx NCount = DistCount(Gen32);
 
-            auto& v = result.emplace_back();
-            v.reserve(c);
+            auto& v = Result.emplace_back();
+            v.reserve(NCount);
 
-            for(idx j = 0; j < c; ++j) {
-                v.push_back(dist_val(gen));
+            for(idx j = 0; j < NCount; ++j) {
+                v.push_back(NResult(Gen32));
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<i64>> RandomNumsSBL(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i64 Min = -100, i64 Max = 100) {
-        if(Max < Min) std::swap(Min, Max);
-        if(CountMax < CountMin) std::swap(CountMin, CountMax);
+    vec<vec<i64>> RandomNumsSBL(const idx Sub = 64, idx CountMin = 25, idx CountMax = 50, i64 Min = -100, i64 Max = 100) {
+        CheckRange(Min, Max);
+        CheckRange(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -55,32 +57,32 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<i64>> result;
-        result.reserve(Sub);
+        vec<vec<i64>> Result;
+        Result.reserve(Sub);
 
-        RdDevice rd;
-        Twister32 gen(rd());
+        sthread RdDevice rd;
+        cthread Twister64 Gen64(rd());
 
-        DistInt<idx>  dist_count(CountMin, CountMax);
-        DistInt<i64>  dist_val(Min, Max);
+        DistInt<idx>  DistCount(CountMin, CountMax);
+        DistInt<i64>  NResult(Min, Max);
 
         for(idx i = 0; i < Sub; ++i) {
-            idx c = dist_count(gen);
+            idx NCount = DistCount(Gen64);
 
-            auto& v = result.emplace_back();
-            v.reserve(c);
+            auto& v = Result.emplace_back();
+            v.reserve(NCount);
 
-            for(idx j = 0; j < c; ++j) {
-                v.push_back(dist_val(gen));
+            for(idx j = 0; j < NCount; ++j) {
+                v.push_back(NResult(Gen64));
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<f32>> RandomNumsSBF(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f32 Min = -2.71, f32 Max = 2.71, int Rounding = 2) {
-        if(Max < Min) std::swap(Min, Max);
-        if(CountMax < CountMin) std::swap(CountMin, CountMax);
+    vec<vec<f32>> RandomNumsSBF(const idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f32 Min = -2.71, f32 Max = 2.71, int Rounding = 2) {
+        CheckRange(Min, Max);
+        CheckRange(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -90,34 +92,34 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<f32>> result;
-        result.reserve(Sub);
+        vec<vec<f32>> Result;
+        Result.reserve(Sub);
 
         RdDevice rd;
-        Twister32 gen(rd());
+        Twister32 Gen32(rd());
 
-        DistInt<idx>  dist_count(CountMin, CountMax);
-        DistReal<f32> dist_val(Min, Max);
+        DistInt<idx>  DistCount(CountMin, CountMax);
+        DistReal<f32> NResult(Min, Max);
 
         for(idx i = 0; i < Sub; ++i) {
-            idx c = dist_count(gen);
+            idx NCount = DistCount(Gen32);
 
-            auto& v = result.emplace_back();
-            v.reserve(c);
+            auto& v = Result.emplace_back();
+            v.reserve(NCount);
 
-            for(idx j = 0; j < c; ++j) {
+            for(idx j = 0; j < NCount; ++j) {
                 v.push_back(
-                    Tools::Round::Round(dist_val(gen), Rounding)
+                    Round(NResult(Gen32), Rounding)
                 );
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<f64>> RandomNumsSBD(idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f64 Min = -3.14, f64 Max = 3.14, int Rounding = 2) {
-        if(Max < Min) std::swap(Min, Max);
-        if(CountMax < CountMin) std::swap(CountMin, CountMax);
+    vec<vec<f64>> RandomNumsSBD(const idx Sub = 64, idx CountMin = 25, idx CountMax = 50, f64 Min = -3.14, f64 Max = 3.14, int Rounding = 2) {
+        CheckRange(Min, Max);
+        CheckRange(CountMin, CountMax);
 
         if(Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
@@ -127,29 +129,29 @@ namespace Tools::Random {
             #endif
         }
 
-        vec<vec<f64>> result;
-        result.reserve(Sub);
+        vec<vec<f64>> Result;
+        Result.reserve(Sub);
 
-        RdDevice rd;
-        Twister32 gen(rd());
+        sthread RdDevice rd;
+        cthread Twister64 Gen64(rd());
 
-        DistInt<idx>  dist_count(CountMin, CountMax);
-        DistReal<f64> dist_val(Min, Max);
+        DistInt<idx>  DistCount(CountMin, CountMax);
+        DistReal<f64> NResult(Min, Max);
 
         for(idx i = 0; i < Sub; ++i) {
-            idx c = dist_count(gen);
+            idx NCount = DistCount(Gen64);
 
-            auto& v = result.emplace_back();
-            v.reserve(c);
+            auto& v = Result.emplace_back();
+            v.reserve(NCount);
 
-            for(idx j = 0; j < c; ++j) {
+            for(idx j = 0; j < NCount; ++j) {
                 v.push_back(
-                    Tools::Round::Round(dist_val(gen), Rounding)
+                    Round(NResult(Gen64), Rounding)
                 );
             }
         }
 
-        return result;
+        return Result;
     }
 }
 
