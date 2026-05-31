@@ -3,11 +3,9 @@
 #ifndef TOOLS_RANDOM_HW_HPP
 #define TOOLS_RANDOM_HW_HPP
 
-// Cara yang benar untuk deteksi RDSEED/RDRND
 #if defined(__clang__) || defined(__GNUC__)
-    // Deteksi melalui macro predefined CPU features
     #if defined(__RDSEED__) && defined(__RDRND__)
-        // Clang/GCC mendefinisikan macro ini jika -mrdseed -mrdrnd di-set
+        // Clang/GCC defines this macro if -mrdseed -mrdrnd setted
         #define HW_EXT_SUPPORT 1
     #else
         #warning "HW entropy not enabled! Please use -mrdseed -mrdrnd or -march=native"
@@ -28,6 +26,8 @@
  * "V"   stands for "Vector"
  * "B"   stands for "Bundled"
  * "SB"  stands for "Scattered Bundle"
+ *
+ * "T"   stands for "Threaded", which means those are using multithreading
  *
  * "VI"  stands for "Vector Integer"
  * "VL"  stands for "Vector Long Integer"

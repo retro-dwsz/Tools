@@ -1,85 +1,85 @@
 #pragma once
 
+#include "RandomHW.vector.hpp"
 #ifndef TOOLS_RANDOM_HW_BUNDLE_HPP
 #define TOOLS_RANDOM_HW_BUNDLE_HPP
 
 #include "RandomHW.common.hpp"
 
 namespace Tools::RandomHW {
-    vec<vec<i32>> RandomNumsBI(Twister32& gen, const idx Sub, const idx Count, i32 min, i32 max) {
-        CheckRange(min, max);
-        
-        DistInt<i32> dist(min, max);
-        vec<vec<i32>> result;
+    void WarningCount(const idx& SubVectorCount, const idx& NCount){
+        if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
+            #ifdef TOOLS_RANDOM_SILENT
+            std::println("{}", "!!");
+            #else
+            std::println("{}", Warning);
+            #endif
+        }
+    }
+}
 
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<i32>{});
-            result[i].reserve(Count);
+// Integers
+namespace Tools::RandomHW {
+    vec<vec<i32>> RandomNumsBI(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, i32 Min = -10, i32 Max = 10) {
+        CheckRange(Min, Max);
+        WarningCount(SubVectorCount, Count);
+
+        DistInt<i32> Dist32(Min, Max);
+        vec<vec<i32>> Result;
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.push_back(vec<i32>{});
+            Result[i].reserve(Count);
         }
 
         for(idx i = 0; i < Count; i++) {
             for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(dist(gen));
+                Result[i].push_back(Dist32(Gen32));
             }
         }
 
-        return result;
+        return Result;
     }
 
-    vec<vec<i64>> RandomNumsBL(Twister64& gen, const idx Sub, const idx Count, i64 min, i64 max) {
-        CheckRange(min, max);
-        
-        DistInt<i64> dist(min, max);
-        vec<vec<i64>> result;
+    vec<vec<i64>> RandomNumsBL(Twister64& Gen64, const idx SubVectorCount = 5, const idx Count = 10, i64 Min = -100, i64 Max = 100) {
+        CheckRange(Min, Max);
+        WarningCount(SubVectorCount, Count);
 
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<i64>{});
-            result[i].reserve(Count);
+        DistInt<i64> Dist64(Min, Max);
+        vec<vec<i64>> Result;
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            Result.push_back(vec<i64>{});
+            Result[i].reserve(Count);
         }
 
         for(idx i = 0; i < Count; i++) {
             for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(dist(gen));
+                Result[i].push_back(Dist64(Gen64));
             }
         }
 
-        return result;
+        return Result;
     }
+}
 
-    vec<vec<f32>> RandomNumsBF(Twister32& gen, const idx Sub, const idx Count, f32 min, f32 max) {
-        CheckRange(min, max);
-        
-        DistReal<f32> dist(min, max);
+// Float
+namespace Tools::RandomHW {
+    vec<vec<f32>> RandomNumsBF(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, f32 Min = -2.71, f32 Max = 3.14) {
+        CheckRange(Min, Max);
+        WarningCount(SubVectorCount, Count);
+
+        DistReal<f32> dist(Min, Max);
         vec<vec<f32>> result;
 
-        for(idx i = 0; i < Sub; i++){
+        for(idx i = 0; i < SubVectorCount; i++){
             result.push_back(vec<f32>{});
             result[i].reserve(Count);
         }
 
         for(idx i = 0; i < Count; i++) {
             for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(dist(gen));
-            }
-        }
-
-        return result;
-    }
-    
-    vec<vec<f32>> RandomNumsBF(Twister32& gen, const idx Sub, const idx Count, f32 min, f32 max, const i32 Rounding) {
-        CheckRange(min, max);
-        
-        DistReal dist(min, max);
-        vec<vec<f32>> result;
-
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<f32>{});
-            result[i].reserve(Count);
-        }
-
-        for(idx i = 0; i < Count; i++) {
-            for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(Tools::Round::Round(dist(gen), Rounding));
+                result[i].push_back(dist(Gen32));
             }
         }
 
@@ -88,7 +88,7 @@ namespace Tools::RandomHW {
 
     vec<vec<f64>> RandomNumsBD(Twister64& gen, const idx Sub, const idx Count, f64 min, f64 max) {
         CheckRange(min, max);
-        
+
         DistReal<f64> dist(min, max);
         vec<vec<f64>> result;
 
@@ -105,27 +105,49 @@ namespace Tools::RandomHW {
 
         return result;
     }
+}
 
-    vec<vec<f64>> RandomNumsBD(Twister64& gen, const idx Sub, const idx Count, f64 min, f64 max, const i32 Rounding) {
-        CheckRange(min, max);
-        
-        DistReal dist(min, max);
-        vec<vec<f64>> result;
+// Float with rounding
+namespace Tools::RandomHW {
+    vec<vec<f32>> RandomNumsBF(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count  = 10, f32 Min = -2.17, f32 Max = 2.71, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
 
-        for(idx i = 0; i < Sub; i++){
-            result.push_back(vec<f64>{});
+        DistReal dist(Min, Max);
+        vec<vec<f32>> result;
+
+        for(idx i = 0; i < SubVectorCount; i++){
+            result.push_back(vec<f32>{});
             result[i].reserve(Count);
         }
 
         for(idx i = 0; i < Count; i++) {
             for(idx ii = 0; ii < Count; ii++){
-                result[i].push_back(Tools::Round::Round(dist(gen), Rounding));
+                result[i].push_back(Round(dist(Gen32), Rounding));
             }
         }
 
         return result;
     }
 
+    vec<vec<f64>> RandomNumsBD(Twister64& Gen64, const idx SubvectorCount = 5, const idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
+
+        DistReal dist(Min, Max);
+        vec<vec<f64>> result;
+
+        for(idx i = 0; i < SubvectorCount; i++){
+            result.push_back(vec<f64>{});
+            result[i].reserve(Count);
+        }
+
+        for(idx i = 0; i < Count; i++) {
+            for(idx ii = 0; ii < Count; ii++){
+                result[i].push_back(Round(dist(Gen64), Rounding));
+            }
+        }
+
+        return result;
+    }
 }
 
 #endif

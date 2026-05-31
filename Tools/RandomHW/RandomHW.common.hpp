@@ -8,34 +8,41 @@
 #include "../Randomizer.hpp"
 #include "../Rounding.hpp"
 
-#include <iostream>
+#include <print>
 #include <format>
 #include <cpuid.h>
 #include <immintrin.h>
 
-const str WarningHW = Tools::Styling::ColorFG("Unusual number for indexes detected, proceed with cauntion", 0xF84234);
+namespace Tools::RandomHW {
+    const str WarningHW = Tools::Styling::ColorFG("Unusual number for indexes detected, proceed with cauntion", 0xF84234);
+    const str Warning = Tools::Styling::ColorFG(
+        "Unusual number for indexes detected, proceed with cauntion", 0xF84234
+    );
 
-#ifdef TOOLS_RANDOM_SILENT
-    #define RANDOM_WARNING_OUT() std::cout << "!!"
-#else
-    #define RANDOM_WARNING_OUT() std::cout << WarningHW
-#endif
+    using Tools::Round::Round;
+}
 
-
-#define WARNING_A             \
-    if (Count > INT32_MAX) {  \
-        RANDOM_WARNING_OUT(); \
-    }
-
-#define WARNING_B                                                           \
-    if (Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX) {  \
-        RANDOM_WARNING_OUT();                                               \
-    }
+// #ifdef TOOLS_RANDOM_SILENT
+//     #define RANDOM_WARNING_OUT() std::cout << "!!"
+// #else
+//     #define RANDOM_WARNING_OUT() std::cout << WarningHW
+// #endif
 
 
-namespace RandomHW::Tests {
-    const str OK = Tools::Styling::ColorFG("supported", 0xAFCB65);
-    const str BAD = Tools::Styling::ColorFG("unsupported", 0xAC2E24);
+// #define WARNING_A             \
+//     if (Count > INT32_MAX) {  \
+//         RANDOM_WARNING_OUT(); \
+//     }
+
+// #define WARNING_B                                                           \
+//     if (Sub > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX) {  \
+//         RANDOM_WARNING_OUT();                                               \
+//     }
+
+
+namespace Tools::RandomHW::Tests {
+    const str OK    = Tools::Styling::ColorFG("supported", 0xAFCB65);
+    const str BAD   = Tools::Styling::ColorFG("unsupported", 0xAC2E24);
 
     bool RDseedSupport() {
         u32 eax, ebx, ecx, edx;
@@ -43,30 +50,30 @@ namespace RandomHW::Tests {
         return ebx & 1 << 18;
     }
 
-    pair<bool, bool> TestRandSeed(u16& outA, u16& outB){
-        const bool a = _rdrand16_step(&outA);      /* Randomizer */
-        const bool b = _rdseed16_step(&outB);      /*   Seeder   */
-        return {a, b};
+    pair<bool, bool> TestRandSeed(u16& OutRand, u16& OutSeed){
+        const bool RdRand16 = _rdrand16_step(&OutRand);      /* Randomizer */
+        const bool RdSeed16 = _rdseed16_step(&OutSeed);      /*   Seeder   */
+        return {RdRand16, RdSeed16};
     }
 
-    pair<bool, bool> TestRandSeed(u32& outA, u32& outB){
-        const bool a = _rdrand32_step(&outA);      /* Randomizer */
-        const bool b = _rdseed32_step(&outB);      /*   Seeder   */
-        return {a, b};
+    pair<bool, bool> TestRandSeed(u32& OutRand, u32& OutSeed){
+        const bool RdRand32 = _rdrand32_step(&OutRand);      /* Randomizer */
+        const bool RdSeed32 = _rdseed32_step(&OutSeed);      /*   Seeder   */
+        return {RdRand32, RdSeed32};
     }
 
-    pair<bool, bool> TestRandSeed(u64& outA, u64& outB){
-        const bool a = _rdrand64_step(&outA);      /* Randomizer */
-        const bool b = _rdseed64_step(&outB);      /*   Seeder   */
-        return {a, b};
+    pair<bool, bool> TestRandSeed(u64& OutRand, u64& OutSeed){
+        const bool RdRand64 = _rdrand64_step(&OutRand);      /* Randomizer */
+        const bool RdSeed64 = _rdseed64_step(&OutSeed);      /*   Seeder   */
+        return {RdRand64, RdSeed64};
     }
 
-    void CheckCompatibily(){
-        std::cout << std::format("CPU HWRD is {}\n", RDseedSupport() ? OK : BAD);
+    void CheckCompatibily() {
+        std::println("{}\n", std::format("CPU HWRD is {}\n", RDseedSupport() ? OK : BAD));
 
-        u16 out16A{}, out16B{};
-        auto Result16 = TestRandSeed(out16A, out16B);
-        std::cout << std::format("{}\n",
+        u16 Rand16Out{}, Seed16Out{};
+        auto Result16 = TestRandSeed(Rand16Out, Seed16Out);
+        std::println("{}\n\n",
             std::format("{} {}\n{} {}",
                 "16-bit seeder is    ",
                 Result16.first,
@@ -75,9 +82,9 @@ namespace RandomHW::Tests {
             )
         );
 
-        u32 out32A{}, out32B{};
-        auto Result32 = TestRandSeed(out32A, out32B);
-        std::cout << std::format("{}\n",
+        u32 Rand32Out{}, Seed32Out{};
+        auto Result32 = TestRandSeed(Rand32Out, Seed32Out);
+        std::println("{}\n\n",
             std::format("{} {}\n{} {}",
                 "32-bit seeder is    ",
                 Result32.first,
@@ -86,9 +93,9 @@ namespace RandomHW::Tests {
             )
         );
 
-        u64 out64A{}, out64B{};
-        auto Result64 = TestRandSeed(out64A, out64B);
-        std::cout << std::format("{}\n\n",
+        u64 Rand64Out{}, Seed64Out{};
+        auto Result64 = TestRandSeed(Rand64Out, Seed64Out);
+        std::println("{}\n\n",
             std::format("{} {}\n{} {}",
                 "64-bit seeder is    ",
                 Result64.first,
@@ -120,29 +127,19 @@ namespace Tools::RandomHW {
 }
 
 namespace Tools::RandomHW {
-    Twister32 MakeHWEngine32(u32 seed = UINT32_MAX) {
-        // u32 seed{};
-        if(!_rdseed32_step(&seed)) {
-            seed = RdDevice{}();
+    Twister32 MakeHWEngine32(u32 Seed32 = UINT32_MAX) {
+        if(!_rdseed32_step(&Seed32)) {
+            Seed32 = RdDevice{}();
         }
-        return Twister32(seed);
+        return Twister32(Seed32);
     }
 
-    // Twister32 MakeEngine32S(const u32 seed = UINT32_MAX) {
-    //     return Twister32(seed);
-    // }
-
-    Twister64 MakeHWEngine64(u64 seed = UINT64_MAX) {
-        // u64 seed{};
-        if(!_rdseed64_step(&seed)) {
-            seed = RdDevice{}();
+    Twister64 MakeHWEngine64(u64 Seed64 = UINT64_MAX) {
+        if(!_rdseed64_step(&Seed64)) {
+            Seed64 = RdDevice{}();
         }
-        return Twister64(seed);
+        return Twister64(Seed64);
     }
-
-    // Twister64 MakeEngine64S(const u64 seed = UINT64_MAX) {
-    //     return Twister64(seed);
-    // }
 }
 
 #endif

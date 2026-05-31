@@ -5,37 +5,44 @@
 
 #include "RandomHW.common.hpp"
 
+// Integer
 namespace Tools::RandomHW {
-    i32 RandomNumI(Twister32& gen, i32 Min = -10, i32 Max = 10) {
+    using Tools::Round::Round;
+
+    i32 RandomNumI(Twister32& Gen32, i32 Min = -10, i32 Max = 10) {
         CheckRange(Min, Max);
-        DistInt<i32> dist(Min, Max);
-        return dist(gen);
-    }
-    
-    i64 RandomNumL(Twister64& gen, i64 Min = -100, i64 Max = 100) {
-        CheckRange(Min, Max);
-        DistInt<i64> dist(Min, Max);
-        return dist(gen);
+        return DistInt<i32>(Min, Max)(Gen32);
     }
 
-    f32 RandomNumF(Twister32& gen, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
+    i64 RandomNumL(Twister64& Gen64, i64 Min = -100, i64 Max = 100) {
         CheckRange(Min, Max);
-        DistReal<f32> dist(Min, Max);
-        // if(Rounding > 0){
-            return Tools::Round::Round(dist(gen), Rounding);
-        // } else {
-        //     return dist(gen);
-        // }
+        return DistInt<i64>(Min, Max)(Gen64);
+    }
+}
+
+// Float
+namespace Tools::RandomHW {
+    f32 RandomNumF(Twister32& Gen32, f32 Min = -2.71, f32 Max = 2.71) {
+        CheckRange(Min, Max);
+        return DistReal<f32>(Min, Max)(Gen32);
     }
 
-    f64 RandomNumD(Twister64& gen, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+    f64 RandomNumD(Twister64& Gen64, f64 Min = -3.14, f64 Max = 3.14) {
         CheckRange(Min, Max);
-        DistReal<f64> dist(Min, Max);
-        // if(Rounding > 0){
-            return Tools::Round::Round(dist(gen), Rounding);
-        // } else {
-        //     return dist(gen);
-        // }
+        return DistReal<f64>(Min, Max)(Gen64);
+    }
+}
+
+// Float with rounding
+namespace Tools::RandomHW {
+    f32 RandomNumF(Twister32& Gen32, f32 Min = -2.71, f32 Max = 2.71, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
+        return Round(DistReal<f32>(Min, Max)(Gen32), Rounding);
+    }
+
+    f64 RandomNumD(Twister64& Gen64, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+        CheckRange(Min, Max);
+        return Round(DistReal<f64>(Min, Max)(Gen64), Rounding);
     }
 }
 

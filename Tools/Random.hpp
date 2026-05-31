@@ -13,6 +13,7 @@
  * "V"   stands for "Vector"
  * "B"   stands for "Bundled"
  * "SB"  stands for "Scattered Bundle"
+ *
  * "T"   stands for "Threaded", which means those are using multithreading
  *
  * "VI"  stands for "Vector Integer"

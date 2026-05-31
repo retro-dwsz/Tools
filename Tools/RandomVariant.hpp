@@ -5,14 +5,12 @@
 
 #include "FeatureCheck.hpp"
 
-
-#include "./Random/Random.common.hpp"
+#include "Random/Random.vector.hpp"
+#include "Random/Random.common.hpp"
 #include "./Casting.hpp"
 
 // Non-HW only!
-
-using namespace Tools::Cast;
-
+/*
 namespace Tools::Random::Detail {
     template<typename T, typename Engine>
     T GenerateValue(Engine& gen, T min, T max) {
@@ -71,17 +69,14 @@ namespace Tools::Random::Detail {
 }
 
 namespace Tools::Random {
+    using Tools::Round::Round;
+    using namespace Tools::Cast;
+
     // ── VV: Vector Variant (1D, fully random per element) ─────────
     template<typename... T1, typename T2, typename Engine = Twister32>
     vec<tvar<T1...>> RandomNumsVV(idx Count, T2 Min, T2 Max, i32 Rounding = 2, Engine& Gen = Detail::MakeEngine32()) {
-        if(Max < Min) std::swap(Min, Max);
-        if(Count > INT32_MAX) {
-            #ifdef TOOLS_RANDOM_SILENT
-            std::cout << "!!";
-            #else
-            std::cout << Warning;
-            #endif
-        }
+        CheckRange(Min, Max);
+        WarningCount(Count);
 
         vec<tvar<T1...>> result;
         result.reserve(Count);
@@ -95,14 +90,8 @@ namespace Tools::Random {
     // ── BV: Bundles Variant (1D, group by type then shuffle) ─────
     template<typename... T1, typename T2, typename Engine = Twister32>
     vec<tvar<T1...>> RandomNumsBV(idx CountPerType, T2 Min, T2 Max, i32 Rounding = 2, Engine& Gen = Detail::MakeEngine32()) {
-        if(Max < Min) std::swap(Min, Max);
-        if(CountPerType > INT32_MAX) {
-            #ifdef TOOLS_RANDOM_SILENT
-            std::cout << "!!";
-            #else
-            std::cout << Warning;
-            #endif
-        }
+        CheckRange(Min, Max);
+        WarningCount(CountPerType);
 
         vec<tvar<T1...>> Result;
         Result.reserve(CountPerType * sizeof...(T1));
@@ -132,7 +121,8 @@ namespace Tools::Random {
     vec<tvar<T1...>> RandomNumsSV(idx TotalCount, T2 Min, T2 Max, i32 Rounding = 2, Engine& Gen = Detail::MakeEngine32()) {
         constexpr idx N = sizeof...(T1);
         static_assert(N > 0, "Minimal satu tipe harus disediakan");
-        if(Max < Min) std::swap(Min, Max);
+        CheckRange(Min, Max);
+        WarningCount(TotalCount);
 
         vec<tvar<T1...>> Result;
         Result.reserve(TotalCount);
@@ -151,7 +141,8 @@ namespace Tools::Random {
         };
         (AddToPool(std::type_identity<T1>{}), ...);
 
-        std::shuffle(TypePool.begin(), TypePool.end(), Gen);
+        // std::shuffle(TypePool.begin(), TypePool.end(), Gen);
+        std::ranges::shuffle(TypePool, Gen);
 
         // Generate sesuai pool
         idx PoolPos = 0;
@@ -165,7 +156,7 @@ namespace Tools::Random {
                     Result.push_back(Detail::GenerateValue(Gen, MinVal, MaxVal));
                 } else {
                     auto val = Detail::GenerateValue(Gen, MinVal, MaxVal);
-                    Result.push_back(Tools::Round::Round(val, Rounding));
+                    Result.push_back(Round(val, Rounding));
                 }
                 ++PoolPos;
             }
@@ -176,5 +167,22 @@ namespace Tools::Random {
         return Result;
     }
 }
+*/
+
+
+namespace Tools::Random {
+    template <typename T>
+    T RandomNumV(T Min, T Max);
+
+    template <typename T, typename ...Ts>
+    vec<tvar<Ts...>> RandomNumsVV(T Min, T Max);
+
+    template <typename T, typename ...Ts>
+    vec<vec<tvar<Ts...>>> RandomNumBV(T Min, T Max);
+
+    template <typename T, typename ...Ts>
+    vec<vec<tvar<Ts...>>> RandomNumSBV(T Min, T Max);
+}
+
 
 #endif
