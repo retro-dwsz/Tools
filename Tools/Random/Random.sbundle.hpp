@@ -60,7 +60,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
 
         DistInt<idx>  DistCount(CountMin, CountMax);
         DistInt<i64>  NResult(Min, Max);
@@ -119,7 +119,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
 
         DistInt<idx>  DistCount(CountMin, CountMax);
         DistReal<f64> NResult(Min, Max);
@@ -180,7 +180,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
 
         DistInt<idx>  DistCount(CountMin, CountMax);
         DistReal<f64> NResult(Min, Max);

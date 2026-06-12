@@ -31,7 +31,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister32 Gen32(rd());
+        sthread Twister32 Gen32(rd());
         DistInt<i32> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
@@ -50,7 +50,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistInt<i64> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
@@ -72,7 +72,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister32 Gen32(rd());
+        sthread Twister32 Gen32(rd());
         DistReal<f32> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
@@ -92,7 +92,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistReal<f64> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
@@ -115,7 +115,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister32 Gen32(rd());
+        sthread Twister32 Gen32(rd());
         DistReal<f32> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {
@@ -135,7 +135,7 @@ namespace Tools::Random {
         Result.reserve(Count);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistReal<f64> NResult(Min, Max);
 
         for (idx i = 0; i < Count; ++i) {

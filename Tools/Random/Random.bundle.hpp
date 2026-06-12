@@ -17,7 +17,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister32 Gen32(rd());
+        sthread Twister32 Gen32(rd());
         DistInt<i32> NResult(Min, Max);
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -41,7 +41,7 @@ namespace Tools::Random {
         WarningCount(SubVectorCount, NCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistInt<i64> NResult(Min, Max);
 
         vec<vec<i64>> Result;
@@ -74,7 +74,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen32(rd());
+        sthread Twister64 Gen32(rd());
         DistReal<f32> NResult(Min, Max);
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -99,7 +99,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistReal<f64> NResult(Min, Max);
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -127,7 +127,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen32(rd());
+        sthread Twister64 Gen32(rd());
         DistReal<f32> NResult(Min, Max);
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -154,7 +154,7 @@ namespace Tools::Random {
         Result.reserve(SubVectorCount);
 
         sthread RdDevice rd;
-        cthread Twister64 Gen64(rd());
+        sthread Twister64 Gen64(rd());
         DistReal<f64> NResult(Min, Max);
 
         for(idx i = 0; i < SubVectorCount; i++){

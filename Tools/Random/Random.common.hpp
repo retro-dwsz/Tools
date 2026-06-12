@@ -10,7 +10,6 @@
 #include <print>
 
 #define sthread static thread_local
-#define cthread const static thread_local
 
 #include "../Style.hpp"
 namespace Tools::Random {

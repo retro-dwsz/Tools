@@ -41,10 +41,19 @@
 /** Vector functions **/
 #include "Random/Random.vector.hpp"
 
+/** Vector multi-thread **/
+#include "Random/Random.vector.thread.hpp"
+
 /** Bundled functions (vector in vector) **/
 #include "Random/Random.bundle.hpp"
 
+/** Bundle multi-thread **/
+#include "Random/Random.vector.thread.hpp"
+
 /** SBundled functions (vector in vector with scattered sizes) **/
 #include "Random/Random.sbundle.hpp"
+
+/** SBundle multi-thread **/
+#include "Random/Random.sbundle.thread.hpp"
 
 #endif
