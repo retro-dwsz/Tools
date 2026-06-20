@@ -33,6 +33,23 @@ bool TypeCompare(const U&) {
     return std::same_as<std::decay_t<U>, T>;
 }
 
+#define MakeAliasFunction(Original, Aliased)    \
+                                                \
+template <typename... Args>                     \
+decltype(auto) Aliased(Args&&... args) {        \
+    return std::invoke(                         \
+        Original,                               \
+        std::forward<Args>(args)...             \
+    );                                          \
+}
+
+// inline constexpr auto Aliased =                \
+// [](auto&&... args) -> decltype(auto) {         \
+//     return Original(                           \
+//         std::forward<decltype(args)>(args)...  \
+//     );                                         \
+// }
+
 #if __has_include(<cxxabi.h>) && defined(ITANIUM_DMGL)
     #include <cxxabi.h>
     str RemoveMangle(const str& mangled, bool WithArgs = true) {
