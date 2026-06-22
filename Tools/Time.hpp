@@ -115,7 +115,7 @@ namespace Tools::Time {
             return this->Return.has_value();
         }
     };
-
+#if defined(FMT_FORMAT_H_) && defined(FMT_STD_H_) && defined(FMT_MODULE)
     /**
      * @brief  Executes a callable and measures its elapsed time.
      * @tparam D    Duration unit (default: Units::us / microseconds)
@@ -163,7 +163,7 @@ namespace Tools::Time {
             return ExecutorData<Ret>(std::move(result), CountDuration<D>(Begin, End));
         }
     }
-
+#endif
 }
 
 #endif
