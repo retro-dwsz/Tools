@@ -31,7 +31,9 @@ namespace Tools::Vector {
         std::ranges::reverse(out);
         return out;
     }
+}
 
+namespace Tools::Vector {
     template <typename T, typename... Args>
     vec<T> Combine(const vec<T>& First, const Args&... Rest) {
         vec<T> Result{};
@@ -46,9 +48,9 @@ namespace Tools::Vector {
     }
 
     template <typename T, typename... Args>
-    vec<T> BlendVectors(const vec<T>& First, const Args&... Rest) {
+    vec<T> Blend(const vec<T>& First, const Args&... Rest) {
         return Shuffle(
-            CombineVectors(First, Rest...)
+            Combine(First, Rest...)
         );
     }
 }
