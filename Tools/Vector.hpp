@@ -6,20 +6,20 @@
 #include "FeatureCheck.hpp"
 
 /* Accumulators */
-#include "Vector/Vector.accumulator.hpp"
+#include "Vector/Accumulator.hpp"
 
 /* Finders */
-#include "Vector/Vector.find.hpp"
+#include "Vector/Find.hpp"
 
 /* Orders */
-#include "Vector/Vector.order.hpp"
+#include "Vector/Order.hpp"
 
 /* Slices */
-#include "Vector/Vector.slice.hpp"
-#include "Vector/Vector.slice.inl.hpp"
+#include "Vector/Slice.hpp"
+#include "Vector/Slice.inl.hpp"
 
 /* Inline Slices */
-#include "Vector/Vector.slice.hpp"
-#include "Vector/Vector.slice.inl.hpp"
+// #include "Vector/Vector.slice.hpp"
+// #include "Vector/Vector.slice.inl.hpp"
 
 #endif

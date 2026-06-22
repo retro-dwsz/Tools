@@ -33,27 +33,27 @@
  */
 
 /** Required for functions **/
-#include "Random/Random.common.hpp"
+#include "Random/_Common.hpp"
 
 /** Singly functions **/
-#include "Random/Random.single.hpp"
+#include "Random/Single.hpp"
 
 /** Vector functions **/
-#include "Random/Random.vector.hpp"
+#include "Random/Vector.hpp"
 
 /** Vector multi-thread **/
-#include "Random/Random.vector.thread.hpp"
+#include "Random/Vector.thread.hpp"
 
 /** Bundled functions (vector in vector) **/
-#include "Random/Random.bundle.hpp"
+#include "Random/Bundle.hpp"
 
 /** Bundle multi-thread **/
-#include "Random/Random.vector.thread.hpp"
+#include "Random/Vector.thread.hpp"
 
 /** SBundled functions (vector in vector with scattered sizes) **/
-#include "Random/Random.sbundle.hpp"
+#include "Random/SBundle.hpp"
 
 /** SBundle multi-thread **/
-#include "Random/Random.sbundle.thread.hpp"
+#include "Random/SBundle.thread.hpp"
 
 #endif

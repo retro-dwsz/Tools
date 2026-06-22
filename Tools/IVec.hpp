@@ -5,7 +5,7 @@
 
 #include "FeatureCheck.hpp"
 
-#include "IVec/IVec.hpp"
+#include "IVec/_IVec.hpp"
 
 template <typename T>
 using ivec = Tools::ivec<T>;

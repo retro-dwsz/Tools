@@ -46,18 +46,18 @@
  */
 
 /** Required for functions **/
-#include "RandomHW/RandomHW.common.hpp"
+#include "RandomHW/Common.hpp"
 
 /** Singly functions **/
-#include "RandomHW/RandomHW.single.hpp"
+#include "RandomHW/Single.hpp"
 
 /** Vector functions **/
-#include "RandomHW/RandomHW.vector.hpp"
+#include "RandomHW/Vector.hpp"
 
 /** Bundled functions (vector in vector) **/
-#include "RandomHW/RandomHW.bundle.hpp"
+#include "RandomHW/Bundle.hpp"
 
 /** SBundled functions (vector in vector with scattered sizes) **/
-#include "RandomHW/RandomHW.sbundle.hpp"
+#include "RandomHW/Sbundle.hpp"
 
 #endif

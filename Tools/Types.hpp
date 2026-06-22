@@ -5,18 +5,18 @@
 
 #include "FeatureCheck.hpp"
 
-#include "Types/Types.common.hpp"
+#include "Types/Common.hpp"
 
-#include "Types/Types.int.hpp"
-#include "Types/Types.uint.hpp"
-#include "Types/Types.float.hpp"
+#include "Types/Int.hpp"
+#include "Types/UInt.hpp"
+#include "Types/Float.hpp"
 
-#include "Types/Types.string.hpp"
-#include "Types/Types.containers.hpp"
-#include "Types/Types.pointer.hpp"
-#include "Types/Types.memory.hpp"
+#include "Types/String.hpp"
+#include "Types/Containers.hpp"
+#include "Types/Pointer.hpp"
+#include "Types/Memory.hpp"
 
-#include "Types/Types.clock.hpp"
+#include "Types/Time.hpp"
 
 template <typename T>
 void CheckRange(T& Min, T& Max) {

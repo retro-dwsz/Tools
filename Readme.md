@@ -2,7 +2,7 @@
 
 - ### What is this?
     A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money.
-    
+
     This project is **_entirely_** in C++, if you see like LLVM IR and Assembly on the github page, don't worry, it's just a testings and WON'T be included in instalation package, also those are generated with `clang++ -S -emit-llvm` and `clang++ -S`.
 
 - ### Disclaimer
@@ -17,7 +17,7 @@
     |            Files          |                         What is this?                         |
     |---------------------------|---------------------------------------------------------------|
     |`Tools/Casting.hpp`        | Type Casting aliases                                          |
-    |`Tools/Clock.hpp`          | Time & Clock utilities                                        |
+    |`Tools/Time.hpp`          | Time & Clock utilities                                        |
     |`Tools/Edges.hpp`          | Min/max getter for types                                      |
     |`Tools/Files.hpp`          | I/O files utility                                             |
     |`Tools/FormatNumber.hpp`   | Number formatter                                              |
@@ -50,29 +50,29 @@
 - ### Folder `Tools/Types/*`
     |               Files              |           What is this?            |
     |----------------------------------|------------------------------------|
-    | `/Types/Types.clock.hpp`         | Clocks & Units aliases             |
-    | `/Types/Types.containers.hpp`    | Containers aliases                 |
-    | `/Types/Types.int.hpp`           | Signed interger aliases            |
-    | `/Types/Types.uint.hpp`          | Unsigned integer aliases           |
-    | `/Types/Types.float.hpp`         | Floating aliases                   |
-    | `/Types/Types.ptr.hpp`           | Pointer aliases (not recommended)  |
-    | `/Types/Types.string.hpp`        | String type aliases                |
-    | `/Types/Types.memory.hpp`        | Smart pointer aliases              |
+    | `/Types/Clock.hpp`         | Clocks & Units aliases             |
+    | `/Types/Containers.hpp`    | Containers aliases                 |
+    | `/Types/Int.hpp`           | Signed interger aliases            |
+    | `/Types/UInt.hpp`          | Unsigned integer aliases           |
+    | `/Types/Float.hpp`         | Floating aliases                   |
+    | `/Types/Pointer.hpp`           | Pointer aliases (not recommended)  |
+    | `/Types/String.hpp`        | String type aliases                |
+    | `/Types/Memory.hpp`        | Smart pointer aliases              |
 
 - ### Folder `Tools/IVec/*`
     |             File             |                           What is this?                            |
     |----------------------------- |--------------------------------------------------------------------|
-    |`/IVec/IVec.hpp`              | All include packed                                                 |
-    |`/IVec/IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
-    |`/IVec/IVec_c.base.hpp`       | Base IVec class                                                    |
-    |`/IVec/IVec_c.init.hpp`       | Initializers for IVec                                              |
-    |`/IVec/IVec_c.basic.hpp`      | Minimal functions                                                  |
-    |`/IVec/IVec_c.advanced.hpp`   | Extended functions                                                 |
-    |`/IVec/IVec_c.convert.hpp`    | Conversion utilities to something else                             |
-    |`/IVec/IVec_c.data.hpp`       | Return pointer data                                                |
-    |`/IVec/IVec_c.getset.hpp`     | Getter and setter functions                                        |
-    |`/IVec/IVec_c.iter.hpp`       | Iterators functions                                                |
-    |`/IVec/IVec_c.legacy.hpp`     | Legacy functions with vector-like dictions                         |
+    |`/IVec/_IVec.hpp`              | All include packed                                                 |
+    |`/IVec/_IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
+    |`/IVec/Base.hpp`       | Base IVec class                                                    |
+    |`/IVec/Init.hpp`       | Initializers for IVec                                              |
+    |`/IVec/Basic.hpp`      | Minimal functions                                                  |
+    |`/IVec/Advanced.hpp`   | Extended functions                                                 |
+    |`/IVec/Convert.hpp`    | Conversion utilities to something else                             |
+    |`/IVec/Data.hpp`       | Return pointer data                                                |
+    |`/IVec/Getset.hpp`     | Getter and setter functions                                        |
+    |`/IVec/Iter.hpp`       | Iterators functions                                                |
+    |`/IVec/Legacy.hpp`     | Legacy functions with vector-like dictions                         |
 
 - ### Folder `Tools/OS/*`
     |           File          |         What is this?      |
@@ -84,15 +84,18 @@
     | `/OS/{OS}.terminal.hpp` | Terminal size, celar, etc  |
 
 - ### Folder `Tools/Random/*`
-    |               File            |                         What is this?                          |
+    |               File            |                         What is this?                         |
     |-------------------------------|---------------------------------------------------------------|
-    | `/Random/Random.common.hpp`   | Internal utility for other files                              |
-    | `/Random/Random.single.hpp`   | Single number generator                                       |
-    | `/Random/Random.vector.hpp`   | Generator for `std::vector<>`                                 |
-    | `/Random/Random.bundle.hpp`   | Generator for `std::vector<std::vector<>>`                    |
-    | `/Random/Random.sbundle.hpp`  | Just like `bundle`, but every sub-vector's size are different |
+    | `/Random/Common.hpp`   | Internal utility for other files                                     |
+    | `/Random/Single.hpp`   | Single number generator                                              |
+    | `/Random/Vector.hpp`   | Generator for `std::vector<>`                                        |
+    | `/Random/Bundle.hpp`   | Generator for `std::vector<std::vector<>>`                           |
+    | `/Random/Sbundle.hpp`  | Just like `bundle`, but every sub-vector's size are different        |
+    | `/Random/Vector.thread.hpp`   | Just like `/Random/Vector.hpp` but with multithreading        |
+    | `/Random/Bundle.thread.hpp`   | Just like `/Random/Bundle.hpp` but with multithreading        |
+    | `/Random/Sbundle.thread.hpp`  | Just like `/Random/SBector.hpp`, but with multithreading      |
 
-- ### Folder `Tools/Random.Basic/*`
+- ### Folder `Tools/Random.Basic/*` (Deprecated)
     Just like `Tools.Random`, but `Twister32`&`Twister64` are initialized on single number generator. So `vector`, `bundle`, and `sbundle` are repeated use of `single`, which is not a good practice of use.
     |               File                        |       What is this?      |
     |-------------------------------------------|--------------------------|
@@ -108,21 +111,21 @@
     Just like `Tools.Random`, but optimized for x86 command called `RDSEED` and `RDRAND`
     |               File               |                      What is this?                            |
     |----------------------------------|---------------------------------------------------------------|
-    | `/RandomHW/RandomHW.common.hpp`  | Single number HW generator                                    |
-    | `/RandomHW/RandomHW.single.hpp`  | Generator for `std::vector<std::vector<>>`                    |
-    | `/RandomHW/RandomHW.vector.hpp`  | Just like `bundle`, but every sub-vector's size are different |
-    | `/RandomHW/RandomHW.bundle.hpp`  | Internal utility for other files                              |
-    | `/RandomHW/RandomHW.sbundle.hpp` | Generator for `std::vector<>`                                 |
+    | `/RandomHW/Common.hpp`  | Single number HW generator                                    |
+    | `/RandomHW/Single.hpp`  | Generator for `std::vector<std::vector<>>`                    |
+    | `/RandomHW/Vector.hpp`  | Just like `bundle`, but every sub-vector's size are different |
+    | `/RandomHW/Bundle.hpp`  | Internal utility for other files                              |
+    | `/RandomHW/SBundle.hpp` | Generator for `std::vector<>`                                 |
 
 - ### Folder `Tools/Vector/*`
     |               File                |                                What is this?                              |
     |-----------------------------------|---------------------------------------------------------------------------|
-    | `/Vector/Vector.accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average            |
-    | `/Vector/Vector.find.hpp`         | Find value and/or index in a vector utilities                             |
-    | `/Vector/Vector.order.hpp`        | Value order utilities and return new vector                               |
-    | `/Vector/Vector.order.inl.hpp`    | Value order utilities and do it inplace                                   |
-    | `/Vector/Vector.slice.hpp`        | Scissors for vector, `0->n` or `0<-n` or `x<->y`, then return new vector  |
-    | `/Vector/Vector.slice.inl.hpp`    | Scissors for vector, and do it inplace                                    |
+    | `/Vector/Accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average            |
+    | `/Vector/Find.hpp`         | Find value and/or index in a vector utilities                             |
+    | `/Vector/Order.hpp`        | Value order utilities and return new vector                               |
+    | `/Vector/Order.inl.hpp`    | Value order utilities and do it inplace                                   |
+    | `/Vector/Slice.hpp`        | Scissors for vector, `0->n` or `0<-n` or `x<->y`, then return new vector  |
+    | `/Vector/Slice.inl.hpp`    | Scissors for vector, and do it inplace                                    |
 
 - ### Folder `Tools/Lib` (Test only!)
     This lib but make it linkable, this is NOT included in msys package pack (in folder `/Msys/*.pkg.tar.zst`) and NOT installed in your `/lib` folder in you environment, so in deployment, this lib is STILL header only.
@@ -150,7 +153,7 @@ Types aliasing to make you less typing just for data types
 |`int64_t` | `i64`   | `uint64_t`| `u64`   |              |         |
 |`ssize_t` | `sidx`  | `size_t`  | `idx`   |              |         |
 
-### C & C++ String 
+### C & C++ String
 |      Original     |  Aliased |       Original       |  Aliased  |
 |-------------------|----------|----------------------|-----------|
 | `const char*`     | `cstr`   | `std::string`        | `str`     |
@@ -364,11 +367,11 @@ namespace Tools::Files {
     /* -------- String -------- */
     str ReadFile(const str& File);
     void WriteFile(const str& File, const str& Content);
-    
+
     /* ---- C-style string ---- */
     cstr ReadFileC(const str& File);
     void WriteFileC(const str& File, cstr& Content);
-    
+
     /* ------ Wide String ------ */
     wstr ReadFileW(const str& File);
     void WriteFileW(const str& File, const wstr& Content);
@@ -392,7 +395,7 @@ namespace Tools::FormatNumber {
     /* Defaults */
     template <Integer T>
     str Format(const T n)
-    
+
     template <Float T>
     str Format(const T n)
 
@@ -413,9 +416,9 @@ Parameters for 1st and 2nd functions:\
 `Char Seperator`: The seperator \
 `const i32 Digits`: Digis for seperation
 - Seperator between N digits this is because not every country use the same formatting.
-- In Europe, we use dot (.) for thousands, and comma for decimal (,), and the opposite in the US and around it. 
+- In Europe, we use dot (.) for thousands, and comma for decimal (,), and the opposite in the US and around it.
 - Some EU countries even use space for thousands seperator, usually around France or Scandinavia.
-- ### For example: 
+- ### For example:
     - `€1.000,50` or `€1 000,50` in C will be `1000.50`
     - `$1,000.50` in C will be `1000.50`
 - ### Example of code usage:
@@ -441,21 +444,21 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     template <typename T>
     class ivec {
         private:
-        
+
         T* ivec_data;
 
         /** Helper **/
         inline idx Normalize(i64 i) ;
         idx ivec_size;
         idx ivec_capacity;
-        
+
         public:
-        
+
         /** Data features **/
         T* data();
         idx size();
         idx capacity();
-        
+
         /** Init features **/
         // Default constructor
         ivec();
@@ -464,7 +467,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         ivec(const vec<T>& Data);
         ivec(const ivec& other);
         ivec(ivec&& other);
-        
+
         // DeConstructors
         ~ivec();
 
@@ -476,7 +479,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         void append(const T&& Element);
         void append(const ivec<T>& iv);
         void append(const vec<T>& v);
-        
+
         void extend(const ivec<T>& v);
         void extend(const vec<T>& v);
 
@@ -494,7 +497,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         void sliceIln(i64 n);
         ivec<T> slice(i64 x, i64 y);
         ivec<T> slice(i64 n);
-        
+
         void clear();
         bool isEmpty();
 
@@ -504,29 +507,29 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         idx find(const T& Element);
         idx findFreq(const T& Element);
         pair<idx, vec<T>> findAll(const T& Element);
-        
+
         /* Orders */
         ivec<T> shuffle();
         void shuffleInl();
-        
+
         ivec<T> sort();
         void sortInl();
-        
+
         ivec<T> rsort();
         void rsortInl();
-        
+
         ivec<T> reverse();
         void reverseInl();
-        
+
         ivec<T> erase(T* pos);
         void eraseInl(T* pos);
-        
+
         ivec<T> erase(T* begin, T* end);
         void eraseInl(T* begin, T* end);
 
         ivec<T> uniques(idx n = 1);
         void uniquesInl(idx n = 1);
-        
+
         T popFirst();
         T popLast();
 
@@ -534,10 +537,10 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
 
         template<typename... Args>
         void emplace(Args&&... args);
-        
+
         template<typename... Args>
         void emplaceFront(Args&&... args);
-        
+
         template<typename... Args>
         void emplaceAt(Args&&... args, idx n);
 
@@ -559,7 +562,7 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         /** Conversion **/
         vec<T> toVector();
         span<T> toSpan();
-        template <idx S>    
+        template <idx S>
         arr<T, S> toArray();
         T* toCArr();
 
@@ -592,7 +595,7 @@ And then public, we have a lot of sections
 1. `data()` returns current array (raw, C-Style array)
 2. `size()` returns current size
 3. `capacity()` return current capacity
-    
+
     > ### Warning
     > If you think size is the same as capacity, then no, size is current element count, capacity is current element count + reserved slots. So size and capacity will not alway be the same.
 
@@ -606,18 +609,18 @@ And then public, we have a lot of sections
 8. `ivec(ivec&& other);` Same as 4th but you write it inplace
 
 ### 3. Destructor
-    
+
 9. `~ivec()` to remove everything
 
 ### 4. Basic functions
 
 10. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
 11. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
-12. `void append(const T& Element);` Push elements to back 
+12. `void append(const T& Element);` Push elements to back
 13. `void append(const T&& Element);` Push elements to back by rvalue
 14. `void append(const ivec<T>& iv);` Append `ivec` to current `ivec`, example `ivec{1, 2, 3}.append(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, ivec{4, 5, 6}}`
 15. `void append(const vec<T>& v);` Append `vec` to current `ivec`, example is same as 11th
-    
+
 16. `void extend(const ivec<T>& v);` Extend with `ivec` to current `ivec`, example `ivec a{1, 2, 3}.extend(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, 4, 5, 6}`
 17. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
 18. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
@@ -632,10 +635,10 @@ And then public, we have a lot of sections
 
 ### 6. Advanced functions
 
-> 
+>
 > ### Note
 > Default function is return new, suffix -`Inl` indicates inline
-> 
+>
 
 23. `void sliceInl(i64 x, i64 y);` Slice inlinely from range `x..y`
 24. `void sliceInl(i64 n);` Slice `0..n` or `n..Size`. Positive will iterate from 0 to `n` (forward), negative will iterate from `ivec_size` to `n` (backward)
@@ -647,7 +650,7 @@ And then public, we have a lot of sections
 29. `void appendFirst(const T& Element);` Append an element at 1st index
 30. `void appendAt(const T& Element, idx At);` Append an element at specified index
 31. `bool contains(const T& Element);` Check if this ivec contains specific Element
-32. `idx find(const T& Element);` Find index of an element 
+32. `idx find(const T& Element);` Find index of an element
 33. `idx findFreq(const T& Element);` Find frequency of selected element
 34. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
 
@@ -678,11 +681,11 @@ And then public, we have a lot of sections
     > `slice` and `erase` might be simmilar, but it's different! Example:
     > ```cpp
     > ivec<i32> a{11, 12, 13, 14, 15, 16, 17, 18, 19, 110};
-    > 
+    >
     > // Keep only a[1..4], delete everything else
     > ivec<i32> a_s = a.slice(1, 4);  // [12, 13, 14, 15]
     > fmt::println("{}", a_s);
-    > 
+    >
     > // Delete only a[1..4], keep everything else
     > ivec<i32> a_e = a.erase(1, 5);  // [11, 16, 17, 18, 19, 110]
     > fmt::println("{}", a_e);
@@ -703,11 +706,11 @@ And then public, we have a lot of sections
 63. `T* begin();` First index iterator
 64. `const T* cbegin` Constant first index iterator
 65. `T& refbegin();` Reference of first index iterator
-    
+
 66. `T last();` Last index getter
 67. `T last(idx n);` Last - n index getter
 68. `T back();` Last index getter (legacy choise of diction)
-69. `T* end();` Last index iterator 
+69. `T* end();` Last index iterator
 70. `const T* cend();` Constant last index iterator
 71. `T& refend();` Reference of last index iterator
 
@@ -733,7 +736,7 @@ This one is to make renaming `vec` to `ivec` possible without breaking current `
 
 # `VII`. Lib `Tools.Linking`
 
-This is a windows-specific tool to call a .dll during runtime. 
+This is a windows-specific tool to call a .dll during runtime.
 
 - ### API Codes:
     ```cpp
@@ -1070,14 +1073,14 @@ Recommended DLL Signature generation
         void SleepPrecise(f64 ms);
     }
 
-    // Process hacks 
+    // Process hacks
     namespace Tools::OS::Process {
         template <typename T>
         T ReadFromProcess(idx PID, u32ptr Address);
-        
+
         template <typename T>
         bool WriteProcess(idx PID, u32ptr Address, T data);
-        
+
         // Current process
         bool IsAdmin();
 
@@ -1122,7 +1125,7 @@ Recommended DLL Signature generation
     namespace Tools::Styling {
         /* RGB Color */
         struct Color;
-        
+
         /* Basic FG coloring*/
         str Colorize(const str& Text, const u64 Hex);
 
@@ -1134,39 +1137,39 @@ Recommended DLL Signature generation
 
         /* Blend color with opacity */
         u32 BlendRGB(u32 color_v, i32 alpha);
-        
+
         /* Blend FG + BG color with opacity */
         u8 BlendRGB(u8 fg, u8 bg, i32 alpha);
-        
+
         /* ---- To make everything after "0x" caps */
         str CapsPtr(str& s);
-        
+
         /* ---- Basic styles ---- */
         /* Bold text */
         str Bold(const str& Text = "Hello, world!");
-        
+
         /* Italic text */
         str Italic(const str& Text = "Hello, world!");
-        
+
         /* Underline text */
         str Under(const str& Text = "Hello, world!");
-        
+
         /* Strikethrough text */
         str Strike(const str& Text = "Hello, world!");
-        
+
         /* ---- Coloring styles ---- */
         /* Foreground color with opacity */
         str ColorFG(const str& Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100);
-        
+
         /* Background color with opacity */
         str ColorBG(const str& Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100);
-        
+
         /* Foreground color with opacity using struct Color */
         str ColorizeFG(const str text, Color rgb);
-        
+
         /* Background color with opacity using struct Color */
         str ColorizeBG(const str text, Color rgb);
-        
+
         /* ---- To reset mess you've made before ---- */
         void Reset(str& Text);
     }
@@ -1222,14 +1225,14 @@ Recommended DLL Signature generation
 - ### Examples:
     - `Tools::Styling::PrintMid("[ My Cool C++ App! ]", '~')`
 
-    - return: 
+    - return:
         ```
         ~~~~~~~~~~~~~~~~[ My Cool C++ App! ]~~~~~~~~~~~~~~~~
         ```
 
     - `Tools::Styling::PrintMid(" My magcial C++ App! ", '/')`
 
-    - return: 
+    - return:
         ```
         //////////////// My magcial C++ App! ////////////////
         ```
@@ -1253,6 +1256,10 @@ Recommended DLL Signature generation
     |           |                       |  `SBL`    |  Scattered Bundled i64 |
     |           |                       |  `SBF`    |  Scattered Bundled f32 |
     |           |                       |  `SBD`    |  Scattered Bundled f64 |
+    |           |                       |  `TVI`    |  Vector Threaded i32   |
+    |           |                       |  `TVL`    |  Vector Threaded i64   |
+    |           |                       |  `TVF`    |  Vector Threaded f32   |
+    |           |                       |  `TVD`    |  Vector Threaded f64   |
 
 - ### **_Example_** API Codes:
     - Supported types are `i32`, `i64`, `f32`, and `f64`. `Num` will return single value, `Nums` will returna bunch of numbers.
@@ -1307,7 +1314,7 @@ Recommended DLL Signature generation
 # `XIII`. Lib `Tools.RandomHW`
 
 - Basically same as `Tools.Random`, but with better seeder from `x86` function called `RDSEED` and `RDRAND`, you just add the `HW` on the namespace (`Tools::Random` -> `Tools::RandomHW`), and you can access the functions.
-- This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad. 
+- This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad.
 - Make sure to add `-mrdseed` `-mrdrnd` `-march=native` flag on your compiler
 
 - API Codes
@@ -1405,7 +1412,7 @@ Library to round floating numbers just like Python and common math knowledge.
     namespace Tools::Round {
         // Internal helper
         f64 static BankersRound(f64 x);
-        
+
         // Rounder
         template <Float T>
         T Round(const T value, const i32 digits);
@@ -1414,8 +1421,8 @@ Library to round floating numbers just like Python and common math knowledge.
 
 - ### Example:
     ```cpp
-    double a = 3.14159;
-    double b = Tools::Round::Round(a, 2);
+    f64 a = 3.14159;
+    f64 b = Tools::Round::Round(a, 2);
     fmt::println("a = {} -> {}", a, b);  // a = 3.14159 -> 3.14
     ```
 
@@ -1426,12 +1433,12 @@ Library to round floating numbers just like Python and common math knowledge.
 Library to do some calculation with vector. Those choise of diction for function names are chosen carefully so it can describe itself without you have to guess and doing unnecessary trial & error.
 
 - ### Per section includes:
-    - `Vector/Vector.accumulator.hpp` : For sum, product, and averages
-    - `Vector/Vector.find.hpp` : Finding utilities
-    - `Vector/Vector.order.hpp` : Data order utilities
-    - `Vector/Vector.order.inl.hpp` : Data order utilities inline
-    - `Vector/Vector.slice.hpp` : Slice elements 
-    - `Vector/Vector.slice.inl.hpp` : Slice elements inline
+    - `Vector/Accumulator.hpp` : For sum, product, and averages
+    - `Vector/Find.hpp` : Finding utilities
+    - `Vector/Order.hpp` : Data order utilities
+    - `Vector/Order.inl.hpp` : Data order utilities inline
+    - `Vector/Slice.hpp` : Slice elements
+    - `Vector/Slice.inl.hpp` : Slice elements inline
 
 
 - ### API Codes:
@@ -1440,10 +1447,10 @@ Library to do some calculation with vector. Those choise of diction for function
     namespace Tools::Vector {
         template<Numbers T>
         T Sum(const vec<T>& v);     // +
-        
+
         template<Numbers T>
         T Product(const vec<T>& v); // *
-        
+
         template <Numbers T>
         T Avg(const vec<T>& v);
     }
@@ -1453,35 +1460,35 @@ Library to do some calculation with vector. Those choise of diction for function
         // Binary search
         template<Numbers T>
         T Find_binary(const vec<T>& v, const T Element);
-        
+
         // Binary search, first index + value, return pair of index and value itself
         template<Numbers T>
         pair<idx, T> FindP_binary(const vec<T>& v, const T Element);
-        
+
         // Linear search
         template <Numbers T>
         T Find_line(const vec<T>& v, const T Element);
-        
+
         // Linear search, first index + value, return pair of index and value itself
         template <Numbers T>
         T FindP_line(const vec<T>& v, const T Element);
-        
+
         // Find an element frequency
         template<Numbers T>
         idx FindFreq(const vec<T>& v, const T Element);
-        
+
         // Find elements and frequency
         template<Numbers T>
         umap<T, idx> FindNFreq(const vec<T>& v);
-        
+
         // Extractor
         template<Numbers T>
         vec<T> ExtractUnique(const vec<T>& v);
-        
+
         // Remove duplicated values
         template<typename T>
         vec<T> RemoveDuplicates(const vec<T>& Data);
-        
+
         // Remove duplicated values inline
         template<typename T>
         void RemoveDuplicatesInl(vec<T>& Data);
@@ -1491,24 +1498,37 @@ Library to do some calculation with vector. Those choise of diction for function
     namespace Tools::Vector {
         template <Numbers T>
         vec<T> Sort(const vec<T>& v);
-        
+
         template <Numbers T>
         vec<T> Shuffle(const vec<T>& v);
-        
+
         template <Numbers T>
         vec<T> Reverse(const vec<T>& v);
+
+        template <typename T, typename... Args>
+        vec<T> Combine(const vec<T>& First, const Args&... Rest);
+
+        template <typename T, typename... Args>
+        vec<T> BlendVectors(const vec<T>& First, const Args&... Rest);
     }
 
     // Order Inline
     namespace Tools::VectorInl {
         template <Numbers T>
         void Sort(vec<T>& v);
-        
+
         template <Numbers T>
         void Shuffle(vec<T>& v);
-        
+
         template <Numbers T>
         void Reverse(vec<T>& v);
+
+        template <typename T, typename... Args>
+        void Combine(vec<T>& First, const Args&... Rest);
+
+        template <typename T, typename... Args>
+        void Blend(vec<T>& First, const Args&... Rest);
+
     }
 
     // Slices (return new)
@@ -1532,7 +1552,7 @@ Library to do some calculation with vector. Those choise of diction for function
 
 ---
 
-# `XVII`. Lib `Tools.Clock`
+# `XVII`. Lib `Tools.Time`
 
 A library (but more liek shortcut) to do some calculations with Time
 
@@ -1545,26 +1565,32 @@ Target of this library:
 
 - ### API Codes
     ```cpp
-    namespace Tools::Clock {
-        // Return elapsed time based on 1 time points in selectected unit
+    namespace Tools::Time {
+        // Count given duration (Manual)
         template <Duration T>
-        u64 Count(const HClock& Begin, const HClock& End);
+        u64 CountDuration(const HClock& Begin, const HClock& End)
 
-        // Run function directly (no return)
-        template <typename F, Duration T>
-        requires std::invocable<F>
-        u64 FunctionElapsed(F&& func);
-
-        // Run function directly (with return)
-        template <typename F, Duration T>
-        requires (!std::same_as<std::invoke_result_t<F>, void>)
-        u64 FunctionElapsed(F&& func, std::invoke_result_t<F>& result);
-
-        // Sleep in given duration unit
+        // Sleep for given duration in `Tools::Time::Units::*` unit
         template <Duration T>
-        void Sleep(u64 value);
+        void Sleep(const u64& Dur)
+
+        // Return value + Time elapsed for Executor()
+        template <typename Ret>
+        struct ExecutorReturn;
+
+        // Proxy class for void, Return type is std::optional
+        template <>
+        struct ExecutorReturn<void>;
+
+        // Unified result container for timed function execution
+        template <typename Ret>
+        struct ExecutorData : ExecutorReturn<Ret>;
+
+        // Executes any callable and measures its elapsed time
+        template <typename D = Units::us, typename Fn, typename... Args>
+        requires std::invocable<Fn, Args...>
+        auto Executor(Fn&& Func, Args&&... args);
     }
-
     ```
 
 - ### Example of usage
@@ -1572,6 +1598,7 @@ Target of this library:
         ```cpp
         #include <fmt/format.h>
         #include <Tools/Types.hpp>
+        #include <Tools/Time.hpp>
 
         void Heavy() {
             u128 result = 0;
@@ -1593,60 +1620,81 @@ Target of this library:
         }
         ```
 
-    2. Run function directly (`void`)
+    2. Run function directly from `Executor`
         ```cpp
-        #include "Tools/Clock.hpp"
+        #include "Tools/Time.hpp"
+
+        str RandomStrings() {
+            auto Data_az = Random::RandomNumsVI(15, 97, 122);    // a..z
+            auto Data_AZ = Random::RandomNumsVI(15, 65, 90);     // A..Z
+            auto Data_09 = Random::RandomNumsVI(15, 48, 57);     // 0..9
+            auto Data_CS = Random::RandomNumsVI(15, 36, 62);     // Common Symbols
+
+            // Combine Data
+            auto Data = CombineVectors(Data_az, Data_AZ, Data_09, Data_CS);
+
+            // Shuffle Data
+            RdDevice RdDev;
+            std::ranges::shuffle(Data, Twister64(RdDev()));
+
+            auto DataStr = Data | std::views::transform(
+                [](const i32& Num) {
+                    return scast<char>(Num);
+                }
+            );
+
+            auto Result = fmt::format(
+                "60 random chars: {}",
+                fmt::format(
+                    fmt::fg(fmt::color::cyan),
+                    "{}",
+                    fmt::join(DataStr, "")
+                )
+            );
+
+            return fmt::format("{}", Result);
+        }
 
         i32 main() {
             // Time a void function directly
-            auto timeMs = Tools::Clock::FunctionElapsed<Tools::Clock::ms>([] {
+            auto timeMs = Tools::Time::FunctionElapsed<Tools::Time::ms>([] {
                 std::vector<i32> v(1000000);
                 std::iota(v.begin(), v.end(), 0);
                 std::sort(v.begin(), v.end(), std::greater<i32>());
             });
-            
+
             fmt::println("Sorting took {} ms", timeMs);
             return 0;
         }
         ```
-    
-    3.  Run function directly (`T`)
-        ```cpp
-        #include "Tools/Clock.hpp"
-
-        i32 main() {
-            i32 result;
-            
-            // Time a function AND get its result
-            auto timeUs = Tools::Clock::FunctionElapsed<Tools::Clock::us>(
-                [] { 
-                    return std::accumulate(std::vector<i32>(1000, 1).begin(), 
-                                        std::vector<i32>(1000, 1).end(), 0); 
-                },
-                result
-            );
-            
-            fmt::println("Sum of 1000 ones = {}", result);
-            fmt::println("Calculation took {} μs", timeUs);
-            return 0;
-        }
+        out:
         ```
-    
-    4. Precise Sleep
+        16:17 .\Random Chars [3ms]
+        ~$ clang++ main.cpp -o main.exe -O3 -std=c++26 -lfmt
+
+        17:05 .\Random Chars [6s 250ms]
+        ~$ .\main
+        Function returned: 60 random chars: 8M6I5*kvPaNo(92CsS5A89;56k4xh1euW10'0G:)3w1o+u3L;CWBx3:1SLp0, Time: 33 μs
+
+        17:05 .\Random Chars [13ms]
+        ~$
+        ```
+
+    3. Precise Sleep
         ```cpp
-        #include "Tools/Clock.hpp"
+        #include "Tools/Time.hpp"
 
         int main() {
             fmt::println("Starting...");
-            
+
             // Sleep for 1.5 seconds
-            Tools::Clock::Sleep<Tools::Clock::ms>(1500);
-            
+            Tools::Time::Sleep<Tools::Time::ms>(1500);
+
             fmt::println("1.5 s (seconds) later...");
-            
+
             // Sleep for 250 microseconds
-            Tools::Clock::Sleep<Tools::Clock::us>(250);
-            
+            Tools::Time::Sleep<Tools::Time::us>(250);
+
             fmt::println("250 μs (microseconds) later...");
             return 0;
         }
