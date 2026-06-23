@@ -55,7 +55,7 @@
     #define TOOLS_ARCH_UNKNOWN 1
 #endif
 
-// OS detection - menggunakan macro standar
+// OS detection
 #if defined(_WIN32) || defined(_WIN64)
     #define TOOLS_OS_WINDOWS 1
     #pragma message "Compiled using Windows"

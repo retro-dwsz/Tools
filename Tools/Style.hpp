@@ -4,13 +4,15 @@
 #define TOOLS_STYLE_HPP
 
 #include "FeatureCheck.hpp"
+#include "Casting.hpp"
+#include "Types.hpp"
 
 #include <ranges>
-#include "Types.hpp"
 #include <format>
 #include <algorithm>
 #include <regex>
 
+using namespace Tools::Cast;
 #define sconst static const
 
 namespace Tools::Styling {
@@ -70,28 +72,28 @@ namespace Tools::Styling {
 
     // Helper function to blend colors based on opacity
     u32 BlendRGB(u32 color_v, i32 alpha) {
-        u8 r, g, b;
-        ExtractRGB(color_v, r, g, b);
+        u8 R, G, B;
+        ExtractRGB(color_v, R, G, B);
 
         // Blend with black (0x000000) for transparency
-        r = static_cast<u8>(r * (alpha / 100.0));
-        g = static_cast<u8>(g * (alpha / 100.0));
-        b = static_cast<u8>(b * (alpha / 100.0));
+        R = scast<u8>(R * (alpha / 100.0));
+        G = scast<u8>(G * (alpha / 100.0));
+        B = scast<u8>(B * (alpha / 100.0));
 
-        return (r << 16) | (g << 8) | b;
+        return (R << 16) | (G << 8) | B;
     }
 
     u8 BlendRGB(u8 fg, u8 bg, i32 alpha) {
-        return static_cast<u8>((fg * alpha + bg * (100 - alpha)) / 100);
+        return scast<u8>((fg * alpha + bg * (100 - alpha)) / 100);
     }
 
     /* ---- To make everything after "0x" caps */
-    str CapsPtr(str& s) {
-        if (s.starts_with("0x") || s.starts_with("0X")) {
-            s = s.substr(2);
+    str CapsPtr(str& Text) {
+        if (Text.starts_with("0x") || Text.starts_with("0X")) {
+            Text = Text.substr(2);
         }
-        std::ranges::transform(s, s.begin(), ::toupper);
-        return "0x" + s;
+        std::ranges::transform(Text, Text.begin(), ::toupper);
+        return "0x" + Text;
     }
 
     /* ---- Basic styles ---- */
@@ -117,37 +119,37 @@ namespace Tools::Styling {
 
     /* ---- Coloring styles ---- */
     // Foreground color with opacity
-    str ColorFG(const str& Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100) {
+    str ColorFG(const str& Text = "Hello, world!", u32 FGColor = 0xFF8A46, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
-            u32 blended_color = BlendRGB(color_tx, alpha);
+            u32 blended_color = BlendRGB(FGColor, alpha);
             ExtractRGB(blended_color, r, g, b);
         } else {
-            ExtractRGB(color_tx, r, g, b);
+            ExtractRGB(FGColor, r, g, b);
         }
         return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m" + Text + "\033[0m";
     }
 
     // Background color with opacity
-    str ColorBG(const str& Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100) {
+    str ColorBG(const str& Text = "Hello, world!", u32 BGColor = 0x092655, i32 alpha = 100) {
         u8 r, g, b;
         if (alpha < 100) {
-            u32 blended_color = BlendRGB(color_bg, alpha);
+            u32 blended_color = BlendRGB(BGColor, alpha);
             ExtractRGB(blended_color, r, g, b);
         } else {
-            ExtractRGB(color_bg, r, g, b);
+            ExtractRGB(BGColor, r, g, b);
         }
         return "\033[48;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m" + Text + "\033[0m";
     }
 
     // Foreground color with opacity using struct Color
-    str ColorFG(const str text, Color rgb) {
-        return std::format("\033[38;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
+    str ColorFG(const str Text, Color TextColor) {
+        return std::format("\033[38;2;{};{};{}m{}\033[0m", TextColor.r, TextColor.g, TextColor.b, Text);
     }
 
     // Background color with opacity using struct Color
-    str ColorBG(const str text, Color rgb) {
-        return std::format("\033[48;2;{};{};{}m{}\033[0m", rgb.r, rgb.g, rgb.b, text);
+    str ColorBG(const str Text, Color TextColor) {
+        return std::format("\033[48;2;{};{};{}m{}\033[0m", TextColor.r, TextColor.g, TextColor.b, Text);
     }
 
     /* ---- To reset mess you've made before ---- */
