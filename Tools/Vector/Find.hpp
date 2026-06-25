@@ -9,7 +9,7 @@
 // Find elements
 namespace Tools::Vector {
     // Binary search
-    template<Numbers T>
+    template<typename T>
     T Find_binary(const vec<T>& v, const T Element){
         idx low = 0;
         idx high = v.size() - 1;
@@ -28,7 +28,7 @@ namespace Tools::Vector {
     }
 
     // Binary search, first index + value
-    template<Numbers T>
+    template<typename T>
     pair<idx, T> FindPair_binary(const vec<T>& v, const T Element){
         idx low = 0;
         idx high = v.size() - 1;
@@ -47,7 +47,7 @@ namespace Tools::Vector {
     }
 
     // Linear search
-    template <Numbers T>
+    template <typename T>
     T Find_line(const vec<T>& v, const T Element){
         for(idx i = 0; i < v.size(); i++){
             if(v[i] == Element){
@@ -57,7 +57,7 @@ namespace Tools::Vector {
     }
 
     // Linear search, first index + value
-    template <Numbers T>
+    template <typename T>
     T FindPair_line(const vec<T>& v, const T Element){
         for(idx i = 0; i < v.size(); i++){
             if(v[i] == Element){
@@ -67,7 +67,7 @@ namespace Tools::Vector {
     }
 
     // Find an element frequency
-    template<Numbers T>
+    template<typename T>
     idx FindFreq(const vec<T>& v, const T Element){
         idx Count = 0;
         for(const auto i : v){
@@ -79,7 +79,7 @@ namespace Tools::Vector {
     }
 
     // Find elements and frequency
-    template<Numbers T>
+    template<typename T>
     umap<T, idx> FindElementsFreq(const vec<T>& v){
         umap<T, idx> result{};
 
@@ -90,8 +90,8 @@ namespace Tools::Vector {
         return result;
     }
 
-    // Extractor for numbers
-    // template<Numbers T>
+    // Extractor for typename
+    // template<typename T>
     // vec<T> ExtractUnique(const vec<T>& v){
     //     umap<T, bool> seen;
     //     vec<T> out;
@@ -131,7 +131,7 @@ namespace Tools::Vector {
             Data = std::move(result);
         }
     }
-    
+
     // Remove duplicated values for any others
     template<typename T>
     vec<T> RemoveDuplicates(const vec<T>& Data, const idx MaxCount = 1, const bool Sorted = false) {

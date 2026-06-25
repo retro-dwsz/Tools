@@ -24,16 +24,16 @@ using f64       = double;
 using fld       = long double;
 using fqq       = long double;
 
-/* All floating points */
-template <typename T>
-concept Float   = std::same_as<T, f16>
-                || std::same_as<T, f32>
-                || std::same_as<T, f64>
-                || std::same_as<T, fld>;
+// /* All floating points */
+// template <typename T>
+// concept Float   = std::same_as<T, f16>
+//                 || std::same_as<T, f32>
+//                 || std::same_as<T, f64>
+//                 || std::same_as<T, fld>;
 
-/* Common floating points */
-template <typename T>
-concept CFloat  = std::same_as<T, f32>
-                || std::same_as<T, f64>;
+// /* Common floating points */
+// template <typename T>
+// concept CFloat  = std::same_as<T, f32>
+//                 || std::same_as<T, f64>;
 
 #endif

@@ -8,7 +8,7 @@
 #include <algorithm>
 
 namespace Tools::Vector {
-    template <Numbers T>
+    template <typename T>
     vec<T> Sort(const vec<T>& v){
         vec<T> out(v);
         std::ranges::sort(out);

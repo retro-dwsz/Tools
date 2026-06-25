@@ -17,17 +17,17 @@ using u64       = uint64_t;
 using u128 = __uint128_t;
 #endif
 
-/* All unsigned integers */
-template <typename T>
-concept UInt =  std::same_as<T, u8>
-                || std::same_as<T, u16>
-                || std::same_as<T, u32>
-                || std::same_as<T, u64>;
+// /* All unsigned integers */
+// template <typename T>
+// concept UInt =  std::same_as<T, u8>
+//                 || std::same_as<T, u16>
+//                 || std::same_as<T, u32>
+//                 || std::same_as<T, u64>;
 
-/* Common unsigned integers */
-template <typename T>
-concept CUInt = std::same_as<T, u32>
-                || std::same_as<T, u64>;
+// /* Common unsigned integers */
+// template <typename T>
+// concept CUInt = std::same_as<T, u32>
+//                 || std::same_as<T, u64>;
 
 using idx       = size_t;
 

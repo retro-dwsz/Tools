@@ -8,7 +8,7 @@
 #include <algorithm>
 
 namespace Tools::VectorInl {
-    template <Numbers T>
+    template <typename T>
     void Sort(vec<T>& v){
         std::sort(v.begin(), v.end());
     };

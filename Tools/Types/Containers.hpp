@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Common.hpp"
 #ifndef TOOLS_TYPES_CONTAINERS_HPP
 #define TOOLS_TYPES_CONTAINERS_HPP
 
@@ -53,7 +54,7 @@ template<typename T>                using topt = std::optional<T>;
 template<typename... T>             using tvar = std::variant<T...>;
 
 #include <expected>
-template<typename A, typename B>    using texp = std::expected<A, B>;
+template<typename T, typename E>    using texp = std::expected<T, E>;
 
 template <typename T>
 concept TableMap = requires(T t) {

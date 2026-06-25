@@ -29,16 +29,16 @@ using str16view = std::u16string_view;
 using str32     = std::u32string;
 using str32view = std::u32string_view;
 
-/* Standard C/C++ stirngs */
-template <typename T>
-concept Strings =
-    std::same_as<T, str>
-    || std::same_as<T, cstr>;
+// /* Standard C/C++ stirngs */
+// template <typename T>
+// concept Strings =
+//     std::same_as<T, str>
+//     || std::same_as<T, cstr>;
 
-/* Wide C/C++ stirngs */
-template <typename T>
-concept WStrings =
-    std::same_as<T, wstr>
-    || std::same_as<T, cwstr>;
+// /* Wide C/C++ stirngs */
+// template <typename T>
+// concept WStrings =
+//     std::same_as<T, wstr>
+//     || std::same_as<T, cwstr>;
 
 #endif

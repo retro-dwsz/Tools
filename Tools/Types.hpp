@@ -3,98 +3,186 @@
 #ifndef TOOLS_TYPES_HPP
 #define TOOLS_TYPES_HPP
 
-#include "FeatureCheck.hpp"
+#include "Types/Base.hpp"
 
-#include "Types/Common.hpp"
+/* Basic Classification */
+namespace Tools::Types {
+    template <typename T>
+    concept Primitive = OneOf<T,
+        /* Signed Ints */
+        i8, i16, i32, i64, idx,
 
-#include "Types/Int.hpp"
-#include "Types/UInt.hpp"
-#include "Types/Float.hpp"
+        /* Unsigned Ints */
+        u8, u16, u32, u64, sidx,
 
-#include "Types/String.hpp"
-#include "Types/Containers.hpp"
-#include "Types/Pointer.hpp"
-#include "Types/Memory.hpp"
+        /* Floating Points */
+        f32, f64, fld,
 
-#include "Types/Time.hpp"
-
-template <typename T>
-void CheckRange(T& Min, T& Max) {
-    if (Max < Min) std::swap(Min, Max);
+        /* C Strings */
+        cstr, cwstr, cstr16, cstr32
+    >;
 }
 
-template <typename T>
-std::pair<T, T> CheckRangeR(T Min, T Max) {
-    if (Max < Min) return std::pair<T, T>(Max, Min);
+/* Segmented Classification */
+
+/* Numbers */
+namespace Tools::Types {
+    // All in one
+    template <typename T>
+    concept Number = OneOf<T,
+        i8, i16, i32, i64, idx,
+        u8, u16, u32, u64, sidx,
+        f32, f64, fld
+    >;
+
+    template <typename T>
+    concept Integer = OneOf<T,
+        /* Signed Ints */
+        i8, i16, i32, i64, idx,
+
+        /* Unsigned Ints */
+        u8, u16, u32, u64, sidx
+    >;
+
+    template <typename T>
+    concept Float = OneOf<T,
+        f32, f64, fld
+    >;
+
+    template <typename T>
+    concept SignedInt = OneOf<T,
+        i8, i16, i32, i64, sidx
+    >;
+
+    template <typename T>
+    concept UnsigedInt = OneOf<T,
+        u8, u16, u32, u64, idx
+    >;
+
+    // Native integers and floats
+    template <typename T>
+    concept NtvInteger = OneOf<T,
+        i32, i64
+    >;
+
+    template <typename T>
+    concept NtvFloat = OneOf<T,
+        f32, f64
+    >;
 }
 
-template <typename T, typename U>
-bool TypeCompare(const U&) {
-    return std::same_as<std::decay_t<U>, T>;
+/* Strings */
+namespace Tools::Types {
+    template <typename T>
+    concept AllString = OneOf<T,
+        /* C++ Strings */
+        str, strview, sstream, ostream,
+
+        /* C++ String View */
+        wstr, wstrview, wsstream, wostream,
+
+        /* Wider Strings */
+        str16, str16view, str32, str32view
+    >;
+
+    template <typename T>
+    concept CString = OneOf<T,
+        cstr, cwstr, cstr16, cstr32
+    >;
+
+    /* C++ Basic Strings */
+    template <typename T>
+    concept String = OneOf<T,
+        str, strview, sstream, ostream
+    >;
+
+    /* C++ Wide Strings */
+    template <typename T>
+    concept WString = OneOf<T,
+        wstr, wstrview, wsstream, wostream
+    >;
+
+    /* C++ Wider Strings */
+    template <typename T>
+    concept XString = OneOf<T,
+        str16, str16view,
+        str32, str32view
+    >;
+
+    /* String views */
+    template <typename T>
+    concept StringViews = OneOf<T,
+        strview,    // Standard
+        wstrview,   // Wide
+        str16view,  // 16-bit
+        str32view   // 32-bit
+    >;
 }
 
-#define MakeAliasFunction(Original, Aliased)    \
-                                                \
-template <typename... Args>                     \
-decltype(auto) Aliased(Args&&... args) {        \
-    return std::invoke(                         \
-        Original,                               \
-        std::forward<Args>(args)...             \
-    );                                          \
+/* Containers */
+namespace Tools::Types {
+    template <typename T1, typename T2, const idx S>
+    concept VContainter = OneOf<T1,
+        vec<T1>, arr<T1, S>,
+        map<T1, T2>, umap<T1, T2>,
+        set<T1>, uset<T1>,
+        pair<T1, T2>,
+        initl<T1>, span<T1>,
+        tuple<T1>, list<T1>
+    >;
+
+    template <typename T, typename E>
+    concept TContainer = OneOf<T,
+        topt<T>, tvar<T>, texp<T, E>
+    >;
 }
 
-// inline constexpr auto Aliased =                \
-// [](auto&&... args) -> decltype(auto) {         \
-//     return Original(                           \
-//         std::forward<decltype(args)>(args)...  \
-//     );                                         \
-// }
+/* Pointers */
+namespace Tools::Types {
+    template <typename T>
+    concept Pointer = OneOf<T,
+        /* C Pointers */
+        ptr<T>, ptrcd<T>, cptr<T>, cptrcd<T>,
 
-#if __has_include(<cxxabi.h>) && defined(ITANIUM_DMGL)
-    #include <cxxabi.h>
-    str RemoveMangle(const str& mangled, bool WithArgs = true) {
-        int status = 0;
+        /* Fixed 32-bit Pointer */
+        i32p, u32p,
 
-        std::unique_ptr<char, void(*)(void*)> demangled{
-            abi::__cxa_demangle(mangled.c_str(), nullptr, nullptr, &status),
-            std::free
-        };
+        /* C++ Smart Pointers */
+        uptr<T>, sptr<T>, wptr<T>
+    >;
 
-        str out = (status == 0 && demangled)
-            ? demangled.get()
-            : mangled;
+    template <typename T>
+    concept CPtr = OneOf<T,
+        ptr<T>, ptrcd<T>, cptr<T>, cptrcd<T>,
+        i32p, u32p
+    >;
 
-        if (!WithArgs) {
-            auto pos = out.find('(');
-            if (pos != str::npos)
-                out.erase(pos);
-        }
+    template <typename T>
+    concept CPPSPtr = OneOf<T,
+        uptr<T>, sptr<T>, wptr<T>
+    >;
+}
 
-        return out;
-    }
-#elif __has_include(<windows.h>) && defined(MSVC_DMGL)
-    #include <windows.h>
-    #include <dbghelp.h>
-    #pragma comment(lib, "Dbghelp.lib")
+/* For Tools.Time */
+namespace Tools::Types {
+    template <typename T>
+    concept TimeClock = OneOf<T,
+        Tools::Time::Clock,
+        Tools::Time::SClock,
+        Tools::Time::HClock
+    >;
 
-    str RemoveMangle(const str& mangled, bool WithArgs = true) {
-        char buffer[2048];
-
-        DWORD flags = WithArgs
-            ? UNDNAME_COMPLETE
-            : UNDNAME_NO_ARGUMENTS;
-
-        if (UnDecorateSymbolName(
-                mangled.c_str(),
-                buffer,
-                sizeof(buffer),
-                flags
-            )) {
-            return buffer;
-        }
-
-        return mangled;
-    }
-#endif
-
+    template <typename T>
+    concept TimeUnit = OneOf<T,
+        Tools::Time::Units::ns,
+        Tools::Time::Units::us,
+        Tools::Time::Units::ms,
+        Tools::Time::Units::sec,
+        Tools::Time::Units::min,
+        Tools::Time::Units::hrs,
+        Tools::Time::Units::days,
+        Tools::Time::Units::weeks,
+        Tools::Time::Units::months
+    >;
+}
 #endif

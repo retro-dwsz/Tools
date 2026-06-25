@@ -7,6 +7,7 @@
 #include <Lmcons.h>
 
 #include "../Types.hpp"
+#include "../Casting.hpp"
 
 // Names & Accounts
 namespace Tools::Win32::Env {
@@ -104,6 +105,59 @@ namespace Tools::Win32::Env {
         } else {
             ::SetEnvironmentVariableA(variable.c_str(), value.c_str());
         }
+    }
+}
+
+// Clipboard
+namespace Tools::Win32::Env {
+    using namespace Tools::Cast;
+
+    bool CopyToClipboard(const str& text) {
+        if (!OpenClipboard(nullptr)) return false;
+        EmptyClipboard();
+
+        HGLOBAL hGlob = GlobalAlloc(GMEM_MOVEABLE, text.size() + 1);
+        if (!hGlob) {
+            CloseClipboard();
+            return false;
+        }
+
+        memcpy(GlobalLock(hGlob), text.c_str(), text.size() + 1);
+        GlobalUnlock(hGlob);
+
+        SetClipboardData(CF_TEXT, hGlob);
+
+        CloseClipboard();
+        return true;
+    }
+
+    str GetFromClipboard(){
+        str result;
+
+        if (!IsClipboardFormatAvailable(CF_UNICODETEXT)) {
+            return result;
+        }
+
+        if (!OpenClipboard(nullptr)) {
+            return result;
+        }
+
+        HANDLE hData = GetClipboardData(CF_UNICODETEXT);
+        if (hData != nullptr) {
+            auto* wStr = scast<LPCWSTR>(GlobalLock(hData));
+            if (wStr != nullptr) {
+                int sizeNeeded = WideCharToMultiByte(CP_UTF8, 0, wStr, -1, nullptr, 0, nullptr, nullptr);
+
+                if (sizeNeeded > 0) {
+                    result.resize(sizeNeeded - 1); // Exclude the null terminator
+                    WideCharToMultiByte(CP_UTF8, 0, wStr, -1, &result[0], sizeNeeded, nullptr, nullptr);
+                }
+                GlobalUnlock(hData);
+            }
+        }
+
+        CloseClipboard();
+        return result;
     }
 }
 

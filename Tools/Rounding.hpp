@@ -22,7 +22,7 @@ namespace Tools::Round {
         return std::round(x);
     }
 
-    template <Float T>
+    template <Tools::Types::Float T>
     T Round(const T value, const u32 digits = -1) {
         static_assert(std::is_arithmetic_v<T>, "Round only supports numbers");
 
