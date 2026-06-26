@@ -15,9 +15,7 @@ namespace Tools::VectorInl {
 
     template <typename T>
     void Shuffle(vec<T>& v){
-        RdDevice rd;
-        Twister32 gen(rd());
-        std::shuffle(v.begin(), v.end(), gen);
+        std::shuffle(v.begin(), v.end(), Tools::Random::Gen64);
     };
 
     template <typename T>
@@ -42,9 +40,7 @@ namespace Tools::VectorInl {
         First.insert(First.end(), First.begin(), First.end());
         (First.insert(First.end(), Rest.begin(), Rest.end()), ...);
 
-        RdDevice Rd;
-        Twister32 Gen(Rd());
-        std::ranges::shuffle(First, Gen);
+        std::ranges::shuffle(First, Tools::Random::Gen64);
     }
 }
 

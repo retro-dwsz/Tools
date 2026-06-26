@@ -17,11 +17,8 @@ namespace Tools::Vector {
 
     template <typename T>
     vec<T> Shuffle(const vec<T>& v){
-        RdDevice rd;
-        Twister32 gen(rd());
-
         vec<T> out(v);
-        std::ranges::shuffle(out, gen);
+        std::ranges::shuffle(out, Tools::Random::Gen64);
         return out;
     };
 
