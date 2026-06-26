@@ -6,17 +6,17 @@
 #include "Base.hpp"
 
 template <typename T>
-T* Tools::ivec<T>::data() {
+T* Tools::ivec<T>::data() noexcept {
     return IVecData;
 }
 
 template <typename T>
-idx Tools::ivec<T>::size() {
+idx Tools::ivec<T>::size() noexcept {
     return IVecSize;
 }
 
 template <typename T>
-idx Tools::ivec<T>::capacity() {
+idx Tools::ivec<T>::capacity() noexcept {
     return IVecCapacity;
 }
 

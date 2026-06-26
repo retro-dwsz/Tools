@@ -4,6 +4,7 @@
 #define TOOLS_IVEC_BASE_HPP
 
 #include "../Types.hpp"
+#include "../Casting.hpp"
 
 // #define vec<T> vec<T>
 #define BEGIN_NAMESPACE(name) namespace name {
@@ -17,12 +18,12 @@ BEGIN_NAMESPACE(Tools)
 template <typename T>
 class ivec {
     private:
-    
+
     T* IVecData;
 
     idx IVecSize;       // Actual size
     idx IVecCapacity;   // How many elements that can be fitted without reallocation
-    
+
     /** Helper **/
     inline idx Normalize(i64 i) {
         if (i < 0) i += IVecSize;
@@ -30,12 +31,12 @@ class ivec {
     }
 
     public:
-    
+
     /** Data features **/
-    T* data();
-    idx size();
-    idx capacity();
-    
+    T* data() noexcept;
+    idx size() noexcept;
+    idx capacity() noexcept;
+
     /** Init features **/
     // Default constructor
     ivec();
@@ -44,7 +45,10 @@ class ivec {
     ivec(const vec<T>& Data);
     ivec(const ivec& other);
     ivec(ivec&& other);
-    
+
+    // Construct by modern pointer
+    ivec(const span<const T>& Data);
+
     // DeConstructors
     ~ivec();
 
@@ -56,14 +60,14 @@ class ivec {
     void append(const T&& Element);     // Single element (but lvalue)
     void append(const ivec<T>& iv);     // ivec->ivec     ivec<i32> a{1, 2, 3}.append(ivec<i32>{4, 5, 6}) == ivec<i32> a{1, 2, 3, {4, 5, 6}}  (obviously, duh)
     void append(const vec<T>& v);       // vec->ivec      ivec<i32> a{1, 2, 3}.append(vec<i32>{4, 5, 6}) == ivec<i32> a{1, 2, 3, {4, 5, 6}} (auto convert vec->ivec)
-    
+
     void extend(const ivec<T>& v);      // Extend using elements from ivector   ivec<i32> a{1, 2, 3}.Extend(ivec<i32>{1, 2, 3}) == ivec<i32> a{1, 2, 3, 4, 5, 6}
     void extend(const vec<T>& v);       // Extend using elements from vector    ivec<i32> a{1, 2, 3}.Extend(vec<i32>{1, 2, 3}) == ivec<i32> a{1, 2, 3, 4, 5, 6}
 
     idx GetSize() const noexcept;       // Current element count
 
     /** Getter and setter **/
-    T pop(const idx& Index);            // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4} 
+    T pop(const idx& Index);            // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4}
     T& operator[](idx Index);           // setter + getter
 
     const T& operator[](idx Index) const;        // getter (read-only)
@@ -84,19 +88,19 @@ class ivec {
 
     // __eq__
     bool operator==(const ivec& other);
-    
+
     // // __ne__
     // bool operator!=(const ivec& other);
-    
+
     // // __lt__
     // bool operator<(const ivec& other);
-    
+
     // // __le__
     // bool operator<=(const ivec& other);
-    
+
     // // __gt__
     // bool operator>(const ivec& other);
-    
+
     // // __ge__
     // bool operator>=(const ivec& other);
 
@@ -105,17 +109,17 @@ class ivec {
     void sliceInl(i64 n);              // Slice First->n or n<-Last
     ivec<T> slice(i64 x, i64 y);       // Slice x<->y, then return
     ivec<T> slice(i64 n);              // Slice First->n or n<-Last, then return
-    
+
     void clear();                                // Nuke all elements, keep slots
     bool isEmpty();                              // Is this empty?
 
     void appendFirst(const T& Element);          // Append from first index
-    void appendAt(const T& Element, idx At);     // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}    
+    void appendAt(const T& Element, idx At);     // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}
     bool contains(const T& Element);             // Find element, return true or false
-    idx find(const T& Element);                  // Find element, return index 
+    idx find(const T& Element);                  // Find element, return index
     idx findFreq(const T& Element);              // Find element, return how many appeared
     pair<idx, vec<T>> findAll(const T& Element); // Find element, return how many appeared and indexes
-    
+
     /* Orders */
     ivec<T> shuffle();                 // return shuffling
     void shuffleInl();                 // inline shuffling
@@ -131,7 +135,7 @@ class ivec {
     void eraseInl(idx begin, idx end);  // inline erased range
     ivec<T> uniques(idx n = 1);        // return remove duplicated values
     void uniquesInl(idx n = 1);        // inline remove duplicated values
-    
+
     T popFirst();                       // get first element, then remove it
     T popLast();                        // get last element, then remove it
 
@@ -139,10 +143,10 @@ class ivec {
 
     template<typename... Args>
     void emplace(Args&&... args);           // Build and append object on-fly
-    
+
     template<typename... Args>
     void emplaceFront(Args&&... args);      // Build and append in front object on-fly
-    
+
     template<typename... Args>
     void emplaceAt(Args&&... args, idx n);  // Build and append in Nth index object on-fly
 
@@ -150,10 +154,21 @@ class ivec {
     str fstr();          // Make to string literally (almost) anything
     vec<T> toVector();   // To std::vector
     span<T> toSpan();    // To std::span
-    template <idx S>    
-    arr<T, S> toArray(); // To std::arrat<T, S>
+
+    // Invalid use of non-static data member 'IVecSize'
+    template <const idx S>
+    arr<T, S> toArray(); // To std::array<T, S>
+
+    /* Auto converter to std::span */
+    operator span<T>() noexcept {
+        return span<T>(IVecData, IVecSize);
+    }
+    operator span<const T>() const noexcept {
+        return span<const T>(IVecData, IVecSize);
+    }
+
     T* toCArr();         // To C-Style array
-    
+
     /** Iterators **/
     T first();           // First index getter
     T first(idx n);      // First + n index getter
@@ -161,7 +176,7 @@ class ivec {
     T* begin();          // First iterator
     const T* cbegin();   // Constant First iterator
     T& refbegin();       // First iterator ref
-    
+
     T last();            // Last index getter
     T last(idx n);       // Last - n index getter
     T back();            // Last index getter (legacy)

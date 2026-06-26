@@ -17,7 +17,7 @@ Tools::ivec<T>::ivec(initl<T> init) : IVecData(nullptr), IVecSize(0), IVecCapaci
     if(init.size() == 0){ return; }
 
     IVecCapacity = init.size();
-    IVecData = static_cast<T*>(
+    IVecData = Cast::scast<T*>(
         operator new[](IVecCapacity * sizeof(T))
     );
 
@@ -33,7 +33,7 @@ template <typename T>
 Tools::ivec<T>::ivec(const ivec& other) : IVecData(nullptr), IVecSize(other.IVecSize), IVecCapacity(other.IVecCapacity) {
     if (IVecCapacity == 0) return;
 
-    IVecData = static_cast<T*>(operator new[](IVecCapacity * sizeof(T)));
+    IVecData = Cast::scast<T*>(operator new[](IVecCapacity * sizeof(T)));
     for (idx i = 0; i < IVecSize; ++i) {
         new (IVecData + i) T(other.IVecData[i]);
     }
@@ -56,7 +56,7 @@ Tools::ivec<T>::ivec(const vec<T>& v) : IVecData(nullptr), IVecSize(0), IVecCapa
 
     IVecCapacity = v.size();
     IVecSize     = v.size();
-    IVecData = static_cast<T*>(operator new[](IVecCapacity * sizeof(T)));
+    IVecData = Cast::scast<T*>(operator new[](IVecCapacity * sizeof(T)));
 
     idx i = 0;
     for (const T& e : v) {
@@ -65,9 +65,20 @@ Tools::ivec<T>::ivec(const vec<T>& v) : IVecData(nullptr), IVecSize(0), IVecCapa
     }
 };
 
+// ???
+template <typename T>
+Tools::ivec<T>::ivec(const span<const T>& v) : IVecData(nullptr), IVecSize(0), IVecCapacity(0) {
+    if(v.empty()) return;
+
+    IVecCapacity = v.size();
+    IVecSize     = v.size();
+    IVecData = Cast::scast<T*>(operator new[](IVecCapacity * sizeof(T)));
+    std::uninitialized_copy(v.begin(), v.end(), IVecData);
+};
+
 // DeConstructor
 template <typename T>
-Tools::ivec<T>::~ivec<T>() {
+Tools::ivec<T>::~ivec() {
     for(idx i = 0; i < IVecSize; i++){
         IVecData[i].~T();
     }

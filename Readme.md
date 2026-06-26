@@ -437,7 +437,7 @@ Example:
 # `VI`. Lib `Tools.IVec`
 
 IVec or "*I*mproved *Vec*tor" is a container just like `std::vector`, but with better choice of diction, for example: `push_back` is now `append` (just like Python).
-All description is already in `IVec/IVec_c.base.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
+All description is already in `IVec/Vase.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
 
 - ### API  Codes
     ```cpp
@@ -445,12 +445,12 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
     class ivec {
         private:
 
-        T* ivec_data;
+        T* IVecData;
 
         /** Helper **/
         inline idx Normalize(i64 i) ;
-        idx ivec_size;
-        idx ivec_capacity;
+        idx IVecSize;
+        idx IVecCapacity;
 
         public:
 
@@ -564,6 +564,11 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
         span<T> toSpan();
         template <idx S>
         arr<T, S> toArray();
+
+        /* Auto Converter to std::span */
+        operator span<T>() noexcept;
+        operator span<const T>() const noexcept;
+
         T* toCArr();
 
         /* Legacy functions */
@@ -584,9 +589,9 @@ All description is already in `IVec/IVec_c.base.hpp`, descriptions are intention
 ### Breakdown
 Let's start with the private functions
 
-1. `ivec_data` Current array
-2. `ivec_size` Current size
-3. `ivec_capacity` Current capacity
+1. `IVec_Data` Current array
+2. `IVec_Size` Current size
+3. `IVec_Capacity` Current capacity
 4. `Normalize` Normalizer `i64` to `idx`
 
 And then public, we have a lot of sections
@@ -603,7 +608,8 @@ And then public, we have a lot of sections
 ### 2. Constructors
 
 4. `ivec();` The default constructor with nothing in it
-5. `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
+5. (a) `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
+5. (b) `ivec(const span<const T>& Data);` Construct with `std::span` elegantly
 6. `ivec(const vec<T>& Data);` Constructor to auto convert `std::vector` to `Tools::ivec`
 7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
 8. `ivec(ivec&& other);` Same as 4th but you write it inplace
@@ -693,11 +699,11 @@ And then public, we have a lot of sections
     > ㅤ
 
 ### 8. Conversion
-55. `str fstr();` Formatted STRing, make everything everything inside and (almost) every data type into a string
-55. `vec<T> toVector();` `ivec` to `std::vector` converter
-57. `span<T> toSpan();` `ivec` to `std::span` converter
-58. `arr<T, S> toArray();` `ivec` to `std::array` converter
-59. `T* toCArr();` `ivec` to raw pointer converter
+55. `str fstr();`: Formatted STRing, make everything everything inside and (almost) every data type into a string
+55. `vec<T> toVector();`: `ivec` to `std::vector` converter
+57. `span<T> toSpan();` or `operator std::span()`: `ivec` to `std::span` converter
+58. `arr<T, S> toArray();`: `ivec` to `std::array` converter
+59. `T* toCArr();`: `ivec` to raw pointer converter
 
 ### 9. Iterators
 60. `T first();` First index getter
