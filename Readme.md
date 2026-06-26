@@ -686,14 +686,14 @@ And then public, we have a lot of sections
     > ### Note*
     > `slice` and `erase` might be simmilar, but it's different! Example:
     > ```cpp
-    > ivec<i32> a{11, 12, 13, 14, 15, 16, 17, 18, 19, 110};
+    > ivec<i32> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     >
     > // Keep only a[1..4], delete everything else
-    > ivec<i32> a_s = a.slice(1, 4);  // [12, 13, 14, 15]
+    > ivec<i32> a_s = a.slice(1, 4);  // [2, 3, 4, 5]
     > fmt::println("{}", a_s);
     >
     > // Delete only a[1..4], keep everything else
-    > ivec<i32> a_e = a.erase(1, 5);  // [11, 16, 17, 18, 19, 110]
+    > ivec<i32> a_e = a.erase(1, 5);  // [1, 6, 7, 8, 9, 10]
     > fmt::println("{}", a_e);
     > ```
     > ㅤ
@@ -801,7 +801,7 @@ This is a windows-specific tool to call a .dll during runtime.
             const bool debug = true         /* Optional Debugging log */
         );
 
-        // Slightly safer CallFunctionC
+        // Slightly safer CallFunctionC (deprecated)
         int CallFunctionC_s(                /* Function IV B */
             const str& File,                /* File to find */
             const str& EntryPoint,          /* Finnction to call (disable magle!) */
@@ -1663,7 +1663,7 @@ Target of this library:
 
         i32 main() {
             // Time a void function directly
-            auto timeMs = Tools::Time::FunctionElapsed<Tools::Time::ms>([] {
+            auto timeMs = Tools::Time::FunctionElapsed<Tools::Time::Units::ms>([] {
                 std::vector<i32> v(1000000);
                 std::iota(v.begin(), v.end(), 0);
                 std::sort(v.begin(), v.end(), std::greater<i32>());
@@ -1689,17 +1689,17 @@ Target of this library:
     3. Precise Sleep
         ```cpp
         #include "Tools/Time.hpp"
-
+        using namespace Tools;
         int main() {
             fmt::println("Starting...");
 
             // Sleep for 1.5 seconds
-            Tools::Time::Sleep<Tools::Time::ms>(1500);
+            Time::Sleep<Time::Units::ms>(1500);
 
             fmt::println("1.5 s (seconds) later...");
 
             // Sleep for 250 microseconds
-            Tools::Time::Sleep<Tools::Time::us>(250);
+            Time::Sleep<Time::us>(250);
 
             fmt::println("250 μs (microseconds) later...");
             return 0;
