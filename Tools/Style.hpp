@@ -6,6 +6,7 @@
 #include "FeatureCheck.hpp"
 #include "Casting.hpp"
 #include "Types.hpp"
+#include "Random.hpp"
 
 #include <ranges>
 #include <format>
@@ -15,147 +16,228 @@
 using namespace Tools::Cast;
 #define sconst static const
 
-namespace Tools::Styling {
-    // using str = std::string;        // Main string
-    // using wstr = std::wstring;      // Wide string (Do we even need this?)
+/* Struct for color */
+namespace Tools::Style {
+    using namespace Tools::Random;
 
-    str Reverse(const str& Tx){
+    /* Color struct for easier config */
+    struct Color {
+        u8 R, G, B;
+
+        Color(const u8 R = 0, const u8 G = 0, const u8 B = 0) {
+            this->R = R;
+            this->G = G;
+            this->B = B;
+        };
+
+        Color(const u32 Hex) {
+            this->R = (Hex >> 16) & 0xFF;
+            this->G = (Hex >> 8) & 0xFF;
+            this->B = Hex & 0xFF;
+        }
+
+        Color(const str& Hex = "0xFFFFFF") {
+            if (Hex.empty()) return;
+            u32 val = 0;
+            try {
+                idx idx = 0;
+                val = std::stoul(Hex, &idx, 0); // auto-detect base (handles 0x)
+            } catch (...) {
+                std::println("Invalid color value '{}', using default!", Hex);
+                val = 0x9BC8EA;
+            }
+            this->R = (val >> 16) & 0xFF;
+            this->G = (val >> 8) & 0xFF;
+            this->B = val & 0xFF;
+        };
+    };
+
+    // Return new
+    Color RandomColor(u8 Min, u8 Max) {
+        CheckRange(Min, Max);
+        auto C = RandomNumsVI(3, Min, Max)
+            | std::views::transform(
+            [](const auto& n){
+                return scast<u8>(n);
+            })
+            | std::ranges::to<vec>();
+
+        return Color(C[0], C[1], C[2]);
+    };
+
+    // Make in-place
+    void RandomColor(u8 Min, u8 Max, Color& Coloring) {
+        Coloring = RandomColor(Min, Max);
+    };
+}
+
+/* Return new */
+namespace Tools::Style {
+    /* Orders */
+
+    // Reverse string
+    str Reverse(const strview& Text) {
         str Result;
-        for(auto& i : Tx | std::views::reverse){
+        for(auto& i : Text | std::views::reverse){
             Result.push_back(i);
         }
 
         return Result;
     }
 
-    void ReverseInl(str& Tx){
-        idx n = Tx.length();
+    // Make all to uppercase
+    str Upper(const strview& Text) {
+        str result(Text);
+        std::ranges::transform(result, result.begin(), [](char c) {
+            return std::toupper(c);
+        });
+        return result;
+    }
+
+    // Make all to lowercase
+    str Lower(const strview& Text) {
+        str result(Text);
+        std::ranges::transform(result, result.begin(), [](char c) {
+            return std::tolower(c);
+        });
+        return result;
+    }
+
+    // Sort chars based on unicode code
+    str Sort(const strview& Text) {
+
+        vec<char> Re(Text.begin(), Text.end());
+
+        std::ranges::sort(Re);
+        str Result(Re.begin(), Re.end());
+
+        return Result;
+    }
+
+    /* Debug */
+    // Put each character on a vector
+    vec<str> Debug(const strview& Text) {
+        vec<str> Result;
+        Result.reserve(Text.size());
+        for (char c : Text) {
+            Result.emplace_back(1, c);
+        }
+        return Result;
+    }
+
+    /* Styles (using ANSI Escape Codes) */
+    // \033[0m is cdoe for RESET style at the end of a text
+    str Bold(const strview& Text) {
+        return std::format("\033[1m{}\033[0m", Text);
+    }
+
+    str Italic(const strview& Text) {
+        return std::format("\033[3m{}\033[0m", Text);
+    }
+
+    str Underline(const strview& Text) {
+        return std::format("\033[4m{}\033[0m", Text);
+    }
+
+    str Strike(const strview& Text) {
+        return std::format("\033[9m{}\033[0m", Text);
+    }
+
+    /* Coloring (True Color RGB 24-bit) */
+    str ColorFG(const strview& Text, const Color& FG) {
+        // 38;2;R;G;B is ANSI for Foreground True Color
+        return std::format("\033[38;2;{};{};{}m{}\033[0m", FG.R, FG.G, FG.B, Text);
+    }
+
+    str ColorFG(const strview& Text, const u32& FGc) {
+        Color FG(FGc);
+        return std::format("\033[38;2;{};{};{}m{}\033[0m", FG.R, FG.G, FG.B, Text);
+    }
+
+    str ColorBG(const strview& Text, const Color& BG) {
+        // 48;2;R;G;B is ANSI for Background True Color
+        return std::format("\033[48;2;{};{};{}m{}\033[0m", BG.R, BG.G, BG.B, Text);
+    }
+
+    str ColorBG(const strview& Text, const u32& BGc) {
+        Color BG(BGc);
+        return std::format("\033[48;2;{};{};{}m{}\033[0m", BG.R, BG.G, BG.B, Text);
+    }
+
+    str Reset(const strview& Text) {
+        static const std::regex ansi_regex("\\x1B\\[[0-9;]*m");
+        return std::regex_replace(str(Text), ansi_regex, "");
+    }
+}
+
+
+/* Modify in-place */
+namespace Tools::Style {
+    /* Orders */
+    void Reverse(str* Tx) {
+        idx n = Tx->length();
         for (idx i = 0; i < n / 2; i++) {
             std::swap(Tx[i], Tx[n - i - 1]);
         }
     };
 
-    struct Color {
-        u8 r, g, b;
-    };
-
-    str Colorize(const str& Text, const u64 Hex) {
-        // Extract RGB channels
-        u8 r = (Hex >> 16) & 0xFF;
-        u8 g = (Hex >> 8) & 0xFF;
-        u8 b = Hex & 0xFF;
-
-        // ANSI escape sequence (truecolor)
-        return std::format("\033[38;2;{};{};{}m{}\033[0m", r, g, b, Text);
+    // Make all to uppercase
+    void Upper(str* Text) {
+        std::ranges::transform(*Text, Text->begin(), [](unsigned char c) {
+            return std::toupper(c);
+        });
     }
 
-    // Helper function to extract RGB components from a 32-bit color value
-    void static ExtractRGB(u32& Alpha, u8& Red, u8& Green, u8& Blue) {
-        Red = (Alpha >> 16) & 0xFF;     // Red
-        Green = (Alpha >> 8) & 0xFF;    // Green
-        Blue = Alpha & 0xFF;            // Blue
+    // Make all to lowercase
+    void Lower(str* Text) {
+        std::ranges::transform(*Text, Text->begin(), [](unsigned char c) {
+            return std::tolower(c);
+        });
     }
 
-    // Proper hex parser (handles "0x" and decimal)
-    u32 ParseHex(const str& s) {
-        if (s.empty()) return 0;
-        u32 val = 0;
-        try {
-            size_t idx = 0;
-            val = std::stoul(s, &idx, 0); // auto-detect base (handles 0x)
-        } catch (...) {
-            printf("%s", std::format("Invalid color value '{}', using default!", s).c_str());
-            val = 0x9BC8EA;
+    void Sort(str* Text) {
+        std::ranges::sort(*Text);
+    }
+
+    /* Debug */
+    void Debug(const strview& Text, vec<char>& Destination) {
+        Destination.clear();
+        Destination.reserve(Text.size());
+        for (auto c : Text) {
+            Destination.push_back(c);
         }
-        return val;
     }
 
-    // Helper function to blend colors based on opacity
-    u32 BlendRGB(u32 color_v, i32 alpha) {
-        u8 R, G, B;
-        ExtractRGB(color_v, R, G, B);
-
-        // Blend with black (0x000000) for transparency
-        R = scast<u8>(R * (alpha / 100.0));
-        G = scast<u8>(G * (alpha / 100.0));
-        B = scast<u8>(B * (alpha / 100.0));
-
-        return (R << 16) | (G << 8) | B;
+    /* Styles */
+    void Bold(str* Text) {
+        *Text = std::format("\033[1m{}\033[0m", *Text);
     }
 
-    u8 BlendRGB(u8 fg, u8 bg, i32 alpha) {
-        return scast<u8>((fg * alpha + bg * (100 - alpha)) / 100);
+    void Italic(str* Text) {
+        *Text = std::format("\033[3m{}\033[0m", *Text);
     }
 
-    /* ---- To make everything after "0x" caps */
-    str CapsPtr(str& Text) {
-        if (Text.starts_with("0x") || Text.starts_with("0X")) {
-            Text = Text.substr(2);
-        }
-        std::ranges::transform(Text, Text.begin(), ::toupper);
-        return "0x" + Text;
+    void Underline(str* Text) {
+        *Text = std::format("\033[4m{}\033[0m", *Text);
     }
 
-    /* ---- Basic styles ---- */
-    // Bold text
-    str Bold(const str& Text = "Hello, world!") {
-        return "\033[1m" + Text + "\033[0m";
+    void Strike(str* Text) {
+        *Text = std::format("\033[9m{}\033[0m", *Text);
     }
 
-    // Italic text
-    str Italic(const str& Text = "Hello, world!") {
-        return "\033[3m" + Text + "\033[0m";
+    /* Coloring */
+    void ColorFG(str* Text, const Color& FG) {
+        *Text = std::format("\033[38;2;{};{};{}m{}\033[0m", FG.R, FG.G, FG.B, *Text);
     }
 
-    // Underline text
-    str Under(const str& Text = "Hello, world!") {
-        return "\033[4m" + Text + "\033[0m";
+    void ColorBG(str* Text, const Color& BG) {
+        *Text = std::format("\033[48;2;{};{};{}m{}\033[0m", BG.R, BG.G, BG.B, *Text);
     }
 
-    // Strikethrough text
-    str Strike(const str& Text = "Hello, world!") {
-        return "\033[9m" + Text + "\033[0m";
-    }
-
-    /* ---- Coloring styles ---- */
-    // Foreground color with opacity
-    str ColorFG(const str& Text = "Hello, world!", u32 FGColor = 0xFF8A46, i32 alpha = 100) {
-        u8 r, g, b;
-        if (alpha < 100) {
-            u32 blended_color = BlendRGB(FGColor, alpha);
-            ExtractRGB(blended_color, r, g, b);
-        } else {
-            ExtractRGB(FGColor, r, g, b);
-        }
-        return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m" + Text + "\033[0m";
-    }
-
-    // Background color with opacity
-    str ColorBG(const str& Text = "Hello, world!", u32 BGColor = 0x092655, i32 alpha = 100) {
-        u8 r, g, b;
-        if (alpha < 100) {
-            u32 blended_color = BlendRGB(BGColor, alpha);
-            ExtractRGB(blended_color, r, g, b);
-        } else {
-            ExtractRGB(BGColor, r, g, b);
-        }
-        return "\033[48;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m" + Text + "\033[0m";
-    }
-
-    // Foreground color with opacity using struct Color
-    str ColorFG(const str Text, Color TextColor) {
-        return std::format("\033[38;2;{};{};{}m{}\033[0m", TextColor.r, TextColor.g, TextColor.b, Text);
-    }
-
-    // Background color with opacity using struct Color
-    str ColorBG(const str Text, Color TextColor) {
-        return std::format("\033[48;2;{};{};{}m{}\033[0m", TextColor.r, TextColor.g, TextColor.b, Text);
-    }
-
-    /* ---- To reset mess you've made before ---- */
-    void Reset(str& Text){
-        sconst std::regex ansi_escape("\x1B\\[[0-9;]*m");
-        Text = std::regex_replace(Text, ansi_escape, "");
+    void Reset(str* Text) {
+        if (!Text) return;
+        static const std::regex ansi_regex("\\x1B\\[[0-9;]*m");
+        *Text = std::regex_replace(*Text, ansi_regex, "");
     }
 }
 

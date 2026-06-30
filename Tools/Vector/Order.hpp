@@ -52,6 +52,22 @@ namespace Tools::Vector {
     }
 }
 
+namespace Tools::Vector {
+    // Remove duplicated values for any others
+    template<typename T>
+    vec<T> RemoveDuplicates(const vec<T>& Data, const idx MaxCount = 1, const bool Sorted = false) {
+        vec<T> Out(Data);
+        if(Sorted){
+            auto U = std::unique(Out.begin(), Out.end());
+            Out.erase(U, Out.end());
+        } else if(!Sorted){
+            RemoveDuplicatesInl(Out);
+        }
+
+        return Out;
+    }
+}
+
 template vec<i8> Tools::Vector::Sort<i8>(const vec<i8>& v);
 template vec<u8> Tools::Vector::Sort<u8>(const vec<u8>& v);
 

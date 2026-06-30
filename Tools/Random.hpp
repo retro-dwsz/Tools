@@ -48,7 +48,7 @@
 #include "Random/Bundle.hpp"
 
 /** Bundle multi-thread **/
-#include "Random/Vector.thread.hpp"
+#include "Random/Bundle.thread.hpp"
 
 /** SBundled functions (vector in vector with scattered sizes) **/
 #include "Random/SBundle.hpp"

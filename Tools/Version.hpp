@@ -8,16 +8,16 @@
 #include "FeatureCheck.hpp"
 #include "Types.hpp"
 
-static constexpr u8 __TOOLS_CPP_VER__   = 10;
-static constexpr u8 __TOOLS_CPP_MAJOR__ = 1;
-static constexpr u8 __TOOLS_CPP_MINOR__ = 0;
+constexpr u8 __TOOLS_CPP_VER__   = 10;
+constexpr u8 __TOOLS_CPP_MAJOR__ = 1;
+constexpr u8 __TOOLS_CPP_MINOR__ = 0;
 
-static constexpr i8 __TOOLS_INFO_BUFFER_MAX_SIZE = 64;
+constexpr i8 __TOOLS_INFO_BUFFER_MAX_SIZE = 64;
 
-char* Tools_GetVersion() {
-    static char __TOOLS_INFO_BUFFER__STRING[__TOOLS_INFO_BUFFER_MAX_SIZE];
+static char* ToolsGetVersion() {
+    static char TOOLS_INFO_BUFFER_CSTR[__TOOLS_INFO_BUFFER_MAX_SIZE];
     snprintf(
-        __TOOLS_INFO_BUFFER__STRING,
+        TOOLS_INFO_BUFFER_CSTR,
         __TOOLS_INFO_BUFFER_MAX_SIZE,
         #if defined(__clang__) && defined(__clang_major__)
             "Tools.cpp v%i.%i ; this project was/is compiled using Clang %i",
@@ -31,11 +31,11 @@ char* Tools_GetVersion() {
         #endif
     );
 
-    return __TOOLS_INFO_BUFFER__STRING;
+    return TOOLS_INFO_BUFFER_CSTR;
 }
 
-void Tools_PrintVersion(){
-    printf("%s", Tools_GetVersion());
+void ToolsPrintVersion(){
+    printf("%s", ToolsGetVersion());
 }
 
 #endif

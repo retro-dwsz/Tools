@@ -5,59 +5,47 @@
 
 #include "../Types.hpp"
 
-/* Inline Slices */
-namespace Tools::VectorInl {
-    // Inline modification versions
+/* Inline Slices: Keep only the specified range in-place */
+namespace Tools::Vector {
     template <typename T>
-    void Slice(vec<T>& vec, idx x, idx y) {
-        // Handle negative indices
-        const idx size = vec.size();
-        if (x < 0) x = size + x;
-        if (y < 0) y = size + y;
+    void Slice(vec<T>* Data, idx Begin, idx End) {
+        CheckRangeR(Begin, End);
+        if (!Data || Data->empty()) return;
+        idx size = Data->size();
+        idx b = std::min(Begin, size - 1);
+        idx e = std::min(End, size - 1);
+        if (b > e) std::swap(b, e);
 
-        // Validate bounds
-        if (x < 0 || y < 0 || x >= size || y >= size || x > y) {
-            throw std::out_of_range("Invalid slice range");
-        }
-
-        // Erase elements before x and after y
-        vec.erase(vec.begin(), vec.begin() + x);
-        vec.erase(vec.begin() + (y - x + 1), vec.end());
+        // Hapus bagian belakang dulu agar iterator depan tidak invalid
+        Data->erase(Data->begin() + e + 1, Data->end());
+        Data->erase(Data->begin(), Data->begin() + b);
     }
 
+    /* Inline: Slice by Single Index */
     template <typename T>
-    void Slice(vec<T>& vec, idx n) {
-        const idx size = vec.size();
-        idx start, end;
+    void Slice(vec<T>* Data, const sidx Index) {
+        if (!Data || Data->empty()) return;
+        idx size = Data->size();
 
-        if (n >= 0) {
-            // From beginning: [0, n]
-            start = 0;
-            end = n;
+        if (Index >= 0) {
+            idx end = std::min(static_cast<idx>(Index), size - 1);
+            Data->erase(Data->begin() + end + 1, Data->end());
         } else {
-            // From end: [size + n, size - 1]
-            start = size + n;
-            end = size - 1;
+            sidx actual_start = static_cast<sidx>(size) + Index;
+            idx start = actual_start < 0 ? 0 : static_cast<idx>(actual_start);
+            Data->erase(Data->begin(), Data->begin() + start);
         }
-
-        // Validate bounds
-        if (start < 0 || end >= size || start > end) {
-            throw std::out_of_range("Invalid slice range");
-        }
-
-        vec.erase(vec.begin() + (end + 1), vec.end());
-        vec.erase(vec.begin(), vec.begin() + start);
     }
 }
 
-template void Tools::VectorInl::Slice(vec<i32>& vec, idx x, idx y);
-template void Tools::VectorInl::Slice(vec<i64>& vec, idx x, idx y);
-template void Tools::VectorInl::Slice(vec<f32>& vec, idx x, idx y);
-template void Tools::VectorInl::Slice(vec<f64>& vec, idx x, idx y);
+template void Tools::Vector::Slice(vec<i32>* Data, idx Begin, idx End);
+template void Tools::Vector::Slice(vec<i64>* Data, idx Begin, idx End);
+template void Tools::Vector::Slice(vec<f32>* Data, idx Begin, idx End);
+template void Tools::Vector::Slice(vec<f64>* Data, idx Begin, idx End);
 
-template void Tools::VectorInl::Slice(vec<i32>& vec, idx n);
-template void Tools::VectorInl::Slice(vec<i64>& vec, idx n);
-template void Tools::VectorInl::Slice(vec<f32>& vec, idx n);
-template void Tools::VectorInl::Slice(vec<f64>& vec, idx n);
+template void Tools::Vector::Slice(vec<i32>* Data, sidx Index);
+template void Tools::Vector::Slice(vec<i64>* Data, sidx Index);
+template void Tools::Vector::Slice(vec<f32>* Data, sidx Index);
+template void Tools::Vector::Slice(vec<f64>* Data, sidx Index);
 
 #endif

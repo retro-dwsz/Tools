@@ -14,8 +14,8 @@
 #include <immintrin.h>
 
 namespace Tools::RandomHW {
-    const str WarningHW = Tools::Styling::ColorFG("Unusual number for indexes detected, proceed with cauntion", 0xF84234);
-    const str Warning = Tools::Styling::ColorFG(
+    const str WarningHW = Tools::Style::ColorFG("Unusual number for indexes detected, proceed with cauntion", 0xF84234);
+    const str Warning = Tools::Style::ColorFG(
         "Unusual number for indexes detected, proceed with cauntion", 0xF84234
     );
 
@@ -41,8 +41,8 @@ namespace Tools::RandomHW {
 
 
 namespace Tools::RandomHW::Tests {
-    const str OK    = Tools::Styling::ColorFG("supported", 0xAFCB65);
-    const str BAD   = Tools::Styling::ColorFG("unsupported", 0xAC2E24);
+    const str OK    = Tools::Style::ColorFG("supported", 0xAFCB65);
+    const str BAD   = Tools::Style::ColorFG("unsupported", 0xAC2E24);
 
     bool RDseedSupport() {
         u32 eax, ebx, ecx, edx;
@@ -127,18 +127,18 @@ namespace Tools::RandomHW {
 }
 
 namespace Tools::RandomHW {
-    Twister32 MakeHWEngine32(u32 Seed32 = UINT32_MAX) {
+    Random::Twister32 MakeHWEngine32(u32 Seed32 = UINT32_MAX) {
         if(!_rdseed32_step(&Seed32)) {
-            Seed32 = RdDevice{}();
+            Seed32 = Random::RdDevice{}();
         }
-        return Twister32(Seed32);
+        return Random::Twister32(Seed32);
     }
 
-    Twister64 MakeHWEngine64(u64 Seed64 = UINT64_MAX) {
+    Random::Twister64 MakeHWEngine64(u64 Seed64 = UINT64_MAX) {
         if(!_rdseed64_step(&Seed64)) {
-            Seed64 = RdDevice{}();
+            Seed64 = Random::RdDevice{}();
         }
-        return Twister64(Seed64);
+        return Random::Twister64(Seed64);
     }
 }
 

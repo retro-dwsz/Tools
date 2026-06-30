@@ -20,10 +20,10 @@ namespace Tools::Random {
     using DistReal = std::uniform_real_distribution<T>;
 }
 
-namespace Tools::Random {
-    static inline thread_local RdDevice    RdDev;
-    static inline thread_local Twister32   Gen32(RdDev());
-    static inline thread_local Twister64   Gen64(RdDev());
-};
+// namespace Tools::Random {
+//     static inline thread_local RdDevice    RdDev;
+//     static inline thread_local Twister32   Gen32(RdDev());
+//     static inline thread_local Twister64   Gen64(RdDev());
+// };
 
 #endif

@@ -20,11 +20,11 @@ namespace Tools::RandomHW {
 
 // Integers
 namespace Tools::RandomHW {
-    vec<vec<i32>> RandomNumsBI(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, i32 Min = -10, i32 Max = 10) {
+    vec<vec<i32>> RandomNumsBI(Random::Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, i32 Min = -10, i32 Max = 10) {
         CheckRange(Min, Max);
         WarningCount(SubVectorCount, Count);
 
-        DistInt<i32> Dist32(Min, Max);
+        Random::DistInt<i32> Dist32(Min, Max);
         vec<vec<i32>> Result;
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -41,11 +41,11 @@ namespace Tools::RandomHW {
         return Result;
     }
 
-    vec<vec<i64>> RandomNumsBL(Twister64& Gen64, const idx SubVectorCount = 5, const idx Count = 10, i64 Min = -100, i64 Max = 100) {
+    vec<vec<i64>> RandomNumsBL(Random::Twister64& Gen64, const idx SubVectorCount = 5, const idx Count = 10, i64 Min = -100, i64 Max = 100) {
         CheckRange(Min, Max);
         WarningCount(SubVectorCount, Count);
 
-        DistInt<i64> Dist64(Min, Max);
+        Random::DistInt<i64> Dist64(Min, Max);
         vec<vec<i64>> Result;
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -65,11 +65,11 @@ namespace Tools::RandomHW {
 
 // Float
 namespace Tools::RandomHW {
-    vec<vec<f32>> RandomNumsBF(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, f32 Min = -2.71, f32 Max = 3.14) {
+    vec<vec<f32>> RandomNumsBF(Random::Twister32& Gen32, const idx SubVectorCount = 5, const idx Count = 10, f32 Min = -2.71, f32 Max = 3.14) {
         CheckRange(Min, Max);
         WarningCount(SubVectorCount, Count);
 
-        DistReal<f32> dist(Min, Max);
+        Random::DistReal<f32> dist(Min, Max);
         vec<vec<f32>> result;
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -86,10 +86,10 @@ namespace Tools::RandomHW {
         return result;
     }
 
-    vec<vec<f64>> RandomNumsBD(Twister64& gen, const idx Sub, const idx Count, f64 min, f64 max) {
+    vec<vec<f64>> RandomNumsBD(Random::Twister64& gen, const idx Sub, const idx Count, f64 min, f64 max) {
         CheckRange(min, max);
 
-        DistReal<f64> dist(min, max);
+        Random::DistReal<f64> dist(min, max);
         vec<vec<f64>> result;
 
         for(idx i = 0; i < Sub; i++){
@@ -109,10 +109,10 @@ namespace Tools::RandomHW {
 
 // Float with rounding
 namespace Tools::RandomHW {
-    vec<vec<f32>> RandomNumsBF(Twister32& Gen32, const idx SubVectorCount = 5, const idx Count  = 10, f32 Min = -2.17, f32 Max = 2.71, const i32 Rounding = 2) {
+    vec<vec<f32>> RandomNumsBF(Random::Twister32& Gen32, const idx SubVectorCount = 5, const idx Count  = 10, f32 Min = -2.17, f32 Max = 2.71, const i32 Rounding = 2) {
         CheckRange(Min, Max);
 
-        DistReal dist(Min, Max);
+        Random::DistReal dist(Min, Max);
         vec<vec<f32>> result;
 
         for(idx i = 0; i < SubVectorCount; i++){
@@ -129,10 +129,10 @@ namespace Tools::RandomHW {
         return result;
     }
 
-    vec<vec<f64>> RandomNumsBD(Twister64& Gen64, const idx SubvectorCount = 5, const idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
+    vec<vec<f64>> RandomNumsBD(Random::Twister64& Gen64, const idx SubvectorCount = 5, const idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, const i32 Rounding = 2) {
         CheckRange(Min, Max);
 
-        DistReal dist(Min, Max);
+        Random::DistReal dist(Min, Max);
         vec<vec<f64>> result;
 
         for(idx i = 0; i < SubvectorCount; i++){

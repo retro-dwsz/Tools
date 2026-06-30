@@ -6,7 +6,7 @@
 #include "../Types.hpp"
 
 namespace Tools::Vector{
-    template<Tools::Types::Number T>
+    template<typename T>
     T Sum(const vec<T>& v){
         T result{};
         for(const auto x : v){
@@ -15,7 +15,7 @@ namespace Tools::Vector{
         return result;
     }
 
-    template<Tools::Types::Number T>
+    template<typename T>
     T Product(const vec<T>& v){
         T result{};
         for(const auto x : v){
@@ -24,7 +24,7 @@ namespace Tools::Vector{
         return result;
     }
 
-    template <Tools::Types::Number T>
+    template <typename T>
     T Avg(const vec<T>& v){
         T sum = Sum(v);
         idx Size = v.size();

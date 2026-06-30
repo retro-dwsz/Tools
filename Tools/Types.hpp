@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Types/Common.hpp"
 #ifndef TOOLS_TYPES_HPP
 #define TOOLS_TYPES_HPP
 
@@ -83,6 +84,12 @@ namespace Tools::Types {
 
         /* Wider Strings */
         str16, str16view, str32, str32view
+    >;
+
+    template <typename T>
+    concept PStr = OneOf<T,
+        char, uchar, schar,
+        wchar, char16, char32
     >;
 
     template <typename T>
@@ -185,4 +192,10 @@ namespace Tools::Types {
         Tools::Time::Units::months
     >;
 }
+
+namespace Tools::Types {
+    template <typename T>
+    concept Ref = OneOf<T, T&, const T&>;
+}
+
 #endif

@@ -5,39 +5,90 @@
 
 #include "_Common.hpp"
 
-using namespace Tools::Cast;
-
 namespace Tools::Random {
-    char RandomCharPicker(const str& Text){
-        return Text[
-            scast<idx>(DistInt<i64>(0, Text.size()-1)(Gen64))
-        ];
+    using namespace Tools::Cast;
+
+    // template <typename T>
+    // concept StringLike = OneOf<std::decay_t<T>, str, wstr>;
+
+    template <typename ReturnType>
+    requires OneOf<ReturnType, char, wchar, str, wstr>
+    ReturnType RandomCharPicker(const OneOf<str, wstr, vec<str>, vec<wstr>> auto& Text) {
+        sthread RdDevice rd;
+        sthread Twister64 Gen64(rd());
+
+        if (Text.size() == 0) {
+            return ReturnType{};
+        }
+
+        idx MaxIndex = Text.size() - 1;
+        idx RdIndex  = scast<idx>(DistInt<i64>(0, MaxIndex)(Gen64));
+
+        const auto& element = Text[RdIndex];
+
+        // Convert to requested type
+        if constexpr (std::is_same_v<std::decay_t<decltype(element)>, ReturnType>) {
+            return element;
+        } else if constexpr (std::is_same_v<ReturnType, char> || std::is_same_v<ReturnType, wchar>) {
+            return element.empty() ? ReturnType{} : element[0];
+        } else {
+            return ReturnType(element.begin(), element.end());
+        }
     };
 
-    str RandomCharPicker(const vec<str>& CharSet){
-        return CharSet[
-            scast<idx>(DistInt<i64>(0, CharSet.size()-1)(Gen64))
-        ];
-    };
+    template <typename CharSetType>
+    requires OneOf<std::decay_t<CharSetType>, str, vec<str>>
+    str RandomStrGenerator(const CharSetType& CharSet, idx Count) {
+        if (CharSet.empty() || Count == 0) return {};
 
-    template <typename T>
-    str RandomStrGenerator(const OneOf<vec<str>, str, vec<T>> auto& CharSet, const idx Count){
+        sthread RdDevice RdDev;
+        sthread Twister64 Gen64(RdDev());
+
         str Result{};
         Result.reserve(Count);
 
-        // sthread RdDevice RdDev;
-        // sthread Twister64 Gen64(RdDev());
-        DistInt<i64> NResult(0, CharSet.size());
+        DistInt<i64> NResult(0, CharSet.size() - 1);
 
-        idx Index{};
-        for(idx i = 0; i < Count; i++){
-            Index = scast<idx>(NResult(Gen64));
-            Result.append(
-                std::format("{}", CharSet[Index])
-            );
+        for (idx i = 0; i < Count; i++) {
+            idx Index = scast<idx>(NResult(Gen64));
+
+            const auto& Element = CharSet[Index];
+
+            if constexpr (std::is_same_v<std::decay_t<decltype(Element)>, char>) {
+                Result.push_back(Element);
+            } else {
+                Result.append(Element);
+            }
         }
         return Result;
-    };
+    }
+
+    // Overload for std::wstring
+    template <typename CharSetType>
+    requires OneOf<std::decay_t<CharSetType>, wstr, vec<wstr>>
+    wstr RandomStrGeneratorW(const CharSetType& CharSet, idx Count) {
+        if (CharSet.empty() || Count == 0) return {};
+
+        sthread RdDevice RdDev;
+        sthread Twister64 Gen64(RdDev());
+
+        wstr Result{};
+        Result.reserve(Count);
+
+        DistInt<i64> NResult(0, CharSet.size() - 1);
+
+        for (idx i = 0; i < Count; i++) {
+            idx Index = scast<idx>(NResult(Gen64));
+            const auto& element = CharSet[Index];
+
+            if constexpr (std::is_same_v<std::decay_t<decltype(element)>, wchar>) {
+                Result.push_back(element);
+            } else {
+                Result.append(element);
+            }
+        }
+        return Result;
+    }
 }
 
 #endif

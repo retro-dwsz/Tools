@@ -13,8 +13,8 @@
 
 #include "../Style.hpp"
 namespace Tools::Random {
-    const str Warning = Tools::Styling::ColorFG(
-        "Unusual number for indexes detected, proceed with cauntion", 0xF84234
+    const str Warning = std::format(
+        "Unusual number for indexes detected, proceed with cauntion" /* , 0xF84234 */
     );
 }
 

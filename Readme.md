@@ -689,12 +689,12 @@ And then public, we have a lot of sections
     > ivec<i32> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     >
     > // Keep only a[1..4], delete everything else
-    > ivec<i32> a_s = a.slice(1, 4);  // [2, 3, 4, 5]
-    > fmt::println("{}", a_s);
+    > ivec<i32> a_s = a.slice(1, 4);
+    > fmt::println("{}", a_s);  // [2, 3, 4, 5]
     >
     > // Delete only a[1..4], keep everything else
-    > ivec<i32> a_e = a.erase(1, 5);  // [1, 6, 7, 8, 9, 10]
-    > fmt::println("{}", a_e);
+    > ivec<i32> a_e = a.erase(1, 5);
+    > fmt::println("{}", a_e);  // [1, 6, 7, 8, 9, 10]
     > ```
     > ㅤ
 
@@ -1128,57 +1128,48 @@ Recommended DLL Signature generation
 
 - ### API Codes
     ```cpp
-    namespace Tools::Styling {
-        /* RGB Color */
-        struct Color;
-
-        /* Basic FG coloring*/
-        str Colorize(const str& Text, const u64 Hex);
-
-        /* Helper function to extract RGB components from a 32-bit color value */
-        void static ExtractRGB(u32& Alpha, u8& Red, u8& Green, u8& Blue);
-
-        /* Convert hex in str -> actual useable number*/
-        u32 ParseHex(const str& s);
-
-        /* Blend color with opacity */
-        u32 BlendRGB(u32 color_v, i32 alpha);
-
-        /* Blend FG + BG color with opacity */
-        u8 BlendRGB(u8 fg, u8 bg, i32 alpha);
-
-        /* ---- To make everything after "0x" caps */
-        str CapsPtr(str& s);
-
-        /* ---- Basic styles ---- */
-        /* Bold text */
-        str Bold(const str& Text = "Hello, world!");
-
-        /* Italic text */
-        str Italic(const str& Text = "Hello, world!");
-
-        /* Underline text */
-        str Under(const str& Text = "Hello, world!");
-
-        /* Strikethrough text */
-        str Strike(const str& Text = "Hello, world!");
-
-        /* ---- Coloring styles ---- */
-        /* Foreground color with opacity */
-        str ColorFG(const str& Text = "Hello, world!", u32 color_tx = 0xFF8A46, i32 alpha = 100);
-
-        /* Background color with opacity */
-        str ColorBG(const str& Text = "Hello, world!", u32 color_bg = 0x092655, i32 alpha = 100);
-
-        /* Foreground color with opacity using struct Color */
-        str ColorizeFG(const str text, Color rgb);
-
-        /* Background color with opacity using struct Color */
-        str ColorizeBG(const str text, Color rgb);
-
-        /* ---- To reset mess you've made before ---- */
-        void Reset(str& Text);
+    // Base struct coloring
+    namespace Tools::Style {
+        struct Color {
+            u8 R, G, B;
+            Color(const u8 R = 0, const u8 G = 0, const u8 B = 0);
+            Color(const u32 Hex);
+            Color(const str& Hex = "0xFFFFFF");
+        };
+        Color RandomColor(u8 Min, u8 Max);
+        void RandomColor(u8 Min, u8 Max, Color& Coloring);
     }
+
+    /* Return new */
+    namespace Tools::Style {
+        str Reverse(const strview& Text);
+        str UpperA(const strview& Text);
+        str LowerA(const strview& Text);
+        str Sort(const strview& Text);
+        vec<str> Debug(const strview& Text);
+        str Bold(const strview& Text);
+        str Italic(const strview& Text);
+        str Underline(const strview& Text);
+        str Strike(const strview& Text);
+        str ColorFG(const strview& Text, const Color& FG);
+        str ColorBG(const strview& Text, const Color& BG);
+    }
+
+    /* Modify in-place */
+    namespace Tools::Style {
+        void Reverse(str* Tx)
+        void Upper(str* Text)
+        void Lower(str* Text)
+        void Sort(str* Text)
+        void Debug(const strview& Text, vec<char>& Destination)
+        void Bold(str* Text)
+        void Italic(str* Text)
+        void Underline(str* Text)
+        void Strike(str* Text)
+        void ColorFG(str* Text, const Color& FG)
+        void ColorBG(str* Text, const Color& BG)
+    }
+
     ```
 
 ---
@@ -1186,24 +1177,50 @@ Recommended DLL Signature generation
 # `X`. Lib `Tools.StyleW`
 
 - ### Description:
-    - Same as `Tools.Style`, but with `std::wstring` (`wstr`) support, slightly different choise of diction, but still good, and maybe kinda simpler. THe Name of the functions are already describe itself.
+    - Same as `Tools.Style`, but with `std::wstring` (`wstr`) support, slightly different choise of diction, but still good, and maybe kinda simpler. Just add 'W' at the end of function name.
 
 - API Codes:
     ```cpp
-    namespace Tools::StylingW {
-        str Colorize(const str& Text, const u64&Hex);
-        str CapsPtr(str& s);
-        str Bold(const str& Text);
-        str Italic(const str& Text);
-        str Under(const str& Text);
-        str Strike(const str& Text);
-        str ColorFG(const str& Text, u32 color_tx = 0xFF8A46, i32 alpha = 100);
-        str ColorBG(const str& Text, u32 color_bg = 0x092655, i32 alpha = 100);
-        str ColorFG(const str& text, CommonW::Color& rgb);
-        str ColorBG(const str& text, CommonW::Color& rgb);
-        str Reset(const str& Text);
+
+    /* Make new retrun (const std::wstring_view& Text) */
+    namespace Tools::Style {
+        wstr ReverseW(const wstrview& Text);
+        wstr UpperW(const wstrview& Text);
+        wstr LowerW(const wstrview& Text);
+        wstr SortW(const wstrview& Text);
+
+        vec<wchar> DebugW(const wstrview& Text);
+
+        wstr BoldW(const wstrview& Text);
+        wstr ItalicW(const wstrview& Text);
+        wstr UnderlineW(const wstrview& Text);
+        wstr StrikeW(const wstrview& Text);
+
+        wstr ColorFGW(const wstrview& Text, const Color& FG);
+        wstr ColorBGW(const wstrview& Text, const Color& BG);
+
+        wstr ResetW(const wstrview& Text);
     }
 
+    /* Modifly in place, always use pointer (*std::wstring Text) */
+    namespace Tools::Style {
+        void ReverseW(wstr* Text);
+        void UpperW(wstr* Text);
+        void LowerW(wstr* Text);
+        void SortW(wstr* Text);
+
+        void DebugW(const wstrview& Text, vec<wchar>& Destination);
+
+        void BoldW(wstr* Text);
+        void ItalicW(wstr* Text);
+        void UnderlineW(wstr* Text);
+        void StrikeW(wstr* Text);
+
+        void ColorFGW(wstr* Text, const Color& FG);
+        void ColorBGW(wstr* Text, const Color& BG);
+
+        void ResetW(wstr* Text);
+    }
     ```
 
 ---
@@ -1247,71 +1264,421 @@ Recommended DLL Signature generation
 
 # `XII`. Lib `Tools.Random`
  * ### Code suffixes you'll find on Random functions
-    | **Suffix**|      **Meaning**      | **Types** |       **Meaning**      |
-    |-----------|-----------------------|-----------|------------------------|
-    | `I`       | Integer (i32)         |  `VI`     |  Vector i32            |
-    | `L`       | Long (i64)            |  `VL`     |  Vector i64            |
-    | `F`       | Float (f32)           |  `VF`     |  Vector f32            |
-    | `D`       | Double (f64)          |  `VD`     |  Vector f64            |
-    | `V`       | Vector                |  `BI`     |  Bundled i32           |
-    | `B`       | Bundled               |  `BL`     |  Bundled i64           |
-    | `SB`      | Scattered Bundle      |  `BF`     |  Bundled f32           |
-    |           |                       |  `BF`     |  Bundled f32           |
-    |           |                       |  `BD`     |  Bundled f64           |
-    |           |                       |  `SBI`    |  Scattered Bundled i32 |
-    |           |                       |  `SBL`    |  Scattered Bundled i64 |
-    |           |                       |  `SBF`    |  Scattered Bundled f32 |
-    |           |                       |  `SBD`    |  Scattered Bundled f64 |
-    |           |                       |  `TVI`    |  Vector Threaded i32   |
-    |           |                       |  `TVL`    |  Vector Threaded i64   |
-    |           |                       |  `TVF`    |  Vector Threaded f32   |
-    |           |                       |  `TVD`    |  Vector Threaded f64   |
+    | **Suffix**|      **Meaning**      | **Types** |        **Meaning**       |
+    |-----------|-----------------------|-----------|--------------------------|
+    | `I`       | Integer (`i32`)       |  `VI`     |  Vector `i32`            |
+    | `L`       | Long (`i64`)          |  `VL`     |  Vector `i64`            |
+    | `F`       | Float (`f32`)         |  `VF`     |  Vector `f32`            |
+    | `D`       | Double (`f64`)        |  `VD`     |  Vector `f64`            |
+    | `V`       | Vector                |  `BI`     |  Bundled `i32`           |
+    | `B`       | Bundled               |  `BL`     |  Bundled `i64`           |
+    | `SB`      | Scattered Bundle      |  `BF`     |  Bundled `f32`           |
+    |           |                       |  `BF`     |  Bundled `f32`           |
+    |           |                       |  `BD`     |  Bundled `f64`           |
+    |           |                       |  `SBI`    |  Scattered Bundled `i32` |
+    |           |                       |  `SBL`    |  Scattered Bundled `i64` |
+    |           |                       |  `SBF`    |  Scattered Bundled `f32` |
+    |           |                       |  `SBD`    |  Scattered Bundled `f64` |
+    |           |                       |  `TVI`    |  Vector Threaded `i32`   |
+    |           |                       |  `TVL`    |  Vector Threaded `i64`   |
+    |           |                       |  `TVF`    |  Vector Threaded `f32`   |
+    |           |                       |  `TVD`    |  Vector Threaded `f64`   |
 
-- ### **_Example_** API Codes:
-    - Supported types are `i32`, `i64`, `f32`, and `f64`. `Num` will return single value, `Nums` will returna bunch of numbers.
-    ```cpp
-    namespace Tools::Random {
-        /* Singles */
-        i32 RandomNumI(
-            i32 Min = 0,            // Minimum value
-            i32 Max = 9             // Maximum value
-        );
-
-        /* Vector */
-        vec<i64> RandomNumsVL(
-            idx Count = 64,         // Element count
-            i64 Min = 0,            // Minimum value
-            i64 Max = 10            // Maximum value
-        );
-
-        /* Bundles */
-        vec<vec<f32>> RandomNumsBF(
-            idx Sub = 64,           // Sub-vector count
-            idx Count = 256,        // Sub-vector element count
-            i32 Min = 0,            // Minimum
-            i32 Max = 100           // Maximum
-            const i32 Rounding = 2  // Value rounding (F&D only)
-        );
-
-        /* Scattered Bundled */
-        vec<vec<f64>> RandomNumsSBD(
-            idx Sub = 64,           // Sub-vector count
-            idx CountMin = 25,      // Sub-vector element minimal count
-            idx CountMax = 50,      // Sub-vector element maximum count
-            f64 Min = 0.01,         // Minimum value
-            f64 Max = 10.0,         // Maximum value
-            const i32 Rounding = 2  // Value Rounding (F&D only)
-        );
-
-    }
-    ```
-
-- ### Explanations
+- ### Functions
     - `Singes` return single random value
     - `Vector` returns multiple random number in `std::vector<T>`
     - `Bundled` returns multiple random number in `std::vector<std::vector<T>>`
     - `Scattered Bundled` returns multiple random number in `std::vector<std::vector<T>>` but with different count of each sub-vector
+    - `-Thread` means everything is done in pararel
 
+- ### API Codes Synopsis:
+    - Supported types are `i32`, `i64`, `f32`, and `f64`. `Num` will return single value, `Nums` will return a bunch of numbers.
+
+    ```cpp
+    /* Singles */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        inline Int RandomNumInInt(
+            Int Min = -100,
+            Int Max = 100
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        inline Real RandomNumReal(
+            Real Min = -2.71,
+            Real Max = 2.71,
+            const i32 Rounding = 0
+        );
+    }
+
+    // All
+    namespace Tools::Random {
+        inline i32 RandomNumI(
+            i32 Min = 0,            // Minimum value
+            i32 Max = 9             // Maximum value
+        );
+        inline i64 RandomNumL(
+            i64 Min = -100,
+            i64 Max = 100
+        );
+
+        // Floats
+        inline f32 RandomNumF(
+            f32 Min = -2.71,
+            f32 Max = 2.71, const i32 Rounding = 0
+        );
+
+        inline f64 RandomNumD(
+            f64 Min = -3.14,
+            f64 Max = 3.14, const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ```cpp
+    /* Vector */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        vec<Int> RandomNumsVInt(
+            const idx Count = 10,       // Element count
+            Int Min = -10,              // Minimum value
+            Int Max = 10                // Maximum value
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        vec<Real> RandomNumsVReal(
+            const idx Count = 10,
+            Real Min = -2.71,
+            Real Max = 2.71,
+            const i32 Rounding = 0
+        );
+    }
+
+    // Integers
+    namespace Tools::Random {
+        vec<i64> RandomNumsVL(
+            idx Count = 64,
+            i64 Min = 0,
+            i64 Max = 10
+        );
+
+        vec<i64> RandomNumsVL(
+            const idx Count = 10,
+            i64 Min = -100,
+            i64 Max = 100
+        );
+    }
+
+    // Floats
+    namespace Tools::Random {
+        vec<f32> RandomNumsVF(
+            const idx Count = 10,
+            f32 Min = -2.71,
+            f32 Max = 2.71,
+            const i32 Rounding = 0
+        );
+
+        vec<f64> RandomNumsVD(
+            const idx Count = 10,
+            f64 Min = -3.14,
+            f64 Max = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ```cpp
+    /* Vector Thread */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        vec<Int> RandomNumsTV(
+            const idx Count = 10,       // Element count
+            Int Min = -10,              // Max value
+            Int Max = 10,               // Min value
+            const idx Threads = 4       // Thread count
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        vec<Real> RandomNumsTV(
+            const idx Count = 10,
+            Real Min = -10,
+            Real Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
+
+    // Integer
+    namespace Tools::Random {
+        vec<i32> RandomNumsTVI(
+            const idx Count = 10,
+            i32 Min = -10,
+            i32 Max = 10,
+            const idx Threads = 4
+        );
+
+        vec<i64> RandomNumsTVL(
+            const idx Count = 10,
+            i64 Min = -10,
+            i64 Max = 10,
+            const idx Threads = 4
+        );
+    }
+
+    // Float
+    namespace Tools::Random {
+        vec<f32> RandomNumsTVF(
+            const idx Count = 10,
+            f32 Min = -10,
+            f32 Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+
+        vec<f64> RandomNumsTVD(
+            const idx Count = 10,
+            f64 Min = -10,
+            f64 Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
+
+    ```
+
+    ```cpp
+    /* Bundles */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        vec<vec<Int>> RandomNumsB(
+            const idx SubVectorCount = 64,  // How many sub-vectors
+            const idx Count = 256,          // Elements for each sub-vectors
+            Int Min = -100,                 // Minimum value
+            Int Max = 100                   // Maximum value
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        vec<vec<Real>> RandomNumsB(
+            const idx SubVectorCount = 64,
+            const idx Count = 256,
+            Real Min = -3.14,
+            Real Max = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+
+    // Integers
+    namespace Tools::Random {
+        vec<vec<i32>> RandomNumsBI(
+            const idx SubVectorCount = 64,
+            const idx Count = 256,
+            i32 Min = -10,
+            i32 Max = 10
+        );
+
+        vec<vec<i64>> RandomNumsBL(
+            const idx SubVectorCount = 64,
+            const idx Count = 256,
+            i64 Min = -100,
+            i64 Max = 100
+        );
+    }
+
+    // Floats
+    namespace Tools::Random {
+        vec<vec<f32>> RandomNumsBF(
+            const idx SubVectorCount = 64,
+            const idx Count = 256,
+            f32 Min = -2.71,
+            f32 Max = 2.71,
+            const i32 Rounding = 0
+        );
+
+        vec<vec<f64>> RandomNumsBD(
+            const idx SubVectorCount = 64,
+            const idx Count = 256,
+            f64 Min = -3.14,
+            f64 Max = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ```cpp
+    /* Bundle Thread */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        vec<vec<Int>> RandomNumsTB(
+            const idx SubVectorCount = 4,   // How manu sub-vectors
+            const idx Count = 10,           // Elements for each sub-vectors
+            Int Min = -10,                  // Max value
+            Int Max = 10,                   // Min value
+            const idx Threads = 4           // Thread count
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        vec<vec<Real>> RandomNumsTB(
+            const idx SubVectorCount = 4,
+            const idx Count = 10,
+            Real Min = -10,
+            Real Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
+
+    // Integer
+    namespace Tools::Random {
+        vec<vec<i32>> RandomNumsTBI(
+            const idx SubVectorCount = 4,
+            const idx Count = 10,
+            i32 Min = -10,
+            i32 Max = 10,
+            const idx Threads = 4
+        );
+
+        vec<vec<i64>> RandomNumsTBL(
+            const idx SubVectorCount = 4,
+            const idx Count = 10,
+            i64 Min = -10,
+            i64 Max = 10,
+            const idx Threads = 4
+        );
+    }
+
+    // Float
+    namespace Tools::Random {
+        vec<vec<f32>> RandomNumsTBF(
+            const idx SubVectorCount = 4,
+            const idx Count = 10,
+            f32 Min = -10,
+            f32 Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+
+        vec<vec<f64>> RandomNumsTBD(
+            const idx SubVectorCount = 4,
+            const idx Count = 10,
+            f64 Min = -10,
+            f64 Max = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
+    ```
+
+    ```cpp
+    /* Scattered Bundle */
+
+    // Generic
+    namespace Tools::Random {
+        template <typename Int>
+        requires OneOf<Int, i32, i64>
+        vec<vec<Int>> RandomNumsSB(
+            const idx SubVectorCount = 64,  // How many sub-vectors
+            idx CountMin = 25,              // Max element count for each sub vectors
+            idx CountMax = 50,              // Min element count ...
+            Int Min = -100,                 // Max value
+            Int Max = 100                   // Min value
+        );
+
+        template <typename Real>
+        requires OneOf<Real, f32, f64>
+        vec<vec<Real>> RandomNumsSB(
+            const idx SubVectorCount = 64,
+            idx CountMin = 25,
+            idx CountMax = 50,
+            Real Min = -3.14,
+            Real Max = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+
+    // Integer
+    namespace Tools::Random {
+        vec<vec<i32>> RandomNumsSBI(
+            const idx SubVectorCount = 64,
+            idx CountMin = 25,
+            idx CountMax = 50,
+            i32 Min = -10,
+            i32 Max = 10
+        );
+
+        vec<vec<i64>> RandomNumsSBL(
+            const idx SubVectorCount = 64,
+            idx CountMin = 25,
+            idx CountMax = 50,
+            i64 Min = -100,
+            i64 Max = 100
+        );
+    }
+
+    // Floats
+    namespace Tools::Random {
+        vec<vec<f32>> RandomNumsSBF(
+            const idx SubVectorCount = 64,
+            idx CountMin = 25,
+            idx CountMax = 50,
+            f32 Min = -2.71,
+            f32 Max = 2.71,
+            const i32 Rounding = 0
+        );
+
+        vec<vec<f64>> RandomNumsSBD(
+            const idx SubVectorCount = 64,
+            idx CountMin = 25,
+            idx CountMax = 50,
+            f64 Min = -3.14,
+            f64 Max = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ```cpp
+    /* Random Strings */
+    namespace Tools::Random {
+        /* Pick random char from stirng OR container */
+        template <typename ReturnType>
+        requires OneOf<ReturnType, char, wchar, str, wstr>
+        ReturnType RandomCharPicker(const OneOf<str, wstr, vec<str>, vec<wstr>> auto& Text);
+
+        /* Generate random string from given charset
+         * from complete string (std::string, std::wstring),
+         * or container (std::vector<std::string/std::wstring>)
+         */
+        template <typename CharSetType>
+        requires OneOf<std::decay_t<CharSetType>, str, vec<str>>
+        str RandomStrGenerator(const CharSetType& CharSet, idx Count);
+
+        /* Overload for std::wstring */
+        template <typename CharSetType>
+        requires OneOf<std::decay_t<CharSetType>, wstr, vec<wstr>>
+        wstr RandomStrGeneratorW(const CharSetType& CharSet, idx Count);
+    }
+
+    ```
 - ### Note:
     - I **_don't_** recommend using singles function inside a loop, instead, generate multiple value, then iterate through that container instead
 

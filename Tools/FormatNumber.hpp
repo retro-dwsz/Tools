@@ -17,7 +17,7 @@
 namespace Tools::FormatNumber {
     /* Internal Helper functions */
     namespace {
-        template <Integer T>
+        template <Tools::Types::Integer T>
         str static FormatIntegerPart(T value, char Separator, i32 GroupSize) {
             if (GroupSize <= 0) GroupSize = 3; // safety
 
@@ -52,7 +52,7 @@ namespace Tools::FormatNumber {
             return result;
         }
 
-        template <Float T>
+        template <Tools::Types::Float T>
         str static FormatFloat(T n, char Separator, char DecimalChar, i32 GroupSize) {
             if (GroupSize <= 0) GroupSize = 3;
 
@@ -95,31 +95,31 @@ namespace Tools::FormatNumber {
 
     /* Defaults */
     /* For i8..i64 && u8..u64 */
-    template <Integer T>
+    template <Tools::Types::Integer T>
     str Format(const T n) {
         return FormatIntegerPart(n, '\'', 3);
     }
 
     /* for f32, f64, and fld */
-    template <Float T>
+    template <Tools::Types::Float T>
     str Format(const T n) {
         return FormatFloat(n, '\'', '.', 3);
     }
 
     /* Customs */
     /* For i8..i64 && u8..u64 */
-    template <Integer T>
+    template <Tools::Types::Integer T>
     str Format(const T n, const char Separator, const i32 Digits) {
         return FormatIntegerPart(n, Separator, Digits);
     }
 
     /* for f32, f64, and fld */
-    template <Float T>
+    template <Tools::Types::Float T>
     str Format(const T n, const char Separator, const i32 Digits) {
         return FormatFloat(n, Separator, '.', Digits); // default decimal is '.'
     }
 
-    template <Float T>
+    template <Tools::Types::Float T>
     str Format(const T n, const char Separator, const char Decimal, const i32 Digits) {
         return FormatFloat(n, Separator, Decimal, Digits);
     }
