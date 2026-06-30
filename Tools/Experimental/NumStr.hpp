@@ -14,10 +14,10 @@ namespace ToolsExperimental {
 
         // Constructor
         NumStr();
-        template <Tools::Types::Integer P>
-        NumStr(const P& NativeNumber);      // From actual number (Integer)
-        template <Tools::Types::Float P>
-        NumStr(const P& NativeNumber);      // From actual number (Float)
+        template <Tools::Types::Integer Int>
+        NumStr(const Int& NativeNumber);      // From actual number (Integer)
+        template <Tools::Types::Float Flt>
+        NumStr(const Flt& NativeNumber);      // From actual number (Float)
         NumStr(const str& StrNumber);       // From a string
         NumStr(const strview StrNumber);    // From a string (pointer)
 
