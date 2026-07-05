@@ -7,6 +7,29 @@
 
 #include "_Common.hpp"
 
+/* Generic */
+namespace Tools::Random {
+    template <typename Int>
+    requires OneOf<Int, i32, i64>
+    inline Int RandomNum(Int Min = -100, Int Max = 100) {
+        CheckRange(Min, Max);
+        sthread RdDevice Rd;
+        sthread Twister64 Gen64(Rd());
+
+        return DistInt<Int>(Min, Max)(Gen64);
+    }
+
+    template <typename Real>
+    requires OneOf<Real, f32, f64>
+    inline Real RandomNum(Real Min = -2.71, Real Max = 2.71, const u32 Rounding = 0) {
+        CheckRange(Min, Max);
+        sthread RdDevice Rd;
+        sthread Twister64 Gen64(Rd());
+
+        return Round(DistReal<Real>(Min, Max)(Gen64), Rounding);
+    }
+}
+
 // Integer
 namespace Tools::Random {
     using Tools::Round::Round;
@@ -45,29 +68,6 @@ namespace Tools::Random {
         sthread Twister64 Gen64(Rd());
 
         return Round(DistReal<f64>(Min, Max)(Gen64), Rounding);
-    }
-}
-
-/* Generic */
-namespace Tools::Random {
-    template <typename Int>
-    requires OneOf<Int, i32, i64>
-    inline Int RandomNum(Int Min = -100, Int Max = 100) {
-        CheckRange(Min, Max);
-        sthread RdDevice Rd;
-        sthread Twister64 Gen64(Rd());
-
-        return DistInt<Int>(Min, Max)(Gen64);
-    }
-
-    template <typename Real>
-    requires OneOf<Real, f32, f64>
-    inline Real RandomNum(Real Min = -2.71, Real Max = 2.71, const u32 Rounding = 0) {
-        CheckRange(Min, Max);
-        sthread RdDevice Rd;
-        sthread Twister64 Gen64(Rd());
-
-        return Round(DistReal<Real>(Min, Max)(Gen64), Rounding);
     }
 }
 

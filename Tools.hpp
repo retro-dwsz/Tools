@@ -1,9 +1,9 @@
 // Begin: Tools.hpp
 
+#pragma once
+
 #ifndef TOOLS_MASTER_HPP
 #define TOOLS_MASTER_HPP
-
-#pragma once
 
 #include "Tools/FeatureCheck.hpp"
 #include "Tools/Version.hpp"
@@ -24,9 +24,10 @@
 #include "Tools/Files.hpp"
 #include "Tools/FormatNumber.hpp"
 #include "Tools/String.hpp"
+#include "Tools/PStr.hpp"
 #include "Tools/Linking.hpp"
 #include "Tools/Random.hpp"
-#include "Tools/RandomHW.hpp"
+// #include "Tools/RandomHW.hpp"
 #include "Tools/Rounding.hpp"
 #include "Tools/Style.hpp"
 #include "Tools/StyleW.hpp"

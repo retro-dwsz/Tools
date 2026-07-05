@@ -5,7 +5,9 @@
 
 #include "Base.hpp"
 
-#ifdef FMT_FORMAT_H_
+#if defined(__has_include)
+
+#if __has_include(<fmt/format.h>) && __has_include(<fmt/ranges.h>)
 
 #include <fmt/format.h>
 #include <fmt/ranges.h>
@@ -35,6 +37,8 @@ struct fmt::formatter<Tools::ivec<T>, char> {
 };
 
 }
+
+#endif
 
 #endif
 

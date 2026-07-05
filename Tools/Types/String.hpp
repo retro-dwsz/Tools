@@ -6,6 +6,7 @@
 #include "Common.hpp"
 
 /* ---- String ---- */
+#include <cstring>
 #include <sstream>
 #include <string>
 #include <string_view>
@@ -16,16 +17,11 @@ using cstr16    = const char16_t*;
 using cstr32    = const char32_t*;
 
 // using char   = char;
-using uchar     = unsigned char;
-using schar     = signed char;
+using u_char    = unsigned char;
+using s_char    = signed char;
 using wchar     = wchar_t;
 using char16    = char16_t;
 using char32    = char32_t;
-
-// accept char, wchar_t, char16_t, and char32_t only
-template <typename T>
-requires OneOf<T, char, uchar, schar, wchar, char16, char32>
-using pstr      = const T*;
 
 using str       = std::string;
 using strview   = std::string_view;
@@ -58,5 +54,10 @@ using str32view = std::u32string_view;
 // concept WStrings =
 //     std::same_as<T, wstr>
 //     || std::same_as<T, cwstr>;
+
+template <typename Char = char>
+requires OneOf<Char, char, u_char, s_char, wchar_t, char16_t, char32_t>
+using pstr = const Char*;
+
 
 #endif

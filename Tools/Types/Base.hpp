@@ -15,8 +15,9 @@
 #include "Containers.hpp"
 #include "Pointer.hpp"
 #include "Memory.hpp"
-
 #include "Time.hpp"
+
+#include <type_traits>
 
 template <typename T>
 void CheckRange(T& Min, T& Max) {
@@ -28,10 +29,19 @@ std::pair<T, T> CheckRangeR(T Min, T Max) {
     if (Max < Min) return std::pair<T, T>(Max, Min);
 }
 
-template <typename T, typename U>
-bool TypeCompare(const U&) {
-    return std::same_as<std::decay_t<U>, T>;
-}
+// template <typename T1, typename T2>
+// constexpr bool TypeCompare(const T1&) {
+//     return std::is_same_v<T2, T1>;
+// }
+
+// template <typename T1, typename T2>
+// constexpr bool TypeCompare(const T1&, const T2&) {
+//     return std::is_same_v<T1, T2>;
+// }
+
+template <typename T1, typename T2>
+constexpr bool TypeCompare = std::is_same_v<T1, T2>;
+
 
 #define MakeAliasFunction(Original, Aliased)    \
                                                 \

@@ -8,8 +8,10 @@
 - ### Disclaimer
     I have to admit, like 80% of those codes are AI-generated, if you find any flaw, please tell me on issues or you can submit you code on issues or you can fork on your own :D
 
+<!--
 - ### Better markdown in Notion
     Better markdown for this documentation is typed using Notion.so [here](https://dwsz-249.notion.site/C-Tools-2f08edc33f1f80a2b877c0c4b19b800f?source=copy_link) (under construction)
+-->
 
 # Abstract of File Structure
 
@@ -17,7 +19,7 @@
     |            Files          |                         What is this?                         |
     |---------------------------|---------------------------------------------------------------|
     |`Tools/Casting.hpp`        | Type Casting aliases                                          |
-    |`Tools/Time.hpp`          | Time & Clock utilities                                        |
+    |`Tools/Time.hpp`           | Time & Clock utilities                                        |
     |`Tools/Edges.hpp`          | Min/max getter for types                                      |
     |`Tools/Files.hpp`          | I/O files utility                                             |
     |`Tools/FormatNumber.hpp`   | Number formatter                                              |
@@ -25,7 +27,7 @@
     |`Tools/Linking.hpp`        | Linking utility to dynamic linked (.dll) using windows API    |
     |`Tools/OS.hpp`             | Some utilities using OS APIs                                  |
     |`Tools/Random.hpp`         | Random Number generator                                       |
-    |`Tools/RandomHW.hpp`       | Hardware-level random generator (x86 only)                    |
+    <!-- |`Tools/RandomHW.hpp`       | Hardware-level random generator (x86 only)                    | -->
     |`Tools/Randomizer.hpp`     | Stuff to make random number (used by Random and RandomHW)     |
     |`Tools/Rounding.hpp`       | Python-like rounding utility                                  |
     |`Tools/Style.hpp`          | Text styler for str                                           |
@@ -39,11 +41,12 @@
 - ### Folders
     |        Folder         |                   What is this?                   |
     |-----------------------|---------------------------------------------------|
-    |`Tools/Deprecated/*`   | Deprecated libs, because it'll break you project instead making coding more fun and productive++|
+    |`Deprecated/*`         | Deprecated libs, because it'll break you project instead making coding more fun and productive++|
+    |`Experimental/*`       | Experimental libs, upcoming libs in progress      |
     |`Tools/IVec/*`         | Improved vector implementations                   |
     |`Tools/OS/*`           | Some utilities using OS APIs implementations      |
     |`Tools/Random/*`       | Random number implementations                     |
-    |`Tools/RandomHW/*`     | Hardware-level random number implementations      |
+    <!-- |`Tools/RandomHW/*`     | Hardware-level random number implementations      | -->
     |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
     |`Tools/Vector/*`       | Common operations for Vector implementations      |
 
@@ -55,24 +58,24 @@
     | `/Types/Int.hpp`           | Signed interger aliases            |
     | `/Types/UInt.hpp`          | Unsigned integer aliases           |
     | `/Types/Float.hpp`         | Floating aliases                   |
-    | `/Types/Pointer.hpp`           | Pointer aliases (not recommended)  |
+    | `/Types/Pointer.hpp`       | Pointer aliases (not recommended)  |
     | `/Types/String.hpp`        | String type aliases                |
     | `/Types/Memory.hpp`        | Smart pointer aliases              |
 
 - ### Folder `Tools/IVec/*`
     |             File             |                           What is this?                            |
     |----------------------------- |--------------------------------------------------------------------|
-    |`/IVec/_IVec.hpp`              | All include packed                                                 |
-    |`/IVec/_IVecfmt.hpp`           | Formatter for {fmt} [deprecated, this thing has already iterators] |
-    |`/IVec/Base.hpp`       | Base IVec class                                                    |
-    |`/IVec/Init.hpp`       | Initializers for IVec                                              |
-    |`/IVec/Basic.hpp`      | Minimal functions                                                  |
-    |`/IVec/Advanced.hpp`   | Extended functions                                                 |
-    |`/IVec/Convert.hpp`    | Conversion utilities to something else                             |
-    |`/IVec/Data.hpp`       | Return pointer data                                                |
-    |`/IVec/Getset.hpp`     | Getter and setter functions                                        |
-    |`/IVec/Iter.hpp`       | Iterators functions                                                |
-    |`/IVec/Legacy.hpp`     | Legacy functions with vector-like dictions                         |
+    |`/IVec/_IVec.hpp`             | All include packed                                                 |
+    |`/IVec/_IVecfmt.hpp`          | Formatter for {fmt} [deprecated, this thing has already iterators] |
+    |`/IVec/Base.hpp`              | Base IVec class                                                    |
+    |`/IVec/Init.hpp`              | Initializers for IVec                                              |
+    |`/IVec/Basic.hpp`             | Minimal functions                                                  |
+    |`/IVec/Advanced.hpp`          | Extended functions                                                 |
+    |`/IVec/Convert.hpp`           | Conversion utilities to something else                             |
+    |`/IVec/Data.hpp`              | Return pointer data                                                |
+    |`/IVec/Getset.hpp`            | Getter and setter functions                                        |
+    |`/IVec/Iter.hpp`              | Iterators functions                                                |
+    |`/IVec/Legacy.hpp`            | Legacy functions with vector-like dictions                         |
 
 - ### Folder `Tools/OS/*`
     |           File          |         What is this?      |
@@ -107,7 +110,7 @@
     | `/Random.Basic/Random.sbundle.basic.hpp`  | _Same as `Tools.Random.SBundle`_ |
 
 
-- ### Folder `Tools/RandomHW/*`
+- ### Folder `Tools/RandomHW/*` (Deprecated)
     Just like `Tools.Random`, but optimized for x86 command called `RDSEED` and `RDRAND`
     |               File               |                      What is this?                            |
     |----------------------------------|---------------------------------------------------------------|
@@ -120,12 +123,14 @@
 - ### Folder `Tools/Vector/*`
     |               File                |                                What is this?                              |
     |-----------------------------------|---------------------------------------------------------------------------|
-    | `/Vector/Accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average            |
-    | `/Vector/Find.hpp`         | Find value and/or index in a vector utilities                             |
-    | `/Vector/Order.hpp`        | Value order utilities and return new vector                               |
-    | `/Vector/Order.inl.hpp`    | Value order utilities and do it inplace                                   |
-    | `/Vector/Slice.hpp`        | Scissors for vector, `0->n` or `0<-n` or `x<->y`, then return new vector  |
-    | `/Vector/Slice.inl.hpp`    | Scissors for vector, and do it inplace                                    |
+    | `/Vector/Accumulator.hpp`  | Accumulate vector values, like Summation, Product, and Average                   |
+    | `/Vector/Find.hpp`         | Find value and/or index in a vector utilities                                    |
+    | `/Vector/Order.hpp`        | Value order utilities and return new vector                                      |
+    | `/Vector/Order.inl.hpp`    | Value order utilities and do it inplace                                          |
+    | `/Vector/Slice.hpp`        | Keeper for vector, Keep `0->n` or `0<-n` or `x..y`, then return new vector       |
+    | `/Vector/Slice.inl.hpp`    | Keeper for vector, and do it inplace                                             |
+    | `/Vector/Eraser.hpp`       | Eraser for vector, Delete `0->n` or `0<-n` or `x..y`, then return new vector     |
+    | `/Vector/Slice.inl.hpp`    | Eraser for vector, and do it inplace                                             |
 
 - ### Folder `Tools/Lib` (Test only!)
     This lib but make it linkable, this is NOT included in msys package pack (in folder `/Msys/*.pkg.tar.zst`) and NOT installed in your `/lib` folder in you environment, so in deployment, this lib is STILL header only.
@@ -159,10 +164,12 @@ Types aliasing to make you less typing just for data types
 | `const char*`     | `cstr`   | `std::string`        | `str`     |
 | `const char16_t*` | `cstr16` | `std::wstring`       | `wstr`    |
 | `const char32_t*` | `cstr32` | `std::u16string`     | `str16`   |
-|                   |          | `std::u32string`     | `str32`   |
-|                   |          | `std::string_view`   | `strview` |
+| `<...>*`          | `pstr<T>`| `std::u32string`     | `str32`   |
+| `PStr`            | (struct) | `std::string_view`   | `strview` |
 |                   |          | `std::stringstream`  | `sstream` |
 |                   |          | `std::ostringstream` | `ostream` |
+
+`pstr<T>` is an alias for C-Style string (`char/wchar/char16/char32 []`), and PStr is struct for simple C-String types
 
 ### C++ Value Containers
 |          Original          |    Aliased    |
@@ -188,7 +195,7 @@ Types aliasing to make you less typing just for data types
 
 Another type alias that you and I may not use often
 
-### Basic C/C++ Pointers
+### Raw Pointers
 
 |               Name                |     Original     |   Aliased   |
 |-----------------------------------|------------------|-------------|
@@ -213,24 +220,32 @@ Another type alias that you and I may not use often
 | `HClock`                                                      | `Clock`   |
 
 ### Commonly used packed type with `concept`
-|   Concept  |              Types convered              |
-|------------|------------------------------------------|
-| `Nx32`     | `i32, f32`                               |
-| `Nx64`     | `i64, f64`                               |
-| `Int`      | `i8, i16, i32, i64`                      |
-| `CInt`     | `i32, i64`                               |
-| `UInt`     | `u8, u16, u32, u64`                      |
-| `CUInt`    | `u32, u64`                               |
-| `Float`    | `f32, f64, fld`                          |
-| `CFloat`   | `f32, f64`                               |
-| `CSize`    | `idx, sidx`                              |
-| `Integer`  | `Int` + `UInt`                           |
-| `CNumber`  | `CInt` + `CUInt` + `CFloat` + `CSize`    |
-| `CTypes`   | `CInt` + `CUInt` + `CFloat` + `Strings`  |
-| `Numbers`  | `Int` + `UInt` + `Float` + `CSize`       |
-| `Strings`  | `str, cstr`                              |
-| `WStrings` | `wstr, cwstr`                            |
-| `Iterable` | `std::ranges::range<T>`                  |
+|     Concept   |                                                                 Types convered                                                                |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `Nx32`        | `i32`, `f32`                                                                                                                                  |
+| `Nx64`        | `i64`, `f64`                                                                                                                                  |
+| `Number`      | `i8`, `i16`, `i32`, `i64`, `idx`, `u8`, `u16`, `u32`, `u64`, `sidx`, `f32`, `f64`, `fld`                                                      |
+| `Integer`     | `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`                                                                                          |
+| `SignedInt`   | `i8`, `i16`, `i32`, `i64`                                                                                                                     |
+| `UnsignedInt` | `u8`, `u16`, `u32`, `u64`                                                                                                                     |
+| `NtvInteger`  | `i32`, `i64`                                                                                                                                  |
+| `NtvFloat`    | `i32`, `i64`                                                                                                                                  |
+| `Float`       | `f32`, `f64`, `fld`                                                                                                                           |
+| `CSize`       | `idx`, `sidx`                                                                                                                                 |
+| `Number`      | `i8`, `i16`, `i32`, `i64`, `idx`, `u8`, `u16`, `u32`, `u64`, `sidx`, `f32`, `f64`, `fld`                                                      |
+| `AllStrings`  | `str`, `strview`, `sstream`, `ostream`, `wstr`, `wstrview`, `wsstream`, `wostream`, `str16`, `str16view`, `str32`, `str32view`                |
+| `CPStr`       | `char`, `u_char`, `s_char`, `wchar`, `char16`, `char32`                                                                                       |
+| `CString`     | `char`, `wchar`, `char16`, `char32`                                                                                                           |
+| `String`      | `str`, `strview`, `sstream`, `ostream`                                                                                                        |
+| `WString`     | `wstr`, `wstrview`, `wsstream`, `wostream`                                                                                                    |
+| `XString`     | `str16`, `str16view`, `str32`, `str32view`                                                                                                    |
+| `StringView`  | `strview`, `wstrview`, `str16view`, `str32view`                                                                                               |
+| `VContainer`  | `vec<T1>`, `arr<T1, S>`, `map<T1, T2>`, `umap<T1, T2>`,`set<T1>`, `uset<T1>`,`pair<T1, T2>`,`initl<T1>`, `span<T1>`,`tuple<T1>`, `list<T1>`   |
+| `TContainer`  | `topt<T>, tvar<T>, texp<T, E>`                                                                                                                |
+| `GContainer`  | `std::ranges::range<T>`                                                                                                                       |
+| `Pointer`     | `ptr<T>`, `ptrcd<T>`, `cptr<T>`, `cptrcd<T>`, `i32p`, `u32p`, `uptr<T>`, `sptr<T>`, `wptr<T>`                                                 |
+| `CPtr`        | `ptr<T>`, `ptrcd<T>`, `cptr<T>`, `cptrcd<T>`, `i32p`, `u32p`                                                                                  |
+| `CPPStr`      | `uptr<T>`, `sptr<T>`, `wptr<T>`                                                                                                               |
 
 An example of implementation:
 ```cpp
@@ -1157,17 +1172,17 @@ Recommended DLL Signature generation
 
     /* Modify in-place */
     namespace Tools::Style {
-        void Reverse(str* Tx)
-        void Upper(str* Text)
-        void Lower(str* Text)
-        void Sort(str* Text)
-        void Debug(const strview& Text, vec<char>& Destination)
-        void Bold(str* Text)
-        void Italic(str* Text)
-        void Underline(str* Text)
-        void Strike(str* Text)
-        void ColorFG(str* Text, const Color& FG)
-        void ColorBG(str* Text, const Color& BG)
+        void Reverse(str* Tx);
+        void Upper(str* Text);
+        void Lower(str* Text);
+        void Sort(str* Text);
+        void Debug(const strview& Text, vec<char>& Destination);
+        void Bold(str* Text);
+        void Italic(str* Text);
+        void Underline(str* Text);
+        void Strike(str* Text);
+        void ColorFG(str* Text, const Color& FG);
+        void ColorBG(str* Text, const Color& BG);
     }
 
     ```
@@ -1301,14 +1316,14 @@ Recommended DLL Signature generation
     namespace Tools::Random {
         template <typename Int>
         requires OneOf<Int, i32, i64>
-        inline Int RandomNumInInt(
+        inline Int RandomNum(
             Int Min = -100,
             Int Max = 100
         );
 
         template <typename Real>
         requires OneOf<Real, f32, f64>
-        inline Real RandomNumReal(
+        inline Real RandomNum(
             Real Min = -2.71,
             Real Max = 2.71,
             const i32 Rounding = 0
@@ -1684,7 +1699,7 @@ Recommended DLL Signature generation
 
 ---
 
-# `XIII`. Lib `Tools.RandomHW`
+# `XIII`. Lib `Tools.RandomHW` (Deprecated)
 
 - Basically same as `Tools.Random`, but with better seeder from `x86` function called `RDSEED` and `RDRAND`, you just add the `HW` on the namespace (`Tools::Random` -> `Tools::RandomHW`), and you can access the functions.
 - This library is limited to `x86`, using this on ARM may invalid or maybe cause something bad.
@@ -1813,7 +1828,6 @@ Library to do some calculation with vector. Those choise of diction for function
     - `Vector/Slice.hpp` : Slice elements
     - `Vector/Slice.inl.hpp` : Slice elements inline
 
-
 - ### API Codes:
     ```cpp
     // Accumulators
@@ -1925,7 +1939,147 @@ Library to do some calculation with vector. Those choise of diction for function
 
 ---
 
-# `XVII`. Lib `Tools.Time`
+# `XVII`. Lib `Tools.PStr`
+
+### What is this?
+
+Lightweight, non-owning string view with Class Template Argument Deduction (CTAD).
+
+Char Character type. Defaults to `char`. Must be one of:
+- Native type: `char`, `unsigned char`, `signed char`, `wchar_t`, `char16_t`, or `char32_t`.
+- Alias type:  `char`, `u_char`, `s_char`, `wchar`, `char16`, or `char32`.
+
+### Overview
+PStr ("Pointer STRing") is a zero-overhead wrapper around a C-style string pointer and its length. Unlike `std::basic_string`, it does NOT own or allocate memory. It provides `std::string`-like ergonomics while maintaining raw pointer efficiency.
+
+### Key Features
+- Non-owning: Stores only a pointer + size. No heap allocation.
+- CTAD Support: Automatic type deduction from string literals.
+- Multi-char-type: Supports char, wchar_t, char16_t, char32_t via constraints.
+- Null-safe: Constructor gracefully handles nullptr input.
+- Implicit conversions: To `const Char*` and `std::span<const Char>`.
+- Explicit ownership transfer: Conversion to `std::basic_string` requires explicit cast   to prevent accidental heap allocations.
+
+### Lifetime Warning
+- PStr does NOT copy the underlying string data. The caller MUST ensure that the
+pointed-to string outlives the PStr instance. Dangling pointers will cause UB.
+
+API Synopsis
+```cpp
+template <typename Char = char>
+requires OneOf<Char, char, u_char, s_char, wchar, char16, char32>
+class PStr {
+    private:
+    const Char* StrData;    // <- Pointer to external string data (non-owning)
+    idx StrSize;            // <- Cached string length in character count
+
+    public:
+    /* ---- CTOR ---- */
+    /* @brief Default constructor, creates empty string (nullptr) and 0 size
+     */
+    PStr() noexcept;
+
+    /* @brief   Constructor from C-string pointer
+     * @param   p Pointer to null-terminated string. May be nullptr (results in empty PStr).
+     * @note    Length is computed via std::char_traits<Char>::length() to support
+     *          all character types (not just char). O(n) operation.
+     */
+    PStr(const Char* p) noexcept;
+
+    /*
+     * @brief       Construct from a pointer and explicit length.
+     * @param p     Pointer to string data. Does NOT need to be null-terminated.
+     * @param len   Number of characters. No length computation performed. O(1).
+     * @note        Use this for substrings, binary data, or when length is already known
+     *              to avoid redundant strlen/char_traits::length calls.
+     */
+    PStr(const Char* p, idx len) noexcept;
+    /* ---- End CTOR ---- */
+
+    /* ---- Debug Data ---- */
+
+    /* @brief Returns the number of characters in the string. O(1). */
+    idx size() const noexcept;
+
+    /* @brief Returns the number of characters in the string multiplied sizeof current char type. O(1). */
+    idx sizeBytes() const noexcept;
+
+    /* @brief Returns true if the string has zero length. O(1). */
+    bool empty() const noexcept;
+
+    /*
+     * @brief Returns raw pointer to the underlying string data.
+     * @return Pointer to first character, or nullptr if empty/default-constructed.
+     */
+    const Char* data() const noexcept;
+    /* ---- End Debug Data ---- */
+
+    /* ---- Getter ---- */
+    /*
+     * @brief Access character at index without bounds checking.
+     * @param i Zero-based character index.
+     * @return Const reference to the character.
+     * @warning No bounds checking. Caller must ensure i < size().
+     */
+    const Char& operator[](idx i) const noexcept;
+    /* ---- End Getter ---- */
+
+    /* ---- Converter ---- */
+    /*
+     * @brief Access character at index without bounds checking.
+     * @param i Zero-based character index.
+     * @return Const reference to the character.
+     * @warning No bounds checking. Caller must ensure i < size().
+     */
+    operator const Char*() const noexcept;          // Implicit conversion to C-string pointer
+
+    /*
+     * @brief Implicit conversion to std::span<const Char>.
+     * @return Span covering the entire string. Zero-copy, enables ranges/views interop.
+     */
+    operator span<const Char>() const noexcept;
+
+    /*
+     * @brief EXPLICIT conversion to std::basic_string<Char>.
+     * @return Owning copy of the string data (heap allocated).
+     * @warning This performs a full deep copy. Marked explicit to prevent
+     *          accidental allocations in function arguments or assignments.
+     */
+    explicit operator std::basic_string<Char>() const;
+    /* ---- End Converter ---- */
+};
+```
+
+### Example of usage:
+```cpp
+#include <Tools/PStr.hpp>
+
+i32 main() {
+    // CTAD: type automatically deduced
+    PStr a = "Hello";           // PStr<char>
+    PStr b = L"Wide Hello";     // PStr<wchar_t>
+
+    // Explicit default type
+    PStr<> c = "Default char";  // PStr<char>
+
+    // Substring / binary-safe construction
+    PStr d("Hello, World!", 5); // PStr<char>, size=5 → "Hello"
+
+    // Safe observers
+    fmt::println("Size: {}, Empty: {}", a.size(), a.empty());
+
+    // Implicit conversion to span (zero-copy)
+    std::span<const char> sp = a;
+
+    // Explicit conversion to owning string (heap allocation!)
+    std::string owned = scast<std::string>(a);
+}
+
+```
+
+---
+
+# `XVIII`. Lib `Tools.Time`
 
 A library (but more liek shortcut) to do some calculations with Time
 
@@ -1934,7 +2088,7 @@ Target of this library:
 - **Precision**: Uses high-resolution clock by default
 - **Type Safety**: Concepts ensure correct usage
 - **Modern C++**: Leverages C++20 features
-- **Zero Overhead**: All operations are compile-time checked
+<!-- - **Zero Overhead**: All operations are compile-time checked -->
 
 - ### API Codes
     ```cpp

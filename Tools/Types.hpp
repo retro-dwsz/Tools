@@ -6,6 +6,39 @@
 
 #include "Types/Base.hpp"
 
+/*
+namespace Tools::Types {
+    template <typename T>
+    requires OneOf<T, f32, f64, fld>
+    T Pi() {
+        if constexpr (TypeCompare<T, f32>) {
+            return T{3.1415926f};
+        } else if constexpr (TypeCompare<T, f64>) {
+            return T{3.14159265358979323};
+        } else {
+            return T{3.14159265358979323846264338327950L};
+        }
+    }
+
+    template <typename T = f32>
+    requires OneOf<T, f32, f64, fld>
+    T E() {
+        if constexpr (TypeCompare<T, f32> ) {
+            return T{2.7182818f};
+        } else if constexpr (TypeCompare<T, f64> ) {
+            return T{2.71828182845904523};
+        } else if constexpr (TypeCompare<T, fld> ) {
+            return T{2.71828182845904523536028747135266L};
+        }
+    };
+
+    void TestTypes() {
+        auto a = Pi<f32>();
+        auto b = E<f32>();
+    }
+}
+*/
+
 /* Basic Classification */
 namespace Tools::Types {
     template <typename T>
@@ -60,6 +93,11 @@ namespace Tools::Types {
         u8, u16, u32, u64, idx
     >;
 
+    template <typename T>
+    concept CSize = OneOf<T,
+        idx, sidx
+    >;
+
     // Native integers and floats
     template <typename T>
     concept NtvInteger = OneOf<T,
@@ -87,8 +125,8 @@ namespace Tools::Types {
     >;
 
     template <typename T>
-    concept PStr = OneOf<T,
-        char, uchar, schar,
+    concept CPStr = OneOf<T,
+        char, u_char, s_char,
         wchar, char16, char32
     >;
 
@@ -118,7 +156,7 @@ namespace Tools::Types {
 
     /* String views */
     template <typename T>
-    concept StringViews = OneOf<T,
+    concept StringView = OneOf<T,
         strview,    // Standard
         wstrview,   // Wide
         str16view,  // 16-bit
@@ -142,6 +180,9 @@ namespace Tools::Types {
     concept TContainer = OneOf<T,
         topt<T>, tvar<T>, texp<T, E>
     >;
+
+    template <typename T>
+    concept GContainer = std::ranges::range<T>;
 }
 
 /* Pointers */
