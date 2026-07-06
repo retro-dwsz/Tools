@@ -1,12 +1,12 @@
 /*
- * Arbitary number with std::vector coming soon
+ * Arbitary number with std::vector<u8> coming soon
  * File "Tools/Experimental/VNum_Draft_2/VNum.hpp"
  */
 
 #pragma once
 
-#ifndef TOOLS_EXPERIMENTAL_VNUM_BASE_HPP
-#define TOOLS_EXPERIMENTAL_VNUM_BASE_HPP
+#ifndef TOOLS_EXPERIMENTAL_D2_VNUM_BASE_HPP
+#define TOOLS_EXPERIMENTAL_D2_VNUM_BASE_HPP
 
 #include "../../Tools/Types.hpp"
 #include "../../Tools/Casting.hpp"
@@ -31,10 +31,6 @@ class VNum {
     idx     m_DecimalLimit   = 100;
 
     public:
-
-    VNum& SetSeperatorScale(const char Scale) const;                // SetSeperatorScale('\'')  2147483647     -> 2'147'483'647
-    VNum& SetSeperatorDecimal(const char Decimal) const;            // SetSeperatorDecimal('_') 21474836473.14 -> 21474836473_14
-    VNum& SetSeperator(const char Scale, const char Decimal) const; // SetSeperator('\'', '_')  21474836473.14 -> 21'474'836'473_14
 
     /* Get Private Props */
     pair<vec<u8>, vec<u8>> GetData() const {
@@ -73,11 +69,36 @@ class VNum {
     VNum() = default;
 
     // CTor from native number
+    /* @brief   Parse from native numbers
+     * @param   NtvNumber: Input number
+     *
+     * Example:
+     *
+     * VNum Ni1(314);           // 314 -> m_DataInt = {3, 1, 4}, m_DataDec = {}
+     * VNum Ni2(271);           // 271 -> m_DataInt = {2, 7, 1}, m_DataDec = {}
+     * VNum Ni3 = Ni1 + Ni2;    // 585 -> m_DataInt = {5, 8, 5}, m_DataDec = {}
+     *
+     * // Float, auto 7 digit after commma
+     * VNum Nf1(3.14f);         // 3.14 -> m_DataInt = {3}, m_DataDec = {1, 4, 0, 0, 0, 0, 0}
+     * VNum Nf1(2.71f);         // 2.71 -> m_DataInt = {2}, m_DataDec = {7, 1, 0, 0, 0, 0, 0}
+     * VNum Nf3 = Nf1 + Nf2;    // 5.85 -> m_DataInt = {5}, m_DataDec = {8, 5, 0, 0, 0, 0, 0}
+     *
+     * // Double, auto 17 digit after commma
+     * VNum Nf4 = 3.14159;      // 3.14159 -> m_DataInt = {3}, m_DataDec = {1, 4, 1, 5, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+     * VNum Nf5 = 2.71828;      // 2.71828 -> m_DataInt = {2}, m_DataDec = {7, 1, 8, 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+     * VNum Nf6 = Nf4 + Nf5;    // 5.85987 -> m_DataInt = {5}, m_DataDec = {8, 5, 9, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+     *
+     * // Long double, auto 32 digit after comma
+     * VNum Nf7 = 3.14159265358979323846264338327950L;  //  -> m_DataInt = {3}, m_DataDec = {1,4,1,5,9,2,6,5,3,5,8,9,7,9,3,2,3,8,4,6,2,6,4,3,3,8,3,2,7,9,5,0}
+     * VNum Nf8 = 2.71828182845904523536028747135266L;  //  -> m_DataInt = {2}, m_DataDec = {7,1,8,2,8,1,8,2,8,4,5,9,0,4,5,2,3,5,3,6,0,2,8,7,4,7,1,3,5,2,6,6}
+     * VNum Nf9(Nf7 + Nf8);                             // 5.85987448204883776270435191690922
+     *                                                  // ^-> m_DataInt = {5}, m_DataDec = {8,5,9,8,7,4,4,8,2,0,4,8,8,3,7,7,6,2,7,0,4,3,5,1,9,1,6,9,0,9,2,2}
+     */
     template <Integer I>
-    VNum(const I& NtvNumber);                // From actual number (Integer/Float)
+    VNum(const I& NtvNumber);
 
     template <Float F>
-    VNum(const F& NtvNumber);                // From actual number (Float)
+    VNum(const F& NtvNumber);
 
     // CTor from string
     /* @brief   Parse from string
@@ -211,13 +232,17 @@ class VNum {
     VNum& Sqrt();
     VNum& Cbrt();
 
-    // Compare each digit and direction
-    bool operator==(VNum& Other) const noexcept;
-    auto operator!=(const VNum& Other) const noexcept;
-    auto operator>(const VNum& Other) const noexcept;
-    auto operator>=(const VNum& Other) const noexcept;
-    auto operator<(const VNum& Other) const noexcept;
-    auto operator<=(const VNum& Other) const noexcept;
+    // Compare each digit and direction + auto construct rvalue or accept lvalue
+    bool operator==(const VNum& Other) const noexcept;
+    bool operator!=(const VNum& Other) const noexcept;
+    bool operator>(const VNum& Other) const noexcept;
+    bool operator>=(const VNum& Other) const noexcept;
+    bool operator<(const VNum& Other) const noexcept;
+    bool operator<=(const VNum& Other) const noexcept;
+    VNum& operator++() noexcept;   // increment from DataInt
+    VNum& operator--() noexcept;   // decrement from DataInt
+    VNum operator++(const i32 N) noexcept;
+    VNum operator--(const i32 N) noexcept;
 
     /* ---- Accessors & Checks ---- */
     bool empty() const noexcept {
@@ -231,13 +256,11 @@ class VNum {
      * default is i32 for round numbers, and f32 for floating points
      *
      * Signed:
-     * If Min<i8>..Max<i8>,     return with i8
-     * If Min<i16>..Max<i16>,   return with i16
-     * If Min<i32>..Max<i32>,   return with i32
-     * If Min<i64>..Max<i64>,   return with i64
+     * If Min(i8/i16/i32)..Max(i8/i16/i32),     return with i32
+     * If <Min(i32) .. >Max(i32),               return with i64
      *
      * Unsigned:
-     * If 0..Max<u64>+,         return with u64
+     * If 0 .. >Max(u64),                       return with u64
      *
      * Example Integer numbers:
      * VNum Ni1_vn = "2'147'483'647";        // auto parse seperators
@@ -284,7 +307,7 @@ class VNum {
     template <Number N = i32>
     N ToNative() const;                     // return singly native data
 
-    /* Conversion to basic string
+    /* Conversion to basic string: return singly str'ed native data
      *
      * Example:
      * NVum Ni1_vn({3,1,4,1,5,9}, 1);       // 3.141459
@@ -293,7 +316,10 @@ class VNum {
      * NVum Ni1_vn({3,1,4,1,5,9}, 1);       // 3.141459
      * str  Ni1_nt = Ni1_vn.ToStr();        // std::string{"3.141459"};
      */
-    str ToStr() const;                      // return singly str'ed native data
+    str ToStr() const;                                      // ToStr()              21474836473.14 -> 21474836473.14
+    str ToStr(const char Scale, const char Decimal) const;  // ToSr('\'', '_')      21474836473.14 -> 21'474'836'473_14
+    str ToStrScale(const char Scale) const;                 // ToStrScale('\'')     2147483647     -> 2'147'483'647
+    str ToStrDecimal(const char Decimal) const;             // ToStrDecimal('_')    21474836473.14 -> 21474836473_14
 
     /* @brief Conversion to container for each digits
      *
@@ -317,8 +343,8 @@ class VNum {
      * u8 Nf3_nt[];
      * Nf3_vn.ToArr(Nf3_nt);                // Nf3_nt is now u8[]{2,7,1,8,2,8};
      */
-    vec<u8> ToVec() const;                  // return as vector of numbers for each digits
-    vec<vec<u8>> ToChunkVec() const;        // return as vector of numbers for each digits by chunks
+    vec<u8> ToVec() const;                  // return as vector of numbers for each digits (flattened)
+    vec<vec<u8>> ToChunkVec() const;        // return as vector of numbers for each digits by chunks (DataInt & DataDec)
 
     template <Number N>
     void ToArr(N* Dest) const;              // return as pointer array for each digits (C Style)
@@ -326,14 +352,17 @@ class VNum {
     /* ---- Conversion CTors ---- */
     // To generic native number types: i8, i16.., u64
     template <Tools::Types::Number N = i32>
-    operator N() const noexcept;
+    explicit operator N() const;
 
-    //
-    operator vec<u8>() const noexcept;
-    operator str() const noexcept;
+    // To other specific base objects
+    explicit operator str() const;          // struct as singly data
+    explicit operator vec<u8>() const;      // struct as flattened data
+    explicit operator vec<vec<u8>>() const; // struct as seperate Dataint & DataDec
 
-    operator span<u8>() const noexcept;
-    operator strview() const noexcept;
+    // To other specific pointer objects
+    explicit operator strview() const;
+    explicit operator span<u8>() const;         // struct as flattened data
+    explicit operator span<span<u8>>() const;   // struct as seperate Dataint & DataDec
 };
 
 }

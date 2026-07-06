@@ -54,7 +54,7 @@ decltype(auto) Aliased(Args&&... args) {        \
 }
 
 /* All types in Tools/Types/#.hpp only */
-template <typename T, typename A, idx S>
+template <typename T1, typename T2, idx S>
 concept ToolsTypes = OneOf<
     /* Signed Integers */
     i8, i16, i32, i64, sidx,
@@ -79,25 +79,25 @@ concept ToolsTypes = OneOf<
     str32, str32view,
 
     /* Value Containers */
-    vec<T>, arr<T, S>,
-    map<T, A>, umap<T, A>,
-    set<T>, uset<T>,
-    pair<T, A>,
-    initl<T>, span<T>,
-    tuple<T>, list<T>,
+    vec<T1>, arr<T1, S>,
+    map<T1, T2>, umap<T1, T2>,
+    set<T1>, uset<T1>,
+    pair<T1, T2>,
+    initl<T1>, span<T1>,
+    tuple<T1>, list<T1>,
 
     /* Type Containers */
-    topt<T>, tvar<T>, texp<T, A>,
+    topt<T1>, tvar<T1>, texp<T1, T2>,
 
     /* C Pointers */
-    ptr<T>,     // Pointer
-    ptrcd<T>,   // Poniter to Contsant Data
-    cptr<T>,    // Constant Pointer to Data
-    cptrcd<T>,  // Constant Pointer to Constant Data
-    i32p, u32p, // 32-bit Pointers
+    ptr<T1>,        // Pointer
+    ptrcd<T1>,      // Poniter to Contsant Data
+    cptr<T1>,       // Constant Pointer to Data
+    cptrcd<T1>,     // Constant Pointer to Constant Data
+    i32p, u32p,     // 32-bit Pointers
 
     /* C++ Smart Pointers */
-    uptr<T>, sptr<T>, wptr<T>,
+    uptr<T1>, sptr<T1>, wptr<T1>,
 
     /* Time Stamps */
     Tools::Time::Clock,
@@ -113,6 +113,67 @@ concept ToolsTypes = OneOf<
     Tools::Time::Units::weeks,
     Tools::Time::Units::months
 >;
+
+// /* All types in Tools/Types/#.hpp only with std::variant */
+// template <typename T1, typename T2, idx S>
+// const tvar<
+//     /* Signed Integers */
+//     i8, i16, i32, i64, sidx,
+//
+//     /* Unsigned Integers */
+//     u8, u16, u32, u64, idx,
+//
+//     /* Floating Points */
+//     f32, f64, fld,
+//
+//     /* C Strings */
+//     cstr, cwstr, cstr16, cstr32,
+//
+//     /* C++ Strings */
+//     str, strview, sstream, ostream,
+//
+//     /* C++ String View */
+//     wstr, wstrview, wsstream, wostream,
+//
+//     /* 16&32-bit Strings */
+//     str16, str16view,
+//     str32, str32view,
+//
+//     /* Value Containers */
+//     vec<T1>, arr<T1, S>,
+//     map<T1, T2>, umap<T1, T2>,
+//     set<T1>, uset<T1>,
+//     pair<T1, T2>,
+//     initl<T1>, span<T1>,
+//     tuple<T1>, list<T1>,
+//
+//     /* Type Containers */
+//     topt<T1>, tvar<T1>, texp<T1, T2>,
+//
+//     /* C Pointers */
+//     ptr<T1>,     // Pointer
+//     ptrcd<T1>,   // Poniter to Contsant Data
+//     cptr<T1>,    // Constant Pointer to Data
+//     cptrcd<T1>,  // Constant Pointer to Constant Data
+//     i32p, u32p, // 32-bit Pointers
+//
+//     /* C++ Smart Pointers */
+//     uptr<T1>, sptr<T1>, wptr<T1>,
+//
+//     /* Time Stamps */
+//     Tools::Time::Clock,
+//     Tools::Time::SClock,
+//     Tools::Time::HClock,
+//     Tools::Time::Units::ns,
+//     Tools::Time::Units::us,
+//     Tools::Time::Units::ms,
+//     Tools::Time::Units::sec,
+//     Tools::Time::Units::min,
+//     Tools::Time::Units::hrs,
+//     Tools::Time::Units::days,
+//     Tools::Time::Units::weeks,
+//     Tools::Time::Units::months
+// > ToolsTypesVariant;
 
 #if __has_include(<cxxabi.h>) && defined(ITANIUM_DMGL)
     #include <cxxabi.h>

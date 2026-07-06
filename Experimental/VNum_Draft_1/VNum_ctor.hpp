@@ -16,8 +16,8 @@ namespace ToolsExperimental {
         if (Num == 0) return 1;
         idx Len = 0;
         using UT = std::make_unsigned_t<I>;
-        UT AbsVal = (Num < 0) ? static_cast<UT>(-(Num + 1)) + 1u
-                               : static_cast<UT>(Num);
+        UT AbsVal = (Num < 0) ? scast<UT>(-(Num + 1)) + 1u
+                               : scast<UT>(Num);
         while (AbsVal > 0) {
             ++Len;
             AbsVal /= 10;
@@ -32,13 +32,13 @@ namespace ToolsExperimental {
         if (Pos > Len) return 0;
 
         using UT = std::make_unsigned_t<I>;
-        UT AbsVal = (Num < 0) ? static_cast<UT>(-(Num + 1)) + 1u
-                               : static_cast<UT>(Num);
+        UT AbsVal = (Num < 0) ? scast<UT>(-(Num + 1)) + 1u
+                               : scast<UT>(Num);
 
         UT Divisor = 1;
         for (idx i = 0; i < Len - Pos; ++i) Divisor *= 10;
 
-        return static_cast<u8>((AbsVal / Divisor) % 10);
+        return scast<u8>((AbsVal / Divisor) % 10);
     }
 
     template <Integer I>
@@ -46,13 +46,13 @@ namespace ToolsExperimental {
         if (Pos == 0) Pos = 1;
 
         using UT = std::make_unsigned_t<I>;
-        UT AbsVal = (Num < 0) ? static_cast<UT>(-(Num + 1)) + 1u
-                               : static_cast<UT>(Num);
+        UT AbsVal = (Num < 0) ? scast<UT>(-(Num + 1)) + 1u
+                               : scast<UT>(Num);
 
         UT Divisor = 1;
         for (idx i = 1; i < Pos; ++i) Divisor *= 10;
 
-        return static_cast<u8>((AbsVal / Divisor) % 10);
+        return scast<u8>((AbsVal / Divisor) % 10);
     }
 
     template <Float F>
@@ -94,7 +94,7 @@ namespace ToolsExperimental::Detail {
     inline vec<u8> FlattenIterable(const Iterable& src) {
         vec<u8> result;
         for (auto val : src) {
-            AppendDigits(result, static_cast<u8>(val));
+            AppendDigits(result, scast<u8>(val));
         }
         return result;
     }
@@ -225,7 +225,7 @@ namespace ToolsExperimental {
                 continue;
             }
             if (c >= '0' && c <= '9') {
-                u8 digit = static_cast<u8>(c - '0');
+                u8 digit = scast<u8>(c - '0');
                 if (InExponent) {
                     Exponent = Exponent * 10 + digit;
                     continue;
@@ -269,7 +269,7 @@ namespace ToolsExperimental {
             if (c == '-' && RawDigits.empty() && this->DataInt.empty()) {
                 this->IsNegative = true;
             } else if (c >= '0' && c <= '9') {
-                RawDigits.push_back(static_cast<u8>(c - '0'));
+                RawDigits.push_back(scast<u8>(c - '0'));
             } else if (c == Comma && !HasComma) {
                 HasComma = true;
                 CommaIdx = RawDigits.size(); // Posisi koma = jumlah digit sebelum koma
@@ -332,7 +332,7 @@ namespace ToolsExperimental {
             if (c == '-' && RawDigits.empty() && this->DataInt.empty()) {
                 this->IsNegative = true;
             } else if (c >= '0' && c <= '9') {
-                RawDigits.push_back(static_cast<u8>(c - '0'));
+                RawDigits.push_back(scast<u8>(c - '0'));
             } else if (c == Comma || c == ScaleDelimiter) {
                 // Abaikan karena posisi koma akan di-override oleh parameter Dec
             }
@@ -547,7 +547,7 @@ namespace ToolsExperimental {
                 // Propagate carry from right to left (LSD to MSD at DataDec)
                 for (idx i = this->DataDec.size(); i > 0 && carry > 0; --i) {
                     i16 sum = this->DataDec[i - 1] + carry;
-                    this->DataDec[i - 1] = static_cast<u8>(sum % 10);
+                    this->DataDec[i - 1] = scast<u8>(sum % 10);
                     carry = sum / 10;
                 }
                 // If there's still a caryy, overflow to Integer! (Example: 0.99 -> 1.0)

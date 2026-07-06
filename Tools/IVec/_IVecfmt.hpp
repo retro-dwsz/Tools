@@ -13,29 +13,27 @@
 #include <fmt/ranges.h>
 
 namespace fmt {
-
-template <typename T>
-struct fmt::formatter<Tools::ivec<T>, char> {
-    constexpr auto parse(format_parse_context& ctx) {
-        return ctx.begin();
-    }
-
-    template <typename FormatContext>
-    [[deprecated("Message")]]
-    auto format(const Tools::ivec<T>& v, FormatContext& ctx) const {
-        auto out = ctx.out();
-        out = fmt::format_to(out, "[");
-
-        for (idx i = 0; i < v.size; ++i) {
-            out = fmt::format_to(out, "{}", v[i]);
-            if (i + 1 < v.size)
-                out = fmt::format_to(out, ", ");
+    template <typename T>
+    struct fmt::formatter<Tools::ivec<T>, char> {
+        constexpr auto parse(format_parse_context& ctx) {
+            return ctx.begin();
         }
 
-        return fmt::format_to(out, "]");
-    }
-};
+        template <typename FormatContext>
+        // [[deprecated("...")]]
+        auto format(const Tools::ivec<T>& v, FormatContext& ctx) const {
+            auto out = ctx.out();
+            out = fmt::format_to(out, "[");
 
+            for (idx i = 0; i < v.size; ++i) {
+                out = fmt::format_to(out, "{}", v[i]);
+                if (i + 1 < v.size)
+                    out = fmt::format_to(out, ", ");
+            }
+
+            return fmt::format_to(out, "]");
+        }
+    };
 }
 
 #endif

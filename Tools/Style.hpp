@@ -55,12 +55,12 @@ namespace Tools::Style {
     // Return new
     Color RandomColor(u8 Min, u8 Max) {
         CheckRange(Min, Max);
-        auto C = RandomNumsVI(3, Min, Max)
-            | std::views::transform(
-            [](const auto& n){
-                return scast<u8>(n);
-            })
-            | std::ranges::to<vec>();
+        const vec Src = RandomNumsVI(3, Min, Max);
+        vec<u8> C(Src.size());
+
+        std::ranges::transform(Src, C.begin(), [](const auto& n){
+            return scast<u8>(n);
+        });
 
         return Color(C[0], C[1], C[2]);
     };

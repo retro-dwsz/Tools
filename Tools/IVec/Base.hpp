@@ -167,6 +167,14 @@ class ivec {
         return span<const T>(IVecData, IVecSize);
     }
 
+    /* Auto converter to std::vector */
+    operator vec<T>() noexcept {
+        return vec<T>(IVecData + IVecSize);
+    }
+    operator vec<const T>() const noexcept {
+        return vec<const T>(IVecData + IVecSize);
+    }
+
     T* toCArr();         // To C-Style array
 
     /** Iterators **/

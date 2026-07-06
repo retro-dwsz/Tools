@@ -27,7 +27,6 @@
     |`Tools/Linking.hpp`        | Linking utility to dynamic linked (.dll) using windows API    |
     |`Tools/OS.hpp`             | Some utilities using OS APIs                                  |
     |`Tools/Random.hpp`         | Random Number generator                                       |
-    <!-- |`Tools/RandomHW.hpp`       | Hardware-level random generator (x86 only)                    | -->
     |`Tools/Randomizer.hpp`     | Stuff to make random number (used by Random and RandomHW)     |
     |`Tools/Rounding.hpp`       | Python-like rounding utility                                  |
     |`Tools/Style.hpp`          | Text styler for str                                           |
