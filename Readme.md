@@ -68,7 +68,7 @@
     | `/Types/Memory.hpp`              | Smart pointer aliases                |
 
 - ### Folder `Tools/IVec/*`
-    |             File             |                           What is this?                            |
+    <!-- |             File             |                           What is this?                            |
     |----------------------------- |--------------------------------------------------------------------|
     |`/IVec/_IVec.hpp`             | All include packed                                                 |
     |`/IVec/_IVecfmt.hpp`          | Formatter for {fmt} [deprecated, this thing has already iterators] |
@@ -80,7 +80,53 @@
     |`/IVec/Data.hpp`              | Return pointer data                                                |
     |`/IVec/Getset.hpp`            | Getter and setter functions                                        |
     |`/IVec/Iter.hpp`              | Iterators functions                                                |
-    |`/IVec/Legacy.hpp`            | Legacy functions with vector-like dictions                         |
+    |`/IVec/Legacy.hpp`            | Legacy functions with vector-like dictions                         | -->
+
+    |                  File                 |                           What is this?                           |
+    |---------------------------------------|-------------------------------------------------------------------|
+    | `IVec.hpp`                            |   Include entry point                                             |
+    | `IVec/Base.Master.hpp`                |   All modules inlcuded                                            |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Base.Class.hpp`                 |   Base class                                                      |
+    |                                       |
+    | `IVec/Init.Ctor.hpp`                  |   Initializers for IVec                                           |
+    | `IVec/Init.Dtor.hpp`                  |   Destructors for IVec                                            |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Core.Data.hpp`                  |   Get Data about IVec                                             |
+    | `IVec/Core.State.hpp`                 |   Get current state                                               |
+    | `IVec/Core.Resize.hpp`                |   Makes you able to resize and reserve                            |
+    | `IVec/Core.Append.hpp`                |   Append an item at last index                                    |
+    | `IVec/Core.Append.Idx.hpp`            |   Append an item at specific index                                |
+    | `IVec/Core.Emplace.hpp`               |   Construct on-fly and append an item at last index               |
+    | `IVec/Core.Emplace.Idx.hpp`           |   Construct on-fly and append an item at specific index           |
+    | `IVec/Core.Extend.hpp`                |   Extend (a.k.a "Concat") current IVec with other iterables       |
+    |                                       |
+    | `IVec/Access.Getset.hpp`              |   Common Getter and Setter utility                                |
+    | `IVec/Access.Pop.hpp`                 |   Pop first/last/specific index                                   |
+    | `IVec/Access.Elements.hpp`            |   Getter for first and last index                                 |
+    | `IVec/Access.Iter.hpp`                |   Get iterator for current IVec                                   |
+    | `IVec/Access.Ref.hpp`                 |   Get reference first or last index of current IVec               |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Opr.Dunder.hpp`                 |   Python dunder like functions                                    |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Items.Orders.hpp`               |   Sorting, shuffling, and reversing operations                    |
+    | `IVec/Items.Query.hpp`                |   Deduplication and bulk reassignment operations                  |
+    | `IVec/Items.Find.hpp`                 |   Linear search utilities                                         |
+    | `IVec/Items.Slice.hpp`                |   Sub-range extraction operations                                 |
+    | `IVec/Items.Erase.Idx.hpp`            |   Modern Index based element eraser                               |
+    | `IVec/Items.Erase.Ptr.hpp`            |   Legacy Pointer based element eraser                             |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Functional.hpp`                 |   Python-style functional transformations                         |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Converter.hpp`                  |   String formatting and generic container conversion              |
+    | `IVec/Converter.Opr.hpp`              |   Generic container conversion via () operator                    |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Legacy.hpp`                     |   STL-compatible and legacy API aliases                           |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Format.std.hpp`                 |   Formatter for std::format                                       |
+    | `IVec/Format.fmt.hpp`                 |   Formatter for fmt::format                                       |
+    |  ~                                    |   ~                                                               |
+    | `IVec/Base.RangesQualification.hpp`   |   Compile-time C++20/26 ranges concept verification               |
 
 - ### Folder `Tools/OS/*`
     |           File          |         What is this?      |
