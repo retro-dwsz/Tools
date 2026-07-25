@@ -7,11 +7,10 @@
 #include "../Casting.hpp"
 #include "../Rounding.hpp"
 #include "../Randomizer.hpp"
-#include <print>
+#include "../Style.hpp"
 
 #define sthread static thread_local
 
-#include "../Style.hpp"
 namespace Tools::Random {
     const str Warning = std::format(
         "Unusual number for indexes detected, proceed with cauntion" /* , 0xF84234 */
@@ -24,9 +23,9 @@ namespace Tools::Random {
     void WarningCount(const idx& SubVectorCount, const idx& NCount){
         if(SubVectorCount > INT32_MAX || NCount > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
-            std::println("{}", "!!");
+            printf("%s", Warning.data());
             #else
-            std::println("{}", Warning);
+            printf("%s", Warning.data());
             #endif
         }
     }

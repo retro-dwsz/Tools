@@ -8,7 +8,19 @@
 #include "Common.hpp"
 
 #include "Int.hpp"
+#include "Int.Fast.hpp"
+#include "Int.Atomic.hpp"
+#include "Int.Atomic.Fast.hpp"
+#include "Int.Least.hpp"
+#include "Int.Atomic.Least.hpp"
+
 #include "UInt.hpp"
+#include "UInt.Fast.hpp"
+#include "UInt.Atomic.hpp"
+#include "UInt.Atomic.Fast.hpp"
+#include "UInt.Least.hpp"
+#include "UInt.Atomic.Least.hpp"
+
 #include "Float.hpp"
 
 #include "String.hpp"
@@ -42,25 +54,64 @@ std::pair<T, T> CheckRangeR(T Min, T Max) {
 template <typename T1, typename T2>
 constexpr bool TypeCompare = std::is_same_v<T1, T2>;
 
+// #define MakeAliasFunction(Original, Aliased)    \
+//                                                 \
+// template <typename... Args>                     \
+// decltype(auto) Aliased(Args&&... args) {        \
+//     return std::invoke(                         \
+//         Original,                               \
+//         std::forward<Args>(args)...             \
+//     );                                          \
+// }
 
-#define MakeAliasFunction(Original, Aliased)    \
-                                                \
-template <typename... Args>                     \
-decltype(auto) Aliased(Args&&... args) {        \
-    return std::invoke(                         \
-        Original,                               \
-        std::forward<Args>(args)...             \
-    );                                          \
-}
+// using ai8        = std::atomic_int8_t;
+// using ai16       = std::atomic_int16_t;
+// using ai32       = std::atomic_int32_t;
+// using ai64       = std::atomic_int64_t;
+
+// using au8        = std::atomic_uint8_t;
+// using au16       = std::atomic_uint16_t;
+// using au32       = std::atomic_uint32_t;
+// using au64       = std::atomic_uint64_t;
 
 /* All types in Tools/Types/#.hpp only */
-template <typename T1, typename T2, idx S>
-concept ToolsTypes = OneOf<
+template <typename T, typename T1, typename T2, idx S>
+concept ToolsTypes = OneOf<T,
     /* Signed Integers */
     i8, i16, i32, i64, sidx,
 
+    /* Fast Signed Integers */
+    fi8, fi16, fi32, fi64,
+
+    /* Atomic Signed Integers */
+    ai8, ai16, ai32, ai64,
+
+    /* Atomic Fast Signed Integers */
+    afi8, afi16, afi32, afi64,
+
+    /* Signed Integer with "at least" size */
+    il8, il16, il32, il64,
+
+    /* Atomic Signed Integer with "at least" size */
+    ail8, ail16, ail32, ail64,
+
     /* Unsigned Integers */
     u8, u16, u32, u64, idx,
+
+    /* Fast Unsigned Integers */
+    fu8, fu16, fu32, fu64,
+
+    /* Atomic Unsigned Integers */
+    au8, au16, au32, au64,
+
+    /* Atomic Fast Unsigned Integers */
+    afu8, afu16, afu32, afu64,
+
+    /* Unsiged Signed Integer with "at least" size */
+    ul8, ul16, ul32, ul64,
+
+    /* Atomic Unsiged Signed Integer with "at least" size */
+    aul8, aul16, aul32, aul64,
 
     /* Floating Points */
     f32, f64, fld,

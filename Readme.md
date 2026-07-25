@@ -19,21 +19,21 @@
     |            Files          |                         What is this?                         |
     |---------------------------|---------------------------------------------------------------|
     |`Tools/Casting.hpp`        | Type Casting aliases                                          |
-    |`Tools/Time.hpp`           | Time & Clock utilities                                        |
     |`Tools/Edges.hpp`          | Min/max getter for types                                      |
     |`Tools/Files.hpp`          | I/O files utility                                             |
     |`Tools/FormatNumber.hpp`   | Number formatter                                              |
     |`Tools/IVec.hpp`           | "Improved Vector", custom made container                      |
     |`Tools/Linking.hpp`        | Linking utility to dynamic linked (.dll) using windows API    |
     |`Tools/OS.hpp`             | Some utilities using OS APIs                                  |
+    |`Tools/PrintHeader.hpp`    | Generate & Print header-like string                           |
+    |`Tools/PStr.hpp`           | Class wrapper for pointer string                              |
     |`Tools/Random.hpp`         | Random Number generator                                       |
     |`Tools/Randomizer.hpp`     | Stuff to make random number (used by Random and RandomHW)     |
     |`Tools/Rounding.hpp`       | Python-like rounding utility                                  |
     |`Tools/Style.hpp`          | Text styler for str                                           |
     |`Tools/StyleW.hpp`         | Text styler for wstr                                          |
+    |`Tools/Time.hpp`           | Time & Clock utilities                                        |
     |`Tools/Types.hpp`          | Type aliases                                                  |
-    |`Tools/Vector.hpp`         | Pyhton-like functions for vector                              |
-    |`Tools/VectorSlice.hpp`    | Vector slicing function                                       |
     |`Tools/OS.hpp`             | OS (Windows, Linux, and MacOS) API utility                    |
     |`Tools/Version.hpp`        | Version infos of this library                                 |
 
@@ -45,21 +45,27 @@
     |`Tools/IVec/*`         | Improved vector implementations                   |
     |`Tools/OS/*`           | Some utilities using OS APIs implementations      |
     |`Tools/Random/*`       | Random number implementations                     |
-    <!-- |`Tools/RandomHW/*`     | Hardware-level random number implementations      | -->
     |`Tools/Types/*`        | Types aliased "concept" + "using" implementations |
     |`Tools/Vector/*`       | Common operations for Vector implementations      |
+    <!-- |`Tools/RandomHW/*`     | Hardware-level random number implementations      | -->
 
 - ### Folder `Tools/Types/*`
-    |               Files              |           What is this?            |
-    |----------------------------------|------------------------------------|
-    | `/Types/Clock.hpp`         | Clocks & Units aliases             |
-    | `/Types/Containers.hpp`    | Containers aliases                 |
-    | `/Types/Int.hpp`           | Signed interger aliases            |
-    | `/Types/UInt.hpp`          | Unsigned integer aliases           |
-    | `/Types/Float.hpp`         | Floating aliases                   |
-    | `/Types/Pointer.hpp`       | Pointer aliases (not recommended)  |
-    | `/Types/String.hpp`        | String type aliases                |
-    | `/Types/Memory.hpp`        | Smart pointer aliases              |
+    |               Files              |            What is this?             |
+    |----------------------------------|--------------------------------------|
+    | `/Types/Clock.hpp`               | Clocks & Units aliases               |
+    | `/Types/Containers.hpp`          | Containers aliases                   |
+    | `/Types/Int.hpp`                 | Signed interger aliases              |
+    | `/Types/Int.Fast.hpp`            | Signed fast interger aliases         |
+    | `/Types/Int.Atomic.hpp`          | Signed atomic interger aliases       |
+    | `/Types/Int.Atomic.Fast.hpp`     | Signed atomic fast interger aliases  |
+    | `/Types/UInt.hpp`                | Unsigned integer aliases             |
+    | `/Types/UInt.Fast.hpp`           | Unsigned fast interger aliases       |
+    | `/Types/UInt.Atomic.hpp`         | Unsigned atomic interger aliases     |
+    | `/Types/UInt.Atomic.Fast.hpp`    | Unsigned atomic fast interger aliases|
+    | `/Types/Float.hpp`               | Floating aliases                     |
+    | `/Types/Pointer.hpp`             | Pointer aliases (not recommended)    |
+    | `/Types/String.hpp`              | String type aliases                  |
+    | `/Types/Memory.hpp`              | Smart pointer aliases                |
 
 - ### Folder `Tools/IVec/*`
     |             File             |                           What is this?                            |
@@ -157,6 +163,44 @@ Types aliasing to make you less typing just for data types
 |`int64_t` | `i64`   | `uint64_t`| `u64`   |              |         |
 |`ssize_t` | `sidx`  | `size_t`  | `idx`   |              |         |
 
+## Fast, Atomic, AtomicFast Integer and Unsigned Integer
+|     Original   | Aliased |        Original       | Aliased |
+|----------------|---------|-----------------------|---------|
+|`int_fast8_t`   | `fi8`   |`std::atomic_int8_t`   | `ai8`   |
+|`int_fast16_t`  | `fi16`  |`std::atomic_int16_t`  | `ai16`  |
+|`int_fast32_t`  | `fi32`  |`std::atomic_int32_t`  | `ai32`  |
+|`int_fast64_t`  | `fi64`  |`std::atomic_int64_t`  | `ai64`  |
+|`uint_fast8_t`  | `fi8`   |`std::atomic_uint8_t`  | `ai8`   |
+|`uint_fast16_t` | `fi16`  |`std::atomic_uint16_t` | `ai16`  |
+|`uint_fast32_t` | `fi32`  |`std::atomic_uint32_t` | `ai32`  |
+|`uint_fast64_t` | `fi64`  |`std::atomic_uint64_t` | `ai64`  |
+
+
+|           Original         | Aliased  |
+|----------------------------|----------|
+|`std::atomic_int_fast8_t`   | `afi8`   |
+|`std::atomic_int_fast16_t`  | `afi16`  |
+|`std::atomic_int_fast32_t`  | `afi32`  |
+|`std::atomic_int_fast64_t`  | `afi64`  |
+|`std::atomic_uint_fast8_t`  | `afi8`   |
+|`std::atomic_uint_fast16_t` | `afi16`  |
+|`std::atomic_uint_fast32_t` | `afi32`  |
+|`std::atomic_uint_fast64_t` | `afi64`  |
+
+## "At least" and "Atomic At least" Integer and Unsigned Integer
+
+|     Original     | Aliased |           Original            | Aliased |
+|------------------|---------|-------------------------------|---------|
+| `int_least8_t`   | `il8`   | `std::atomic_int_least8_t`    | `ail8`  |
+| `int_least16_t`  | `il16`  | `std::atomic_int_least16_t`   | `ail16` |
+| `int_least32_t`  | `il32`  | `std::atomic_int_least32_t`   | `ail32` |
+| `int_least64_t`  | `il64`  | `std::atomic_int_least64_t`   | `ail64` |
+| `uint_least8_t`  | `ul8`   | `std::atomic_uint_least8_t`   | `aul8`  |
+| `uint_least16_t` | `ul16`  | `std::atomic_uint_least16_t`  | `aul16` |
+| `uint_least32_t` | `ul32`  | `std::atomic_uint_least32_t`  | `aul32` |
+| `uint_least64_t` | `ul64`  | `std::atomic_uint_least64_t`  | `aul64` |
+
+
 ### C & C++ String
 |      Original     |  Aliased |       Original       |  Aliased  |
 |-------------------|----------|----------------------|-----------|
@@ -225,10 +269,10 @@ Another type alias that you and I may not use often
 | `Nx64`        | `i64`, `f64`                                                                                                                                  |
 | `Number`      | `i8`, `i16`, `i32`, `i64`, `idx`, `u8`, `u16`, `u32`, `u64`, `sidx`, `f32`, `f64`, `fld`                                                      |
 | `Integer`     | `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`                                                                                          |
-| `SignedInt`   | `i8`, `i16`, `i32`, `i64`                                                                                                                     |
-| `UnsignedInt` | `u8`, `u16`, `u32`, `u64`                                                                                                                     |
+| `SignedInt`   | `i8`, `i16`, `i32`, `i64`, `fi8`, `fi16`, `fi32`, `fi64`, `ai8`, `ai16`, `ai32`, `ai64`, `afi8`, `afi16`, `afi32`, `afi64`                    |
+| `UnsignedInt` | `u8`, `u16`, `u32`, `u64`, `fu8`, `fu16`, `fu32`, `fu64`, `au8`, `au16`, `au32`, `au64`, `afu8`, `afu16`, `afu32`, `afu64`                    |
 | `NtvInteger`  | `i32`, `i64`                                                                                                                                  |
-| `NtvFloat`    | `i32`, `i64`                                                                                                                                  |
+| `NtvFloat`    | `f32`, `f64`                                                                                                                                  |
 | `Float`       | `f32`, `f64`, `fld`                                                                                                                           |
 | `CSize`       | `idx`, `sidx`                                                                                                                                 |
 | `Number`      | `i8`, `i16`, `i32`, `i64`, `idx`, `u8`, `u16`, `u32`, `u64`, `sidx`, `f32`, `f64`, `fld`                                                      |
@@ -245,6 +289,13 @@ Another type alias that you and I may not use often
 | `Pointer`     | `ptr<T>`, `ptrcd<T>`, `cptr<T>`, `cptrcd<T>`, `i32p`, `u32p`, `uptr<T>`, `sptr<T>`, `wptr<T>`                                                 |
 | `CPtr`        | `ptr<T>`, `ptrcd<T>`, `cptr<T>`, `cptrcd<T>`, `i32p`, `u32p`                                                                                  |
 | `CPPStr`      | `uptr<T>`, `sptr<T>`, `wptr<T>`                                                                                                               |
+| `ExtNum`      | `fi8`, `fi16`, `fi32`, `fi64`, `ai8`, `ai16`, `ai32`, `ai64`, `afi8`, `afi16`, `afi32`, `afi64`, `fu8`, `fu16`, `fu32`, `fu64`, `au8`, `au16`, `au32`, `au64`, `afu8`, `afu16`, `afu32`, `afu64`|
+| `FInt`        | `fi8`, `fi16`, `fi32`, `fi64`                                                                                                                 |
+| `AInt`        | `ai8`, `ai16`, `ai32`, `ai64`                                                                                                                 |
+| `AFInt`       | `afi8`, `afi16`, `afi32`, `afi64`                                                                                                             |
+| `FUInt`       | `fu8`, `fu16`, `fu32`, `fu64`                                                                                                                 |
+| `AUInt`       | `au8`, `au16`, `au32`, `au64`                                                                                                                 |
+| `AFUInt`      | `afu8`, `afu16`, `afu32`, `afu64`                                                                                                             |
 
 An example of implementation:
 ```cpp
@@ -451,308 +502,1647 @@ Example:
 # `VI`. Lib `Tools.IVec`
 
 IVec or "*I*mproved *Vec*tor" is a container just like `std::vector`, but with better choice of diction, for example: `push_back` is now `append` (just like Python).
-All description is already in `IVec/Vase.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
+All description is already in `IVec/*.hpp`, descriptions are intentionally made short and simple, so even beginners can understand it.
 
-- ### API  Codes
+### Master file
+
+- IVec.hpp
+
+    Main entry point for the Tools::ivec<T> container library.
+
+- IVec/Base.Master.hpp
+    * Master aggregation header for the Tools::ivec<T> container.
+    * This file serves as the single entry point for the ivec implementation. It includes all segmented module headers in the correct dependency order. Users should typically include "IVec.hpp" which transitively includes this file.
+    * Naming Conventions
+        - `-Inl` suffix: In-place mutation (modifies the container directly).       Methods without this suffix return a new modified copy.
+        - `r-` prefix / `r` suffix: Reverse operation (e.g., rsort).
+        - `ref-` prefix: Returns a reference instead of a copy.
+        - `c-` prefix: Explicit const version (e.g., cbegin, crefbegin).
+
+    * Note for formatter: Formatter headers (Format.std.hpp, Format.fmt.hpp) are intentionally **NOT included** here to avoid SFINAE conflicts with `<fmt/ranges.h>`. Include them explicitly in your translation unit **only** when needed.
+
+
+### Base class
+
+- IVec/Base.Class.hpp
+
+    ### Note
+    I've reworked `Tools.IVec` because old version is horrobly terrible even for some simple tasks. Yes, I know what are ye thinking. So in this new version, I reworked everything from base class typing into segmented typing. Why? Because I hate my self and C++ it self.
+
+    > ### Brief:
+    > > - Primary class declaration for `Tools::ivec<T>` (declarations only).
+    >
+    > ### Details:
+    > > - This header contains the complete public interface declaration for the ivec<T> container template. All method implementations are segmented into dedicated headers and aggregated via Base.Master.hpp.
+    > > - This file serves as the canonical reference for the full API surface. Developers should consult this file to discover available methods, then refer to the corresponding implementation header for details.
+
     ```cpp
-    template <typename T>
-    class ivec {
-        private:
+    namespace Tools {
+        template <typename T>
+        class ivec {
+            private:
+            T*  m_Data;
+            idx m_Size;
+            idx m_Capacity;
 
-        T* IVecData;
+            public:
+            /** [Init] Constructors **/
+            ivec() noexcept;
+            ivec(initl<T> Data);
+            ivec(const ivec& Data);
+            ivec(ivec&& Data) noexcept;
+            explicit ivec(const vec<T>& Data);
+            explicit ivec(const span<const T>& Data);
 
-        /** Helper **/
-        inline idx Normalize(i64 i) ;
-        idx IVecSize;
-        idx IVecCapacity;
+            /** [Init] DeConstructors **/
+            ~ivec() noexcept;
 
-        public:
+            /** [Core] Data stuffs **/
+            [[nodiscard]] T* data() noexcept;
+            [[nodiscard]] const T* data() const noexcept;
+            [[nodiscard]] idx size() const noexcept;
+            [[nodiscard]] idx capacity() const noexcept;
+            [[nodiscard]] u64 memory() const noexcept;
 
-        /** Data features **/
-        T* data();
-        idx size();
-        idx capacity();
+            /** [Core] Resize and reserve with/for stuffs **/
+            void resize(idx Size, const T& Fill = T{});
+            void reserve(idx Size);
 
-        /** Init features **/
-        // Default constructor
-        ivec();
-        // Constructors
-        ivec(const initl<T> Data);
-        ivec(const vec<T>& Data);
-        ivec(const ivec& other);
-        ivec(ivec&& other);
+            /** [Core] Append at end **/
+            void append(const T& Element);
+            void append(T&& Element);
 
-        // DeConstructors
-        ~ivec();
+            /** [Core] Append at specific index **/
+            void appendFirst(const T& Item);
+            void appendAt(const T& Item, idx At);
 
-        /** Basic Functions **/
-        void reserve(const idx Size);
-        void resize(const idx Size, const T& fill = T{});
+            /** [Core] Emplace at end **/
+            template<typename... Args>
+            void emplace(Args&&... Items);
 
-        void append(const T& Element);
-        void append(const T&& Element);
-        void append(const ivec<T>& iv);
-        void append(const vec<T>& v);
+            /** [Core] Emplace at specific index **/
+            template<typename... Args>
+            void emplaceFront(Args&&... Items);
+            template<typename... Args>
+            void emplaceAt(idx At, Args&&... Items);
 
-        void extend(const ivec<T>& v);
-        void extend(const vec<T>& v);
+            /** [Core] Extend this with other iterables **/
+            void extend(std::span<const T> Data);
 
-        idx GetSize() const noexcept;
+            /** [Core] State **/
+            void clear();
+            [[nodiscard]] bool isEmpty() const noexcept;
 
-        /** Getter and setter **/
-        T pop(const idx& Index);
-        T& operator[](idx Index);
+            /** [Access] Common getter **/
+            [[nodiscard]] T& operator[](idx Index) noexcept;
+            [[nodiscard]] const T& operator[](idx Index) const noexcept;
+            [[nodiscard]] T& at(const idx& Index);
+            [[nodiscard]] T& at(const idx& Index) const;
 
-        const T& operator[](idx Index) const;
-        ivec<T>& operator=(const ivec& Other);
+            /** [Access] Common setter **/
+            [[nodiscard]] ivec& operator=(const ivec& Other);
 
-        /** Advanced **/
-        void sliceInl(i64 x, i64 y);
-        void sliceIln(i64 n);
-        ivec<T> slice(i64 x, i64 y);
-        ivec<T> slice(i64 n);
+            /** [Access] Pop front/back/specific index **/
+            [[nodiscard]] T pop(const idx& Index);
+            [[nodiscard]] T popFirst();
+            [[nodiscard]] T popLast();
 
-        void clear();
-        bool isEmpty();
+            /** [Access] Specific Element Accessors **/
+            [[nodiscard]] T first() const noexcept;
+            [[nodiscard]] T last() const noexcept;
+            [[nodiscard]] T first(idx n) const noexcept;
+            [[nodiscard]] T last(idx n) const noexcept;
+            [[nodiscard]] T front() const noexcept;
+            [[nodiscard]] T back() const noexcept;
 
-        void appendFirst(const T& Element);
-        void appendAt(const T& Element, idx At);
-        bool contains(const T& Element);
-        idx find(const T& Element);
-        idx findFreq(const T& Element);
-        pair<idx, vec<T>> findAll(const T& Element);
+            /** [Access] Standard Iterators (Pointer-based) **/
+            [[nodiscard]] T* begin() noexcept;
+            [[nodiscard]] const T* begin() const noexcept;
+            [[nodiscard]] const T* cbegin() const noexcept;
+            [[nodiscard]] T* end() noexcept;
+            [[nodiscard]] const T* end() const noexcept;
+            [[nodiscard]] const T* cend() const noexcept;
 
-        /* Orders */
-        ivec<T> shuffle();
-        void shuffleInl();
+            /** [Access] Reference Accessors with bounds check **/
+            [[nodiscard]] T& refbegin();
+            [[nodiscard]] const T& refbegin() const;
+            [[nodiscard]] const T& crefbegin() const;
+            [[nodiscard]] T& refend();
+            [[nodiscard]] const T& refend() const;
+            [[nodiscard]] const T& crefend() const;
 
-        ivec<T> sort();
-        void sortInl();
+            /** [Opr] Dunders **/
+            [[nodiscard]] /* __add__ */ ivec operator+(const ivec& Other);
+            [[nodiscard]] /* __mul__ */ ivec operator*(idx Count);
+            [[nodiscard]] /* __eq__  */ bool operator==(const ivec& Other) const;
 
-        ivec<T> rsort();
-        void rsortInl();
+            /** [Items] Orders **/
+            [[nodiscard]]   ivec shuffle();
+            [[nodiscard]]   ivec Sort();
+            [[nodiscard]]   ivec rSort();
+            [[nodiscard]]   ivec Reverse();
+                            void ShuffleInl();
+                            void SortInl();
+                            void rSortInl();
+                            void ReverseInl();
 
-        ivec<T> reverse();
-        void reverseInl();
+            /** [Items] Query **/
+            [[nodiscard]]   ivec Uniques(idx Max = 1);
+            [[nodiscard]]   ivec Reassign(span<const T> Data, idx Start);
+                            void UniquesInl(idx Max = 1);
+                            void ReassignInl(span<const T> Data, idx Start);
 
-        ivec<T> erase(T* pos);
-        void eraseInl(T* pos);
+            /** [Items] Find utils **/
+            [[nodiscard]] bool Contains(const T& Item) noexcept;
+            [[nodiscard]] idx Find(const T& Item) noexcept;
+            [[nodiscard]] idx FindFreq(const T& Item) noexcept;
+            [[nodiscard]] pair<idx, vec<T>> FindAll(const T& Item) noexcept;
 
-        ivec<T> erase(T* begin, T* end);
-        void eraseInl(T* begin, T* end);
+            /** [Items] Slicers **/
+            [[nodiscard]] ivec Slice(i64 From, i64 To);
+            [[nodiscard]] ivec Slice(i64 To);
+            void SliceInl(i64 From, i64 To);
+            void SliceInl(i64 To);
 
-        ivec<T> uniques(idx n = 1);
-        void uniquesInl(idx n = 1);
+            /** [Items] Eraser return new by index **/
+            [[nodiscard]] ivec Erase(idx Pos);
+            [[nodiscard]] ivec Erase(idx From, idx To);
 
-        T popFirst();
-        T popLast();
+            /** [Items] Eraser do inline by pointer **/
+            void EraseInl(idx Pos);
+            void EraseInl(idx From, idx To);
 
-        u64 memory();
+            /** [Items] Eraser return new by pointer **/
+            [[nodiscard]] ivec erase(T* pos);
+            [[nodiscard]] ivec erase(T* begin, T* end);
 
-        template<typename... Args>
-        void emplace(Args&&... args);
+            /** [Items] Eraser fo inline by pointer **/
+            void eraseInl(T* pos);
+            void eraseInl(T* begin, T* end);
 
-        template<typename... Args>
-        void emplaceFront(Args&&... args);
+            /** [Functional] Generate items by lambda **/
+            template <typename Fn>
+            requires requires(Fn&& f, const T& x) { f(x); }
+            [[nodiscard]] auto Map(Fn&& Func) const -> ivec<decltype(Func(std::declval<const T&>()))>;
 
-        template<typename... Args>
-        void emplaceAt(Args&&... args, idx n);
+            template <typename Fn>
+            requires std::predicate<Fn, const T&>
+            [[nodiscard]] ivec Filter(Fn&& Pred) const;
 
-        str fstr();
+            /** [Converter] Convert to common objects **/
+            [[nodiscard]]   str fstr() const;
+            [[nodiscard]]   str join(strview Delim = ", ") const;
+                            void toCArr(span<T> Destination) const;
+            template <template<typename, typename...> class Container>
+            [[nodiscard]]   auto to() const;
 
-        /** Iterators **/
-        T first();
-        T front();
-        T* begin();
-        const T* cbegin();
-        T& refbegin();
+            /* [Converter.Opr] Auto converter to std::span & std::vector by operator */
+            explicit operator span<T>() const noexcept;
+            explicit operator span<const T>() const noexcept;
+            explicit operator vec<T>() const noexcept ;
+            explicit operator vec<const T>() const noexcept;
 
-        T last();
-        T back();
-        T* end();
-        const T* cend();
-        T& refend();
-
-        /** Conversion **/
-        vec<T> toVector();
-        span<T> toSpan();
-        template <idx S>
-        arr<T, S> toArray();
-
-        /* Auto Converter to std::span */
-        operator span<T>() noexcept;
-        operator span<const T>() const noexcept;
-
-        T* toCArr();
-
-        /* Legacy functions */
-        void push_back(const T& Element);
-        void push_front(const T& Element);
-
-        T at(const idx Index);
-
-        void insert(const ivec<T>& v);
-        void insert(const vec<T>& v);
-        void insert(const T& Element, idx At);
-        void insert(const T* A, const T* B);
-    };
+            /* Legacy functions */
+            void push_back(const T& Item);
+            void push_front(const T& Item);
+            void insert(ivec &&v);
+            void insert(span<const T>& v);
+            void insert(const T& Item, idx At);
+            void insert(const T* From, const T* To);
+        };
+    }
     ```
 
-    Yes, the function name can already tell itself what are they doing. But here's the breakdown if you want it anyway
+### Inits
 
-### Breakdown
-Let's start with the private functions
+- IVec/Init.Ctor.hpp
 
-1. `IVec_Data` Current array
-2. `IVec_Size` Current size
-3. `IVec_Capacity` Current capacity
-4. `Normalize` Normalizer `i64` to `idx`
-
-And then public, we have a lot of sections
-
-### 1. Data utility
-1. `data()` returns current array (raw, C-Style array)
-2. `size()` returns current size
-3. `capacity()` return current capacity
-
-    > ### Warning
-    > If you think size is the same as capacity, then no, size is current element count, capacity is current element count + reserved slots. So size and capacity will not alway be the same.
-
-
-### 2. Constructors
-
-4. `ivec();` The default constructor with nothing in it
-5. (a) `ivec(const initl<T> Data);` Constructor to make `ivec a{1.68, 2.71, 3.14}` possible
-5. (b) `ivec(const span<const T>& Data);` Construct with `std::span` elegantly
-6. `ivec(const vec<T>& Data);` Constructor to auto convert `std::vector` to `Tools::ivec`
-7. `ivec(const ivec& other);` Same as 3rd constructor but used to copy other ivec
-8. `ivec(ivec&& other);` Same as 4th but you write it inplace
-
-### 3. Destructor
-
-9. `~ivec()` to remove everything
-
-### 4. Basic functions
-
-10. `void reserve(const idx Size);` Reserve slots, this can reduce runtime because it calls the `syscall` once
-11. `void resize(const idx Size, const T& fill = T{});` Resize `size` and fill it with 1 specified value
-12. `void append(const T& Element);` Push elements to back
-13. `void append(const T&& Element);` Push elements to back by rvalue
-14. `void append(const ivec<T>& iv);` Append `ivec` to current `ivec`, example `ivec{1, 2, 3}.append(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, ivec{4, 5, 6}}`
-15. `void append(const vec<T>& v);` Append `vec` to current `ivec`, example is same as 11th
-
-16. `void extend(const ivec<T>& v);` Extend with `ivec` to current `ivec`, example `ivec a{1, 2, 3}.extend(ivec{4, 5, 6})` will result `ivec a{1, 2, 3, 4, 5, 6}`
-17. `void extend(const vec<T>& v);` Extend with `vec` to current `ivec`, example is the same as 13th
-18. `idx GetSize() const noexcept;` Basically same as `std::vector<T>::size()` and `Tools::ivec<T>::size()`
-
-### 5. Common Advanced functions
-
-19. `T pop(const idx& Index);` To get and remove immediately selected index
-20. `T& operator[](idx Index);` To get selected index with the `[]` thing
-21. `const T& operator[](idx Index) const;` Same as before, but make it constant
-22. `ivec<T>& operator=(const ivec& Other);` Setter to selected index
-
-
-### 6. Advanced functions
-
->
-> ### Note
-> Default function is return new, suffix -`Inl` indicates inline
->
-
-23. `void sliceInl(i64 x, i64 y);` Slice inlinely from range `x..y`
-24. `void sliceInl(i64 n);` Slice `0..n` or `n..Size`. Positive will iterate from 0 to `n` (forward), negative will iterate from `ivec_size` to `n` (backward)
-25. `ivec<T> slice(i64 x, i64 y);` Same as 20, but return new ivec
-26. `ivec<T> slice(i64 n);` Same as 21, but return new ivec
-27. `void clear();` To nuke everything inside
-28. `bool isEmpty();` Check is this thing is empty or no
-
-29. `void appendFirst(const T& Element);` Append an element at 1st index
-30. `void appendAt(const T& Element, idx At);` Append an element at specified index
-31. `bool contains(const T& Element);` Check if this ivec contains specific Element
-32. `idx find(const T& Element);` Find index of an element
-33. `idx findFreq(const T& Element);` Find frequency of selected element
-34. `pair<idx, vec<T>> findAll(const T& Element);` Find an element and check in which indexes appeared
-
-### 7. Orders & Find
-
-35. `ivec<T> shuffle();` Shuffle current ivec, then return new
-36. `void shuffleInl();` Shuffle current ivec inlinely
-37. `ivec<T> sort();` Sort current ivec, then return new
-38. `void sortInl();` Sort current ivec inlinely
-39. `ivec<T> rsort();` Sort, then reverse current ivec, then return new
-40. `void rsortInl();` Sort, then reverse current ivec inlinely
-41. `ivec<T> reverse();` Reverse current ivec, then return new
-42. `void reverseInl();` Reverse current ivec inlinely
-43. `ivec<T> erase(idx pos);` (*) Erase specific position (unlike pop, this one is not return selected index(es)), then return new
-44. `void eraseInl(idx pos);` (*) Erase specific position inlinely
-45. `ivec<T> erase(idx begin, idx end);` (*) Erase specific range, then return new
-46. `void eraseInl(idx begin, idx end);` (*) Erase specific range inlinely
-47. `ivec<T> uniques(idx n = 1);` Make elements appeared maximum `n` times, then return new; `n=1` means everything only appear once
-48. `void uniquesInl(idx n = 1);` Make elements appeared maximum `n` times inlinely
-48. `T popFirst();` Get index 0 and remove immediately
-50. `T popLast();` Get index last and remove immidiately
-51. `u64 memory();` Get total memory used for current array
-52. `void emplace(Args&&... args);` Build object in array on-fly at last index
-53. `void emplaceFront(Args&&... args);` Build object in array on-fly at first index
-54. `void emplaceAt(Args&&... args, idx n);` Build object in array on-fly at specific index
-
-    > ### Note*
-    > `slice` and `erase` might be simmilar, but it's different! Example:
-    > ```cpp
-    > ivec<i32> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    > ### Brief:
+    > > Constructor implementations for `Tools::ivec<T>`.
     >
-    > // Keep only a[1..4], delete everything else
-    > ivec<i32> a_s = a.slice(1, 4);
-    > fmt::println("{}", a_s);  // [2, 3, 4, 5]
+    > ### Details:
+    > > Provides all construction pathways for ivec including:
+    > > - Default construction (empty, zero-allocation)
+    > > - Initializer list construction
+    > > - Copy/move construction from std::vector and std::span
+    > > - Deep copy construction from another ivec
+    > > - Move construction (zero-copy ownership transfer)
     >
-    > // Delete only a[1..4], keep everything else
-    > ivec<i32> a_e = a.erase(1, 5);
-    > fmt::println("{}", a_e);  // [1, 6, 7, 8, 9, 10]
-    > ```
-    > ㅤ
-
-### 8. Conversion
-55. `str fstr();`: Formatted STRing, make everything everything inside and (almost) every data type into a string
-55. `vec<T> toVector();`: `ivec` to `std::vector` converter
-57. `span<T> toSpan();` or `operator std::span()`: `ivec` to `std::span` converter
-58. `arr<T, S> toArray();`: `ivec` to `std::array` converter
-59. `T* toCArr();`: `ivec` to raw pointer converter
-
-### 9. Iterators
-60. `T first();` First index getter
-61. `T first(idx n);` First + n index getter
-62. `T front();` First index getter (legacy choise of diction)
-63. `T* begin();` First index iterator
-64. `const T* cbegin` Constant first index iterator
-65. `T& refbegin();` Reference of first index iterator
-
-66. `T last();` Last index getter
-67. `T last(idx n);` Last - n index getter
-68. `T back();` Last index getter (legacy choise of diction)
-69. `T* end();` Last index iterator
-70. `const T* cend();` Constant last index iterator
-71. `T& refend();` Reference of last index iterator
-
-### 10. Legacies
-
-This one is to make renaming `vec` to `ivec` possible without breaking current `vec` codes, but only some, not everything.
-
-72. `void push_back(const T& Element);` The same as `std::vector<T>::push_back`
-73. `void push_front(const T& Element);` Not standard from STL, but STL-isch choise of diction
-74. `T at(const idx Index);` Specific index getter, I have absolutely zero why `.at` even exist, but oké
-75. `ivec<T> erase(T* pos);` Specific index eraser with iterator, then return new
-76. `void eraseInl(T* pos);` Specific index eraser with iterator inlinely
-77. `ivec<T> erase(T* begin, T* end);` Range eraser with iterator, then return new
-78. `void eraseInl(T* begin, T* end);` Range erasee with iterator inlinely
-79. `void insert(const ivec<T>& v);` Extender like from `std::range::insert` specificly for `ivec`
-80. `void insert(const vec<T>& v);` Extender like from `std::range::insert` specificly for `std::vector`
-81. `void insert(const T& Element, idx At);` Append to specific index
-82. `void insert(const T* A, const T* B);` Extender like from `std::vector<T>::insert` with iterators, yes, you can extend current container from other containers
-
     > ### Note
-    > `erase` functions from `advanced` are the wrapper from `legacy` \
-    > ㅤ
+    > > All constructors that allocate memory use operator new[] directly. Elements are constructed via placement new to support non-default-constructible types.
+
+    ```cpp
+    /** Init **/
+
+    namespace Tools {
+        /// @brief Default constructor. Creates an empty vector with no allocation.
+        /// @post size() == 0, capacity() == 0, data() == nullptr
+        template <typename T>
+        ivec<T>::ivec() noexcept;
+    }
+
+    namespace Tools {
+        /// Construct with {}
+        /// @brief Construct from std::vector<T> (deep copy).
+        /// @param Data Source vector to copy elements from.
+        /// @note Explicit constructor to prevent implicit conversion.
+        ///       Allocates exactly Data.size() capacity. Empty source results in no allocation.
+        template <typename T>
+        ivec<T>::ivec(initl<T> Data);
+
+        /// Construct from Data std::vector<T>
+        /// @brief Deep copy constructor from another ivec.
+        /// @param Data Source ivec to copy. All elements are copy-constructed.
+        /// @note Allocates exactly other.capacity() (not size) to preserve reserved space.
+        ///       If source is empty, no allocation occurs.
+        template <typename T>
+        ivec<T>::ivec(const vec<T>& Data);
+
+        /// Construct from Data ivec
+        /// @brief Deep copy constructor from another ivec.
+        /// @param Data Source ivec to copy. All elements are copy-constructed.
+        /// @note Allocates exactly other.capacity() (not size) to preserve reserved space.
+        ///       If source is empty, no allocation occurs.
+        template <typename T>
+        ivec<T>::ivec(const ivec& Data);
+
+        /// Construct from temporary other ivec
+        /// @brief Move constructor. Transfers ownership from another ivec.
+        /// @param Data Source ivec whose resources are stolen. Left in valid empty state.
+        /// @post other.size() == 0, other.capacity() == 0, other.data() == nullptr
+        /// @note noexcept — guaranteed not to throw. Critical for STL container compatibility.
+        template <typename T>
+        ivec<T>::ivec(ivec&& Data) noexcept;
+
+        /// Construct from unified containers
+        /// @brief Construct from std::span<const T> (deep copy).
+        /// @param Data Span of elements to copy. Supports any contiguous range.
+        /// @note Explicit constructor to prevent implicit conversion.
+        ///       Uses std::uninitialized_copy for optimal construction of non-trivial types.
+        ///       Empty span results in no allocation.
+        template <typename T>
+        ivec<T>::ivec(const span<const T>& Data);
+    }
+    ```
+- IVec/Init.Dtor.hpp
+    > ### Brief
+    > > Destructor implementation for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Responsible for proper cleanup of heap-allocated resources:
+    > > 1. Explicitly destroys all constructed elements via destructor calls
+    > > 2. Releases raw memory back to the allocator via operator delete[]
+    >
+    > ### Note
+    > > This destructor is `noexcept` and safe to call on moved-from objects `(where m_Data == nullptr)`. `operator delete[](nullptr)` is a valid no-op per the C++ standard.
+    >
+    > ### Warning
+    > > Elements are destroyed in forward order [0, size). If reverse, destruction order is required for your use case, modify accordingly.
+
+    ```cpp
+    namespace Tools {
+        /// @brief Destructor. Destroys all elements and releases heap memory.
+        /// @post All element destructors have been called. Raw memory is freed.
+        /// @note noexcept — guaranteed not to throw. Element destructors that throw
+        ///       will result in std::terminate() being called.
+        template <typename T>
+        ivec<T>::~ivec() noexcept;
+    }
+    ```
+
+### Core features
+
+- IVec/Core.Data.hpp
+    > ### Brief
+    > > Core data accessors for Tools::ivec<T>.
+    >
+    > ### details
+    > Provides read-only and mutable access to the underlying storage, size/capacity queries, and memory usage reporting. All methods are O(1) and `noexcept` where applicable.
+    >
+    > ### Note
+    > These accessors do NOT perform bounds checking. Use `at()` or `refbegin()`/`refend()` for safe bounded access.
+    ```cpp
+    namespace Tools {
+        /// @brief Get mutable pointer to underlying data buffer.
+        /// @return Pointer to first element, or nullptr if empty.
+        /// @note Lifetime tied to this ivec. Invalidated by reserve(), resize(), clear(),
+        ///       append(), extend(), erase(), or any operation that may reallocate.
+        template <typename T>
+        T* ivec<T>::data() noexcept;
+
+        /// @brief Get const pointer to underlying data buffer.
+        /// @return Const pointer to first element, or nullptr if empty.
+        /// @note Same lifetime guarantees as mutable data().
+        template <typename T>
+        const T *ivec<T>::data() const noexcept;
+
+        /// @brief Get number of elements currently stored.
+        /// @return Current element count. Always <= capacity().
+        template <typename T>
+        idx ivec<T>::size() const noexcept;
+
+        /// @brief Get current storage capacity (elements that fit without reallocation).
+        /// @return Number of elements that can be held before next reallocation.
+        ///         Always >= size().
+        template <typename T>
+        idx ivec<T>::capacity() const noexcept;
+
+        /// @brief Get total memory used by stored elements in bytes.
+        /// @return sizeof(T) * size(). Does NOT include unused capacity overhead.
+        /// @note For total allocated memory including reserved capacity,
+        ///       use sizeof(T) * capacity() instead.
+        template <typename T>
+        u64 ivec<T>::memory() const noexcept;
+    }
+    ```
+
+- IVec/Core.State.hpp
+    > ### Brief
+    > > Container state management for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides utilities for clearing contents and querying emptiness.
+    > > These operations **do NOT** change the allocated capacity.
+    ```cpp
+    namespace Tools {
+        /// Nuke everything
+        /// @brief Destroy all elements and set size to zero.
+        /// @post size() == 0, capacity() unchanged, data() still valid (but empty).
+        /// @note Calls destructor on each element explicitly. Does NOT free heap memory.
+        ///       To release memory as well, use shrink_to_fit() after clear() (if available).
+        ///       Safe to call on an already-empty vector.
+        template <typename T>
+        void ivec<T>::clear();
+
+        /// Is there anyone?
+        /// @brief Check whether the container holds no elements.
+        /// @return true if size() == 0, false otherwise.
+        /// @note O(1) complexity. Equivalent to (size() == 0) but more expressive.
+        template <typename T>
+        bool ivec<T>::isEmpty() const noexcept;
+    }
+    ```
+
+- IVec/Core.Resize.hpp
+    > ### Brief
+    > > Capacity management for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides reserve() for pre-allocation without changing size, and resize() for changing the logical element count with optional fill value.
+    >
+    > ### Note
+    > > Both functions use strong exception guarantee for shrink operations. Grow operations provide basic guarantee — if construction of fill values throws, the vector remains in a valid state with elements constructed up to the failure point.
+    ```cpp
+    namespace Tools {
+        /* Resize (with filler value given or default) */
+        /// @brief Change the number of stored elements.
+        /// @param Size New element count. If smaller than current size, excess elements are destroyed.
+        ///             If larger, new elements are copy-constructed from Fill.
+        /// @param Fill Value used to initialize new elements when growing. Default-constructed T if omitted.
+        /// @post size() == Size. capacity() >= Size.
+        /// @note Shrinking does NOT release memory (capacity unchanged). Call shrink_to_fit() after
+        ///       resize() if you want to release unused capacity (when available).
+        ///       Growing may trigger reallocation if Size > capacity().
+        template <typename T>
+        void ivec<T>::resize(const idx Size, const T& Fill);
+
+        /* Reserve (with NONE value) */
+        /// @brief Pre-allocate storage without changing size.
+        /// @param Size Minimum capacity to ensure. No-op if Size <= capacity().
+        /// @post capacity() >= Size. size() unchanged. All existing elements preserved.
+        /// @note Uses move_if_noexcept for relocation — falls back to copy if move constructor
+        ///       is not noexcept, ensuring strong exception safety during reallocation.
+        ///       Existing elements are always destroyed before old memory is freed.
+        template <typename T>
+        void ivec<T>::reserve(const idx Size);
+    }
+    ```
+
+- IVec/Core.Append.hpp
+    > ### Brief
+    > > Single-element append operations for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides append() overloads for adding individual elements to the end of the vector. Supports both lvalue (copy) and rvalue (move) semantics. Automatic capacity growth uses 2x strategy.
+    >
+    > ### Note
+    > > - For bulk insertion, use `extend()` or `append(span)` instead.
+    > > - For in-place construction without copies/moves, use `emplace()`.
+    ```cpp
+    namespace Tools {
+        /** Append single element (lvalue) **/
+        /// @brief Append element by copy-constructing at the end.
+        /// @param Element Lvalue reference to copy into the vector.
+        /// @post size() increased by 1. Element is copy-constructed at new position.
+        /// @note Triggers reallocation if size() == capacity() before insertion.
+        ///       Growth factor: 2x current capacity (or 1 if empty).
+        template <typename T>
+        void ivec<T>::append(const T& Element);
+
+        /** Append single element (rvalue) **/
+        /// @brief Append element by move-constructing at the end.
+        /// @param Element Rvalue reference to move into the vector.
+        /// @post size() increased by 1. Element is move-constructed at new position.
+        ///       Source object is left in valid-but-unspecified state.
+        /// @note Triggers reallocation if size() == capacity() before insertion.
+        ///       Growth factor: 2x current capacity (or 1 if empty).
+        template <typename T>
+        void ivec<T>::append(T&& Element);
+    }
+    ```
+
+- IVec/Core.Append.Idx.hpp
+    > ### Brief
+    > > Positional insertion operations for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides appendFirst() and appendAt() for inserting elements at specific positions.
+    > > These operations are O(n) due to element shifting, but benefit from ivec's direct memory control compared to std::vector:
+    > > - No iterator invalidation checks overhead
+    > > - Direct placement-new construction at target position
+    > > - Explicit move-if-noexcept optimization during shift
+    >
+    > ### Note
+    > > For bulk insertion at position, consider using `reassignInl()` or manual `extend()` + shift pattern for better performance.
+    ```cpp
+    namespace Tools {
+        /// @brief Insert element at the beginning of the vector.
+        /// @param Item Value to copy-construct at index 0.
+        /// @post size() increased by 1. All existing elements shifted right by 1.
+        /// @note O(n) operation. Uses move_if_noexcept for shifting to ensure
+        ///       strong exception safety when T has noexcept move constructor.
+        ///       Triggers reallocation if size() == capacity() before insertion.
+        template <typename T>
+        void ivec<T>::appendFirst(const T& Item);
+
+        /// @brief Insert element at specified position.
+        /// @param Item Value to copy-construct at position At.
+        /// @param At Target index [0, size()]. Clamped to size() if out of range.
+        /// @post size() increased by 1. Elements at [At, old_size) shifted right by 1.
+        /// @note O(n) operation where n = size() - At. Uses move_if_noexcept for shifting.
+        ///       When At == size(), behaves identically to append(Element).
+        ///       Triggers reallocation if size() == capacity() before insertion.
+        template <typename T>
+        void ivec<T>::appendAt(const T& Item, idx At);
+    }
+    ```
+
+- IVec/Core.Emplace.hpp
+    > ### brief
+    > > In-place construction at end for Tools::ivec<T>.
+    >
+    > ### details
+    > > Provides emplace() for constructing elements directly in the vector's
+    > > storage using perfect forwarding. Avoids temporary object creation
+    > > and extra copy/move operations compared to append().
+    >
+    > ### note
+    > > Prefer emplace() over append() when constructing complex objects or
+    > > when T is non-copyable/non-movable. For simple types (int, float),
+    > > performance difference is negligible.
+    ```cpp
+    namespace Tools {
+        /** Emplace object at end **/
+        /// @brief Construct element in-place at the end using forwarded arguments.
+        /// @tparam Args Constructor argument types (perfectly forwarded).
+        /// @param Items Arguments forwarded to T's constructor.
+        /// @post size() increased by 1. Element constructed directly at new position.
+        /// @note Triggers reallocation if size() == capacity() before construction.
+        ///       Growth factor: 2x current capacity (or 1 if empty).
+        ///       If T's constructor throws, vector remains unchanged (strong guarantee).
+        template <typename T>
+        template <typename... Args>
+        void ivec<T>::emplace(Args&&... Items);
+    }
+    ```
+
+- IVec/Core.Emplace.Idx.hpp
+    > ### Brief
+    > > Positional in-place construction for Tools::ivec<T>.
+    >
+    > ### Details
+    > Provides emplaceFront() and emplaceAt() for constructing elements
+    > directly at specific positions using perfect forwarding. Combines
+    > the zero-copy benefits of emplace() with positional insertion.
+    >
+    > ### Note
+    > > These are O(n) operations due to element shifting. For simple types,
+    > > prefer appendFirst()/appendAt() which have identical performance.
+    > > Use emplace variants when constructing complex/non-movable objects.
+
+    ```cpp
+
+    namespace Tools {
+        /** Emplace object at 1st index **/
+        /// @brief Construct element in-place at the beginning using forwarded arguments.
+        /// @tparam Args Constructor argument types (perfectly forwarded).
+        /// @param Items Arguments forwarded to T's constructor.
+        /// @post size() increased by 1. All existing elements shifted right by 1.
+        /// @note Delegates to emplaceAt(0, args...). See emplaceAt() for full details.
+        template <typename T>
+        template<typename... Args>
+        void ivec<T>::emplaceFront(Args&&... Items);
+
+        /** Emplace object at specific index **/
+        /// @brief Construct element in-place at specified position using forwarded arguments.
+        /// @tparam Args Constructor argument types (perfectly forwarded).
+        /// @param At Target index [0, size()]. Clamped to size() if out of range.
+        /// @param Items Arguments forwarded to T's constructor.
+        /// @post size() increased by 1. Elements at [At, old_size) shifted right by 1.
+        ///       New element constructed directly at target position via placement new.
+        /// @note O(n) where n = size() - At. Uses move_if_noexcept for shifting.
+        ///       Triggers reallocation if size() == capacity() before construction.
+        ///       If T's constructor throws after shift, vector is left in valid but
+        ///       partially-shifted state (basic exception guarantee).
+        template <typename T>
+        template<typename... Args>
+        void ivec<T>::emplaceAt(idx At, Args&&... Items);
+    }
+
+    ```
+
+- IVec/Core.Extend.hpp
+    > ### Brief
+    > > Bulk element insertion for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides extend() for appending multiple elements from any contiguous
+    > > range via std::span. Performs exact pre-allocation to ensure zero
+    > > intermediate reallocations during bulk insertion.
+    >
+    > ### Note
+    > > For single-element insertion, use append() instead.
+    > > For positional insertion, use reassignInl() or appendAt().
+    ```cpp
+
+    namespace Tools {
+        /** Generic Extend with span **/
+        /// @brief Append all elements from a span to the end of the vector.
+        /// @param Data Span of elements to copy-construct at the end.
+        /// @post size() increased by D.size(). All source elements are copy-constructed.
+        /// @note Performs exact pre-allocation (m_Size + D.size()) before copying,
+        ///       guaranteeing zero intermediate reallocations regardless of current capacity.
+        ///       Empty span is a no-op. Source and destination may safely overlap
+        ///       only if source is entirely before the write position.
+        template <typename T>
+        void ivec<T>::extend(span<const T> Data);
+    }
+    ```
+
+### Accessors
+
+- IVec/Access.Getset.hpp
+    > ### Brief
+    > > Element access operators and copy assignment for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides unchecked `operator[]` for performance-critical paths,
+    > > bounds-checked `at()` for safe access, and deep-copy assignment.
+    >
+    > ### Note
+    > > `operator[]` does NOT perform bounds checking in any build configuration.
+    > > Use `at()` when index validity cannot be guaranteed at compile time.
+    ```cpp
+    /** Common Getter Operators **/
+    namespace Tools {
+        /// @brief Access element by index without bounds checking (mutable).
+        /// @param Index Position of the element [0, size()).
+        /// @return Mutable reference to the element at Index.
+        /// @warning UB if Index >= size(). No debug assertion is performed.
+        ///          Use at() for safe bounded access.
+        template <typename T>
+        T& ivec<T>::operator[](idx Index) noexcept;
+
+        /// @brief Access element by index without bounds checking (const).
+        /// @param Index Position of the element [0, size()).
+        /// @return Const reference to the element at Index.
+        /// @warning UB if Index >= size(). No debug assertion is performed.
+        template <typename T>
+        const T& ivec<T>::operator[](idx Index) const noexcept;
+    }
+
+    /** Legacy getter at (with bounds check) **/
+    namespace Tools {
+        /// @brief Access element by index with bounds checking (mutable).
+        /// @param Index Position of the element [0, size()).
+        /// @return Mutable reference to the element at Index.
+        /// @throws std::out_of_range if Index >= size().
+        template <typename T>
+        T& ivec<T>::at(const idx& Index);
+
+        /// @brief Access element by index with bounds checking (const).
+        /// @param Index Position of the element [0, size()).
+        /// @return Const reference to the element at Index.
+        /// @throws std::out_of_range if Index >= size().
+        template <typename T>
+        T& ivec<T>::at(const idx& Index) const;
+    }
+
+    /** Common Setter Operators **/
+    namespace Tools {
+        /// @brief Deep-copy assignment from another ivec.
+        /// @param Other Source vector to copy. Self-assignment is safely handled.
+        /// @return Reference to this vector after assignment.
+        /// @post size() == Other.size(), capacity() == Other.capacity().
+        ///       All elements are copy-constructed into freshly allocated storage.
+        /// @note Strong exception guarantee: if allocation or copy construction fails,
+        ///       this vector remains unchanged (old data preserved until new data is ready).
+        template <typename T>
+        ivec<T>& ivec<T>::operator=(const ivec& Other);
+    }
+    ```
+
+- IVec/Access.Pop.hpp
+    > ### Brief
+    > > Element removal operations for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides `pop()`, `popFirst()`, and `popLast()` for extracting and removing
+    > > elements by value. All operations shift remaining elements to maintain
+    > > contiguous storage.
+    >
+    > ### Note
+    > > These are O(n) operations due to element shifting. For bulk removal,
+    >       consider `eraseInl()` or `filter()` instead.
+    >
+    > ### Warning
+    > > Calling `pop()` on an empty vector or with Index >= `size()` is UB.
+    > > No bounds checking is performed. Use `at()` + `eraseInl()` for safe removal.
+    ```cpp
+    /** Poper, get then remove **/
+    namespace Tools {
+        /** Pop specific index **/
+        /// @brief Remove and return element at specified index.
+        /// @param Index Position of element to remove [0, size()).
+        /// @return The removed element (moved if possible).
+        /// @post size() decreased by 1. Elements at [Index+1, old_size) shifted left.
+        /// @note O(n) where n = size() - Index. Uses move assignment for shifting.
+        ///       Last slot is explicitly destroyed after shift to prevent leaks.
+        template <typename T>
+        T ivec<T>::pop(const idx& Index);
+
+        /** Pop 1st index **/
+        /// @brief Remove and return the first element.
+        /// @return The removed first element (moved if possible).
+        /// @post size() decreased by 1. All remaining elements shifted left.
+        /// @note O(n) — equivalent to pop(0). For frequent front removal,
+        ///       consider a deque-like structure instead.
+        template <typename T>
+        T ivec<T>::popFirst();
+
+        /** Pop last index **/
+        /// @brief Remove and return the last element.
+        /// @return The removed last element (moved if possible).
+        /// @post size() decreased by 1. No shifting required.
+        /// @note O(1) — most efficient pop variant. Preferred when order doesn't matter.
+        template <typename T>
+        T ivec<T>::popLast();
+    }
+    ```
+
+- IVec/Access.Elements.hpp
+    > ### Brief
+    > > Positional element accessors for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides `first()`, `last()`, `front()`, `back()` and their indexed variants.
+    >          All methods return by value (copy) and are noexcept.
+    >
+    > ### Warning
+    > > No bounds checking is performed. Calling on an empty vector or with
+    > > out-of-range index is Undefined Behavior. Use `refbegin()`/`refend()`
+    > > for bounds-checked reference access.
+    ```cpp
+    /** First index **/
+    namespace Tools {
+        /// @brief Get first element by copy.
+        /// @return Copy of the first element.
+        /// @warning UB if size() == 0. No bounds check performed.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::first() const noexcept;
+
+        /// @brief Get last element by copy.
+        /// @return Copy of the last element.
+        /// @warning UB if size() == 0. No bounds check performed.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::last() const noexcept;
+
+        /// @brief Get nth element from start by copy.
+        /// @param n Zero-based offset from the beginning [0, size()).
+        /// @return Copy of the element at position n.
+        /// @warning UB if n >= size(). No bounds check performed.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::first(const idx n) const noexcept;
+
+        /// @brief Get nth element from end by copy.
+        /// @param n Zero-based offset from the end [0, size()).
+        ///          last(0) == last(), last(1) == second-to-last, etc.
+        /// @return Copy of the element at position (size() - 1 - n).
+        /// @warning UB if n >= size(). No bounds check performed.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::last(const idx n) const noexcept;
+    }
+
+    /** Last index **/
+    namespace Tools {
+        /// @brief Legacy alias for first(). Equivalent to std::vector::front().
+        /// @return Copy of the first element.
+        /// @warning UB if size() == 0.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::front() const noexcept;
+
+        /// @brief Legacy alias for last(). Equivalent to std::vector::back().
+        /// @return Copy of the last element.
+        /// @warning UB if size() == 0.
+        template <typename T>
+        [[nodiscard]] T ivec<T>::back() const noexcept;
+    }
+    ```
+
+- IVec/Access.Iter.hpp
+    > ### Brief
+    > > Pointer-based iterator accessors for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides `begin()`/`end()` and their explicit const variants `cbegin()`/`cend()`.
+    >          All iterators are raw pointers (`T*` / `const T*`), making ivec fully compatible
+    >          with STL algorithms, std::ranges, and fmt/ranges without wrapper overhead.
+    >
+    > ### Note
+    > > Mutable `begin()`/`end()` return `T*`, const overloads return const `T*`.
+    > > This dual-overload pattern is required for `std::ranges::range` and
+    > > `std::ranges::borrowed_range` concept satisfaction on lvalue references.
+    ```cpp
+    /** First index **/
+    namespace Tools {
+        /// @brief Get mutable iterator to the first element.
+        /// @return Pointer to first element, or nullptr if empty.
+        /// @note Equivalent to data(). Satisfies std::ranges::range requirement.
+        template <typename T>
+        [[nodiscard]] T* ivec<T>::begin() noexcept;
+
+        /// @brief Get const iterator to the first element.
+        /// @return Const pointer to first element, or nullptr if empty.
+        /// @note Enables range-for and STL algorithms on const ivec.
+        ///       Required for std::ranges::borrowed_range<ivec<T>&> satisfaction.
+        template <typename T>
+        [[nodiscard]] const T* ivec<T>::begin() const noexcept;
+
+        /// @brief Get explicit const iterator to the first element.
+        /// @return Const pointer to first element, or nullptr if empty.
+        /// @note Use when you need guaranteed const iteration regardless of
+        ///       whether the ivec itself is const or mutable.
+        template <typename T>
+        [[nodiscard]] const T* ivec<T>::cbegin() const noexcept;
+    }
+
+    /** Last index **/
+    namespace Tools {
+        /// @brief Get mutable past-the-end iterator.
+        /// @return Pointer one past the last element. Never dereference this value.
+        /// @note Equivalent to data() + size(). Satisfies std::ranges::range requirement.
+        template <typename T>
+        [[nodiscard]] T* ivec<T>::end() noexcept;
+
+        /// @brief Get const past-the-end iterator.
+        /// @return Const pointer one past the last element. Never dereference this value.
+        /// @note Enables range-for and STL algorithms on const ivec.
+        ///       Required for std::ranges::borrowed_range<ivec<T>&> satisfaction.
+        template <typename T>
+        [[nodiscard]] const T* ivec<T>::end() const noexcept;
+
+        /// @brief Get explicit const past-the-end iterator.
+        /// @return Const pointer one past the last element. Never dereference this value.
+        /// @note Use when you need guaranteed const iteration regardless of
+        ///       whether the ivec itself is const or mutable.
+        template <typename T>
+        [[nodiscard]] const T* ivec<T>::cend() const noexcept;
+    }
+    ```
+
+- IVec/Access.Ref.hpp
+    > ### Brief
+    > > Bounds-checked reference accessors for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides `refbegin()`/`refend()` and their explicit const variants
+    >          `crefbegin()`/`crefend()`. Unlike `first()`/`last()` which return by value,
+    >          these return references and throw `std::out_of_range` on empty vectors.
+    >
+    > ### Note
+    > > These are the safe counterparts to `first()`/`last()`. Use when you need
+    >       a reference (not a copy) AND want bounds checking.
+    >
+    > ### Warning
+    > > All methods throw `std::out_of_range` if `size() == 0`.
+    > > They are NOT `noexcept`.
+    ```cpp
+    /** First index **/
+    namespace Tools {
+        /// @brief Get mutable reference to first element with bounds checking.
+        /// @return Mutable reference to element at index 0.
+        /// @throws std::out_of_range if size() == 0.
+        /// @note Preferred over first() when you need to modify the element in-place.
+        template <typename T>
+        [[nodiscard]] T& ivec<T>::refbegin();
+
+        /// @brief Get const reference to first element with bounds checking.
+        /// @return Const reference to element at index 0.
+        /// @throws std::out_of_range if size() == 0.
+        template <typename T>
+        [[nodiscard]] const T& ivec<T>::refbegin() const;
+
+        /// @brief Get explicit const reference to first element with bounds checking.
+        /// @return Const reference to element at index 0.
+        /// @throws std::out_of_range if size() == 0.
+        /// @note Use when you need guaranteed const access regardless of whether
+        ///       the ivec itself is const or mutable. Analogous to cbegin().
+        template <typename T>
+        [[nodiscard]] const T& ivec<T>::crefbegin() const;
+    }
+
+    /** Last index **/
+    namespace Tools {
+        /// @brief Get mutable reference to last element with bounds checking.
+        /// @return Mutable reference to element at index (size() - 1).
+        /// @throws std::out_of_range if size() == 0.
+        /// @note Preferred over last() when you need to modify the element in-place.
+        template <typename T>
+        [[nodiscard]] T& ivec<T>::refend();
+
+        /// @brief Get const reference to last element with bounds checking.
+        /// @return Const reference to element at index (size() - 1).
+        /// @throws std::out_of_range if size() == 0.
+        template <typename T>
+        [[nodiscard]] const T& ivec<T>::refend() const;
+
+        /// @brief Get explicit const reference to last element with bounds checking.
+        /// @return Const reference to element at index (size() - 1).
+        /// @throws std::out_of_range if size() == 0.
+        /// @note Use when you need guaranteed const access regardless of whether
+        ///       the ivec itself is const or mutable. Analogous to cend().
+        template <typename T>
+        [[nodiscard]] const T& ivec<T>::crefend() const;
+    }
+    ```
+
+### Dunder
+
+- IVec/Opr.Dunder.hpp
+    > ### Brief
+    > > Python-style operator overloads for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides intuitive operator syntax inspired by Python list semantics:
+    > > - `operator+` : Concatenation (returns new ivec)
+    > > - `operator*` : Repetition (returns new ivec with N copies)
+    > > - `operator==`: Element-wise equality comparison
+    >
+    > ### Note
+    > > All operators **return NEW vectors**. No in-place mutation variants
+    > > (`+=`, `*=`) are provided to maintain value semantics and prevent
+    > > accidental aliasing bugs. Use `extend()` for in-place concatenation.
+    ```cpp
+    /** Python like functions **/
+    namespace Tools {
+        // __add__ (a.k.a "extend")
+        /// @brief Concatenate two vectors, returning a new ivec.
+        /// @param Other Right-hand operand to append.
+        /// @return New ivec containing all elements of this followed by all elements of Other.
+        /// @note Equivalent to Python: a + b. Does not modify either operand.
+        ///       Pre-allocates exact capacity needed (no intermediate reallocations).
+        template <typename T>
+        ivec<T> ivec<T>::operator+(const ivec& Other);
+
+        // __iadd__ -> "extend"
+
+        // __mul__
+        /// @brief Repeat vector contents N times, returning a new ivec.
+        /// @param Count Number of repetitions. Zero returns empty vector.
+        /// @return New ivec containing this->size() * Count elements.
+        /// @note Equivalent to Python: a * n. Does not modify this vector.
+        ///       Pre-allocates exact capacity needed. O(n * size()) complexity.
+        template <typename T>
+        ivec<T> ivec<T>::operator*(const idx Count) ;
+
+        // __imul__ -> no
+
+        // __eq__
+        /// @brief Element-wise equality comparison.
+        /// @param Other Vector to compare against.
+        /// @return true if both vectors have same size AND all corresponding elements are equal.
+        /// @note Equivalent to Python: a == b. Short-circuits on first mismatch.
+        ///       Uses operator== on element type T.
+        template <typename T>
+        bool ivec<T>::operator==(const ivec& Other) const;
+
+        // __ne__   -> no.
+        // __contains__ -> (already)
+        // __len__  -> no.
+        // __lt__   -> no.
+        // __le__   -> no.
+        // __gt__   -> no.
+        // __ge__   -> no.
+
+        // Intentionally omitted operators:
+        // - operator!= : Can be synthesized from == by compiler (C++20+)
+        // - operator<, <=, >, >= : Lexicographic ordering not implemented.
+        //   Use std::lexicographical_compare(begin(), end(), ...) explicitly if needed.
+        // - operator+=, *= : In-place mutation omitted to preserve value semantics.
+        //   Use extend() for concatenation, manual loop for repetition.
+        // - operator[] : Defined in Access.Getset.hpp
+        // - contains() : Defined in Items.Finders.hpp
+    }
+    ```
+
+### Items
+
+- IVec/Items.Orders.hpp
+    > ### Brief
+    > > Sorting, shuffling, and reversing operations for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides both returning (copy-based) and in-place (-Inl) variants:
+    > > - `sort()` / `sortInl()`    : Ascending order via `std::sort`
+    > > - `rsort()` / `rsortInl()`  : Descending order via `std::sort` + `std::greater`
+    > > - `shuffle()` / `shuffleInl()` : Random permutation via `std::shuffle`
+    > > - `reverse()` / `reverseInl()` : Element reversal via `std::reverse`
+    >
+    > ### Note
+    > > Returning variants create a deep copy first, then modify the copy.
+    > > Original vector is never modified by non-Inl methods.
+    > > All operations require `T` to satisfy the relevant STL concept
+    > > (`LessThanComparable` for sort, Swappable for `shuffle`/`reverse`).
+    ```cpp
+    /** Orders return **/
+    namespace Tools {
+        /// @brief Return a new ivec with elements randomly shuffled.
+        /// @return Deep copy of this vector with elements in random order.
+        /// @note Uses std::mt19937_64 seeded from std::random_device.
+        ///       Original vector is unchanged. O(n) complexity.
+        template <typename T>
+        [[nodiscard]] ivec<T> ivec<T>::shuffle();
+
+        /// @brief Return a new ivec with elements sorted in ascending order.
+        /// @return Deep copy of this vector sorted via operator<.
+        /// @note Original vector is unchanged. O(n log n) average complexity.
+        ///       Requires T to be LessThanComparable.
+        template <typename T>
+        [[nodiscard]] ivec<T> ivec<T>::Sort();
+
+        /// @brief Return a new ivec with elements sorted in descending order.
+        /// @return Deep copy of this vector sorted via std::greater<T>.
+        /// @note Original vector is unchanged. O(n log n) average complexity.
+        ///       Requires T to be comparable via std::greater.
+        template <typename T>
+        [[nodiscard]] ivec<T> ivec<T>::rSort();
+
+        /** Reversing **/
+        /// @brief Return a new ivec with elements in reversed order.
+        /// @return Deep copy of this vector with elements reversed.
+        /// @note Original vector is unchanged. O(n) complexity.
+        template <typename T>
+        [[nodiscard]] ivec<T> ivec<T>::Reverse();
+    }
+
+    /** Orders do inline **/
+    namespace Tools {
+        /// @brief Shuffle elements in-place using random permutation.
+        /// @note Uses thread-local std::mt19937_64 seeded from std::random_device.
+        ///       O(n) complexity. Requires T to be Swappable.
+        template <typename T>
+        void ivec<T>::ShuffleInl();
+
+        /// @brief Sort elements in-place in ascending order.
+        /// @note Uses std::sort (introsort). O(n log n) average complexity.
+        ///       Requires T to be LessThanComparable.
+        template <typename T>
+        void ivec<T>::SortInl();
+
+        /// @brief Sort elements in-place in descending order.
+        /// @note Uses std::sort with std::greater<T>. O(n log n) average complexity.
+        ///       Requires T to be comparable via std::greater.
+        template <typename T>
+        void ivec<T>::rSortInl();
+
+        /// @brief Reverse element order in-place.
+        /// @note Uses std::reverse. O(n) complexity. Requires T to be Swappable.
+        template <typename T>
+        void ivec<T>::ReverseInl();
+    }
+    ```
+
+- IVec/Items.Query.hpp
+    > ### Brief
+    > > Deduplication and bulk reassignment operations for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides two categories of operations:
+    > > - `uniques()` / `uniquesInl()`: Remove duplicate elements, keeping at most N occurrences
+    > > - `reassign()` / `reassignInl()`: Overwrite/extend elements from a span at a given position
+    >
+    > ### Note
+    > > `uniques()` preserves the relative order of first occurrences.
+    > > `reassignInl()` performs in-place overwrite when possible, avoiding reallocation.
+    ```cpp
+    /** Remove duplicated elements by n times inline/return new **/
+    namespace Tools {
+        /// @brief Return a new ivec with duplicates removed, keeping at most Max occurrences.
+        /// @param Max Maximum number of times each value may appear. Must be > 0.
+        /// @return New ivec with duplicates filtered. Original is unchanged.
+        /// @note Preserves relative order of first occurrences. O(n) time + O(n) space for hash map.
+        ///       Returns empty vector if Max <= 0 or source is empty.
+        template <typename T>
+        ivec<T> ivec<T>::Uniques(const idx Max);
+
+        /// @brief Remove duplicates in-place, keeping at most Max occurrences.
+        /// @param Max Maximum number of times each value may appear. Must be > 0.
+        /// @post size() reduced to number of unique elements kept. Capacity unchanged.
+        /// @note Preserves relative order. O(n) time + O(n) space for hash map.
+        ///       No-op if Max <= 0 or size() <= 1.
+        template <typename T>
+        void ivec<T>::UniquesInl(const idx Max);
+    }
+
+    /** Reassign based on specified iterable **/
+    namespace Tools {
+        /// @brief Overwrite elements starting at Start with data from span, returning new ivec.
+        /// @param Data Span of elements to write.
+        /// @param Start Position to begin overwriting [0, size()]. Clamped to size().
+        /// @return New ivec with the result. Original is unchanged.
+        /// @note If Start + Data.size() > size(), the result is extended to fit.
+        ///       Delegates to reassignInl() on a copy.
+        template <typename T>
+        ivec<T> ivec<T>::Reassign(std::span<const T> Data, const idx Start);
+
+        /// @brief Overwrite elements in-place starting at Start with data from span.
+        /// @param Data Span of elements to write.
+        /// @param Start Position to begin overwriting [0, size()]. Clamped to size().
+        /// @post Elements at [Start, min(Start+Data.size(), old_size)) are overwritten.
+        ///       If Start + Data.size() > old_size, vector is extended via reserve() + placement new.
+        /// @note Pure overwrite path (no allocation) when Start + Data.size() <= size().
+        ///       Extension path uses single reserve() call for exact capacity.
+        template <typename T>
+        void ivec<T>::ReassignInl(std::span<const T> Data, idx Start);
+    }
+    ```
+
+- IVec/Items.Find.hpp
+    > ### Brief
+    > > Linear search utilities for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides O(n) element lookup operations including existence check,
+    > > index finding, frequency counting, and multi-index collection.
+    > > All methods use linear scan and are noexcept where applicable.
+    >
+    > ### Note
+    > > For sorted data, consider using `std::lower_bound`/`upper_bound` via
+    > > `begin()`/`end()` iterators for O(log n) performance instead.
+    ```cpp
+    /* Non Const & Const Finders */
+    namespace Tools {
+        /// @brief Check whether an element exists in the vector.
+        /// @param Item Element to search for (compared via operator==).
+        /// @return true if at least one matching element is found, false otherwise.
+        /// @note O(n) linear scan. Const-correct: callable on both mutable and const ivec.
+        template <typename T>
+        bool ivec<T>::Contains(const T& Item) noexcept;
+
+        /// @brief Find the index of the first occurrence of an element.
+        /// @param Item Element to search for (compared via operator==).
+        /// @return Index of first match, or size() if not found.
+        /// @note O(n) linear scan. Returns size() (not -1) as sentinel value
+        ///       since idx is unsigned. Always check result < size() before use.
+        template <typename T>
+        idx ivec<T>::Find(const T& Item) noexcept;
+
+        /// @brief Count how many times an element appears in the vector.
+        /// @param Item Element to count (compared via operator==).
+        /// @return Number of occurrences (0 if not found).
+        /// @note O(n) linear scan. Equivalent to std::count(begin(), end(), Item).
+        template <typename T>
+        idx ivec<T>::FindFreq(const T& Item) noexcept;
+
+        /// @brief *Find all* occurrences of an element, returning count and indices.
+        /// @param Item Element to search for (compared via operator==).
+        /// @return pair<count, vec<idx>> where count is number of matches and
+        ///         vec contains all matching indices in ascending order.
+        /// @note O(n) linear scan + dynamic allocation for result vector.
+        ///       If no matches found, returns {0, empty_vec}.
+        template <typename T>
+        pair<idx, vec<T>> ivec<T>::FindAll(const T& Item) noexcept;
+    }
+    ```
+
+- IVec/Items.Slice.hpp
+    > ### Brief
+    > Sub-range extraction operations for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides Python-style slicing with negative index support:
+    > > - `slice(From, To)` / `sliceInl(From, To)`: Extract range [`From`, `To`] inclusive
+    > > - `slice(n)` / sliceInl(n): Extract first n elements (n >= 0) or last |n| elements (n < 0)
+    >
+    > ### Note
+    > > Negative indices are resolved relative to `size()`: -1 == last element.
+    > > Out-of-range indices are clamped to valid bounds rather than throwing.
+    > > All returning variants create deep copies; original is never modified.
+    ```cpp
+    /** Slicers return new **/
+    namespace Tools {
+        /// @brief Extract a sub-range [From, To] inclusive, with negative index support.
+        /// @param From Start index (inclusive). Negative values count from end (-1 == last).
+        /// @param To End index (inclusive). Negative values count from end (-1 == last).
+        /// @return New ivec containing elements in [From, To]. Empty if range is invalid.
+        /// @note Indices are clamped to [0, size()-1]. Returns empty vector if From > To after normalization.
+        ///       Original vector is unchanged. O(k) where k = To - From + 1.
+        template <typename T>
+        ivec<T> ivec<T>::Slice(i64 From, i64 To);
+
+        /// @brief Extract first n or last |n| elements.
+        /// @param To If >= 0: extract elements [0, n]. If < 0: extract last |n| elements.
+        /// @return New ivec containing the extracted elements. Empty if n == 0 or vector is empty.
+        /// @note Delegates to slice(From, To). Original vector is unchanged.
+        template <typename T>
+        ivec<T> ivec<T>::Slice(const i64 To);
+    }
+
+    /** Slicers do inline **/
+    namespace Tools {
+        /// @brief Replace contents with sub-range [From, To] inclusive.
+        /// @param From Start index (inclusive). Negative values count from end.
+        /// @param To End index (inclusive). Negative values count from end.
+        /// @post Vector contains only elements from the specified range.
+        /// @note Equivalent to *this = slice(From, To). May reallocate.
+        template <typename T>
+        void ivec<T>::SliceInl(const i64 From, const i64 To);
+
+        /// @brief Replace contents with first n or last |n| elements.
+        /// @param To If >= 0: keep elements [0, n]. If < 0: keep last |n| elements.
+        /// @post Vector contains only the extracted elements.
+        /// @note Equivalent to *this = slice(n). May reallocate.
+        template <typename T>
+        void ivec<T>::SliceInl(const i64 To);
+    }
+    ```
+
+- IVec/Items.Erase.Idx.hpp
+    > ### Brief
+    > > Index-based element removal for `Tools::ivec<T>`. Modern index-based erase are using `Erase` (with '`E`')
+    >
+    > ### Details
+    > > Provides `erase()` and `eraseInl()` overloads that accept index positions.
+    > > These delegate to the pointer-based implementations in Items.Eraser.ptr.hpp.
+    >
+    > ### Slice and Erase
+    > > `slice()` vs `erase()` — Key Difference
+    > > Both operations work on sub-ranges, but with **opposite** semantics:
+    > > - `slice(From, To)`: **KEEPS elements** in [`From`, `To`], discards everything else.
+    > >   Think of it as "extract this window."
+    > > - `erase(From, To)`: **REMOVES elements** in [`From`, `To`), keeps everything else.
+    > >   Think of it as "cut out this section."
+    > >
+    > > ```cpp
+    > > ivec<int> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    >>
+    > > // Keep only a[1..4], delete everything else
+    > > auto s = a.slice(1, 4);    // -> [2, 3, 4, 5]
+    > >
+    > > // Delete a[1..5), keep everything else
+    > > auto e = a.erase(1, 5);    // -> [1, 6, 7, 8, 9, 10]
+    > > ```
+    >
+    > ### Note
+    > > Index-based erase uses exclusive end bound [`From`, `To`) matching STL convention,
+    > > while slice uses inclusive bounds [`From`, `To`]. Be mindful of this difference.
+    ```cpp
+    /** Erase return new **/
+    namespace Tools {
+        /** 1 element return **/
+        /// @brief Return new ivec with single element at Pos removed.
+        /// @param Pos Index of element to remove [0, size()).
+        /// @return New ivec with size() - 1 elements. Original is unchanged.
+        /// @note Delegates to erase(T*). O(n) due to element shifting.
+        template <typename T>
+        ivec<T> ivec<T>::Erase(idx Pos);
+
+        /** N element return **/
+        /// @brief Return new ivec with elements in [From, To) removed.
+        /// @param From Start index (inclusive) [0, size()].
+        /// @param To End index (exclusive) [From, size()].
+        /// @return New ivec without the specified range. Original is unchanged.
+        /// @note Uses exclusive end bound [From, To) matching STL erase convention.
+        ///       This differs from slice() which uses inclusive [From, To].
+        ///       Delegates to erase(T*, T*). O(n) due to element shifting.
+        template <typename T>
+        ivec<T> ivec<T>::Erase(idx From, idx To);
+    }
+
+    /** Erase do inline **/
+    namespace Tools {
+        /** 1 element inline **/
+        /// @brief Remove single element at Pos in-place.
+        /// @param Pos Index of element to remove [0, size()).
+        /// @post size() decreased by 1. Elements after Pos shifted left.
+        /// @note Delegates to eraseInl(T*). O(n) due to element shifting.
+        template <typename T>
+        void ivec<T>::EraseInl(idx Pos);
+
+        /** N element inline **/
+        /// @brief Remove elements in [From, To) in-place.
+        /// @param From Start index (inclusive) [0, size()].
+        /// @param To End index (exclusive) [From, size()].
+        /// @post size() decreased by (To - From). Remaining elements compacted.
+        /// @note Uses exclusive end bound [From, To). No-op if From >= To.
+        ///       Delegates to eraseInl(T*, T*). O(n) due to element shifting.
+        template <typename T>
+        void ivec<T>::EraseInl(idx From, idx To);
+    }
+    ```
+
+- IVec/Items.Erase.Ptr.hpp
+    > ### Brief
+    > Pointer-based element removal for `Tools::ivec<T>`. Legacy pointer-based erase are using `erase` (with '`e`')
+    >
+    > ### Details
+    > > Provides `erase()` and `eraseInl()` overloads that accept raw pointers.
+    > > These are the foundational implementations that index-based erasers
+    > > delegate to. Pointers must refer to elements within this vector's
+    > > allocated buffer `[m_Data, m_Data + m_Size)`.
+    >
+    > ### Note
+    > > Pointer validity is checked at runtime. Out-of-range pointers are either
+    > > rejected (throw) or silently ignored depending on the overload.
+    > > All operations use move-then-destroy pattern for safe element compaction.
+    ```cpp
+    /** Erase return new **/
+    namespace Tools {
+        /// @brief Return new ivec with single element at pointer position removed.
+        /// @param pos Pointer to element to remove. Must be within [data(), data()+size()).
+        /// @return New ivec with size()-1 elements. Original is unchanged.
+        /// @throws std::out_of_range if pos is null or outside valid range.
+        /// @note Delegates to eraseInl(idx) on a copy. O(n) due to element shifting.
+        template <typename T>
+        ivec<T> ivec<T>::erase(T* pos);
+
+        /// @brief Return new ivec with elements in [begin, end) removed.
+        /// @param begin Pointer to first element to remove (inclusive).
+        /// @param end Pointer past last element to remove (exclusive).
+        /// @return New ivec without the specified range. Original is unchanged.
+        /// @note Out-of-range pointers are clamped to valid bounds. No-op if begin >= end.
+        ///       Delegates to eraseInl(T*, T*) on a copy. O(n) due to element shifting.
+        template <typename T>
+        ivec<T> ivec<T>::erase(T* begin, T* end);
+    }
+
+    /** Erase do inline**/
+    namespace Tools {
+        /// @brief Remove single element at pointer position in-place.
+        /// @param pos Pointer to element to remove. Must be within [data(), data()+size()).
+        /// @post size() decreased by 1. Elements after pos shifted left.
+        /// @note Silently returns if pos is null or out of range (no exception).
+        ///       Uses move-then-destroy pattern for safe compaction. O(n).
+        template <typename T>
+        void ivec<T>::eraseInl(T* pos);
+
+        /// @brief Remove elements in [begin, end) in-place.
+        /// @param begin Pointer to first element to remove (inclusive).
+        /// @param end Pointer past last element to remove (exclusive).
+        /// @post size() decreased by number of removed elements. Remaining elements compacted.
+        /// @note Out-of-range pointers are clamped to valid bounds. No-op if begin >= end.
+        ///       Uses batch destroy + shift pattern for efficiency. O(n).
+        template <typename T>
+        void ivec<T>::eraseInl(T* begin, T* end);
+    }
+    ```
+
+### Functional
+
+- IVec/Functional.hpp
+    > ### Brief
+    > > Python-style functional transformations for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides `map()` and `filter()` operations that return new vectors:
+    > > - `map(Fn)`: Transform each element via callable `->` `ivec<U>`
+    > > - `filter(Pred)`: Keep elements matching predicate `->` `ivec<T>`
+    >
+    > ### Note
+    > > Both operations are non-mutating. Original vector is never modified.
+    > > These are eager operations — results are computed immediately.
+    > > For lazy evaluation, consider using `std::views` with `begin()`/`end()`.
+    ```cpp
+    namespace Tools {
+        /// @brief Transform each element via callable, returning a new ivec.
+        /// @tparam Fn Callable type accepting const T& and returning any type U.
+        /// @param Func Transformation function applied to each element.
+        /// @return New ivec<U> where U = decltype(Func(const T&)). Same size as source.
+        /// @note Exact pre-allocation via reserve(size()). Zero intermediate reallocations.
+        ///       Equivalent to Python: [func(x) for x in self].
+        ///       Example: ivec<int>{1,2,3}.map([](int x){ return x * 2.0; })
+        ///                -> ivec<double>{2.0, 4.0, 6.0}
+        template <typename T>
+        template <typename Fn>
+        requires requires(Fn&& f, const T& x) { f(x); }
+        auto ivec<T>::Map(Fn&& Func) const
+        -> ivec<decltype(Func(std::declval<const T&>()))>;
+
+        /// @brief Filter elements matching predicate, returning a new ivec.
+        /// @tparam Fn Predicate type accepting const T& and returning bool-like value.
+        /// @param Pred Predicate function. Elements where Pred(elem) == true are kept.
+        /// @return New ivec<T> containing only matching elements in original order.
+        /// @note Two-pass algorithm: first pass counts matches for exact pre-allocation,
+        ///       second pass copies matching elements. O(n) time, O(k) space where k = matches.
+        ///       Equivalent to Python: [x for x in self if pred(x)].
+        ///       Example: ivec<int>{1,2,3,4,5}.filter([](int x){ return x % 2 == 0; })
+        ///                -> ivec<int>{2, 4}
+        template <typename T>
+        template <typename Fn>
+        requires std::predicate<Fn, const T&>
+        [[nodiscard]] ivec<T> ivec<T>::Filter(Fn&& Pred) const;
+    }
+    ```
+
+### Converter
+
+- IVec/Converter.hpp
+    > ### brief
+    > > String formatting and generic container conversion for `Tools::ivec<T>`.
+    >
+    > ### details
+    > > Provides utilities for converting ivec contents to strings and
+    > > other container types. Explicit conversion operators (span, vector)
+    > > are defined separately in Converter.Opr.hpp.
+    >
+    > ### note
+    > > `toVector()` and `toSpan()` have been removed from this file.
+    > > - Use explicit conversion operators instead:
+    > > - `static_cast<std::vector<T>>(v)` or `vec<T>(v)`
+    > > - `static_cast<std::span<T>>(v)` or `span<T>(v)`
+    ```cpp
+    namespace Tools {
+        /** Convert (almost) everything to string **/
+        /// @brief Convert entire vector to a bracketed string representation.
+        /// @return String in format "[elem0, elem1, ..., elemN]" using std::format.
+        /// @note Uses std::format("{}") for each element. T must be formattable.
+        ///       For custom formatting with spec forwarding, use fmt::format or std::format
+        ///       directly with Format.fmt.hpp / Format.std.hpp included.
+        template <typename T>
+        str ivec<T>::fstr() const;
+
+        /** join with delimiter **/
+        /// @brief Join all elements into a single string with a delimiter.
+        /// @param Delim Separator string placed between elements. Default: ", ".
+        /// @return Concatenated string of all elements separated by Delim.
+        ///         Empty string if vector is empty.
+        /// @note Uses std::format("{}") for each element. T must be formattable.
+        ///       Example: ivec<int>{1,2,3}.join(" | ") → "1 | 2 | 3"
+        template <typename T>
+        str ivec<T>::join(strview Delim) const;
+
+        /** To C Array (wrapped with span) **/
+        /// @brief Copy elements into a pre-allocated C-style array via span.
+        /// @param Destination Span wrapping the target buffer. Elements are assigned (not constructed).
+        /// @note Copies min(size(), Destination.size()) elements. Safe for partial copies.
+        ///       No-op if destination is empty or source is empty.
+        ///       Destination elements must already be constructed (uses operator=, not placement new).
+        template <typename T>
+        void ivec<T>::toCArr(span<T> Destination) const;
+
+        /** Generic conversion **/
+        /// @brief Generic conversion to any container constructible from iterator pair.
+        /// @tparam Container Template template parameter accepting any standard container.
+        /// @return Container<T> constructed from begin()/end() iterators.
+        /// @note Replaces type-specific converters (toVector, toArray, etc.).
+        ///       Example: v.to<std::vector>() -> std::vector<T>
+        ///                v.to<std::list>()   -> std::list<T>
+        ///                v.to<std::deque>()  -> std::deque<T>
+        template <typename T>
+        template <template<typename...> class Container>
+        auto ivec<T>::to() const;
+    }
+    ```
+
+- IVec/Converter.Opr.hpp
+    > ### brief
+    > > Explicit type conversion operators for `Tools::ivec<T>`.
+    >
+    > ### details
+    > > Provides explicit conversions to std::span and std::vector.
+    >          All operators are marked explicit to prevent accidental implicit
+    >          copies or dangling views.
+    >
+    > ### note
+    > > span conversions are O(1) — they create a non-owning view.
+    > > vector conversions are O(n) — they perform a deep copy.
+    > > Since all operators are explicit, you must write:
+    > > ```cpp
+    > >  auto s = std::span<int>(my_ivec);      // OK
+    > >  auto v = std::vector<int>(my_ivec);    // OK (deep copy)
+    > >  std::span<int> s = my_ivec;            // Won't compile (explicit)
+    > > ```
+    ```cpp
+    /** Auto converter to std::span (O(1), Non-Owning View) **/
+    namespace Tools {
+        /// @brief Explicit conversion to mutable std::span.
+        /// @return span<T> viewing this vector's data. Lifetime tied to this ivec.
+        /// @note O(1). No allocation. Invalidated by any operation that reallocates.
+        template <typename T>
+        ivec<T>::operator span<T>() const noexcept;
+
+        /// @brief Explicit conversion to const std::span.
+        /// @return span<const T> viewing this vector's data. Lifetime tied to this ivec.
+        /// @note O(1). No allocation. Preferred over mutable span when modification is not needed.
+        template <typename T>
+        ivec<T>::operator span<const T>() const noexcept;
+    }
+
+    /** Auto converter to std::vector (O(n), Deep Copy) **/
+    namespace Tools {
+        /// @brief Explicit conversion to std::vector via deep copy.
+        /// @return New std::vector<T> containing copies of all elements.
+        /// @note O(n) time and space. Independent lifetime from this ivec.
+        ///       Equivalent to toVector(). Use when ownership transfer is needed.
+        template <typename T>
+        ivec<T>::operator vec<T>() const noexcept;
+
+        /// @brief Explicit conversion to const std::vector via deep copy.
+        /// @return New std::vector<const T> containing copies of all elements.
+        /// @note O(n) time and space. Rarely needed — prefer vec<T> in most cases.
+        template <typename T>
+        ivec<T>::operator vec<const T>() const noexcept;
+    }
+    ```
+
+### Legacy choise of diction
+
+- IVec/Legacy.hpp
+    > ### Brief
+    > > STL-compatible and legacy API aliases for Tools::ivec<T>.
+    >
+    > ### Details
+    > > Provides familiar function names for users migrating from std::vector
+    > > or other containers. All functions delegate to modern ivec equivalents:
+    > > - `push_back()`   equal to `append()`
+    > > - `push_front()`  equal to `appendFirst()`
+    > > - `insert(v)`     equal to `extend()`
+    > > - `insert(item, at)` equal to `appendAt()`
+    > > - `insert(ptr, ptr)` equal to manual extend with pointer range
+    >
+    > ### Note
+    > > These are thin wrappers with zero overhead. Prefer the modern API
+    > > (append, extend, appendAt) in new code for clarity and consistency.
+    ```cpp
+    namespace Tools {
+        /** Append single element (legacy) **/
+        /// @brief "Append" single element to end (STL-compatible alias).
+        /// @param Item Element to copy-append.
+        /// @note Delegates to append(const T&). Equivalent to std::vector::push_back.
+        template <typename T>
+        void ivec<T>::push_back(const T& Item);
+
+        /** Append from first index (Legacy-ish) **/
+        /// @brief "Insert" single element at beginning (legacy alias).
+        /// @param Item Element to copy-insert at front.
+        /// @note Delegates to appendFirst(). O(n) due to element shifting.
+        ///       Equivalent to std::deque::push_front.
+        template <typename T>
+        void ivec<T>::push_front(const T& Item);
+
+        /** Move version (optional, for performance) **/
+        /// @brief "Extend" vector by moving all elements from another ivec.
+        /// @param v Source ivec whose elements are moved into this vector.
+        /// @post Source is left in valid-but-unspecified state (typically empty).
+        /// @note Delegates to extend() via implicit span conversion.
+        ///       More efficient than copy-insert for temporary sources.
+        template <typename T>
+        void ivec<T>::insert(ivec&& v);
+
+        /// @brief "Extend" vector by copying elements from a span.
+        /// @param v Span of elements to copy-append.
+        /// @note Delegates to extend(span<const T>). Accepts any contiguous range
+        ///       that converts to span (std::vector, std::array, C arrays, etc.).
+        /* Safety note
+        *
+        * v.insert(std::span{arr});        // Won't bind to non-const lvalue ref
+        * void insert(span<const T> v);    // Accepts both lvalues and rvalues
+        */
+        template <typename T>
+        void ivec<T>::insert(span<const T>& v);
+
+        /** Append at Nth index (legacy) **/
+        /// @brief "Insert" single element at specified position (legacy alias).
+        /// @param Item Element to copy-insert.
+        /// @param At Target index [0, size()]. Clamped to size() if out of range.
+        /// @note Delegates to appendAt(). O(n) due to element shifting.
+        ///       Equivalent to std::vector::insert(iterator, value).
+        template <typename T>
+        void ivec<T>::insert(const T& Item, const idx At);
+
+        /// @brief "Extend" vector by copying elements from raw pointer range [From, To).
+        /// @param From Pointer to first element (inclusive). Null-safe.
+        /// @param To Pointer past last element (exclusive). Null-safe.
+        /// @note Safe: handles nullptr, reversed range (From >= To), and empty range.
+        ///       Pre-allocates exact capacity needed (single reallocation).
+        ///       O(n) where n = To - From.
+        template <typename T>
+        void ivec<T>::insert(const T* From, const T* To);
+    }
+    ```
+
+### Formater for std & fmt (**Do not** include on Master.hpp)
+
+Warning: Do NOT uncomment these in this master header.
+Including custom formatters alongside `<fmt/ranges.h>` causes SFINAE ambiguity.
+Users must opt-in by including these headers directly in their .cpp files.
+Or pick only ivec or others.
+
+- IVec/Format.std.hpp
+    > ### Brief
+    > > Optional custom `std::formatter` for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > Provides format spec forwarding (`{:.2f}`, `{:x}`, etc.) for `std::format`.
+    > > Include this file only when you need spec forwarding beyond what
+    > > `std::ranges` provides by default.
+    ```cpp
+    #if __has_include(<format>) && defined(__cpp_lib_format)
+    #include <format>
+    template <typename T>
+    struct std::formatter<Tools::ivec<T>, char> : std::formatter<T> {...};
+    #endif
+    ```
+
+- IVec/Format.fmt.hpp
+    > ### Brief
+    > > Optional custom `fmt::formatter` for `Tools::ivec<T>`.
+    >
+    > ### Details
+    > > **Do NOT** include this file together with `<fmt/ranges.h>` in the same
+    > translation unit. They conflict due to SFINAE ambiguity.
+    >
+    > Usage:
+    >   - For basic `{}` formatting: just use `<fmt/ranges.h>` (no custom formatter needed)
+    >   - For format spec forwarding (`{:.2f}`, `{:x}`, etc.): include THIS file instead
+    >
+    > ### Note
+    > > This formatter uses `.begin()`/`.end()` iterators, maintaining full flexibility
+    > > with any iterator-based algorithm or range adapter.
+    ```cpp
+    #if __has_include(<fmt/format.h>)
+    #include <fmt/format.h>
+    template <typename T>
+    struct fmt::formatter<Tools::ivec<T>, char> : fmt::formatter<T> {...};
+    #endif
+    ```
+
+### Debug (**Do not** include on Master.hpp)
+
+- IVec/Base.RangesQualification.hpp
+    > ### Brief
+    > > Compile-time C++20/26 ranges concept verification for Tools::ivec<T>.
+    >
+    > ### Details
+    > > This header is an OPT-IN debugging aid. It is intentionally NOT included
+    > > in Base.Master.hpp to avoid slowing down normal compilation or causing
+    > > false-positive failures during development.
+    >
+    > > Include this file in your test TU or main.cpp to verify that ivec
+    > > correctly satisfies the required range concepts after modifying
+    > > iterator/accessor implementations.
+    >
+    > ### Warning
+    > > Do NOT include this in production headers or Base.Master.hpp.
+    > > The negative static_assert for rvalue borrowed_range is expected
+    > > and intentional — it confirms correct ownership semantics.
+    ```cpp
+    #if __has_include(<ranges>)
+    #include <ranges>
+
+    // Compile-time verification (uncomment to enforce):
+    namespace Tools {
+        template <typename T>
+        concept IsIVecRange = std::ranges::range<ivec<T>>;
+        static_assert(IsIVecRange<i32>, "ivec must satisfy std::ranges::range");
+
+        template <typename T>
+        concept IsIVecBorrowedRange_Val = std::ranges::borrowed_range<ivec<T>>;
+        static_assert(IsIVecBorrowedRange_Val<i32>, "ivec (&) must satisfy std::ranges::borrowed_range");
+
+        template <typename T>
+        concept IsIVecBorrowedRange_Ref = std::ranges::borrowed_range<ivec<T>&>;
+        static_assert(IsIVecBorrowedRange_Ref<i32>, "ivec (&) must satisfy std::ranges::borrowed_range");
+    }
+
+    #endif
+    ```
+
+### Usage Example
+```
+
+```
+
 
 # `VII`. Lib `Tools.Linking`
 
@@ -1772,11 +3162,100 @@ Recommended DLL Signature generation
 
 Library used internally for `Tools.Random` and `Tools.RandomHW`, this just contain aliases for some objects.
 
-- Code
-    ```cpp
-    #include <random>
-    #include "Types.hpp"
+### API Synopsis
+Customizeable Mersenne Twister engine with _**generic** named parameters_.
 
+- ### Out
+    Output is unsigned integer type (`u32` or `u64`). All mask/constant parameters derive their type from this.
+
+- ### Tampering recurrance for generation
+    - `WordSize` (`w`):  Bits per state element (32 or 64).
+    - `Degree` (`n`)  :  Internal state array size.
+    - `MidWord` (`m`) :  Feedback XOR offset.
+    - `LowerBit` (`r`):  Separation point for lower bits.
+    - `XORMask` (`a`) :  Conditional XOR mask. Type follows Out.
+
+- ### Tampering parameter for post processing
+    - `ShiftR_U` (`u`):  Tempering right-shift amount.
+    - `Mask_U` (`d`)  :  Tempering AND mask after shift `u`. Type follows Out.
+    - `ShiftL_S` (`s`):  Tempering left-shift amount for `u`.
+    - `Mask_S` (`b`)  :  Tempering AND mask after shift `s`. Type follows Out.
+    - `ShiftL_T` (`t`):  Tempering left-shift amount for `s`.
+    - `Mask_T` (`c`)  :  Tempering AND mask after shift `t`. Type follows Out.
+    - `ShiftR_L` (`l`):  Tempering right-shift amount for `t`.
+
+- ### Initialization parameter
+    - `SeedMul` (`f`) :  State initialization multiplier. Type follows Out.
+
+- ### Note:
+    - Default values correspond to `MT19937-64`.
+
+- ### Warning:
+    - Changing individual parameters produces a **_non-standard_** variant that has **not** been statistically verified. Use provided presets (`Twister64`, `Twister32`) unless you are conducting PRNG research.
+    - When `Out=u32`, default mask constants are TRUNCATED from 64-bit `MT19937-64` values and do **not** match standard `MT19937-32` constants. Always use `Twister32` preset for verified 32-bit generation, and use `Twister64` preset for verified 64-bit generation,
+
+### API Synopsis
+```cpp
+#include <random>
+#include "Types.hpp"
+
+namespace Tools::Random {
+    using namespace Tools::Types;
+
+    template <UnsignedInt Out>
+    consteval Out Get_XORMask();
+
+    template <UnsignedInt Out>
+    consteval Out Get_Mask_U();
+
+    template <UnsignedInt Out>
+    consteval Out Get_Mask_S();
+
+    template <UnsignedInt Out>
+    consteval Out Get_Mask_T();
+
+    template <UnsignedInt Out>
+    consteval Out Get_SeedMul();
+
+    template <
+        // Output Type, default is u64
+        UnsignedInt Out = u64,
+
+        // Tampering recurrance for generation
+        idx WordSize = 0x40,                    // w <idx>
+        idx Degree   = 0x138,                   // n <idx>
+        idx MidWord  = 0x9c,                    // m <idx>
+        idx LowerBit = 0x1f,                    // r <idx>
+        Out XORMask  = Get_XORMask<Out>(),      // a <Out>
+
+        // Tampering parameter for post processing
+        idx ShiftR_U = 0x1d,                    // u <idx>
+        Out Mask_U   = Get_Mask_U<Out>(),       // d <Out>
+        idx ShiftL_S = 0x11,                    // s <idx>
+        Out Mask_S   = Get_Mask_S<Out>(),       // b <Out>
+        idx ShiftL_T = 0x25,                    // t <idx>
+        Out Mask_T   = Get_Mask_T<Out>(),       // c <Out>
+        idx ShiftR_L = 0x2b,                    // l <idx>
+
+        // Initialization parameter
+        Out SeedMul  = Get_SeedMul<Out>()       // f <Out>
+    >
+    using TwisterAny = std::mersenne_twister_engine<
+        Out,
+        WordSize, Degree, MidWord, LowerBit, XORMask,
+        ShiftR_U, Mask_U,
+        ShiftL_S, Mask_S,
+        ShiftL_T, Mask_T,
+        ShiftR_L,
+        SeedMul
+    >;
+}
+```
+
+### Commonly used aliases
+
+```cpp
+namespace Tools::Random {
     using Twister32 = std::mt19937;
     using Twister64 = std::mt19937_64;
     using RdDevice  = std::random_device;
@@ -1786,7 +3265,8 @@ Library used internally for `Tools.Random` and `Tools.RandomHW`, this just conta
 
     template <Float T>
     using DistReal = std::uniform_real_distribution<T>;
-    ```
+}
+```
 
 ---
 
@@ -1963,7 +3443,7 @@ PStr ("Pointer STRing") is a zero-overhead wrapper around a C-style string point
 - PStr does NOT copy the underlying string data. The caller MUST ensure that the
 pointed-to string outlives the PStr instance. Dangling pointers will cause UB.
 
-API Synopsis
+### API Synopsis
 ```cpp
 template <typename Char = char>
 requires OneOf<Char, char, u_char, s_char, wchar, char16, char32>
@@ -2237,3 +3717,5 @@ Target of this library:
     3. Clock Selection Guide
         - `HTimeNow()`: _**Highest**_ precision, but may vary if system clock changes
         - `TimeNow()`: _**Steady**_ clock, better for measuring intervals (not implemented in current API but available)
+
+# ---

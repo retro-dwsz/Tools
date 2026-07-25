@@ -14,9 +14,9 @@ namespace Tools::Random {
     void WarningCount(const idx& SubVectorCount, const idx& CountMin, const idx& CountMax){
         if(SubVectorCount > INT32_MAX || CountMin > INT32_MAX || CountMax > INT32_MAX){
             #ifdef TOOLS_RANDOM_SILENT
-            std::println("{}", "!!");
+            printf("!!");
             #else
-            std::println("{}", Warning);
+            printf("%s", Warning.data());
             #endif
         }
     }

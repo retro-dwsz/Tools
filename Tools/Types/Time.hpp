@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Common.hpp"
 #ifndef TOOLS_TYPES_CLOCK_HPP
 #define TOOLS_TYPES_CLOCK_HPP
 
@@ -42,21 +43,21 @@ namespace Tools::Time::Units {
 
 // Durations
 template <typename T>
-concept Duration =
-       std::same_as<T, Tools::Time::Units::ns>
-    || std::same_as<T, Tools::Time::Units::ms>
-    || std::same_as<T, Tools::Time::Units::us>
-    || std::same_as<T, Tools::Time::Units::sec>
-    || std::same_as<T, Tools::Time::Units::min>
-    || std::same_as<T, Tools::Time::Units::hrs>
-    || std::same_as<T, Tools::Time::Units::days>
-    || std::same_as<T, Tools::Time::Units::weeks>
-    || std::same_as<T, Tools::Time::Units::months>;
+concept Duration = OneOf<T, Tools::Time::Units::ns,
+    Tools::Time::Units::ms,
+    Tools::Time::Units::us,
+    Tools::Time::Units::sec,
+    Tools::Time::Units::min,
+    Tools::Time::Units::hrs,
+    Tools::Time::Units::days,
+    Tools::Time::Units::weeks,
+    Tools::Time::Units::months
+>;
 
 // Helper: Convert duration to u64 (for display or storage)
 template <Duration D>
-constexpr u64 duration_to_u64(const D& d) {
-    return static_cast<u64>(d.count());
+constexpr u64 Duration_to_u64(const D& d) {
+    return scast<u64>(d.count());
 }
 
 // Helper: Cast duration to another unit

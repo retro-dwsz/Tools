@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Types/Common.hpp"
 #ifndef TOOLS_TYPES_HPP
 #define TOOLS_TYPES_HPP
 
 #include "Types/Base.hpp"
+#include "Types/Common.hpp"
 
 /*
 namespace Tools::Types {
@@ -65,7 +65,15 @@ namespace Tools::Types {
     template <typename T>
     concept Number = OneOf<T,
         i8, i16, i32, i64, idx,
+        fi8, fi16, fi32, fi64,
+        ai8, ai16, ai32, ai64,
+        afi8, afi16, afi32, afi64,
+
         u8, u16, u32, u64, sidx,
+        fu8, fu16, fu32, fu64,
+        au8, au16, au32, au64,
+        afu8, afu16, afu32, afu64,
+
         f32, f64, fld
     >;
 
@@ -85,12 +93,18 @@ namespace Tools::Types {
 
     template <typename T>
     concept SignedInt = OneOf<T,
-        i8, i16, i32, i64, sidx
+        i8, i16, i32, i64, sidx,    // Native
+        fi8, fi16, fi32, fi64,      // Fast
+        ai8, ai16, ai32, ai64,      // Atomic
+        afi8, afi16, afi32, afi64   // Atomic Fast
     >;
 
     template <typename T>
-    concept UnsigedInt = OneOf<T,
-        u8, u16, u32, u64, idx
+    concept UnsignedInt = OneOf<T,
+        u8, u16, u32, u64, idx,     // Native
+        fu8, fu16, fu32, fu64,      // Fast
+        au8, au16, au32, au64,      // Atomic
+        afu8, afu16, afu32, afu64   // Atomic Fast
     >;
 
     template <typename T>
@@ -98,7 +112,7 @@ namespace Tools::Types {
         idx, sidx
     >;
 
-    // Native integers and floats
+    // Commonlu used native integers and floats
     template <typename T>
     concept NtvInteger = OneOf<T,
         i32, i64
@@ -107,6 +121,68 @@ namespace Tools::Types {
     template <typename T>
     concept NtvFloat = OneOf<T,
         f32, f64
+    >;
+}
+
+// Extended Intger
+namespace Tools::Types {
+    template <typename T>
+    concept ExtNum = OneOf<T,
+        /* Fast Signed Integers */
+        fi8, fi16, fi32, fi64,
+
+        /* Atomic Signed Integers */
+        ai8, ai16, ai32, ai64,
+
+        /* Atomic Fast Signed Integers */
+        afi8, afi16, afi32, afi64,
+        /* Fast Unsigned Integers */
+        fu8, fu16, fu32, fu64,
+
+        /* Atomic Unsigned Integers */
+        au8, au16, au32, au64,
+
+        /* Atomic Fast Unsigned Integers */
+        afu8, afu16, afu32, afu64
+    >;
+}
+
+// Extended Intger types segmented
+namespace Tools::Types {
+    /* Fast Signed Integers */
+    template <typename T>
+    concept FInt = OneOf<T,
+        fi8, fi16, fi32, fi64
+    >;
+
+    /* Atomic Signed Integers */
+    template <typename T>
+    concept AInt = OneOf<T,
+        ai8, ai16, ai32, ai64
+    >;
+
+    /* Atomic Fast Signed Integers */
+    template <typename T>
+    concept AFInt = OneOf<T,
+        afi8, afi16, afi32, afi64
+    >;
+
+    /* Fast Unsigned Integers */
+    template <typename T>
+    concept FUInt = OneOf<T,
+        fu8, fu16, fu32, fu64
+    >;
+
+    /* Atomic Unsigned Integers */
+    template <typename T>
+    concept AUInt = OneOf<T,
+        au8, au16, au32, au64
+    >;
+
+    /* Atomic Fast Unsigned Integers */
+    template <typename T>
+    concept AFUInt = OneOf<T,
+        afu8, afu16, afu32, afu64
     >;
 }
 

@@ -13,9 +13,9 @@ namespace Tools::Random {
     void WarningCount(const idx& Count) {
         if(Count > INT16_MAX) {
             #ifdef TOOLS_RANDOM_SILENT
-            std::println("{}", "!!");
+            printf("!!");
             #else
-            std::println("{}", Warning);
+            printf("%s", Warning.data());
             #endif
         }
     }

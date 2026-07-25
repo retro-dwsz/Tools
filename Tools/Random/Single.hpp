@@ -20,13 +20,50 @@ namespace Tools::Random {
     }
 
     template <typename Real>
-    requires OneOf<Real, f32, f64>
+    requires OneOf<Real, f32, f64, fld>
     inline Real RandomNum(Real Min = -2.71, Real Max = 2.71, const u32 Rounding = 0) {
         CheckRange(Min, Max);
         sthread RdDevice Rd;
         sthread Twister64 Gen64(Rd());
 
         return Round(DistReal<Real>(Min, Max)(Gen64), Rounding);
+    }
+
+    template <typename T>
+    requires OneOf<T, i32, i64, f32, f64, fld>
+    inline T RandomNum(T Min = -2.71, T Max = 2.71, u32 Rounding = 0) {
+
+        CheckRange(Min, Max);
+        sthread RdDevice Rd;
+
+        if constexpr (TypeCompare<T, i32>){
+            sthread Twister32 Gen32(Rd());
+            return T(
+                DistInt<T>(Min, Max)(Gen32)
+            );
+        } else if constexpr (TypeCompare<T, i64>){
+            sthread Twister64 Gen64(Rd());
+            return T(
+                DistInt<T>(Min, Max)(Gen64)
+            );
+        } else if constexpr (TypeCompare<T, f32>){
+            sthread Twister32 Gen32(Rd());
+            return T(
+                Round(DistReal<T>(Min, Max)(Gen32), Rounding)
+            );
+        } else if constexpr (TypeCompare<T, f64>){
+            sthread Twister64 Gen64(Rd());
+            return T(
+                Round(DistReal<T>(Min, Max)(Gen64), Rounding)
+            );
+        } else if constexpr (TypeCompare<T, fld>){
+            sthread Twister64 Gen64(Rd());
+            return T(
+                Round(DistReal<T>(Min, Max)(Gen64), Rounding)
+            );
+        }
+
+        return T{};
     }
 }
 
@@ -50,6 +87,16 @@ namespace Tools::Random {
 
         return DistInt<i64>(Min, Max)(Gen64);
     }
+
+    inline i32 RandomNum(const Twister32& Gen32, i32 Min = -10, i32 Max = 10) {
+        CheckRange(Min, Max);
+        return DistInt<i32>(Min, Max)(Gen32);
+    }
+
+    inline i64 RandomNum(const Twister64& Gen64, i64 Min = -10, i64 Max = 10) {
+        CheckRange(Min, Max);
+        return DistInt<i64>(Min, Max)(Gen64);
+    }
 }
 
 // Floats
@@ -68,6 +115,16 @@ namespace Tools::Random {
         sthread Twister64 Gen64(Rd());
 
         return Round(DistReal<f64>(Min, Max)(Gen64), Rounding);
+    }
+
+    inline f32 RandomNum(const Twister32& Gen32, f32 Min = -10, f32 Max = 10) {
+        CheckRange(Min, Max);
+        return DistReal<f32>(Min, Max)(Gen32);
+    }
+
+    inline f64 RandomNum(const Twister64& Gen64, f64 Min = -10, f64 Max = 10) {
+        CheckRange(Min, Max);
+        return DistReal<f64>(Min, Max)(Gen64);
     }
 }
 

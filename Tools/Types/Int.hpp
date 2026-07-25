@@ -5,7 +5,6 @@
 
 /* ---- Integers ---- */
 
-#include <concepts>
 #include <cstdint>
 
 using i8        = int8_t;
