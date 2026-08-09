@@ -1,11 +1,18 @@
+/* ---- Begin: Random.hpp ---- */
+
 #pragma once
 
 #ifndef TOOLS_RANDOM_HPP
-#define TOOLS_RANDOM_HPP
+#define TOOLS_RANDOM_HPP 0
 
 #include "FeatureCheck.hpp"
 
-/* Legend
+/* Tools.Random, random number wrapper for singly/multiple items per function
+ * Total files: 14
+ * Total function: 11*6 = 66 funcs
+ * Total size: 131 KB
+ *
+ * Legend
  * "I"   stands for "Integer" (i32)
  * "L"   stands for "Long" (i64)
  * "F"   stands for "Float" (f32)
@@ -30,30 +37,43 @@
  * "SBL" stands for "Scattered Bundled Long Integer"
  * "SBF" stands for "Scattered Bundled Float"
  * "SBD" stands for "Scattered Bundled Double"
+ *
+ * Twister available in 32/64-bit or in Custom
  */
 
 /** Required for functions **/
 #include "Random/_Common.hpp"
 
 /** Singly functions **/
-#include "Random/Single.hpp"
+#include "Random/Single.Base.hpp"
+#include "Random/Single.Custom.hpp"
 
 /** Vector functions **/
-#include "Random/Vector.hpp"
-
-/** Vector multi-thread **/
-#include "Random/Vector.thread.hpp"
+#include "Random/Vector.Base.hpp"
+#include "Random/Vector.Custom.hpp"
+#include "Random/Vector.Thread.hpp"
+#include "Random/Vector.Thread.Custom.hpp"
 
 /** Bundled functions (vector in vector) **/
-#include "Random/Bundle.hpp"
-
-/** Bundle multi-thread **/
-#include "Random/Bundle.thread.hpp"
+#include "Random/Bundle.Base.hpp"
+#include "Random/Bundle.Custom.hpp"
+#include "Random/Bundle.Thread.hpp"
+#include "Random/Bundle.Thread.Custom.hpp"
 
 /** SBundled functions (vector in vector with scattered sizes) **/
-#include "Random/SBundle.hpp"
+#include "Random/SBundle.Base.hpp"
+#include "Random/SBundle.Custom.hpp"
+#include "Random/SBundle.Thread.hpp"
+#include "Random/SBundle.Thread.Custom.hpp"
 
-/** SBundle multi-thread **/
-#include "Random/SBundle.thread.hpp"
+/** Random String **/
+#include "Random/String.Base.hpp"
+#include "Random/String.Custom.hpp"
+
+/** Random Choice from  generic iterables **/
+#include "Random/Choice.Base.hpp"
+#include "Random/Choice.Custom.hpp"
 
 #endif
+
+/* ---- End: Random.hpp ---- */

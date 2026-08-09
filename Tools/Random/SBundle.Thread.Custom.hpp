@@ -1,35 +1,46 @@
-/* ---- Begin: Random/SBundle.Thread.hpp ---- */
+/* ---- Begin: Random/SBundle.Thread.Custom.hpp ---- */
 
 #pragma once
 
-#ifndef TOOLS_RANDOM_SBUNDLE_THREAD_HPP
-#define TOOLS_RANDOM_SBUNDLE_THREAD_HPP 13
+#ifndef TOOLS_RANDOM_SBUNDLE_THREAD_CUSTOM_HPP
+#define TOOLS_RANDOM_SBUNDLE_THREAD_CUSTOM_HPP 14
 
-/** Vector in vector functions with fixed min/max value vectors and random sub-vector element count with multithreading **/
+/** Vector in vector functions with fixed min/max value vectors and random sub-vector element count with custom twister and multithreading **/
 /**
- * @file SBundle.Thread.hpp
- * @brief Provides multi-threaded functions for generating scattered bundles (ragged 2D vectors).
+ * @file SBundle.Thread.Custom.hpp
+ * @brief Provides multi-threaded scattered bundle generation using a user-provided custom generator.
  *
- * This header implements parallel generation of ragged arrays where each sub-vector has
- * a randomly determined size within [CountMin, CountMax]. Work distribution uses an
- * atomic work-stealing approach: each worker thread grabs the next available sub-vector
- * index dynamically, ensuring balanced load even when sub-vector sizes vary significantly.
+ * This header combines ragged array generation with parallel execution and external
+ * PRNG control. Each sub-vector has a randomly determined size within [ValueCountMin, ValueCountMax].
+ * Work distribution uses an atomic work-stealing approach: each worker thread grabs the next
+ * available sub-vector index dynamically, ensuring balanced load even when sub-vector sizes
+ * vary significantly.
  *
  * @section thread_safety Thread Safety & Generator Strategy
- * Each worker thread creates its own LOCAL Twister engine seeded from the master generator.
- * This eliminates data races on the non-thread-safe Mersenne Twister while maintaining
- * deterministic reproducibility for the same initial seed.
+ * - The user-provided generator (`Gen`) is accessed ONLY sequentially in the calling thread
+ *   to derive seeds for workers. It is NOT shared across threads during generation.
+ * - Each worker creates its own LOCAL Twister engine (type deduced from master via
+ *   `std::decay_t<decltype(Gen)>`) seeded deterministically from the master.
+ * - No mutexes needed; zero contention during the generation phase.
  *
  * @note Sub-vector sizes are pre-calculated sequentially before spawning workers to ensure
  *       deterministic size distribution regardless of thread count.
  *
+ * @warning Reproducibility depends entirely on the state of 'Gen' passed by the caller.
+ *          The same seed + same thread count will always produce identical results.
+ *
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace ToolsExperimental;
  *
- * // Generate 100 ragged sub-vectors (size 10-50 each) using all hardware threads
- * auto data = Random::RandomNumsTSBI(100, 10, 50, -100, 100, 0);
+ * // Generate 100 ragged sub-vectors (size 10-50 each) using 8 threads with custom generator
+ * Twister64 myGen(42);
+ * auto data = Random::RandomNumsTSBI(myGen, 100, 10, 50, -100, 100, 8);
+ *
+ * // Auto-detect hardware concurrency (Thread = 0)
+ * Twister32 gen32(12345);
+ * auto ragged = Random::RandomNumsTSBF(gen32, 50, 5, 20, -1.0f, 1.0f, 2, 0);
  * @endcode
  */
 
@@ -37,18 +48,20 @@
 #include <thread>
 #include <atomic>
 
+/** Generic **/
 /**
  * @namespace Tools::Random
- * @brief Generic template functions for multi-threaded scattered bundle generation.
+ * @brief Generic template functions for multi-threaded scattered bundle generation with custom engines.
  */
 namespace Tools::Random {
     /**
-     * @brief Generates a ragged 2D vector of random integers using multiple threads.
+     * @brief Generates a ragged 2D vector of random integers using multiple threads and a custom generator.
      *
-     * Uses atomic work-stealing for load balancing across threads. Each worker gets
-     * a locally-seeded Twister64 to avoid contention.
+     * Uses atomic work-stealing for load balancing. Each worker gets a locally-seeded
+     * Twister engine matching the type of the provided master generator.
      *
      * @tparam Int The integer type (must be i32 or i64).
+     * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
      * @param SubVectorCount Number of sub-vectors. Default: 4.
      * @param ValueCountMin Min elements per sub-vector (inclusive). Default: 10.
      * @param ValueCountMax Max elements per sub-vector (inclusive). Default: 30.
@@ -60,10 +73,11 @@ namespace Tools::Random {
      */
     template <Tools::Types::Integer Int = i32>
     Bundle<Int> RandomNumsTSB(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         Int ValueMin = -10, Int ValueMax = 10,
-        const idx Thread = 4
+        const idx Thread = 0
     ) {
         CheckRange(ValueMin, ValueMax);
         CheckRange(ValueCountMin, ValueCountMax);
@@ -74,12 +88,9 @@ namespace Tools::Random {
 
         if (SubVectorCount == 0) return Result;
 
-        RdDevice Rd;
-        TwisterFor<Int> MasterGen(Rd());
-
         // Use hardware concurrency if Thread == 0
         idx NumThreads = Thread;
-        if(NumThreads == 0) {
+        if (NumThreads == 0) {
             NumThreads = std::max<idx>(1, std::thread::hardware_concurrency());
         }
 
@@ -89,8 +100,8 @@ namespace Tools::Random {
         vec<idx> Counts(SubVectorCount);
         {
             DistInt<idx> DistCount(ValueCountMin, ValueCountMax);
-            for(idx i = 0; i < SubVectorCount; ++i) {
-                Counts[i] = DistCount(MasterGen);
+            for (idx i = 0; i < SubVectorCount; ++i) {
+                Counts[i] = DistCount(Gen);
                 Result[i].reserve(Counts[i]);
             }
         }
@@ -99,17 +110,23 @@ namespace Tools::Random {
         Workers.reserve(NumThreads);
         std::atomic<idx> CurrentIdx{0};
 
-        for(idx t = 0; t < NumThreads; ++t) {
-            auto LocalSeed = MasterGen();
+        // Deduce worker twister type from master generator
+        using WorkerTwister = std::decay_t<decltype(Gen)>;
+
+        for (idx t = 0; t < NumThreads; ++t) {
+            // Derive seed sequentially from master generator
+            auto LocalSeed = Gen();
 
             Workers.emplace_back(
                 [&Result, &CurrentIdx, &Counts, SubVectorCount, NResult, LocalSeed](const std::stop_token& st) mutable {
-                TwisterFor<Int> LocalGen(LocalSeed);
-                while(!st.stop_requested()) {
-                    const idx i = CurrentIdx.fetch_add(1, std::memory_order_relaxed);
-                    if(i >= SubVectorCount) break;
+                // Local random generator per thread to avoid contention
+                WorkerTwister LocalGen(LocalSeed);
 
-                    for(idx j = 0; j < Counts[i]; ++j) {
+                while (!st.stop_requested()) {
+                    const idx i = CurrentIdx.fetch_add(1, std::memory_order_relaxed);
+                    if (i >= SubVectorCount) break;
+
+                    for (idx j = 0; j < Counts[i]; ++j) {
                         Result[i].push_back(NResult(LocalGen));
                     }
                 }
@@ -120,9 +137,10 @@ namespace Tools::Random {
     }
 
     /**
-     * @brief Generates a ragged 2D vector of random floating-point numbers using multiple threads.
+     * @brief Generates a ragged 2D vector of random floating-point numbers using multiple threads and a custom generator.
      *
      * @tparam Real The floating-point type (must be f32, f64, or fld).
+     * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
      * @param SubVectorCount Number of sub-vectors. Default: 4.
      * @param ValueCountMin Min elements per sub-vector. Default: 10.
      * @param ValueCountMax Max elements per sub-vector. Default: 30.
@@ -134,11 +152,12 @@ namespace Tools::Random {
      */
     template <Tools::Types::Float Real = f32>
     Bundle<Real> RandomNumsTSB(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         Real ValueMin = -10, Real ValueMax = 10,
         const u32 Rounding = 0,
-        const idx Thread = 4
+        const idx Thread = 0
     ) {
         CheckRange(ValueMin, ValueMax);
         CheckRange(ValueCountMin, ValueCountMax);
@@ -149,11 +168,8 @@ namespace Tools::Random {
 
         if (SubVectorCount == 0) return Result;
 
-        RdDevice Rd;
-        TwisterFor<Real> MasterGen(Rd());
-
         idx NumThreads = Thread;
-        if(NumThreads == 0) {
+        if (NumThreads == 0) {
             NumThreads = std::max<idx>(1, std::thread::hardware_concurrency());
         }
 
@@ -162,8 +178,8 @@ namespace Tools::Random {
         vec<idx> Counts(SubVectorCount);
         {
             DistInt<idx> DistCount(ValueCountMin, ValueCountMax);
-            for(idx i = 0; i < SubVectorCount; ++i) {
-                Counts[i] = DistCount(MasterGen);
+            for (idx i = 0; i < SubVectorCount; ++i) {
+                Counts[i] = DistCount(Gen);
                 Result[i].reserve(Counts[i]);
             }
         }
@@ -172,17 +188,22 @@ namespace Tools::Random {
         Workers.reserve(NumThreads);
         std::atomic<idx> CurrentIdx{0};
 
-        for(idx t = 0; t < NumThreads; ++t) {
-            auto LocalSeed = MasterGen();
+        // Deduce worker twister type from master generator
+        using WorkerTwister = std::decay_t<decltype(Gen)>;
+
+        for (idx t = 0; t < NumThreads; ++t) {
+            auto LocalSeed = Gen();
 
             Workers.emplace_back(
                 [&Result, &CurrentIdx, &Counts, SubVectorCount, NResult, LocalSeed, Rounding](const std::stop_token& st) mutable {
-                TwisterFor<Real> LocalGen(LocalSeed);
-                while(!st.stop_requested()) {
-                    const idx i = CurrentIdx.fetch_add(1, std::memory_order_relaxed);
-                    if(i >= SubVectorCount) break;
+                // Local random generator per thread to avoid contention
+                WorkerTwister LocalGen(LocalSeed);
 
-                    for(idx j = 0; j < Counts[i]; ++j) {
+                while (!st.stop_requested()) {
+                    const idx i = CurrentIdx.fetch_add(1, std::memory_order_relaxed);
+                    if (i >= SubVectorCount) break;
+
+                    for (idx j = 0; j < Counts[i]; ++j) {
                         Result[i].push_back(Round(NResult(LocalGen), Rounding));
                     }
                 }
@@ -193,22 +214,16 @@ namespace Tools::Random {
     }
 }
 
-/**
- * @namespace Tools::Random
- * @brief Type-specific overloads for multi-threaded integer scattered bundle generation.
- */
 namespace Tools::Random {
-    /**
-     * @brief Multi-threaded ragged 2D i32 bundle generation.
-     * Uses Twister32 per worker for optimal performance.
-     */
     inline Bundle<i32> RandomNumsTSBI(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         i32 ValueMin = -10, i32 ValueMax = 10,
         const idx Thread = 0
     ) {
         return RandomNumsTSB<i32>(
+            Gen,
             SubVectorCount,
             ValueCountMin, ValueCountMax,
             ValueMin, ValueMax,
@@ -216,17 +231,15 @@ namespace Tools::Random {
         );
     }
 
-    /**
-     * @brief Multi-threaded ragged 2D i64 bundle generation.
-     * Uses Twister64 per worker.
-     */
     inline Bundle<i64> RandomNumsTSBL(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         i64 ValueMin = -10, i64 ValueMax = 10,
         const idx Thread = 0
     ) {
         return RandomNumsTSB<i64>(
+            Gen,
             SubVectorCount,
             ValueCountMin, ValueCountMax,
             ValueMin, ValueMax,
@@ -235,16 +248,9 @@ namespace Tools::Random {
     }
 }
 
-/**
- * @namespace Tools::Random
- * @brief Type-specific overloads for multi-threaded float scattered bundle generation.
- */
 namespace Tools::Random {
-    /**
-     * @brief Multi-threaded ragged 2D f32 bundle generation.
-     * Uses Twister32 per worker.
-     */
     inline Bundle<f32> RandomNumsTSBF(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         f32 ValueMin = -10, f32 ValueMax = 10,
@@ -252,18 +258,17 @@ namespace Tools::Random {
         const idx Thread = 0
     ) {
         return RandomNumsTSB<f32>(
+            Gen,
             SubVectorCount,
             ValueCountMin, ValueCountMax,
-            ValueMin, ValueMax, Rounding,
+            ValueMin, ValueMax,
+            Rounding,
             Thread
         );
     }
 
-    /**
-     * @brief Multi-threaded ragged 2D f64 bundle generation.
-     * Uses Twister64 per worker.
-     */
     inline Bundle<f64> RandomNumsTSBD(
+        TwisterAny<>& Gen,
         const idx SubVectorCount = 4,
         idx ValueCountMin = 10, idx ValueCountMax = 30,
         f64 ValueMin = -10, f64 ValueMax = 10,
@@ -271,9 +276,11 @@ namespace Tools::Random {
         const idx Thread = 0
     ) {
         return RandomNumsTSB<f64>(
+            Gen,
             SubVectorCount,
             ValueCountMin, ValueCountMax,
-            ValueMin, ValueMax, Rounding,
+            ValueMin, ValueMax,
+            Rounding,
             Thread
         );
     }
@@ -281,4 +288,4 @@ namespace Tools::Random {
 
 #endif
 
-/* ---- End: Random/SBundle.Thread.hpp ---- */
+/* ---- End: Random/SBundle.Thread.Custom.hpp ---- */

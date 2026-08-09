@@ -1,4 +1,4 @@
-# Tools.cpp
+# Retro Dave's Tools "Tools.hpp" Tools:: (or rdt::)
 
 - ### What is this?
     A simple fully _header-only_ lib for C++ to make your code sesion _fells_ fun and kinda more Python-y feel. This lib in inteded for simple libs and everyday coding, not for big/enteprise project on that actually matter on you life or money.
@@ -140,36 +140,25 @@
 - ### Folder `Tools/Random/*`
     |               File            |                         What is this?                         |
     |-------------------------------|---------------------------------------------------------------|
-    | `/Random/Common.hpp`   | Internal utility for other files                                     |
-    | `/Random/Single.hpp`   | Single number generator                                              |
-    | `/Random/Vector.hpp`   | Generator for `std::vector<>`                                        |
-    | `/Random/Bundle.hpp`   | Generator for `std::vector<std::vector<>>`                           |
-    | `/Random/Sbundle.hpp`  | Just like `bundle`, but every sub-vector's size are different        |
-    | `/Random/Vector.thread.hpp`   | Just like `/Random/Vector.hpp` but with multithreading        |
-    | `/Random/Bundle.thread.hpp`   | Just like `/Random/Bundle.hpp` but with multithreading        |
-    | `/Random/Sbundle.thread.hpp`  | Just like `/Random/SBector.hpp`, but with multithreading      |
-
-- ### Folder `Tools/Random.Basic/*` (Deprecated)
-    Just like `Tools.Random`, but `Twister32`&`Twister64` are initialized on single number generator. So `vector`, `bundle`, and `sbundle` are repeated use of `single`, which is not a good practice of use.
-    |               File                        |       What is this?      |
-    |-------------------------------------------|--------------------------|
-    | `/Random.Basic/Random.basic.hpp`          | _Same as `Tools.Random`_ |
-    | `/Random.Basic/Random.common.basic.hpp`   | _Same as `Tools.Random.Common`_ |
-    | `/Random.Basic/Random.single.basic.hpp`   | _Same as `Tools.Random.Single`_ |
-    | `/Random.Basic/Random.vector.basic.hpp`   | _Same as `Tools.Random.Vector`_ |
-    | `/Random.Basic/Random.bundle.basic.hpp`   | _Same as `Tools.Random.Bundle`_ |
-    | `/Random.Basic/Random.sbundle.basic.hpp`  | _Same as `Tools.Random.SBundle`_ |
-
-
-- ### Folder `Tools/RandomHW/*` (Deprecated)
-    Just like `Tools.Random`, but optimized for x86 command called `RDSEED` and `RDRAND`
-    |               File               |                      What is this?                            |
-    |----------------------------------|---------------------------------------------------------------|
-    | `/RandomHW/Common.hpp`  | Single number HW generator                                    |
-    | `/RandomHW/Single.hpp`  | Generator for `std::vector<std::vector<>>`                    |
-    | `/RandomHW/Vector.hpp`  | Just like `bundle`, but every sub-vector's size are different |
-    | `/RandomHW/Bundle.hpp`  | Internal utility for other files                              |
-    | `/RandomHW/SBundle.hpp` | Generator for `std::vector<>`                                 |
+    | `"Random/_Common.hpp"`                | Internal utility for other files |
+    | `"Random/Single.Base.hpp"`            | Single number generator |
+    | `"Random/Single.Custom.hpp"`          | Single number generator with custom twister|
+    | `"Random/Vector.Base.hpp"`            | Generator for `std::vector<>` |
+    | `"Random/Vector.Custom.hpp"`          | Generator for `std::vector<>` with custom twister|
+    | `"Random/Vector.Thread.hpp"`          | Generator for `std::vector<>` with multithreading|
+    | `"Random/Vector.Thread.Custom.hpp"`   | Generator for `std::vector<>` with multithreading + custom twister |
+    | `"Random/Bundle.Base.hpp"`            | Generator for `std::vector<std::vector<>>` |
+    | `"Random/Bundle.Custom.hpp"`          | Generator for `std::vector<std::vector<>>` with custom twister |
+    | `"Random/Bundle.Thread.hpp"`          | Generator for `std::vector<std::vector<>>` with multithreading|
+    | `"Random/Bundle.Thread.Custom.hpp"`   | Generator for `std::vector<std::vector<>>` with multithreading + custom twister |
+    | `"Random/SBundle.Base.hpp"`           | Generator for `std::vector<std::vector<>>` |
+    | `"Random/SBundle.Custom.hpp"`         | Generator for `std::vector<std::vector<>>` with custom twister |
+    | `"Random/SBundle.Thread.hpp"`         | Generator for `std::vector<std::vector<>>` with multithreading|
+    | `"Random/SBundle.Thread.Custom.hpp"`  | Generator for `std::vector<std::vector<>>` with multithreading + custom twister |
+    | `"Random/String.Base.hpp"`            | Generator for `char` or `str` from given range or charset |
+    | `"Random/String.Custom.hpp"`          | Generator for `char` or `str` from given range or charset with custom twister |
+    | `"Random/Choice.Base.hpp"`            | Random choice selector (implements `Vector.Base.hpp`) for given `std::vector` or any iterables |
+    | `"Random/Choice.Custom.hpp"`          | Random choice selector (implements `Vector.Base.hpp`) for given `std::vector` or any iterables with custom twister |
 
 - ### Folder `Tools/Vector/*`
     |               File                |                                What is this?                              |
@@ -461,7 +450,7 @@ This will check given bounds, and swap them if `min` is bigger than `max`
         T GetMax();
 
         template <typename T>
-        T GetMin()
+        T GetMin();
     }
     ```
 
@@ -505,10 +494,10 @@ code:
 namespace Tools::FormatNumber {
     /* Defaults */
     template <Integer T>
-    str Format(const T n)
+    str Format(const T n);
 
     template <Float T>
-    str Format(const T n)
+    str Format(const T n);
 
     /* Customs */
     template <Integer T>
@@ -554,10 +543,10 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec.hpp
 
-    Main entry point for the Tools::ivec<T> container library.
+    Main entry point for the `Tools::ivec<T>` container library.
 
 - IVec/Base.Master.hpp
-    * Master aggregation header for the Tools::ivec<T> container.
+    * Master aggregation header for the `Tools::ivec<T>` container.
     * This file serves as the single entry point for the ivec implementation. It includes all segmented module headers in the correct dependency order. Users should typically include "IVec.hpp" which transitively includes this file.
     * Naming Conventions
         - `-Inl` suffix: In-place mutation (modifies the container directly).       Methods without this suffix return a new modified copy.
@@ -683,20 +672,20 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
             [[nodiscard]] /* __eq__  */ bool operator==(const ivec& Other) const;
 
             /** [Items] Orders **/
-            [[nodiscard]]   ivec shuffle();
-            [[nodiscard]]   ivec Sort();
-            [[nodiscard]]   ivec rSort();
-            [[nodiscard]]   ivec Reverse();
-                            void ShuffleInl();
-                            void SortInl();
-                            void rSortInl();
-                            void ReverseInl();
+            [[nodiscard]] ivec shuffle();
+            [[nodiscard]] ivec Sort();
+            [[nodiscard]] ivec rSort();
+            [[nodiscard]] ivec Reverse();
+                          void ShuffleInl();
+                          void SortInl();
+                          void rSortInl();
+                          void ReverseInl();
 
             /** [Items] Query **/
-            [[nodiscard]]   ivec Uniques(idx Max = 1);
-            [[nodiscard]]   ivec Reassign(span<const T> Data, idx Start);
-                            void UniquesInl(idx Max = 1);
-                            void ReassignInl(span<const T> Data, idx Start);
+            [[nodiscard]] ivec Uniques(idx Max = 1);
+            [[nodiscard]] ivec Reassign(span<const T> Data, idx Start);
+                          void UniquesInl(idx Max = 1);
+                          void ReassignInl(span<const T> Data, idx Start);
 
             /** [Items] Find utils **/
             [[nodiscard]] bool Contains(const T& Item) noexcept;
@@ -707,8 +696,8 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
             /** [Items] Slicers **/
             [[nodiscard]] ivec Slice(i64 From, i64 To);
             [[nodiscard]] ivec Slice(i64 To);
-            void SliceInl(i64 From, i64 To);
-            void SliceInl(i64 To);
+                          void SliceInl(i64 From, i64 To);
+                          void SliceInl(i64 To);
 
             /** [Items] Eraser return new by index **/
             [[nodiscard]] ivec Erase(idx Pos);
@@ -832,7 +821,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
     ```
 - IVec/Init.Dtor.hpp
     > ### Brief
-    > > Destructor implementation for Tools::ivec<T>.
+    > > Destructor implementation for `Tools::ivec<T>`.
     >
     > ### Details
     > > Responsible for proper cleanup of heap-allocated resources:
@@ -860,7 +849,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Data.hpp
     > ### Brief
-    > > Core data accessors for Tools::ivec<T>.
+    > > Core data accessors for `Tools::ivec<T>`.
     >
     > ### details
     > Provides read-only and mutable access to the underlying storage, size/capacity queries, and memory usage reporting. All methods are O(1) and `noexcept` where applicable.
@@ -904,7 +893,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.State.hpp
     > ### Brief
-    > > Container state management for Tools::ivec<T>.
+    > > Container state management for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides utilities for clearing contents and querying emptiness.
@@ -931,7 +920,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Resize.hpp
     > ### Brief
-    > > Capacity management for Tools::ivec<T>.
+    > > Capacity management for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides reserve() for pre-allocation without changing size, and resize() for changing the logical element count with optional fill value.
@@ -966,7 +955,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Append.hpp
     > ### Brief
-    > > Single-element append operations for Tools::ivec<T>.
+    > > Single-element append operations for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides append() overloads for adding individual elements to the end of the vector. Supports both lvalue (copy) and rvalue (move) semantics. Automatic capacity growth uses 2x strategy.
@@ -999,7 +988,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Append.Idx.hpp
     > ### Brief
-    > > Positional insertion operations for Tools::ivec<T>.
+    > > Positional insertion operations for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides appendFirst() and appendAt() for inserting elements at specific positions.
@@ -1034,15 +1023,15 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
     ```
 
 - IVec/Core.Emplace.hpp
-    > ### brief
-    > > In-place construction at end for Tools::ivec<T>.
+    > ### Brief
+    > > In-place construction at end for `Tools::ivec<T>`.
     >
-    > ### details
+    > ### Details
     > > Provides emplace() for constructing elements directly in the vector's
     > > storage using perfect forwarding. Avoids temporary object creation
     > > and extra copy/move operations compared to append().
     >
-    > ### note
+    > ### Note
     > > Prefer emplace() over append() when constructing complex objects or
     > > when T is non-copyable/non-movable. For simple types (int, float),
     > > performance difference is negligible.
@@ -1064,7 +1053,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Emplace.Idx.hpp
     > ### Brief
-    > > Positional in-place construction for Tools::ivec<T>.
+    > > Positional in-place construction for `Tools::ivec<T>`.
     >
     > ### Details
     > Provides emplaceFront() and emplaceAt() for constructing elements
@@ -1109,7 +1098,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Core.Extend.hpp
     > ### Brief
-    > > Bulk element insertion for Tools::ivec<T>.
+    > > Bulk element insertion for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides extend() for appending multiple elements from any contiguous
@@ -1139,7 +1128,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Access.Getset.hpp
     > ### Brief
-    > > Element access operators and copy assignment for Tools::ivec<T>.
+    > > Element access operators and copy assignment for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides unchecked `operator[]` for performance-critical paths,
@@ -2025,7 +2014,7 @@ All description is already in `IVec/*.hpp`, descriptions are intentionally made 
 
 - IVec/Legacy.hpp
     > ### Brief
-    > > STL-compatible and legacy API aliases for Tools::ivec<T>.
+    > > STL-compatible and legacy API aliases for `Tools::ivec<T>`.
     >
     > ### Details
     > > Provides familiar function names for users migrating from std::vector
@@ -2147,7 +2136,7 @@ Or pick only ivec or others.
 
 - IVec/Base.RangesQualification.hpp
     > ### Brief
-    > > Compile-time C++20/26 ranges concept verification for Tools::ivec<T>.
+    > > Compile-time C++20/26 ranges concept verification for `Tools::ivec<T>`.
     >
     > ### Details
     > > This header is an OPT-IN debugging aid. It is intentionally NOT included
@@ -2184,10 +2173,10 @@ Or pick only ivec or others.
     #endif
     ```
 
-### Usage Example
+<!-- ### Usage Example
 ```
 
-```
+``` -->
 
 
 # `VII`. Lib `Tools.Linking`
@@ -2744,391 +2733,2388 @@ Recommended DLL Signature generation
 - ### API Codes Synopsis:
     - Supported types are `i32`, `i64`, `f32`, and `f64`. `Num` will return single value, `Nums` will return a bunch of numbers.
 
-    ```cpp
-    /* Singles */
+    ### File `Common.hpp`
+    > ### Brief
+    > Internal common utilities and definitions for the ToolsE::Random module.
+    > This header provides shared dependencies, type aliases, and helper functions
+    > used across the randomization library. It includes core Tools library components
+    > for types, casting, rounding, and base randomization primitives.
 
-    // Generic
+    > ### Library Overview
+    > Tools.Random is a high-performance, C++26-compliant randomization wrapper
+    > designed to provide Python-like expressiveness with C++ type safety.
+
+    > ### Key Features:
+    > - **Type Safety**: Uses C++20/26 concepts (OneOf) to ensure correct type usage.
+    > - **Thread Safety**: Utilizes `static thread_local` generators for single-threaded
+    >   functions and `std::jthread` with local generators for multi-threaded operations.
+    > - **Flexibility**: Supports both preset generators (32/64-bit Mersenne Twister)
+    >   and custom user-provided generators via `TwisterAny<>`.
+    > - **Unicode Support**: Full support for char, wchar_t, char16_t, and char32_t.
+
+    > ### File Structure
+    > The library is organized into three main categories:
+    > 1. **Base**: Single-threaded functions with preset generators.
+    > 2. **Custom**: Single-threaded functions accepting a custom `TwisterAny<>` reference.
+    > 3. **Thread**: Multi-threaded functions using `std::jthread` for parallel generation.
+
+    > ### Naming Conventions
+    > Functions follow a strict suffix pattern to indicate their behavior: \
+    > `I`: Integer (`i32`) \
+    > `L`: Long Integer (`i64`) \
+    > `F`: Float (`f32`) \
+    > `D`: Double (`f64`) \
+    > `V`: Vector (`std::vector` or custom `vec`) \
+    > `B`: Bundle (`vec<vec<T>>`) \
+    > `SB`: Scattered Bundle (`vec<vec<T>>` with random sub-vector sizes) \
+    > `T`: Threaded (Multi-threaded implementation) \
+    > Example: `RandomNumsTVI` `->` Random Numbers, Threaded, Vector, Integer 32.
+
+    ### Master file
+    `Tools.Random`, random number wrapper for singly/multiple items per function
+    - Total files: 14
+    - Total function: 11*6 = 66 funcs
+    - Total size: 131 KB
+
+    Legend
+    - Types
+        - `I` stands for "Integer" (i32)
+        - `L` stands for "Long" (i64)
+        - `F` stands for "Float" (f32)
+        - `D` stands for "Double" (f64)
+        - `V` stands for "Vector"
+        - `B` stands for "Bundled"
+        - `SB` stands for "Scattered Bundle"
+
+    - How they process?
+        - Functions end with `VI` or something else without `T` are single thread
+        - `T` stands for "Threaded", which means those are using multithreading
+
+    - Vector types
+        - `VI` stands for "Vector Integer"
+        - `VL` stands for "Vector Long Integer"
+        - `VF` stands for "Vector Float"
+        - `VD` stands for "Vector Double"
+
+    - Vector in vector (bundle) types
+        - `BI` stands for "Bundled Integer"
+        - `BL` stands for "Bundled Long Integer"
+        - `BF` stands for "Bundled Float"
+        - `BD` stands for "Bundled Double"
+
+    - Vector in vector with random size each subvector
+        - `SBI` stands for "Scattered Bundled Integer"
+        - `SBL` stands for "Scattered Bundled Long Integer"
+        - `SBF` stands for "Scattered Bundled Float"
+        - `SBD` stands for "Scattered Bundled Double"
+
+    Twister available in 32/64-bit or in Custom
+
+    ```cpp
+    /** Required for functions **/
+    #include "Random/_Common.hpp"
+
+    /** Singly functions **/
+    #include "Random/Single.Base.hpp"
+    #include "Random/Single.Custom.hpp"
+
+    /** Vector functions **/
+    #include "Random/Vector.Base.hpp"
+    #include "Random/Vector.Custom.hpp"
+    #include "Random/Vector.Thread.hpp"
+    #include "Random/Vector.Thread.Custom.hpp"
+
+    /** Bundled functions (vector in vector) **/
+    #include "Random/Bundle.Base.hpp"
+    #include "Random/Bundle.Custom.hpp"
+    #include "Random/Bundle.Thread.hpp"
+    #include "Random/Bundle.Thread.Custom.hpp"
+
+    /** SBundled functions (vector in vector with scattered sizes) **/
+    #include "Random/SBundle.Base.hpp"
+    #include "Random/SBundle.Custom.hpp"
+    #include "Random/SBundle.Thread.hpp"
+    #include "Random/SBundle.Thread.Custom.hpp"
+
+    /** Random String **/
+    #include "Random/String.Base.hpp"
+    #include "Random/String.Custom.hpp"
+
+    /** Random Choice from vec or ivec **/
+    #include "Random/Choice.Base.hpp"
+    #include "Random/Choice.Custom.hpp"
+    ```
+
+    ### Singly functions
+
+    ### `Random/Single.Base.hpp`
+    Provides functions for generating single random numbers using preset thread-local generators.
+
+    This header implements the core "Single" functionality of Tools.Random. It offers
+    both generic template functions and type-specific overloads for integers and floating-point
+    numbers. All functions in this file utilize `static thread_local` (`sthread`) generators,
+    ensuring high performance and thread-safety without the overhead of mutexes or explicit
+    generator management by the user.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    auto i = Random::RandomNumI(-50, 50);   // Integer [-50, 50]
+    auto d = Random::RandomNumD(0.0, 1.0);  // Double [0.0, 1.0]
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+    * @namespace Tools::Random
+    * @brief Generic template functions for single random number generation.
+    */
     namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        inline Int RandomNum(
+        /**
+        * @brief Generates a single random integer within the specified range.
+        *
+        * Uses a 64-bit Mersenne Twister generator stored in thread-local storage.
+        *
+        * @tparam Int The integer type (must be i32 or i64).
+        * @param Min The lower bound of the range (inclusive). Default: -100.
+        * @param Max The upper bound of the range (inclusive). Default: 100.
+        * @return Int A random integer between Min and Max.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Integer Int = i32>
+        Int RandomNum(
             Int Min = -100,
             Int Max = 100
         );
 
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        inline Real RandomNum(
+        /**
+        * @brief Generates a single random floating-point number within the specified range.
+        *
+        * Uses a 64-bit Mersenne Twister generator and applies optional rounding.
+        *
+        * @tparam Real The floating-point type (must be f32, f64, or fld).
+        * @param Min The lower bound of the range (inclusive). Default: -2.71.
+        * @param Max The upper bound of the range (inclusive). Default: 2.71.
+        * @param Rounding The number of decimal places to round the result to. Default: 0.
+        * @return Real A random floating-point number between Min and Max.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Float Real = f32>
+        Real RandomNum(
             Real Min = -2.71,
             Real Max = 2.71,
-            const i32 Rounding = 0
+            const u32 Rounding = 0
         );
     }
 
-    // All
+    /** Integer **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for integer random number generation.
+    */
     namespace Tools::Random {
+        /**
+        * @brief Generates a single 32-bit random integer.
+        */
         inline i32 RandomNumI(
-            i32 Min = 0,            // Minimum value
-            i32 Max = 9             // Maximum value
+            i32 ValueMin = -10,
+            i32 ValueMax = 10
         );
+
+        /**
+        * @brief Generates a single 64-bit random integer.
+        *
+        * Optimized with a 64-bit Mersenne Twister generator.
+        */
         inline i64 RandomNumL(
-            i64 Min = -100,
-            i64 Max = 100
+            i64 ValueMin = -100,
+            i64 ValueMax = 100
         );
+    }
 
-        // Floats
+    /** Floats **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for floating-point random number generation.
+    */
+    namespace Tools::Random {
+        /**
+        * @brief Generates a single 32-bit floating-point number.
+        * @return f32 A random 32-bit float.
+        */
         inline f32 RandomNumF(
-            f32 Min = -2.71,
-            f32 Max = 2.71, const i32 Rounding = 0
+            f32 ValueMin = -2.71,
+            f32 ValueMax = 2.71,
+            const u32 Rounding = 0
         );
 
+        /**
+        * @brief Generates a single 64-bit floating-point number (double).
+        * @return f64 A random 64-bit double.
+        */
         inline f64 RandomNumD(
-            f64 Min = -3.14,
-            f64 Max = 3.14, const i32 Rounding = 0
+            f64 ValueMin = -3.14,
+            f64 ValueMax = 3.14,
+            const u32 Rounding = 0
         );
     }
     ```
 
+    ### `Random/Single.Custom.hpp`
+    Provides functions for generating single random numbers using a user-provided generator.
+    This header implements the "Custom" variant of single number generation. Unlike the Base
+    versions which use internal thread-local generators, these functions accept a reference
+    to a `TwisterAny<>` engine. This allows for:
+    - Deterministic reproduction of results by seeding the generator externally.
+    - Usage of custom PRNG configurations.
+    - Better control over generator state in complex applications.
+
+    Usage
     ```cpp
-    /* Vector */
-
-    // Generic
-    namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        vec<Int> RandomNumsVInt(
-            const idx Count = 10,       // Element count
-            Int Min = -10,              // Minimum value
-            Int Max = 10                // Maximum value
-        );
-
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        vec<Real> RandomNumsVReal(
-            const idx Count = 10,
-            Real Min = -2.71,
-            Real Max = 2.71,
-            const i32 Rounding = 0
-        );
-    }
-
-    // Integers
-    namespace Tools::Random {
-        vec<i64> RandomNumsVL(
-            idx Count = 64,
-            i64 Min = 0,
-            i64 Max = 10
-        );
-
-        vec<i64> RandomNumsVL(
-            const idx Count = 10,
-            i64 Min = -100,
-            i64 Max = 100
-        );
-    }
-
-    // Floats
-    namespace Tools::Random {
-        vec<f32> RandomNumsVF(
-            const idx Count = 10,
-            f32 Min = -2.71,
-            f32 Max = 2.71,
-            const i32 Rounding = 0
-        );
-
-        vec<f64> RandomNumsVD(
-            const idx Count = 10,
-            f64 Min = -3.14,
-            f64 Max = 3.14,
-            const i32 Rounding = 0
-        );
-    }
+    using namespace Tools;
+    // Create a custom 64-bit twister
+    Twister64 myGen(12345);
+    auto i = Random::RandomNumI(myGen, -50, 50);
+    auto d = Random::RandomNumD(myGen, 0.0, 1.0);
     ```
 
+    File synopsis
     ```cpp
-    /* Vector Thread */
-
-    // Generic
+    /** Generic with custom twister **/
+    /**
+    * @namespace Tools::Random
+    * @brief Generic template functions for single random number generation with custom engines.
+    */
     namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        vec<Int> RandomNumsTV(
-            const idx Count = 10,       // Element count
-            Int Min = -10,              // Max value
-            Int Max = 10,               // Min value
-            const idx Threads = 4       // Thread count
+        /**
+        * @brief Generates a single random integer using a custom generator.
+        *
+        * @tparam Int The integer type (must be i32 or i64).
+        * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+        * @param ValueMin The lower bound of the range (inclusive). Default: -100.
+        * @param ValueMax The upper bound of the range (inclusive). Default: 100.
+        * @return Int A random integer between Min and Max.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Integer Int = i32>
+        Int RandomNum(
+            TwisterAny<>& Gen,
+            Int ValueMin = -100,
+            Int ValueMax = 100
         );
 
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        vec<Real> RandomNumsTV(
-            const idx Count = 10,
-            Real Min = -10,
-            Real Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a single random floating-point number using a custom generator.
+        *
+        * @tparam Real The floating-point type (must be f32, f64, or fld).
+        * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+        * @param ValueMin The lower bound of the range (inclusive). Default: -2.71.
+        * @param ValueMax The upper bound of the range (inclusive). Default: 2.71.
+        * @param Rounding The number of decimal places to round the result to. Default: 0.
+        * @return Real A random floating-point number between Min and Max.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Float Real = f32>
+        Real RandomNum(
+            TwisterAny<>& Gen,
+            Real ValueMin = -2.71,
+            Real ValueMax = 2.71,
             const u32 Rounding = 0
         );
     }
 
-    // Integer
+    /** Integer with custom twister **/
     namespace Tools::Random {
-        vec<i32> RandomNumsTVI(
-            const idx Count = 10,
-            i32 Min = -10,
-            i32 Max = 10,
-            const idx Threads = 4
+        /**
+        * @brief Generates a single 32-bit random integer using a custom generator.
+        * @return i32 A random 32-bit integer.
+        */
+        inline i32 RandomNumI(
+            TwisterAny<>& Gen,
+            i32 ValueMin = -10,
+            i32 ValueMax = 10
         );
 
-        vec<i64> RandomNumsTVL(
-            const idx Count = 10,
-            i64 Min = -10,
-            i64 Max = 10,
-            const idx Threads = 4
+        /**
+        * @brief Generates a single 64-bit random integer using a custom generator.
+        * @return i64 A random 64-bit integer.
+        */
+        inline i64 RandomNumL(
+            TwisterAny<>& Gen,
+            i64 ValueMin = -10,
+            i64 ValueMax = 10
         );
     }
 
-    // Float
+    /** Float with custom twister **/
     namespace Tools::Random {
-        vec<f32> RandomNumsTVF(
-            const idx Count = 10,
-            f32 Min = -10,
-            f32 Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a single 32-bit floating-point number using a custom generator.
+        * @return f32 A random 32-bit float.
+        */
+        inline f32 RandomNumF(
+            TwisterAny<>& Gen,
+            f32 ValueMin = -10,
+            f32 ValueMax = 10,
             const u32 Rounding = 0
         );
 
-        vec<f64> RandomNumsTVD(
-            const idx Count = 10,
-            f64 Min = -10,
-            f64 Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a single 64-bit floating-point number (double) using a custom generator.
+        * @return f64 A random 64-bit double.
+        */
+        inline f64 RandomNumD(
+            TwisterAny<>& Gen,
+            f64 ValueMin = -10,
+            f64 ValueMax = 10,
             const u32 Rounding = 0
         );
     }
 
     ```
 
+    ### Vector functions
+
+    ### `Random/Vector.Base.hpp`
+    Provides functions for generating vectors of random numbers using preset thread-local generators.
+
+    This header implements the core "Vector" functionality of Tools.Random. It generates
+    a `vec<T>` containing random values within a specified range. Like the Single module,
+    it uses `static thread_local` generators for high performance and implicit thread safety.
+
+    Performance Note:
+    All vector generation functions pre-allocate memory using `reserve()` to avoid
+    reallocations during the generation loop. For very large counts (>32,767),
+    a warning will be triggered via `WarningCount()`.
+
+    Usage
     ```cpp
-    /* Bundles */
+    #include "Random.hpp"
+    using namespace Tools;
 
-    // Generic
-    namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        vec<vec<Int>> RandomNumsB(
-            const idx SubVectorCount = 64,  // How many sub-vectors
-            const idx Count = 256,          // Elements for each sub-vectors
-            Int Min = -100,                 // Minimum value
-            Int Max = 100                   // Maximum value
-        );
-
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        vec<vec<Real>> RandomNumsB(
-            const idx SubVectorCount = 64,
-            const idx Count = 256,
-            Real Min = -3.14,
-            Real Max = 3.14,
-            const i32 Rounding = 0
-        );
-    }
-
-    // Integers
-    namespace Tools::Random {
-        vec<vec<i32>> RandomNumsBI(
-            const idx SubVectorCount = 64,
-            const idx Count = 256,
-            i32 Min = -10,
-            i32 Max = 10
-        );
-
-        vec<vec<i64>> RandomNumsBL(
-            const idx SubVectorCount = 64,
-            const idx Count = 256,
-            i64 Min = -100,
-            i64 Max = 100
-        );
-    }
-
-    // Floats
-    namespace Tools::Random {
-        vec<vec<f32>> RandomNumsBF(
-            const idx SubVectorCount = 64,
-            const idx Count = 256,
-            f32 Min = -2.71,
-            f32 Max = 2.71,
-            const i32 Rounding = 0
-        );
-
-        vec<vec<f64>> RandomNumsBD(
-            const idx SubVectorCount = 64,
-            const idx Count = 256,
-            f64 Min = -3.14,
-            f64 Max = 3.14,
-            const i32 Rounding = 0
-        );
-    }
+    auto ints = Random::RandomNumsVI(100, 0, 50);       // 100 integers [0, 50]
+    auto dbls = Random::RandomNumsVD(1000, -1.0, 1.0);  // 1000 doubles [-1.0, 1.0]
     ```
 
+    File synopsis
     ```cpp
-    /* Bundle Thread */
-
-    // Generic
+    /** Generic **/
+    /**
+    * @namespace Tools::Random
+    * @brief Generic template functions for vector random number generation.
+    */
     namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        vec<vec<Int>> RandomNumsTB(
-            const idx SubVectorCount = 4,   // How manu sub-vectors
-            const idx Count = 10,           // Elements for each sub-vectors
-            Int Min = -10,                  // Max value
-            Int Max = 10,                   // Min value
-            const idx Threads = 4           // Thread count
+        /**
+        * @brief Generates a vector of random integers.
+        *
+        * Uses a 64-bit Mersenne Twister generator stored in thread-local storage.
+        *
+        * @return vec<Int> A vector containing 'Count' random integers.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Integer Int = i32>
+        vec<Int> RandomNumsV(
+            const idx ValueCount = 10,
+            Int ValueMin = -10, Int ValueMax = 10
         );
 
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        vec<vec<Real>> RandomNumsTB(
-            const idx SubVectorCount = 4,
-            const idx Count = 10,
-            Real Min = -10,
-            Real Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a vector of random floating-point numbers.
+        *
+        * Uses a 64-bit Mersenne Twister generator and applies optional rounding to each element.
+        *
+        * @return vec<Real> A vector containing 'Count' random floats/doubles.
+        * @note auto swap if Min > Max.
+        */
+        template <Tools::Types::Float Real = f32>
+        vec<Real> RandomNumsV(
+            const idx ValueCount = 10,
+            Real ValueMin = -2.71, Real ValueMax = 2.71,
             const u32 Rounding = 0
         );
     }
 
-    // Integer
+    /** Integer **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for integer vector generation.
+    */
     namespace Tools::Random {
-        vec<vec<i32>> RandomNumsTBI(
-            const idx SubVectorCount = 4,
-            const idx Count = 10,
-            i32 Min = -10,
-            i32 Max = 10,
-            const idx Threads = 4
+        /**
+        * @brief Generates a vector of 32-bit random integers.
+        *
+        * Optimized with a 32-bit Mersenne Twister generator.
+        * @return vec<i32> Vector of random i32 values.
+        */
+        inline vec<i32> RandomNumsVI(
+            const idx ValueCount = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10
         );
 
-        vec<vec<i64>> RandomNumsTBL(
-            const idx SubVectorCount = 4,
-            const idx Count = 10,
-            i64 Min = -10,
-            i64 Max = 10,
-            const idx Threads = 4
+        /**
+        * @brief Generates a vector of 64-bit random integers.
+        *
+        * Optimized with a 64-bit Mersenne Twister generator.
+        * @return vec<i64> Vector of random i64 values.
+        */
+        inline vec<i64> RandomNumsVL(
+            const idx ValueCount = 10,
+            i64 ValueMin = -100, i64 ValueMax = 100
         );
     }
 
-    // Float
+    /** Floats **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for floating-point vector generation.
+    */
     namespace Tools::Random {
-        vec<vec<f32>> RandomNumsTBF(
-            const idx SubVectorCount = 4,
-            const idx Count = 10,
-            f32 Min = -10,
-            f32 Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a vector of 32-bit floating-point numbers.
+        * @return vec<f32> Vector of random f32 values.
+        */
+        inline vec<f32> RandomNumsVF(
+            const idx ValueCount = 10,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
             const u32 Rounding = 0
         );
 
-        vec<vec<f64>> RandomNumsTBD(
-            const idx SubVectorCount = 4,
-            const idx Count = 10,
-            f64 Min = -10,
-            f64 Max = 10,
-            const idx Threads = 4,
+        /**
+        * @brief Generates a vector of 64-bit floating-point numbers (doubles).
+        * @return vec<f64> Vector of random f64 values.
+        */
+        inline vec<f64> RandomNumsVD(
+            const idx ValueCount = 10,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
+            const u32 Rounding = 0
+        );
+    }
+
+    ```
+
+    ### `Random/Vector.Custom.hpp`
+    Provides functions for generating vectors of random numbers using a user-provided generator.
+
+    This header implements the "Custom" variant of vector generation. Unlike the Base
+    versions which use internal thread-local generators, these functions accept a reference
+    to a `TwisterAny<>` engine. This is useful for:
+    - Reproducible batch generation with a specific seed.
+    - Using non-standard PRNG configurations.
+    - Sharing a single generator state across multiple generation calls.
+
+    Range Safety: If Min > Max, the values are automatically swapped internally. No exception is thrown for inverted ranges.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    Twister64 myGen(42);
+    auto data = Random::RandomNumsVI(myGen, 1000, 0, 100);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+    * @namespace Tools::Random
+    * @brief Generic template functions for vector generation with custom engines.
+    */
+    namespace Tools::Random {
+        /**
+        * @brief Generates a vector of random integers using a custom generator.
+        *
+        * @tparam Int The integer type (must be i32 or i64).
+        * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+        * @param ValueCount Number of elements to generate. Default: 10.
+        * @param ValueMin Lower bound of the range (inclusive). Default: -10.
+        * @param ValueMax Upper bound of the range (inclusive). Default: 10.
+        * @return vec<Int> A vector containing 'Count' random integers.
+        * @note If Min > Max, they are automatically swapped.
+        */
+        template <Tools::Types::Integer Int = i32>
+        vec<Int> RandomNumsV(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            Int ValueMin = -10, Int ValueMax = 10
+        );
+
+        /**
+        * @brief Generates a vector of random floating-point numbers using a custom generator.
+        *
+        * @tparam Real The floating-point type (must be f32 or f64).
+        * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+        * @param ValueCount Number of elements to generate. Default: 10.
+        * @param ValueMin Lower bound of the range (inclusive). Default: -2.71.
+        * @param ValueMax Upper bound of the range (inclusive). Default: 2.71.
+        * @param Rounding Decimal precision for rounding each element. Default: 0.
+        * @return vec<Real> A vector containing 'Count' random floats/doubles.
+        * @note If Min > Max, they are automatically swapped.
+        */
+        template <Tools::Types::Float Real = f32>
+        vec<Real> RandomNumsV(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            Real ValueMin = -2.71, Real ValueMax = 2.71,
+            const u32 Rounding = 0
+        );
+    }
+
+    /** Integer **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for integer vector generation with custom engines.
+    */
+    namespace Tools::Random {
+        /**
+        * @brief Generates a vector of 32-bit random integers using a custom generator.
+        * @return vec<i32> Vector of random i32 values.
+        */
+        inline vec<i32> RandomNumsVI(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10
+        );
+
+        /**
+        * @brief Generates a vector of 64-bit random integers using a custom generator.
+        * @return vec<i64> Vector of random i64 values.
+        */
+        inline vec<i64> RandomNumsVL(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            i64 ValueMin = -100, i64 ValueMax = 100
+        );
+    }
+
+    /** Floats **/
+    /**
+    * @namespace Tools::Random
+    * @brief Type-specific overloads for floating-point vector generation with custom engines.
+    */
+    namespace Tools::Random {
+        /**
+        * @brief Generates a vector of 32-bit floating-point numbers using a custom generator.
+        * @return vec<f32> Vector of random f32 values.
+        */
+        inline vec<f32> RandomNumsVF(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
+            const u32 Rounding = 0
+        );
+
+        /**
+        * @brief Generates a vector of 64-bit floating-point numbers (doubles) using a custom generator.
+        * @return vec<f64> Vector of random f64 values.
+        */
+        inline vec<f64> RandomNumsVD(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
             const u32 Rounding = 0
         );
     }
     ```
 
+    ### `Random/Vector.Thread.hpp`
+    Provides multi-threaded functions for generating vectors of random numbers.
+
+    This header implements parallel random number generation using `std::jthread`.
+    Unlike the single-threaded Base versions, these functions split the workload
+    across multiple threads to accelerate generation for large datasets.
+
+    `thread_safety`: Thread Safety & Generator Strategy
+    To avoid data races on the non-thread-safe Mersenne Twister engine, each worker
+    thread creates its own LOCAL generator instance. The local generators are seeded
+    deterministically from the master generator to ensure reproducibility while
+    maintaining parallel performance.
+
+    Warning: For small counts (<1000), the overhead of thread creation may exceed
+            the benefit. Use single-threaded versions (Vector.Base.hpp) for small datasets.
+
+    Usage
     ```cpp
-    /* Scattered Bundle */
+    #include "Random.hpp"
+    using namespace Tools;
 
-    // Generic
-    namespace Tools::Random {
-        template <typename Int>
-        requires OneOf<Int, i32, i64>
-        vec<vec<Int>> RandomNumsSB(
-            const idx SubVectorCount = 64,  // How many sub-vectors
-            idx CountMin = 25,              // Max element count for each sub vectors
-            idx CountMax = 50,              // Min element count ...
-            Int Min = -100,                 // Max value
-            Int Max = 100                   // Min value
-        );
-
-        template <typename Real>
-        requires OneOf<Real, f32, f64>
-        vec<vec<Real>> RandomNumsSB(
-            const idx SubVectorCount = 64,
-            idx CountMin = 25,
-            idx CountMax = 50,
-            Real Min = -3.14,
-            Real Max = 3.14,
-            const i32 Rounding = 0
-        );
-    }
-
-    // Integer
-    namespace Tools::Random {
-        vec<vec<i32>> RandomNumsSBI(
-            const idx SubVectorCount = 64,
-            idx CountMin = 25,
-            idx CountMax = 50,
-            i32 Min = -10,
-            i32 Max = 10
-        );
-
-        vec<vec<i64>> RandomNumsSBL(
-            const idx SubVectorCount = 64,
-            idx CountMin = 25,
-            idx CountMax = 50,
-            i64 Min = -100,
-            i64 Max = 100
-        );
-    }
-
-    // Floats
-    namespace Tools::Random {
-        vec<vec<f32>> RandomNumsSBF(
-            const idx SubVectorCount = 64,
-            idx CountMin = 25,
-            idx CountMax = 50,
-            f32 Min = -2.71,
-            f32 Max = 2.71,
-            const i32 Rounding = 0
-        );
-
-        vec<vec<f64>> RandomNumsSBD(
-            const idx SubVectorCount = 64,
-            idx CountMin = 25,
-            idx CountMax = 50,
-            f64 Min = -3.14,
-            f64 Max = 3.14,
-            const i32 Rounding = 0
-        );
-    }
+    // Generate 1M integers using 8 threads
+    auto data = Random::RandomNumsTVI(1'000'000, -100, 100, 8);
     ```
 
+    File synopsis
     ```cpp
-    /* Random Strings */
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded vector generation.
+     */
     namespace Tools::Random {
-        /* Pick random char from stirng OR container */
-        template <typename ReturnType>
-        requires OneOf<ReturnType, char, wchar, str, wstr>
-        ReturnType RandomCharPicker(const OneOf<str, wstr, vec<str>, vec<wstr>> auto& Text);
-
-        /* Generate random string from given charset
-         * from complete string (std::string, std::wstring),
-         * or container (std::vector<std::string/std::wstring>)
+        /**
+         * @brief Generates a vector of random integers using multiple threads.
+         *
+         * Splits the work into chunks and processes them in parallel. Each thread
+         * uses a locally-seeded Twister64 to avoid contention.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param ValueCount Total number of elements to generate. Default: 10.
+         * @param ValueMin Lower bound of the range (inclusive). Default: -10.
+         * @param ValueMax Upper bound of the range (inclusive). Default: 10.
+         * @param Threads Number of worker threads to use. Default: 4.
+         * @return vec<Int> A vector containing 'Count' random integers.
+         * @note If Min > Max, they are automatically swapped.
          */
-        template <typename CharSetType>
-        requires OneOf<std::decay_t<CharSetType>, str, vec<str>>
-        str RandomStrGenerator(const CharSetType& CharSet, idx Count);
+        template <Tools::Types::Integer Int = i32>
+        vec<Int> RandomNumsTV(
+            const idx ValueCount = 10,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Threads = 4
+        );
 
-        /* Overload for std::wstring */
-        template <typename CharSetType>
-        requires OneOf<std::decay_t<CharSetType>, wstr, vec<wstr>>
-        wstr RandomStrGeneratorW(const CharSetType& CharSet, idx Count);
+        /**
+         * @brief Generates a vector of random floating-point numbers using multiple threads.
+         *
+         * @tparam Real The floating-point type (must be f32, f64, or fld).
+         * @param ValueCount Total number of elements. Default: 10.
+         * @param ValueMin Lower bound (inclusive). Default: -10.
+         * @param ValueMax Upper bound (inclusive). Default: 10.
+         * @param Threads Number of worker threads. Default: 4.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return vec<Real> A vector containing 'Count' random floats/doubles.
+         */
+        template <Tools::Types::Float Real = f32>
+        vec<Real> RandomNumsTV(
+            const idx ValueCount = 10,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
     }
 
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded integer vector generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of 32-bit integer vector.
+         * @return vec<i32>
+         */
+        inline vec<i32> RandomNumsTVI(
+            const idx ValueCount = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded generation of 64-bit integer vector.
+         * @return vec<i64>
+         */
+        inline vec<i64> RandomNumsTVL(
+            const idx ValueCount = 10,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Threads = 4
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded float vector generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of f32 vector.
+         * @return vec<f32>
+         */
+        inline vec<f32> RandomNumsTVF(
+            const idx ValueCount = 10,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+
+        /**
+         * @brief Multi-threaded generation of f64 vector.
+         * @return vec<f64>
+         */
+        inline vec<f64> RandomNumsTVD(
+            const idx ValueCount = 10,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
     ```
+
+    ### `Random/Vector.Thread.Custom.hpp`
+    Provides multi-threaded vector generation using a user-provided custom generator.
+
+    This header combines the flexibility of custom PRNG engines with parallel execution.
+    The user-provided generator is used ONLY for seeding worker threads sequentially.
+    Each worker then creates its own LOCAL Twister engine (matching the master's type)
+    to avoid data races and contention during generation.
+
+    `thread_safety` Thread Safety & Generator Strategy:
+    - Master generator (`Gen`) is accessed ONLY in the calling thread for seeding.
+    - Each worker creates a local `WorkerTwister` seeded deterministically from master.
+    - No mutexes needed; zero contention during the generation phase.
+    - Worker twister type is automatically deduced from the master via `std::decay_t<decltype(Gen)>`.
+
+    Warning:
+    - For small counts (<1000), the overhead of thread creation may exceed the benefit.
+    - Use single-threaded versions (Vector.Custom.hpp) for small datasets.
+
+    Note:
+    - Reproducibility depends entirely on the state of 'Gen' passed by the caller. The same seed + same thread count will always produce identical results.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    // Generate 1M integers using 8 threads with custom 32-bit twister
+    Twister32 gen(123123);
+    auto data = Random::RandomNumsTVI(gen, 1'000'000, -100, 100, 8);
+
+    // Generate 500K doubles with rounding using custom 64-bit twister
+    Twister64 gen64(42);
+    auto dbls = Random::RandomNumsTVD(gen64, 500'000, -3.14, 3.14, 4, 8);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded vector generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a vector of random integers using multiple threads and a custom generator.
+         *
+         * Splits the work into chunks and processes them in parallel. Each thread gets
+         * a locally-seeded Twister matching the master's type to avoid contention.
+         *
+         * @tparam Int The integer type (must satisfy Tools::Types::Integer). Default: i32.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param ValueCount Total number of elements to generate. Default: 10.
+         * @param ValueMin Lower bound of the range (inclusive). Default: -10.
+         * @param ValueMax Upper bound of the range (inclusive). Default: 10.
+         * @param Threads Number of worker threads to use. Default: 4.
+         * @return vec<Int> A vector containing 'ValueCount' random integers.
+         * @note If ValueMin > ValueMax, they are automatically swapped.
+         * @note Returns empty vector if ValueCount == 0 or Threads == 0.
+         */
+        template <Tools::Types::Integer Int = i32>
+        vec<Int> RandomNumsTV(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Generates a vector of random floating-point numbers using multiple threads and a custom generator.
+         *
+         * @tparam Real The floating-point type (must satisfy Tools::Types::Float). Default: f32.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param ValueCount Total number of elements to generate. Default: 10.
+         * @param ValueMin Lower bound of the range (inclusive). Default: -10.
+         * @param ValueMax Upper bound of the range (inclusive). Default: 10.
+         * @param Rounding Decimal precision for rounding each element. Default: 0.
+         * @param Threads Number of worker threads to use. Default: 4.
+         * @return vec<Real> A vector containing 'ValueCount' random floats/doubles.
+         * @note If ValueMin > ValueMax, they are automatically swapped.
+         * @note Returns empty vector if ValueCount == 0 or Threads == 0.
+         */
+        template <Tools::Types::Float Real = f32>
+        vec<Real> RandomNumsTV(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded integer vector generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of i32 vector with custom engine.
+         * @return vec<i32>
+         */
+        inline vec<i32> RandomNumsTVI(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded generation of i64 vector with custom engine.
+         * @return vec<i64>
+         */
+        inline vec<i64> RandomNumsTVL(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Threads = 4
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded float vector generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of f32 vector with custom engine.
+         * @return vec<f32>
+         */
+        inline vec<f32> RandomNumsTVF(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+
+        /**
+         * @brief Multi-threaded generation of f64 vector with custom engine.
+         * @return vec<f64>
+         */
+        inline vec<f64> RandomNumsTVD(
+            TwisterAny<>& Gen,
+            const idx ValueCount = 10,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const idx Threads = 4,
+            const u32 Rounding = 0
+        );
+    }
+    ```
+
+    ### Bundled functions (vector in vector)
+
+    ### `Random/Bundle.Base.hpp`
+
+    Provides functions for generating 2D vectors (bundles) with fixed sub-vector sizes.
+
+    This header implements the "Bundle" functionality, generating a `Bundle<T>` where
+    every inner vector has exactly the same length ('Count'). This is ideal for representing
+    matrices, grids, or batched datasets with uniform dimensions.
+
+    Note:
+    - For bundles with varying sub-vector sizes, see SBundle.Base.hpp.
+    - All functions use preset thread-local generators for implicit thread safety.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    // Create a 4x10 matrix of integers
+    auto grid = Random::RandomNumsBI(4, 10, 0, 100);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of random integers with fixed dimensions.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param ValueCountPerVec Number of elements per sub-vector (columns). Default: 10.
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueMin Lower bound of the range (inclusive). Default: -100.
+         * @param ValueMax Upper bound of the range (inclusive). Default: 100.
+         * @return Bundle<Int> A 2D vector with dimensions [SubVectorCount][Count].
+         * @note If Min > Max, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsB(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Int ValueMin = -100, Int ValueMax = 100
+        );
+
+        /**
+         * @brief Generates a 2D vector of random floating-point numbers with fixed dimensions.
+         *
+         * @tparam Real The floating-point type (must be f32 or f64).
+         * @param ValueCountPerVec Number of elements per sub-vector. Default: 10.
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueMin Lower bound (inclusive). Default: -3.14.
+         * @param ValueMax Upper bound (inclusive). Default: 3.14.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A 2D vector with dimensions [SubVectorCount][Count].
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsB(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Real ValueMin = -3.14, Real ValueMax = 3.14, const u32 Rounding = 0
+        );
+    }
+
+    /** Integers **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for integer bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of i32 with fixed dimensions.
+         * Uses optimized Twister32 generator.
+         */
+        inline Bundle<i32> RandomNumsBI(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10
+        );
+
+        /**
+         * @brief Generates a 2D vector of i64 with fixed dimensions.
+         * Uses optimized Twister64 generator.
+         */
+        inline Bundle<i64> RandomNumsBL(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i64 ValueMin = -100, i64 ValueMax = 100
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for floating-point bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of f32 with fixed dimensions.
+         * Uses optimized Twister32 generator.
+         */
+        inline Bundle<f32> RandomNumsBF(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
+            const u32 Rounding = 0
+        );
+
+        /**
+         * @brief Generates a 2D vector of f64 with fixed dimensions.
+         * Uses optimized Twister64 generator.
+         */
+        inline Bundle<f64> RandomNumsBD(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
+            const u32 Rounding = 0
+        );
+    }
+    ```
+
+    ### `Random/Bundle.Custom.hpp`
+    Provides functions for generating 2D vectors (bundles) with fixed dimensions using a user-provided generator.
+
+    This header implements the "Custom" variant of bundle generation. It accepts a reference
+    to a `TwisterAny<>` engine, allowing for deterministic matrix generation or integration
+    with external PRNG state management.
+
+    Note: Unlike Base versions, these functions do NOT use internal thread-local generators.
+        The caller is responsible for ensuring thread safety if the same generator is
+        shared across multiple threads.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    Twister64 myGen(12345);
+    auto matrix = Random::RandomNumsBI(myGen, 4, 10, 0, 100);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of random integers with fixed dimensions using a custom generator.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueCountPerVec Number of elements per sub-vector. Default: 10.
+         * @param ValueMin Lower bound of the range (inclusive). Default: -100.
+         * @param ValueMax Upper bound of the range (inclusive). Default: 100.
+         * @return Bundle<Int> A 2D vector with dimensions [SubVectorCount][Count].
+         * @note If Min > Max, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsB(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            Int ValueMin = -100, Int ValueMax = 100
+        );
+
+        /**
+         * @brief Generates a 2D vector of random floating-point numbers with fixed dimensions using a custom generator.
+         *
+         * @tparam Real The floating-point type (must be f32 or f64).
+         * @param Gen A reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueCountPerVec Number of elements per sub-vector. Default: 10.
+         * @param ValueMin Lower bound (inclusive). Default: -3.14.
+         * @param ValueMax Upper bound (inclusive). Default: 3.14.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A 2D vector with dimensions [SubVectorCount][Count].
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsB(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            Real ValueMin = -3.14, Real ValueMax = 3.14, const u32 Rounding = 0
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for integer bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of i32 with fixed dimensions using a custom generator.
+         */
+        inline Bundle<i32> RandomNumsBI(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            i32 ValueMin = -10, i32 ValueMax = 10
+        );
+
+        /**
+         * @brief Generates a 2D vector of i64 with fixed dimensions using a custom generator.
+         */
+        inline Bundle<i64> RandomNumsBL(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            i64 ValueMin = -100,i64  ValueMax = 100
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for floating-point bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of f32 with fixed dimensions using a custom generator.
+         */
+        inline Bundle<f32> RandomNumsBF(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
+            const u32 Rounding = 0
+        );
+
+        /**
+         * @brief Generates a 2D vector of f64 with fixed dimensions using a custom generator.
+         */
+        inline Bundle<f64> RandomNumsBD(
+            TwisterAny<>& Gen,
+            const idx ValueCountPerVec = 10, const idx SubVectorCount = 4,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
+            const u32 Rounding = 0
+        );
+    }
+    ```
+
+    ### `Random/Bundle.Thread.hpp`
+    Provides multi-threaded functions for generating 2D vectors (bundles) with fixed dimensions.
+
+    This header implements parallel bundle generation using std::jthread. Work is distributed
+    at the sub-vector level (row-level parallelism), where each thread processes specific
+    rows in a round-robin fashion to ensure balanced workload distribution.
+
+    `thread_safety`: Thread Safety & Generator Strategy
+    Each worker thread creates its own LOCAL generator seeded from the master generator.
+    This eliminates data races on the non-thread-safe Mersenne Twister engine while
+    maintaining deterministic reproducibility for the same seed.
+
+    Warning:
+    For small bundles (e.g., < 4 sub-vectors or < 100 elements each), threading overhead may exceed benefits. Consider using Bundle.Base.hpp for small datasets.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    // Generate a 100x1000 matrix using 8 threads
+    auto grid = Random::RandomNumsTBI(100, 1000, 0, 255, 8);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of random integers using multiple threads.
+         *
+         * Distributes sub-vectors across threads in round-robin fashion. Each thread
+         * uses a locally-seeded Twister64 to avoid contention.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueCountPerVec Elements per sub-vector. Default: 10.
+         * @param ValueMin Lower bound (inclusive). Default: -10.
+         * @param ValueMax Upper bound (inclusive). Default: 10.
+         * @param Threads Number of worker threads. Default: 4.
+         * @return Bundle<Int> A 2D vector with dimensions [SubVectorCount][Count].
+         * @note If Min > Max, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsTB(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Generates a 2D vector of random floating-point numbers using multiple threads.
+         *
+         * @tparam Real The floating-point type (must be f32, f64, or fld).
+         * @param SubVectorCount Number of rows. Default: 4.
+         * @param ValueCountPerVec Elements per row. Default: 10.
+         * @param ValueMin Lower bound. Default: -10.
+         * @param ValueMax Upper bound. Default: 10.
+         * @param Threads Worker count. Default: 4.
+         * @param Rounding Decimal precision. Default: 0.
+         * @return Bundle<Real>
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsTB(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded integer bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of 2D i32 bundle.
+         * Uses Twister32 per thread for optimal performance.
+         */
+        inline Bundle<i32> RandomNumsTBI(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded generation of 2D i64 bundle.
+         * Uses Twister64 per thread.
+         */
+        inline Bundle<i64> RandomNumsTBL(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Threads = 4
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded float bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded generation of 2D f32 bundle.
+         * Uses Twister32 per thread.
+         */
+        inline Bundle<f32> RandomNumsTBF(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded generation of 2D f64 bundle.
+         * Uses Twister64 per thread.
+         */
+        inline Bundle<f64> RandomNumsTBD(
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+    }
+    ```
+
+    ### `Random/Bundle.Thread.Custom.hpp`
+    Provides multi-threaded bundle generation using a user-provided custom generator.
+
+    This header combines the flexibility of custom PRNG engines with parallel execution.
+    The user-provided generator is used ONLY for seeding worker threads. Each worker
+    then uses its own local Twister engine to avoid data races and contention.
+
+    `thread_safety` Thread Safety Note:
+    The input generator `Gen` is accessed sequentially in the main thread to derive
+    seeds for workers. It is NOT shared across threads during generation, ensuring
+    complete thread safety without mutexes.
+
+    Warning:
+    Since this uses a custom generator, reproducibility depends entirely on the state of 'Gen' passed by the caller.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    Twister64 myGen(12345);
+    auto matrix = Random::RandomNumsTBI(myGen, 100, 1000, 0, 255, 8);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of random integers using multiple threads and a custom generator.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param SubVectorCount Number of rows/sub-vectors. Default: 4.
+         * @param ValueCountPerVec Elements per sub-vector. Default: 10.
+         * @param ValueMin Lower bound (inclusive). Default: -10.
+         * @param ValueMax Upper bound (inclusive). Default: 10.
+         * @param Threads Number of worker threads. Default: 4.
+         * @return Bundle<Int> A 2D vector with dimensions [SubVectorCount][Count].
+         * @note If Min > Max, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsTB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Generates a 2D vector of random floating-point numbers using multiple threads and a custom generator.
+         *
+         * @tparam Real The floating-point type (must be f32, f64, or fld).
+         * @param Gen Reference to custom engine (used for seeding).
+         * @param SubVectorCount Number of rows. Default: 4.
+         * @param ValueCountPerVec Elements per row. Default: 10.
+         * @param ValueMin Lower bound. Default: -10.
+         * @param ValueMax Upper bound. Default: 10.
+         * @param Threads Worker count. Default: 4.
+         * @param Rounding Decimal precision. Default: 0.
+         * @return Bundle<Real>
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsTB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded integer bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded 2D i32 bundle generation with custom engine.
+         * Uses Twister32 per worker for optimal performance.
+         */
+        inline Bundle<i32> RandomNumsTBI(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded 2D i64 bundle generation with custom engine.
+         * Uses Twister64 per worker.
+         */
+        inline Bundle<i64> RandomNumsTBL(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Threads = 4
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded float bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded 2D f32 bundle generation with custom engine.
+         * Uses Twister32 per worker.
+         */
+        inline Bundle<f32> RandomNumsTBF(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+
+        /**
+         * @brief Multi-threaded 2D f64 bundle generation with custom engine.
+         * Uses Twister64 per worker.
+         */
+        inline Bundle<f64> RandomNumsTBD(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4, const idx ValueCountPerVec = 10,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Threads = 4
+        );
+    }
+    ```
+
+    ### SBundled functions (vector in vector with scattered sizes)
+
+    ### `Random/SBundle.Base.hpp`
+    Provides functions for generating 2D vectors (scattered bundles) with RANDOM sub-vector sizes.
+
+    Unlike Bundle.Base.hpp where every sub-vector has the same length, SBundle generates
+    a `Bundle<T>` where each inner vector has a size randomly chosen between [CountMin, CountMax].
+    This is useful for simulating ragged arrays, variable-length sequences, or testing
+    algorithms with non-uniform data structures.
+
+    Note:
+    - All functions use preset thread-local generators for implicit thread safety.
+    - For fixed-size bundles, see Bundle.Base.hpp.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    // Create 5 sub-vectors, each with random size between 10 and 30
+    auto ragged = Random::RandomNumsSBI(5, 10, 30, -100, 100);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a 2D vector of random integers with varying sub-vector sizes.
+         *
+         * Each sub-vector's length is independently randomized within [CountMin, CountMax].
+         * Uses a 64-bit Mersenne Twister generator stored in thread-local storage.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param SubVectorCount Number of sub-vectors to generate. Default: 4.
+         * @param ValueCountMin Minimum elements per sub-vector (inclusive). Default: 10.
+         * @param ValueCountMax Maximum elements per sub-vector (inclusive). Default: 30.
+         * @param ValueMin Lower bound of value range (inclusive). Default: -100.
+         * @param ValueMax Upper bound of value range (inclusive). Default: 100.
+         * @return Bundle<Int> A ragged 2D vector.
+         * @note If Min > Max or CountMin > CountMax, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsSB(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Int ValueMin = -100, Int ValueMax = 100
+        );
+
+        /**
+         * @brief Generates a 2D vector of random floating-point numbers with varying sub-vector sizes.
+         *
+         * @tparam Real The floating-point type (must be f32 or f64).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector. Default: 10.
+         * @param ValueCountMax Max elements per sub-vector. Default: 30.
+         * @param ValueMin Lower bound of value range. Default: -3.14.
+         * @param ValueMax Upper bound of value range. Default: 3.14.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A ragged 2D vector.
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsSB(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Real ValueMin = -3.14, Real ValueMax = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for integer scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of i32.
+         * Uses optimized Twister32 generator.
+         */
+        inline Bundle<i32> RandomNumsSBI(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i32 ValueMin = -10, i32 ValueMax = 10
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of i64.
+         * Uses optimized Twister64 generator.
+         */
+        inline Bundle<i64> RandomNumsSBL(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i64 ValueMin = -100, i64 ValueMax = 100
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for floating-point scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of f32.
+         * Uses optimized Twister32 generator.
+         */
+        inline Bundle<f32> RandomNumsSBF(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
+            const i32 Rounding = 0
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of f64.
+         * Uses optimized Twister64 generator.
+         */
+        inline Bundle<f64> RandomNumsSBD(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ### `Random/SBundle.Custom.hpp`
+
+    Provides functions for generating scattered bundles (ragged 2D vectors) using a user-provided generator.
+
+    This header implements the "Custom" variant of scattered bundle generation. Each sub-vector
+    has a randomly determined size within [ItemCountMin, ItemCountMax], and values are generated using
+    the caller-supplied TwisterAny<> engine.
+
+    Note:
+    - Unlike Base versions, these functions do NOT use internal thread-local generators. The caller is responsible for thread safety if sharing the generator across threads.
+    - If Min > Max or ItemCountMin > ItemCountMax, values are automatically swapped internally.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    Twister64 myGen(42);
+    auto ragged = Random::RandomNumsSBI(myGen, 5, 10, 30, -100, 100);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for scattered bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of random integers using a custom generator.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Minimum elements per sub-vector (inclusive). Default: 10.
+         * @param ValueCountMax Maximum elements per sub-vector (inclusive). Default: 30.
+         * @param ValueMin Lower bound of value range (inclusive). Default: -100.
+         * @param ValueMax Upper bound of value range (inclusive). Default: 100.
+         * @return Bundle<Int> A ragged 2D vector with varying sub-vector sizes.
+         * @note If Min > Max or ItemCountMin > ItemCountMax, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsSB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Int ValueMin = -100, Int ValueMax = 100
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of random floating-point numbers using a custom generator.
+         *
+         * @tparam Real The floating-point type (must be f32 or f64).
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector. Default: 10.
+         * @param ValueCountMax Max elements per sub-vector. Default: 30.
+         * @param ValueMin Lower bound of value range. Default: -3.14.
+         * @param ValueMax Upper bound of value range. Default: 3.14.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A ragged 2D vector.
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsSB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Real ValueMin = -3.14, Real ValueMax = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+
+    /** Integer **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for integer scattered bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of i32 using a custom generator.
+         * @return Bundle<i32>
+         */
+        inline Bundle<i32> RandomNumsSBI(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i32 ValueMin = -10, i32 ValueMax = 10
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of i64 using a custom generator.
+         * @return Bundle<i64>
+         */
+        inline Bundle<i64> RandomNumsSBL(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i64 ValueMin = -100, i64 ValueMax = 100
+        );
+    }
+
+    /** Floats **/
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for floating-point scattered bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of f32 using a custom generator.
+         * @return Bundle<f32>
+         */
+        inline Bundle<f32> RandomNumsSBF(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f32 ValueMin = -2.71, f32 ValueMax = 2.71,
+            const i32 Rounding = 0
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of f64 using a custom generator.
+         * @return Bundle<f64>
+         */
+        inline Bundle<f64> RandomNumsSBD(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f64 ValueMin = -3.14, f64 ValueMax = 3.14,
+            const i32 Rounding = 0
+        );
+    }
+    ```
+
+    ### `Random/SBundle.Thread.hpp`
+    Provides multi-threaded functions for generating scattered bundles (ragged 2D vectors).
+
+    This header implements parallel generation of ragged arrays where each sub-vector has
+    a randomly determined size within [CountMin, CountMax]. Work distribution uses an
+    atomic work-stealing approach: each worker thread grabs the next available sub-vector
+    index dynamically, ensuring balanced load even when sub-vector sizes vary significantly.
+
+    `thread_safety`: Thread Safety & Generator Strategy
+    Each worker thread creates its own LOCAL Twister engine seeded from the master generator.
+    This eliminates data races on the non-thread-safe Mersenne Twister while maintaining
+    deterministic reproducibility for the same initial seed.
+
+    Note:
+    - Sub-vector sizes are pre-calculated sequentially before spawning workers to ensure deterministic size distribution regardless of thread count.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    // Generate 100 ragged sub-vectors (size 10-50 each) using all hardware threads
+    auto data = Random::RandomNumsTSBI(100, 10, 50, -100, 100, 2);
+    ```
+
+    File synopsis
+    ```cpp
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of random integers using multiple threads.
+         *
+         * Uses atomic work-stealing for load balancing across threads. Each worker gets
+         * a locally-seeded Twister64 to avoid contention.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector (inclusive). Default: 10.
+         * @param ValueCountMax Max elements per sub-vector (inclusive). Default: 30.
+         * @param ValueMin Lower bound of value range (inclusive). Default: -10.
+         * @param ValueMax Upper bound of value range (inclusive). Default: 10.
+         * @param Thread Number of worker threads. 0 = hardware_concurrency(). Default: 0.
+         * @return Bundle<Int> A ragged 2D vector with varying sub-vector sizes.
+         * @note If Min > Max or CountMin > CountMax, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsTSB(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Thread = 4
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of random floating-point numbers using multiple threads.
+         *
+         * @tparam Real The floating-point type (must be f32, f64, or fld).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector. Default: 10.
+         * @param ValueCountMax Max elements per sub-vector. Default: 30.
+         * @param ValueMin Lower bound of value range. Default: -10.
+         * @param ValueMax Upper bound of value range. Default: 10.
+         * @param Thread Worker count. 0 = hardware_concurrency(). Default: 0.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A ragged 2D vector.
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsTSB(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 4
+        );
+    }
+
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded integer scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded ragged 2D i32 bundle generation.
+         * Uses Twister32 per worker for optimal performance.
+         */
+        inline Bundle<i32> RandomNumsTSBI(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Thread = 0
+        );
+
+        /**
+         * @brief Multi-threaded ragged 2D i64 bundle generation.
+         * Uses Twister64 per worker.
+         */
+        inline Bundle<i64> RandomNumsTSBL(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Thread = 0
+        );
+    }
+
+    /**
+     * @namespace Tools::Random
+     * @brief Type-specific overloads for multi-threaded float scattered bundle generation.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Multi-threaded ragged 2D f32 bundle generation.
+         * Uses Twister32 per worker.
+         */
+        inline Bundle<f32> RandomNumsTSBF(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 0
+        );
+
+        /**
+         * @brief Multi-threaded ragged 2D f64 bundle generation.
+         * Uses Twister64 per worker.
+         */
+        inline Bundle<f64> RandomNumsTSBD(
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 0
+        );
+    }
+    ```
+
+    ### `Random/SBundle.Thread.Custom.hpp`
+    Provides multi-threaded scattered bundle generation using a user-provided custom generator.
+
+    This header combines ragged array generation with parallel execution and external
+    PRNG control. Each sub-vector has a randomly determined size within [ValueCountMin, ValueCountMax].
+    Work distribution uses an atomic work-stealing approach: each worker thread grabs the next
+    available sub-vector index dynamically, ensuring balanced load even when sub-vector sizes
+    vary significantly.
+
+    `thread_safety` Thread Safety & Generator Strategy
+    - The user-provided generator (`Gen`) is accessed ONLY sequentially in the calling thread
+    to derive seeds for workers. It is NOT shared across threads during generation.
+    - Each worker creates its own LOCAL Twister engine (type deduced from master via
+    `std::decay_t<decltype(Gen)>`) seeded deterministically from the master.
+    - No mutexes needed; zero contention during the generation phase.
+
+    Note:
+    - Sub-vector sizes are pre-calculated sequentially before spawning workers to ensure deterministic size distribution regardless of thread count.
+
+    Warning: Reproducibility depends entirely on the state of 'Gen' passed by the caller. The same seed + same thread count will always produce identical results.
+
+    Usage
+    ```cpp
+        #include "Random.hpp"
+    using namespace Tools;
+
+    // Generate 100 ragged sub-vectors (size 10-50 each) using 8 threads with custom generator
+    Twister64 myGen(42);
+    auto data = Random::RandomNumsTSBI(myGen, 100, 10, 50, -100, 100, 8);
+
+    // Auto-detect hardware concurrency (Thread = 0)
+    Twister32 gen32(12345);
+    auto ragged = Random::RandomNumsTSBF(gen32, 50, 5, 20, -1.0f, 1.0f, 2, 0);
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic **/
+    /**
+     * @namespace Tools::Random
+     * @brief Generic template functions for multi-threaded scattered bundle generation with custom engines.
+     */
+    namespace Tools::Random {
+        /**
+         * @brief Generates a ragged 2D vector of random integers using multiple threads and a custom generator.
+         *
+         * Uses atomic work-stealing for load balancing. Each worker gets a locally-seeded
+         * Twister engine matching the type of the provided master generator.
+         *
+         * @tparam Int The integer type (must be i32 or i64).
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector (inclusive). Default: 10.
+         * @param ValueCountMax Max elements per sub-vector (inclusive). Default: 30.
+         * @param ValueMin Lower bound of value range (inclusive). Default: -10.
+         * @param ValueMax Upper bound of value range (inclusive). Default: 10.
+         * @param Thread Number of worker threads. 0 = hardware_concurrency(). Default: 0.
+         * @return Bundle<Int> A ragged 2D vector with varying sub-vector sizes.
+         * @note If Min > Max or CountMin > CountMax, they are automatically swapped.
+         */
+        template <Tools::Types::Integer Int = i32>
+        Bundle<Int> RandomNumsTSB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Int ValueMin = -10, Int ValueMax = 10,
+            const idx Thread = 0
+        );
+
+        /**
+         * @brief Generates a ragged 2D vector of random floating-point numbers using multiple threads and a custom generator.
+         *
+         * @tparam Real The floating-point type (must be f32, f64, or fld).
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param SubVectorCount Number of sub-vectors. Default: 4.
+         * @param ValueCountMin Min elements per sub-vector. Default: 10.
+         * @param ValueCountMax Max elements per sub-vector. Default: 30.
+         * @param ValueMin Lower bound of value range. Default: -10.
+         * @param ValueMax Upper bound of value range. Default: 10.
+         * @param Thread Worker count. 0 = hardware_concurrency(). Default: 0.
+         * @param Rounding Decimal precision for rounding. Default: 0.
+         * @return Bundle<Real> A ragged 2D vector.
+         */
+        template <Tools::Types::Float Real = f32>
+        Bundle<Real> RandomNumsTSB(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            Real ValueMin = -10, Real ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 0
+        );
+    }
+
+    namespace Tools::Random {
+        /*
+        * @brief Generates a ragged 2D vector of i32 paralelly and custom twister.
+        * @return Bundle<i32>
+        */
+        inline Bundle<i32> RandomNumsTSBI(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i32 ValueMin = -10, i32 ValueMax = 10,
+            const idx Thread = 0
+        );
+
+        /*
+        * @brief Generates a ragged 2D vector of i64 paralelly and custom twister.
+        * @return Bundle<i64>
+        */
+        inline Bundle<i64> RandomNumsTSBL(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            i64 ValueMin = -10, i64 ValueMax = 10,
+            const idx Thread = 0
+        );
+    }
+
+    namespace Tools::Random {
+        /*
+        * @brief Generates a ragged 2D vector of f32 paralelly and custom twister.
+        * @return Bundle<f32>
+        */
+        inline Bundle<f32> RandomNumsTSBF(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f32 ValueMin = -10, f32 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 0
+        );
+
+        /*
+        * @brief Generates a ragged 2D vector of f64 paralelly and custom twister.
+        * @return Bundle<f64>
+        */
+        inline Bundle<f64> RandomNumsTSBD(
+            TwisterAny<>& Gen,
+            const idx SubVectorCount = 4,
+            idx ValueCountMin = 10, idx ValueCountMax = 30,
+            f64 ValueMin = -10, f64 ValueMax = 10,
+            const u32 Rounding = 0,
+            const idx Thread = 0
+        );
+    }
+    ```
+
+    ### Random String
+
+    ### `Random/String.Base.hpp`
+
+    Provides Python-like random character and string generation functions.
+
+    Supports generation from codepoint ranges (like Python's chr()) or from
+    predefined character sets. All functions use thread-local preset generators.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    auto c = Random::RandomChar('A', 'Z');          // Random uppercase letter
+    auto s = Random::RandomStr("abcdef", 10);        // 10-char hex-like string
+    auto w = Random::RandomWStr(L"αβγδ", 5);        // 5 Greek letters
+    auto cp = Random::RandomChar<char32_t>(0x4E00, 0x9FFF); // CJK character
+    ```
+
+    File synopsis
+    ```cpp
+    namespace Tools::Random {
+        /**
+         * @brief Concept for valid character set containers.
+         * Matches std::string variants and vectors of character types.
+         */
+        template <typename T>
+        concept CharSet = OneOf<T,
+            str, wstr, str16, str32,
+            vec<char>, vec<wchar>, vec<char16>, vec<char32>
+        >;
+    }
+
+    /** Single char **/
+    namespace Tools::Random {
+        /**
+         * @brief Generates a random character within a codepoint range [From, To].
+         *
+         * Inspired by Python's chr(random.randint(from, to)).
+         * Uses TwisterFor<Ret> to select optimal generator for the character width.
+         *
+         * @tparam Ret The character type to return. Default: char.
+         * @param From Lower codepoint bound (inclusive).
+         * @param To Upper codepoint bound (inclusive).
+         * @return Ret A random character in the specified range.
+         * @note If From > To, they are automatically swapped.
+         */
+        template <Char Ret = char>
+        Ret RandomChar(u32 From, u32 To);
+
+        /**
+         * @brief Selects a random element from a character set.
+         *
+         * Similar to Python's random.choice(charset).
+         *
+         * @tparam Ret The character type to return. Default: char.
+         * @param CharSet A string or vector of characters to choose from.
+         * @return Ret A randomly selected character. Returns default-constructed
+         *         value if CharSet is empty.
+         */
+        template <Char Ret = char>
+        Ret RandomChar(const CharSet auto& CharSet);
+    }
+
+    /** Generic String Generation **/
+    namespace Tools::Random {
+        /**
+         * @brief Generates a string of random characters from a codepoint range.
+         *
+         * @tparam Ret The character type for the resulting string. Default: char.
+         * @param From Lower codepoint bound (inclusive).
+         * @param To Upper codepoint bound (inclusive).
+         * @param Count Number of characters to generate.
+         * @return std::basic_string<Ret> The generated string.
+         * @note Returns empty string if Count <= 0.
+         */
+        template <Char Ret = char>
+        std::basic_string<Ret> RandomStr(u32 From, u32 To, const idx Count);
+
+        /**
+         * @brief Generates a string by randomly selecting characters from a charset.
+         *
+         * @tparam Ret The character type for the resulting string. Default: char.
+         * @param CharSet Source character set (string or vector of chars).
+         * @param Count Number of characters to generate.
+         * @return std::basic_string<Ret> The generated string.
+         * @note Returns empty string if CharSet is empty or Count <= 0.
+         */
+        template <Char Ret = char>
+        std::basic_string<Ret> RandomStr(const CharSet auto& CharSet, const idx Count);
+    }
+
+    /** Single range chars **/
+    namespace Tools::Random {
+        // Generate random char from codepoint range
+        inline char GetRandomChar(u32 From, u32 To);
+
+        // Generate random wchar from codepoint range
+        inline wchar GetRandomWChar(u32 From, u32 To);
+    }
+
+    /** String range chars **/
+    namespace Tools::Random {
+        // Generate Standard string std::string from given range
+        inline str MakeRandomStr(u32 From, u32 To, const idx Count);
+
+        // Generate Wide string std::wstring from given range
+        inline wstr MakeRandomWStr(u32 From, u32 To, const idx Count);
+    }
+
+    /** String charset **/
+    namespace Tools::Random {
+        // Generate Standard string std::string from charset (str, vec<char>)
+        str MakeRandomStr(const OneOf<vec<char>, str> auto& CharSet, const idx Count);
+
+        // Generate Wide string std::wstring from charset (wstr, vec<wchar>)
+        wstr MakeRandomWStr(const OneOf<vec<wchar>, wstr> auto& CharSet, const idx Count);
+    }
+    ```
+
+    ### `Random/String.Custom.hpp`
+    Provides Python-like random character and string generation functions with custom twister engine
+
+    Supports generation from codepoint ranges (like Python's chr()) or from predefined character sets. All functions use thread-local preset generators.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    TwisterAny<> Gen;
+    auto c = Random::RandomChar(Gen, 'A', 'Z');          // Random uppercase letter
+    auto s = Random::RandomStr(Gen, "abcdef", 10);        // 10-char hex-like string
+    auto w = Random::RandomWStr(Gen, L"αβγδ", 5);        // 5 Greek letters
+    auto cp = Random::RandomChar<char32_t>(Gen, 0x4E00, 0x9FFF); // CJK character
+    ```
+
+    File synopsis
+    ```cpp
+    /** Generic Single char **/
+    namespace Tools::Random {
+        /**
+         * @brief Generates a random character within a codepoint range [From, To].
+         *
+         * Inspired by Python's chr(random.randint(from, to)).
+         * Uses TwisterFor<Ret> to select optimal generator for the character width.
+         *
+         * @tparam Ret The character type to return. Default: char.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param From Lower codepoint bound (inclusive).
+         * @param To Upper codepoint bound (inclusive).
+         * @return Ret A random character in the specified range.
+         * @note If From > To, they are automatically swapped.
+         */
+        template <Char Ret = char>
+        Ret RandomChar(TwisterAny<>& Gen, u32 From, u32 To);
+
+        /**
+         * @brief Selects a random element from a character set.
+         *
+         * Similar to Python's random.choice(charset).
+         *
+         * @tparam Ret The character type to return. Default: char.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param CharSet A string or vector of characters to choose from.
+         * @return Ret A randomly selected character. Returns default-constructed
+         *         value if CharSet is empty.
+         */
+        template <Char Ret = char>
+        Ret RandomChar(TwisterAny<>& Gen, const CharSet auto& CharSet);
+    }
+
+    /** Generic String Generation **/
+    namespace Tools::Random {
+        /**
+         * @brief Generates a string of random characters from a codepoint range.
+         *
+         * @tparam Ret The character type for the resulting string. Default: char.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param From Lower codepoint bound (inclusive).
+         * @param To Upper codepoint bound (inclusive).
+         * @param Count Number of characters to generate.
+         * @return std::basic_string<Ret> The generated string.
+         * @note Returns empty string if Count <= 0.
+         */
+        template <Char Ret = char>
+        std::basic_string<Ret> RandomStr(TwisterAny<>& Gen, u32 From, u32 To, const idx Count);
+
+        /**
+         * @brief Generates a string by randomly selecting characters from a charset.
+         *
+         * @tparam Ret The character type for the resulting string. Default: char.
+         * @param Gen Reference to custom Mersenne Twister engine (used for seeding workers).
+         * @param CharSet Source character set (string or vector of chars).
+         * @param Count Number of characters to generate.
+         * @return std::basic_string<Ret> The generated string.
+         * @note Returns empty string if CharSet is empty or Count <= 0.
+         */
+        template <Char Ret = char>
+        std::basic_string<Ret> RandomStr(TwisterAny<>& Gen, const CharSet auto& CharSet, const idx Count);
+    }
+
+    /** Single range chars with custom Twister **/
+    namespace Tools::Random {
+        // Generate random char from codepoint range
+        inline char GetRandomChar(TwisterAny<>& Gen, u32 From, u32 To);
+
+        // Generate random wchar from codepoint range
+        inline wchar GetRandomWChar(TwisterAny<>& Gen, u32 From, u32 To);
+    }
+
+    /** String range chars with custom Twister **/
+    namespace Tools::Random {
+        // Generate Standard string std::string from given range
+        inline str MakeRandomStr(TwisterAny<>& Gen, u32 From, u32 To, const idx Count);
+
+        // Generate Wide string std::wstring from given range
+        inline wstr MakeRandomWStr(TwisterAny<>& Gen, u32 From, u32 To, const idx Count);
+    }
+
+    /** String charset with custom Twister **/
+    namespace Tools::Random {
+        // Generate Standard string std::string from charset (str, vec<char>) with custom Twister
+        str MakeRandomStr(TwisterAny<>& Gen, const OneOf<vec<char>, str> auto& CharSet, const idx Count);
+
+        // Generate Wide string std::wstring from charset (wstr, vec<wchar>) with custom Twister
+        wstr MakeRandomWStr(TwisterAny<>& Gen, const OneOf<vec<wchar>, wstr> auto& CharSet, const idx Count);
+    }
+    ```
+
+    ### Random Choice from Generic Iterables
+
+    ### `Random/Choice.Base.hpp`
+    Provides Python-like random selection functions (choice & sample) using preset generators.
+
+    This header implements generic random selection from any contiguous container (`std::vector`, `std::array`, etc.) using thread-local preset generators.
+
+    - **Choice**: Selects a single random element (like Python's `random.choice`).
+    - **Sample**: Selects N random elements WITH replacement (like Python's `random.choices`).
+
+    Note: All functions use preset thread-local generators via Single.Base.hpp and Vector.Base.hpp. For custom generator support, see Choice.Custom.hpp.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    vec<i32> data = {10, 20, 30, 40, 50};
+
+    auto item  = Random::Choice(data);           // Single random element
+    auto items = Random::Sample(data, 3);        // 3 random elements (with replacement)
+    auto sub   = Random::Choice(data, 1, 3);     // Random from index [1..3]
+    auto subs  = Random::Sample(data, 1, 3, 5);  // 5 random elements from index [1..3]
+    ```
+
+    File synopsis
+    ```cpp
+    /** Single item **/
+    namespace Tools::Random {
+        /** Get single random item **/
+        /**
+         * @brief Selects a single random element from the entire container.
+         *
+         * Equivalent to Python's `random.choice(data)`.
+         * Uses a preset thread-local generator internally.
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`
+         *                   (e.g., vec<T>, std::vector<T>, std::array<T,N>).
+         * @param DataSet Source data container.
+         * @return typename Container::value_type A randomly selected element.
+         *         Returns default-constructed value if container is empty.
+         *
+         * @note Time complexity: O(1).
+         */
+        template <typename Data>
+        auto Choice(const Data& DataSet) -> Data::value_type;;
+
+        /** Get single random item from selected range **/
+        /**
+         * @brief Selects a single random element from a sub-range [From, To].
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param DataSet Source data container.
+         * @param From Lower bound index (inclusive). Auto-swapped if From > To.
+         * @param To Upper bound index (inclusive). Clamped to Data.size()-1.
+         * @return typename Container::value_type A randomly selected element from the specified range.
+         *         Returns default-constructed value if container is empty.
+         * @throws std::out_of_range if From >= Data.size() after validation.
+         *
+         * @see ValidateChoiceRange in _Common.hpp for range validation details.
+         */
+        template<typename Data>
+        auto Choice(const Data& DataSet, idx From, idx To) -> Data::value_type;;
+    }
+
+    /** Many items **/
+    namespace Tools::Random {
+        /** Get N random items **/
+        /**
+         * @brief Selects N random elements from the entire container (with replacement).
+         *
+         * Equivalent to Python's `random.choices(data, k=Count)`.
+         * Elements may appear multiple times in the result since sampling is done
+         * with replacement.
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param DataSet Source data container.
+         * @param Count Number of elements to select.
+         * @return vec<typename Container::value_type> Vector containing 'Count' randomly
+         *         selected elements. Returns empty vector if Data is empty or Count <= 0.
+         *
+         * @note Time complexity: O(Count). Memory: allocates a new vec of size Count.
+         */
+        template <typename Data>
+        vec<typename Data::value_type> Sample(const Data& DataSet, const idx Count);
+
+        /** Get N random items from selected range **/
+        /**
+         * @brief Selects N random elements from a sub-range [From, To] (with replacement).
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param DataSet Source data container.
+         * @param From Lower bound index (inclusive). Auto-swapped if From > To.
+         * @param To Upper bound index (inclusive). Clamped to Data.size()-1.
+         * @param Count Number of elements to select.
+         * @return vec<typename Container::value_type> Vector containing 'Count' randomly
+         *         selected elements from the specified range.
+         *         Returns empty vector if Data is empty or Count <= 0.
+         * @throws std::out_of_range if From >= Data.size() after validation.
+         *
+         * @see ValidateChoiceRange in _Common.hpp for range validation details.
+         */
+        template <typename Data>
+        vec<typename Data::value_type> Sample(const Data& DataSet, idx From, idx To, const idx Count);
+    }
+    ```
+
+    ### `Random/Choice.Custom.hpp`
+
+    Provides Python-like random selection functions (choice & sample) using a user-provided generator.
+
+    This header implements generic random selection from any contiguous container
+    (`std::vector`, `std::array`, etc.) using a caller-supplied TwisterAny<> engine.
+
+    - "Choice": Selects a single random element (like Python's `random.choice`).
+    - "Sample": Selects N random elements WITH replacement (like Python's `random.choices`).
+
+    Note:
+    Unlike Base versions, these functions do NOT use internal thread-local generators.
+    The caller is responsible for thread safety if sharing the generator across threads.
+
+    Usage
+    ```cpp
+    #include "Random.hpp"
+    using namespace Tools;
+
+    Twister64 gen(42);
+    vec<i32> data = {10, 20, 30, 40, 50};
+
+    auto item  = Random::Choice(gen, data);           // Single random element
+    auto items = Random::Sample(gen, data, 3);        // 3 random elements (with replacement)
+    auto sub   = Random::Choice(gen, data, 1, 3);     // Random from index [1..3]
+    auto subs  = Random::Sample(gen, data, 1, 3, 5);  // 5 random elements from index [1..3]
+    ```
+
+    File synopsis
+    ```cpp
+    /** Single item **/
+    namespace Tools::Random {
+        /** Get single random item **/
+        /**
+         * @brief Selects a single random element from the entire dataset using a custom generator.
+         *
+         * Equivalent to Python's `random.choice(data)`.
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`
+         *              (e.g., vec<T>, std::vector<T>, std::array<T,N>).
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param DataSet Source data container.
+         * @return typename Data::value_type A randomly selected element.
+         *         Returns default-constructed value if dataset is empty.
+         *
+         * @note Time complexity: O(1).
+         */
+        template <typename Data>
+        auto Choice(TwisterAny<>& Gen, const Data& DataSet) -> Data::value_type;
+
+        /** Get single random item from selected range **/
+        /**
+         * @brief Selects a single random element from a sub-range [From, To] using a custom generator.
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param DataSet Source data container.
+         * @param From Lower bound index (inclusive). Auto-swapped if From > To.
+         * @param To Upper bound index (inclusive). Clamped to DataSet.size()-1.
+         * @return typename Data::value_type A randomly selected element from the specified range.
+         *         Returns default-constructed value if dataset is empty.
+         * @throws std::out_of_range if From >= DataSet.size() after validation.
+         *
+         * @see ValidateChoiceRange in _Common.hpp for range validation details.
+         */
+        template<typename Data>
+        auto Choice(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To) -> Data::value_type;
+    }
+
+    /** Many items **/
+    namespace Tools::Random {
+        /** Get N random items **/
+        /**
+         * @brief Selects N random elements from the entire dataset using a custom generator (with replacement).
+         *
+         * Equivalent to Python's `random.choices(data, k=Count)`.
+         * Elements may appear multiple times in the result since sampling is done
+         * with replacement.
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param DataSet Source data container.
+         * @param Count Number of elements to select.
+         * @return vec<typename Data::value_type> Vector containing 'Count' randomly
+         *         selected elements. Returns empty vector if dataset is empty or Count <= 0.
+         *
+         * @note Time complexity: O(Count). Memory: allocates a new vec of size Count.
+         */
+        template <typename Data>
+        vec<typename Data::value_type> Sample(TwisterAny<>& Gen, const Data& DataSet, const idx Count);
+
+        /** Get N random items from selected range **/
+        /**
+         * @brief Selects N random elements from a sub-range [From, To] using a custom generator (with replacement).
+         *
+         * @tparam Data Any contiguous container with `.size()` and `operator[]`.
+         * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
+         * @param DataSet Source data container.
+         * @param From Lower bound index (inclusive). Auto-swapped if From > To.
+         * @param To Upper bound index (inclusive). Clamped to DataSet.size()-1.
+         * @param Count Number of elements to select.
+         * @return vec<typename Data::value_type> Vector containing 'Count' randomly
+         *         selected elements from the specified range.
+         *         Returns empty vector if dataset is empty or Count <= 0.
+         * @throws std::out_of_range if From >= DataSet.size() after validation.
+         *
+         * @see ValidateChoiceRange in _Common.hpp for range validation details.
+         */
+        template <typename Data>
+        vec<typename Data::value_type> Sample(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To, const idx Count);
+    }
+    ```
+
+
 - ### Note:
     - I **_don't_** recommend using singles function inside a loop, instead, generate multiple value, then iterate through that container instead
 

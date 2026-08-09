@@ -201,7 +201,7 @@ namespace Tools::Types {
     >;
 
     template <typename T>
-    concept CPStr = OneOf<T,
+    concept Char = OneOf<T,
         char, u_char, s_char,
         wchar, char16, char32
     >;
@@ -291,22 +291,22 @@ namespace Tools::Types {
 namespace Tools::Types {
     template <typename T>
     concept TimeClock = OneOf<T,
-        Tools::Time::Clock,
-        Tools::Time::SClock,
-        Tools::Time::HClock
+        Time::Clock,
+        Time::SClock,
+        Time::HClock
     >;
 
     template <typename T>
     concept TimeUnit = OneOf<T,
-        Tools::Time::Units::ns,
-        Tools::Time::Units::us,
-        Tools::Time::Units::ms,
-        Tools::Time::Units::sec,
-        Tools::Time::Units::min,
-        Tools::Time::Units::hrs,
-        Tools::Time::Units::days,
-        Tools::Time::Units::weeks,
-        Tools::Time::Units::months
+        Time::Units::ns,
+        Time::Units::us,
+        Time::Units::ms,
+        Time::Units::sec,
+        Time::Units::min,
+        Time::Units::hrs,
+        Time::Units::days,
+        Time::Units::weeks,
+        Time::Units::months
     >;
 }
 

@@ -8,6 +8,7 @@
 #include "Types.hpp"
 #include "Random.hpp"
 
+#include <print>
 #include <ranges>
 #include <format>
 #include <algorithm>
