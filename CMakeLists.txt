@@ -1,10 +1,32 @@
 cmake_minimum_required(VERSION 4.2)
+
+# ----- 1. HEADER-ONLY LIBRARY -----
 project(RDTools VERSION 1.0.0 LANGUAGES CXX)
+
+add_library(RDTools INTERFACE)
+add_library(RDTools::RDTools ALIAS RDTools) # Namespace alias untuk konsistensi
+
+# Include path: berbeda saat build vs install
+target_include_directories(RDTools INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+)
+
+# C++26 requirement — otomatis propagate ke consumer
+target_compile_features(RDTools INTERFACE cxx_std_26)
+
+# Opsional: Daftarkan header agar muncul di IDE tree view
+# Gunakan GLOB_RECURSE agar tidak perlu maintenance manual 100+ file
+file(GLOB_RECURSE RDTOOLS_HEADERS CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/RDTools/*.hpp"
+)
+target_sources(RDTools INTERFACE ${RDTOOLS_HEADERS})
+
 
 #set(CMAKE_SYSTEM_NAME Windows)
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(RDTools Tools.cpp)
+#add_executable(RDTools Tools.cpp)
 
 set(TOOLS_TYPES
     # ----- RDTools.Types -----
@@ -286,7 +308,7 @@ set_source_files_properties(${TOOLS_UNIFIED_HEADERS} PROPERTIES
     HEADER_FILE_ONLY TRUE
 )
 
-target_compile_features(RDTools PRIVATE cxx_std_26)
+#target_compile_features(RDTools PRIVATE cxx_std_26)
 
 set(COMMON_FLAGS
     -std=c++26
@@ -306,15 +328,65 @@ set(COMMON_FLAGS
     -v
 )
 
-target_compile_options(RDTools PRIVATE
-    ${COMMON_FLAGS}
+# ----- 2. TEST EXECUTABLE (Optional) -----
+option(RDTOOLS_BUILD_TESTS "Build RDTools tests" ON)
+
+if(RDTOOLS_BUILD_TESTS)
+    add_executable(RDTools_Test RDTools.cpp)
+    target_link_libraries(RDTools_Test PRIVATE RDTools::RDTools)
+
+    target_compile_options(RDTools_Test PRIVATE
+            -O0 -m64 -Wall
+            -fansi-escape-codes -fcolor-diagnostics
+            -fdiagnostics-show-option
+            -Wno-deprecated-declarations -Wno-return-type
+    )
+
+    set_target_properties(RDTools_Test PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+endif()
+
+# ----- 3. INSTALL & PACKAGE SUPPORT -----
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
+install(TARGETS RDTools
+        EXPORT RDToolsTargets
+        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-target_link_libraries(RDTools PRIVATE
-    # fmt
-    # bcrypt
+install(EXPORT RDToolsTargets
+        FILE RDToolsTargets.cmake
+        NAMESPACE RDTools::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/RDTools
 )
 
-set_target_properties(RDTools PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+configure_package_config_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake/RDToolsConfig.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/RDToolsConfig.cmake"
+        INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/RDTools
 )
+
+write_basic_package_version_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/RDToolsConfigVersion.cmake"
+        VERSION ${PROJECT_VERSION}
+        COMPATIBILITY SameMajorVersion
+)
+
+install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/RDToolsConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/RDToolsConfigVersion.cmake"
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/RDTools
+)
+
+# Able to use: #include <RDTools/Types.hpp>
+install(DIRECTORY RDTools
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/RDTools.hpp")
+    install(FILES RDTools.hpp
+            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    )
+endif()

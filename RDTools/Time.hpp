@@ -29,6 +29,18 @@ namespace rdt::Time {
         std::this_thread::sleep_for(T{Dur});
     }
 
+    /**
+     * @brief Get Unix timestamp in seconds as double.
+     * @note Equivalent to Python's time.time().
+     *       Returns seconds since 1970-01-01 00:00:00 UTC.
+     */
+    template <typename D = Units::us>
+    f64 Timestamp() noexcept {
+        const auto now = std::chrono::system_clock::now();
+        const auto duration = now.time_since_epoch();
+        return std::chrono::duration<D>(duration).count();
+    }
+
     // // Measure time taken by a callable (return none)
     // // Able to run function, std::function, lamba
     // template <typename F, Duration T>
@@ -63,7 +75,7 @@ namespace rdt::Time {
     template <typename Ret>
     struct ExecutorReturn {
         topt<Ret> Return;
-        str Unit;   // TODO: Integrate with rdt::Time::Units for automatic unit labeling
+        str Unit;
 
         ExecutorReturn() = default;
         explicit ExecutorReturn(Ret r) : Return(std::move(r)) {}
