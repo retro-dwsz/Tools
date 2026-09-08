@@ -7,7 +7,7 @@
 
 /**
  * @file Items.Query.hpp
- * @brief Deduplication and bulk reassignment operations for Tools::ivec<T>.
+ * @brief Deduplication and bulk reassignment operations for rdt::ivec<T>.
  *
  * @details Provides two categories of operations:
  *          - uniques() / uniquesInl(): Remove duplicate elements, keeping at most N occurrences
@@ -16,8 +16,8 @@
  * @note uniques() preserves the relative order of first occurrences.
  *       reassignInl() performs in-place overwrite when possible, avoiding reallocation.
  *
- * @see Tools::ivec::filter
- * @see Tools::ivec::extend
+ * @see rdt::ivec::filter
+ * @see rdt::ivec::extend
  */
 
 #include <algorithm>

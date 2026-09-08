@@ -7,12 +7,12 @@
 
 /**
  * @file Core.State.hpp
- * @brief Container state management for Tools::ivec<T>.
+ * @brief Container state management for rdt::ivec<T>.
  *
  * @details Provides utilities for clearing contents and querying emptiness.
  *          These operations do NOT change the allocated capacity.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 #include "Base.Class.hpp"

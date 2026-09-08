@@ -7,7 +7,7 @@
 
 /**
  * @file Functional.hpp
- * @brief Python-style functional transformations for Tools::ivec<T>.
+ * @brief Python-style functional transformations for rdt::ivec<T>.
  *
  * @details Provides map() and filter() operations that return new vectors:
  *          - map(Fn):    Transform each element via callable → ivec<U>
@@ -17,8 +17,8 @@
  *       These are eager operations — results are computed immediately.
  *       For lazy evaluation, consider using std::views with begin()/end().
  *
- * @see Tools::ivec::begin
- * @see Tools::ivec::extend
+ * @see rdt::ivec::begin
+ * @see rdt::ivec::extend
  */
 
 #include "Base.Class.hpp"

@@ -11,10 +11,10 @@ namespace rdt::Vector {
     using namespace rdt::Cast;
 
     template <typename T>
-    vec<T> Erase(const vec<T>& Data, idx Begin, idx End) {
+    vec<T> Erase(const vec<T>& Data, const idx Begin, const idx End) {
         CheckRangeR(Begin, End);
         if (Data.empty()) return {};
-        idx size = Data.size();
+        const idx size = Data.size();
         idx b = std::min(Begin, size - 1);
         idx e = std::min(End, size - 1);
         if (b > e) std::swap(b, e);

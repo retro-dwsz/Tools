@@ -26,7 +26,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Generate 100 ragged sub-vectors (size 10-50 each) using all hardware threads
  * auto data = Random::RandomNumsTSBI(100, 10, 50, -100, 100, 0);
@@ -38,7 +38,7 @@
 #include <atomic>
 
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded scattered bundle generation.
  */
 namespace rdt::Random {
@@ -194,7 +194,7 @@ namespace rdt::Random {
 }
 
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded integer scattered bundle generation.
  */
 namespace rdt::Random {
@@ -236,7 +236,7 @@ namespace rdt::Random {
 }
 
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded float scattered bundle generation.
  */
 namespace rdt::Random {

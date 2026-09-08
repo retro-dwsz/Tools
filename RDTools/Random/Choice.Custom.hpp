@@ -21,7 +21,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * Twister64 gen(42);
  * vec<i32> data = {10, 20, 30, 40, 50};

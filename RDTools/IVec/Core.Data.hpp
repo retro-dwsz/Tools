@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Data.hpp
- * @brief Core data accessors for Tools::ivec<T>.
+ * @brief Core data accessors for rdt::ivec<T>.
  *
  * @details Provides read-only and mutable access to the underlying storage,
  *          size/capacity queries, and memory usage reporting. All methods are
@@ -16,7 +16,7 @@
  * @note These accessors do NOT perform bounds checking. Use at() or refbegin()/refend()
  *       for safe bounded access.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 #include "Base.Class.hpp"

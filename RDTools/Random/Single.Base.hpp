@@ -19,7 +19,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * auto i = Random::RandomNumI(-50, 50);   // Integer [-50, 50]
  * auto d = Random::RandomNumD(0.0, 1.0);  // Double [0.0, 1.0]
@@ -30,7 +30,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for single random number generation.
  */
 namespace rdt::Random {
@@ -86,7 +86,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for integer random number generation.
  */
 namespace rdt::Random {
@@ -125,7 +125,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for floating-point random number generation.
  */
 namespace rdt::Random {

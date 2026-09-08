@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Append.hpp
- * @brief Single-element append operations for Tools::ivec<T>.
+ * @brief Single-element append operations for rdt::ivec<T>.
  *
  * @details Provides append() overloads for adding individual elements to the
  *          end of the vector. Supports both lvalue (copy) and rvalue (move)
@@ -16,8 +16,8 @@
  * @note For bulk insertion, use extend() or append(span) instead.
  *       For in-place construction without copies/moves, use emplace().
  *
- * @see Tools::ivec::extend
- * @see Tools::ivec::emplace
+ * @see rdt::ivec::extend
+ * @see rdt::ivec::emplace
  */
 
 #include "Base.Class.hpp"

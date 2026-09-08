@@ -60,7 +60,7 @@ add_library(RDTools::RDTools INTERFACE IMPORTED)
 
 set_target_properties(RDTools::RDTools PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_26"
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
 )
 
 # Load information for each installed configuration.

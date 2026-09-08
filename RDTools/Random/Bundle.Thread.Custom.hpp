@@ -25,7 +25,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * Twister64 myGen(12345);
  * auto matrix = Random::RandomNumsTBI(myGen, 100, 1000, 0, 255, 8);
@@ -37,7 +37,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded bundle generation with custom engines.
  */
 namespace rdt::Random {
@@ -158,7 +158,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded integer bundle generation with custom engines.
  */
 namespace rdt::Random {
@@ -199,7 +199,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded float bundle generation with custom engines.
  */
 namespace rdt::Random {

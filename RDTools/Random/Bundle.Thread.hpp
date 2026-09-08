@@ -25,7 +25,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Generate a 100x1000 matrix using 8 threads
  * auto grid = Random::RandomNumsTBI(100, 1000, 0, 255, 8);
@@ -37,7 +37,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded bundle generation.
  */
 namespace rdt::Random {
@@ -152,7 +152,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded integer bundle generation.
  */
 namespace rdt::Random {
@@ -191,7 +191,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded float bundle generation.
  */
 namespace rdt::Random {

@@ -12,7 +12,7 @@ namespace rdt::Vector {
     vec<T> Slice(const vec<T>& Data, idx Begin, idx End) {
         CheckRangeR(Begin, End);
         if (Data.empty()) return {};
-        idx size = Data.size();
+        const idx size = Data.size();
         idx b = std::min(Begin, size - 1);
         idx e = std::min(End, size - 1);
         if (b > e) std::swap(b, e);
@@ -24,7 +24,7 @@ namespace rdt::Vector {
     template <typename T>
     vec<T> Slice(const vec<T>& Data, sidx Index) {
         if (Data.empty()) return {};
-        idx size = Data.size();
+        const idx size = Data.size();
 
         if (Index >= 0) {
             idx end = std::min(static_cast<idx>(Index), size - 1);

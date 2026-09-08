@@ -7,7 +7,7 @@
 
 /**
  * @file Converter.Opr.hpp
- * @brief Explicit type conversion operators for Tools::ivec<T>.
+ * @brief Explicit type conversion operators for rdt::ivec<T>.
  *
  * @details Provides explicit conversions to std::span and std::vector.
  *          All operators are marked explicit to prevent accidental implicit
@@ -20,9 +20,9 @@
  *         auto v = std::vector<int>(my_ivec);    // OK (deep copy)
  *         std::span<int> s = my_ivec;            // Won't compile (explicit)
  *
- * @see Tools::ivec::to
- * @see Tools::ivec::toVector
- * @see Tools::ivec::toSpan
+ * @see rdt::ivec::to
+ * @see rdt::ivec::toVector
+ * @see rdt::ivec::toSpan
  */
 
 #include "Base.Class.hpp"

@@ -7,9 +7,9 @@
 
 namespace rdt {
     template <typename Char = char>
-    concept ValidTypes = OneOf<Char, char, u_char, s_char, wchar, char16, char32>;
+    concept PStrTypes = OneOf<Char, char, u_char, s_char, wchar, char16, char32>;
 
-    template <ValidTypes Char = char>
+    template <PStrTypes Char = char>
     class PStr {
         private:
         const Char* StrData;    // <- Pointer to external string data (non-owning)

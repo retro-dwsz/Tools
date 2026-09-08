@@ -23,7 +23,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * Twister64 myGen(42);
  * auto data = Random::RandomNumsVI(myGen, 1000, 0, 100);
@@ -34,7 +34,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for vector generation with custom engines.
  */
 namespace rdt::Random {
@@ -110,7 +110,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for integer vector generation with custom engines.
  */
 namespace rdt::Random {
@@ -155,7 +155,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for floating-point vector generation with custom engines.
  */
 namespace rdt::Random {

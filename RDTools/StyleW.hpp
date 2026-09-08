@@ -30,13 +30,14 @@ Compile and Link:  clang++ -o test.cpp -o test.exe -lStyle
 /* Make new retrun (const wstrview& Text) */
 namespace rdt::Style {
     using namespace ::rdt::Cast;
-    wstr ReverseW(const wstrview& Text) {
+
+    inline wstr ReverseW(const wstrview& Text) {
         wstr result(Text);
         std::ranges::reverse(result);
         return result;
     }
 
-    wstr UpperW(const wstrview& Text) {
+    inline wstr UpperW(const wstrview& Text) {
         wstr result(Text);
         std::ranges::transform(result, result.begin(), [](wchar c) {
             // Cast to wchar because towupper return wint_t
@@ -45,7 +46,7 @@ namespace rdt::Style {
         return result;
     }
 
-    wstr LowerW(const wstrview& Text) {
+    inline wstr LowerW(const wstrview& Text) {
         wstr result(Text);
         std::ranges::transform(result, result.begin(), [](wchar c) {
             return scast<wchar>(std::towlower(c));
@@ -53,13 +54,13 @@ namespace rdt::Style {
         return result;
     }
 
-    wstr SortW(const wstrview& Text) {
+    inline wstr SortW(const wstrview& Text) {
         wstr result(Text);
         std::ranges::sort(result);
         return result;
     }
 
-    vec<wchar> DebugW(const wstrview& Text) {
+    inline vec<wchar> DebugW(const wstrview& Text) {
         vec<wchar> result;
         result.reserve(Text.size());
         for (wchar c : Text) {
@@ -71,32 +72,32 @@ namespace rdt::Style {
     /* Styles (Wide ANSI Escape Codes)
     * Use 'L' prefix for literal wide string
     */
-    wstr BoldW(const wstrview& Text) {
+    inline wstr BoldW(const wstrview& Text) {
         return std::format(L"\033[1m{}\033[0m", Text);
     }
 
-    wstr ItalicW(const wstrview& Text) {
+    inline wstr ItalicW(const wstrview& Text) {
         return std::format(L"\033[3m{}\033[0m", Text);
     }
 
-    wstr UnderlineW(const wstrview& Text) {
+    inline wstr UnderlineW(const wstrview& Text) {
         return std::format(L"\033[4m{}\033[0m", Text);
     }
 
-    wstr StrikeW(const wstrview& Text) {
+    inline wstr StrikeW(const wstrview& Text) {
         return std::format(L"\033[9m{}\033[0m", Text);
     }
 
     /* Coloring (Wide True Color RGB) */
-    wstr ColorFGW(const wstrview& Text, const Color& FG) {
+    inline wstr ColorFGW(const wstrview& Text, const Color& FG) {
         return std::format(L"\033[38;2;{};{};{}m{}\033[0m", FG.R, FG.G, FG.B, Text);
     }
 
-    wstr ColorBGW(const wstrview& Text, const Color& BG) {
+    inline wstr ColorBGW(const wstrview& Text, const Color& BG) {
         return std::format(L"\033[48;2;{};{};{}m{}\033[0m", BG.R, BG.G, BG.B, Text);
     }
 
-    wstr ResetW(const wstrview& Text) {
+    inline wstr ResetW(const wstrview& Text) {
         // Perhatikan prefix 'L' untuk wide regex (std::wregex) dan wide string literal
         static const std::wregex ansi_regex(L"\\x1B\\[[0-9;]*m");
         return std::regex_replace(wstr(Text), ansi_regex, L"");
@@ -105,29 +106,29 @@ namespace rdt::Style {
 
 /* Modifly in place, always use pointer (*wstr Text) */
 namespace rdt::Style {
-    void ReverseW(wstr* Text) {
+    inline void ReverseW(wstr* Text) {
         if(!Text) return;
         std::ranges::reverse(*Text);
     };
 
-    void UpperWW(wstr* Text) {
+    inline void UpperWW(wstr* Text) {
        std::ranges::transform(*Text, Text->begin(), [](wchar c) {
             return scast<wchar>(std::towupper(c));
         });
     };
 
-    void LowerWW(wstr* Text) {
+    inline void LowerWW(wstr* Text) {
        std::ranges::transform(*Text, Text->begin(), [](wchar c) {
             return scast<wchar>(std::towlower(c));
         });
     };
 
-    void SortW(wstr* Text) {
+    inline void SortW(wstr* Text) {
         if (!Text) return;
         std::ranges::sort(*Text);
     };
 
-    void DebugW(const wstrview& Text, vec<wchar>& Destination) {
+    inline void DebugW(const wstrview& Text, vec<wchar>& Destination) {
         Destination.clear();
         Destination.reserve(Text.size());
         for (wchar_t c : Text) {
@@ -135,37 +136,37 @@ namespace rdt::Style {
         }
     };
 
-    void BoldW(wstr* Text) {
+    inline void BoldW(wstr* Text) {
         if (!Text) return;
         *Text = std::format(L"\033[1m{}\033[0m", *Text);
     };
 
-    void ItalicW(wstr* Text) {
+    inline void ItalicW(wstr* Text) {
         if (!Text) return;
         *Text = std::format(L"\033[3m{}\033[0m", *Text);
     }
 
-    void UnderlineW(wstr* Text) {
+    inline void UnderlineW(wstr* Text) {
         if (!Text) return;
         *Text = std::format(L"\033[4m{}\033[0m", *Text);
     }
 
-    void StrikeW(wstr* Text) {
+    inline void StrikeW(wstr* Text) {
         if (!Text) return;
         *Text = std::format(L"\033[9m{}\033[0m", *Text);
     }
 
-    void ColorFGW(wstr* Text, const Color& FG) {
+    inline void ColorFGW(wstr* Text, const Color& FG) {
         if (!Text) return;
         *Text = std::format(L"\033[38;2;{};{};{}m{}\033[0m", FG.R, FG.G, FG.B, *Text);
     }
 
-    void ColorBGW(wstr* Text, const Color& BG) {
+    inline void ColorBGW(wstr* Text, const Color& BG) {
         if (!Text) return;
         *Text = std::format(L"\033[48;2;{};{};{}m{}\033[0m", BG.R, BG.G, BG.B, *Text);
     }
 
-    void ResetW(wstr* Text) {
+    inline void ResetW(wstr* Text) {
         if (!Text) return; // Null-check
         static const std::wregex ansi_regex(L"\\x1B\\[[0-9;]*m");
         *Text = std::regex_replace(*Text, ansi_regex, L"");

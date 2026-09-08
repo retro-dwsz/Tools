@@ -15,7 +15,7 @@ namespace rdt::Vector {
 
     template <typename T>
     void Shuffle(vec<T>& v){
-        std::ranges::shuffle(v, rdt::Random::Gen64);
+        std::ranges::shuffle(v, rdt::Random::Twister64{});
     };
 
     template <typename T>
@@ -42,7 +42,7 @@ namespace rdt::Vector {
         First->insert(First->end(), First->begin(), First->end());
         (First->insert(First->end(), Rest.begin(), Rest.end()), ...);
 
-        std::ranges::shuffle(First, rdt::Random::Gen64);
+        std::ranges::shuffle(First, rdt::Random::Twister64{});
     }
 }
 

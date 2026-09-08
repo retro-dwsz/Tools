@@ -7,7 +7,7 @@
 
 /**
  * @file Init.Ctor.hpp
- * @brief Constructor implementations for Tools::ivec<T>.
+ * @brief Constructor implementations for rdt::ivec<T>.
  *
  * @details Provides all construction pathways for ivec including:
  *          - Default construction (empty, zero-allocation)
@@ -19,7 +19,7 @@
  * @note All constructors that allocate memory use operator new[] directly.
  *       Elements are constructed via placement new to support non-default-constructible types.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 #include "Base.Class.hpp"

@@ -7,22 +7,22 @@
 
 /* ---- Debug data ---- */
 namespace rdt {
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     idx PStr<Char>::size() const noexcept {
         return this->StrSize;
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     idx PStr<Char>::sizeBytes() const noexcept {
         return this->StrSize * sizeof(Char{});
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     bool PStr<Char>::empty() const noexcept {
         return this->StrSize == 0;
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     const Char* PStr<Char>::data() const noexcept {
         return this->StrData;
     }

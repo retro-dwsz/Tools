@@ -89,11 +89,11 @@ namespace rdt::Linking {
     ) {
         File = std::format("{}", GetFile(File));        // File maker
 
-        if(debug) std::cout << std::format("> Loading {}", File);   // Load the Lib using WinAPI (Clang)
+        if(debug) std::print("> Loading {}", File);   // Load the Lib using WinAPI (Clang)
 
         HMODULE Lib = LoadLibraryA(File.c_str());
         if (!Lib) {
-            std::cout << std::format("> Failed to load {}", File);
+            std::print("> Failed to load {}", File);
             return;
         }
 
@@ -108,7 +108,7 @@ namespace rdt::Linking {
         try {
             EntryFunc = LoadSymbol<Entry>(Lib, EntryPoint);
         } catch (const std::exception& e) {
-            std::cout << std::format("Error: {}", e.what());
+            std::print("Error: {}", e.what());
             FreeLibrary(Lib);
             return;
         }
@@ -117,14 +117,14 @@ namespace rdt::Linking {
         const str   argv_dll[] = {*C_EntryPoint, Msg};
         const int   argc_dll   = 2;
 
-        if(debug) std::cout << std::format("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize) );
+        if(debug) std::print("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize) );
 
         int result = 0;
 
         try {
             result = EntryFunc(argc_dll, *argv_dll);
         } catch(std::exception e){
-            std::cout << std::format("Error!");
+            std::print("Error!");
             std::cerr << e.what();
         }
 
@@ -135,7 +135,7 @@ namespace rdt::Linking {
             Result_s = ColorFG(std::format("{}", result), 0xFF5826);
         }
 
-        if(debug) std::cout << std::format("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
+        if(debug) std::print("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
 
         FreeLibrary(Lib);
     }
@@ -150,11 +150,11 @@ namespace rdt::Linking {
     ) {
         File = std::format("{}", GetFile(File));        // File name maker
 
-        if (debug) std::cout << std::format("> Loading {}", File);
+        if (debug) std::print("> Loading {}", File);
 
         HMODULE lib = LoadLibraryA(File.c_str());       // Load the lib using WinAPI (ANSI)
         if (!lib) {
-            std::cout << std::format("> Failed to load {}", File);
+            std::print("> Failed to load {}", File);
             return;
         }
 
@@ -168,7 +168,7 @@ namespace rdt::Linking {
         try {
             EntryFunc = LoadSymbol<Entry>(lib, EntryPoint);
         } catch (const std::exception& e) {
-            std::cout << std::format("Error: {}", e.what());
+            std::print("Error: {}", e.what());
             FreeLibrary(lib);
             return;
         }
@@ -181,13 +181,13 @@ namespace rdt::Linking {
         const i32 argc_dll = 2;
 
         if (debug)
-            std::cout << std::format("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize));
+            std::print("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize));
 
         i32 result = 0;
         try {
             result = EntryFunc(argc_dll, *argv_dll);
         } catch (const std::exception& e) {
-            std::cout << std::format("Exception: {}", e.what());
+            std::print("Exception: {}", e.what());
         }
 
         str Result_s;
@@ -198,7 +198,7 @@ namespace rdt::Linking {
         }
 
         if (debug)
-            std::cout << std::format("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
+            std::print("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
 
         FreeLibrary(lib);
     }
@@ -212,11 +212,11 @@ namespace rdt::Linking {
     ) {
         File = std::format("{}", GetFile(File));        // File name maker
 
-        if(debug) std::cout << std::format("> Loading {}", File);
+        if(debug) std::print("> Loading {}", File);
 
         const HMODULE lib = LoadLibraryA(File.c_str());  // Load the lib using WinAPI (Clang)
         if (!lib) {
-            std::cout << std::format("> Failed to load {}", File);
+            std::print("> Failed to load {}", File);
             return;
         }
 
@@ -230,7 +230,7 @@ namespace rdt::Linking {
         try {
             EntryFunc = LoadSymbol<Entry>(lib, EntryPoint);
         } catch (const std::exception& e) {
-            std::cout << std::format("Error: {}", e.what());
+            std::print("Error: {}", e.what());
             FreeLibrary(lib);
             return;
         }
@@ -239,14 +239,14 @@ namespace rdt::Linking {
         const str argv_dll[] = {*C_EntryPoint};
         const int   argc_dll = 1;
 
-        if(debug) std::cout << std::format("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize) );
+        if(debug) std::print("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize) );
 
         int result = 0;
 
         try {
             result = EntryFunc(argc_dll, *argv_dll);
         } catch(std::exception e){
-            std::cout << std::format("Error!");
+            std::print("Error!");
             std::cerr << e.what();
         }
 
@@ -257,7 +257,7 @@ namespace rdt::Linking {
             Result_s = ColorFG(std::format("{}", result), 0xFF5826);
         }
 
-        if(debug) std::cout << std::format("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
+        if(debug) std::print("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
 
         FreeLibrary(lib);
     }
@@ -274,12 +274,12 @@ namespace rdt::Linking {
     ) {
         File = GetFile(File);
 
-        if (debug) std::cout << std::format("> Loading {}", File);
+        if (debug) std::print("> Loading {}", File);
 
         // Load the lib using WinAPI (Clang)
         HMODULE Lib = LoadLibraryA(File.c_str());
         if (!Lib) {
-            std::cout << std::format("> Failed to load {}", File);
+            std::print("> Failed to load {}", File);
             return -1;
         }
 
@@ -291,7 +291,7 @@ namespace rdt::Linking {
         try {
             EntryFunc = LoadSymbol<Entry>(Lib, EntryPoint);
         } catch (const std::exception& e) {
-            std::cout << std::format("Error: {}", e.what());
+            std::print("Error: {}", e.what());
             FreeLibrary(Lib);
             return -1;
         }
@@ -310,7 +310,7 @@ namespace rdt::Linking {
         int argc = static_cast<int>(argv.size());
 
         if (debug){
-            std::cout << std::format("> Running DLL...\n{}\n\n",
+            std::print("> Running DLL...\n{}\n\n",
                 std::format("{:-^{}}", " Begin ", TerminalSize)
             );
         }
@@ -320,7 +320,7 @@ namespace rdt::Linking {
         try {
             result = EntryFunc(argc, argv.data());
         } catch (const std::exception& e) {
-            std::cout << std::format("Error!");
+            std::print("Error!");
             std::cerr << e.what();
             return -1;
         }
@@ -330,7 +330,7 @@ namespace rdt::Linking {
             : ColorFG(std::format("{}", result), 0xFF5826);
 
         if (debug)
-            std::cout << std::format("\n\n{}\n> DLL returned {}",
+            std::print("\n\n{}\n> DLL returned {}",
                 std::format("{:-^{}}", " End ", TerminalSize),
                 Result_s
             );
@@ -351,11 +351,11 @@ namespace rdt::Linking {
     ) {
         File = GetFile(File);
 
-        if (debug) std::cout << std::format("> Loading {}", File);
+        if (debug) std::print("> Loading {}", File);
 
         HMODULE Lib = LoadLibraryA(File.c_str());
         if (!Lib) {
-            std::cout << std::format("> Failed to load {}", File);
+            std::print("> Failed to load {}", File);
             return -1;
         }
 
@@ -366,7 +366,7 @@ namespace rdt::Linking {
         try {
             EntryFunc = LoadSymbol<Entry>(Lib, EntryPoint);
         } catch (const std::exception& e) {
-            std::cout << std::format("Error: {}", e.what());
+            std::print("Error: {}", e.what());
             FreeLibrary(Lib);
             return -1;
         }
@@ -388,7 +388,7 @@ namespace rdt::Linking {
         int argc = static_cast<i32>(argv.size() - 1); // exclude trailing nullptr
 
         if (debug) {
-            std::cout << std::format("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize));
+            std::print("> Running DLL...\n{}\n\n", std::format("{:-^{}}", " Begin ", TerminalSize));
         }
 
         i32 result = -1;
@@ -396,7 +396,7 @@ namespace rdt::Linking {
             // call
             result = EntryFunc(argc, argv.data());
         } catch (const std::exception& e) {
-            std::cout << std::format("Exception calling DLL: {}", e.what());
+            std::print("Exception calling DLL: {}", e.what());
             // don't rethrow across modules
             result = -1;
         }
@@ -404,7 +404,7 @@ namespace rdt::Linking {
         if (debug) {
             auto Result_s = (result == 0) ? std::format("{}", result)
                                           : ColorFG(std::format("{}", result), 0xFF5826);
-            std::cout << std::format("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
+            std::print("\n\n{}\n> DLL returned {}", std::format("{:-^{}}", " End ", TerminalSize), Result_s);
         }
 
         FreeLibrary(Lib);
@@ -417,8 +417,8 @@ namespace rdt::Linking {
         const str& Func,                /* Mangled function name with itanium format */
         bool WithArgs = true            /* Include args or not*/
     ) {
-        cstr Name = Func.c_str();
-        int status = 0;
+        const cstr Name = Func.c_str();
+        auto status = 0;
         std::unique_ptr<char, void(*)(void*)> res{
             abi::__cxa_demangle(Name, 0, 0, &status),
             std::free

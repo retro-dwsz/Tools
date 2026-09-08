@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Emplace.Idx.hpp
- * @brief Positional in-place construction for Tools::ivec<T>.
+ * @brief Positional in-place construction for rdt::ivec<T>.
  *
  * @details Provides emplaceFront() and emplaceAt() for constructing elements
  *          directly at specific positions using perfect forwarding. Combines
@@ -17,8 +17,8 @@
  *       prefer appendFirst()/appendAt() which have identical performance.
  *       Use emplace variants when constructing complex/non-movable objects.
  *
- * @see Tools::ivec::emplace
- * @see Tools::ivec::appendAt
+ * @see rdt::ivec::emplace
+ * @see rdt::ivec::appendAt
  */
 
 #include "Base.Class.hpp"

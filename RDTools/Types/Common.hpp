@@ -5,16 +5,18 @@
 
 #include <concepts>
 
-/* * * * * * Commonly used types * * * * * */
-template <typename X, typename Y>
-concept Same    = std::same_as<X, Y>;
+namespace rdt {
+    /* * * * * * Commonly used types * * * * * */
+    template <typename X, typename Y>
+    concept Same    = std::same_as<X, Y>;
 
-template <typename T, typename... Ts>
-concept OneOf   = (Same<T, Ts> || ...);
+    template <typename T, typename... Ts>
+    concept OneOf   = (Same<T, Ts> || ...);
+}
 
 #define ADD_TYPES(name, ...)    \
-    template <typename T>       \
-    concept name = (Same<T, __VA_ARGS__> || ...);
+template <typename T>       \
+concept name = (Same<T, __VA_ARGS__> || ...);
 
 #include "Int.hpp"
 #include "UInt.hpp"

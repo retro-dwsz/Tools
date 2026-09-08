@@ -7,13 +7,13 @@
 
 /* ---- CTOR ---- */
 namespace rdt {
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::PStr() noexcept {
         this->StrData = nullptr;
         this->StrSize = 0;
     };
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::PStr(const Char* p) noexcept {
         this->StrData = p;
         // Using char_traits to support ALL char types
@@ -21,7 +21,7 @@ namespace rdt {
         this->StrSize = p ? std::char_traits<Char>::length(p) : 0;
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::PStr(const Char* p, idx len) noexcept {
         this->StrData = p;
         this->StrSize = len;

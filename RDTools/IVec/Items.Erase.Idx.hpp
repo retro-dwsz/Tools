@@ -7,7 +7,7 @@
 
 /**
  * @file Items.Erase.idx.hpp
- * @brief Index-based element removal for Tools::ivec<T>.
+ * @brief Index-based element removal for rdt::ivec<T>.
  *
  * @details Provides erase() and eraseInl() overloads that accept index positions.
  *          These delegate to the pointer-based implementations in Items.Eraser.ptr.hpp.
@@ -32,8 +32,8 @@
  * @note Index-based erase uses exclusive end bound [From, To) matching STL convention,
  *       while slice uses inclusive bounds [From, To]. Be mindful of this difference.
  *
- * @see Tools::ivec::slice
- * @see Tools::ivec::erase(T*, T*)
+ * @see rdt::ivec::slice
+ * @see rdt::ivec::erase(T*, T*)
  */
 
 #include "Base.Class.hpp"

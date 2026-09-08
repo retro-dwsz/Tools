@@ -7,7 +7,7 @@
 
 /**
  * @file Opr.Dunder.hpp
- * @brief Python-style operator overloads for Tools::ivec<T>.
+ * @brief Python-style operator overloads for rdt::ivec<T>.
  *
  * @details Provides intuitive operator syntax inspired by Python list semantics:
  *          - operator+ : Concatenation (returns new ivec)
@@ -18,8 +18,8 @@
  *       (+=, *=) are provided to maintain value semantics and prevent
  *       accidental aliasing bugs. Use extend() for in-place concatenation.
  *
- * @see Tools::ivec::extend
- * @see Tools::ivec::contains
+ * @see rdt::ivec::extend
+ * @see rdt::ivec::contains
  */
 
 #include "Base.Class.hpp"

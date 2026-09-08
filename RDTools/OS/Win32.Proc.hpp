@@ -27,7 +27,7 @@ namespace rdt::OS::Process {
         SIZE_T Bytes = 0;
         ReadProcessMemory(
             Handle,
-            (LPCVOID)Address,
+            rcast<LPCVOID>(Address),
             &Value,
             sizeof(T),
             &Bytes
@@ -50,7 +50,7 @@ namespace rdt::OS::Process {
         SIZE_T Bytes = 0;
         BOOL Success = WriteProcessMemory(
             Handle,
-            (LPVOID)Address,
+            rcast<LPVOID>(Address),
             &data,
             sizeof(T),
             &Bytes

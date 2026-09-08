@@ -5,14 +5,14 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     message: |
       The system is: Windows - 10.0.26200 - AMD64
   -
     kind: "find-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Program used to build from build.ninja files."
@@ -465,7 +465,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -799,7 +799,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -900,7 +900,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: D:/Code/Msys2/Files/clang64/bin/clang++.exe 
@@ -921,7 +921,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -1091,7 +1091,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -1261,7 +1261,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -1431,7 +1431,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -1601,7 +1601,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -1771,7 +1771,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -1941,7 +1941,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -2111,7 +2111,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -2281,7 +2281,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -2451,7 +2451,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -2621,7 +2621,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -2993,7 +2993,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "LLVM archiver"
@@ -3777,7 +3777,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "Generate index for LLVM archive"
@@ -4561,7 +4561,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
     description: "`clang-scan-deps` dependency scanner"
@@ -5349,7 +5349,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Clang.cmake:296 (__windows_compiler_clang_base)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Clang-CXX.cmake:3 (__windows_compiler_clang)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake:48 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     mode: "program"
     variable: "CMAKE_RC_COMPILER"
     description: "RC compiler"
@@ -5696,12 +5696,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx"
-      binary: "D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx"
+      source: "D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5"
+      binary: "D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "D:/Code/Msys2/Files/clang64/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -5713,16 +5713,16 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx'
+        Change Dir: 'D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5'
         
-        Run Build Command(s): C:/Users/DAVIDS~1/AppData/Local/MICROS~1/WinGet/Links/ninja.exe -v cmTC_2d894
-        [1/2] D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe   -v -MD -MT CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_2d894.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): C:/Users/DAVIDS~1/AppData/Local/MICROS~1/WinGet/Links/ninja.exe -v cmTC_2e748
+        [1/2] D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe   -v -MD -MT CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_2e748.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"
         clang version 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: D:/Code/Msys2/Files/clang64/bin
          (in-process)
-         "D:/Code/Msys2/Files/clang64/bin/clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx -v -fcoverage-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx -resource-dir D:/Code/Msys2/Files/clang64/lib/clang/22 -dependency-file "CMakeFiles\\\\cmTC_2d894.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/lib/clang/22/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/usr/include -internal-isystem D:/Code/Msys2/Files/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"
+         "D:/Code/Msys2/Files/clang64/bin/clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5 -v -fcoverage-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5 -resource-dir D:/Code/Msys2/Files/clang64/lib/clang/22 -dependency-file "CMakeFiles\\\\cmTC_2e748.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/lib/clang/22/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/usr/include -internal-isystem D:/Code/Msys2/Files/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"
         clang -cc1 version 22.1.8 based upon LLVM 22.1.8 default target x86_64-w64-windows-gnu
         ignoring nonexistent directory "D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1"
         ignoring nonexistent directory "D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include"
@@ -5733,12 +5733,12 @@ events:
          D:/Code/Msys2/Files/clang64/lib/clang/22/include
          D:/Code/Msys2/Files/clang64/include
         End of search list.
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe  -v -Wl,-v CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_2d894.exe -Wl,--out-implib,libcmTC_2d894.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe  -v -Wl,-v CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_2e748.exe -Wl,--out-implib,libcmTC_2e748.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         clang version 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: D:/Code/Msys2/Files/clang64/bin
-         "D:/Code/Msys2/Files/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_2d894.exe D:/Code/Msys2/Files/clang64/lib/crt2.o D:/Code/Msys2/Files/clang64/lib/crtbegin.o -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/lib -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/mingw/lib -LD:/Code/Msys2/Files/clang64/lib -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows -v CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_2d894.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Code/Msys2/Files/clang64/lib/crtend.o
+         "D:/Code/Msys2/Files/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_2e748.exe D:/Code/Msys2/Files/clang64/lib/crt2.o D:/Code/Msys2/Files/clang64/lib/crtbegin.o -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/lib -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/mingw/lib -LD:/Code/Msys2/Files/clang64/lib -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows -v CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_2e748.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Code/Msys2/Files/clang64/lib/crtend.o
         LLD 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab) (compatible with GNU linkers)
         
       exitCode: 0
@@ -5747,7 +5747,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -5767,21 +5767,21 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx']
+        ignore line: [Change Dir: 'D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/DAVIDS~1/AppData/Local/MICROS~1/WinGet/Links/ninja.exe -v cmTC_2d894]
-        ignore line: [[1/2] D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe   -v -MD -MT CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_2d894.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): C:/Users/DAVIDS~1/AppData/Local/MICROS~1/WinGet/Links/ninja.exe -v cmTC_2e748]
+        ignore line: [[1/2] D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe   -v -MD -MT CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_2e748.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [clang version 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: D:/Code/Msys2/Files/clang64/bin]
         ignore line: [ (in-process)]
-        ignore line: [ "D:/Code/Msys2/Files/clang64/bin/clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx -v -fcoverage-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-2hd6fx -resource-dir D:/Code/Msys2/Files/clang64/lib/clang/22 -dependency-file "CMakeFiles\\\\cmTC_2d894.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/lib/clang/22/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/usr/include -internal-isystem D:/Code/Msys2/Files/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [ "D:/Code/Msys2/Files/clang64/bin/clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5 -v -fcoverage-compilation-dir=D:/Code/_CLIB/Tools/build/CMakeFiles/CMakeScratch/TryCompile-f35px5 -resource-dir D:/Code/Msys2/Files/clang64/lib/clang/22 -dependency-file "CMakeFiles\\\\cmTC_2e748.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/include/c++/v1 -internal-isystem D:/Code/Msys2/Files/clang64/lib/clang/22/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include -internal-isystem D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/usr/include -internal-isystem D:/Code/Msys2/Files/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [clang -cc1 version 22.1.8 based upon LLVM 22.1.8 default target x86_64-w64-windows-gnu]
         ignore line: [ignoring nonexistent directory "D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include/c++/v1"]
         ignore line: [ignoring nonexistent directory "D:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/include"]
@@ -5792,18 +5792,18 @@ events:
         ignore line: [ D:/Code/Msys2/Files/clang64/lib/clang/22/include]
         ignore line: [ D:/Code/Msys2/Files/clang64/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe  -v -Wl -v CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_2d894.exe -Wl --out-implib libcmTC_2d894.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && D:\\Code\\Msys2\\Files\\clang64\\bin\\clang++.exe  -v -Wl -v CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_2e748.exe -Wl --out-implib libcmTC_2e748.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [clang version 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: D:/Code/Msys2/Files/clang64/bin]
-        link line: [ "D:/Code/Msys2/Files/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_2d894.exe D:/Code/Msys2/Files/clang64/lib/crt2.o D:/Code/Msys2/Files/clang64/lib/crtbegin.o -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/lib -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/mingw/lib -LD:/Code/Msys2/Files/clang64/lib -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows -v CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_2d894.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Code/Msys2/Files/clang64/lib/crtend.o]
+        link line: [ "D:/Code/Msys2/Files/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_2e748.exe D:/Code/Msys2/Files/clang64/lib/crt2.o D:/Code/Msys2/Files/clang64/lib/crtbegin.o -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/lib -LD:/Code/Msys2/Files/clang64/x86_64-w64-mingw32/mingw/lib -LD:/Code/Msys2/Files/clang64/lib -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu -LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows -v CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_2e748.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Code/Msys2/Files/clang64/lib/crtend.o]
           arg [D:/Code/Msys2/Files/clang64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_2d894.exe] ==> ignore
+          arg [cmTC_2e748.exe] ==> ignore
           arg [D:/Code/Msys2/Files/clang64/lib/crt2.o] ==> obj [D:/Code/Msys2/Files/clang64/lib/crt2.o]
           arg [D:/Code/Msys2/Files/clang64/lib/crtbegin.o] ==> obj [D:/Code/Msys2/Files/clang64/lib/crtbegin.o]
           arg [-LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu] ==> dir [D:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu]
@@ -5813,9 +5813,9 @@ events:
           arg [-LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu] ==> dir [D:/Code/Msys2/Files/clang64/lib/clang/22/lib/x86_64-w64-windows-gnu]
           arg [-LD:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows] ==> dir [D:/Code/Msys2/Files/clang64/lib/clang/22/lib/windows]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_2d894.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_2e748.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_2d894.dll.a] ==> ignore
+          arg [libcmTC_2e748.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -5862,7 +5862,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:395 (project)"
     message: |
       Running the CXX compiler's linker: "D:/Code/Msys2/Files/clang64/bin/ld.lld" "-v"
       LLD 22.1.8 (https://github.com/msys2/MINGW-packages 6e4e79c2f86eeb534e324e583f2057dc9fd5ecab) (compatible with GNU linkers)

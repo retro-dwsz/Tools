@@ -15,7 +15,7 @@
 
 namespace rdt::Files {
     /* ---- CPP str ---- */
-    str ReadFile(const str& File){
+    inline str ReadFile(const str& File) {
         try {
             std::ifstream in(File, std::ios::binary);
 
@@ -23,25 +23,25 @@ namespace rdt::Files {
                 std::istreambuf_iterator<char>(in),
                 std::istreambuf_iterator<char>()
             );
-        } catch(std::exception& e){
-            std::cout << std::format("Error while reading file -> {}", e.what());
+        } catch(std::exception& e) {
+            std::println("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
 
-    void WriteFile(const str& File, const str& Content){
-        if(File == "__NONE__"){
+    inline void WriteFile(const str& File, const str& Content) {
+        if(File == "__NONE__") {
             return;
         } else {
             std::fstream Out(File, std::ios::out | std::ios::trunc);
 
-            if(Out.is_open()){
+            if(Out.is_open()) {
                 try{
                     Out.write(Content.data(), Content.size());
                     // Out << Content << "\n\n";
                     Out.close();
-                } catch (std::exception& e){
-                    std::cout << std::format("Error while writing to file -> {}", e.what());
+                } catch (std::exception& e) {
+                    std::println("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -51,29 +51,29 @@ namespace rdt::Files {
     }
 
     /* ---- C str ---- */
-    cstr ReadFileC(const str& File){
+    inline cstr ReadFileC(const str& File) {
         try {
             auto C = std::make_unique<cstr>(ReadFile(File).c_str());
             return *C;
-        } catch(std::exception& e){
-            std::cout << std::format("Error while reading file -> {}", e.what());
+        } catch(std::exception& e) {
+            std::println("Error while reading file -> {}", e.what());
             std::exit(1);
         }
     }
 
-    void WriteFileC(const str& File, cstr& Content){
-        if(File == "__NONE__"){
+    inline void WriteFileC(const str& File, const cstr& Content) {
+        if(File == "__NONE__") {
             return;
         } else {
             std::fstream Out(File, std::ios::out | std::ios::trunc);
 
-            if(Out.is_open()){
+            if(Out.is_open()) {
                 try{
                     Out.write(Content, sizeof(Content));
                     // Out << Content << "\n\n";
                     Out.close();
-                } catch (std::exception& e){
-                    std::cout << std::format("Error while writing to file -> {}", e.what());
+                } catch (std::exception& e) {
+                    std::println("Error while writing to file -> {}", e.what());
                 }
             } else {
                 throw std::domain_error("Failed to open");
@@ -83,7 +83,7 @@ namespace rdt::Files {
     }
 
     /* ---- Wide String ---- */
-    wstr ReadFileW(const str& File){
+    inline wstr ReadFileW(const str& File) {
         std::ifstream in(File, std::ios::binary);
         if(!in) throw std::runtime_error("Cannot open");
 
@@ -101,12 +101,12 @@ namespace rdt::Files {
         return out;
     }
 
-    void WriteFileW(const str& File, const wstr& Content){
+    inline void WriteFileW(const str& File, const wstr& Content) {
         if(File == "__NONE__") return;
 
         std::ofstream out(File, std::ios::binary | std::ios::trunc);
-        if(!out){
-            std::cout << std::format("Error: cannot open {}", File);
+        if(!out) {
+            std::println("Error: cannot open {}", File);
             std::exit(2);
         }
 

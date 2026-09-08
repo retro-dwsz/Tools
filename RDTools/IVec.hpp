@@ -7,7 +7,7 @@
 
 /**
  * @file IVec.hpp
- * @brief Main entry point for the Tools::ivec<T> container library.
+ * @brief Main entry point for the rdt::ivec<T> container library.
  *
  * @section sec_overview Overview
  * `rdt::ivec<T>` is a modern, heap-allocated dynamic array designed for C++26.
@@ -40,7 +40,7 @@
  * #include "IVec/Format.fmt.hpp" // Opt-in for format spec forwarding
  * #include <fmt/format.h>
  *
- * using namespace Tools;
+ * using namespace rdt;
  *
  * ivec<int> data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
  *
@@ -65,7 +65,7 @@
  * - **Ranges Concept:** Fully satisfies `std::ranges::range` and
  *   `std::ranges::borrowed_range` (for lvalues) out of the box.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  * @see IVec/Base.Master.hpp
  */
 

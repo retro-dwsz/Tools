@@ -32,7 +32,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace ToolsExperimental;
+ * using namespace rdt;
  *
  * // Generate 100 ragged sub-vectors (size 10-50 each) using 8 threads with custom generator
  * Twister64 myGen(42);
@@ -50,7 +50,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded scattered bundle generation with custom engines.
  */
 namespace rdt::Random {

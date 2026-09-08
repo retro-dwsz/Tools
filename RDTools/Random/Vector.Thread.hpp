@@ -26,7 +26,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Generate 1M integers using 8 threads
  * auto data = Random::RandomNumsTVI(1'000'000, -100, 100, 8);
@@ -38,7 +38,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded vector generation.
  */
 namespace rdt::Random {
@@ -155,7 +155,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded integer vector generation.
  */
 namespace rdt::Random {
@@ -198,7 +198,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded float vector generation.
  */
 namespace rdt::Random {

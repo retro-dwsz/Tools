@@ -54,6 +54,7 @@ namespace rdt::Vector {
                 return v[i];
             }
         }
+        return {};
     }
 
     // Linear search, first index + value
@@ -64,6 +65,7 @@ namespace rdt::Vector {
                 return pair{i, Element};
             }
         }
+        return {};
     }
 
     // Find an element frequency
@@ -84,7 +86,7 @@ namespace rdt::Vector {
         umap<T, idx> result{};
 
         for(const auto x : v){
-            result[x]++; // hmm
+            ++result[x]; // hmm
         }
 
         return result;

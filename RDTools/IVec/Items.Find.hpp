@@ -9,7 +9,7 @@
 
 /**
  * @file Items.Find.hpp
- * @brief Linear search utilities for Tools::ivec<T>.
+ * @brief Linear search utilities for rdt::ivec<T>.
  *
  * @details Provides O(n) element lookup operations including existence check,
  *          index finding, frequency counting, and multi-index collection.
@@ -18,7 +18,7 @@
  * @note For sorted data, consider using std::lower_bound/upper_bound via
  *       begin()/end() iterators for O(log n) performance instead.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 /* Non Const & Const Finders */

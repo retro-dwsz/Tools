@@ -12,7 +12,7 @@
 /* Files I/O + system */
 namespace rdt::Win32::File {
     cstr static Normalize(const strview& s, str& temp) {
-        if (s.data()[s.size()] == '\0')
+        if (s[s.size()] == '\0')
             return s.data();
 
         temp.assign(s);
@@ -50,7 +50,7 @@ namespace rdt::Win32::File {
 
     inline str ReadFile(const strview& path) {
         str temp;
-        cstr Path = Normalize(path, temp);
+        const cstr Path = Normalize(path, temp);
 
         HANDLE h = CreateFileA(
             Path,
@@ -87,9 +87,9 @@ namespace rdt::Win32::File {
 
     inline bool Exists(const strview& path) {
         str temp;
-        cstr Path = Normalize(path, temp);
+        const cstr Path = Normalize(path, temp);
 
-        DWORD attr = GetFileAttributesA(Path);
+        const DWORD attr = GetFileAttributesA(Path);
         return attr != INVALID_FILE_ATTRIBUTES;
     }
 

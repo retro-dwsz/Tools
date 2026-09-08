@@ -125,9 +125,8 @@ namespace rdt::FormatNumber {
     }
 }
 
-
 namespace rdt::FormatNumber {
-    void test(){
+    inline void test(){
         vec<str> a = {
             /* i8..i64 */
             Format(i8{INT8_MAX}, '\'', 3), Format(i16{INT16_MAX}, '\'', 3), Format(i32{INT32_MAX}, '\'', 3), Format(i64{INT32_MAX}, '\'', 3),

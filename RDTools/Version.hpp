@@ -14,8 +14,8 @@ constexpr u8 __TOOLS_CPP_MINOR__ = 0;
 
 constexpr i8 __TOOLS_INFO_BUFFER_MAX_SIZE = 64;
 
-static char* ToolsGetVersion() {
-    static char TOOLS_INFO_BUFFER_CSTR[__TOOLS_INFO_BUFFER_MAX_SIZE];
+inline void ToolsGetVersion(char* TOOLS_INFO_BUFFER_CSTR) {
+    // char TOOLS_INFO_BUFFER_CSTR[__TOOLS_INFO_BUFFER_MAX_SIZE];
     snprintf(
         TOOLS_INFO_BUFFER_CSTR,
         __TOOLS_INFO_BUFFER_MAX_SIZE,
@@ -31,11 +31,13 @@ static char* ToolsGetVersion() {
         #endif
     );
 
-    return TOOLS_INFO_BUFFER_CSTR;
+    // return TOOLS_INFO_BUFFER_CSTR;
 }
 
-void ToolsPrintVersion(){
-    printf("%s", ToolsGetVersion());
+inline void ToolsPrintVersion(){
+    char TOOLS_INFO_BUFFER_CSTR[__TOOLS_INFO_BUFFER_MAX_SIZE];
+    ToolsGetVersion(TOOLS_INFO_BUFFER_CSTR);
+    printf("%s", TOOLS_INFO_BUFFER_CSTR);
 }
 
 #endif

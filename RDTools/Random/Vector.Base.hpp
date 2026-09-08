@@ -22,7 +22,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * auto ints = Random::RandomNumsVI(100, 0, 50);    // 100 integers [0, 50]
  * auto dbls = Random::RandomNumsVD(1000, -1.0, 1.0); // 1000 doubles [-1.0, 1.0]
@@ -33,7 +33,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for vector random number generation.
  */
 namespace rdt::Random {
@@ -113,7 +113,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for integer vector generation.
  */
 namespace rdt::Random {
@@ -158,7 +158,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for floating-point vector generation.
  */
 namespace rdt::Random {

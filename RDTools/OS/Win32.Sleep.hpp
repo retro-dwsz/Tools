@@ -19,7 +19,7 @@ namespace rdt::OS::Sleep {
         QueryPerformanceFrequency(&freq);
         QueryPerformanceCounter(&start);
 
-        double target = ms * freq.QuadPart;
+        const f64 target = ms * freq.QuadPart;
 
         while (true) {
             QueryPerformanceCounter(&now);

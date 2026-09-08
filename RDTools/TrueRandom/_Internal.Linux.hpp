@@ -20,8 +20,7 @@ namespace rdt::TrueRandom {
     /**
      * @brief True Random Number Generator backed by Linux randomizer.
      */
-    struct Generator {
-    };
+    struct Generator;
 }
 
 // ─── Static Assertions (compile-time safety net) ─────────────

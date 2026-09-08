@@ -25,7 +25,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * vec<i32> data = {10, 20, 30, 40, 50};
  *

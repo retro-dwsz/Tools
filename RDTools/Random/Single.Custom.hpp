@@ -20,7 +20,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Create a custom 64-bit twister
  * Twister64 myGen(12345);
@@ -34,7 +34,7 @@
 
 /** Generic with custom twister **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for single random number generation with custom engines.
  */
 namespace rdt::Random {

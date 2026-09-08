@@ -15,7 +15,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * auto c = Random::RandomChar('A', 'Z');          // Random uppercase letter
  * auto s = Random::RandomStr("abcdef", 10);        // 10-char hex-like string

@@ -7,7 +7,7 @@
 
 /**
  * @file Legacy.hpp
- * @brief STL-compatible and legacy API aliases for Tools::ivec<T>.
+ * @brief STL-compatible and legacy API aliases for rdt::ivec<T>.
  *
  * @details Provides familiar function names for users migrating from std::vector
  *          or other containers. All functions delegate to modern ivec equivalents:
@@ -20,9 +20,9 @@
  * @note These are thin wrappers with zero overhead. Prefer the modern API
  *       (append, extend, appendAt) in new code for clarity and consistency.
  *
- * @see Tools::ivec::append
- * @see Tools::ivec::extend
- * @see Tools::ivec::appendAt
+ * @see rdt::ivec::append
+ * @see rdt::ivec::extend
+ * @see rdt::ivec::appendAt
  */
 
 #include "Base.Class.hpp"

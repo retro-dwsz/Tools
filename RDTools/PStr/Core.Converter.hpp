@@ -7,17 +7,17 @@
 
 /* ---- Converters ---- */
 namespace rdt {
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::operator const Char*() const noexcept {
         return this->StrData;
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::operator std::span<const Char>() const noexcept {
         return std::span<const Char>(this->StrData, this->StrSize);
     }
 
-    template <ValidTypes Char>
+    template <PStrTypes Char>
     PStr<Char>::operator std::basic_string<Char>() const {
         return std::basic_string<Char>(this->StrData, this->StrSize);
     }

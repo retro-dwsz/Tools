@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Extend.hpp
- * @brief Bulk element insertion for Tools::ivec<T>.
+ * @brief Bulk element insertion for rdt::ivec<T>.
  *
  * @details Provides extend() for appending multiple elements from any contiguous
  *          range via std::span. Performs exact pre-allocation to ensure zero
@@ -16,8 +16,8 @@
  * @note For single-element insertion, use append() instead.
  *       For positional insertion, use reassignInl() or appendAt().
  *
- * @see Tools::ivec::append
- * @see Tools::ivec::reassignInl
+ * @see rdt::ivec::append
+ * @see rdt::ivec::reassignInl
  */
 
 #include "Base.Class.hpp"

@@ -275,7 +275,7 @@ Types aliasing to make you less typing just for data types
 |                   |          | `std::stringstream`  | `sstream` |
 |                   |          | `std::ostringstream` | `ostream` |
 
-`pstr<T>` is an alias for C-Style string (`char/wchar/char16/char32 []`), and PStr is struct for simple C-String types
+`cpstr<T>` is an alias for C-Style string (`char/wchar/char16/char32*`), and PStr is struct for simple C-String types
 
 ### C++ Value Containers
 |          Original          |    Aliased    |
@@ -5038,14 +5038,14 @@ Recommended DLL Signature generation
   ```c++
   #include "Random.hpp"
     using namespace rdt;
-  
+
     Twister64 gen(42);
     vec<i32> data = {10, 20, 30, 40, 50};
-  
+
     auto item  = Random::Choice(gen, data);           // Single random element
     auto items = Random::Sample(gen, data, 3);        // 3 random elements (with replacement)
     auto sub   = Random::Choice(gen, data, 1, 3);     // Random from index [1..3]
-    auto subs  = Random::Sample(gen, data, 1, 3, 5);  // 5 random elements from index 
+    auto subs  = Random::Sample(gen, data, 1, 3, 5);  // 5 random elements from index
   ```
 
     File synopsis
@@ -5166,8 +5166,8 @@ This module uses Windows BCryptGenRandom(SYSTEM_PREFERRED_RNG), which combines h
 
 ### Tradeoffs
 - Cost: ~50-250x slower per value than MT19937 (syscall overhead)
-- State: None — no seed, no period, no internal state to manage 
-- Safety: Immune to seed prediction, state recovery, and period attacks 
+- State: None — no seed, no period, no internal state to manage
+- Safety: Immune to seed prediction, state recovery, and period attacks
 - Thread: Inherently thread-safe (stateless), Thread variants available for throughput scaling on large container generation
 
 ### Platform Support
@@ -5204,7 +5204,7 @@ All functions satisfy cryptographic security requirements but are significantly 
 
 ### Folder Synopsis `Tools/TrueRandom/*`
   |                  File                 |                                 What is this?                                 |
-      |---------------------------------------|-------------------------------------------------------------------------------|
+    |---------------------------------------|-------------------------------------------------------------------------------|
   | `/TrueRandom/_Common.hpp`             | Commonly used stuff across all files                                          |
   | `/TrueRandom/_Internal.Win32.hpp`     | Generator class for Windows OS                                                |
   | `/TrueRandom/_Internal.Linux.hpp`     | Generator class for Linux-based OSes                                          |
@@ -5235,20 +5235,20 @@ All functions satisfy cryptographic security requirements but are significantly 
     ```c++
     // Master file
     // #include "TrueRandom.hpp"               // 0
-    
+
     // Common header file
     #include "TrueRandom/_Common.hpp"          // 1
-    
+
     #if defined(_WIN32)
     #include "TrueRandom/_Internal.Win32.hpp"   // 2a
     #elif defined(__linux__) && !defined(__ANDROID__)
     #include "TrueRandom/_Internal.Linux.hpp"
     #endif
-    
+
     // Single thread exclusive
     #include "TrueRandom/Single.hpp"           // 3a
     #include "TrueRandom/Single.Impl.hpp"      // 3b
-    
+
     // Single threading with 32/64-bit type preset
     #include "TrueRandom/Vector.hpp"           // 4a
     #include "TrueRandom/Vector.Impl.hpp"      // 4b
@@ -5256,7 +5256,7 @@ All functions satisfy cryptographic security requirements but are significantly 
     #include "TrueRandom/Bundle.Impl.hpp"      // 5b
     #include "TrueRandom/SBundle.hpp"          // 6a
     #include "TrueRandom/SBundle.Impl.hpp"     // 6b
-    
+
     // Multi threading with 32/64-bit type preset
     #include "TrueRandom/Vector.Thread.hpp"         // 7a
     #include "TrueRandom/Vector.Thread.Impl.hpp"    // 7b
@@ -5264,13 +5264,13 @@ All functions satisfy cryptographic security requirements but are significantly 
     #include "TrueRandom/Bundle.Thread.Impl.hpp"    // 8b
     #include "TrueRandom/SBundle.Thread.hpp"        // 9a
     #include "TrueRandom/SBundle.Thread.Impl.hpp"   // 9b
-    
+
     // Random Choice from any iterable via generic template
     #include "TrueRandom/Choice.hpp"           // 10
     #include "TrueRandom/String.hpp"           // 11a
     #include "TrueRandom/String.Impl.hpp"      // 11b
     ```
-  
+
     - `_Common.hpp`
     ```c++
     /** Checkings **/
@@ -5278,7 +5278,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         using namespace rdt::Random;
         using namespace rdt::Round;
         using Cast::scast, Cast::rcast, Cast::dcast;
-        
+
         /**
          * @brief Warning message displayed when unusually large index counts are detected.
          *
@@ -5289,13 +5289,13 @@ All functions satisfy cryptographic security requirements but are significantly 
         const str Warning = std::format(
             "Unusual number for indexes detected, proceed with caution" /* , 0xF84234 */
         );
-    
+
         /** vec<vec<T>> a.k.a "Bundle" **/
         template <typename T>
         using Bundle = vec<vec<T>>;
     }
     ```
-   
+
 - `_Internal.Win32.hpp`
     ```c++
     namespace rdt::TrueRandom {
@@ -5425,12 +5425,12 @@ All functions satisfy cryptographic security requirements but are significantly 
         #endif
     }
     ```
-    
+
     - `_Internal.Linux.hpp `
     ```c++
     /* To be implemented */
     ```
-    
+
     - `Single.hpp `
     ```c++
     /** Generics **/
@@ -5473,7 +5473,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         Real RandomNum(Real ValueMin, Real ValueMax, const u32 Rounding);
     }
     ```
-    
+
     - `Single.Impl.hpp`
     ```c++
     /** Integers **/
@@ -5494,8 +5494,8 @@ All functions satisfy cryptographic security requirements but are significantly 
         inline f64 RandomNumD(f64 ValueMin = -3.14, f64 ValueMax = 3.14, const u32 Rounding = 0);
     }
     ```
-    
-    - `Vector.hpp      `
+
+    - `Vector.hpp`
     ```c++
     /** Checkings **/
     namespace rdt::TrueRandom {
@@ -5556,7 +5556,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Vector.Impl.hpp`
     ```c++
     /** Integers **/
@@ -5585,7 +5585,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Bundle.hpp      `
     ```c++
     /** Checkings **/
@@ -5650,7 +5650,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Bundle.Impl.hpp`
     ```c++
     /** Integers **/
@@ -5679,7 +5679,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `SBundle.hpp     `
     ```c++
     /** Checkings **/
@@ -5753,7 +5753,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `SBundle.Impl.hpp`
     ```c++
     /** Integers **/
@@ -5783,7 +5783,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Vector.Thread.hpp      `
     ```c++
     /** Generics **/
@@ -5846,7 +5846,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Vector.Thread.Impl.hpp`
     ```c++
     /** Integers **/
@@ -5867,7 +5867,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         inline vec<f64> RandomNumsTVD(idx Count = 10, f64 Min = -3.14, f64 Max = 3.14, u32 Rnd = 0, idx Threads = 4);
     }
     ```
-    
+
     - `Bundle.Thread.hpp      `
     ```c++
     /* Generics */
@@ -5928,7 +5928,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Bundle.Thread.Impl.hpp`
     ```c++
     /** Integer **/
@@ -5957,7 +5957,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `SBundle.Thread.hpp     `
     ```c++
     /** Generics **/
@@ -6025,7 +6025,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `SBundle.Thread.Impl.hpp`
     ```c++
     /* Integers */
@@ -6054,7 +6054,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         );
     }
     ```
-    
+
     - `Choice.hpp    `
     ```c++
     /** Choises validatation **/
@@ -6147,7 +6147,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         vec<typename Data::value_type> Sample(const Data& DataSet, idx From, idx To, const idx Count);
     }
     ```
-    
+
     - `String.hpp    `
     ```c++
     /** Valid String charsets **/
@@ -6161,7 +6161,7 @@ All functions satisfy cryptographic security requirements but are significantly 
             str, wstr, str16, str32,
             vec<char>, vec<wchar>, vec<char16>, vec<char32>
         >;
-        
+
         /// @brief Validates codepoint range does not exceed Unicode max (0x10FFFF).
         inline void CheckRangeChar(const u32& From, const u32& To);
 
@@ -6230,7 +6230,7 @@ All functions satisfy cryptographic security requirements but are significantly 
         std::basic_string<Ret> RandomStr(const CharSet auto& CharSet, const idx Count);
     }
     ```
-    
+
     - `String.Impl.hpp`
     ```c++
     /** Single range chars **/
@@ -6269,7 +6269,93 @@ Library used internally for `RDTools.Random` and `RDTools.TrueRandom`, this just
 ### API Synopsis
 Customizeable Mersenne Twister engine with _**generic** named parameters_.
 
-- ### Out
+- ### Commonly used aliases
+    ```c++
+    namespace rdt::Random {
+        using Twister32 = std::mt19937;
+        using Twister64 = std::mt19937_64;
+        using RdDevice  = std::random_device;
+
+        template <Integer T>
+        using DistInt = std::uniform_int_distribution<T>;
+
+        template <Float T>
+        using DistReal = std::uniform_real_distribution<T>;
+    }
+    ```
+
+- ### Custom Twister "`TwisterAny`"
+    - Brief:Generic Mersenne Twister engine with named parameters.
+    - `Out`: Output unsigned integer type (u32 or u64). All mask/constant parameters derive their type from this.
+
+    - Tampering recurrance for generation:
+        - `WordSize` (`w`):  Bits per state element (32 or 64).
+        - `Degree` (`n`):  Internal state array size.
+        - `MidWord` (`m`):  Feedback XOR offset.
+        - `LowerBit` (`r`):  Separation point for lower bits.
+        - `XORMask` (`a`):  Conditional XOR mask. Type follows Out.
+
+    - Tampering parameter for post processing:
+        - `ShiftR_U` (`u`): Tempering right-shift amount.
+        - `Mask_U` (`d`): Tempering AND mask after shift `u`. Type follows `Out`.
+        - `ShiftL_S` (`s`): Tempering left-shift amount for `u`.
+        - `Mask_S` (`b`): Tempering AND mask after shift `s`. Type follows `Out`.
+        - `ShiftL_T` (`t`): Tempering left-shift amount for `s`.
+        - `Mask_T` (`c`): Tempering AND mask after shift `t`. Type follows `Out`.
+        - `ShiftR_L` (`l`): Tempering right-shift amount for `t`.
+
+    - Initialization parameter:
+        - `SeedMul` (`f`): State initialization multiplier. Type follows Out.
+
+    - Note: Default values correspond to `MT19937-64`.
+
+    - Warning: Changing individual parameters produces a NON-STANDARD variant
+               that has NOT been statistically verified. Use provided presets
+               (`Twister64`, `Twister32`) unless you are conducting PRNG research.
+
+    - Warning: When `Out=u32`, default mask constants are TRUNCATED from 64-bit
+           `MT19937-64` values and do NOT match standard `MT19937-32` constants.
+           Always use `Twister32` preset for verified 32-bit generation, and
+           use `Twister64` preset for verified 64-bit generation,
+
+    ```c++
+    template <
+        // Output Type, default is u64
+        UnsignedInt Out = u64,
+
+        // Base bit, 32 (0x20) or 64 (0x40)
+        idx WordSize = 0x40,               // w <idx>
+
+        // Tampering recurrance for generation
+        idx Degree   = 0x138,              // n <idx>
+        idx MidWord  = 0x9c,               // m <idx>
+        idx LowerBit = 0x1f,               // r <idx>
+        Out XORMask  = Get_XORMask<Out>,   // a <Out>
+
+        // Tampering parameter for post processing
+        idx ShiftR_U = 0x1d,               // u <idx>
+        Out Mask_U   = Get_Mask_U<Out>,    // d <Out>
+        idx ShiftL_S = 0x11,               // s <idx>
+        Out Mask_S   = Get_Mask_S<Out>,    // b <Out>
+        idx ShiftL_T = 0x25,               // t <idx>
+        Out Mask_T   = Get_Mask_T<Out>,    // c <Out>
+        idx ShiftR_L = 0x2b,               // l <idx>
+
+        // Initialization parameter
+        Out SeedMul  = Get_SeedMul<Out>    // f <Out>
+    >
+    using TwisterAny = std::mersenne_twister_engine<
+        Out, WordSize,
+        Degree, MidWord, LowerBit, XORMask,
+        ShiftR_U, Mask_U,
+        ShiftL_S, Mask_S,
+        ShiftL_T, Mask_T,
+        ShiftR_L,
+        SeedMul
+    >  ;
+    ```
+
+- ### Xoshiro256 algorithm
     Output is unsigned integer type (`u32` or `u64`). All mask/constant parameters derive their type from this.
 
 - ### Tampering recurrance for generation
@@ -6353,22 +6439,6 @@ Customizeable Mersenne Twister engine with _**generic** named parameters_.
             ShiftR_L,
             SeedMul
         >;
-    }
-    ```
-
-- ### Commonly used aliases
-
-    ```c++
-    namespace rdt::Random {
-        using Twister32 = std::mt19937;
-        using Twister64 = std::mt19937_64;
-        using RdDevice  = std::random_device;
-
-        template <Integer T>
-        using DistInt = std::uniform_int_distribution<T>;
-
-        template <Float T>
-        using DistReal = std::uniform_real_distribution<T>;
     }
     ```
 

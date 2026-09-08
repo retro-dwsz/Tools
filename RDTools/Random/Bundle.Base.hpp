@@ -20,7 +20,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Create a 4x10 matrix of integers
  * auto grid = Random::RandomNumsBI(4, 10, 0, 100);
@@ -31,7 +31,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for bundle generation.
  */
 namespace rdt::Random {
@@ -122,7 +122,7 @@ namespace rdt::Random {
 
 /** Integers **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for integer bundle generation.
  */
 namespace rdt::Random {
@@ -157,7 +157,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for floating-point bundle generation.
  */
 namespace rdt::Random {

@@ -7,7 +7,7 @@
 
 /**
  * @file Base.Class.hpp
- * @brief Primary class declaration for Tools::ivec<T> (declarations only).
+ * @brief Primary class declaration for rdt::ivec<T> (declarations only).
  *
  * @details This header contains the complete public interface declaration for
  *          the ivec<T> container template. All method implementations are
@@ -53,8 +53,8 @@
  * @see IVec/Base.Master.hpp
  */
 
-#include <Tools/Types.hpp>
-#include <Tools/Casting.hpp>
+#include "../Types.hpp"
+#include "../Casting.hpp"
 
 namespace rdt {
     /// @brief A modern, heap-allocated dynamic array with Python-like ergonomics.

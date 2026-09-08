@@ -7,7 +7,7 @@
 
 /**
  * @file Converter.hpp
- * @brief String formatting and generic container conversion for Tools::ivec<T>.
+ * @brief String formatting and generic container conversion for rdt::ivec<T>.
  *
  * @details Provides utilities for converting ivec contents to strings and
  *          other container types. Explicit conversion operators (span, vector)

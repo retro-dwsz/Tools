@@ -18,7 +18,7 @@
 // _Float64x
 // _Float128
 
-using f16       = _Float16;
+// using f16       = _Float16;
 using f32       = float;
 using f64       = double;
 using fld       = long double;

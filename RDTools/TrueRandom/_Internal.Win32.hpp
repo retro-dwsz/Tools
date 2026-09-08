@@ -129,8 +129,8 @@ namespace rdt::TrueRandom {
 
             // rcast u64* → u8*: treat Val's memory as raw byte buffer.
             // Safe because u64 is trivially copyable with no padding.
-            auto ValPtr  = Cast::rcast<u8*>(&Val);
-            auto ValSize = sizeof(Val);
+            const auto ValPtr  = Cast::rcast<u8*>(&Val);
+            const auto ValSize = sizeof(Val);
 
             if (AcquireEntropy(ValPtr, ValSize) != ValSize) [[unlikely]] {
                 throw std::runtime_error(

@@ -35,11 +35,43 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = D$:/Code/_CLIB/Tools/build/
+# =============================================================================
+# Object build statements for EXECUTABLE target RDTools_Test
+
 
 #############################################
-# Utility command for RDTools
+# Order-only phony target for RDTools_Test
 
-build RDTools: phony
+build cmake_object_order_depends_target_RDTools_Test: phony || .
+
+build CMakeFiles/RDTools_Test.dir/RDTools.cpp.obj: CXX_COMPILER__RDTools_Test_unscanned_ D$:/Code/_CLIB/Tools/RDTools.cpp || cmake_object_order_depends_target_RDTools_Test
+  DEP_FILE = CMakeFiles\RDTools_Test.dir\RDTools.cpp.obj.d
+  FLAGS = -std=gnu++26 -O0 -m64 -Wall -fansi-escape-codes -fcolor-diagnostics -fdiagnostics-show-option -Wno-deprecated-declarations -Wno-return-type
+  INCLUDES = -ID:/Code/_CLIB/Tools
+  OBJECT_DIR = CMakeFiles\RDTools_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles\RDTools_Test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\RDTools_Test.dir\
+  TARGET_PDB = RDTools_Test.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\RDTools_Test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target RDTools_Test
+
+
+#############################################
+# Link the executable RDTools_Test.exe
+
+build RDTools_Test.exe: CXX_EXECUTABLE_LINKER__RDTools_Test_ CMakeFiles/RDTools_Test.dir/RDTools.cpp.obj
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\RDTools_Test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\RDTools_Test.dir\
+  TARGET_FILE = RDTools_Test.exe
+  TARGET_IMPLIB = libRDTools_Test.dll.a
+  TARGET_PDB = RDTools_Test.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\RDTools_Test.dir
 
 
 #############################################
@@ -110,6 +142,8 @@ build install/strip: phony CMakeFiles/install/strip.util
 # =============================================================================
 # Target aliases.
 
+build RDTools_Test: phony RDTools_Test.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -118,14 +152,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 #############################################
 # Folder: D:/Code/_CLIB/Tools/build
 
-build codegen: phony
-
-# =============================================================================
-
-#############################################
-# Folder: D:/Code/_CLIB/Tools/build
-
-build all: phony RDTools
+build all: phony RDTools_Test.exe
 
 # =============================================================================
 # Built-in targets

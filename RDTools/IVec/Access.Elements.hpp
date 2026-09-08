@@ -7,7 +7,7 @@
 
 /**
  * @file Access.Elements.hpp
- * @brief Positional element accessors for Tools::ivec<T>.
+ * @brief Positional element accessors for rdt::ivec<T>.
  *
  * @details Provides first(), last(), front(), back() and their indexed variants.
  *          All methods return by value (copy) and are noexcept.
@@ -16,9 +16,9 @@
  *          out-of-range index is Undefined Behavior. Use refbegin()/refend()
  *          for bounds-checked reference access.
  *
- * @see Tools::ivec::refbegin
- * @see Tools::ivec::refend
- * @see Tools::ivec::operator[]
+ * @see rdt::ivec::refbegin
+ * @see rdt::ivec::refend
+ * @see rdt::ivec::operator[]
  */
 
 #include "Base.Class.hpp"

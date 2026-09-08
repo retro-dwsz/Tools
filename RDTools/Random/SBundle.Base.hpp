@@ -21,7 +21,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Create 5 sub-vectors, each with random size between 10 and 30
  * auto ragged = Random::RandomNumsSBI(5, 10, 30, -100, 100);
@@ -32,7 +32,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for scattered bundle generation.
  */
 namespace rdt::Random {
@@ -135,7 +135,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for integer scattered bundle generation.
  */
 namespace rdt::Random {
@@ -174,7 +174,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for floating-point scattered bundle generation.
  */
 namespace rdt::Random {

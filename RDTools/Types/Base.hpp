@@ -31,29 +31,32 @@
 
 #include <type_traits>
 
-template <typename T>
-void CheckRange(T& Min, T& Max) {
-    if (Max < Min) std::swap(Min, Max);
+namespace rdt {
+    template <typename T>
+    void CheckRange(T& Min, T& Max) {
+        if (Max < Min) std::swap(Min, Max);
+    }
+
+    template <typename T>
+    std::pair<T, T> CheckRangeR(T Min, T Max) {
+        if (Max < Min) return std::pair<T, T>(Max, Min);
+        return ;
+    }
+
+    // template <typename T1, typename T2>
+    // constexpr bool TypeCompare(const T1&) {
+    //     return std::is_same_v<T2, T1>;
+    // }
+
+    // template <typename T1, typename T2>
+    // constexpr bool TypeCompare(const T1&, const T2&) {
+    //     return std::is_same_v<T1, T2>;
+    // }
+
+    template <typename T1, typename T2>
+    constexpr bool TypeCompare = std::is_same_v<T1, T2>;
+
 }
-
-template <typename T>
-std::pair<T, T> CheckRangeR(T Min, T Max) {
-    if (Max < Min) return std::pair<T, T>(Max, Min);
-}
-
-// template <typename T1, typename T2>
-// constexpr bool TypeCompare(const T1&) {
-//     return std::is_same_v<T2, T1>;
-// }
-
-// template <typename T1, typename T2>
-// constexpr bool TypeCompare(const T1&, const T2&) {
-//     return std::is_same_v<T1, T2>;
-// }
-
-template <typename T1, typename T2>
-constexpr bool TypeCompare = std::is_same_v<T1, T2>;
-
 // #define MakeAliasFunction(Original, Aliased)    \
 //                                                 \
 // template <typename... Args>                     \
@@ -75,156 +78,158 @@ constexpr bool TypeCompare = std::is_same_v<T1, T2>;
 // using au64       = std::atomic_uint64_t;
 
 /* All types in rdt/Types/#.hpp only */
-template <typename T, typename T1, typename T2, idx S>
-concept ToolsTypes = OneOf<T,
-    /* Signed Integers */
-    i8, i16, i32, i64, sidx,
+namespace rdt {
+    template <typename T, typename T1, typename T2, idx S>
+    concept ToolsTypes = OneOf<T,
+        /* Signed Integers */
+        i8, i16, i32, i64, sidx,
 
-    /* Fast Signed Integers */
-    fi8, fi16, fi32, fi64,
+        /* Fast Signed Integers */
+        fi8, fi16, fi32, fi64,
 
-    /* Atomic Signed Integers */
-    ai8, ai16, ai32, ai64,
+        /* Atomic Signed Integers */
+        ai8, ai16, ai32, ai64,
 
-    /* Atomic Fast Signed Integers */
-    afi8, afi16, afi32, afi64,
+        /* Atomic Fast Signed Integers */
+        afi8, afi16, afi32, afi64,
 
-    /* Signed Integer with "at least" size */
-    il8, il16, il32, il64,
+        /* Signed Integer with "at least" size */
+        il8, il16, il32, il64,
 
-    /* Atomic Signed Integer with "at least" size */
-    ail8, ail16, ail32, ail64,
+        /* Atomic Signed Integer with "at least" size */
+        ail8, ail16, ail32, ail64,
 
-    /* Unsigned Integers */
-    u8, u16, u32, u64, idx,
+        /* Unsigned Integers */
+        u8, u16, u32, u64, idx,
 
-    /* Fast Unsigned Integers */
-    fu8, fu16, fu32, fu64,
+        /* Fast Unsigned Integers */
+        fu8, fu16, fu32, fu64,
 
-    /* Atomic Unsigned Integers */
-    au8, au16, au32, au64,
+        /* Atomic Unsigned Integers */
+        au8, au16, au32, au64,
 
-    /* Atomic Fast Unsigned Integers */
-    afu8, afu16, afu32, afu64,
+        /* Atomic Fast Unsigned Integers */
+        afu8, afu16, afu32, afu64,
 
-    /* Unsiged Signed Integer with "at least" size */
-    ul8, ul16, ul32, ul64,
+        /* Unsiged Signed Integer with "at least" size */
+        ul8, ul16, ul32, ul64,
 
-    /* Atomic Unsiged Signed Integer with "at least" size */
-    aul8, aul16, aul32, aul64,
+        /* Atomic Unsiged Signed Integer with "at least" size */
+        aul8, aul16, aul32, aul64,
 
-    /* Floating Points */
-    f32, f64, fld,
+        /* Floating Points */
+        f32, f64, fld,
 
-    /* C Strings */
-    cstr, cwstr, cstr16, cstr32,
+        /* C Strings */
+        cstr, cwstr, cstr16, cstr32,
 
-    /* C++ Strings */
-    str, strview, sstream, ostream,
+        /* C++ Strings */
+        str, strview, sstream, ostream,
 
-    /* C++ String View */
-    wstr, wstrview, wsstream, wostream,
+        /* C++ String View */
+        wstr, wstrview, wsstream, wostream,
 
-    /* 16&32-bit Strings */
-    str16, str16view,
-    str32, str32view,
+        /* 16&32-bit Strings */
+        str16, str16view,
+        str32, str32view,
 
-    /* Value Containers */
-    vec<T1>, arr<T1, S>,
-    map<T1, T2>, umap<T1, T2>,
-    set<T1>, uset<T1>,
-    pair<T1, T2>,
-    initl<T1>, span<T1>,
-    tuple<T1>, list<T1>,
+        /* Value Containers */
+        vec<T1>, arr<T1, S>,
+        map<T1, T2>, umap<T1, T2>,
+        set<T1>, uset<T1>,
+        pair<T1, T2>,
+        initl<T1>, span<T1>,
+        tuple<T1>, list<T1>,
 
-    /* Type Containers */
-    topt<T1>, tvar<T1>, texp<T1, T2>,
+        /* Type Containers */
+        topt<T1>, tvar<T1>, texp<T1, T2>,
 
-    /* C Pointers */
-    ptr<T1>,        // Pointer
-    ptrcd<T1>,      // Poniter to Contsant Data
-    cptr<T1>,       // Constant Pointer to Data
-    cptrcd<T1>,     // Constant Pointer to Constant Data
-    i32p, u32p,     // 32-bit Pointers
+        /* C Pointers */
+        ptr<T1>,        // Pointer
+        ptrcd<T1>,      // Poniter to Contsant Data
+        cptr<T1>,       // Constant Pointer to Data
+        cptrcd<T1>,     // Constant Pointer to Constant Data
+        i32p, u32p,     // 32-bit Pointers
 
-    /* C++ Smart Pointers */
-    uptr<T1>, sptr<T1>, wptr<T1>,
+        /* C++ Smart Pointers */
+        uptr<T1>, sptr<T1>, wptr<T1>,
 
-    /* Time Stamps */
-    rdt::Time::Clock,
-    rdt::Time::SClock,
-    rdt::Time::HClock,
-    rdt::Time::Units::ns,
-    rdt::Time::Units::us,
-    rdt::Time::Units::ms,
-    rdt::Time::Units::sec,
-    rdt::Time::Units::min,
-    rdt::Time::Units::hrs,
-    rdt::Time::Units::days,
-    rdt::Time::Units::weeks,
-    rdt::Time::Units::months
->;
+        /* Time Stamps */
+        rdt::Time::Clock,
+        rdt::Time::SClock,
+        rdt::Time::HClock,
+        rdt::Time::Units::ns,
+        rdt::Time::Units::us,
+        rdt::Time::Units::ms,
+        rdt::Time::Units::sec,
+        rdt::Time::Units::min,
+        rdt::Time::Units::hrs,
+        rdt::Time::Units::days,
+        rdt::Time::Units::weeks,
+        rdt::Time::Units::months
+    >;
 
-// /* All types in rdt/Types/#.hpp only with std::variant */
-// template <typename T1, typename T2, idx S>
-// const tvar<
-//     /* Signed Integers */
-//     i8, i16, i32, i64, sidx,
-//
-//     /* Unsigned Integers */
-//     u8, u16, u32, u64, idx,
-//
-//     /* Floating Points */
-//     f32, f64, fld,
-//
-//     /* C Strings */
-//     cstr, cwstr, cstr16, cstr32,
-//
-//     /* C++ Strings */
-//     str, strview, sstream, ostream,
-//
-//     /* C++ String View */
-//     wstr, wstrview, wsstream, wostream,
-//
-//     /* 16&32-bit Strings */
-//     str16, str16view,
-//     str32, str32view,
-//
-//     /* Value Containers */
-//     vec<T1>, arr<T1, S>,
-//     map<T1, T2>, umap<T1, T2>,
-//     set<T1>, uset<T1>,
-//     pair<T1, T2>,
-//     initl<T1>, span<T1>,
-//     tuple<T1>, list<T1>,
-//
-//     /* Type Containers */
-//     topt<T1>, tvar<T1>, texp<T1, T2>,
-//
-//     /* C Pointers */
-//     ptr<T1>,     // Pointer
-//     ptrcd<T1>,   // Poniter to Contsant Data
-//     cptr<T1>,    // Constant Pointer to Data
-//     cptrcd<T1>,  // Constant Pointer to Constant Data
-//     i32p, u32p, // 32-bit Pointers
-//
-//     /* C++ Smart Pointers */
-//     uptr<T1>, sptr<T1>, wptr<T1>,
-//
-//     /* Time Stamps */
-//     rdt::Time::Clock,
-//     rdt::Time::SClock,
-//     rdt::Time::HClock,
-//     rdt::Time::Units::ns,
-//     rdt::Time::Units::us,
-//     rdt::Time::Units::ms,
-//     rdt::Time::Units::sec,
-//     rdt::Time::Units::min,
-//     rdt::Time::Units::hrs,
-//     rdt::Time::Units::days,
-//     rdt::Time::Units::weeks,
-//     rdt::Time::Units::months
-// > ToolsTypesVariant;
+    // /* All types in rdt/Types/#.hpp only with std::variant */
+    // template <typename T1, typename T2, idx S>
+    // const tvar<
+    //     /* Signed Integers */
+    //     i8, i16, i32, i64, sidx,
+    //
+    //     /* Unsigned Integers */
+    //     u8, u16, u32, u64, idx,
+    //
+    //     /* Floating Points */
+    //     f32, f64, fld,
+    //
+    //     /* C Strings */
+    //     cstr, cwstr, cstr16, cstr32,
+    //
+    //     /* C++ Strings */
+    //     str, strview, sstream, ostream,
+    //
+    //     /* C++ String View */
+    //     wstr, wstrview, wsstream, wostream,
+    //
+    //     /* 16&32-bit Strings */
+    //     str16, str16view,
+    //     str32, str32view,
+    //
+    //     /* Value Containers */
+    //     vec<T1>, arr<T1, S>,
+    //     map<T1, T2>, umap<T1, T2>,
+    //     set<T1>, uset<T1>,
+    //     pair<T1, T2>,
+    //     initl<T1>, span<T1>,
+    //     tuple<T1>, list<T1>,
+    //
+    //     /* Type Containers */
+    //     topt<T1>, tvar<T1>, texp<T1, T2>,
+    //
+    //     /* C Pointers */
+    //     ptr<T1>,     // Pointer
+    //     ptrcd<T1>,   // Poniter to Contsant Data
+    //     cptr<T1>,    // Constant Pointer to Data
+    //     cptrcd<T1>,  // Constant Pointer to Constant Data
+    //     i32p, u32p, // 32-bit Pointers
+    //
+    //     /* C++ Smart Pointers */
+    //     uptr<T1>, sptr<T1>, wptr<T1>,
+    //
+    //     /* Time Stamps */
+    //     rdt::Time::Clock,
+    //     rdt::Time::SClock,
+    //     rdt::Time::HClock,
+    //     rdt::Time::Units::ns,
+    //     rdt::Time::Units::us,
+    //     rdt::Time::Units::ms,
+    //     rdt::Time::Units::sec,
+    //     rdt::Time::Units::min,
+    //     rdt::Time::Units::hrs,
+    //     rdt::Time::Units::days,
+    //     rdt::Time::Units::weeks,
+    //     rdt::Time::Units::months
+    // > ToolsTypesVariant;
+}
 
 #if __has_include(<cxxabi.h>) && defined(ITANIUM_DMGL)
     #include <cxxabi.h>

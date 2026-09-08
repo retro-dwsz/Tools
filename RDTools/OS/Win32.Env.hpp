@@ -11,7 +11,7 @@
 
 // Names & Accounts
 namespace rdt::Win32::Env {
-    str GetUserName(){
+    inline str GetUserName(){
         TCHAR UserName[UNLEN + 1];
         DWORD Size = UNLEN + 1;
 
@@ -22,14 +22,14 @@ namespace rdt::Win32::Env {
         };
     };
 
-    str GetUserDomainName(){
+    inline str GetUserDomainName(){
         return std::getenv("USERDOMAIN");
     }
 }
 
 // Networks & Machine info
 namespace rdt::Win32::Env {
-    str GetMachineName() {
+    inline str GetMachineName() {
         char buffer[MAX_COMPUTERNAME_LENGTH + 1];
         DWORD size = sizeof(buffer);
         if (::GetComputerNameA(buffer, &size)) {
@@ -38,7 +38,7 @@ namespace rdt::Win32::Env {
         return "";
     }
 
-    bool Is64BitOperatingSystem() {
+    inline bool Is64BitOperatingSystem() {
     #if defined(_WIN64)
         return true;
     #elif defined(_WIN32)
@@ -61,7 +61,7 @@ namespace rdt::Win32::Env {
 
 // Directories & Paths
 namespace rdt::Win32::Env {
-    str GetCurrentDirectory() {
+    inline str GetCurrentDirectory() {
         char buffer[MAX_PATH];
         DWORD bytes = ::GetCurrentDirectoryA(MAX_PATH, buffer);
         if (bytes > 0) {
@@ -70,11 +70,11 @@ namespace rdt::Win32::Env {
         return "";
     }
 
-    void SetCurrentDirectory(const str& path) {
+    inline void SetCurrentDirectory(const str& path) {
         ::SetCurrentDirectoryA(path.c_str());
     }
 
-    str GetSystemDirectory() {
+    inline str GetSystemDirectory() {
         char buffer[MAX_PATH];
         UINT bytes = ::GetSystemDirectoryA(buffer, MAX_PATH);
         if (bytes > 0) {
@@ -86,11 +86,11 @@ namespace rdt::Win32::Env {
 
 // Variables & Command Line
 namespace rdt::Win32::Env {
-    str GetCommandLineArgs() {
+    inline str GetCommandLineArgs() {
         return str(::GetCommandLineA());
     }
 
-    str GetEnvironmentVariable(const str& variable) {
+    inline str GetEnvironmentVariable(const str& variable) {
         DWORD bufferSize = ::GetEnvironmentVariableA(variable.c_str(), NULL, 0);
         if (bufferSize == 0) return "";
 
@@ -99,7 +99,7 @@ namespace rdt::Win32::Env {
         return str(buffer.data());
     }
 
-    void SetEnvironmentVariable(const str& variable, const str& value) {
+    inline void SetEnvironmentVariable(const str& variable, const str& value) {
         if (value.empty()) {
             ::SetEnvironmentVariableA(variable.c_str(), NULL);
         } else {
@@ -112,7 +112,7 @@ namespace rdt::Win32::Env {
 namespace rdt::Win32::Env {
     using namespace rdt::Cast;
 
-    bool CopyToClipboard(const str& text) {
+    inline bool CopyToClipboard(const str& text) {
         if (!OpenClipboard(nullptr)) return false;
         EmptyClipboard();
 
@@ -131,7 +131,7 @@ namespace rdt::Win32::Env {
         return true;
     }
 
-    str GetFromClipboard(){
+    inline str GetFromClipboard(){
         str result;
 
         if (!IsClipboardFormatAvailable(CF_UNICODETEXT)) {

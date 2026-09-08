@@ -7,7 +7,7 @@
 
 /**
  * @file Items.Slice.hpp
- * @brief Sub-range extraction operations for Tools::ivec<T>.
+ * @brief Sub-range extraction operations for rdt::ivec<T>.
  *
  * @details Provides Python-style slicing with negative index support:
  *          - slice(From, To) / sliceInl(From, To): Extract range [From, To] inclusive
@@ -17,8 +17,8 @@
  *       Out-of-range indices are clamped to valid bounds rather than throwing.
  *       All returning variants create deep copies; original is never modified.
  *
- * @see Tools::ivec::erase
- * @see Tools::ivec::reassign
+ * @see rdt::ivec::erase
+ * @see rdt::ivec::reassign
  */
 
 #include "Base.Class.hpp"

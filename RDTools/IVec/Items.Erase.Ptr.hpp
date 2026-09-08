@@ -7,7 +7,7 @@
 
 /**
  * @file Items.Erase.ptr.hpp
- * @brief Pointer-based element removal for Tools::ivec<T>.
+ * @brief Pointer-based element removal for rdt::ivec<T>.
  *
  * @details Provides erase() and eraseInl() overloads that accept raw pointers.
  *          These are the foundational implementations that index-based erasers
@@ -18,8 +18,8 @@
  *       rejected (throw) or silently ignored depending on the overload.
  *       All operations use move-then-destroy pattern for safe element compaction.
  *
- * @see Tools::ivec::erase(idx)
- * @see Tools::ivec::eraseInl(idx)
+ * @see rdt::ivec::erase(idx)
+ * @see rdt::ivec::eraseInl(idx)
  */
 
 #include "Base.Class.hpp"

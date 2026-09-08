@@ -14,7 +14,7 @@ template <typename T> using ptrcd    = const T*;
 template <typename T> using cptr     = T const*;
 
 /* Constant pointer to constant data */
-template <typename T> using cptrcd   = const T *const;
+template <typename T> using cptrcd   = const T* const;
 
 using i32p      = intptr_t;
 using u32p      = uintptr_t;

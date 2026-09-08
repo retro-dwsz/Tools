@@ -7,7 +7,7 @@
 
 /**
  * @file Init.Dtor.hpp
- * @brief Destructor implementation for Tools::ivec<T>.
+ * @brief Destructor implementation for rdt::ivec<T>.
  *
  * @details Responsible for proper cleanup of heap-allocated resources:
  *          1. Explicitly destroys all constructed elements via destructor calls
@@ -20,7 +20,7 @@
  * @warning Elements are destroyed in forward order [0, size). If reverse
  *          destruction order is required for your use case, modify accordingly.
  *
- * @see Tools::ivec::~ivec
+ * @see rdt::ivec::~ivec
  */
 
 #include "Base.Class.hpp"

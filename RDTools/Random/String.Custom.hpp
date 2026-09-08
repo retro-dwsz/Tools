@@ -16,7 +16,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * TwisterAny<> Gen;
  * auto c = Random::RandomChar(Gen, 'A', 'Z');          // Random uppercase letter

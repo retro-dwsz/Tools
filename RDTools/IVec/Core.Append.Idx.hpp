@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Append.Idx.hpp
- * @brief Positional insertion operations for Tools::ivec<T>.
+ * @brief Positional insertion operations for rdt::ivec<T>.
  *
  * @details Provides appendFirst() and appendAt() for inserting elements at
  *          specific positions. These operations are O(n) due to element shifting,
@@ -19,8 +19,8 @@
  * @note For bulk insertion at position, consider using reassignInl() or
  *       manual extend() + shift pattern for better performance.
  *
- * @see Tools::ivec::append
- * @see Tools::ivec::emplaceAt
+ * @see rdt::ivec::append
+ * @see rdt::ivec::emplaceAt
  */
 
 #include "Base.Class.hpp"

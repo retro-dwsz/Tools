@@ -7,7 +7,7 @@
 
 /**
  * @file Items.Orders.hpp
- * @brief Sorting, shuffling, and reversing operations for Tools::ivec<T>.
+ * @brief Sorting, shuffling, and reversing operations for rdt::ivec<T>.
  *
  * @details Provides both returning (copy-based) and in-place (-Inl) variants:
  *          - sort() / sortInl()    : Ascending order via std::sort
@@ -20,8 +20,8 @@
  *       All operations require T to satisfy the relevant STL concept
  *       (LessThanComparable for sort, Swappable for shuffle/reverse).
  *
- * @see Tools::ivec::uniques
- * @see Tools::ivec::reassign
+ * @see rdt::ivec::uniques
+ * @see rdt::ivec::reassign
  */
 
 #include <algorithm>

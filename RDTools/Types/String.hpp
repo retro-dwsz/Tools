@@ -57,7 +57,7 @@ using str32view = std::u32string_view;
 
 template <typename Char = char>
 requires OneOf<Char, char, u_char, s_char, wchar_t, char16_t, char32_t>
-using pstr = const Char*;
+using cpstr = const Char*;
 
 
 #endif

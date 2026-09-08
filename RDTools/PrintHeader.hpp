@@ -11,7 +11,7 @@
 
 namespace rdt::Styling {
     // Centered Text with Borders
-    str PrintMid(const str& Text = "Hello", const char borderChar = '=', const u32 offset = 0, const bool printing = false) {
+    inline str PrintMid(const str& Text = "Hello", const char borderChar = '=', const u32 offset = 0, const bool printing = false) {
         const i32 termWidth = OS::Terminal::TerminalSizeWidth(offset);
 
         const i32 padding = (termWidth - static_cast<i32>(Text.size()) - 4) / 2;

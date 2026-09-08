@@ -5,12 +5,12 @@
 #ifndef TOOLS_IVEC_BASE_MASTER_HPP
 #define TOOLS_IVEC_BASE_MASTER_HPP
 
-#include <Tools/Types.hpp>
-#include <Tools/Casting.hpp>
+#include "../Types.hpp"
+#include "../Casting.hpp"
 
 /**
  * @file Base.Master.hpp
- * @brief Master aggregation header for the Tools::ivec<T> container.
+ * @brief Master aggregation header for the rdt::ivec<T> container.
  *
  * @details This file serves as the single entry point for the ivec implementation.
  * It includes all segmented module headers in the correct dependency order.
@@ -27,7 +27,7 @@
  *       NOT included here to avoid SFINAE conflicts with <fmt/ranges.h>.
  *       Include them explicitly in your translation unit when needed.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 /** Base class **/

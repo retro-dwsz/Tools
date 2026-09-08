@@ -30,7 +30,7 @@
  * @section usage Usage
  * @code
  * #include "Random.hpp"
- * using namespace Tools;
+ * using namespace rdt;
  *
  * // Generate 1M integers using 8 threads with custom 32-bit twister
  * Twister32 gen(123123);
@@ -47,7 +47,7 @@
 
 /** Generic **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Generic template functions for multi-threaded vector generation with custom engines.
  */
 namespace rdt::Random {
@@ -152,7 +152,7 @@ namespace rdt::Random {
 
 /** Integer **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded integer vector generation with custom engines.
  */
 namespace rdt::Random {
@@ -189,7 +189,7 @@ namespace rdt::Random {
 
 /** Floats **/
 /**
- * @namespace Tools::Random
+ * @namespace rdt::Random
  * @brief Type-specific overloads for multi-threaded float vector generation with custom engines.
  */
 namespace rdt::Random {

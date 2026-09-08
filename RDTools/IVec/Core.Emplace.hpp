@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Emplace.hpp
- * @brief In-place construction at end for Tools::ivec<T>.
+ * @brief In-place construction at end for rdt::ivec<T>.
  *
  * @details Provides emplace() for constructing elements directly in the vector's
  *          storage using perfect forwarding. Avoids temporary object creation
@@ -17,8 +17,8 @@
  *       when T is non-copyable/non-movable. For simple types (int, float),
  *       performance difference is negligible.
  *
- * @see Tools::ivec::append
- * @see Tools::ivec::emplaceAt
+ * @see rdt::ivec::append
+ * @see rdt::ivec::emplaceAt
  */
 
 #include "Base.Class.hpp"

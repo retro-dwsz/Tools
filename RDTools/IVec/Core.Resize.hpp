@@ -7,7 +7,7 @@
 
 /**
  * @file Core.Resize.hpp
- * @brief Capacity management for Tools::ivec<T>.
+ * @brief Capacity management for rdt::ivec<T>.
  *
  * @details Provides reserve() for pre-allocation without changing size,
  *          and resize() for changing the logical element count with optional fill value.
@@ -16,7 +16,7 @@
  *       Grow operations provide basic guarantee — if construction of fill values throws,
  *       the vector remains in a valid state with elements constructed up to the failure point.
  *
- * @see Tools::ivec
+ * @see rdt::ivec
  */
 
 #include "Base.Class.hpp"

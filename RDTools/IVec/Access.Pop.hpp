@@ -7,7 +7,7 @@
 
 /**
  * @file Access.Pop.hpp
- * @brief Element removal operations for Tools::ivec<T>.
+ * @brief Element removal operations for rdt::ivec<T>.
  *
  * @details Provides pop(), popFirst(), and popLast() for extracting and removing
  *          elements by value. All operations shift remaining elements to maintain
@@ -19,8 +19,8 @@
  * @warning Calling pop() on an empty vector or with Index >= size() is UB.
  *          No bounds checking is performed. Use at() + eraseInl() for safe removal.
  *
- * @see Tools::ivec::eraseInl
- * @see Tools::ivec::filter
+ * @see rdt::ivec::eraseInl
+ * @see rdt::ivec::filter
  */
 
 #include "Base.Class.hpp"

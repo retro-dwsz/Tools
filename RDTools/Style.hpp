@@ -25,19 +25,19 @@ namespace rdt::Style {
     struct Color {
         u8 R, G, B;
 
-        Color(const u8 R = 0, const u8 G = 0, const u8 B = 0) {
+        explicit Color(const u8 R = 0, const u8 G = 0, const u8 B = 0) {
             this->R = R;
             this->G = G;
             this->B = B;
         };
 
-        Color(const u32 Hex) {
+        explicit Color(const u32 Hex) {
             this->R = (Hex >> 16) & 0xFF;
             this->G = (Hex >> 8) & 0xFF;
             this->B = Hex & 0xFF;
         }
 
-        Color(const str& Hex = "0xFFFFFF") {
+        explicit Color(const str& Hex = "0xFFFFFF") {
             if (Hex.empty()) return;
             u32 val = 0;
             try {

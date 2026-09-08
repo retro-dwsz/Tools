@@ -18,8 +18,8 @@ namespace rdt::Vector {
     template <typename T>
     vec<T> Shuffle(const vec<T>& v){
         vec<T> out(v);
-        static thread_local Random::RdDevice Rd;
-        static thread_local Random::Twister64 Gen64(Rd());
+        thread_local RdDevice  Rd;
+        thread_local Twister64 Gen64(Rd());
         std::ranges::shuffle(out, Gen64);
         return out;
     };

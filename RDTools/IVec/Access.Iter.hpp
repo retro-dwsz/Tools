@@ -7,7 +7,7 @@
 
 /**
  * @file Access.Iter.hpp
- * @brief Pointer-based iterator accessors for Tools::ivec<T>.
+ * @brief Pointer-based iterator accessors for rdt::ivec<T>.
  *
  * @details Provides begin()/end() and their explicit const variants cbegin()/cend().
  *          All iterators are raw pointers (T* / const T*), making ivec fully compatible
@@ -17,9 +17,9 @@
  *       This dual-overload pattern is required for std::ranges::range and
  *       std::ranges::borrowed_range concept satisfaction on lvalue references.
  *
- * @see Tools::ivec::refbegin
- * @see Tools::ivec::refend
- * @see Tools::ivec::data
+ * @see rdt::ivec::refbegin
+ * @see rdt::ivec::refend
+ * @see rdt::ivec::data
  */
 
 #include "Base.Class.hpp"

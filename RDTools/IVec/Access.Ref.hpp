@@ -7,7 +7,7 @@
 
 /**
  * @file Access.Ref.hpp
- * @brief Bounds-checked reference accessors for Tools::ivec<T>.
+ * @brief Bounds-checked reference accessors for rdt::ivec<T>.
  *
  * @details Provides refbegin()/refend() and their explicit const variants
  *          crefbegin()/crefend(). Unlike first()/last() which return by value,
@@ -19,9 +19,9 @@
  * @warning All methods throw std::out_of_range if size() == 0.
  *          They are NOT noexcept.
  *
- * @see Tools::ivec::first
- * @see Tools::ivec::last
- * @see Tools::ivec::operator[]
+ * @see rdt::ivec::first
+ * @see rdt::ivec::last
+ * @see rdt::ivec::operator[]
  */
 
 #include "Base.Class.hpp"
