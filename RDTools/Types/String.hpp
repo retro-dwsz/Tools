@@ -56,7 +56,7 @@ using str32view = std::u32string_view;
 //     || std::same_as<T, cwstr>;
 
 template <typename Char = char>
-requires OneOf<Char, char, u_char, s_char, wchar_t, char16_t, char32_t>
+requires rdt::OneOf<Char, char, u_char, s_char, wchar_t, char16_t, char32_t>
 using cpstr = const Char*;
 
 

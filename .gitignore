@@ -1,0 +1,9 @@
+# Cmake stuffs for IDEs
+build
+cmake
+cmake-build-debug
+cmake-build-release
+
+# Exessive bins
+*.exe
+Experimental/*.exe

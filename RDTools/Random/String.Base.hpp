@@ -135,7 +135,7 @@ namespace rdt::Random {
 }
 
 /** Single range chars **/
-namespace rdt::TrueRandom {
+namespace rdt::Random {
     /// @brief Generate random char from codepoint range [From, To].
     inline char GetRandomChar(u32 From, u32 To) {
         CheckRange(From, To);
@@ -150,7 +150,7 @@ namespace rdt::TrueRandom {
 }
 
 /** String range chars **/
-namespace rdt::TrueRandom {
+namespace rdt::Random {
     /// @brief Generate std::string of Count random chars from codepoint range [From, To].
     inline str MakeRandomStr(u32 From, u32 To, const idx Count) {
         CheckRange(From, To);
@@ -165,7 +165,7 @@ namespace rdt::TrueRandom {
 }
 
 /** String charset **/
-namespace rdt::TrueRandom {
+namespace rdt::Random {
     /// @brief Generate std::string of Count random chars from charset (str or vec<char>).
     str MakeRandomStr(const OneOf<vec<char>, str> auto& CharSet, const idx Count) {
         return RandomStr<char>(CharSet, Count);

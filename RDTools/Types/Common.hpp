@@ -12,6 +12,11 @@ namespace rdt {
 
     template <typename T, typename... Ts>
     concept OneOf   = (Same<T, Ts> || ...);
+
+    // Convenience macro — untuk definisi cepat
+    #define RDT_CONCEPT_ONE_OF(Name, ...)           \
+        template <typename T>                       \
+        concept Name = rdt::OneOf<T, __VA_ARGS__>
 }
 
 #define ADD_TYPES(name, ...)    \
