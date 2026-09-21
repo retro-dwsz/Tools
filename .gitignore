@@ -7,3 +7,4 @@ cmake-build-release
 # Exessive bins
 *.exe
 Experimental/*.exe
+Test/*.exe

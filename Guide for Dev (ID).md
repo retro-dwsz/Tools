@@ -88,12 +88,10 @@ inline void Capitalize(str* t) {
 - **Macro:** UPPER_SNAKE_CASE (Contoh: `TOOLS_PSTR_TEMPLATE`, `RDT_MAKE_ONE_OF`).
 - **Member Class (Private):** Gunakan prefix `m_`. Gunakan nama deskriptif biasa, akses selalu via `this->`.
 
-
 ## 4. Type System & Aliases
 - **WAJIB** menggunakan type alias dari RDTools (`i32`, `i64`, `u32`, `u64`, `f32`, `f64`, `str`, `idx`, dll.) alih-alih tipe primitif bawaan C++ (`int`, `long`, `float`, `size_t`).
 - **Jangan** gunakan tipe fast/atomic (`fu64`, `ai32`) sebagai parameter template algoritma yang membutuhkan lebar bit eksak (seperti RNG MT). Gunakan fixed-width types (`u32`, `u64`).
 - Gunakan `concepts` untuk membatasi template parameter. Manfaatkan macro `RDT_CONCEPT_ONE_OF` atau `OneOf<T, ...>` untuk validasi tipe.
-
 
 ## 5. Modern C++ Practices (C++23/C++26)
 - **`constexpr` / `consteval`:** Gunakan `constexpr` pada fungsi dan variabel yang bisa dievaluasi saat compile-time. Gunakan `consteval` jika HARUS dievaluasi saat compile-time.
@@ -101,7 +99,6 @@ inline void Capitalize(str* t) {
 - **`explicit`:** Wajib digunakan pada conversion operator yang melakukan alokasi memori atau mengubah ownership (contoh: konversi `PStr` ke `std::string`). Jangan tulis `explicit` di definisi luar class.
 - **Destructor:** JANGAN tulis destructor kosong secara eksplisit untuk class non-owning (view/wrapper). Biarkan compiler men-generate trivial destructor.
 - **CTAD:** Sediakan *Class Template Argument Deduction Guides* untuk class template agar user tidak perlu menulis angle brackets `<>` secara manual.
-
 
 ## 6. Memory & Ownership
 - **Non-Owning Views:** Class seperti `PStr` hanya menyimpan pointer dan size. Tidak boleh ada `new`/`delete`. Lifetime data adalah tanggung jawab pemanggil. Dokumentasikan peringatan ini dengan jelas.
@@ -111,19 +108,16 @@ inline void Capitalize(str* t) {
     - Gunakan `T*` untuk modifikasi in-place (terutama pada free functions).
     - Hindari passing by value untuk objek besar.
 
-
 ## 7. Error Handling & Safety
 - **Undefined Behavior (UB):** Dilarang keras. Jangan lakukan signed integer overflow, dereference nullptr, atau out-of-bounds access.
 - **Bit Manipulation:** Jika melakukan operasi bit untuk signed integers, lakukan di tipe unsigned terlebih dahulu, lalu cast kembali ke signed di langkah terakhir.
 - **Compile-Time Safety:** Gunakan `static_assert` untuk memvalidasi asumsi ukuran tipe atau nilai constexpr.
-
 
 ## 8. Documentation
 - Gunakan format **Doxygen-style** untuk semua API publik.
 - Tag wajib: `@brief`, `@tparam`, `@param`, `@return`.
 - Tag kondisional: `@note` (untuk info tambahan), `@warning` (untuk potensi bahaya seperti UB, lifetime, atau alokasi memori tersembunyi).
 - Dokumentasi ditulis dalam bahasa **Inggris (en-US)**.
-
 
 ## 9. Build System (CMake)
 - RDTools adalah **header-only INTERFACE library**.

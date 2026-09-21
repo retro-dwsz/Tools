@@ -76,7 +76,6 @@ inline void Capitalize(str* t) {
 }
 ```
 
-
 ## 3. Naming Convention
 - **Namespace:** `rdt::*` (main), `rdt::Tools::*` (code-level sub-modules).
 - **Physical Files:** `RDTools/Tools.ModuleName.hpp` (Example: `RDTools/TrueRandom.hpp` contains `rdt::TrueRandom::*`).
@@ -88,12 +87,10 @@ inline void Capitalize(str* t) {
 - **Macro:** UPPER_SNAKE_CASE (Example: `TOOLS_PSTR_TEMPLATE`, `RDT_MAKE_ONE_OF`).
 - **Private Class Members:** Use the `m_` prefix. Use descriptive names, and always access them via `this->`.
 
-
 ## 4. Type System & Aliases
 - You MUST use RDTools type aliases (`i32`, `i64`, `u32`, `u64`, `f32`, `f64`, `str`, `idx`, etc.) instead of built-in C++ primitive types (`int`, `long`, `float`, `size_t`).
 - Do NOT use fast/atomic types (`fu64`, `ai32`) as template parameters for algorithms that require exact bit widths (such as MT RNG). Use fixed-width types (`u32`, `u64`).
 - Use `concepts` to constrain template parameters. Leverage the `RDT_CONCEPT_ONE_OF` macro or `OneOf<T, ...>` for type validation.
-
 
 ## 5. Modern C++ Practices (C++23/C++26)
 - **`constexpr` / `consteval`:** Use `constexpr` for functions and variables that can be evaluated at compile-time. Use `consteval` if they MUST be evaluated at compile-time.
@@ -101,7 +98,6 @@ inline void Capitalize(str* t) {
 - **`explicit`:** Mandatory for conversion operators that allocate memory or change ownership (example: converting `PStr` to `std::string`). Do not write `explicit` on out-of-class definitions.
 - **Destructor:** DO NOT explicitly write an empty destructor for non-owning classes (views/wrappers). Let the compiler generate the trivial destructor.
 - **CTAD:** Provide *Class Template Argument Deduction Guides* for template classes so users don't have to manually write angle brackets `<>`.
-
 
 ## 6. Memory & Ownership
 - **Non-Owning Views:** Classes like `PStr` only store a pointer and a size. No `new`/`delete` allowed. Data lifetime is the caller's responsibility. Document this warning clearly.
@@ -111,19 +107,16 @@ inline void Capitalize(str* t) {
     - Use `T*` for in-place modification (especially in free functions).
     - Avoid passing large objects by value.
 
-
 ## 7. Error Handling & Safety
 - **Undefined Behavior (UB):** Strictly prohibited. Do not perform signed integer overflow, nullptr dereferencing, or out-of-bounds access.
 - **Bit Manipulation:** When performing bitwise operations on signed integers, perform them on unsigned types first, then cast back to signed as the final step.
 - **Compile-Time Safety:** Use `static_assert` to validate assumptions about type sizes or constexpr values.
-
 
 ## 8. Documentation
 - Use **Doxygen-style** formatting for all public APIs.
 - Mandatory tags: `@brief`, `@tparam`, `@param`, `@return`.
 - Conditional tags: `@note` (for additional info), `@warning` (for potential dangers like UB, lifetime issues, or hidden memory allocations).
 - Documentation must be written in **English (en-US)**.
-
 
 ## 9. Build System (CMake)
 - RDTools is a **header-only INTERFACE library**.

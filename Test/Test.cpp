@@ -37,7 +37,7 @@ int main(){
     char* First = FIRST(t3); // &t3[0];
     char* Last  = LAST(t3);  // &t3[strlen(t3)-1];
 
-    std::string tx = std::format("{}", t3);
+    const std::string tx = std::format("{}", t3);
 
     std::printf(
         "%s\n\n> That string above is %llu char long and took %llu bytes of your memory\n> Pointers are at 0x%p..0x%p",

@@ -152,13 +152,13 @@ namespace rdt::Random {
 /** String range chars **/
 namespace rdt::Random {
     /// @brief Generate std::string of Count random chars from codepoint range [From, To].
-    inline str MakeRandomStr(u32 From, u32 To, const idx Count) {
+    inline str MakeRandomStr(const idx Count, u32 From, u32 To) {
         CheckRange(From, To);
         return RandomStr<char>(From, To, Count);
     }
 
     /// @brief Generate std::wstring of Count random wchars from codepoint range [From, To].
-    inline wstr MakeRandomWStr(u32 From, u32 To, const idx Count) {
+    inline wstr MakeRandomWStr(const idx Count, u32 From, u32 To) {
         CheckRange(From, To);
         return RandomStr<wchar>(From, To, Count);
     }
@@ -167,12 +167,12 @@ namespace rdt::Random {
 /** String charset **/
 namespace rdt::Random {
     /// @brief Generate std::string of Count random chars from charset (str or vec<char>).
-    str MakeRandomStr(const OneOf<vec<char>, str> auto& CharSet, const idx Count) {
+    str MakeRandomStr(const idx Count, const OneOf<vec<char>, str> auto& CharSet) {
         return RandomStr<char>(CharSet, Count);
     }
 
     /// @brief Generate std::wstring of Count random wchars from charset (wstr or vec<wchar>).
-    wstr MakeRandomWStr(const OneOf<vec<wchar>, wstr> auto& CharSet, const idx Count) {
+    wstr MakeRandomWStr(const idx Count, const OneOf<vec<wchar>, wstr> auto& CharSet) {
         return RandomStr<wchar>(CharSet, Count);
     }
 }
