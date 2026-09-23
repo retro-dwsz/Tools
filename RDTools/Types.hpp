@@ -44,10 +44,10 @@ namespace rdt::Types {
     template <typename T>
     concept Primitive = OneOf<T,
         /* Signed Ints */
-        i8, i16, i32, i64, idx,
+        i8, i16, i32, i64, sidx,
 
         /* Unsigned Ints */
-        u8, u16, u32, u64, sidx,
+        u8, u16, u32, u64, idx,
 
         /* Floating Points */
         f32, f64, fld,
