@@ -40,7 +40,14 @@ namespace rdt {
         return Out;
     };
 
-    // __iadd__ -> "extend"
+    // __iadd__ -> "extend" or +=
+    template <typename T>
+    ivec<T>& ivec<T>::operator+=(const ivec& Other) {
+        if(Other.m_Size == 0) { return *this; }
+        reserve(m_Size + Other.m_Size);
+        extend(Other);
+        return *this;
+    };
 
     // __mul__
     /// @brief Repeat vector contents N times, returning a new ivec.
@@ -60,7 +67,26 @@ namespace rdt {
         return Out;
     }
 
-    // __imul__ -> no
+    // __imul__ -> maybe?
+    template <typename T>
+    ivec<T>& ivec<T>::operator*=(const idx Count) {
+        // Edge cases
+        if (Count == 0) { clear(); return *this; }
+        if (Count == 1 || m_Size == 0) return *this;
+
+        // Snapshot original size BEFORE any mutation
+        const idx originalSize = m_Size;
+        reserve(originalSize * Count);
+
+        // Append (Count - 1) copies of the ORIGINAL content
+        // Safe: we only read indices [0, originalSize) which never change
+        for (idx i = 1; i < Count; ++i) {
+            for (idx j = 0; j < originalSize; ++j) {
+                append(m_Data[j]);
+            }
+        }
+        return *this;
+    }
 
     // __eq__
     /// @brief Element-wise equality comparison.

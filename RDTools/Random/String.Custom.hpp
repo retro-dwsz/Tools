@@ -146,13 +146,13 @@ namespace rdt::Random {
 /** String range chars with custom Twister **/
 namespace rdt::Random {
     // Generate Standard STRing std::string from given range
-    inline str RandomSStr(const idx Count, TwisterAny<>& Gen, u32 From, u32 To) {
+    inline str MakeRandomStr(const idx Count, TwisterAny<>& Gen, u32 From, u32 To) {
         CheckRange(From, To);
         return RandomStr<char>(Gen, From, To, Count);
     }
 
     // Generate Wide STRing std::wstring from given range
-    inline wstr RandomWStr(const idx Count, TwisterAny<>& Gen, u32 From, u32 To) {
+    inline wstr MakeRandomWStr(const idx Count, TwisterAny<>& Gen, u32 From, u32 To) {
         CheckRange(From, To);
         return RandomStr<wchar>(Gen, From, To, Count);
     }
@@ -161,12 +161,12 @@ namespace rdt::Random {
 /** String charset with custom Twister **/
 namespace rdt::Random {
     // Generate Standard STRing std::string from charset (str, vec<char>) with custom Twister
-    str RandomSStr(const idx Count, TwisterAny<>& Gen, const OneOf<vec<char>, str> auto& CharSet) {
+    str MakeRandomStr(const idx Count, TwisterAny<>& Gen, const OneOf<vec<char>, str> auto& CharSet) {
         return RandomStr<char>(Gen, CharSet, Count);
     }
 
     // Generate Wide STRing std::wstring from charset (wstr, vec<wchar>) with custom Twister
-    wstr RandomWStr(const idx Count, TwisterAny<>& Gen, const OneOf<vec<wchar>, wstr> auto& CharSet) {
+    wstr MakeRandomWStr(const idx Count, TwisterAny<>& Gen, const OneOf<vec<wchar>, wstr> auto& CharSet) {
         return RandomStr<wchar>(Gen, CharSet, Count);
     }
 }

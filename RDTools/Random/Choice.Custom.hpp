@@ -38,126 +38,170 @@
 #include "Vector.Custom.hpp"
 
 /** Single item **/
+/**
+ * @brief Generic single-element random selection for any random-access container.
+ *
+ * @details Provides Python-style random.choice() as free functions.
+ *          Opt-in header — NOT included by IVec.hpp or Base.Master.hpp
+ *          to avoid pulling <random> into every translation unit.
+ *
+ * @note Requires container to satisfy std::ranges::random_access_range
+ *       and std::ranges::sized_range. This covers ivec, std::vector,
+ *       std::array, std::span, std::deque, and C arrays (via ADL).
+ *
+ * @see rdt::Random::Sample (multi-element selection)
+ * @see rdt::Random::RandomNum
+ */
 namespace rdt::Random {
     /** Get single random item **/
-    /**
-     * @brief Selects a single random element from the entire dataset using a custom generator.
-     *
-     * Equivalent to Python's `random.choice(data)`.
-     *
-     * @tparam Data Any contiguous container with `.size()` and `operator[]`
-     *              (e.g., vec<T>, std::vector<T>, std::array<T,N>).
-     * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
-     * @param DataSet Source data container.
-     * @return typename Data::value_type A randomly selected element.
-     *         Returns default-constructed value if dataset is empty.
-     *
-     * @note Time complexity: O(1).
+    /*
+     * @brief Select a single random element from the entire container.
+     * @tparam Data Any random-access sized range (ivec, vector, array, span, etc.).
+     * @param Gen Custom setting for twister engine
+     * @param DataSet Source container. Must not be empty for meaningful results.
+     * @return Copy of a randomly selected element.
+     *         Returns default-constructed value_type if container is empty.
+     * @note O(1) time complexity. Equivalent to Python's random.choice().
+     *       Uses thread-local RNG internally.
      */
     template <typename Data>
-    auto Choice(TwisterAny<>& Gen, const Data& DataSet) -> Data::value_type {
-        //fmt::println("DataSet = {}", Dat
+    requires std::ranges::random_access_range<Data> && std::ranges::sized_range<Data>
+    [[nodiscard]] auto Choice(TwisterAny<>& Gen, const Data& DataSet) -> std::ranges::range_value_t<Data> {
+        using Type = std::ranges::range_value_t<Data>;
+        const auto Size = scast<idx>(DataSet.size());
+        if (Size == 0) return Type{};
 
-        const idx Index = RandomNum<idx>(Gen, 0, DataSet.size() - 1);
-        return DataSet[Index];
+        // RandomNum uses exclusive upper bound: [0, Size)
+        const idx index = RandomNum<idx>(Gen, 0, Size);
+        return DataSet[index];
     }
 
     /** Get single random item from selected range **/
-    /**
-     * @brief Selects a single random element from a sub-range [From, To] using a custom generator.
-     *
-     * @tparam Data Any contiguous container with `.size()` and `operator[]`.
-     * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
-     * @param DataSet Source data container.
+    /*
+     * @brief Select a single random element from sub-range [From, To] inclusive.
+     * @tparam Data Any random-access sized range.
+     * @param Gen Custom setting for twister engine
+     * @param DataSet Source container.
      * @param From Lower bound index (inclusive). Auto-swapped if From > To.
-     * @param To Upper bound index (inclusive). Clamped to DataSet.size()-1.
-     * @return typename Data::value_type A randomly selected element from the specified range.
-     *         Returns default-constructed value if dataset is empty.
-     * @throws std::out_of_range if From >= DataSet.size() after validation.
-     *
-     * @see ValidateChoiceRange in _Common.hpp for range validation details.
+     * @param To Upper bound index (inclusive). Clamped to size()-1.
+     * @return Copy of a randomly selected element from [From, To].
+     *         Returns default-constructed value_type if effective range is empty.
+     * @note O(1) time complexity. Both bounds are clamped to valid container range.
+     *       Uses thread-local RNG internally.
      */
-    template<typename Data>
-    auto Choice(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To) -> Data::value_type {
-        //fmt::println("DataSet = {}; From = {}; To =
+    template <typename Data>
+        requires std::ranges::random_access_range<Data> &&
+                 std::ranges::sized_range<Data>
+    [[nodiscard]] auto Choice(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To)
+        -> std::ranges::range_value_t<Data>
+    {
+        using Type = std::ranges::range_value_t<Data>;
+        const auto Size = scast<idx>(DataSet.size());
+        if (Size == 0) return Type{};
 
-        if(DataSet.size() == 0) return {};
-        const idx Index = RandomNum<idx>(Gen, From, To);
+        // Auto-swap if reversed
+        if (From > To) std::swap(From, To);
 
-        return DataSet[Index];
+        // Clamp to valid range [0, Size-1]
+        if (From >= Size) From = Size - 1;
+        if (To >= Size)   To   = Size - 1;
+
+        // Convert inclusive [From, To] → exclusive [From, To+1) for RandomNum
+        const idx index = RandomNum<idx>(Gen, From, To + 1);
+        return DataSet[index];
     }
 }
 
 /** Many items **/
+/**
+ * @brief Generic multi-element random selection (with replacement) for any random-access container.
+ *
+ * @details Provides Python-style random.choices() as free functions.
+ *          Sampling is done WITH replacement — elements may appear multiple times.
+ *          Opt-in header — NOT included by IVec.hpp or Base.Master.hpp.
+ *
+ * @note Requires container to satisfy std::ranges::random_access_range
+ *       and std::ranges::sized_range.
+ *
+ * @see rdt::Random::Choice (single-element selection)
+ * @see rdt::Random::RandomNumsV
+ */
 namespace rdt::Random {
     /** Get N random items **/
-    /**
-     * @brief Selects N random elements from the entire dataset using a custom generator (with replacement).
-     *
-     * Equivalent to Python's `random.choices(data, k=Count)`.
-     * Elements may appear multiple times in the result since sampling is done
-     * with replacement.
-     *
-     * @tparam Data Any contiguous container with `.size()` and `operator[]`.
-     * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
-     * @param DataSet Source data container.
+    /*
+     * @brief Select N random elements from the entire container (with replacement).
+     * @tparam Data Any random-access sized range (ivec, vector, array, span, etc.).
+     * @param Gen Custom setting for twister engine
+     * @param DataSet Source container.
      * @param Count Number of elements to select.
-     * @return vec<typename Data::value_type> Vector containing 'Count' randomly
-     *         selected elements. Returns empty vector if dataset is empty or Count <= 0.
-     *
-     * @note Time complexity: O(Count). Memory: allocates a new vec of size Count.
+     * @return vec<value_type> containing Count randomly selected elements.
+     *         Returns empty vec if container is empty or Count == 0.
+     * @note O(Count) time. Elements may repeat (sampling with replacement).
+     *       Equivalent to Python's random.choices(data, k=Count).
+     *       Uses thread-local RNG internally.
      */
     template <typename Data>
-    vec<typename Data::value_type> Sample(TwisterAny<>& Gen, const Data& DataSet, const idx Count) {
-        using T = Data::value_type;
+    requires std::ranges::random_access_range<Data> && std::ranges::sized_range<Data>
+    [[nodiscard]] auto Sample(TwisterAny<>& Gen, const Data& DataSet, idx Count)
+        -> vec<std::ranges::range_value_t<Data>>
+    {
+        using T = std::ranges::range_value_t<Data>;
 
-        if(DataSet.size() == 0 || Count == 0) return {};
+        const idx Size = scast<idx>(DataSet.size());
+        if (Size == 0 || Count == 0) return {};
 
-        const vec Index = RandomNumsV<idx>(Gen, Count, 0, DataSet.size() - 1);
-        vec<T> Out;
-        Out.reserve(Count);
+        // RandomNumsV uses exclusive upper bound: [0, Size)
+        const vec<idx> indices = RandomNumsV<idx>(Gen, Count, 0, Size);
 
-        for(const auto& i : Index) {
-            Out.push_back(DataSet[i]);
+        vec<T> out;
+        out.reserve(Count);
+        for (const auto& i : indices) {
+            out.append(DataSet[i]);
         }
-
-        return Out;
+        return out;
     }
 
     /** Get N random items from selected range **/
-    /**
-     * @brief Selects N random elements from a sub-range [From, To] using a custom generator (with replacement).
-     *
-     * @tparam Data Any contiguous container with `.size()` and `operator[]`.
-     * @param Gen Reference to a Mersenne Twister engine (TwisterAny<>).
-     * @param DataSet Source data container.
+    /*
+     * @brief Select N random elements from sub-range [From, To] inclusive (with replacement).
+     * @tparam Data Any random-access sized range.
+     * @param Gen Custom setting for twister engine
+     * @param DataSet Source container.
      * @param From Lower bound index (inclusive). Auto-swapped if From > To.
-     * @param To Upper bound index (inclusive). Clamped to DataSet.size()-1.
+     * @param To Upper bound index (inclusive). Clamped to size()-1.
      * @param Count Number of elements to select.
-     * @return vec<typename Data::value_type> Vector containing 'Count' randomly
-     *         selected elements from the specified range.
-     *         Returns empty vector if dataset is empty or Count <= 0.
-     * @throws std::out_of_range if From >= DataSet.size() after validation.
-     *
-     * @see ValidateChoiceRange in _Common.hpp for range validation details.
+     * @return vec<value_type> containing Count randomly selected elements from [From, To].
+     *         Returns empty vec if effective range is empty or Count == 0.
+     * @note O(Count) time. Both bounds are clamped to valid container range.
+     *       Equivalent to Python's random.choices(data[From:To+1], k=Count).
+     *       Uses thread-local RNG internally.
      */
     template <typename Data>
-    vec<typename Data::value_type> Sample(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To, const idx Count) {
-        using T = Data::value_type;
+        requires std::ranges::random_access_range<Data> && std::ranges::sized_range<Data>
+    [[nodiscard]] auto Sample(TwisterAny<>& Gen, const Data& DataSet, idx From, idx To, idx Count)
+        -> vec<std::ranges::range_value_t<Data>>
+    {
+        using T = std::ranges::range_value_t<Data>;
 
-        if(DataSet.size() == 0 || Count == 0) return {};
-        ValidateChoiceRange(DataSet.size(), From, To);
+        const idx Size = scast<idx>(DataSet.size());
+        if (Size == 0 || Count == 0) return {};
 
-        const vec Index = RandomNumsV<idx>(Gen, Count, From, To);
+        // Auto-swap if reversed
+        if (From > To) std::swap(From, To);
 
-        vec<T> Out;
-        Out.reserve(Count);
+        // Clamp to valid range [0, Size-1]
+        if (From >= Size) From = Size - 1;
+        if (To >= Size)   To   = Size - 1;
 
-        for(const auto& i : Index) {
-            Out.push_back(DataSet[i]);
+        // Convert inclusive [From, To] → exclusive [From, To+1) for RandomNumsV
+        const vec<idx> indices = RandomNumsV<idx>(Gen, Count, From, To + 1);
+
+        vec<T> out;
+        out.reserve(Count);
+        for (const auto& i : indices) {
+            out.append(DataSet[i]);
         }
-
-        return Out;
+        return out;
     }
 }
 

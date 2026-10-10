@@ -32,7 +32,7 @@ namespace rdt {
     /// @note Indices are clamped to [0, size()-1]. Returns empty vector if From > To after normalization.
     ///       Original vector is unchanged. O(k) where k = To - From + 1.
     template <typename T>
-    ivec<T> ivec<T>::Slice(i64 From, i64 To) {
+    ivec<T> ivec<T>::Slice(idx From, idx To) {
         if (m_Size == 0) return {};
 
         if (From < 0) From += m_Size;
@@ -51,19 +51,19 @@ namespace rdt {
         return out;
     }
 
-    /// @brief Extract first n or last |n| elements.
-    /// @param To If >= 0: extract elements [0, n]. If < 0: extract last |n| elements.
-    /// @return New ivec containing the extracted elements. Empty if n == 0 or vector is empty.
-    /// @note Delegates to slice(From, To). Original vector is unchanged.
-    template <typename T>
-    ivec<T> ivec<T>::Slice(const i64 To) {
-        if (m_Size == 0) return {};
-
-        if (To >= 0)
-            return Slice(0, To);
-
-        return Slice(m_Size + To, m_Size - 1);
-    }
+    // /// @brief Extract first n or last |n| elements.
+    // /// @param To If >= 0: extract elements [0, n]. If < 0: extract last |n| elements.
+    // /// @return New ivec containing the extracted elements. Empty if n == 0 or vector is empty.
+    // /// @note Delegates to slice(From, To). Original vector is unchanged.
+    // template <typename T>
+    // ivec<T> ivec<T>::Slice(const i64 To) {
+    //     if (m_Size == 0) return {};
+    //
+    //     if (To >= 0)
+    //         return Slice(0, To);
+    //
+    //     return Slice(m_Size + To, m_Size - 1);
+    // }
 }
 
 /** Slicers do inline **/
@@ -74,18 +74,18 @@ namespace rdt {
     /// @post Vector contains only elements from the specified range.
     /// @note Equivalent to *this = slice(From, To). May reallocate.
     template <typename T>
-    void ivec<T>::SliceInl(const i64 From, const i64 To) {
+    void ivec<T>::SliceInl(idx From, idx To) {
         *this = Slice(From, To);
     };
 
-    /// @brief Replace contents with first n or last |n| elements.
-    /// @param To If >= 0: keep elements [0, n]. If < 0: keep last |n| elements.
-    /// @post Vector contains only the extracted elements.
-    /// @note Equivalent to *this = slice(n). May reallocate.
-    template <typename T>
-    void ivec<T>::SliceInl(const i64 To) {
-        *this = Slice(To);
-    }
+    // /// @brief Replace contents with first n or last |n| elements.
+    // /// @param To If >= 0: keep elements [0, n]. If < 0: keep last |n| elements.
+    // /// @post Vector contains only the extracted elements.
+    // /// @note Equivalent to *this = slice(n). May reallocate.
+    // template <typename T>
+    // void ivec<T>::SliceInl(const i64 To) {
+    //     *this = Slice(To);
+    // }
 }
 
 #endif

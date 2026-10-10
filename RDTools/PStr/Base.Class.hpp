@@ -33,7 +33,7 @@ namespace rdt {
 
         [[nodiscard]] constexpr idx size() const noexcept;
         [[nodiscard]] constexpr idx sizeBytes() const noexcept;
-        [[nodiscard]] constexpr bool empty() const noexcept;
+        [[nodiscard]] constexpr bool isEmpty() const noexcept;
         [[nodiscard]] constexpr const Char* data() const noexcept;  // FIX: Return type must be `const Char*` because StrData is const
 
         /* ---- End Observers ---- */

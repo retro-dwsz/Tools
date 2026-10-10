@@ -13,7 +13,7 @@ namespace rdt {
      * @warning No bounds checking. Caller must ensure i < size().
      */
     template <PStrTypes Char>
-    constexpr const Char& PStr<Char>::operator[](idx i) const noexcept {
+    constexpr const Char& PStr<Char>::operator[](const idx i) const noexcept {
         return StrData[i];
     }
 
@@ -25,7 +25,7 @@ namespace rdt {
      *       throw during compile-time evaluation.
      */
     template <PStrTypes Char>
-    constexpr const Char& PStr<Char>::at(idx i) const {
+    constexpr const Char& PStr<Char>::at(const idx i) const noexcept {
         // FIX: Logic was inverted. Must throw if out of bounds.
         if (i >= StrSize) {
             // FIX: Cannot use std::format here because it is NOT constexpr.

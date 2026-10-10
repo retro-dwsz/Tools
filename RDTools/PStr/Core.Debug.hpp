@@ -28,7 +28,7 @@ namespace rdt {
      * @brief Checks if the string has zero length. O(1).
      */
     template <PStrTypes Char>
-    constexpr bool PStr<Char>::empty() const noexcept {
+    constexpr bool PStr<Char>::isEmpty() const noexcept {
         return this->StrSize == 0;
     }
 

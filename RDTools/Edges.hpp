@@ -8,8 +8,8 @@
 #include <limits>
 
 // Macro shortcut
-#define GET_MAX(T) std::numeric_limits<T>::max()
-#define GET_MIN(T) std::numeric_limits<T>::min()
+#define RDT_GET_MAX(T) std::numeric_limits<T>::max()
+#define RDT_GET_MIN(T) std::numeric_limits<T>::min()
 
 namespace rdt::Edge {
     template <typename T>

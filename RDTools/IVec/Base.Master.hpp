@@ -50,6 +50,7 @@
 /** Accessors **/
 #include "Access.Getset.hpp"    ///< for operator[](idx Index), .at(const idx& Index), operator=(const ivec& Other)
 #include "Access.Pop.hpp"       ///< for .pop(const idx& Index), .popFirst(), .popLast()
+// #include "Access.Random.hpp"    ///< for .random(), .randomMax(const idx& MaxIndex), .randomMin(const idx& MinIndex), .random(const idx& From, const idx& To)
 #include "Access.Elements.hpp"  ///< for .first() .last() .first(const idx n) .last(const idx n) .front() .back()
 #include "Access.Iter.hpp"      ///< for .begin() .cbegin() .end() .cend()
 #include "Access.Ref.hpp"       ///< for .refbegin() .crefbegin() .refend() .crefend()

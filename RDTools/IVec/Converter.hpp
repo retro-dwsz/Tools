@@ -33,15 +33,15 @@ namespace rdt {
     ///       directly with Format.fmt.hpp / Format.std.hpp included.
     template <typename T>
     str ivec<T>::fstr() const {
-        str out = "[";
+        str Out = "[";
 
         for (idx i = 0; i < m_Size; ++i) {
-            out += std::format("{}", m_Data[i]);
-            if (i + 1 < m_Size) out += ", ";
+            Out += std::format("{}", m_Data[i]);
+            if (i + 1 < m_Size) Out += ", ";
         }
 
-        out += "]";
-        return out;
+        Out += ']';
+        return Out;
     }
 
     /** join with delimiter **/
@@ -55,13 +55,13 @@ namespace rdt {
     str ivec<T>::join(strview Delim) const {
         if (isEmpty()) return "";
 
-        str result = std::format("{}", m_Data[0]);
+        str Out = std::format("{}", m_Data[0]);
 
         for (idx i = 1; i < m_Size; ++i) {
-            result += std::format("{}{}", Delim, m_Data[i]);
+            Out += std::format("{}{}", Delim, m_Data[i]);
         }
 
-        return result;
+        return Out;
     }
 
     // /** To Vector **/

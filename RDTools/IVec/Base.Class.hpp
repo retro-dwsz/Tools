@@ -79,13 +79,22 @@ namespace rdt {
         idx m_Capacity;   // How many elements that can be fitted without reallocation
 
         public:
+        using value_type        = T;
+        using reference         = T&;
+        using const_reference   = const T&;
+
         /** [Init] Constructors **/
         ivec() noexcept;                            // default
         ivec(initl<T> Data);                        // with {}
+        ivec(const T* begin, const T* end);         // with pointer
         explicit ivec(const vec<T>& Data);          // copy from std::vector
         explicit ivec(const span<const T>& Data);   // copy from generic iterables
         ivec(const ivec& Data);                     // copy from Data ivec
         ivec(ivec&& Data) noexcept;                 // copy from temporary ivec
+
+        /** [Init] More explicit Constructors ? **/
+        void fromVec(const vec<T>& Data);
+        void fromSpan(const span<const T>& Data);
 
         /** [Init] DeConstructors **/
         ~ivec() noexcept;
@@ -106,18 +115,18 @@ namespace rdt {
         void append(T&& Element);           // Single element (but rvalue)
 
         /** [Core] Append at specific index **/
-        void appendFirst(const T& Item);         // Append from first index, ivec<i32> a{0, 1, 2, 3, 4}.appendFirst(99) -> a{99, 0, 1, 2, 3, 4, 5}
-        void appendAt(const T& Item, idx At);    // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}
+        void appendFirst(const T& Item) noexcept;       // Append from first index, ivec<i32> a{0, 1, 2, 3, 4}.appendFirst(99) -> a{99, 0, 1, 2, 3, 4, 5}
+        void appendAt(idx At, const T& Item) noexcept;  // Append at Nth index, ivec<i32> a{0, 1, 2, 3, 4}.appendAt(99, 1) -> a{0, 99, 1, 2, 3, 4, 5}
 
         /** [Core] Emplace at end **/
         template<typename... Args>
-        void emplace(Args&&... Items);               // Build and append object on-fly
+        void emplace(Args&&... Items) noexcept;         // Build and append object on-fly
 
         /** [Core] Emplace at specific index **/
         template<typename... Args>
-        void emplaceFront(Args&&... Items);          // Build and append in front object on-fly
+        void emplaceFront(Args&&... Items) noexcept;    // Build and append in front object on-fly
         template<typename... Args>
-        void emplaceAt(idx At, Args&&... Items);     // Build and append in Nth index object on-fly
+        void emplaceAt(idx At, Args&&... Items) noexcept;   // Build and append in Nth index object on-fly
 
         /** [Core] Extend this with other iterables **/
         void extend(std::span<const T> Data);        // Unified range append via span (replaces vec<T> overload)
@@ -139,6 +148,12 @@ namespace rdt {
         [[nodiscard]] T pop(const idx& Index);                  // Get then remove selected index. ivec<i32> a{1, 2, 3, 4}.Pop(1); -> return a[1] then make ivec ivec<i32>a to {1, 3, 4}
         [[nodiscard]] T popFirst();                             // get first element, then remove it
         [[nodiscard]] T popLast();                              // get last element, then remove it
+
+        /** [Access] Get random item with/without specific range **/
+        // [[nodiscard]] T random();                               // Absolute random item
+        // [[nodiscard]] T randomMax(const idx& MaxIndex);         // Random item from 0..Max
+        // [[nodiscard]] T randomMin(const idx& MinIndex);         // Random item from Min..N
+        // [[nodiscard]] T random(const idx& From, const idx& To); // Random item from Min, Max
 
         /** [Access] Specific Element Accessors **/
         [[nodiscard]] T first() const noexcept;             // First element (copy)
@@ -165,12 +180,14 @@ namespace rdt {
         [[nodiscard]] const T& crefend() const;             // Explicit const ref to last
 
         /** [Opr] Dunders **/
-        [[nodiscard]] /* __add__ */ ivec operator+(const ivec& Other);
-        [[nodiscard]] /* __mul__ */ ivec operator*(idx Count);
-        [[nodiscard]] /* __eq__  */ bool operator==(const ivec& Other) const;
+        [[nodiscard]] /* __add__  */ ivec  operator+(const ivec& Other);
+        [[nodiscard]] /* __iadd__ */ ivec& operator+=(const ivec& Other);
+        [[nodiscard]] /* __mul__  */ ivec  operator*(idx Count);
+        [[nodiscard]] /* __imul__ */ ivec& operator*=(idx Count);
+        [[nodiscard]] /* __eq__   */ bool  operator==(const ivec& Other) const;
 
         /** [Items] Orders **/
-        [[nodiscard]] ivec shuffle();       // return shuffling
+        [[nodiscard]] ivec Shuffle();       // return shuffling
         [[nodiscard]] ivec Sort();          // return sorting with std::sort
         [[nodiscard]] ivec rSort();         // return reverse sorting with std::sort
         [[nodiscard]] ivec Reverse();       // return reverse order
@@ -186,22 +203,22 @@ namespace rdt {
         void ReassignInl(span<const T> Data, idx Start);            // inline reassign valued
 
         /** [Items] Find utils **/
-        [[nodiscard]] bool Contains(const T& Item) noexcept;            // Find element, return true or false
-        [[nodiscard]] idx Find(const T& Item) noexcept;                 // Find element, return index
-        [[nodiscard]] idx FindFreq(const T& Item) noexcept;             // Find element, return how many appeared
-        [[nodiscard]] pair<idx, vec<T>> FindAll(const T& Item) noexcept;// Find element, return how many appeared and indexes
+        [[nodiscard]] bool Contains(const T& Item) const noexcept;            // Find element, return true or false
+        [[nodiscard]] idx Find(const T& Item) const noexcept;                 // Find element, return index
+        [[nodiscard]] idx FindFreq(const T& Item) const noexcept;             // Find element, return how many appeared
+        [[nodiscard]] pair<idx, vec<T>> FindAll(const T& Item) const noexcept;// Find element, return how many appeared and indexes
 
         // /** [Items] Const Find utils **/
-        // [[nodiscard]] bool Contains(const T& Item) const noexcept;              // Find element, return true or false
-        // [[nodiscard]] idx Find(const T& Item) const noexcept;                   // Find element, return index
-        // [[nodiscard]] idx FindFreq(const T& Item) const noexcept;               // Find element, return how many appeared
-        // [[nodiscard]] pair<idx, vec<T>> FindAll(const T& Item) const noexcept;  // Find element, return how many appeared and indexes
+        // [[nodiscard]] bool Contains(const T& Item) noexcept;              // Find element, return true or false
+        // [[nodiscard]] idx Find(const T& Item) noexcept;                   // Find element, return index
+        // [[nodiscard]] idx FindFreq(const T& Item) noexcept;               // Find element, return how many appeared
+        // [[nodiscard]] pair<idx, vec<T>> FindAll(const T& Item) noexcept;  // Find element, return how many appeared and indexes
 
         /** [Items] Slicers **/
-        [[nodiscard]]   ivec Slice(i64 From, i64 To);       // Slice From<->To, then return
-        [[nodiscard]]   ivec Slice(i64 To);                 // Slice First->n or n<-Last, then return
-                        void SliceInl(i64 From, i64 To);    // Slice x<->y
-                        void SliceInl(i64 To);              // Slice First->n or n<-Last
+        [[nodiscard]]   ivec Slice(idx From, idx To);       // Slice From<->To, then return
+        // [[nodiscard]]   ivec Slice(idx To);                 // Slice First->n or n<-Last, then return
+                        void SliceInl(idx From, idx To);    // Slice x<->y
+        //                 void SliceInl(idx To);              // Slice First->n or n<-Last
 
         /** [Items] Eraser return new by index **/
         [[nodiscard]]   ivec Erase(idx Pos);                // return erased specific
@@ -230,14 +247,14 @@ namespace rdt {
         [[nodiscard]] str fstr() const;                     // Make to string literally (almost) anything
         [[nodiscard]] str join(strview Delim = ", ") const; // Format everything into string seperated by something
         void toCArr(span<T> Destination) const;             // Convert to conventional pointer array
-        // template <template<typename...> class Container>
+
         template <template<typename, typename...> class Container>
         [[nodiscard]] auto to() const;                      // To generic iterables
 
         /* [Converter.Opr] Auto converter to std::span & std::vector by operator */
         explicit operator span<T>() const noexcept;
         explicit operator span<const T>() const noexcept;
-        explicit operator vec<T>() const noexcept ;
+        explicit operator vec<T>() const noexcept;
         explicit operator vec<const T>() const noexcept;
 
         /* Legacy functions */

@@ -34,7 +34,7 @@ namespace rdt {
     ///       If T's constructor throws, vector remains unchanged (strong guarantee).
     template <typename T>
     template <typename... Args>
-    void ivec<T>::emplace(Args&&... Items) {
+    void ivec<T>::emplace(Args&&... Items) noexcept {
         if (m_Size == m_Capacity)
             reserve(m_Capacity ? m_Capacity * 2 : 1);
 

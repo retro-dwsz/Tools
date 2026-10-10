@@ -28,7 +28,7 @@ namespace rdt {
     /// @return true if at least one matching element is found, false otherwise.
     /// @note O(n) linear scan. Const-correct: callable on both mutable and const ivec.
     template <typename T>
-    bool ivec<T>::Contains(const T& Item) noexcept {
+    bool ivec<T>::Contains(const T& Item) const noexcept {
         for(idx i = 0; i < m_Size; ++i) {
             if(m_Data[i] == Item)
                 return true;
@@ -42,7 +42,7 @@ namespace rdt {
     /// @note O(n) linear scan. Returns size() (not -1) as sentinel value
     ///       since idx is unsigned. Always check result < size() before use.
     template <typename T>
-    idx ivec<T>::Find(const T& Item) noexcept {
+    idx ivec<T>::Find(const T& Item) const noexcept {
         for(idx i = 0; i < m_Size; ++i) {
             if(m_Data[i] == Item)
                 return i;
@@ -55,7 +55,7 @@ namespace rdt {
     /// @return Number of occurrences (0 if not found).
     /// @note O(n) linear scan. Equivalent to std::count(begin(), end(), Item).
     template <typename T>
-    idx ivec<T>::FindFreq(const T& Item) noexcept {
+    idx ivec<T>::FindFreq(const T& Item) const noexcept {
         idx count = 0;
         for(idx i = 0; i < m_Size; ++i) {
             if(m_Data[i] == Item)
@@ -70,7 +70,7 @@ namespace rdt {
     /// @note O(n) linear scan + dynamic allocation for result vector.
     ///       If no matches found, returns {0, empty_vec}.
     template <typename T>
-    pair<idx, vec<T>> ivec<T>::FindAll(const T& Item) noexcept {
+    pair<idx, vec<T>> ivec<T>::FindAll(const T& Item) const noexcept {
         idx count = 0;
         vec<T> idxs;
 

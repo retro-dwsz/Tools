@@ -1,5 +1,5 @@
-# ---- Direct install on msys2/cygwin ----
-# If you're on windows and using msys2 or cygwin
+# ---- Direct install on msys2/wsl ----
+# If you're on windows and using msys2 or wsl
 # you can simply copy RDTools/ to your /include/ folder
 # Example to msys2 with PowerShell:
 # `Copy-Item -Path .\RDTools\ -Destination D:\Msys2\clang64\include -Recurse -Force`
@@ -34,6 +34,7 @@ if(RDTOOLS_BUILD_TESTS)
     # Header list only appeared here for IDE view, doesn't effect build/install
     file(GLOB_RECURSE _rdtools_ide_headers CONFIGURE_DEPENDS
         "${CMAKE_CURRENT_SOURCE_DIR}/RDTools/*.hpp"
+#        "${CMAKE_CURRENT_SOURCE_DIR}/Test/*.cpp"
     )
     target_sources(RDTools_Test PRIVATE ${_rdtools_ide_headers})
 

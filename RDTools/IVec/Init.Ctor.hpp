@@ -56,6 +56,31 @@ namespace rdt {
         m_Size = m_Capacity;
     }
 
+    /// @brief Construct from raw pointer range [begin, end) via deep copy.
+    /// @param begin Pointer to first element (inclusive). Must not be null if end != begin.
+    /// @param end Pointer past last element (exclusive).
+    /// @note Explicit constructor to prevent implicit conversion.
+    ///       Uses exclusive end bound matching STL iterator-pair convention.
+    ///       Safe: handles nullptr and empty range (begin == end).
+    template <typename T>
+    ivec<T>::ivec(const T* begin, const T* end) {
+        // Guard: null or empty range
+        if (!begin || !end || begin >= end) return;
+
+        const auto Count = scast<idx>(end - begin);
+
+        this->m_Capacity = Count;
+        this->m_Size     = Count;
+        this->m_Data     = Cast::scast<T*>(
+            operator new[](m_Capacity * sizeof(T))
+        );
+
+        for (idx i = 0; i < Count; ++i) {
+            // Dereference via index (safe & clear)
+            new (m_Data + i) T(begin[i]);
+        }
+    }
+
     /// Construct from Data ivec
     /// @brief Deep copy constructor from another ivec.
     /// @param Data Source ivec to copy. All elements are copy-constructed.
@@ -124,6 +149,14 @@ namespace rdt {
     };
 }
 
+namespace rdt {
+
+    template<typename T>
+    void ivec<T>::fromVec(const vec<T>& Data){ this = ivec(Data.begin(), Data.end()); };
+
+    template<typename T>
+    void ivec<T>::fromSpan(const span<const T>& Data){ this = ivec(Data.begin(), Data.end()); };
+}
 
 #endif
 

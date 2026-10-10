@@ -34,7 +34,7 @@ namespace rdt {
     ///       strong exception safety when T has noexcept move constructor.
     ///       Triggers reallocation if size() == capacity() before insertion.
     template <typename T>
-    void ivec<T>::appendFirst(const T& Item) {
+    void ivec<T>::appendFirst(const T& Item) noexcept {
         if (m_Size == m_Capacity)
             reserve(m_Capacity == 0 ? 1 : m_Capacity * 2);
 
@@ -57,7 +57,7 @@ namespace rdt {
     ///       When At == size(), behaves identically to append(Element).
     ///       Triggers reallocation if size() == capacity() before insertion.
     template <typename T>
-    void ivec<T>::appendAt(const T& Item, idx At) {
+    void ivec<T>::appendAt(idx At, const T& Item) noexcept {
         if (At > m_Size) At = m_Size; // clamp (insert at end)
 
         if (m_Size == m_Capacity)

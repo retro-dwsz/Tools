@@ -36,7 +36,7 @@ namespace rdt {
     /// @note Uses std::mt19937_64 seeded from std::random_device.
     ///       Original vector is unchanged. O(n) complexity.
     template <typename T>
-    [[nodiscard]] ivec<T> ivec<T>::shuffle() {
+    [[nodiscard]] ivec<T> ivec<T>::Shuffle() {
         ivec out(*this);
         out.ShuffleInl();
         return out;

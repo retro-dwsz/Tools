@@ -32,8 +32,8 @@ namespace rdt {
     /// @note Delegates to emplaceAt(0, args...). See emplaceAt() for full details.
     template <typename T>
     template<typename... Args>
-    void ivec<T>::emplaceFront(Args&&... Items) {
-        emplaceAt(std::forward<Args>(Items)..., 0);
+    void ivec<T>::emplaceFront(Args&&... Items) noexcept {
+        emplaceAt(0, std::forward<Args>(Items)...);
     }
 
     /** Emplace object at specific index **/
@@ -49,7 +49,7 @@ namespace rdt {
     ///       partially-shifted state (basic exception guarantee).
     template <typename T>
     template<typename... Args>
-    void ivec<T>::emplaceAt(idx At, Args&&... Items) {
+    void ivec<T>::emplaceAt(idx At, Args&&... Items) noexcept {
         if (At > m_Size) At = m_Size; // clamp to end
 
         if (m_Size == m_Capacity) {
